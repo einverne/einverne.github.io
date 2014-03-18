@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>jquery 图片滚动 xslider 插件 图片左右滚动、上下滚动</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a, img {
+            border: 0;
+        }
+
+        body {
+            font: 12px/180% Arial, Helvetica, sans-serif, "宋体";
+        }
+
+        .scrolltitle {
+            height: 24px;
+            font-size: 14px;
+            width: 742px;
+            border-bottom: solid 1px #ddd;
+            margin: 20px auto 15px auto;
+        }
+
+        a.abtn {
+            display: block;
+            height: 130px;
+            width: 17px;
+            overflow: hidden;
+            background: url(images/arrow3.png) no-repeat 0px 50%;
+        }
+
+        a.aleft {
+            float: left;
+        }
+
+        a.agrayleft {
+            cursor: default;
+            background-position: -34px 50%;
+        }
+
+        a.aright {
+            float: right;
+            background-position: -17px 50%;
+        }
+
+        a.agrayright {
+            cursor: default;
+            background-position: -51px 50%;
+        }
+
+        .scrolllist {
+            width: 742px;
+            height: 204px;
+            margin: 0 auto;
+        }
+
+        .scrolllist .imglist_w {
+            width: 704px;
+            height: 204px;
+            overflow: hidden;
+            float: left;
+            position: relative; /*必要元素*/
+        }
+
+        .scrolllist .imglist_w ul {
+            width: 20000px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .scrolllist .imglist_w li {
+            width: 156px;
+            float: left;
+            padding: 0 10px;
+        }
+
+        .scrolllist .imglist_w li img {
+            padding: 2px;
+            border: solid 1px #ddd;
+        }
+
+        .scrolllist .imglist_w li a {
+            color: #3366cc;
+            text-decoration: none;
+            float: left;
+        }
+
+        .scrolllist .imglist_w li a:hover img {
+            filter: alpha(opacity = 86);
+            -moz-opacity: 0.86;
+            opacity: 0.86;
+        }
+
+        .scrolllist .imglist_w li p {
+            height: 48px;
+            line-height: 24px;
+            overflow: hidden;
+            float: left;
+        }
+
+        #s2 {
+            width: 214px;
+        }
+
+        #s2 .imglist_w {
+            width: 176px;
+        }
+
+        #s2 .imglist_w ul {
+            height: 20000px;
+            width: auto;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        #s2 .imglist_w li {
+            float: none;
+        }
+    </style>
+</head>
+
+<body>
+<h2 class="scrolltitle">默认状态属性</h2>
+	<pre class="scrolllist">
+	$(".productshow").xslider({//.productshow是要移动对象的外框;
+		unitdisplayed:3,//可视的单位个数   必需项;
+		movelength:1,//要移动的单位个数    必需项;
+		maxlength:null,//可视宽度或高度    默认查找要移动对象外层的宽或高度;
+		scrollobj:null,//要移动的对象     默认查找productshow下的ul;
+		unitlen:null,//移动的单位宽或高度     默认查找li的尺寸;
+		nowlength:null,//移动最长宽或高（要移动对象的宽度或高度）   默认由li个数乘以unitlen所得的积;
+		dir:"H",//水平移动还是垂直移动，默认H为水平移动，传入V或其他字符则表示垂直移动;
+		autoscroll:1000//自动移动间隔时间     默认null不自动移动;
+	});
+	</pre>
+<h2 class="scrolltitle">默认状态下左右滚动</h2>
+
+<div class="scrolllist" id="s1">
+    <a class="abtn aleft" href="#left" title="左移"></a>
+
+    <div class="imglist_w">
+        <ul class="imglist">
+            <li>
+                <a target="_blank" href="http://www.einverne.tk"
+                   title="示例1"><img width="150" height="150" alt="示例1" src="images/1.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例1</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例2"><img
+                        width="150" height="150" alt="示例2" src="images/2.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例2</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例3"><img
+                        width="150" height="150" alt="示例3" src="images/3.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例3</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例4"><img
+                        width="150" height="150" alt="示例4" src="images/4.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例4</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例5"><img
+                        width="150" height="150" alt="示例5" src="images/1.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例5</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk"
+                   title="示例6"><img width="150" height="150"
+                                    alt="示例6"
+                                    src="images/2.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例6</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例7"><img
+                        width="150" height="150" alt="示例7" src="images/3.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例7</a></p>
+            </li>
+        </ul>
+        <!--imglist end-->
+    </div>
+    <a class="abtn aright" href="#right" title="右移"></a>
+</div>
+<!--scrolllist end-->
+
+<h2 class="scrolltitle">设置上下滚动</h2>
+
+<div class="scrolllist" id="s2">
+    <a class="abtn aleft" href="#left" title="左移"></a>
+
+    <div class="imglist_w">
+        <ul class="imglist">
+            <li>
+                <a target="_blank" href="http://www.einverne.tk"
+                   title="示例1"><img width="150" height="150"
+                                    alt="示例1"
+                                    src="images/1.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例1</a></p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.einverne.tk" title="示例2"><img
+                        width="150" height="150" alt="示例2" src="images/3.jpg"/></a>
+
+                <p><a target="_blank" href="http://www.einverne.tk">示例2</a></p>
+            </li>
+        </ul>
+        <!--imglist end-->
+    </div>
+    <a class="abtn aright" href="#right" title="右移"></a>
+</div>
+<!--scrolllist end-->
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //默认状态下左右滚动
+        $("#s1").xslider({
+            unitdisplayed:4,
+            movelength:1,
+            unitlen:176,
+            autoscroll:3000
+        });
+
+        //设置上下滚动
+        $("#s2").xslider({
+            unitdisplayed:4,
+            movelength:1,
+            dir:"V",
+            unitlen:204,
+            autoscroll:2000
+        });
+
+    })
+</script>
+
+</body>
+</html>
