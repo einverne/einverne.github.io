@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>图片幻灯效果</title>
+
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+
+    body {
+        font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+    }
+
+    .wrapper {
+        width: 500px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .d1 {
+        width: 443px;
+        height: 209px;
+        overflow: hidden;
+        background-color: #000000;
+        position: relative;
+        margin: 40px auto 0 auto;
+    }
+
+    .d1 ul {
+        display: none;
+    }
+
+    .d1 ul li a img {
+        width: 443px;
+        height: 209px
+    }
+
+    .loading {
+        width: 443px;
+        background-color: #000000;
+        color: #FFCC00;
+        font-size: 12px;
+        height: 179px;
+        text-align: center;
+        padding-top: 30px;
+        font-weight: bold;
+    }
+
+    .d2 {
+        width: 100%;
+        height: 209px;
+        overflow: hidden;
+    }
+
+    .num_list {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        bottom: -1px;
+        background-color: #000000;
+        color: #FFFFFF;
+        font-size: 12px;
+        padding: 4px 0px;
+        height: 20px;
+        overflow: hidden;
+    }
+
+    .num_list span {
+        display: inline-block;
+        height: 16px;
+        padding-left: 6px;
+    }
+
+    .button {
+        position: absolute;
+        z-index: 1000;
+        right: 0px;
+        bottom: 2px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .button a {
+        background-color: #666666;
+        display: block;
+        line-height: 14px;
+        float: left;
+        padding: 2px 6px;
+        margin-right: 3px;
+        color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .button .b2 {
+        color: #FFCC33;
+        background-color: #FF6633;
+    }
+</style>
+
+<script type="text/javascript">
+    //主函数
+    var s = function () {
+        var interv = 2000; //切换间隔时间
+        var interv2 = 10; //切换速度
+        var opac1 = 80; //文字背景的透明度
+        var source = "show" //焦点轮换图片容器的id名称
+        //获取对象
+        function getTag(tag, obj) {
+            if (obj == null) {
+                return document.getElementsByTagName(tag);
+            } else {
+                return obj.getElementsByTagName(tag);
+            }
+        }
+
+        function getid(id) {
+            return document.getElementById(id);
+        }
+
+        var opac = 0, j = 0, t = 63, num, scton = 0, timer, timer2, timer3;
+        var id = getid(source);
+        id.removeChild(getTag("div", id)[0]);
+        var li = getTag("li", id);
+        var div = document.createElement("div");
+        var title = document.createElement("div");
+        var span = document.createElement("span");
+        var button = document.createElement("div");
+        button.className = "button";
+        for (var i = 0; i < li.length; i++) {
+            var a = document.createElement("a");
+            a.innerHTML = i + 1;
+            a.onclick = function () {
+                clearTimeout(timer);
+                clearTimeout(timer2);
+                clearTimeout(timer3);
+                j = parseInt(this.innerHTML) - 1;
+                scton = 0;
+                t = 63;
+                opac = 0;
+                fadeon();
+            };
+            a.className = "b1";
+            a.onmouseover = function () {
+                this.className = "b2";
+            };
+            a.onmouseout = function () {
+                this.className = "b1";
+                sc(j);
+            };
+            button.appendChild(a);
+        }
+        //控制图层透明度
+        function alpha(obj, n) {
+            if (document.all) {
+                obj.style.filter = "alpha(opacity=" + n + ")";
+            } else {
+                obj.style.opacity = (n / 100);
+            }
+        }
+
+        //控制焦点按钮
+        function sc(n) {
+            for (var i = 0; i < li.length; i++) {
+                button.childNodes[i].className = "b1";
+            }
+            button.childNodes[n].className = "b2";
+        }
+
+        title.className = "num_list";
+        title.appendChild(span);
+        alpha(title, opac1);
+        id.className = "d1";
+        div.className = "d2";
+        id.appendChild(div);
+        id.appendChild(title);
+        id.appendChild(button);
+        //渐显
+        var fadeon = function () {
+            opac += 5;
+            div.innerHTML = li[j].innerHTML;
+            span.innerHTML = getTag("img", li[j])[0].alt;
+            alpha(div, opac);
+            if (scton == 0) {
+                sc(j);
+                num = -2;
+                scrolltxt();
+                scton = 1;
+            }
+            if (opac < 100) {
+                timer = setTimeout(fadeon, interv2);
+            } else {
+                timer2 = setTimeout(fadeout, interv);
+            }
+        };
+        //渐隐
+        var fadeout = function () {
+            opac -= 5;
+            div.innerHTML = li[j].innerHTML;
+            alpha(div, opac);
+            if (scton == 0) {
+                num = 2;
+                scrolltxt();
+                scton = 1;
+            }
+            if (opac > 0) {
+                timer = setTimeout(fadeout, interv2);
+            } else {
+                if (j < li.length - 1) {
+                    j++;
+                } else {
+                    j = 0;
+                }
+                fadeon();
+            }
+        };
+        //滚动文字
+        var scrolltxt = function () {
+            t += num;
+            span.style.marginTop = t + "px";
+            if (num < 0 && t > 1) {
+                timer3 = setTimeout(scrolltxt, interv2);
+            } else if (num > 0 && t < 62) {
+                timer3 = setTimeout(scrolltxt, interv2);
+            } else {
+                scton = 0
+            }
+        };
+        fadeon();
+    }
+    //初始化
+    window.onload = s;
+</script>
+
+
+</head>
+<body>
+<div class="wrapper">
+    <h1>带数字的图片轮播</h1>
+
+    <div id="show" class="d1">
+        <div class="loading">Loading...<br/><img src="images/1.jpg" width="100" height="100"/></div>
+        <ul>
+            <li><a href="http://www.einverne.tk/"><img src="images/1.jpg" alt="展示图片1"/></a></li>
+            <li><a href="http://www.einverne.tk/"><img src="images/2.jpg" alt="展示图片2"/></a></li>
+            <li><a href="http://www.einverne.tk/"><img src="images/3.jpg" alt="展示图片3"/></a></li>
+            <li><a href="http://www.einverne.tk/"><img src="images/4.jpg" alt="展示图片4"/></a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
