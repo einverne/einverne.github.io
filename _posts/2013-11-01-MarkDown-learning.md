@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags: [MarkDown ]
 ---
-{% include JB/setup %}
 
 ###学习使用MarkDown语言进行写作
 

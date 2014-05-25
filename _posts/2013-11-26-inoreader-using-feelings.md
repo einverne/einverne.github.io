@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [intro, beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 inoreader使用感受--绝佳Google Reader代替品
 ===

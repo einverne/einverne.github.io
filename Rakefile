@@ -74,7 +74,7 @@ task :post do
     post.puts "category: #{category}"
     post.puts "tags: #{tags}"
     post.puts "---"
-    post.puts "{% include JB/setup %}"
+    #post.puts "{% include JB/setup %}"
   end
 end # task :post
 

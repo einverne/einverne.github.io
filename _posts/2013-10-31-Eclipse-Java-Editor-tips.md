@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags: [Ingress ]
 ---
-{% include JB/setup %}
 
 ###add auto complete
 

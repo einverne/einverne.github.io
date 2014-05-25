@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [LastPass , beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 LastPass New Design 新设计
 ===

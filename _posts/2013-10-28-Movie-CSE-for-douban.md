@@ -5,7 +5,6 @@ category: lessons
 tagline: ""
 tags: [CSE, douban]
 ---
-{% include JB/setup %}
 
 
 脚本地址:http://userscripts.org/scripts/show/175005

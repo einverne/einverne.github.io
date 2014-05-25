@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags: [Ingress ]
 ---
-{% include JB/setup %}
 
 
 RE管理器修改/system/build.prop

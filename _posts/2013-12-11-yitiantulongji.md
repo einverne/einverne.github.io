@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [Movie , beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 倚天屠龙记_苏有朋版观后感
 ===

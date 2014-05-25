@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [学车 , beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 学车记
 ----

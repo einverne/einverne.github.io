@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [Android  , beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 Android SDK就是Google提供的Android开发工具包,之前请先[配置好JDK][1]
 

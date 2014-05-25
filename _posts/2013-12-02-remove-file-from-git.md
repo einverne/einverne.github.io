@@ -5,7 +5,6 @@ category : lessons
 tagline: ""
 tags : [git , beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 Remove file from git source control but not delete it from drive
 ====

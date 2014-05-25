@@ -3,7 +3,6 @@ layout: post
 title: Markdown online Editor
 tags: [MardDown ,Blogger]
 ---
-{% include JB/setup %}
 
 
 ###Markdown online Editor
