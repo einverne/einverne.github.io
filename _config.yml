@@ -15,7 +15,7 @@ title : Verne in GitHub
 tagline: Heal the World
 author :
   name : Ein Verne
-  email : blah@email.test
+  email : ein.verne+github@gmail.com
   github : einverne
   twitter : einverne
   feedburner : feedname
@@ -28,7 +28,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://git.einverne.tk
+production_url : http://einverne.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
