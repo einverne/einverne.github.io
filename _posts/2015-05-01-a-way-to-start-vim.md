@@ -24,4 +24,7 @@ VIM作为一款Linux下必备的编辑器，会使用的人都说好用，于是
 ###colorscheme
 或许在练习了VIM不久就会觉得VIM的颜色太单调，但是没关系，VIM有很多很多的配色方案，只要你能找到总能找到自己喜欢的，我直接用了别人推荐的[molokai](https://github.com/tomasr/molokai),你也可以试试，下载molokai.vim文件到colors目录下之后，在vimrc中写入`colorscheme molokai`，就能使用这款配色了。当然你也能自己定义字体和字号，还有很多你能自己定义的东西等待发掘的。
 
+附送两张图
+![vi tutorial](https://lh5.googleusercontent.com/-Ox74nXfnQ0s/VUZBTBRQjjI/AAAAAAAAnjk/yw6e1DG7AWA/s0/vi_tutorial.png)
 
+![vi key command](https://lh5.googleusercontent.com/-777zNXGtePg/VUSf2KO3eoI/AAAAAAAAnjM/zrkNBCUya0o/s0/gVim_commond_tree.png)
