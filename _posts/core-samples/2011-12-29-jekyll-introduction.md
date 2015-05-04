@@ -1,10 +1,10 @@
 ---
 layout: post
-category : lessons
-tagline: "Supporting tagline"
+category : jekyll
+tagline: "jekyll"
+description: "jekyll tutorial"
 tags : [intro, beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
 Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
@@ -19,8 +19,6 @@ dynamic components such as templates, partials, liquid code, markdown, etc. Jeky
 ### Examples
 
 This website is created with Jekyll. [Other Jekyll websites](https://github.com/mojombo/jekyll/wiki/Sites).
-
-
 
 ### What does Jekyll Do?
 
@@ -131,8 +129,6 @@ Jekyll supports various configuration options that are fully outlined here:
 (<https://github.com/mojombo/jekyll/wiki/Configuration>)
 
 
-
-
 ## Content in Jekyll
 
 Content in Jekyll is either a post or a page.
@@ -215,7 +211,6 @@ This page will be available at `http://yourdomain.com/people/bob/essay.html`
 - **about.html**
   A nice about page is easy to do and gives the human perspective to your website.
 
-
 ## Templates in Jekyll
 
 Templates are used to contain a page's or post's content.
@@ -297,15 +292,12 @@ My personal stance is to not invest time trying to hack liquid. It's really unne
 _from a programmer's_ perspective. That is to say if you have the ability to run custom plugins (i.e. run arbitrary ruby code)
 you are better off sticking with ruby. Toward that end I've built [Mustache-with-Jekyll](http://github.com/plusjade/mustache-with-jekyll)
 
-
 ## Static Assets
 
 Static assets are any file in the root or non-underscored subfolders that are not pages.
 That is they have no valid YAML Front Matter and are thus not treated as Jekyll Pages.
 
 Static assets should be used for images, css, and javascript files.
-
-
 
 
 ## How Jekyll Parses Files
