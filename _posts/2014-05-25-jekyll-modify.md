@@ -2,8 +2,8 @@
 layout: post
 title: "Jekyll modify"
 description: "Jekyll 全记录"
-category: 
-tags: [Jekyll, Rankfile]
+category: jekyll
+tags: [jekyll, rankfile]
 ---
 
 Jekyll修改

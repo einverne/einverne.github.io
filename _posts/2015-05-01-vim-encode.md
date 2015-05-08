@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "vim字符编码及中文菜单乱码"
+title: "Vim字符编码及中文菜单乱码"
 description: "VIM字符编码解决方案，自动识别文件编码，中文菜单乱码"
-category: VIM
-tags: [VIM, encode, fileencoding]
+category: vim
+tags: [vim, encode, fileencoding]
 ---
 
 vim经常遇到文件乱码的情况，很多的文章都只是解决了作者遇到的乱码问题，不同的使用者由于环境不一样，参考之后，反而更加混淆和复杂。

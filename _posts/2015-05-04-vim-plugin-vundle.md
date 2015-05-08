@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "vim插件Vundle"
-description: "VIM插件Vundle，vim插件"
-category: VIM
-tags: [VIM, vim-plugin, vundle]
+title: "Vim插件Vundle"
+description: "Vim插件Vundle，Vim插件"
+category: vim
+tags: [vim, vim-plugin, vundle]
 ---
 
 ##简单介绍

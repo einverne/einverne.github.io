@@ -2,8 +2,8 @@
 layout: post
 title: "开始使用Vim"
 description: "VIM使用入门，入门教程"
-category: VIM
-tags: [VIM, tutorial]
+category: vim
+tags: [vim, tutorial]
 ---
 
 ###Brief Introduction

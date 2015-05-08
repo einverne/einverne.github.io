@@ -3,7 +3,7 @@ layout: post
 title: "毕设相关"
 description: ""
 category: 
-tags: [Skills, ]
+tags: [skills, ]
 ---
 
 ##Word目录自动生成
