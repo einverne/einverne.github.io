@@ -6,6 +6,32 @@ category: wiki
 tags: [linux, notes]
 ---
 
+##ssh keys
+
+An SSH key allows you to establish a secure connection between your computer and server
+
+	ssh-keygen -t rsa -C "example@gmail.com"
+
+show the public key
+
+	cat ~/.ssh/id_rsa.pub
+
+Copy the key
+
+Windows:
+
+	clip < ~/.ssh/id_rsa.pub
+
+Mac:
+
+	pbcopy < ~/.ssh/id_rsa.pub
+
+GNU/Linux(requires xclip)
+
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+
+参考：https://gitlab.com/help/ssh/README
+
 ##screen
 
 ###常用命令
