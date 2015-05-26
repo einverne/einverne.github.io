@@ -20,15 +20,15 @@ tags: [inoreader, ]
 
 所以我在订阅这个分类时就依赖我的兴趣点、我关心的IT，时事新闻，或者偶尔更新的个人博客。保证这个分类每天更新适量，而不是一天下来1000+，并且通过观看这个分类就能基本了解行情新闻。
 
-InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635adc](http://www.inoreader.com/bundle/0014cd635adc)
-OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635adc](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635adc)
+- InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635adc](http://www.inoreader.com/bundle/0014cd635adc)
+- OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635adc](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635adc)
 
 ##科技新闻
 
 TechCrunch, Android Police, cnBeta, Solidot, Google Operating System, The Next Web...等等更新非常快的媒体博客
 
-InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635e65](http://www.inoreader.com/bundle/0014cd635e65)
-OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e65](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e65)
+- InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635e65](http://www.inoreader.com/bundle/0014cd635e65)
+- OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e65](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e65)
 
 ##软件及应用
 
@@ -39,8 +39,8 @@ OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e65](ht
 1. 网站主要是对软件和应用推荐
 2. 网站的每篇文章都会对推荐的软件进行详细的说明，有些网站会对同类型的软件进行横向的比较
 
-InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635e88](http://www.inoreader.com/bundle/0014cd635e88)
-OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e88](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e88)
+- InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd635e88](http://www.inoreader.com/bundle/0014cd635e88)
+- OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e88](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e88)
 
 ##博客
 
@@ -51,5 +51,5 @@ OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd635e88](ht
 
 该分类下主要是惠惠网和什么值得买这两个购物导购网站的Feed，这个分类下更新太快，我基本看不完。通过关键词过滤，找到合适的内容。
 
-InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd6361bd](http://www.inoreader.com/bundle/0014cd6361bd)
-OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd6361bd](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd6361bd)
+- InoReader订阅地址：[http://www.inoreader.com/bundle/0014cd6361bd](http://www.inoreader.com/bundle/0014cd6361bd)
+- OPML地址：[http://www.inoreader.com/reader/api/0/bundle/opml/0014cd6361bd](http://www.inoreader.com/reader/api/0/bundle/opml/0014cd6361bd)
