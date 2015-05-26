@@ -41,6 +41,15 @@ for example:
 
 	Ctrl-w o    让当前文件占据整个窗口
 
+##更正
+
+Insert模式下
+
+	<BS>  退格键，删除光标前
+	<Del> Delete键，删除光标后
+	<C-W> 删除一个单词
+	<C-U> 删除光标前的字符，保留光标之后的文本，保留行首的缩进，只删除第一个非空字符至光标位置之间的文本。
+
 ##可视Visual mode
 
 ###
@@ -58,3 +67,4 @@ for example:
 
 	:verbose set tabstop?    in Vim, it will tell you where the tapstop option value is coming from
 
+差不多看到这里就能够直接看文档了：[http://vimcdoc.sourceforge.net/](http://vimcdoc.sourceforge.net/) 通过文档学习更多符合自己使用习惯的命令或者操作。
