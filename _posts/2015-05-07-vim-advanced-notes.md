@@ -56,6 +56,7 @@ Insert模式下
 
 	v 按字符选择，在Normal mode下按下v进入Visual mode
 	V 按行选择
+	Ctrl+Q 块选择，Windows下，其他平台下Ctrl+V
 
 选择字符之后操作
 
@@ -66,5 +67,6 @@ Insert模式下
 ##Other
 
 	:verbose set tabstop?    in Vim, it will tell you where the tapstop option value is coming from
+
 
 差不多看到这里就能够直接看文档了：[http://vimcdoc.sourceforge.net/](http://vimcdoc.sourceforge.net/) 通过文档学习更多符合自己使用习惯的命令或者操作。
