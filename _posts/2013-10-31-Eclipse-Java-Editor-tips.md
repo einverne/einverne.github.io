@@ -1,7 +1,7 @@
 ---
 title: add auto complete
 layout: post
-category : lessons
+category : 经验总结
 tagline: ""
 tags: [Ingress ]
 ---

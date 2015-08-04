@@ -2,8 +2,8 @@
 layout: post
 title: "ASCII Unicode GBK UTF-8字符编码的区别与联系"
 description: "ASCII、Unicode、GBK和UTF-8字符编码的区别联系"
-category: wiki
-tags: [encoding, ]
+category: 经验总结
+tags: [encoding, 编码, Unicode, UTF8, ASCII]
 ---
 
 很久很久以前，有一群人，他们决定用8个可以开合的晶体管来组合成不同的状态，以表示世界上的万物。他们看到8个开关状态是好的，于是他们把这称为”字节“。再后来，他们又做了一些可以处理这些字节的机器，机器开动了，可以用字节来组合出很多状态，状态开始变来变去。他们看到这样是好的，于是它们就这机器称为”计算机“。

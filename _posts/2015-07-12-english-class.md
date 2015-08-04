@@ -2,7 +2,7 @@
 layout: post
 title: "纪念最后的英语课"
 description: "最后的英语课"
-category: 
+category: 思考感悟
 tags: []
 ---
 

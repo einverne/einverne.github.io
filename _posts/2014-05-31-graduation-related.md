@@ -2,7 +2,7 @@
 layout: post
 title: "毕设相关"
 description: ""
-category: 
+category: 经验总结
 tags: [skills, ]
 ---
 

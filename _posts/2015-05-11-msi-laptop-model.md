@@ -2,7 +2,7 @@
 layout: post
 title: "msi笔记本型号对比"
 description: "msi笔记本型号对比, GE GS GT GP GX系列对比"
-category: collection
+category: 整理合集
 tags: [msi, laptop, ]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "我使用的Chrome Extension"
 description: "我使用的Chrome Extension扩展"
-category: 
+category: 整理合集
 tags: []
 ---
 

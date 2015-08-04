@@ -1,9 +1,9 @@
 ---
 title: Movie CSE for douban
 layout: post
-category: lessons
+category: 产品体验
 tagline: ""
-tags: [CSE, douban]
+tags: [CSE, 豆瓣, Userscript]
 ---
 
 

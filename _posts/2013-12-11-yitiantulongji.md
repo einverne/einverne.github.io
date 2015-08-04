@@ -1,13 +1,10 @@
 ---
 title: 倚天屠龙记_苏有朋版观后感
 layout: post
-category : lessons
+category : 思考感悟
 tagline: ""
-tags : [Movie , beginner, jekyll, tutorial]
+tags : [Movie , beginner, ]
 ---
-
-倚天屠龙记_苏有朋版观后感
-===
 
 ![倚天屠龙记_苏有朋版](https://lh3.googleusercontent.com/-06QPubCzekM/UqBo0ke_7XI/AAAAAAAAZv8/DAAfi-JwnI4/w640/%25E5%2580%259A%25E5%25A4%25A9%25E5%25B1%25A0%25E9%25BE%2599%25E8%25AE%25B0_%25E8%258B%258F%25E6%259C%2589%25E6%259C%258B.jpg)
 
@@ -26,7 +23,7 @@ tags : [Movie , beginner, jekyll, tutorial]
 >
 > 你要他身边再没别的女孩
 
-赵敏要求张无忌做的第三件事情就是**画眉**, 经过毛阿敏的演唱, 让我单曲循环了一阵子. 本来想写更多一点,可是真的不知道写些什么了.~~
+赵敏要求张无忌做的第三件事情就是**画眉**, 经过毛阿敏的演唱, 让我单曲循环了一阵子. 本来想写更多一点,可是真的不知道写些什么了.~
 
 <embed src="http://www.xiami.com/widget/0_2075830/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent"></embed>
 

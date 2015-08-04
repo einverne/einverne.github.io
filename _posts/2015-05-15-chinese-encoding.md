@@ -2,7 +2,7 @@
 layout: post
 title: "中文编码"
 description: "中文字符编码"
-category: wiki
+category: 经验总结
 tags: [encoding, ]
 ---
 

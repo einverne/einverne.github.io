@@ -2,7 +2,7 @@
 layout: post
 title: "如何将OneDrive移动到其他位置"
 description: "如何将OneDrive移动到其他位置"
-category: how-to
+category: 经验总结
 tags: [OneDrive]
 ---
 

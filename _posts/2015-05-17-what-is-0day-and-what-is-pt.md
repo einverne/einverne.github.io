@@ -2,7 +2,7 @@
 layout: post
 title: "0day和PT站扫盲贴"
 description: "0day和PT站扫盲贴"
-category: wiki
+category: 经验总结
 tags: [pt, 0day, download]
 ---
 

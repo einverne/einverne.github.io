@@ -1,7 +1,7 @@
 ---
 title: modify build prop to get Ultra Strike
 layout: post
-category : lessons
+category : 经验总结
 tagline: ""
 tags: [Ingress ]
 ---

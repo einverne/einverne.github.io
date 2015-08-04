@@ -2,7 +2,7 @@
 layout: post
 title: "CentOS 安装文件区别"
 description: "相同Centos版本，不同安装文件区别"
-category: wiki
+category: 经验总结
 tags: [linux, centos, ]
 ---
 

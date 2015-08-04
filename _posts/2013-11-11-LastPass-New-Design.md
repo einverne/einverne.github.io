@@ -1,13 +1,11 @@
 ---
 title: LastPass New Design 新设计
 layout: post
-category : lessons
+category : 产品体验
 tagline: ""
-tags : [LastPass , beginner, jekyll, tutorial]
+tags : [LastPass ]
 ---
 
-LastPass New Design 新设计
-===
 From:[LastPass官方博客](http://blog.lastpass.com/2013/11/lastpass-30-is-here-new-design-new.html)
 
 正如我之前在[密码管理](http://www.einverne.tk/2013/04/manage-password.html)一文中提到的LastPass,现在已经成为我必不可少的一个生活工具LastPass甚至可以用来[分享密码](http://www.einverne.tk/2013/06/lastpass-share-password.html).最近LastPass 3.0发布,看看更新了什么.同样如果你需要注册LastPass,可以通过我的[邀请链接](https://lastpass.com/f?1284546 )这样大家都可以得到一个月的高级账户
@@ -15,7 +13,7 @@ From:[LastPass官方博客](http://blog.lastpass.com/2013/11/lastpass-30-is-here
 <img src="http://2.bp.blogspot.com/-Cof-gyEEeIE/UmfHSJq-rUI/AAAAAAAABhI/LBBun1zeh9k/s1600/30_RGB.png" alt="lastpass 3.0">
 </div>
 
-####干净设计不刺眼的感觉
+##干净设计不刺眼的感觉
 
 官方的用词是这样的`clean design`and`unobtrusive feel`
 <div>
@@ -52,14 +50,14 @@ Chrome插件界面更新变的小清新了.现在LastPass会自动在用户名�
 ![](http://4.bp.blogspot.com/-0MprIxQf0jk/UmbFvJQHVLI/AAAAAAAABgA/elFRpkp939E/s400/features-centralizeyourdata.png)
 
 
-####Android iOS版重新设计
+##Android iOS版重新设计
 官方用语:Enjoy updated Android and iOS apps, with a more powerful browser experience for easier navigating, site saving, and password generating. PS.只有高级版LastPass才能使用
 
 ![](https://lh3.googleusercontent.com/-ZVaJjUn4-5E/Unh9S2zEy4I/AAAAAAAAZb0/DEBLq-Fbz7o/s640/lastpass_android_ios.jpg)
 
 高级版LastPass Android和iOS直接将LastPass集成到了浏览器能在浏览器中自动填入密码.
 
-####LastPass Family Feature
+##LastPass Family Feature
 可以多至五个人共享一个文件夹
 
 ![](https://lh4.googleusercontent.com/-LFIGt7Kzgxc/Unh9sQ9QB9I/AAAAAAAAZb8/ZC7Yh5Ffdx4/s640/lastpass_familyshare.png)

@@ -2,7 +2,7 @@
 layout: post
 title: "Dropbox 技巧"
 description: "Dropbox 技巧"
-category: Products
+category: 产品体验
 tags: [Dropbox,]
 ---
 

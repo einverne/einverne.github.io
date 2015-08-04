@@ -2,7 +2,7 @@
 layout: post
 title: "Linux notes"
 description: "Linux学习笔记"
-category: wiki
+category: 经验总结
 tags: [linux, notes]
 ---
 

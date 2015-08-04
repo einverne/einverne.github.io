@@ -2,7 +2,7 @@
 layout: post
 title: "Dropbox同步已存在的文件夹"
 description: "How to sync with exist Dropbox folder 如何同步已存在的Dropbox文件夹"
-category: how-to
+category: 经验总结
 tags: [Dropbox]
 ---
 

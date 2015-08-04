@@ -1,9 +1,9 @@
 ---
 title: Android SDK环境变量配置
 layout: post
-category : lessons
+category : 经验总结
 tagline: ""
-tags : [Android  , beginner, jekyll, tutorial]
+tags : [Android, JDK,]
 ---
 
 Android SDK就是Google提供的Android开发工具包,之前请先[配置好JDK][1]
