@@ -11,6 +11,7 @@ tags: []
 - 使用账号同步，在不同电脑上同步扩展的配置，即使重装系统，所有的扩展配置都能够同步过来
 - 占用内存相对较少，部分扩展使用 Userscript 代替，减少 Chrome 常驻内存
 
+![Chrome Extension](https://lh3.googleusercontent.com/-RRQpdKvdFqU/VcC4gutTGRI/AAAAAAAAykw/Ylj6joaSNis/s780-Ic42/78afd21e6cfc0692ea542a5fc1d848d7.jpg)
 #列表：
 
 ##Tampermonkey
