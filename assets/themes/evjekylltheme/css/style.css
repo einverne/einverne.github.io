@@ -1,13 +1,25 @@
-/* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
+h2 {
+  padding-bottom: 0.3em;
+	margin-top: 1em;
+	margin-bottom: 16px;
+  font-size: 1.75em;
+	font-weight: bold;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
 
-.container-narrow > hr {
-  margin: 30px 0; }
+.post-meta {
+	margin: 0 0 20px 0;
+	font-style: italic;
+	font-size: 1em;
+}
 
-body {
-  padding-top: 60px;
+#toc {
+	margin-top: 10px;
+}
+
+#floatbox {
+	margin-top: 20px;
 }
 
 .navbar .nav {
@@ -96,12 +108,3 @@ kbd
   text-shadow:0 1px 0 #fff;
 }
 
-h2 {
-  padding-bottom: 0.3em;
-	margin-top: 1em;
-	margin-bottom: 16px;
-  font-size: 1.75em;
-	font-weight: bold;
-  line-height: 1.225;
-  border-bottom: 1px solid #eee;
-}

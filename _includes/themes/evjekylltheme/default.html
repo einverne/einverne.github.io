@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     
-    <title>{{ page.title }}</title>
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
-
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,15 +18,17 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-	<link href="/assets/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="/assets/google-code-prettify/prettify.js?skin=desert"></script>
-	<script type="text/javascript" src="/assets/jquery-2.1.3.min.js"></script>
+	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js?skin=desert"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript">
-	  	$(function(){
+		$(function(){
     	$("pre").addClass("prettyprint");
     	prettyPrint();
   	});
 	</script>
+
+	<script type="text/javascript" src="{{ ASSET_PATH }}/toc.js"></script>
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
@@ -43,32 +45,40 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-narrow">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <ul class="nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-        </div>
-      </div>
+    <div class="navbar navbar-default navbar-static-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+					<ul class="nav">
+						{% assign pages_list = site.pages %}
+						{% assign group = 'navigation' %}
+						{% include JB/pages_list %}
+					</ul>
+				</div>
+			</div>
     </div>
 
-    <div class="container-narrow">
+    <div class="container">
+			<div class="row">
+				{{ content }}
+			</div>
 
-      <div class="content">
-        {{ content }}
-      </div>
-      <hr>
-      <footer>
-        &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
-        <br><br>
-      </footer>
 
-    </div>
+			<hr>
+			<footer>
+				&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
+				<br><br>
+			</footer>
+		</div>
 
     {% include JB/analytics %}
   </body>
+	<script type="text/javascript">
+		window.___gcfg = {lang: 'zh-CN'};
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/platform.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+	</script>
 </html>
