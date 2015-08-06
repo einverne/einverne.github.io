@@ -29,17 +29,35 @@ for example:
 
 ##多窗口操作
 
+###新建与关闭窗口
+
+在 Normal 模式下使用以下命令新建窗口
+
+	:split 			水平分割窗口，内容一样
+	:10split 		水平分割窗口，新窗口高度10行
+	:split filename 窗口中打开新文件
+	:new 			功能和split一样
+	:sp 			split 缩写
+	Ctrl-w s,v 		分割窗口的快捷方式，s水平分割，v垂直分割
+	:vsplit 		垂直分割窗口，简写 :vs
+	Ctrl-w c 		关闭当前窗口
+
 ###窗口间移动
 
 	Ctrl-w h,j,k,l    Ctrl按下，按下w 松开，Ctrl松开，按hjkl 对应左下上右
 
 ###移动窗口
 
-	Ctrl-w H,J,K,L    大写移动窗口
+	Ctrl-w H,J,K,L    大写HJKL,移动窗口
 
 ###窗口最大化
 
 	Ctrl-w o    让当前文件占据整个窗口
+
+###调整窗口大小
+
+	Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列，>增加当前窗口宽度，向右扩展一列。当然 Ctrl-w 之后可以使用 n+< 调整多列宽度
+	Ctrl-w - + 	调整窗口高度
 
 ##更正
 
@@ -51,8 +69,6 @@ Insert模式下
 	<C-U> 删除光标前的字符，保留光标之后的文本，保留行首的缩进，只删除第一个非空字符至光标位置之间的文本。
 
 ##可视Visual mode
-
-###
 
 	v 按字符选择，在Normal mode下按下v进入Visual mode
 	V 按行选择
