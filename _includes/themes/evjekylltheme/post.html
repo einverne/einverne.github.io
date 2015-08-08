@@ -9,7 +9,7 @@
 						<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span> 
 						{% endif %}
 						{% if page.last_updated %}
-						  {{ page.last_updated | date_to_string }}
+						  , Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
 						{% endif %}
 						<span class="entry-author">by {{ site.author.name }}</span>
 						| <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}" target="_blank">View revision history</a>
@@ -44,7 +44,8 @@
 					<hr>
 
 					{% include JB/comments %}
-					
+					{% assign random = site.time | date: "%s%N" | modulo: site.data.quote.size %}
+					<p class="quote">{{ site.data.quote[random] }}</p>		
 		</div>
 
 		<div class="span4">
@@ -72,6 +73,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#toc').toc();
+		$('table').addClass('table table-hover');
 	});
 	$(function(){
 		var tocH = $("#floatbox").offset().top;
@@ -83,5 +85,5 @@
 				$("#floatbox").css({"position":"static"});
 			}
 		})
-	})
+	});
 </script>
