@@ -188,7 +188,13 @@ Registering a page means 1) that Jekyll will process the page and 2) that the pa
 **Categories and Tags**
 Pages do not compute categories nor tags so defining them will have no effect.
 
-**Sub-Directories**
+**Sub-Directories**---
+layout: post
+title: "字库格式介绍"
+description: "字库格式介绍"
+category: 经验总结
+tags: [font, ]
+---
 If pages are defined in sub-directories, the path to the page will be reflected in the url.
 Example:
 
