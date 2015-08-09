@@ -44,8 +44,7 @@
 					<hr>
 
 					{% include JB/comments %}
-					{% assign random = site.time | date: "%s%N" | modulo: site.data.quote.size %}
-					<p class="quote">{{ site.data.quote[random] }}</p>		
+					<blockquote><p class="quote"></p></blockquote>
 		</div>
 
 		<div class="span4">
