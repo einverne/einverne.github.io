@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bindings xmlns="http://www.mozilla.org/xbl">
+<!--
+	This work is licensed under a Creative Commons License.
+
+	You are free:
+
+	to copy, distribute, display, and perform the work
+	to make derivative works
+	to make commercial use of the work
+
+	Under the following conditions:
+
+	Attribution. You must give the original author credit
+
+	Author:  Dean Edwards/2004
+	Web:     http://dean.edwards.name/
+
+	License: http://creativecommons.org/licenses/by/2.0/
+-->
+<!-- keeping code tidy! -->
+
+<!-- provide mozilla browsers with a mechanism for
+     utilising microsoft's dhtml behaviors -->
+
+<!-- version 1.0.6 2004/06/25 -->
+
+<!-- reference your own behaviors here -->
+<binding id="js-highlight.htc" extends="#behavior"/>
+
+<!-- DO NOT DELETE THIS -->
+<!-- begin: "default" behaviors -->
+<binding id="-moz-ie" extends="#behavior"/>
+<binding id="-moz-table" extends="#behavior"><implementation><constructor>if(getComputedStyle(this,null).MozBinding=="none")this.addBehavior("-moz-table")</constructor></implementation></binding>
+<!-- end: "default" behaviors -->
+<!-- begin: dhtml behaviors loader -->
+<binding id="behavior">
+<implementation>
+<constructor><![CDATA[
+if(!this.addBehavior){
+// version 1.0.6 2004/06/25
+// ---------------------------------------------------------code-protection --
+Function.toString = toString;
+toString = function() {
+	if (arguments[0]) {
+		arguments[0].toString = arguments[0].toSource = arguments.callee;
+		return arguments[0];
+	}
+	return String(Function).replace(
+		/Function/, this.name).replace(
+		/\[[^\]]*\]/, "[http://dean.edwards.name/]");
+};
+toString(toString);
+// ---------------------------------------------------------code-protection --
+
+/*
+  this script does not create any global variables.
+  however, it does extend the interfaces of several objects
+
+  http://dean.edwards.name/moz-behaviors/compatibility/
+*/
+
+/* here we define the addBehavior/removeBehavior methods for an element
+   these methods are used to add and remove all dhtml behaviors
+*/
+
+// cache for previously loaded behaviors
+// -also store some "default" behaviors
+document.behaviorUrns = {
+	// a "default" behavior that does nothing
+	"none": new Function,
+	// this "default" behavior enables explorer emulation
+	// note:
+	//  this only needs to be applied if no other behaviors are
+	//  referenced but you require the explorer emulation that
+	//  this binding provides.
+	"-moz-ie": new Function,
+	// this "default" behavior gets round a bug in mozilla (bugzilla:83830)
+	//  which prevents binding to the child elements of tables.
+	// you need to apply this behavior to the <table/> element that contains
+	//  any children that you wish to attach behaviors to.
+	// i.e. do this in css: table{-moz-binding: url(moz-behaviors.xml#-moz-table)}
+	"-moz-table": function() {
+		// manually attach behaviors for thead, tbody, tfoot, tr, th and td
+		with (this) {
+			var i, j;
+			if (tHead) tHead.addBehavior(0);
+			for (i = 0; i < tBodies.length; i++) tBodies[i].addBehavior(0);
+			for (i = 0; i < rows.length; i++) {
+				for (j = 0; j < rows[i].cells.length; j++) {
+					rows[i].cells[j].addBehavior(0);
+				}
+			}
+			if (tFoot) tFoot.addBehavior(0);
+
+			// need to do something about new rows...
+		}
+	}
+};
+
+// implement the addBehavior method for all elements
+Element.prototype.addBehavior = toString(function addBehavior(url) {
+	// calling this method with the first argument as zero
+	//  initialises the object's behaviors
+	if (url === 0) with (getComputedStyle(this, null).MozBinding)
+		// grab the htc's url from the css setting
+		url = replace(/^url\(/, "").replace(/([\/\\])[^#\/\\]+#/, "$1").replace(/\)$/, "");
+
+	// check the cache
+	if (!document.behaviorUrns[url]) {
+		// constants
+		var SEPARATOR = ";";
+		// regular expressions used to parse scripts
+		var BLOCKS = /\{[^\{\}]*\}/g;
+		var FUNCTIONS = /\n\s*function[^\n]*\n/g;
+
+		// behaviors are defined as xml documents, so we can use
+		//  the http request object to load them and the dom parser
+		//  object to parse them into a dom tree
+		var httpRequest = new XMLHttpRequest;
+		var domParser = new DOMParser;
+
+		function getTagName(node) {
+			var tagName = node.tagName.toLowerCase();
+			// this fixes a bug(?) in Mozilla 1.6b that includes the
+			//  namespace prefix in the tagName
+			return tagName.slice(tagName.indexOf(":") + 1);
+		};
+
+		// this function converts elements in a behavior to a program
+		//  declaration, for example:
+		//    <public:attach for="window" event="onload" handler="init"/>
+		//  becomes:
+		//    window.addEventListener("load", init);
+		function asDeclaration(behaviorNode) {
+			with (behaviorNode) {
+				switch (getTagName(behaviorNode)) {
+					case "attach":
+						var handler = getAttribute("handler") || "";
+						handler += (handler) ? "()" : getAttribute("onevent");
+						handler = "function(event){window.event=event;return " + handler + "}";
+						return (getAttribute("for")||"element") + ".addEventListener('" +
+							getAttribute("event").slice(2) + "'," + handler + ",false)";
+					case "property":
+						var name = getAttribute("name");
+						var get = getAttribute("get") || "function(){return getAttribute('" +
+							name + "')}";
+						get = "__defineGetter__('" + name + "'," + get + ")";
+						var put = getAttribute("put") || "";
+						if (put) put += ".call(element,value);";
+						put = "function(value){" + put + "setAttribute('" + name + "',value)}";
+						put = "__defineSetter__('" +  name + "'," + put + ")";
+						return get + SEPARATOR + put;
+					case "method":
+						return "element." + getAttribute("name") + "=" + getAttribute("name");
+					case "event":
+						var id = getAttribute("id");
+						return (id) ? "var " + id + "={fire:function(event){element.fireEvent('" +
+							getAttribute("name") + "',event)}}" : "";
+					case "defaults":
+						// not implemented
+					default:
+						return "";
+				}
+			}
+		};
+
+		function asDefault(behaviorNode) {
+			with (behaviorNode) {
+				return (getAttribute("put")) ? ";var _tmp=getAttribute('" + getAttribute("name") + "')||" +
+					(getAttribute("value") || "null") +
+					";if(_tmp!=null)element['" + getAttribute("name") + "']=_tmp" : "";
+			}
+		};
+
+		// extract the body of a function
+		function getFunctionBody(Function) {
+			with (String(Function)) return slice(indexOf("{") + 1, lastIndexOf("}"));
+		};
+
+		// load the behavior
+		httpRequest.open("GET", url, false);
+		httpRequest.send(null);
+
+		// build a dom representation of the loaded xml document
+		var behaviorDOM = domParser.parseFromString(httpRequest.responseText, "text/xml");
+
+		// analyse the dom tree, build the interface and create the script
+		var declarations = [];
+		var defaults = "";
+		var behaviorNodes = behaviorDOM.documentElement.childNodes;
+		var script = "";
+		for (var i = 0; i < behaviorNodes.length; i++) {
+			with (behaviorNodes[i]) if (nodeType == Node.ELEMENT_NODE) {
+				if (getTagName(behaviorNodes[i]) == "script") {
+					// build the script from the text nodes of the script element
+					for (var j = 0; j < childNodes.length; j++)
+						script += childNodes[j].nodeValue;
+				} else {
+					// convert the dom node representation of a
+					//  <public:declaration/>  to a javascript statement
+					//  and store it in our declarations collection
+					declarations.push(asDeclaration(behaviorNodes[i]));
+					if (getTagName(behaviorNodes[i]) == "property") {
+						defaults += asDefault(behaviorNodes[i]);
+					}
+				}
+			}
+		}
+		// we've finished collecting interface declarations.
+		//  they are now held as an array of strings.
+
+		// build a function from the script and extract the function body
+		//  this has the effect of formatting the script (removing comments etc)
+		script = getFunctionBody(new Function(script));
+
+		// begin: annoying parse of script to "shuffle" declarations
+		//        and inline code.
+		// microsoft dhtml behaviors add the interface first, then
+		//  apply inline script.
+		// to achieve this, we have to strip out all of the inline
+		//  code, leaving only function declarations. the inline code
+		//  then gets appended to the script block for later
+		//  execution.
+		// in between the function declarations and inline script, we
+		//  sandwich the property getters and setters.
+		// this is a real nuisance actually...
+
+		// on the upside regular expressions are really quick...
+
+		// i'm using "#" as a placeholder, so i'll have to escape these out
+		script = script.replace(/#/g, "\\x23");
+
+		// parse out program blocks - anything between curly braces {/}
+		// we will then be left with declarations and inline statememts.
+
+		// store for parsed out program blocks
+		var $ = [declarations.join(SEPARATOR)];
+
+		// this function is used by String.replace to store parsed out
+		//  program blocks
+		function $replace(match) {
+			// store all strings and program blocks and return a unique id
+			return "#" + $.push(match);
+		};
+
+		// parse out all program blocks
+		while(script.match(BLOCKS)) script = script.replace(BLOCKS, $replace);
+
+		// retrieve functions and save them
+		var functions = script.match(FUNCTIONS) || [];
+
+		// remove function declarations
+		script = script.replace(FUNCTIONS, "");
+
+		// re-assemble the encoded script, in the following
+		//  order: function declarations, interface definition
+		//  (getters and setters), inline script
+		script = functions.concat("#1", script).join(SEPARATOR);
+
+		// decode the script
+		while(script.match(/#(\d+)/))
+			script = script.replace(/#(\d+)/g, function(match, index){return $[index-1]});
+		// end: annoying parse of script
+
+		// there are no mozilla events analogous to the contentready/documentready
+		//  events, so we'll just fire them off straight away
+		script += defaults + ";fireEvent('oncontentready');fireEvent('ondocumentready');delete _tmp";
+
+		// create an anonymous function in the global namespace.
+		// this function will add the interface defined by the dhtml behavior.
+		// after we've built this function we'll store it so that we don't
+		//  have to go through this process again.
+		document.behaviorUrns[url] =  new Function("element", "with(this){" + script + "}");
+	}
+
+	// because we loaded synchronously (or got it from the cache)
+	//  we can apply the behavior immediately...
+	document.behaviorUrns[url].call(this, this);
+});
+
+// implement the removeBehavior method for all elements
+Element.prototype.removeBehavior = toString(function removeBehavior(cookie) {
+	// mmm, not in a hurry to write this
+});
+
+// ok, we've defined our addBehavior and removeBehavior methods.
+// well, i've defined the addBehavior method anyway.
+// now we'll tweak the interfaces of some of mozilla's objects to
+// make them more compatible with microsoft
+
+/*    ---   (include) moz-explorer.js   ---    */
+
+// thanks to erik arvidsson (http://webfx.eae.net/dhtml/ieemu/)
+
+// ------------------------------------------------------------------
+// explorer emulation for mozilla
+// ------------------------------------------------------------------
+
+/* we're going to mess about with some of mozilla's interfaces to
+   make them more explorer-like
+*/
+
+/* note: in my comments where it says support/mimic a property
+   support = exactly the same as explorer
+   mimic = close enough
+*/
+
+// CSSStyleDeclaration
+// -------------------
+// support microsoft's pixel representations of left/top/width/height
+CSSStyleDeclaration.prototype.__defineGetter__("pixelLeft", function() {
+	return parseInt(this.left) || 0;
+});
+CSSStyleDeclaration.prototype.__defineSetter__("pixelLeft", function (value) {
+	this.left = value + "px";
+});
+CSSStyleDeclaration.prototype.__defineGetter__("pixelHeight", function() {
+	return parseInt(this.height) || 0;
+});
+CSSStyleDeclaration.prototype.__defineSetter__("pixelHeight", function (value) {
+	this.height = value + "px";
+});
+CSSStyleDeclaration.prototype.__defineGetter__("pixelTop", function() {
+	return parseInt(this.top) || 0;
+});
+CSSStyleDeclaration.prototype.__defineSetter__("pixelTop", function (value) {
+	this.top = value + "px";
+});
+CSSStyleDeclaration.prototype.__defineGetter__("pixelWidth", function() {
+	return parseInt(this.width) || 0;
+});
+CSSStyleDeclaration.prototype.__defineSetter__("pixelWidth", function (value) {
+	this.width = value + "px";
+});
+
+// for older versions of mozilla/netscape you need to
+//  use style.getPropertyValue() to access css properties
+//  returned by getComputedStyle(). we don't want this so we fix it.
+try {
+	var style = getComputedStyle(this, null);
+	// the next line will throw an error for older versions of mozilla
+	style = style.color;
+} catch (error) {
+	alert(error);
+	// the above code didn't work so we need to fix CSSStyleDeclaration
+	var UPPER = /[A-Z]/g;
+	function DASH_LOWER($) {return "-"+$.toLowerCase()};
+	function cssName(propertyName) {return propertyName.replace(UPPER, DASH_LOWER)};
+	for (var propertyName in this.style) {
+		if (typeof this.style[propertyName] == "string") {
+			CSSStyleDeclaration.prototype.__defineGetter__(propertyName, function() {
+				return this.getPropertyValue(cssName(propertyName));
+			});
+		}
+	}
+}
+
+// HTMLDocument
+// ------------
+// support microsoft's "all" property
+HTMLDocument.prototype.__defineGetter__("all", function() {
+	return this.getElementsByTagName("*");
+});
+// mimic the "createEventObject" method for the document object
+HTMLDocument.prototype.createEventObject = function createEventObject() {
+	return document.createEvent("Events");
+};
+
+// HTMLElement
+// -----------
+// mimic microsoft's "all" property
+HTMLElement.prototype.__defineGetter__("all", function() {
+	return this.getElementsByTagName("*");
+});
+// support "parentElement"
+HTMLElement.prototype.__defineGetter__("parentElement", function() {
+	return (this.parentNode == this.ownerDocument) ? null : this.parentNode;
+});
+// mimic microsoft's "uniqueID"
+HTMLElement.prototype.__defineGetter__("uniqueID", function() {
+	// a global counter is stored privately as a property of this getter function.
+	// initialise the counter
+	if (!arguments.callee.count) arguments.callee.count = 0;
+	// create the id and increment the counter
+	var uniqueID = "moz_id" + arguments.callee.count++;
+	// creating a unique id, creates a global reference
+	window[uniqueID] = this;
+	// we don't want to increment next time, so redefine the getter
+	this.__defineGetter__("uniqueID", function() {
+		return uniqueID;
+	});
+	return uniqueID;
+});
+// mimic microsoft's "currentStyle"
+HTMLElement.prototype.__defineGetter__("currentStyle", function() {
+	return getComputedStyle(this, null);
+});
+// mimic microsoft's "runtimeStyle"
+HTMLElement.prototype.__defineGetter__("runtimeStyle", function() {
+// this doesn't work yet (bugzilla:)
+//#	return this.ownerDocument.defaultView.getOverrideStyle(this, null);
+});
+// support "innerText"
+HTMLElement.prototype.__defineGetter__("innerText", function() {
+	return this.textContent;
+});
+HTMLElement.prototype.__defineSetter__("innerText", function (value) {
+	this.textContent = value;
+});
+// mimic the "attachEvent" method
+HTMLElement.prototype.attachEvent = function attachEvent(name, handler) {
+	this.addEventListener(name.slice(2), handler, false);
+};
+// mimic the "removeEvent" method
+HTMLElement.prototype.removeEvent = function removeEvent(name, handler) {
+	this.removeEventListener(name.slice(2), handler, false);
+};
+// mimic the "createEventObject" method
+HTMLElement.prototype.createEventObject = function createEventObject() {
+	return this.ownerDocument.createEventObject();
+};
+// mimic the "fireEvent" method
+HTMLElement.prototype.fireEvent = function fireEvent(name, event) {
+	if (!event) event = this.ownerDocument.createEventObject();
+	event.initEvent(name.slice(2), false, false);
+	this.dispatchEvent(event);
+	// not sure that this should be here??
+	if (typeof this[name] == "function") this[name]();
+	else if (this.getAttribute(name)) eval(this.getAttribute(name));
+};
+// support the "contains" method
+HTMLElement.prototype.contains = function contains(element) {
+	return Boolean(element == this || (element && this.contains(element.parentElement)));
+};
+
+// Event
+// -----
+// support microsoft's proprietary event properties
+Event.prototype.__defineGetter__("srcElement", function() {
+	return (this.target.nodeType == Node.ELEMENT_NODE) ? this.target : this.target.parentNode;
+});
+Event.prototype.__defineGetter__("fromElement",function() {
+	return (this.type == "mouseover") ? this.relatedTarget : (this.type == "mouseout") ? this.srcElement : null;
+});
+Event.prototype.__defineGetter__("toElement", function() {
+	return (this.type == "mouseout") ? this.relatedTarget : (this.type == "mouseover") ? this.srcElement : null;
+});
+// convert w3c button id's to microsoft's
+Event.prototype.__defineGetter__("button", function() {
+	return (this.which == 1) ? 1 : (this.which == 2) ? 4 : 2;
+});
+// mimc "returnValue" (default is "true")
+Event.prototype.__defineGetter__("returnValue", function() {
+	return true;
+});
+Event.prototype.__defineSetter__("returnValue", function (value) {
+	if (this.cancelable && !value) {
+		// this can't be undone!
+		this.preventDefault();
+		this.__defineGetter__("returnValue", function() {
+			return false;
+		});
+	}
+});
+// mozilla already supports the read-only "cancelBubble"
+//  so we only need to define the setter
+Event.prototype.__defineSetter__("cancelBubble", function (value) {
+	// this can't be undone!
+	if (value) this.stopPropagation();
+});
+Event.prototype.__defineGetter__("offsetX", function() {
+	return this.layerX;
+});
+Event.prototype.__defineGetter__("offsetY", function() {
+	return this.layerY;
+});
+// and that's it!
+
+// thanks mozilla for being such a developer's playground :D
+
+// ---------------------------------------------------------code-protection --
+toString = Function.toString;
+Function.toString = Function.prototype.toString;
+// ---------------------------------------------------------code-protection --
+/* http://dean.edwards.name/ */
+}
+addBehavior(0)
+]]></constructor>
+<!-- packed with http:/dean.edwards.name/packer/ -->
+</implementation>
+</binding>
+<!-- end: dhtml behaviors loader -->
+</bindings>
+

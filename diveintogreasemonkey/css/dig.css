@@ -1,0 +1,410 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, sans-serif;
+  font-size: 100%;
+  margin: 10px;
+  padding: 0;
+}
+
+.skip {
+  display: none;
+}
+
+samp, code, tt, pre  {
+  font-weight: normal;
+  font-family: monospace;
+  font-size: small;
+}
+
+h1 samp, h1 code, h1 tt, h1 pre,
+h2 samp, h2 code, h2 tt, h2 pre,
+h3 samp, h3 code, h3 tt, h3 pre,
+h4 samp, h4 code, h4 tt, h4 pre,
+h5 samp, h5 code, h5 tt, h5 pre,
+h6 samp, h6 code, h6 tt, h6 pre {
+  font-weight: bold ! important;
+  font-size: 100%;
+  font-family: 'Lucida Grande', Verdana, Geneva, Lucida, Helvetica, sans-serif;
+}
+
+pre.programlisting {
+  background-color: #fff;
+  color: #000;
+  behavior: url(../behaviors/js-highlight.htc);
+  -moz-binding: url(../behaviors/moz-behaviors.xml#js-highlight.htc);
+  font-size: small;
+}
+
+img {
+  border: 0;
+}
+
+acronym, abbr {
+  border-bottom: 0;
+  font-style: normal;
+  cursor: help;
+}
+
+hr {
+  margin-top: 2em !important;
+  margin-top: 1em;
+  height: 1px;
+  background-color: #ccc;
+  color: #ccc;
+}
+
+a:link { 
+  background-color: #fff;
+  color: #0000ee;
+}
+
+a:visited {
+  background-color: #fff;
+  color: #551a8b;
+}
+
+a.indexlink {
+  background-color: #fff ! important;
+  color: #222 ! important;
+  text-decoration: none ! important;
+}
+
+h1 {
+  margin: 8px 0 0 0;
+  padding: 0;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-family: "Book Antiqua", Georgia, Palatino, Times, "Times New Roman", serif;
+}
+
+.reference h1 {
+  margin: 0.83em 0 0.83em 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-variant: normal;
+  letter-spacing: 0;
+  font-family: inherit;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover {
+  background-color: #fff ! important;
+  color: #222 ! important;
+  text-decoration: none ! important;
+}
+
+#intro { 
+  width: 730px;
+ }
+
+#intro ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: inline;
+}
+
+#intro ul li {
+  display: inline;
+  font-size: small;
+}
+
+#intro p {
+  font-size: small;
+  font-weight: normal;
+  margin: 1.2em 0 0 0;
+  padding: 0;
+}
+
+.z {
+  float:left;
+  background: url(/images/shadowAlpha.png) no-repeat bottom right !important;
+  background: url(/images/shadow.gif) no-repeat bottom right;
+  margin: 15px 0 0 10px !important;
+  margin: 15px 0 0 5px;
+}
+
+.z .sectionInner {
+  background: none !important;
+  background: url(/images/shadow2.gif) no-repeat left top;
+  padding: 0 !important;
+  padding: 0 6px 6px 0;
+  }
+
+.z .sectionInner .sectionInner2 {
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  padding: 4px;
+  margin: -6px 6px 6px -6px !important;
+  margin: 0;
+}
+
+.s { 
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+#main {
+  clear: left;
+  margin-left: 11px;
+  margin-bottom: 2em;
+  font-size: small;
+}
+
+#mainInner { 
+  margin-left: 1em;
+  margin-bottom: 2em;
+  padding-top: 1em;
+}
+
+.chapter, .section, .appendix, .titlepage, .reference, .refentry, .refentrytitle {
+  line-height: 160%;
+}
+
+#breadcrumb {
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 0;
+  font-size: small;
+}
+
+#breadcrumb .thispage {
+  font-weight: bold;
+}
+
+.footer {
+  font-size: x-small;
+  text-align: center;
+}
+
+.example, .informalexample, .procedure {
+  border-left: 4px double #ddd !important;
+  border-left: 1px solid #ccc;
+  margin-left: 2em;
+  padding-left: 2em;
+}
+
+.example h3, .procedure h3 {
+  font-size: 100%;
+}
+
+.example a.skip:link,
+.example a.skip:visited,
+.example a.skip:hover,
+.procedure a.skip:link,
+.procedure a.skip:visited,
+.procedure a.skip:hover,
+.section h3.title a.skip:link,
+.section h3.title a.skip:visited,
+.section h3.title a.skip:hover {
+  background-color: #fff ! important;
+  color: #222 ! important;
+  display: block;
+  float: left;
+  vertical-align: bottom;
+  text-decoration: none;
+  margin-right: 6px;
+}
+
+div.download, div.usedby, div.seealso, div.furtherreading, div.indexread, div.indexdownload {
+  width: 708px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border: 1px solid #a9a9a9;
+}
+
+div.download h3,
+div.usedby h3,
+div.seealso h3,
+div.furtherreading h3,
+div.indexread h3,
+div.indexdownload h3 {
+  margin-top: -1.2em;
+  margin-left: -15px;
+  font-size: small;
+  width: 10em;
+  border: 1px solid #a9a9a9;
+  padding: 3px 3px 3px 13px;
+  background-color: #fff;
+  color: #222;
+  position: relative;
+}
+
+div.download ul {
+  list-style: none;
+  padding-left: 1.5em;
+  margin-left: 0;
+}
+
+div.download ul,
+div.usedby ul,
+div.seealso ul,
+div.furtherreading ul,
+div.indexread ul,
+div.indexdownload ul {
+  margin-right: 1em;
+}
+
+div.toc ul {
+  list-style: none;
+}
+
+div.indexread p,
+div.indexdownload p,
+div.indexdownload dl {
+  margin-left: 1em;
+}
+
+div.indexdownload dd {
+  margin-bottom: 1em;
+}
+
+.admonicon {
+  width: 32px;
+}
+
+.admonicon a:link,
+.admonicon a:visited,
+.admonicon a:hover {
+  text-decoration: none ! important;
+  background-color: #fff ! important;
+  color: #222 ! important;
+}
+
+.contextual li {
+  padding-bottom: 1em;
+  border-bottom: 1px solid silver;
+  margin-bottom: 0.5em;
+}
+
+span.context {
+  display: block;
+  text-align: right;
+}
+
+pre.programlisting+p {
+  padding-top: 1em;
+}
+
+.lastmodified {
+  font-size: x-small;
+  font-style: italic;
+}
+
+.guibutton {
+  background-color: #ddd;
+  color: #000;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0px 4px 0px 4px;
+  font-weight: normal;
+}
+
+.guimenu, .guisubmenu, .guimenuitem {
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #ddd;
+  color: #000;
+  padding: 0px 4px 2px 4px;
+  font-weight: normal;
+}
+
+.guilabel {
+  /* used for dialog text (other than prompts), document text, and document hyperlinks */
+  font-family: monospace;
+  background-color: #fff;
+  color: #222;
+}
+
+.accel {
+  text-decoration: underline;
+}
+
+body.debug-shell .userinput code {
+  font-family: serif;
+  background-color: transparent;
+  color: blue;
+  font-weight: bold;
+  font-size: small;
+}
+
+body.debug-shell .computeroutput {
+  font-family: serif;
+  font-size: small;
+}
+
+body.debug-shell .props {
+  font-family: serif;
+  background-color: transparent;
+  color: green;
+  font-size: small;
+}
+
+a.dingbat {
+  font-size: large;
+  display: block;
+  float: left;
+  margin-right: 0.4em;
+  margin-top: 0.4em;
+  text-decoration: none ! important;
+  background-image: url(../images/radio-star.png);
+  background-repeat: no-repeat;
+  text-indent: -4000px;
+  width: 14px;
+  height: 14px;
+}
+html>body a.dingbat {
+  margin-top: -1px;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  background-image: none;
+}
+
+a.dingbat:hover {
+  background-color: #fff ! important;
+  color: #222 ! important;
+}
+
+.refentry h2 {
+  font-size: medium;
+}
+
+.refnamediv,
+.refsynopsisdiv,
+.refsection {
+  margin-left: 40px;
+}
+
+.refnamediv h2,
+.refsynopsisdiv h2,
+.refsection h2 {
+  margin-top: 2em;
+  margin-left: -40px;
+  font-variant: small-caps;
+}
+
+.refsection .download,
+.refsection .usedby,
+.refsection .seealso,
+.refsection .furtherreading {
+  margin-left: -40px;
+  margin-top: 4em;
+}
+
+.reference .toc p b {
+  display: none;
+}
+
+.refsection .refsection {
+  margin-left: 0;
+}

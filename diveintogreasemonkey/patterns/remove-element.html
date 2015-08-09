@@ -1,0 +1,111 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh_cn">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>4.9.&nbsp;&#21024;&#38500;&#20803;&#32032; [&#28145;&#20837;&#27973;&#20986; Greasemonkey]</title>
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="stylesheet" href="../css/dig.css" type="text/css">
+      <meta http-equiv="Link" content='&lt;../css/modern.css&gt;; type="text/css"; rel=stylesheet, &lt;../css/empty.css&gt;; type="text/css";
+      rel=stylesheet'>
+      <link rev="made" href="mailto:mark@diveintomark.org">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+      <meta name="keywords" content="Firefox, Greasemonkey, Javascript, user script, userscript">
+      <link rel="start" href="../toc/index.html" title="&#28145;&#20837;&#27973;&#20986; Greasemonkey">
+      <link rel="up" href="index.html" title="&#31532;&nbsp;4&nbsp;&#31456;&nbsp;&#20844;&#20849;&#27169;&#24335;">
+      <link rel="prev" href="insert-after.html" title="4.8.&nbsp;&#22312;&#20803;&#32032;&#21518;&#25554;&#20837;&#20869;&#23481;">
+      <link rel="next" href="replace-element.html" title="4.10.&nbsp;&#26367;&#25442;&#20803;&#32032;&#20026;&#26032;&#20869;&#23481;">
+   </head>
+   <body id="diveintogreasemonkey-org" class="pattern-removeelement">
+      <div class="z" id="intro">
+         <div class="sectionInner">
+            <div class="sectionInner2">
+               <div class="s">
+                  <h1><a href="/" accesskey="1">&#28145;&#20837;&#27973;&#20986; Greasemonkey</a></h1>
+                  <p>&#25945;&#32769;&#32593;&#32476;&#23398;&#26032;&#25226;&#25103;</p>
+               </div>
+               <div class="s">
+                  <ul>
+                     <li><a href="../">&#36215;&#22987;&#39029;</a> &middot; 
+                     </li>
+                     <li><a href="../toc/">&#30446;&#24405;</a> &middot; 
+                     </li>
+                     <li><a href="../download/">&#19979;&#36733;</a> &middot; 
+                     </li>
+                     <li><a href="http://greasemonkey.mozdev.org/">&#31435;&#21363;&#19979;&#36733; Greasemonkey</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="main">
+         <div id="mainInner">
+            <p id="breadcrumb">&#24744;&#30340;&#20301;&#32622;&#65306;<a href="../">&#36215;&#22987;&#39029;</a> &#8594; <a href="../toc/index.html">&#30446;&#24405;</a> &#8594; <a href="index.html">&#20844;&#20849;&#27169;&#24335;</a> &#8594; <span class="thispage">&#21024;&#38500;&#20803;&#32032;</span></p>
+            <div class="section" lang="zh_cn">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title"><a name="pattern.removeelement" class="skip" href="#pattern.removeelement" title="link to this section"><img src="../images/permalink.gif" alt="[link]" title="link to this section" width="8" height="9"></a> 4.9.&nbsp;&#21024;&#38500;&#20803;&#32032;
+                        </h2>
+                     </div>
+                     <div>
+                        <div class="abstract">
+                           <h3 class="title"></h3>
+                           <p>&#20351;&#29992; <code class="function">removeChild</code>  &#20989;&#25968;&#65292;&#24744;&#21487;&#20197;&#20351; Greasemonkey &#19968;&#19979;&#23376;&#21024;&#38500;&#39029;&#38754;&#20013;&#23436;&#25972;&#30340;&#19968;&#22359;&#12290;
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="example"><a name="example.pattern.remove" class="skip" href="#example.pattern.remove" title="link to this example"><img src="../images/permalink.gif" alt="[link]" title="link to this example" width="8" height="9"></a> 
+                  <h3 class="title">&#20363;&nbsp;4.12.&nbsp;&#21024;&#38500;&#24191;&#21578;&#20391;&#36793;&#26639;</h3>
+                  <p>&#20551;&#35774;&#26377;&#20010;&#20803;&#32032; ID &#20026; <code class="literal">"ads"</code>&#12290;
+                  </p><pre class="programlisting ">var adSidebar = document.getElementById('ads');
+if (adSidebar) {
+	adSidebar.parentNode.removeChild(adSidebar);
+}</pre></div>
+               <div class="note">
+                  <table class="admon" summary="">
+                     <tr>
+                        <td class="admonicon"><a href="../appendix/tips.html" title="&#25216;&#24039;&#28165;&#21333;"><img alt="[&#27880;&#24847;]" src="../images/note.png" width="24" height="24" title=""></a></td>
+                        <td class="admontext">
+                           <p> &#29992;<code class="methodname">removeChild</code> &#31227;&#38500;&#19968;&#20010;&#20803;&#32032;&#20063;&#20250;&#21024;&#38500;&#23427;&#37324;&#38754;&#30340;&#25152;&#26377;&#20869;&#23481;&#12290;&#20363;&#22914;&#24744;&#31227;&#38500;&#19968;&#20010; <code class="sgmltag-element">&lt;table&gt;</code> &#20803;&#32032;&#65292;&#27492;&#26102;&#20063;&#20250;&#23558;&#34920;&#26684;&#21333;&#20803;&#26684;(<code class="sgmltag-element">&lt;td&gt;</code> &#20803;&#32032;)&#19968;&#36215;&#31227;&#38500;&#12290;
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="tip">
+                  <table class="admon" summary="">
+                     <tr>
+                        <td class="admonicon"><a href="../appendix/tips.html" title="&#25216;&#24039;&#28165;&#21333;"><img alt="[&#25552;&#31034;]" src="../images/tip.png" width="24" height="24" title=""></a></td>
+                        <td class="admontext">
+                           <p>&#22914;&#26524;&#35201;&#31227;&#38500;&#24191;&#21578;&#65292;&#27604;&#36215;&#20889;&#29992;&#25143;&#33050;&#26412;&#26469;&#65292;&#26356;&#23481;&#26131;&#30340;&#21150;&#27861;&#26159;&#23433;&#35013; <a href="http://adblock.mozdev.org/">AdBlock</a> &#28982;&#21518;&#23548;&#20837; <a href="http://www.geocities.com/pierceive/adblock/">&#26368;&#26032;&#30340;&#36807;&#28388;&#21015;&#34920;</a>&#12290;
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="usedby">
+                  <h3>&#23454;&#20363;</h3>
+                  <ul>
+                     <li>
+                        <a href="http://diveintomark.org/projects/butler/butler.user.js">Butler</a>
+                        
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div style="float: left">&#8592;&nbsp;<a class="NavigationArrow" href="insert-after.html">&#22312;&#20803;&#32032;&#21518;&#25554;&#20837;&#20869;&#23481;</a></div>
+            <div style="text-align: right"><a class="NavigationArrow" href="replace-element.html">&#26367;&#25442;&#20803;&#32032;&#20026;&#26032;&#20869;&#23481;</a>&nbsp;&#8594;
+            </div>
+            <hr style="clear:both">
+            <div class="footer">
+               <p class="copyright">&#29256;&#26435; &copy; 2005 Mark Pilgrim &middot; <a title="&#21457;&#36865;&#32473;&#25105;&#26377;&#20110;&#27492;&#20070;&#30340;&#21453;&#39304;&#24847;&#35265;" href="mailto:mark@diveintomark.org">mark@diveintomark.org</a> &middot; <a href="../license/gpl.html" title="GNU &#36890;&#29992;&#20844;&#20849;&#35768;&#21487;&#35777;">&#20351;&#29992;&#26465;&#27454;</a></p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

@@ -27,6 +27,12 @@
     	prettyPrint();
   	});
 	</script>
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	
 
 	<script type="text/javascript" src="{{ ASSET_PATH }}/toc.js"></script>
 
@@ -80,5 +86,21 @@
 			po.src = 'https://apis.google.com/js/platform.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
+	</script>
+	<script>
+		$(document).ready(function() {
+			$("p img").each(function(){
+				var strA = "<a class='fancybox' rel='gallery' href='" + this.src + "'></a>";
+				$(this).wrapAll(strA);
+			});
+			$(".fancybox").fancybox({
+				padding: 0,
+				beforeShow: function(){
+					var alt = this.element.find('img').attr('alt');
+					this.inner.find('img').attr('alt', alt);
+					this.title = alt;
+				}
+			});
+		});
 	</script>
 </html>

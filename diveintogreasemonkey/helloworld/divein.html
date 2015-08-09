@@ -1,0 +1,123 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="zh_cn">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <title>2.1.&nbsp;Hello World [&#28145;&#20837;&#27973;&#20986; Greasemonkey]</title>
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="stylesheet" href="../css/dig.css" type="text/css">
+      <meta http-equiv="Link" content='&lt;../css/modern.css&gt;; type="text/css"; rel=stylesheet, &lt;../css/empty.css&gt;; type="text/css";
+      rel=stylesheet'>
+      <link rev="made" href="mailto:mark@diveintomark.org">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+      <meta name="keywords" content="Firefox, Greasemonkey, Javascript, user script, userscript">
+      <link rel="start" href="../toc/index.html" title="&#28145;&#20837;&#27973;&#20986; Greasemonkey">
+      <link rel="up" href="index.html" title="&#31532;&nbsp;2&nbsp;&#31456;&nbsp;&#24744;&#30340;&#31532;&#19968;&#20010;&#29992;&#25143;&#33050;&#26412;">
+      <link rel="prev" href="index.html" title="&#31532;&nbsp;2&nbsp;&#31456;&nbsp;&#24744;&#30340;&#31532;&#19968;&#20010;&#29992;&#25143;&#33050;&#26412;">
+      <link rel="next" href="metadata.html" title="2.2.&nbsp;&#29992;&#20803;&#25968;&#25454;&#25551;&#36848;&#24744;&#30340;&#29992;&#25143;&#33050;&#26412;">
+   </head>
+   <body id="diveintogreasemonkey-org" class="first-divein">
+      <div class="z" id="intro">
+         <div class="sectionInner">
+            <div class="sectionInner2">
+               <div class="s">
+                  <h1><a href="/" accesskey="1">&#28145;&#20837;&#27973;&#20986; Greasemonkey</a></h1>
+                  <p>&#25945;&#32769;&#32593;&#32476;&#23398;&#26032;&#25226;&#25103;</p>
+               </div>
+               <div class="s">
+                  <ul>
+                     <li><a href="../">&#36215;&#22987;&#39029;</a> &middot; 
+                     </li>
+                     <li><a href="../toc/">&#30446;&#24405;</a> &middot; 
+                     </li>
+                     <li><a href="../download/">&#19979;&#36733;</a> &middot; 
+                     </li>
+                     <li><a href="http://greasemonkey.mozdev.org/">&#31435;&#21363;&#19979;&#36733; Greasemonkey</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="main">
+         <div id="mainInner">
+            <p id="breadcrumb">&#24744;&#30340;&#20301;&#32622;&#65306;<a href="../">&#36215;&#22987;&#39029;</a> &#8594; <a href="../toc/index.html">&#30446;&#24405;</a> &#8594; <a href="index.html">&#24744;&#30340;&#31532;&#19968;&#20010;&#29992;&#25143;&#33050;&#26412;</a> &#8594; <span class="thispage">Hello World</span></p>
+            <div class="section" lang="zh_cn">
+               <div class="titlepage">
+                  <div>
+                     <div>
+                        <h2 class="title"><a name="first.divein" class="skip" href="#first.divein" title="link to this section"><img src="../images/permalink.gif" alt="[link]" title="link to this section" width="8" height="9"></a> 2.1.&nbsp;Hello World
+                        </h2>
+                     </div>
+                     <div>
+                        <div class="abstract">
+                           <h3 class="title"></h3>
+                           <p>&#25105;&#20204;&#27493;&#20837; Greasemonkey &#32654;&#22937;&#19990;&#30028;&#30340;&#19975;&#37324;&#38271;&#24449;&#23558;&#20174;&#31532;&#19968;&#27493;&#24320;&#22987;&#65292;&#25152;&#26377;&#35835;&#36807;&#25216;&#26415;&#25163;&#20876;&#30340;&#35835;&#32773;&#37117;&#20250;&#24456;&#29087;&#24713;&#36825;&#19968;&#27493;&#65306;&#35753;&#24744;&#30340;&#30005;&#33041;&#25171;&#20986;&#8220;<span class="guilabel">Hello world</span>&#8221;&#12290;
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="example"><a name="example.helloworld.code" class="skip" href="#example.helloworld.code" title="link to this example"><img src="../images/permalink.gif" alt="[link]" title="link to this example" width="8" height="9"></a> 
+                  <h3 class="title">&#20363;&nbsp;2.1.&nbsp;<a href="http://www.firefox.net.cn/dig/download/helloworld.user.js"><code class="filename">helloworld.user.js</code></a>
+                     
+                  </h3><pre class="programlisting ">// Hello World! example user script
+// version 0.1 BETA!
+// 2005-04-22
+// Copyright (c) 2005, Mark Pilgrim
+// Released under the GPL license
+// http://www.gnu.org/copyleft/gpl.html
+//
+// --------------------------------------------------------------------
+//
+// This is a Greasemonkey user script.
+//
+// To install, you need Greasemonkey: http://greasemonkey.mozdev.org/
+// Then restart Firefox and revisit this script.
+// Under Tools, there will be a new menu item to "Install User Script".
+// Accept the default configuration and install.
+//
+// To uninstall, go to Tools/Manage User Scripts,
+// select "Hello World", and click Uninstall.
+//
+// --------------------------------------------------------------------
+//
+// ==UserScript==
+// @name          Hello World
+// @namespace     http://diveintogreasemonkey.org/download/
+// @description   example script to alert "Hello world!" on every page
+// @include       *
+// @exclude       http://diveintogreasemonkey.org/*
+// @exclude       http://www.diveintogreasemonkey.org/*
+// ==/UserScript==
+
+alert('Hello world!');</pre></div>
+               <p>&#27491;&#22914;&#24744;&#25152;&#35265;&#21040;&#30340;&#65292;&#36825;&#20010;<code class="filename">Hello World</code>&#33050;&#26412;&#30340;&#22823;&#37096;&#20998;&#37117;&#26159;&#27880;&#37322;&#12290;&#26377;&#20123;&#27880;&#37322;&#65292;&#27604;&#22914;&#22914;&#20309;&#23433;&#35013;&#65292;&#27809;&#20160;&#20040;&#29305;&#27530;&#21547;&#20041;&#65307;&#37027;&#21482;&#26159;&#23545;&#21021;&#23398;&#32773;&#30340;&#19968;&#20123;&#25351;&#23548;&#12290;&#20294;&#26159;&#65292;&#26377;&#19968;&#33410;&#27880;&#37322;<span class="emphasis"><em>&#30830;&#23454;&#26377;</em></span>&#29305;&#27530;&#21547;&#20041;&#65292;&#19979;&#19968;&#33410;&#20250;&#26377;&#35814;&#32454;&#30340;&#35299;&#37322;&#12290;
+               </p>
+               <p>&#35201;&#30475;&#21040;&#33050;&#26412;&#30340;&#25928;&#26524;&#65292;&#24744;&#39318;&#20808;&#35201;<a href="../install/userscript.html" title="1.3.&nbsp;&#23433;&#35013;&#29992;&#25143;&#33050;&#26412;">&#23433;&#35013;</a>&#65292;&#28982;&#21518;&#35775;&#38382;&#19968;&#20010;&#19981;&#22312;<code class="systemitem">diveintogreasemonkey.org</code>&#22495;&#21517;&#19979;&#30340;&#32593;&#31449;(&#20363;&#22914;&#65292;<a href="http://www.google.com/">Google</a>)&#12290;&#36825;&#20010;&#39029;&#38754;&#23558;&#20250;&#20687;&#24179;&#26102;&#19968;&#26679;&#26174;&#31034;&#20986;&#26469;&#65292;&#36824;&#20250;&#24377;&#20986;&#19968;&#20010;&#23545;&#35805;&#26694;&#65306;&#8220;<span class="guilabel">Hello world!</span>&#8221;
+                  
+               </p>
+               <div class="download">
+                  <h3>&#19979;&#36733;</h3>
+                  <ul>
+                     <li>
+                        <a href="http://www.firefox.net.cn/dig/download/helloworld.user.js">
+                           <code class="filename">helloworld.user.js</code>
+                           </a>
+                        
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div style="float: left">&#8592;&nbsp;<a class="NavigationArrow" href="index.html">&#24744;&#30340;&#31532;&#19968;&#20010;&#29992;&#25143;&#33050;&#26412;</a></div>
+            <div style="text-align: right"><a class="NavigationArrow" href="metadata.html">&#29992;&#20803;&#25968;&#25454;&#25551;&#36848;&#24744;&#30340;&#29992;&#25143;&#33050;&#26412;</a>&nbsp;&#8594;
+            </div>
+            <hr style="clear:both">
+            <div class="footer">
+               <p class="copyright">&#29256;&#26435; &copy; 2005 Mark Pilgrim &middot; <a title="&#21457;&#36865;&#32473;&#25105;&#26377;&#20110;&#27492;&#20070;&#30340;&#21453;&#39304;&#24847;&#35265;" href="mailto:mark@diveintomark.org">mark@diveintomark.org</a> &middot; <a href="../license/gpl.html" title="GNU &#36890;&#29992;&#20844;&#20849;&#35768;&#21487;&#35777;">&#20351;&#29992;&#26465;&#27454;</a></p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
