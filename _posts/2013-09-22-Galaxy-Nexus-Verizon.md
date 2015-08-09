@@ -43,6 +43,7 @@ http://www.diypda.com/thread-802263-1-1.html
 [教程] (12月17号重新编辑)全民3G，首发三星I515 完美3G教程，下载地址已更新
 http://www.diypda.com/thread-812093-1-1.html
 
+[GNCDMA写号教程重制版.pdf](https://app.box.com/s/6ft23b8vnyg6g49r3smd9izyx28n6q3j)
 
 参考：
 - C网玩家GN专区 [http://galaxynexus.diypda.com](http://galaxynexus.diypda.com)
