@@ -1,72 +1,70 @@
-<div class="container-fliud">
-	<div class="row-fliud">
-		<div class="span8">
-			<div class="page-header">
-				<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
-			</div>
-					<div class="post-meta">
-						{% if page.date %}
-						<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span> 
-						{% endif %}
-						{% if page.last_updated %}
-						  , Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
-						{% endif %}
-						<span class="entry-author">by {{ site.author.name }}</span>
-						| <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}" target="_blank">View revision history</a>
-					</div>
-						{{ content }}
+<div class="row-fliud">
+	<div class="span8">
+		<div class="page-header">
+			<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
+		</div>
+				<div class="post-meta">
+					{% if page.date %}
+					<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span> 
+					{% endif %}
+					{% if page.last_updated %}
+						, Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
+					{% endif %}
+					<span class="entry-author">by {{ site.author.name }}</span>
+					| <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}" target="_blank">View revision history</a>
+				</div>
+					{{ content }}
 
-					<div id="related">
-						<h2>Related Posts</h2>
-							<ul class="posts">
-								{% for post in site.related_posts limit:5 %}
-								<li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
-								{% endfor %}
-							</ul>
-					</div>
-
-					<hr>
-					<div class="pagination">
-						<ul>
-						{% if page.previous %}
-							<li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
-						{% else %}
-							<li class="prev disabled"><a>&larr; Previous（前一篇）</a></li>
-						{% endif %}
-							<li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
-						{% if page.next %}
-							<li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
-						{% else %}
-							<li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
-						{% endif %}
+				<div id="related">
+					<h2>Related Posts</h2>
+						<ul class="posts">
+							{% for post in site.related_posts limit:5 %}
+							<li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
+							{% endfor %}
 						</ul>
-					</div>
-					<hr>
+				</div>
 
-					{% include JB/comments %}
-					<blockquote><p class="quote"></p></blockquote>
-		</div>
-
-		<div class="span4">
-				{% unless page.categories == empty %}
-					<ul class="tag_box">
-						<li><i class="icon-folder-open"></i></li>
-						{% assign categories_list = page.categories %}
-						{% include JB/categories_list %}
+				<hr>
+				<div class="pagination">
+					<ul>
+					{% if page.previous %}
+						<li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
+					{% else %}
+						<li class="prev disabled"><a>&larr; Previous（前一篇）</a></li>
+					{% endif %}
+						<li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
+					{% if page.next %}
+						<li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
+					{% else %}
+						<li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
+					{% endif %}
 					</ul>
-				{% endunless %}  
+				</div>
+				<hr>
 
-				{% unless page.tags == empty %}
-					<ul class="tag_box">
-						<li><i class="icon-tags"></i></li>
-						{% assign tags_list = page.tags %}
-						{% include JB/tags_list %}
-					</ul>
-				{% endunless %}  
-			<div id="floatbox">
-				<div class="g-plusone" data-annotation="inline" data-width="300"></div>				
-				<div id="toc"></div></div>
-		</div>
+				{% include JB/comments %}
+				<blockquote><p class="quote"></p></blockquote>
+	</div>
+
+	<div class="span4">
+			{% unless page.categories == empty %}
+				<ul class="tag_box">
+					<li><i class="icon-folder-open"></i></li>
+					{% assign categories_list = page.categories %}
+					{% include JB/categories_list %}
+				</ul>
+			{% endunless %}  
+
+			{% unless page.tags == empty %}
+				<ul class="tag_box">
+					<li><i class="icon-tags"></i></li>
+					{% assign tags_list = page.tags %}
+					{% include JB/tags_list %}
+				</ul>
+			{% endunless %}  
+		<div id="floatbox">
+			<div class="g-plusone" data-annotation="inline" data-width="300"></div>				
+			<div id="toc"></div></div>
 	</div>
 </div>
 <script type="text/javascript">
