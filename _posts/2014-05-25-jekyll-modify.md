@@ -16,6 +16,9 @@ Jekyll修改
 - [http://www.soooldier.com/blog/2013/04/27/gai-jin-jekyll-bootstrapde-rakefile/](http://www.soooldier.com/blog/2013/04/27/gai-jin-jekyll-bootstrapde-rakefile/)
 - [http://blog.turbidsoul.me/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html](http://blog.turbidsoul.me/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html)
 
+##自动隐藏Bootstrap导航条
+开源项目 [Github](https://github.com/istvan-ujjmeszaros/bootstrap-autohidingnavbar)
+
 ##404页面
 
 参考:

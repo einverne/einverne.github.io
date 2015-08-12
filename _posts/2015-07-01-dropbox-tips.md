@@ -53,6 +53,7 @@ Dropbox是一个云端硬盘，你可以在任何有网络的地方访问到它�
 
 我自己的体验来说 Pancake 的体验最好，可以绑定域名，支持https，支持 Jekyll，支持git  等等，这里是我的主页 [http://pancake.einverne.info](http://pancake.einverne.info) 也可以是 [https://einverne.pancakeapps.com](https://einverne.pancakeapps.com)
 
+更多类似 Pancake 服务请看 [alternativeto](http://alternativeto.net/software/pancake-io/) ，比较出名的还有Droppages，和国产的 [Farbox](https://www.farbox.com/)。
 
 ##保存网页图片到Dropbox
 
