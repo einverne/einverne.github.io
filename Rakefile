@@ -74,6 +74,7 @@ task :post do
     post.puts 'description: ""'
     post.puts "category: #{category}"
     post.puts "tags: #{tags}"
+	post.puts 'last_updated: '
     post.puts "---"
     #post.puts "{% include JB/setup %}"
   end
