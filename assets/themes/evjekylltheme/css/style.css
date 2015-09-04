@@ -8,6 +8,7 @@
 		padding-top: 0px;
 	}
 }
+
 h2 {
   padding-bottom: 0.3em;
 	margin-top: 1em;
@@ -107,6 +108,12 @@ h2 {
 
 p {
   font-size: 110%;
+}
+
+p img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .nav {
