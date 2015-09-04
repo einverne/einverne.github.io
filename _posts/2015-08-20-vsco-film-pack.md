@@ -41,6 +41,7 @@ HC是“High Contrast”的缩写，这些版本提供更加醒目的结果。�
 [FILM 01](http://vsco.co/film/01/lightroom4)：现代系列(Modern Films)，收录了当下在产的专业负片，是一个优秀的全能包，包括：
 
 COLOR
+
 * Kodak Portra 160 / Kodak Portra 160 ++ / Kodak Portra 160 + / Kodak Portra 160 -
 * Kodak Portra 400 / Kodak Portra 400 ++ / Kodak Portra 400 + / Kodak Portra 400 -
 * Kodak Portra 800 / Kodak Portra 800 ++ / Kodak Portra 800 + / Kodak Portra 800 -
@@ -50,6 +51,7 @@ COLOR
 * Fuji 800Z ++ / Fuji 800Z + / Fuji 800Z -
 
 BLACK & WHITE
+
 * Kodak Tri-X / Kodak Tri-X ++ / Kodak Tri-X + / Kodak Tri-X -
 * Kodak T-MAX 3200 / Kodak T-MAX 3200 + / Kodak T-MAX 3200 -
 * Ilford HP5 / Ilford HP5 + / Ilford HP5 -
@@ -126,6 +128,7 @@ BLACK & WHITE
 [FILM 05](http://vsco.co/film/05/lightroom)：原型系列(Archetype Films)，这个是新出的系列，收录了胶片时期市场占有率较大的几种消费级胶片。FILM 05 可以产生一种老旧胶片的美感，适合肖像，婚礼和生活场景。
 
 包括：
+
 * Agfa Vista 100 - / -- / + / ++ / +++ / Contrast + / Cool / Cool + / Portrait / Soft Highs / Vibrant / Warm / Warm +
 * Agfa Vista 400 - / -- / + / ++ / Contrast ++ / Cool / Cool + / Portrait / Soft Highs / Vibrant / Warm / Warm + / Night/Tungsten / Night/Tungsten + / Night/Tungsten Alt
 * Agfa Vista 800 - / -- / + / ++ / Contrast + / Cool / Cool + / Soft Highs / Vibrant / Warm / Warm + / Night/Tungsten / Night/Tungsten + / Night/Tungsten Alt
