@@ -1,7 +1,3 @@
-- **change index**
-	- Follow [shengbinmeng](https://github.com/shengbinmeng/shengbinmeng.github.com) change index
-
-
 ## Changelog
 
 Public releases are all root nodes.  
