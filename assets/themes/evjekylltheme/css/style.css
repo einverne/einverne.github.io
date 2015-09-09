@@ -119,6 +119,10 @@ p {
 .nav {
   font-size: 110%;
 }
+.nav-icon{
+	padding: 5px 15px 5px;
+	float: right;
+}
 /*http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style*/
 kbd
 {
