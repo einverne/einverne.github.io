@@ -71,6 +71,12 @@
 	$(document).ready(function(){
 		$('#toc').toc();
 		$('table').addClass('table table-hover');
+
+		$.getJSON('/quotes.json', function(data){
+			var rand = Math.floor(Math.random()*data.quotes.length);
+			var entry = data.quotes[rand].quote +"    --"+ data.quotes[rand].name;
+			$('.quote').text(entry);
+		});		
 	});
 	$(function(){
 		var tocH = $("#floatbox").offset().top;
