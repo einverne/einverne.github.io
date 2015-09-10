@@ -1,0 +1,16 @@
+---
+layout: null
+title : quotes
+---
+
+{"quotes":[
+	{% for quotes in site.data.quotes %}
+		{% assign size = quotes.length %}
+		{% if forloop.index == 1 %}
+			{"quote":"{{quotes.quote}}", "name":"{{quotes.name}}"}
+		{% endif %}
+		{% if forloop.index != 1 %}
+			,{"quote":"{{quotes.quote}}", "name":"{{quotes.name}}"}
+		{% endif %}
+	{% endfor %}
+]}
