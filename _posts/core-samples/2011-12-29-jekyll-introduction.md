@@ -1,9 +1,11 @@
 ---
 layout: post
-category : jekyll
+title: Jekyll Introduction
 tagline: "jekyll"
 description: "jekyll tutorial"
+category : jekyll
 tags : [intro, beginner, jekyll, tutorial]
+last_updated: 2015-09-10
 ---
 
 This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
@@ -13,8 +15,7 @@ Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
 
 ### What is Jekyll?
 
-Jekyll is a parsing engine bundled as a ruby gem used to build static websites from
-dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
+Jekyll is a **parsing engine** bundled as a ruby gem used to build static websites from dynamic components such as templates, partials, liquid code, markdown, etc. Jekyll is known as "a simple, blog aware, static site generator".
 
 ### Examples
 
@@ -188,13 +189,7 @@ Registering a page means 1) that Jekyll will process the page and 2) that the pa
 **Categories and Tags**
 Pages do not compute categories nor tags so defining them will have no effect.
 
-**Sub-Directories**---
-layout: post
-title: "字库格式介绍"
-description: "字库格式介绍"
-category: 经验总结
-tags: [font, ]
----
+**Sub-Directories**
 If pages are defined in sub-directories, the path to the page will be reflected in the url.
 Example:
 

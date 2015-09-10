@@ -113,10 +113,11 @@ p {
 
 .span8 p img{
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 }
-
+.span8 p img.emoji{
+	display: inline;
+}
 .nav {
   font-size: 110%;
 }
@@ -206,4 +207,10 @@ blockquote a:hover{
 	line-height: 1.4;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
+}
+
+.footnotes{
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: #bbb 2px dotted;
 }
