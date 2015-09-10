@@ -2,9 +2,12 @@
 layout: post
 title: "vim 学习笔记2"
 description: "vim学习笔记2"
-category: vim
-tags: [vim,]
+category: [vim, 学习笔记]
+tags: [vim, command]
+last_updated: 2015-09-10
 ---
+
+vim学习笔记进阶版，初级版可以参考这篇[文章](http://einverne.github.io/2015/05/06/vim-notes.html)
 
 ##combine command
 
@@ -25,7 +28,11 @@ for example:
 
 ##批量替换
 
-	%s/想要被替换的字串/新字串/g g模式全局替换
+在全文中用一个单词替换另外一个单词
+
+	:%s/想要被替换的字串/新字串/g g模式全局替换
+
+"%" 范围前缀表示在所有行中执行替换，"g" 标记表示替换行中所有匹配点。
 
 ##多窗口操作
 
@@ -83,6 +90,8 @@ Insert模式下
 ##Other
 
 	:verbose set tabstop?    in Vim, it will tell you where the tapstop option value is coming from
+	:help + command  查看Vim命令的帮助，比如想要查看 c 命令的帮助直接使用 `:h c` 就能查到。
+	g <C-g>  单词统计
 
 
 差不多看到这里就能够直接看文档了：[http://vimcdoc.sourceforge.net/](http://vimcdoc.sourceforge.net/) 通过文档学习更多符合自己使用习惯的命令或者操作。
