@@ -228,7 +228,7 @@ yum :yum:
 
 You can find the Emoji from this [link](http://www.emoji-cheat-sheet.com/)
 
-### Footnotes
+## Footnotes
 
 Footnote 1 link[^first].
 
@@ -245,7 +245,7 @@ Duplicated footnote reference[^second].
 [^second]: Footnote text.
 
 
-### Abbreviations
+## Abbreviations
 
 This is HTML abbreviation example.
 
