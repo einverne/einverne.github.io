@@ -111,13 +111,34 @@ p {
 	text-align: justify;
 }
 
-.span8 p img{
+.post-content p img{
 	display: block;
 	margin: 0 auto;
 }
-.span8 p img.emoji{
+.post-content p img.emoji{
 	display: inline;
 }
+
+.post-content a[target="_blank"]:after {
+  content: url(../Icon_External_Link.png);
+  margin: 0 0 0 5px;
+}
+/*
+.post-content a[href^="//"]:after, 
+.post-content a[href^="http://"]:after, 
+.post-content a[href^="https://"]:after {
+  content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+  margin: 0 0 0 5px;
+}
+
+.post-content a[href^="//einverne.github.io/"]:after, 
+.post-content a[href^="http://einverne.github.io/"]:after, 
+.post-content a[href^="https://einverne.github.io/"]:after {
+  content: '';
+  margin: 0;
+}
+*/
+
 .nav {
   font-size: 110%;
 }
