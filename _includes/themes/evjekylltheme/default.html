@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% if page.url == "/404.html" %}
+		<meta http-equiv = "refresh" content = "5;url=/">
+	{% endif %}
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js?skin=desert"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+    	$("pre").addClass("prettyprint");
+    	prettyPrint();
+  	});
+	</script>
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<!--<link href="/css/syntax.css" rel="stylesheet" type="text/css" media="all">-->
+
+	<script type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/toc.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.bootstrap-autohidingnavbar.min.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="{{ BASE_PATH }}/images/favicon.ico">
+
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+	<link rel="stylesheet" href="{{ ASSET_PATH }}/font-awesome-4.4.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+					<ul class="nav navbar-nav">
+						{% assign pages_list = site.pages %}
+						{% assign group = 'navigation' %}
+						{% include JB/pages_list %}
+					</ul>
+					<form id="search-form" class="navbar-form navbar-right pull-right has-success visible-lg" role="search">
+						<div class="form-group">
+						<input type="text" class="form-control input-sm" placeholder="Search" id="query">
+						</div>
+					</form>
+					<div class="nav-icon">
+						<a href="/rss.xml"><i class="fa fa-rss fa-2x"></i></a>
+					</div>
+				</div>
+			</div>
+    </div>
+
+    <div class="container">
+			<div class="row">
+				<div class="row-fliud">
+					<div class="span12">
+						<div class="searchresult">
+						</div>
+						<div id="search-loader" class="img-wrap">
+							<img src="{{ ASSET_PATH }}/loading.gif">
+						</div>
+					</div>
+				</div>
+				{{ content }}
+			</div>
+
+
+			<hr>
+			<footer>
+				&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
+				<br><br>
+			</footer>
+		</div>
+
+    {% include JB/analytics %}
+  </body>
+	<script type="text/javascript">
+		window.___gcfg = {lang: 'zh-CN'};
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/platform.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+	</script>
+	<script>
+		$(document).ready(function() {
+			$("p img").each(function(){
+				var strA = "<a class='fancybox' rel='gallery' href='" + this.src + "'></a>";
+				$(this).wrapAll(strA);
+			});
+			$(".fancybox").fancybox({
+				padding: 0,
+				beforeShow: function(){
+					var alt = this.element.find('img').attr('alt');
+					this.inner.find('img').attr('alt', alt);
+					this.title = alt;
+				}
+			});
+			$(".navbar-fixed-top").autoHidingNavbar({
+				'animationDuration': 300
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,216 @@
+@media (min-width:979px) {
+	body {
+		padding-top: 60px;
+	}
+}
+@media (max-width: 978px) {
+	body {
+		padding-top: 0px;
+	}
+}
+
+h2 {
+  padding-bottom: 0.3em;
+	margin-top: 1em;
+	margin-bottom: 16px;
+  font-size: 1.75em;
+	font-weight: bold;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.post-meta {
+	margin: 0 0 20px 0;
+	font-style: italic;
+	font-size: 1em;
+}
+
+#toc {
+	margin-top: 10px;
+}
+
+#floatbox {
+	margin-top: 60px;
+}
+
+#search-loader {
+  display: none;
+  text-align: center;
+}
+
+.img-wrap {
+	text-align: center;
+	margin: 100px auto;
+	background: transparent;
+}
+
+.navbar .nav {
+}
+
+.navbar-inner {
+	background: rgba(255,255,255,0.5);
+}
+
+/* posts index */
+.post > h3.title {
+  position: relative;
+  padding-top: 10px; }
+
+.post > h3.title span.date {
+  position: absolute;
+  right: 0;
+  font-size: 0.9em; }
+
+.post > .more {
+  margin: 10px 0;
+  text-align: left; }
+
+/* post-full*/
+.post-full .date {
+  margin-bottom: 20px;
+  font-weight: bold; }
+
+/* tag_box */
+.tag_box {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; }
+
+.tag_box li {
+  line-height: 28px; }
+
+.tag_box li i {
+  opacity: 0.9; }
+
+.tag_box.inline li {
+  float: left; }
+
+.tag_box a {
+  padding: 3px 6px;
+  margin: 2px;
+  background: #eee;
+  color: #555;
+  border-radius: 3px;
+  text-decoration: none;
+  border: 1px dashed #cccccc; }
+
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.tag_box a:hover {
+  background-color: #e5e5e5; }
+
+.tag_box a.active {
+  background: #57A957;
+  border: 1px solid #4c964d;
+  color: #FFF; }
+
+p {
+  font-size: 110%;
+	text-align: justify;
+}
+
+.span8 p img{
+	display: block;
+	margin: 0 auto;
+}
+.span8 p img.emoji{
+	display: inline;
+}
+.nav {
+  font-size: 110%;
+}
+.nav-icon{
+	padding: 5px 15px 5px;
+	float: right;
+}
+/*http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style*/
+kbd
+{
+  -moz-border-radius:3px;
+  -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  -webkit-border-radius:3px;
+  -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  background-color:#f7f7f7;
+  border:1px solid #ccc;
+  border-radius:3px;
+  box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+  color:#333;
+  display:inline-block;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:11px;
+  line-height:1.4;
+  margin:0 .1em;
+  padding:.1em .6em;
+  text-shadow:0 1px 0 #fff;
+}
+
+blockquote{
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #444;
+  text-align: justify;
+  
+  /*Borders - (Optional)*/
+  border-left: 15px solid #c76c0c;
+  border-right: 2px solid #c76c0c;
+  
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote a{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+blockquote a:hover{
+ color: #666;
+}
+
+.quote{
+	font-size: 20px;
+	color: #000;
+	line-height: 1.4;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+}
+
+.footnotes{
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: #bbb 2px dotted;
+}
