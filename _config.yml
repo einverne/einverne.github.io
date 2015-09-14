@@ -78,6 +78,7 @@ JB :
   tags_path : /tags.html
   atom_path : /atom.xml
   rss_path : /rss.xml
+  feed_path : /feed.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
@@ -86,7 +87,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : verneinblogger
+      short_name : einvernegithubio
     livefyre :
       site_id : 123
     intensedebate :
@@ -140,3 +141,4 @@ gems:
   - jemoji
   - jekyll-mentions
   - jekyll-sitemap
+  - jekyll-feed
