@@ -138,7 +138,7 @@ JB :
   # where [HELPER] is the name of the helper you are overriding.
   
 gems:
-  - jemoji
-  - jekyll-mentions
+#- jemoji
+#- jekyll-mentions
   - jekyll-sitemap
   - jekyll-feed
