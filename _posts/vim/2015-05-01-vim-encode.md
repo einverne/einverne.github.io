@@ -16,6 +16,12 @@ vim为何会出现乱码：
 3. 然后是输出，vim输出显示的编码与系统不一致，也会乱码。
 4. 最后是写入，vim回写文件与打开的不一致，造成编辑后文件乱码。
 
+在 Linux 下需要考虑：
+
+1. Linux 默认支持的语系，/etc/sysconfig/i18n
+2. 终端 bash 的语系，与 $LANG 变量有关
+3. 再就是上面提到的文件编码有关
+
 ###VIM编码相关选项
 Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助  :help encoding-names)，它们的意义如下:
 
