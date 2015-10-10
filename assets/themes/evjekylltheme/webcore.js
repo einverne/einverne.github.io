@@ -5,6 +5,8 @@
     $('a[href]').each(function() {
       if (this.href.indexOf(window.location.host) == -1) $(this).attr({target: '_blank' });
     });
+		anchors.options.placement = 'left';
+		anchors.add('h2');
   });
 
   /* site search */
