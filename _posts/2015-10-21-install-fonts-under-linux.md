@@ -103,6 +103,15 @@ Output will be all available Chinese fonts.
 ### Fix WPS for Linux font missing error
 After I installed WPS for Linux under Linux Mint 17.2, I met this problem, "系统缺失字体symbol、wingdings、wingdings 2、wingdings 3、wedding”. According to the copyright, WPS for Linux doesn’t contains these five fonts. You can only find these five fonts and install them in the right place like I said before. One way to find these fonts is to find them in Microsoft Windows system. And another way is to download these files from Internet and install.
 
+## Install Korean fonts
+Use following command to search Korean font
+
+	apt-cache search korean font
+
+and use this command to install Korean font to linux:
+
+	sudo apt-get install fonts-unfonts-core fonts-unfonts-extra
+
 ### Common sense
 Fonts type:
 
