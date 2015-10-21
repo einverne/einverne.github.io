@@ -2,7 +2,7 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
-require 'Hz2py'
+require 'hz2py'
 
 SOURCE = "."
 CONFIG = {
