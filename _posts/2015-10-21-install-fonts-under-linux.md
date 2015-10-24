@@ -27,7 +27,7 @@ and then use copy command to copy all the files to `/usr/share/fonts/truetype`,`
 
 finally, you shoulde give this directory and all the ttf under this directory right permission. All the new fonts now can only be used by root. We need to change the permission to let all the users to use these fonts:
 
-     sudo chmod 777 /usr/share/fonts/truetype/ubuntu-font-family-0.80/ -R
+     sudo chmod 755 /usr/share/fonts/truetype/ubuntu-font-family-0.80/ -R
 
 then, refresh the font cache to let system detect these fonts:
 
