@@ -13,7 +13,7 @@ I have changed my desktop environment to Linux, and after I tried Ubuntu and Deb
 ## Software Sources
 You didn't need to edit`/etc/apt/sources.list` and files under `/etc/apt/sources.list.d/` mannually. All customs can be changed through UI. Just click "start menu" and choose the "Software Sources". And this application can even custom the PPAs.
 
-INSERT PICTURE HERE
+![linux mint software sources managers](https://lh6.googleusercontent.com/-I7XpHcVbcmM/VjTkvQx9VNI/AAAAAAAA2cU/d___YHrcXDI/w874-h573-no/software%2Bsource%2BScreenshot%2Bfrom%2B2015-10-21%2B23%253A39%253A18.png)
 
 ## Necessary applications
 
@@ -44,6 +44,7 @@ If pip is missing, install pip first.
 ### Nvidia driver
 "System settings" , "Driver Manager", choose the right latest driver and install. After installation, you will find Nvidia icon at the right-bottom corner. Double click the icon to open the setting panel. In order to save the battery , you can use Intel(Power Saving Mode) for most time. And if choose NVIDIA(Performance Mode) for high performance need.
 
+![Nvidia driver](https://lh3.googleusercontent.com/-aGzNJ1OCjS8/VjTlDWHz6-I/AAAAAAAA2cw/lfoLvcwk1Y8/w642-h508-no/nvidia%2Bdriver%2BScreenshot%2Bfrom%2B2015-10-22%2B10%253A04%253A49.png)
 ### hardinfo
 Install hardinfo tool to check hardware information through GUI
 
