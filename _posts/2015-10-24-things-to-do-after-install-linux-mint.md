@@ -45,6 +45,7 @@ If pip is missing, install pip first.
 "System settings" , "Driver Manager", choose the right latest driver and install. After installation, you will find Nvidia icon at the right-bottom corner. Double click the icon to open the setting panel. In order to save the battery , you can use Intel(Power Saving Mode) for most time. And if choose NVIDIA(Performance Mode) for high performance need.
 
 ![Nvidia driver](https://lh3.googleusercontent.com/-aGzNJ1OCjS8/VjTlDWHz6-I/AAAAAAAA2cw/lfoLvcwk1Y8/w642-h508-no/nvidia%2Bdriver%2BScreenshot%2Bfrom%2B2015-10-22%2B10%253A04%253A49.png)
+
 ### hardinfo
 Install hardinfo tool to check hardware information through GUI
 
