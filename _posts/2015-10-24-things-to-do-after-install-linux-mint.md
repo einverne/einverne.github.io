@@ -160,6 +160,8 @@ all the detail information can be found at it’s official [site](https://www.ff
     $ sudo apt-get update
     $ sudo apt-get install ffmpeg
 
+### Teamviewer
+Remote control application. I need it to help to connect my mac in lab and other Windows machine. You can download [here](https://www.teamviewer.com/en/download/linux.aspx). And because it is cross-platform. You can install in other OS and connect it easily.
 
 ## Programming tools
 
