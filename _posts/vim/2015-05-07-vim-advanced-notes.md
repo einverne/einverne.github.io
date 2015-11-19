@@ -84,6 +84,42 @@ for example:
 	Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列，>增加当前窗口宽度，向右扩展一列。当然 Ctrl-w 之后可以使用 n+< 调整多列宽度
 	Ctrl-w - + 	调整窗口高度
 
+##  Tabs
+Tab is different from the windows in vim. If your fimiliar with Firefox or Chrome, you can understand that a new tab contains a new website. While in vim, a tab can contain several windows and you can move the windows between tabs.
+
+### Create New tab
+There are lots of ways to create a new tab, here I only intruduce some common commands.
+
+	:tabnew 	create a empty new tab
+	:tabedit {file} 	edit specified file in new tab
+
+### Manage tabs
+Some ways to close tabs:
+
+	:tabclose 	close current tab
+	:tabclose {i} 	close i-th tab
+	:tabonly 	close all other tabs
+
+Some ways to move tabs:
+
+	:tabm 0 	move current tab to first
+	:tabm 		move current tab to last
+	:tabm {i} 	move current tab to position i+1
+	:tabs 		list all tabs including their opening windows
+
+Ways to move between tabs:
+
+	:tabn 		go to next tab
+	:tabp 		go to previous tab
+	:tabfirst 	go to first tab
+	:tablast 	go to last tab
+
+While in normal mode, you can type:
+
+	gt 			go to next tab
+	gT 			go to previous tab
+	{i}gt 		go to tab in position i
+
 ##更正
 
 Insert模式下
