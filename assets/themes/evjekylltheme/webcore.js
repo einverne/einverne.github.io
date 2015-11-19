@@ -5,8 +5,11 @@
     $('a[href]').each(function() {
       if (this.href.indexOf(window.location.host) == -1) $(this).attr({target: '_blank' });
     });
-		anchors.options.placement = 'left';
-		anchors.add('h2');
+		anchors.options = {
+			visible: 'always',
+			icon: '¶'
+		}
+		anchors.add('.post-content h2, .post-content h3');
   });
 
   /* site search */
