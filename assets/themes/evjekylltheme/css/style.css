@@ -114,6 +114,8 @@ p {
 .post-content p img{
 	display: block;
 	margin: 0 auto;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 .post-content p img.emoji{
 	display: inline;
@@ -124,15 +126,15 @@ p {
   margin: 0 0 0 5px;
 }
 /*
-.post-content a[href^="//"]:after, 
-.post-content a[href^="http://"]:after, 
+.post-content a[href^="//"]:after,
+.post-content a[href^="http://"]:after,
 .post-content a[href^="https://"]:after {
   content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
   margin: 0 0 0 5px;
 }
 
-.post-content a[href^="//einverne.github.io/"]:after, 
-.post-content a[href^="http://einverne.github.io/"]:after, 
+.post-content a[href^="//einverne.github.io/"]:after,
+.post-content a[href^="http://einverne.github.io/"]:after,
 .post-content a[href^="https://einverne.github.io/"]:after {
   content: '';
   margin: 0;
@@ -173,18 +175,18 @@ blockquote{
   padding: 15px 20px 15px 45px;
   margin: 0 0 20px;
   position: relative;
-  
+
   /*Font*/
   font-family: Georgia, serif;
   font-size: 16px;
   line-height: 1.2;
   color: #444;
   text-align: justify;
-  
+
   /*Borders - (Optional)*/
   border-left: 15px solid #c76c0c;
   border-right: 2px solid #c76c0c;
-  
+
   /*Box Shadow - (Optional)*/
   -moz-box-shadow: 2px 2px 15px #ccc;
   -webkit-box-shadow: 2px 2px 15px #ccc;
@@ -193,13 +195,13 @@ blockquote{
 
 blockquote::before{
   content: "\201C"; /*Unicode for Left Double Quote*/
-  
+
   /*Font*/
   font-family: Georgia, serif;
   font-size: 60px;
   font-weight: bold;
   color: #999;
-  
+
   /*Positioning*/
   position: absolute;
   left: 10px;
