@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [ffmpeg, linux]
-last_updated: 
+last_updated: 2015-12-31
 ---
 
 那天需要将一段视频文件转成gif，偶遇ffmpeg，于是就学习了一下，它真的很强大。在看资料的过程中也是挺有趣的，发现其实kmplayer以及国内的QQ影音，暴风等等，都不同程度的使用了 ffmpeg，可是根据 ffmpeg 的开源许可LGPL，任何使用 ffmpeg 的软件都必须开源，于是乎QQ影音，暴风都上了 ffmpeg 的耻辱柱，如果没接触到 ffmpeg 还真不知道有这一茬，国内的黑心厂商真是拿开源社区的东西都不遵循开源协议。
@@ -47,6 +47,8 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
     apt-get install ffmpeg
 
 其他操作系统安装方法，参考[官网](https://www.ffmpeg.org/download.html)
+
+如果想要手工编译 ffmpeg 可以参考官方 [wiki](https://trac.ffmpeg.org/wiki#CompilingFFmpeg)。 Ubuntu/Debian/Mint 系手工编译 ffmpeg 参考 [wiki](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)。
 
 ## 用法举例 {#examples}
 
