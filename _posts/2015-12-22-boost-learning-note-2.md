@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "boost 学习笔记 2: timer and date_time"
+title: "boost 学习笔记 2: timer"
 tagline: ""
 description: "时间"
 category: 学习笔记
@@ -8,7 +8,7 @@ tags: [boost, C/C++,]
 last_updated: 
 ---
 
-C++中操作时间的类。timer 是一个很小的库，提供简易的度量时间和进度显示的功能，可用于测试性能计时任务等大多数情况。timer 库包含三个组件， 计时器类 timer, progress_timer 和进度条指示类 progress_display.
+C++中操作时间的类。timer 是一个很小的库，提供简易的度量时间和进度显示的功能，可用于测试性能计时任务等大多数情况。timer 库包含三个组件， 计时器类 timer, progress_timer 和进度条指示类 progress_display。对应书中第二章内容。
 
 ## timer
 ### 头文件
