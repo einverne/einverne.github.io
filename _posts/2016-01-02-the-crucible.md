@@ -55,6 +55,7 @@ last_updated:
 ![伊丽莎白出场](https://lh3.googleusercontent.com/-gRS3hXGRjeg/Vok7WY9XndI/AAAAAAAA5Qk/fBRUfjaPyvE/s720-Ic42/2016-01-03%25252009.45.01%2525201.jpg)
 
 ![伊丽莎白和约翰告别](https://lh3.googleusercontent.com/-VNNiKROQ_g4/Vok7WXZnivI/AAAAAAAA5Qk/ioLYi1P9iUs/s720-Ic42/2016-01-02%25252011.35.36%2525201.jpg)
+
 ## 剧情 {#plot}
 
 在第一幕，最开始以为 帕里斯牧师 是非常正直的人物形象，而到后面几幕中形象大转变，从收受房契，到金子做的烛台，人物形象一落万丈。而同样人物形象转变的还有黑尔牧师，本来善良正直的牧师，到后来只能堕落颓废到劝说人们认罪。同样帕特南无理指控别人想要强行占他人领土地等等。人物形象的转变和刻画推动着剧情的发展。
