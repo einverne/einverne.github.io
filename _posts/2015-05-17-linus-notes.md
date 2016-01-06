@@ -2,11 +2,11 @@
 layout: post
 title: "Linux notes"
 description: "Linux学习笔记"
-category: 经验总结
+category: Linux
 tags: [linux, notes]
 ---
 
-##ssh keys
+## ssh keys
 
 An SSH key allows you to establish a secure connection between your computer and server
 
@@ -32,9 +32,9 @@ GNU/Linux(requires xclip)
 
 参考：https://gitlab.com/help/ssh/README
 
-##screen
+## screen
 
-###常用命令
+### 常用命令
 
 	screen -S name    启动
 	screen -ls        查看screen列表
@@ -43,7 +43,7 @@ GNU/Linux(requires xclip)
 - GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 - 更多内容参考：http://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html
 
-###命令参数
+### 命令参数
 
 	screen [-AmRvx -ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 	参数说明
@@ -61,4 +61,6 @@ GNU/Linux(requires xclip)
 	-wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。
 
 
+## 一些网站
 
+[开源世界旅行手册](http://i.linuxtoy.org/docs/guide/)
