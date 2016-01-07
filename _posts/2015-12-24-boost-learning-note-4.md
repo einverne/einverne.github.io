@@ -66,7 +66,26 @@ scoped_ptr 常用方法：
 * 假设T支持直接赋值，*ptr_t = xxx。
 * 再次强调，scoped_ptr不能做拷贝、赋值等转移指针管理权限的事情。因此，class内置域为scoped_ptr\<T\>是不允许的，除非class也禁止拷贝、赋值
 
-例子如下：
+例子：
+
+	// scoped_ptr usage
+	scoped_ptr<string> sp(new string("text"));
+	cout << *sp << endl;
+	cout << sp->size() << endl;
+
+	// pointer 管理权移交 scoped_ptr
+	auto_ptr<int> ap(new int(10));
+	scoped_ptr<int> scoped(ap);
+	assert(ap.get() == 0);
+
+	ap.reset(new int(20));
+	cout << *ap << ", " << *scoped << endl;
+
+	auto_ptr<int> ap2;
+	ap2 = ap;
+	assert(ap.get() == 0);			// ap is null-pointer
+
+具体例子如下：
 
     #include <iostream>
     #include <boost/smart_ptr.hpp>
@@ -144,6 +163,7 @@ scoped_array 轻巧方便，没有给程序增加额外负担，但是 scoped_ar
         scopedarr[0] = 100;           // 赋值
     //    *(scopedarr+1) = 200;       // error
 
+		// fill array with 100 value 2
         fill_n(&scopedarr[0], 100, 2);
         cout << scopedarr[2] << endl;
 
