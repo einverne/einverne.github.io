@@ -53,7 +53,7 @@ Blockquotes with plain text
 Blockquotes with Lists
 
 > - List one
-> 	- List one.one	
+> 	- List one.one
 >   - List one.two
 > - List two
 > - List three
@@ -81,6 +81,7 @@ Ordered
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
 
+This is another ordered list
 
 1. You can use sequential numbers...
 1. ...or keep all the numbers as `1.`
@@ -238,7 +239,7 @@ Inline footnote^[Text of inline footnote] definition.
 
 Duplicated footnote reference[^second].
 
-[^first]: Footnote **can have markup** and multiple paragraphs. 
+[^first]: Footnote **can have markup** and multiple paragraphs.
 
 	paragraph 2 this is _some text_。
 

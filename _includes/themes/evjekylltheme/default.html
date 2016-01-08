@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    
+
 		<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
@@ -25,6 +25,10 @@
 		$(function(){
     	$("pre").addClass("prettyprint");
     	prettyPrint();
+      $('table').addClass('table table-hover');
+      $('.navbar').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+      })
   	});
 	</script>
 	<!-- Add mousewheel plugin (this is optional) -->
@@ -34,7 +38,7 @@
 	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
     <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
 	<!--<link href="/css/syntax.css" rel="stylesheet" type="text/css" media="all">-->
 
@@ -56,15 +60,15 @@
 
   <body>
     <div class="navbar navbar-default navbar-fixed-top">
-			<div class="navbar-inner">
 				<div class="container">
-					<a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          <div class="row">
+					<a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
 					<ul class="nav navbar-nav">
 						{% assign pages_list = site.pages %}
 						{% assign group = 'navigation' %}
 						{% include JB/pages_list %}
 					</ul>
-					<form id="search-form" class="navbar-form navbar-right pull-right has-success visible-lg" role="search">
+					<form id="search-form" class="navbar-form navbar-right pull-right visible-lg" role="search">
 						<div class="form-group">
 						<input type="text" class="form-control input-sm" placeholder="Search" id="query">
 						</div>
@@ -73,30 +77,35 @@
 						<a href="/rss.xml"><i class="fa fa-rss fa-2x"></i></a>
 					</div>
 				</div>
-			</div>
+      </div>
     </div>
 
     <div class="container">
 			<div class="row">
-				<div class="row-fliud">
-					<div class="span12">
+        <div class="row">
+					<div class="col-md-12">
 						<div class="searchresult">
 						</div>
 						<div id="search-loader" class="img-wrap">
 							<img src="{{ ASSET_PATH }}/loading.gif">
 						</div>
 					</div>
-				</div>
+        </div>
 				{{ content }}
 			</div>
 
 
-			<hr>
-			<footer>
-				&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
-				<br><br>
-			</footer>
 		</div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          			<hr>
+      &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
+      <br><br>
+      </div>
+    </div>
+    </footer>
 
     {% include JB/analytics %}
   </body>
