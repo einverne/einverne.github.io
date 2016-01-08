@@ -64,26 +64,26 @@
 				<div class="container">
           <div class="row">
 					<a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class = "collapse navbar-collapse navHeaderCollapse">
+          <div class="collapse navbar-collapse" id="mNavbar">
   					<ul class="nav navbar-nav">
   						{% assign pages_list = site.pages %}
   						{% assign group = 'navigation' %}
   						{% include JB/pages_list %}
   					</ul>
+  					<form id="search-form" class="navbar-form navbar-right" role="search">
+  						<div class="form-group">
+  						<input type="text" class="form-control input-sm" placeholder="Search" id="query">
+  						</div>
+  					</form>
+  					<div class="nav-icon">
+  						<a href="/rss.xml"><i class="fa fa-rss fa-2x"></i></a>
+  					</div>
           </div>
-					<form id="search-form" class="navbar-form navbar-right pull-right visible-lg" role="search">
-						<div class="form-group">
-						<input type="text" class="form-control input-sm" placeholder="Search" id="query">
-						</div>
-					</form>
-					<div class="nav-icon">
-						<a href="/rss.xml"><i class="fa fa-rss fa-2x"></i></a>
-					</div>
 				</div>
       </div>
     </div>
