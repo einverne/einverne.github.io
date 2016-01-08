@@ -9,14 +9,35 @@
 	}
 }
 
+body {
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;}
+
+.page-header {
+	margin: 20px 0px;
+}
+
+ol, ul {
+	padding-left: 20px;
+}
+
 h2 {
-  padding-bottom: 0.3em;
+	padding: 0.3em 0em 0.3em 0.5em;
+
 	margin-top: 1em;
-	margin-bottom: 16px;
+	margin-bottom: 1em;
   font-size: 1.75em;
 	font-weight: bold;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
+	border-left: 15px solid #2e9fff;
+}
+
+.searchresult {
+	display:none;
+	padding: 20px;
+	-webkit-box-shadow: 2px 2px 15px 0px rgba(204,204,204,1);
+	-moz-box-shadow: 2px 2px 15px 0px rgba(204,204,204,1);
+	box-shadow: 2px 2px 15px 0px rgba(204,204,204,1);
 }
 
 .post-meta {
@@ -44,11 +65,8 @@ h2 {
 	background: transparent;
 }
 
-.navbar .nav {
-}
-
-.navbar-inner {
-	background: rgba(255,255,255,0.5);
+.navbar {
+	background: rgba(248,248,248,0.6);
 }
 
 /* posts index */
@@ -70,6 +88,9 @@ h2 {
   margin-bottom: 20px;
   font-weight: bold; }
 
+ul.tag_box {
+	padding-left: 0px;
+}
 /* tag_box */
 .tag_box {
   list-style: none;
@@ -116,6 +137,7 @@ p {
 	margin: 0 auto;
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+	max-width: 100%;
 }
 .post-content p img.emoji{
 	display: inline;
@@ -144,8 +166,9 @@ p {
 .nav {
   font-size: 110%;
 }
+
 .nav-icon{
-	padding: 5px 15px 5px;
+	padding: 10px 15px 10px;
 	float: right;
 }
 /*http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style*/

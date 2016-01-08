@@ -3,30 +3,30 @@ layout: default
 title: Verne in GitHub
 ---
 
-<div class="row-fliud">
-	<div class="span8">
+<div class="row">
+	<div class="col-md-8">
 		{% for post in paginator.posts %}
 					{% capture summary %}{{post.content | split:'<!--more-->' |first }}{% endcapture%}
 					<h1><a class="title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
 					<div class="post_at_index">
-							{{summary}} 
+							{{summary}}
 					{% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" rel="nofollow">Read more...</a>{% endif %}
 					</div>
 					<br/>
 					<div>
-						<cite>{{ post.date | date: "%Y-%m-%d" }}</cite> <i class="icon-tag"></i> 
+						<cite>{{ post.date | date: "%Y-%m-%d" }}</cite> <i class="icon-tag"></i>
 				{% for tag in post.tags %}<a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
 					{% if forloop.last %}
 					{% else %}, {% endif %}
 				{% endfor %}
-				 </div> 
+				 </div>
 					<div style="clear: both;"></div>
 					<hr/>
 	 {% endfor %}
 
 		<!-- Pagination links -->
-		<div class="pagination">
-			<ul>
+		<nav>
+			<ul class="pagination">
 			{% if paginator.previous_page %}
 					{% if paginator.previous_page == 1 %}
 					<li>
@@ -42,7 +42,7 @@ title: Verne in GitHub
 							<a>&laquo; Previous</a>
 					</li>
 			{% endif %}
-		
+
 			{% if paginator.page == 1 %}
 					<li class="active">
 							<a>1</a>
@@ -52,7 +52,7 @@ title: Verne in GitHub
 							<a href="/">1</a>
 					</li>
 			{% endif %}
-				
+
 			{% for count in (2..paginator.total_pages) %}
 					{% if count == paginator.page %}
 							<li class="active">
@@ -64,7 +64,7 @@ title: Verne in GitHub
 							</li>
 					{% endif %}
 			{% endfor %}
-		
+
 			{% if paginator.next_page %}
 					<li>
 							<a href="/page{{paginator.next_page}}">Next &raquo;</a>
@@ -75,12 +75,12 @@ title: Verne in GitHub
 					</li>
 			{% endif %}
 			</ul>
-		</div>
+		</nav>
 	</div>
-<div class="span4">
+<div class="col-md-4">
 		<div>
 			<h2>Google+</h2>
-			<div class="g-plusone" data-annotation="inline" data-width="300"></div>				
+			<div class="g-plusone" data-annotation="inline" data-width="300"></div>
 			<div class="g-person" data-href="//plus.google.com/u/0/109340910651529827181" data-rel="author"></div>
 		</div>
 		<div class="categories">

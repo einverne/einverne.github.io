@@ -1,11 +1,11 @@
-<div class="row-fliud">
-	<div class="span8">
+<div class="row">
+	<div class="col-xs-12 col-md-8">
 		<div class="page-header">
 			<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 		</div>
 		<div class="post-meta">
 			{% if page.date %}
-			<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span> 
+			<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span>
 			{% endif %}
 			{% if page.last_updated %}
 				, Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
@@ -27,12 +27,12 @@
 		</div>
 
 		<hr>
-		<div class="pagination">
-			<ul>
+		<nav>
+			<ul class="pager">
 			{% if page.previous %}
-				<li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
+				<li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
 			{% else %}
-				<li class="prev disabled"><a>&larr; Previous（前一篇）</a></li>
+				<li class="previous disabled"><a>&larr; Previous（前一篇）</a></li>
 			{% endif %}
 				<li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
 			{% if page.next %}
@@ -41,44 +41,44 @@
 				<li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
 			{% endif %}
 			</ul>
-		</div>
+		</nav>
 		<hr>
 
 		{% include JB/comments %}
 		<blockquote><p class="quote"></p></blockquote>
 	</div>
 
-	<div class="span4">
+	<div class="col-md-4">
 			{% unless page.categories == empty %}
 				<ul class="tag_box">
-					<li><i class="icon-folder-open"></i></li>
+					<li><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></li>
 					{% assign categories_list = page.categories %}
 					{% include JB/categories_list %}
 				</ul>
-			{% endunless %}  
+			{% endunless %}
 
 			{% unless page.tags == empty %}
 				<ul class="tag_box">
-					<li><i class="icon-tags"></i></li>
+					<li><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></li>
 					{% assign tags_list = page.tags %}
 					{% include JB/tags_list %}
 				</ul>
-			{% endunless %}  
+			{% endunless %}
 		<div id="floatbox">
-			<div class="g-plusone" data-annotation="inline" data-width="300"></div>				
+			<div class="g-plusone" data-annotation="inline" data-width="300"></div>
 			<div id="toc"></div></div>
 	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#toc').toc();
-		$('table').addClass('table table-hover');
+		
 
 		$.getJSON('/quotes.json', function(data){
 			var rand = Math.floor(Math.random()*data.quotes.length);
 			var entry = data.quotes[rand].quote +"    --"+ data.quotes[rand].name;
 			$('.quote').text(entry);
-		});		
+		});
 	});
 	$(function(){
 		var tocH = $("#floatbox").offset().top;
