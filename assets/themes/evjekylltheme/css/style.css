@@ -23,6 +23,11 @@ h2 {
 	border-left: 15px solid #2e9fff;
 }
 
+.mobilepadding {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 .searchresult {
 	display:none;
 	padding: 20px;
