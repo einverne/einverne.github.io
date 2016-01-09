@@ -78,25 +78,28 @@
 	</div>
 </div>
 <script type="text/javascript">
+	function isMobile() {
+		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	}
 	$(document).ready(function(){
 		$('#toc').toc();
 
+		if (!isMobile()) {
+			var tocH = $("#floatbox").offset().top;
+			$(window).scroll(function(){
+				var scroH = $(this).scrollTop();
+				if(scroH >= tocH){
+					$("#floatbox").css({"position":"fixed","top":0});
+				}else{
+					$("#floatbox").css({"position":"static"});
+				}
+			});
+		}
 
 		$.getJSON('/quotes.json', function(data){
 			var rand = Math.floor(Math.random()*data.quotes.length);
 			var entry = data.quotes[rand].quote +"    --"+ data.quotes[rand].name;
 			$('.quote').text(entry);
 		});
-	});
-	$(function(){
-		var tocH = $("#floatbox").offset().top;
-		$(window).scroll(function(){
-			var scroH = $(this).scrollTop();
-			if(scroH >= tocH){
-				$("#floatbox").css({"position":"fixed","top":0});
-			}else{
-				$("#floatbox").css({"position":"static"});
-			}
-		})
 	});
 </script>
