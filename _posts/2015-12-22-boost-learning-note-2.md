@@ -4,7 +4,7 @@ title: "boost 学习笔记 2: timer"
 tagline: ""
 description: "时间"
 category: 学习笔记
-tags: [boost, C/C++,]
+tags: [boost, C++,]
 last_updated: 
 ---
 
