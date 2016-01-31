@@ -1,6 +1,6 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:year/:month/:day/:title.html
+permalink: /post/:year/:month/:title.html
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 paginate: 10
@@ -16,7 +16,7 @@ title : Verne in GitHub
 tagline: Heal the World
 author :
   name : Ein Verne
-  email : ein.verne+github@gmail.com
+  email : ein.verne@gmail.com
   google : EinVerne
   github : einverne
   twitter : einverne
@@ -79,6 +79,7 @@ JB :
   tags_path : /tags.html
   atom_path : /atom.xml
   rss_path : /rss.xml
+  feed_path : /feed.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
@@ -87,7 +88,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : verneinblogger
+      short_name : einvernegithubio
     livefyre :
       site_id : 123
     intensedebate :
@@ -141,3 +142,4 @@ gems:
   - jemoji
   - jekyll-mentions
   - jekyll-sitemap
+  - jekyll-feed
