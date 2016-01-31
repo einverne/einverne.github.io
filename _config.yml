@@ -1,6 +1,6 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:year/:month/:day/:title.html
+permalink: /post/:year/:month/:title.html
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 paginate: 10
@@ -16,7 +16,7 @@ title : Verne in GitHub
 tagline: Heal the World
 author :
   name : Ein Verne
-  email : ein.verne+github@gmail.com
+  email : ein.verne@gmail.com
   github : einverne
   twitter : einverne
   feedburner : feedname
