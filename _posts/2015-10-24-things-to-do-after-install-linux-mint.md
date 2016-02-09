@@ -3,9 +3,9 @@ layout: post
 title: "Things to do after install Linux Mint"
 tagline: ""
 description: ""
-category: linux
+category: Linux
 tags: [linux, linux mint, applications, ]
-last_updated: 
+last_updated: 2016-02-09
 ---
 
 I have changed my desktop environment to Linux, and after I tried Ubuntu and Debian, I finally choose the Linux Mint distribution. I think there are some reasons why this distribution take the first place in [distrowatch](http://distrowatch.com/). User-friendly desktop environment and convenient software package manager make me very comfortable. Cause it is based on the Debian and Ubuntu, most of the applications are familiar.
@@ -35,9 +35,17 @@ After installation, "start", "Fcitx Configuration" can config the input method, 
 ### shadowsocks
 Use to cross China's great firewall. Don't need to talk more.
 
-     pip install shadowsocks
+     pip install shadowsocks # install command line tool
 
 If pip is missing, install pip first.
+
+PPA is for Ubuntu >= 14.04.
+
+    sudo add-apt-repository ppa:hzwhuang/ss-qt5
+    sudo apt-get update
+    sudo apt-get install shadowsocks-qt5
+
+To install Qt version of shadowsocks. From:[GitHub](https://github.com/shadowsocks/shadowsocks-qt5/wiki/Installation).
 
 ## Hardware related
 
@@ -66,7 +74,7 @@ install following package:
 Use F12 to open a terminal. Dropdown terminal, you can right click the terminal after you press F12 to configure your guake.
 
 ### PlayOnLinux
-"PlayOnLinux is a front-end for wine. It permits you to easily install Windows Games and software on Linux. It is advised to have a functional internet connection." I use playonlinux to install Evernote and 网易云音乐. Although I met a lot of problems during installation of Evernote. But finally evernote 5.8.x can be installed on wine 1.7.x.
+"PlayOnLinux is a front-end for wine. It permits you to easily install Windows Games and software on Linux. It is advised to have a functional internet connection." I use playonlinux to install Evernote and cloudmusic(网易云音乐). Although I met a lot of problems during installation of Evernote. But finally evernote 5.8.x can be installed on wine 1.7.x.
 
 There are several packages you need to install to make PlayOnLinux work.
 
@@ -77,11 +85,13 @@ There are several packages you need to install to make PlayOnLinux work.
 
 ## Tools
 
-###网易云音乐
+Most of the following can be installed from default Software Manager. Just type name of the application and search then click install.
+
+### 网易云音乐
 cloud music client and my favourite music client.
 
-###Evernote
-my favourite cloud notebook.
+### Evernote
+my favourite cloud notebook with a very clean Android client.
 
 ### shutter
 Linux mint 17 has a default screenshot software called Screenshot. It is a very simple screenshot software. Shutter is more powerful.
@@ -121,6 +131,9 @@ non-linear video editing suite.
 ### WPS Office for Linux
 Office software include writer, spreadsheets and presentation.
 
+### KeePassX
+Password manager. But I prefer LastPass.
+
 ### youdao dict
 This client really make me impressed. It is faster and simple than any other platform client. Launch it with Gnome do, and use it to check English word is a very happy work. Someone used to recommand me the StarDict, but I think youdao dict is a better choice for me.
 
@@ -136,8 +149,8 @@ Install this tool using this command:
 
 and you can find NTFS Configuration Tool in the menu. It is a very efficient tool to auto mount windows NTFS partitions. You can setup to auto-mount when your Linux mint start up. It is really useful if you have a second hard drive installed and you want it to auto-mount each time you restart your system.
 
-### mplayer or vlc
-video player always need one
+### smplayer or vlc
+video player always need one. Personally, I like smplayer more.
 
 ### Nuvola Player 3
 You can follow the instruction on it's official [site](http://tiliado.github.io/nuvolaplayer/documentation/3.0/install.html). It was great, espcially when you want to listen to music at Google Play Music, or other cloud stream music. It support a lot of services, like Amazon Cloud Player, Play Music, Plex Music, Spotify, Tuneln, etc.
@@ -169,13 +182,13 @@ Remote control application. I need it to help to connect my mac in lab and other
 Use `apt-get search vim` to search related vim packages, you will find several packages,like vim-gtk, vim-gnome etc. Install vim and vim-gtk package to install vim and gvim. And config my vim with my dotfile, <https://github.com/einverne/dotfiles>.
 
 ### git
-best version control system.
+best version control system. And I am using SmartGit.
 
 ### SmartGit
 Git GUI
 
 ### Sublime Text
-Editor.
+Text Editor. Later I found Atom which is also great.
 
 ### haroopad
 markdown editor.
@@ -190,5 +203,24 @@ install boost library from source using the following code:
 
 all boost library is located at `/usr/include/boost`
 
+### Android Studio
+Check official site for more information.
+
+### PyCharm
+Python IDE
+
+### ZeroBrane Studio
+Lua IDE
+
+### SQLiteman
+Sqlite manager
+
+## Applets
+
+### Weather
+You can have your local weather forecast in desktop.
+
+### Desktop Capture
+Screenshot and screencasting tools which saves me a lot of time.
 
 I have created a list in [Youtube](https://www.youtube.com/playlist?list=PLKHfgb7QQO0imWboMrQxovJ-G2urwot01), you can check it for information.
