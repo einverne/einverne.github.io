@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [Android, AndroidDev, Genymotion]
-last_updated: 
+last_updated: 2016-02-14
 ---
 
 在Linux下安装 Genymotion Android 模拟器。最近拾起 Android Development，Android 模拟器必不可少，用来用去 Genymotion 模拟器算是速度和效率最棒的模拟器了。
@@ -44,8 +44,14 @@ Genymotion 安装需要一个 Genymotion 的个人账号，Genymotion 高级功�
 
 下载对应的镜像，然后就能够运行模拟器了。
 
+为了方便使用可以将 Genymotion 的地址加入到 PATH 中，这样就能快速启动 Genymotion. 类似：
+
+	$ PATH=$PATH:/home/einverne/Android/genymotion/
+
 ## 使用 {#after}
 在使用 Genymotion 的时候，有时会遇到 ”INSTALL_FAILED_NO_MATCHING_ABIS“ 错误。一些时候是因为 APP 和模拟器CPU架构的问题，但是在 Genymotion 这里需要额外安装一个文件。点击[这里](http://forum.xda-developers.com/showthread.php?t=2528952) 去xda 下载 Genymotion-ARM-Translation_v1.1.zip 这个文件。并拖到模拟器中。这样就不会出现问题了。如果需要在模拟器中安装 GApps ，可以在上面的链接中找到对应的方法。
+
+如果使用过程中出现 “An error occured while deploying the file. INSTALL_FAILED_CPU_ABI_INCOMPATIBLE” 这样的错误，利用上面的方法也能解决。造成这个错误的原因是因为 Genymotion 是一个基于 x86 的虚拟环境，不是一个 ARM 的模拟器。而 Genymotion 在更新过程中移除了 ARM Translation 和 Google Play Apps ， 这样对开发者和使用者造成了一定的困扰，不过还好依然可以通过其他方法解决。
 
 ## reference
 
