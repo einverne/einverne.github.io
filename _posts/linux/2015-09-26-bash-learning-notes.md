@@ -5,7 +5,7 @@ tagline: "bash 学习笔记"
 description: "bash 学习笔记"
 category: [ Linux, 学习笔记]
 tags: [ linux , bash]
-last_updated: 
+last_updated: 2016-03-08
 ---
 
 
@@ -152,3 +152,56 @@ Ctrl-V  | 引用插入|
 - Ctrl-y
 - Ctrl-r
 
+## 环境配置 {#env}
+
+### 特殊文件 {#bash-profile}
+
+最重要的bash文件是 `.bash_profile` ，它在每次用户登陆系统时被读取 `/etc/profile` 。bash 允许有 `.bash_profile` 两个同义文件， C Shell 的 `.bash_login` 以及 Bourne Shell 和 Korn Shell 的 `.profile` 。登录时三者中只有一个被读取，如果用户根目录下 `.bash_profile` 不存在，则 bash 依次查找 `.bash_login` , `.profile`.
+
+`.bash_profile` 只被登录 shell 读取并执行，如果通过命令键入 bash 启动一个新 Shell， 它就会读取 bashrc 中的命令。
+
+`.bash_logout` 在每次 shell 退出时被读取并执行。
+
+### 别名 {#alias}
+
+给命令添加熟悉的别名
+
+	alias name=command
+
+指定 name 是 command 的别名。在“=”两边没有空格，严格语法。
+
+别名是可递归的，可以使用别名定义另外的别名。
+
+### 选项 {#option}
+
+别名可以为命令创建方便的名字，它们实际上并不改变shell的行为。选项则不然。基本命令：
+
+	set -o optionname	-号 开启
+    set +o optionname	+号 关闭
+
+检查bash所有可选项，使用 `set -o` 打印所有列表。
+
+shopt 选项
+
+选项 | 含义
+---- | ----
+-p   | 显示可选设置及其当前取值
+-s   | 设置
+-u   | 失效
+-o   | 允许选项名取值通过 set 命令 -o 选项定义
+
+
+
+### 变量 {#variable}
+
+Shell变量也是一个拥有取值的名字，bash有一些内置的变量，shell编程也可以自定义变量。按照惯例，内置变量名均为大写，当然也有两个例外。
+
+	varname=value
+
+等号两边必须没有空格。
+
+引用
+
+	echo $varname
+
+bash 有很多内置变量分布在各个配置文件中。
