@@ -3,7 +3,7 @@ layout: post
 title: "Goodbye Picasa"
 tagline: ""
 description: "告别文，就像告别 Google Reader"
-category: 经验总结, 产品体验
+category: [经验总结, 产品体验]
 tags: [Google, Picasa, Google Photos, Blogger, 经验总结, 产品体验]
 last_updated: 
 ---

@@ -4,8 +4,8 @@ title: "国家博物院一日游"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [博物院, travel, beijing, 经验总结]
-last_updated: 
+tags: [博物院, travel, beijing,游记, 经验总结]
+last_updated: 2016-03-20
 ---
 
 说了很久想去国家博物院，只是迟迟没有动脚，终于熬到今天。本不是旅游旺季，早上9点出门到那边依然能够领到票进去，排队人数也不是很多，几乎就是去了拿票直接进。如果想要预约门票的话，提早电话或者网上预定，可参见官网[文章](http://www.chnmuseum.cn/tabid/267/Default.aspx)。
