@@ -1,12 +1,12 @@
 ---
-title: 通过图片找字体
+title: 推荐网站之求字体：通过图片找字体
 layout: post
 category: 经验总结
 tagline: ""
-tags: [font, ]
+tags: [fonts, website, 推荐网站]
 ---
 
-通过图片找到对应字体。
+推荐网站之求字体：通过图片找到对应字体。
 
 求字体 [http://www.qiuziti.com/](http://www.qiuziti.com/)
 
