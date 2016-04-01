@@ -5,17 +5,19 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [linux, vps, lnmp,]
-last_updated: 2016-02-28
+last_updated: 2016-04-01
 ---
 
 ## Security
 
 ### Change password
+
 The first thing you login into your VPS using root is to change your root password your VPS provider gave. Run the `passwd` to change your root password.
 
 After you run this command, your terminal will prompt you to input new password. So just type your new password twice. Linux will check your new password to prevent simple password or short password. So don’t use any exist words or any password only contains number.
 
 ### Create a new User
+
 One of the most important security thing is try your best not to login to your VPS using root account. A better way is to create a new user account and do anything you like as this new user.
 
 Following command is to create a new user and set a password for this user. Please replace `einverne` as your own name.
@@ -115,10 +117,6 @@ VPS的网络性能，主要分出口和入口二个指标，入口可以用wget�
 看下载速度，如果是11M/s，大概就是百兆口，70M/S，大概就是G口。
 您的VPS搭建好网站环境后，可以用其它的VPS去拽这个文件，得到出口的带宽。
 
-芝加哥机房/100M测试包
-
-    wget http://cachefly.cachefly.net/100mb.test
-
 Directspace机房/10M.100M测试包 Portland
 
     wget http://bandwidth.directspace.net/10MBtest.zip
@@ -154,12 +152,12 @@ sock5 proxy.
 	edit file as follow:
 
         {
-        "server":"[ip]", //server ip address
-        "server_port":[port], //server port
-        "local_port":[port], //local port
-        "password":"[password]", //password
-        "timeout":600, //time out
-        "method":"AES-256-CFB" //encryption way
+			"server":"[ip]", //server ip address
+			"server_port":[port], //server port
+			"local_port":[port], //local port
+			"password":"[password]", //password
+			"timeout":600, //time out
+			"method":"AES-256-CFB" //encryption way
         }
 
 - start server
@@ -189,7 +187,7 @@ From:<http://www.vpser.net/manage/run-screen-lnmp.html>
 After installation, you will see some short instructions.
 
     lnmp status manage: /root/lnmp {start|stop|reload|restart|kill|status}
-    default mysql root password:ev1123581321
+    default mysql root password:12345678
     phpinfo : http://yourIP/phpinfo.php
     phpMyAdmin : http://yourIP/phpmyadmin/
     Prober : http://yourIP/p.php
