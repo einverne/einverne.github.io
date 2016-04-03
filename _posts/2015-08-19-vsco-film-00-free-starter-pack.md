@@ -4,13 +4,13 @@ title: "VSCO Film 00 free starter pack"
 tagline: ""
 description: "VSCO Film 00 free starter pack 使用感受"
 category: 产品体验
-tags: [VSCO, 摄影, LightRoom]
-last_updated: 
+tags: [VSCO, photography, 摄影, LightRoom]
+last_updated: 2016-04-03
 ---
 
 VSCO Cam 一直深受摄影爱好者的喜爱，VSCO Cam 能够提供极佳的模拟胶片效果(analog film)。而桌面的 VSCO 产品叫做 VSCO Film，这些天试用 Adobe Light Room 突然想起来这样一款产品，上官网一查，VSCO Film 给入门者提供了一套免费的预设(Preset)----VSCO FILM 00 free starter pack，正好试用一下。
 
-##VSCO FILM 00 free starter pack
+## VSCO FILM 00 free starter pack
 
 - 官网及下载地址：[http://vsco.co/film/00/lightroom](http://vsco.co/film/00/lightroom)
 - 产品介绍及效果演示：[http://grid.vsco.co/journal/introducing-vsco-film-00-free-starter-pack](http://grid.vsco.co/journal/introducing-vsco-film-00-free-starter-pack)
