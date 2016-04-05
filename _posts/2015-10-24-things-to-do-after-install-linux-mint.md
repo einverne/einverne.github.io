@@ -5,10 +5,52 @@ tagline: ""
 description: ""
 category: Linux
 tags: [linux, linux mint, applications, ]
-last_updated: 2016-02-09
+last_updated: 2016-04-04
 ---
 
 I have changed my desktop environment to Linux, and after I tried Ubuntu and Debian, I finally choose the Linux Mint distribution. I think there are some reasons why this distribution take the first place in [distrowatch](http://distrowatch.com/). User-friendly desktop environment and convenient software package manager make me very comfortable. Cause it is based on the Debian and Ubuntu, most of the applications are familiar.
+
+## Install a theme
+
+The simplest way to install a new Cinnamon theme is with the Themes manager in System settings.
+
+Go to System Settings -> Themes -> Get More Online -> Refresh list. You can choose Most Popular or Latest. The theme will be installed to your hidden folder `~/.themes`
+
+### Dark Blue Glass
+
+I highly recommend my modified Dark Blue Glass theme [link](https://github.com/einverne/dark-blue-glass). It is a mix of Dark Glass and mint numix blue theme. Or you can find more themes on the following sites:
+
+- Themes (this is the official linux mint theme sites which you can directly download this themes and install in your cinnamon desktop environment):<https://cinnamon-spices.linuxmint.com/themes>
+- Mint Numix Blue:<https://cinnamon-spices.linuxmint.com/themes/view/434>
+- Dark Glass link:<http://gnome-look.org/content/show.php/Dark+Glass?content=171257>
+- Numix Cinnamon Blue:<http://cinnamon-spices.linuxmint.com/themes/view/196>
+- Noobslab themes and icons:<http://www.noobslab.com/p/themes-icons.html>
+- Numix project:<https://numixproject.org/> and PPA for numix [project](https://launchpad.net/~numix/+archive/ubuntu/ppa)
+
+## icons
+
+You can install a new icon set in two ways. One is by adding a PPA. You add the PPA, install the icon set. But you won’t find icon sets for all the icon themes. Therefore, the other way round is to download the compressed file and extract it to `~/.icons` or `~/.local/share/icon` . If this directory doesn’t exist, create one using the following command:
+
+	mkdir ~/.icons
+
+The icons extracted in the above directory will be available for the current user only. If you want the icons to be available for all the users, you should extract the icons to `/usr/share/icons` .
+
+Now, once you have installed the icon set, you can use a Unity Tweak Tool to change the icon theme. Use the following command to install Unity Tweak Tool:
+
+	sudo apt-get install unity-tweak-tool
+
+Or in Linux mint you can just change icons under setting -> theme -> icons.
+
+I highly recommend this one: **papirus icons**
+
+	sudo add-apt-repository ppa:varlesh-l/papirus-pack
+    sudo apt update
+	sudo apt install papirus-icons
+
+- papirus suite:<https://github.com/varlesh/papirus-suite>
+- link:<https://launchpad.net/~varlesh-l/+archive/ubuntu/papirus-pack>
+- Ioncs:<http://www.noobslab.com/p/themes-icons.html>
+- PPA:<https://launchpad.net/~noobslab/+archive/ubuntu/icons/>
 
 ## Software Sources
 You didn't need to edit`/etc/apt/sources.list` and files under `/etc/apt/sources.list.d/` mannually. All customs can be changed through UI. Just click "start menu" and choose the "Software Sources". And this application can even custom the PPAs.
@@ -87,7 +129,7 @@ There are several packages you need to install to make PlayOnLinux work.
 
 Most of the following can be installed from default Software Manager. Just type name of the application and search then click install.
 
-### 网易云音乐
+### 网易云音乐 {#cloud-music}
 cloud music client and my favourite music client.
 
 ### Evernote
@@ -111,13 +153,13 @@ Remote desktop connection client able to display and control a remote desktop se
 linux firewall.
 
 ### Calibre
-E-book manager, 电子书管理
+E-book manager, 电子书管理. It is very efficient when you plug in kindle using USB port Calibre is prepare to serve.
 
 ### WizNote
 Evernote like cloud notebook client. Find more information [here](http://blog.wiz.cn/wiznote-linux.html)
 
 ### SimpleScreenRecorder
-one the screenrecoder I use.
+one of the screenrecoders I use.
 
 ### Picasa
 Best image and picture manager ever from Google.
