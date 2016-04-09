@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [linux, vps, lnmp,]
-last_updated: 2016-04-01
+last_updated: 2016-04-09
 ---
 
 ## Security
@@ -151,18 +151,27 @@ sock5 proxy.
 
 	edit file as follow:
 
-        {
-			"server":"[ip]", //server ip address
-			"server_port":[port], //server port
-			"local_port":[port], //local port
-			"password":"[password]", //password
-			"timeout":600, //time out
-			"method":"AES-256-CFB" //encryption way
-        }
+		{
+			"server":"[ip]",
+			"server_port":[port],
+			"local_port":[port],
+			"password":"[password]",
+			"timeout":600,
+			"method":"AES-256-CFB"
+		}
+	
+	Explanation of each field:
+
+		- server: your hostname or server IP (IPv4/IPv6).
+		- server_port: server port number.
+		- local_port: local port number.
+		- password: a password used to encrypt transfer.
+		- timeout: connections timeout in seconds.
+		- method: encryption method, "bf-cfb", "aes-256-cfb", "des-cfb", "rc4", etc. Default is table, which is not secure. "aes-256-cfb" is recommended.
 
 - start server
 
-		ssserver -c [json_path] -d start
+	`ssserver -c [json_path] -d start`
 
     start service
 
