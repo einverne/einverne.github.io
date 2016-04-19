@@ -62,6 +62,70 @@ To test the new ssh config, do not logout of root. Open a new terminal and login
 
 ![servers](https://lh3.googleusercontent.com/-fxTfiWZ7Q9U/VZA0FJkW1TI/AAAAAAAApLg/7mc831epKyA/s1024-Ic42/MNK_006.jpg)
 
+After you set up server ssh, you can generate SSH key at local computer and use SSH key to connect to server rather than using password. Generating a key at local computer:
+
+	ssh-keygen
+
+follow the instruction of this command, for example you name it **vps** , just enter to skip password of key, and you will get two files under `~/.ssh/`, **vps** is your private key, keep it safe. And **vps.pub** is the public key. And Now use `ssh-copy-id` to copy public key to server.
+
+	ssh-copy-id user@server.address
+
+Then type the password. And it will be the last time to type your password to connect to server. If your computer don't have the command `ssh-copy-id`, you have to copy the public key to server `~/.ssh/authorized_keys` manually.
+
+	scp ~/.ssh/name.pub user@server:~/.ssh/
+
+Then copy the file content to `authorized_keys` file.
+
+	cat name.pub >> authorized_keys
+
+Finally to check the permission of the folder `.ssh` and file `authorized_keys`
+
+	drwx------ 2 einverne einverne       4096 Apr 19 21:25 .ssh
+	-rw------- 1 einverne einverne  744 Apr 19 21:14 authorized_keys
+
+and if not:
+
+	chmod 700 ~/.ssh/
+	chmod 600 authorized_keys
+
+### setup alias
+
+Add alias to `.bashrc` or `.zshrc` file.
+
+	alias vps = "ssh username@server -p port"
+
+Then next time, you can just type `vps` to connect to server.
+
+### ssh config
+
+There are two config file to setup ssh. One is system wide configuration file which can be found `/etc/ssh/ssh_config`. And another is per-user configuration file which is located under user home directory `~/.ssh/config`. Most time we only care about user config.
+
+Try to set up:
+
+	Host ds #this can be anything just a alias
+		HostName server
+		Port 22
+		User username
+
+Then we can use `ssh ds` to connect to server. If you have multi config just add to following like:
+
+	Host ds
+		HostName server
+		Port 22
+		User einverne
+	
+	Host github
+		HostName github.com
+		Port 22
+		User einverne
+		IdentityFile ~/.ssh/private_key_name
+
+After all this, you can type following command to have a try:
+
+	scp filename ds:~/filename   # copy file to server
+	ssh ds "ls ~" 		# list server files
+
+
 ## Test VPS
 
 ### Processor test
@@ -213,3 +277,11 @@ After installation, you will see some short instructions.
     For more information please visit http://www.lnmp.org
 
     Usage: /root/lnmp {start|stop|reload|restart|kill|status}
+
+## reference
+
+- <http://linux.die.net/man/1/ssh-copy-id>
+- <http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/>
+- <http://linux.die.net/man/5/ssh_config>
+- <http://dhq.me/use-ssh-config-manage-ssh-session>
+- <http://blog.jobbole.com/33790/>
