@@ -72,3 +72,4 @@ hello.py
 
 注意将 python, boost 所在目录 include 进去，在链接时加上 `-lboost_python -lpython2.7` 并 include python 和 boost目录。
 
+Demo 地址GitLab : <https://gitlab.com/einverne/boost_test/>
