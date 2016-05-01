@@ -11,6 +11,8 @@ last_updated:
 
 推荐好用的网站系列之生成邮件签名 htmlsig 。想要一个漂亮的邮件签名，又不想自己写 html，最好的方法就是找一个模板然后自己填写内容。这个网站就是这样的。
 
+官网地址：<https://htmlsig.com/>
+
 样式1
 ![htmlsig 1](https://lh6.googleusercontent.com/-lj-7WqAb_iI/VvI6X-iW9LI/AAAAAAAA8H4/ywLEjFSbUvE7UYzo8zNV9h2uUSk54qHvg/w341-h228-no/%25E5%25B1%258F%25E5%25B9%2595%25E6%2588%25AA%25E5%259B%25BE%2B2016-03-23%2B14.38.57.png)
 
