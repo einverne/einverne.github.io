@@ -140,6 +140,6 @@ or
 
 - <http://unix.stackexchange.com/questions/33793/how-to-auto-start-a-service-apache2-with-linux-mint>
 - <https://www.debuntu.org/how-to-managing-services-with-update-rc-d/>
-- <http://manpages.ubuntu.com/manpages/natty/man8/update-rc.d.8.html>
+- <http://manpages.ubuntu.com/manpages/xenial/en/man8/update-rc.d.8.html>
 - <http://www.aboutlinux.info/2006/04/enabling-and-disabling-services-during_01.html>
 - <https://packages.debian.org/wheezy/rcconf>

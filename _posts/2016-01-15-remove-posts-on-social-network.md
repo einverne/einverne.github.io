@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [经验总结, social, posts]
-last_updated: 
+last_updated: 2016-05-08
 ---
 
 这两天陆陆续续通过一些插件脚本删除了一些社交网站数据。年轻的时候发过一些无聊的状态，然后很久以后都没有登陆过的一些账号，倒不如关了的好，自此以后墙外只用 [Google+](https://www.google.com/+EinVerne) ,还有Blog记录一下所思所想，墙内公开内容除了豆瓣可能也没得发了，不愿生活在一个审查的制度下。虽然我可能也不会发什么敏感的内容，可谁知道什么敏感，什么不敏感呢？
@@ -14,7 +14,11 @@ last_updated:
 
 Delete all facebook posts ， 可以利用以下插件删除 Facebook 所有状态，包括账号内的头像等等。
 
-[Chrome Extension](https://chrome.google.com/webstore/detail/facebook-timeline-cleaner/lfejocdlmhhkmnabbaeckmaehmgaffje)
+Chrome Extension link
+
+https://chrome.google.com/webstore/detail/facebook-timeline-cleaner/lfejocdlmhhkmnabbaeckmaehmgaffje
+
+Update: 可惜了这个插件被删除了
 
 ## renren
 

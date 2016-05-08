@@ -8,7 +8,7 @@ tags: [Android, Jenkins, gradle, ci]
 last_updated: 
 ---
 
-Jenkins 是 Java 编写的开源持续集成（Continuous integration）工具[^Jenkins]。在上一篇推荐网站中提到的 [AlternativeTo](../../../post/2016/04/alternativeto.html) 中去搜索一下，能够看到很多持续集成的[工具](http://alternativeto.net/software/jenkins/)，像 GitHub 上经常看到的 Travis CI， 还有 Jenkins 的前身 Hudson。
+Jenkins 是 Java 编写的开源持续集成（Continuous integration）工具[^Jenkins]。在上一篇推荐网站中提到的 [AlternativeTo](/post/2016/04/alternativeto.html) 中去搜索一下，能够看到很多持续集成的[工具](http://alternativeto.net/software/jenkins/)，像 GitHub 上经常看到的 Travis CI， 还有 Jenkins 的前身 Hudson。
 
 ## 安装
 

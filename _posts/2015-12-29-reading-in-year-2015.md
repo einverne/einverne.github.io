@@ -102,7 +102,7 @@ last_updated:
 ### bash cookbook
 更加详细一点的bash教程
 
-参考[bash 学习笔记](/2015/09/26/bash-learning-notes.html).
+参考[bash 学习笔记](/post/2015/09/bash-learning-notes.html).
 
 ### 鸟哥的Linux私房菜 基础学习篇(第二版) (第三版)
 很经典，很详细，却也略显啰嗦的Linux入门书

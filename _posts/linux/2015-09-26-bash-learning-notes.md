@@ -143,7 +143,7 @@ Ctrl-V  | 引用插入|
 ### Vi 编辑模式
 通过设置 `set -o vi` 进入Vi编辑模式，正常环境为输入模式，对命令进行修改则按 <kbd>Esc</kbd>。完整命令[参考](/assets/bash-vi-editing-mode-cheat-sheet.pdf).
 
-命令包括 <kbd>h</kbd>, <kbd>l</kbd>, <kbd>w</kbd>, <kbd>b</kbd> 等等Vi中使用的命令，可参考另外一篇[Vim学习笔记](/2015/05/06/vim-notes.html)。
+命令包括 <kbd>h</kbd>, <kbd>l</kbd>, <kbd>w</kbd>, <kbd>b</kbd> 等等Vi中使用的命令，可参考另外一篇[Vim学习笔记](/post/2015/05/vim-notes.html)。
 
 - 通过按键 `Esc` , `Ctrl+l（L lower case）` ，clear screen。
 - Ctrl-w

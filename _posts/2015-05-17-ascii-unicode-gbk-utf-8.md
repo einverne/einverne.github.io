@@ -41,4 +41,4 @@ UTF-8最大的一个特点，就是它是一种变长的编码方式。它可以
 
 转载：[http://dengo.org/archives/901](http://dengo.org/archives/901)
 
-更多中文编码知识请看：[中文编码](../../../2015/05/15/chinese-encoding.html)
+更多中文编码知识请看：[中文编码](/post/2015/05/chinese-encoding.html)

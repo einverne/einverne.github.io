@@ -11,7 +11,7 @@ last_updated:
 曾经收藏过的一篇文章[How to write a Git commit message](http://chris.beams.io/posts/git-commit/)，今天无意中点开却发现网站无法访问，故而使用Google Cache恢复该文。后来发现作者网站虽然无法访问，但是作者将网站[开源](https://github.com/cbeams/chris.beams.io)了。
 
 <center>
-<a href="http://xkcd.com/1296/"><img src="http://imgs.xkcd.com/comics/git_commit.png"/></a>
+<a href="http://xkcd.com/1296/"><img src="http://imgs.xkcd.com/comics/git_commit.png" alt="xkcd"/></a>
 </center>
 
 ## Introduction: Why good commit messages matter

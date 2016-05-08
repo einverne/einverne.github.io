@@ -35,32 +35,32 @@ Chrome插件界面更新变的小清新了.现在LastPass会自动在用户名�
 
 如果是购物表单,会出现你自定义的Profiles
 
-![](http://2.bp.blogspot.com/-JgXdUtojHrQ/UmbF52v4eaI/AAAAAAAABgY/cq6syyZJfW4/s320/addanaddress.png)
+![profile](http://2.bp.blogspot.com/-JgXdUtojHrQ/UmbF52v4eaI/AAAAAAAABgY/cq6syyZJfW4/s320/addanaddress.png)
 
 点击按钮展开可以快速选择想要的功能,如禁用此网站密码填入,生成密码,填入密码等等
 
-![](http://1.bp.blogspot.com/-C-wAlNP-L8g/Une73_g4UPI/AAAAAAAABik/JCO41hDcT1w/s320/openmenu1.png)
+![menu](http://1.bp.blogspot.com/-C-wAlNP-L8g/Une73_g4UPI/AAAAAAAABik/JCO41hDcT1w/s320/openmenu1.png)
 
 而点击Chrome展开LastPass可以快速搜索密码库,以前是只能打开密码库才能搜索密码的
 
-![](http://1.bp.blogspot.com/-di7iPsh3Whk/UnQpU8uf-bI/AAAAAAAABiU/DckrBKczzTo/s1600/iconmenu.png)
+![icon](http://1.bp.blogspot.com/-di7iPsh3Whk/UnQpU8uf-bI/AAAAAAAABiU/DckrBKczzTo/s1600/iconmenu.png)
 
 展开密码库的界面也同样重新设计了
 
-![](http://4.bp.blogspot.com/-0MprIxQf0jk/UmbFvJQHVLI/AAAAAAAABgA/elFRpkp939E/s400/features-centralizeyourdata.png)
+![design](http://4.bp.blogspot.com/-0MprIxQf0jk/UmbFvJQHVLI/AAAAAAAABgA/elFRpkp939E/s400/features-centralizeyourdata.png)
 
 
 ##Android iOS版重新设计
 官方用语:Enjoy updated Android and iOS apps, with a more powerful browser experience for easier navigating, site saving, and password generating. PS.只有高级版LastPass才能使用
 
-![](https://lh3.googleusercontent.com/-ZVaJjUn4-5E/Unh9S2zEy4I/AAAAAAAAZb0/DEBLq-Fbz7o/s640/lastpass_android_ios.jpg)
+![android](https://lh3.googleusercontent.com/-ZVaJjUn4-5E/Unh9S2zEy4I/AAAAAAAAZb0/DEBLq-Fbz7o/s640/lastpass_android_ios.jpg)
 
 高级版LastPass Android和iOS直接将LastPass集成到了浏览器能在浏览器中自动填入密码.
 
 ##LastPass Family Feature
 可以多至五个人共享一个文件夹
 
-![](https://lh4.googleusercontent.com/-LFIGt7Kzgxc/Unh9sQ9QB9I/AAAAAAAAZb8/ZC7Yh5Ffdx4/s640/lastpass_familyshare.png)
+![share](https://lh4.googleusercontent.com/-LFIGt7Kzgxc/Unh9sQ9QB9I/AAAAAAAAZb8/ZC7Yh5Ffdx4/s640/lastpass_familyshare.png)
 五个人中任何一个人都能在同一文件夹中管理密码,LastPass将文档的协同工作搬到了密码管理
 
 LastPass Team感谢原文:
