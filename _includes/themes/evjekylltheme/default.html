@@ -19,36 +19,17 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
 
 	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
-	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js?skin=desert"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-    	$("pre").addClass("prettyprint");
-    	prettyPrint();
-      $('table').addClass('table table-hover');
-      $('.navbar').click(function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
-      })
-  	});
-	</script>
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 	<!-- Add fancyBox -->
 	<link rel="stylesheet" href="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
 	<!--<link href="/css/syntax.css" rel="stylesheet" type="text/css" media="all">-->
 
-	<script type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/toc.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.bootstrap-autohidingnavbar.min.js"></script>
-	<script src="{{ ASSET_PATH }}/anchor.min.js"></script>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ BASE_PATH }}/images/favicon.ico">
@@ -118,8 +99,27 @@
     </footer>
 
     {% include JB/analytics %}
-  </body>
-	<script type="text/javascript">
+
+	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js?skin=desert"></script>
+	<script async type="text/javascript">
+		$(function(){
+    	$("pre").addClass("prettyprint");
+    	prettyPrint();
+      $('table').addClass('table table-hover');
+      $('.navbar').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+      })
+  	});
+	</script>
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script async type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+	<script async type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.bootstrap-autohidingnavbar.min.js"></script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/anchor.min.js"></script>
+
+	<script type="text/javascript" async>
 		window.___gcfg = {lang: 'zh-CN'};
 		(function() {
 			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -127,7 +127,7 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 	</script>
-	<script>
+	<script async>
 		$(document).ready(function() {
 			$("p img").each(function(){
 				var strA = "<a class='fancybox' rel='gallery' href='" + this.src + "'></a>";
@@ -146,4 +146,5 @@
 			});
 		});
 	</script>
+  </body>
 </html>
