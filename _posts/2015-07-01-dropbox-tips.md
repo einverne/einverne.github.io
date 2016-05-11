@@ -89,7 +89,7 @@ Link:[https://ifttt.com/recipes/56-save-all-your-instagram-photos-to-dropbox](ht
 
 Link:[https://ifttt.com/recipes/21350-shuffle-your-liked-instagram-photos-into-a-screensaver](https://ifttt.com/recipes/21350-shuffle-your-liked-instagram-photos-into-a-screensaver)
 
-更多 IFTTT 内容可参考另一篇 [IFTTT](/2015/06/23/ifttt.html) 文章。
+更多 IFTTT 内容可参考另一篇 [IFTTT](/post/2015/06/ifttt.html) 文章。
 
 otixo.com
 参考文章：
