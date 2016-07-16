@@ -1,4 +1,4 @@
-<div id="disqus_thread"></div>
+<div id="disqus_thread" itemprop="comment"></div>
 <script type="text/javascript">
     {% include JB/is_production %}
     {% if is_production == false %}var disqus_developer = 1;{% endif %}
