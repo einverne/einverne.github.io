@@ -7,8 +7,7 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">
     <meta itemprop="description" content="{{ page.description }}">{% endif %}
 		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
-    <meta itemprop="name" content="{{ site.title }}">
-    <meta itemprop="image" content="{{ site.image }}">
+    {% if page.url == "/index.html" %}<meta itemprop="image" content="{{ site.image }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
