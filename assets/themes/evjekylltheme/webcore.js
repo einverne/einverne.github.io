@@ -3,7 +3,7 @@
   /* add _blank to each link */
   $(document).ready(function() {
     $('a[href]').each(function() {
-      if (this.href.indexOf(window.location.host) == -1 && !this.hasClass("fancybox")){
+      if (this.href.indexOf(window.location.host) == -1 && !$(this).hasClass("fancybox")){
         $(this).attr({target: '_blank' });
       }
     });
