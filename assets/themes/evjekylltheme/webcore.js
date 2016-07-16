@@ -83,7 +83,7 @@
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
         $('.searchresult').hide();
-        $('#search-loader').show();
+        $('#search-loader').append('<img src="/assets/themes/evjekylltheme/loading.gif" alt="loading">').show();
         if (entries == null) {
           $.ajax({url: '/search.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
             entries = data.getElementsByTagName('entry');
