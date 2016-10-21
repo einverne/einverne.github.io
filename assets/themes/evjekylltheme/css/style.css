@@ -144,6 +144,51 @@ p img{
   content: url(../Icon_External_Link.png);
   margin: 0 0 0 5px;
 }
+
+.post-content blockquote{
+  display:block;
+  background: whitesmoke;
+  padding: 15px 20px 15px 20px;
+  margin: 0 0 20px;
+  position: relative;
+
+  /*Font*/
+  font-family: Georgia, Cambria, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #444;
+  text-align: justify;
+
+  /*Borders - (Optional)*/
+  border-left: 15px solid #999;
+  border-right: 2px solid #999;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 0px 0px 0px #ccc;
+  -webkit-box-shadow: 0px 0px 0px #ccc;
+  box-shadow: 0px 0px 0px #ccc;
+}
+
+.post-content blockquote::before{
+  content: ""; /*Unicode for Left Double Quote*/
+}
+
+.post-content blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+.post-content blockquote a{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+.post-content blockquote a:hover{
+ color: #666;
+}
+
 /*
 .post-content a[href^="//"]:after,
 .post-content a[href^="http://"]:after,
