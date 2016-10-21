@@ -136,6 +136,10 @@ p img{
 	max-width: 100%;
 }
 
+.post-content {
+	line-height: 1.5;
+}
+
 .post-content p img.emoji{
 	display: inline;
 }
@@ -187,6 +191,24 @@ p img{
 
 .post-content blockquote a:hover{
  color: #666;
+}
+
+code {
+	color: #333;
+	background-color: rgba(0,0,0,0.04);
+	padding: 0;
+	padding-top: 0.2em;
+  padding-bottom: 0.2em;
+	border-radius: 3px;
+	margin: 0;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 102%;
+}
+
+code::before,
+code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
 }
 
 /*
