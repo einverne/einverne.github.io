@@ -4,6 +4,7 @@ title: "Vim字符编码及中文菜单乱码"
 description: "VIM字符编码解决方案，自动识别文件编码，中文菜单乱码"
 category: vim
 tags: [vim, encode, fileencoding]
+last_updated: 2016-07-16
 ---
 
 vim经常遇到文件乱码的情况，很多的文章都只是解决了作者遇到的乱码问题，不同的使用者由于环境不一样，参考之后，反而更加混淆和复杂。
@@ -22,7 +23,7 @@ vim为何会出现乱码：
 2. 终端 bash 的语系，与 $LANG 变量有关
 3. 再就是上面提到的文件编码有关
 
-###VIM编码相关选项
+### VIM编码相关选项
 Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fileencodings、termencoding (这些选项可能的取值请参考 Vim 在线帮助  :help encoding-names)，它们的意义如下:
 
 1. encoding : Vim 内部使用的字符编码方式，包括 Vim 的 buffer (缓冲区)、菜单文本、消息文本等。用户手册上建议只在 .vimrc 中改变它的值，事实上似乎也只有在 .vimrc 中改变它的值才有意义。vim读取文件之后，但并不以读取文件的编码来处理，而是会转换成内部编码的格式，这个编码一般与操作系统相关，linux下utf-8居多，中文windows下则是gbk。
@@ -32,7 +33,7 @@ Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fi
 5. fileformats，用于区分操作系统，主要是回车\r\n的区别，fileformats选项，用于处理文件格式问题。以下命令，告诉vim将UNIX文件格式做为第一选择，而将MS-DOS的文件格式做为第二选择：（换行方式 在早期的打印机时代，开始新的一行要占用两个字符的时间。如果到了一行的结尾处，你要快速回到新的一行的开头，需要打印针头在纸面上飞快地掠过，常常会在纸面上留下污点。解决这个问题的办法就是，用两个字符：一个字符<Return>来移到第一列，另一个字符<Line feed>来新增一行。计算机产生以后，存储较为昂贵，在如何解决回车换行这个老问题上，人们产生了不同的意见。UNIX人认为在到达一行的结尾时新增一行<Line feed> (LF)，而Mac人则认同<Return> (CR)的解决办法，MS则坚持古老的<Return><Line feed> (CRLF)的方法。这就意味着如果你将一个文件从一个系统转移到另一个系统，就面临着回车换行的问题。而Vim编辑器则会自动的认出这种文件格式方面的区别，并做出相应处理。）
 	set fileformats=unix,dos
 
-###VIM多字符编码方式工作流程
+### VIM多字符编码方式工作流程
 再记录一下，Vim 的多字符编码方式支持是如何工作的：
 
 1. Vim 启动，根据 .vimrc 中设置的 encoding 的值来设置 buffer、菜单文本、消息文的字符编码方式。
@@ -42,7 +43,7 @@ Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fi
 
 由于 Unicode 能够包含几乎所有的语言的字符，而且 Unicode 的 UTF-8 编码方式又是非常具有性价比的编码方式 (空间消耗比 UCS-2 小)，因此建议 encoding 的值设置为 utf-8。这么做的另一个理由是 encoding 设置为 utf-8 时，Vim 自动探测文件的编码方式会更准确 (或许这个理由才是主要的 ;) 。我们在中文 Windows 里编辑的文件，为了兼顾与其他软件的兼容性，文件编码还是设置为 GB2312/GBK 比较合适，因此 fileencoding 建议设置为 chinese (chinese 是个别名，在 Unix 里表示 gb2312，在 Windows 里表示 cp936，也就是 GBK 的代码页)。
 
-###vimrc中设置
+### vimrc中设置
 
 在分析了乱码原因，了解了vim编码的参数之后，就可以根据实际情况来配置了
 1. 分析文件编码，配置vim文件文件解析编码fileencodings，让vim能解析出来

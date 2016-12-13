@@ -3,7 +3,9 @@
   /* add _blank to each link */
   $(document).ready(function() {
     $('a[href]').each(function() {
-      if (this.href.indexOf(window.location.host) == -1) $(this).attr({target: '_blank' });
+      if (this.href.indexOf(window.location.host) == -1 && !$(this).hasClass("fancybox")){
+        $(this).attr({target: '_blank' });
+      }
     });
 		anchors.options = {
 			visible: 'always',
@@ -81,7 +83,7 @@
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
         $('.searchresult').hide();
-        $('#search-loader').show();
+        $('#search-loader').append('<img src="/assets/themes/evjekylltheme/loading.gif" alt="loading">').show();
         if (entries == null) {
           $.ajax({url: '/search.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
             entries = data.getElementsByTagName('entry');

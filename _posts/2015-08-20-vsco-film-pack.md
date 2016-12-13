@@ -33,9 +33,17 @@ daylight white balance conditions at the scene.)
 
 带-号的预设提供Normal预设较轻柔的版本。通常情况下，这些预设调低对比度，降低颗粒感。
 
+### UC,NC,VC 含义
+
+VSCO Film 02 中包含内容， UC 是 “Ultra Color”缩写，提供了合适的色彩饱和度（improved color saturation）和丰富的细节（details with fine grain）。 NC 是 “Natural Color”缩写，适合于低对比度环境（low contrast situation）。 VC 是 “Vivid Color”缩写，适合于中等对比度照片（medium contrast images）。
+
 ### HC
 
 HC是“High Contrast”的缩写，这些版本提供更加醒目的结果。他们达到的效果和通过工具栏的Contrast滑块调整的效果不一样。
+
+### ALT
+
+根据官方的[文档](https://support.vsco.co/hc/en-us/articles/200324500-VSCO-FILM-03-What-are-the-various-warm-cold-HC-and-alt-presets-for-in-VSCO-Film-03-), VSCO Film 03 中因为 instant films 的效果和拍摄当时的环境相关， VSCO 为了尽量模拟当时的环境，所以每种滤镜都有不同的版本，ALT 版本就是在其他 + 或者 ++ 版本都无法表现的时候的 Alternative 版本。
 
 ## VSCO FILM 01
 [FILM 01](http://vsco.co/film/01/lightroom4)：现代系列(Modern Films)，收录了当下在产的专业 负片[^1]，是一个优秀的全能包，包括：

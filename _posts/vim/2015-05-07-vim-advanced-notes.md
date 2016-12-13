@@ -9,7 +9,7 @@ last_updated: 2015-09-10
 
 vim学习笔记进阶版，初级版可以参考这篇[文章](/post/2015/05/vim-notes.html)
 
-##combine command
+## combine command
 
 	.    (dot) will repeat the last command
 	n<commmand>    will repeat the command n times
@@ -20,13 +20,13 @@ for example:
 	3p 	   will paste the text 3 times
 	40idesu [ESC] will write "desu " 40 times
 
-##move in one file
+## move in one file
 
 	NG    go to line N, N is a number, like 23G means go to line 23
 	gg    shortcut for 1G - go to the start of the file
 	G     Go to last line
 
-##批量替换
+## 批量替换
 
 在全文中用一个单词替换另外一个单词
 
@@ -52,9 +52,9 @@ for example:
 
 省略 option 时只对每一行的第一个匹配串进行替换
 
-##多窗口操作
+## 多窗口操作
 
-###新建与关闭窗口
+### 新建与关闭窗口
 
 在 Normal 模式下使用以下命令新建窗口
 
@@ -67,24 +67,24 @@ for example:
 	:vsplit 		垂直分割窗口，简写 :vs
 	Ctrl-w c 		关闭当前窗口
 
-###窗口间移动
+### 窗口间移动
 
 	Ctrl-w h,j,k,l    Ctrl按下，按下w 松开，Ctrl松开，按hjkl 对应左下上右
 
-###移动窗口
+### 移动窗口
 
 	Ctrl-w H,J,K,L    大写HJKL,移动窗口
 
-###窗口最大化
+### 窗口最大化
 
 	Ctrl-w o    让当前文件占据整个窗口
 
-###调整窗口大小
+### 调整窗口大小
 
-	Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列，>增加当前窗口宽度，向右扩展一列。当然 Ctrl-w 之后可以使用 n+< 调整多列宽度
+Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列，>增加当前窗口宽度，向右扩展一列。当然 Ctrl-w 之后可以使用 n+< 调整多列宽度
 	Ctrl-w - + 	调整窗口高度
 
-##  Tabs
+## Tabs
 Tab is different from the windows in vim. If your fimiliar with Firefox or Chrome, you can understand that a new tab contains a new website. While in vim, a tab can contain several windows and you can move the windows between tabs.
 
 ### Create New tab
@@ -120,7 +120,7 @@ While in normal mode, you can type:
 	gT 			go to previous tab
 	{i}gt 		go to tab in position i
 
-##更正
+## 更正
 
 Insert模式下
 
@@ -129,7 +129,7 @@ Insert模式下
 	<C-W> 删除一个单词
 	<C-U> 删除光标前的字符，保留光标之后的文本，保留行首的缩进，只删除第一个非空字符至光标位置之间的文本。
 
-##可视Visual mode
+## 可视Visual mode
 
 	v 按字符选择，在Normal mode下按下v进入Visual mode
 	V 按行选择
@@ -145,7 +145,7 @@ Insert模式下
 	
 	:! command 暂时离开 vi 到命令模式下执行 command
 
-##Other
+## Other
 
 	:verbose set tabstop?    in Vim, it will tell you where the tapstop option value is coming from
 	:help + command  查看Vim命令的帮助，比如想要查看 c 命令的帮助直接使用 `:h c` 就能查到。

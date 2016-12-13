@@ -18,7 +18,16 @@ last_updated: 2016-04-20
 
 ## 插入排序 {#insertion-sort}
 
-每次取一个元素插入正确的位置，适合少量元素。
+每次取一个元素插入正确的位置，适合少量元素。对于未排序的数据，从已排序的序列中从后向前扫描，找到相应的位置插入，实现上通常使用 in-place 排序，只需要使用额外 O(1) 空间，但是因为插入正确的位置之后，需要反复移动已经排序的序列，为新元素提供插入空间，因而比较费时。
+
+一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：
+
+1. 从第一个元素开始，该元素可以认为已经被排序
+2. 取出下一个元素，在已经排序的元素序列中从后向前扫描
+3. 如果该元素（已排序）大于新元素，将该元素移到下一位置
+4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+5. 将新元素插入到该位置后
+6. 重复步骤2~5
 
 ### Algorithm
     for i = 2:n,
@@ -26,6 +35,20 @@ last_updated: 2016-04-20
             swap a[k,k-1]
         → invariant: a[1..i] is sorted
     end
+
+Java 版本：
+
+```
+static void insert_sort(int[] array) {
+    for(int i = 1; i < array.length; ++i) {
+        int cur = array[i];
+        for(int j = i - 1; j >= 0 && array[j] > cur; j--) {
+            array[j + 1] = array[j];
+            array[j] = cur;
+        }
+    }
+}
+```
 
 ### Properties
 
@@ -64,7 +87,7 @@ last_updated: 2016-04-20
     print(list)
 
 ## 选择排序 {#selection-sort}
-每次选取数组中最小的元素，并将其与数组中A[0]元素交换，依次进行。
+每次选取数组中最小(或者最大)的元素，并将其与未排序数组中首元素交换，依次进行。
 
 选择排序拥有最小的交换次数，适合交换元素开销比较大的情况。选择排序其他情况都比较低效。
 
@@ -95,6 +118,24 @@ last_updated: 2016-04-20
                 list[i], list[k] = list[k], list[i]
 
     print(list)
+
+Java 版：
+
+	static void selection_sort(int[] array) {
+		if(array.length <= 1) return;
+		for(int i = 0; i < array.length; i++) {
+			int smallest = i;
+			for(int j = i + 1; j < array.length; j++) {
+				if (array[j] < array[smallest]) {
+					smallest = j;					
+				}
+			}
+			int temp = array[i];
+			array[i] = array[smallest];
+			array[smallest] = temp;
+		}
+	}
+
 
 ## 冒泡排序 {#bubble-sort}
 反复交换相邻未按次序排列的元素，一次循环之后最大的元素到数组最后。
@@ -137,8 +178,21 @@ last_updated: 2016-04-20
 
 相较于第一种直接冒泡，设定标志优化冒泡。
 
+Java 版
+
+	static void bubble_sort(int[] arr) {
+		int i, j, temp, len = arr.length;
+		for (i = 0; i < len - 1; i++)
+			for (j = 0; j < len - 1 - i; j++)
+				if (arr[j] > arr[j + 1]) {
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+	}
+
 ## 希尔排序 {#shell-sort}
-分组插入排序
+分组插入排序，将数组拆分成若干子序列，由增量决定，分别进行直接插入排序，然后缩减增量，减少子序列，最后对全体元素进行插入排序。插入排序在基本有序的情况下效率最高。
 
 ### Algorithm
 
@@ -188,7 +242,7 @@ last_updated: 2016-04-20
 
 
 ## 归并排序 {#merge-sort}
-典型的分治算法，将数组分成两个子数组分别进行排序，之后合并，所以重点就到了合并有序数组。
+典型的分治算法，将数组分成两个子数组，在子数组中继续拆分，当小组只有一个数据时可认为有序，之后合并，所以重点就到了合并有序数组。
 
 ### Algorithm
     # split in half
@@ -240,7 +294,7 @@ From wiki
 
 
 ## 堆排序 {#heap-sort}
-利用最大堆的性质
+利用最大堆的性质，堆性质，子结点的值小于父节点的值。每次将根节点最大值取出，剩下元素进行最大堆调整，依次进行。
 
 ### Algorithm
 
@@ -318,6 +372,7 @@ From wiki
 
 
 ## 快排 {#quick-sort}
+从数列中挑出元素，将比挑出元素小的摆放到前面，大的放到后面，分区操作。然后递归地将小于挑出值的子数列和大于的子数列排序。
 
 ### Algorithm
     # choose pivot
@@ -380,7 +435,6 @@ From wiki
 
 - 箱排序中，箱子的个数取决于关键字的取值范围。
     若R[0..n-1]中关键字的取值范围是0到m-1的整数，则必须设置m个箱子。因此箱排序要求关键字的类型是有限类型，否则可能要无限个箱子。
-	
 
 - 箱子的类型应设计成链表为宜
 	一般情况下每个箱子中存放多少个关键字相同的记录是无法预料的，故箱子的类型应设计成链表为宜。
@@ -399,6 +453,10 @@ From wiki
 这个算法的难度在于分离数位,将分离出的数位代表原元素的代表, 用作计数排序.但是分离数位不能脱离原来的数字,计数排序的结果,还是要移动原元素.
 
 注意计数排序的元素数值与位置的联系,引申到基数排序的从元素得到中间值然后与位置的联系.
+
+## 枚举排序 {#enumeration-sort}
+通常也被叫做秩排序(Rank Sort) ，算法基本思想是：对每一个要排序的元素，统计小于它的所有元素的个数，从而得到该元素在整个序列中的位置，时间复杂度为O（n^2）
+
 
 ## reference
 

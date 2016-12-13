@@ -3,7 +3,7 @@ layout: post
 title: "snapseed 中的一些参数"
 tagline: ""
 description: ""
-category: 使用经验
+category: 经验总结
 tags: [ Snapseed, PhotoEditing, Anroid, VSCO, ]
 last_updated: 
 ---

@@ -136,6 +136,10 @@ p img{
 	max-width: 100%;
 }
 
+.post-content {
+	line-height: 1.5;
+}
+
 .post-content p img.emoji{
 	display: inline;
 }
@@ -144,6 +148,69 @@ p img{
   content: url(../Icon_External_Link.png);
   margin: 0 0 0 5px;
 }
+
+.post-content blockquote{
+  display:block;
+  background: whitesmoke;
+  padding: 15px 20px 15px 20px;
+  margin: 0 0 20px;
+  position: relative;
+
+  /*Font*/
+  font-family: Georgia, Cambria, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #444;
+  text-align: justify;
+
+  /*Borders - (Optional)*/
+  border-left: 15px solid #999;
+  border-right: 2px solid #999;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 0px 0px 0px #ccc;
+  -webkit-box-shadow: 0px 0px 0px #ccc;
+  box-shadow: 0px 0px 0px #ccc;
+}
+
+.post-content blockquote::before{
+  content: ""; /*Unicode for Left Double Quote*/
+}
+
+.post-content blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+.post-content blockquote a{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 3px;
+  color: #c76c0c;
+}
+
+.post-content blockquote a:hover{
+ color: #666;
+}
+
+code {
+	color: #333;
+	background-color: rgba(0,0,0,0.04);
+	padding: 0;
+	padding-top: 0.2em;
+  padding-bottom: 0.2em;
+	border-radius: 3px;
+	margin: 0;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-size: 102%;
+}
+
+code::before,
+code::after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
 /*
 .post-content a[href^="//"]:after,
 .post-content a[href^="http://"]:after,

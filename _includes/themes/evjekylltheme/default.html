@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/Blog">
   <head>
     <meta charset="utf-8">
 
-		<title>{% if page.title %}{{ page.title }}{% endif %} | {{ site.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+		<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">
+    <meta itemprop="description" content="{{ page.description }}">{% endif %}
 		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <!-- Enable responsive viewport -->
@@ -78,7 +79,6 @@
 						<div class="searchresult">
 						</div>
 						<div id="search-loader" class="img-wrap">
-							<img src="{{ ASSET_PATH }}/loading.gif" alt="loading">
 						</div>
 					</div>
         </div>

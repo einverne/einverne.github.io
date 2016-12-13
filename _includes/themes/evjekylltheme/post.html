@@ -1,19 +1,19 @@
-<div class="row">
+<div class="row" itemscope itemtype="http://schema.org/Article">
 	<div class="col-xs-12 col-md-8">
-		<div class="page-header">
+		<div class="page-header" itemprop="name">
 			<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
 		</div>
 		<div class="post-meta">
 			{% if page.date %}
-			<span class="entry-date">Posted on {{ page.date | date: '%B %d, %Y' }}</span>
+			<span class="entry-date" itemprop="datePublished">Posted on {{ page.date | date: '%B %d, %Y' }}</span>
 			{% endif %}
 			{% if page.last_updated %}
 				, Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
 			{% endif %}
-			<span class="entry-author">by {{ site.author.name }}</span>
+			<span class="entry-author" itemprop="author">by {{ site.author.name }}</span>
 			| <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}" target="_blank">View revision history</a>
 		</div>
-		<div class="post-content">
+		<div class="post-content" itemprop="articleBody">
 			{{ content }}
 		</div>
 
@@ -84,7 +84,7 @@
 		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	}
 	$(document).ready(function(){
-		$('#toc').toc();
+		$('#toc').toc({ headers: 'h2, h3' });
 
 		if (!isMobile()) {
 			var tocH = $("#floatbox").offset().top;

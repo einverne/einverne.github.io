@@ -4,9 +4,10 @@ title: "Vim插件Vundle"
 description: "Vim插件Vundle，Vim插件"
 category: vim
 tags: [vim, vim-plugin, vundle]
+last_updated: 2016-07-16
 ---
 
-##简单介绍
+## 简单介绍
 经[Code Rush](http://foocoder.com/blog/mei-ri-vimcha-jian-kai-pian-zhi-vundle.html/)推荐，之后又陆陆续续看到很多在使用这款插件，所以在入门插件的时候就第一个安装了此插件，VIM如果不依靠插件来增强功能可谓鸡肋。而VIM提供的插件又很多，新手可能无从下手。幸好让我接触到了这个[Vundle]插件，Vundle用来安装，管理其他插件，这样以后安装插件卸载插件的问题就迎刃而解了。用[Vundle]管理插件有以下好处：
 
 - 自动下载安装插件
@@ -14,13 +15,13 @@ tags: [vim, vim-plugin, vundle]
 - 只需要保存一份配置文件即可在新环境下安装所有插件
 - 自动清理没用的插件
 
-##安装
+## 安装
 
-###下载地址
+### 下载地址
 
 > [https://github.com/gmarik/Vundle.vim](https://github.com/gmarik/Vundle.vim)
 
-###Mac和Linux安装
+### Mac和Linux安装
 
 1. 安装git客户端
 Mac和Linux一般默认已经安装
@@ -80,7 +81,7 @@ Mac和Linux一般默认已经安装
 
 	启动vim，并运行`:PluginInstall`
 
-###Windows下安装
+### Windows下安装
 
 查看官方[教程](https://github.com/gmarik/Vundle.vim/wiki/Vundle-for-Windows),官方的教程有点问题，完全按照所写配置并不能成功。
 
@@ -116,7 +117,7 @@ Mac和Linux一般默认已经安装
 		let path='$VIM/vimfiles/bundle'
 		call vundle#rc(path)
 
-##使用
+## 使用
 
 使用方法很简单，只需3步使新插件生效即可
 
