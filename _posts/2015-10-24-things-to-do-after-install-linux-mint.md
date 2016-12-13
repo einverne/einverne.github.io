@@ -130,7 +130,7 @@ There are several packages you need to install to make PlayOnLinux work.
 Most of the following can be installed from default Software Manager. Just type name of the application and search then click install.
 
 ### 网易云音乐 {#cloud-music}
-cloud music client and my favourite music client.
+cloud music client and my favourite music client. Here is the [link](http://music.163.com/) to it's official site, where you can found clients for all platforms include linux.
 
 ### Evernote
 my favourite cloud notebook with a very clean Android client.
@@ -139,7 +139,15 @@ my favourite cloud notebook with a very clean Android client.
 Linux mint 17 has a default screenshot software called Screenshot. It is a very simple screenshot software. Shutter is more powerful.
 
 ### Dropbox
-Sync all my files
+Sync all my files. When I installed Dropbox through it's offical installer, there was a problem I cannot connect to Dropbox directly from China. Here is a solution to redirect connections to shadowsocks sock5 proxy. You should install `proxychains`.
+
+    sudo apt install proxychains
+    # config socks4 127.0.0.1 9050  To socks5 127.0.0.1 1080 which is the default of shadowsocks
+    vi /usr/local/etc/proxychains.conf
+    # then use proxychains to start dropbox
+    proxychains4 dropbox start -i
+
+Then dropbox will start to start and install, then after installation you can set sock5 proxy in dropbox settings.
 
 ### BCloud
 Baidu pan linux port. It is really a great work. Thank the author.
@@ -156,7 +164,11 @@ linux firewall.
 E-book manager, 电子书管理. It is very efficient when you plug in kindle using USB port Calibre is prepare to serve.
 
 ### WizNote
-Evernote like cloud notebook client. Find more information [here](http://blog.wiz.cn/wiznote-linux.html)
+Evernote like cloud notebook client. Find more information [here](http://blog.wiz.cn/wiznote-linux.html). You can install through PPA:
+
+    $ sudo add-apt-repository ppa:wiznote-team
+    $ sudo apt-get update
+    $ sudo apt-get install wiznote
 
 ### SimpleScreenRecorder
 one of the screenrecoders I use.

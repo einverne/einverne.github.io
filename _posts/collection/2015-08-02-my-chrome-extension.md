@@ -3,15 +3,16 @@ layout: post
 title: "我使用的Chrome Extension"
 description: "我使用的Chrome Extension扩展"
 category: 整理合集
-tags: []
+tags: [Chrome, Google]
 ---
 
-日常使用备份，另外会单独拿出一列写写我用的Userscript，类似微博去广告，豆瓣页面显示下载链接之类并不会存在这个列表里面。使用这一套扩展的好处有以下几点：
+日常使用备份，另外会单独拿出一列写写[我用的 Userscript](/post/2015/08/userscripts.html)，类似微博去广告，豆瓣页面显示下载链接之类并不会存在这个列表里面。使用这一套扩展的好处有以下几点：
 
 - 使用账号同步，在不同电脑上同步扩展的配置，即使重装系统，所有的扩展配置都能够同步过来
 - 占用内存相对较少，部分扩展使用 Userscript 代替，减少 Chrome 常驻内存
 
 ![Chrome Extension](https://lh3.googleusercontent.com/-RRQpdKvdFqU/VcC4gutTGRI/AAAAAAAAykw/Ylj6joaSNis/s780-Ic42/78afd21e6cfc0692ea542a5fc1d848d7.jpg)
+
 # 列表：
 
 ## Tampermonkey
@@ -92,5 +93,4 @@ Hangouts 推荐使用 App 版本，看样子 Google 应该会重点发展 App �
 ## Google Keep 已经弃用，使用Evernote完全代替
 Google Keep - notes and lists
 Quickly capture what's on your mind and share those thoughts with friends and family.
-
 
