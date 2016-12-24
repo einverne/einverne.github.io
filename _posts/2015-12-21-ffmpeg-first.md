@@ -78,6 +78,12 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
     ffmpeg -i input.mp4 output.avi
 
+将 flv 转码 MP4
+
+	ffmpeg -i input.flv -vcodec copy -acodec copy out.mp4
+
+`-vcodec copy` 和 `-acodec copy` 表示所使用的视频和音频编码格式，为原样拷贝。
+
 对视频切片操作  
 
 比如需要从视频第1分45秒地方，剪10秒画面，-ss 表示开始位置，-t 表示延长时间
@@ -140,8 +146,7 @@ Source: <http://superuser.com/a/556031>
 
 转换文件格式
 
-    ffmpeg -y -i input_video.mp4 -bitexact -vcodec h263 -b 128 -r 15 -s 176x144
- -acodec aac -ac 2 -ar 22500 -ab 24 -f 3gp test.3gp
+    ffmpeg -y -i input_video.mp4 -bitexact -vcodec h263 -b 128 -r 15 -s 176x144 -acodec aac -ac 2 -ar 22500 -ab 24 -f 3gp test.3gp
 
 或
 
@@ -150,6 +155,13 @@ Source: <http://superuser.com/a/556031>
 利用ffmpeg屏幕录制
 
 参考：<https://trac.ffmpeg.org/wiki/Capture/Desktop>
+
+
+添加水印
+
+	ffmpeg -i input.mp4 -i picture.png -filter_complex overlay="(main_w/2)-(overlay_w/2):(main_h/2)-(overlay_h)/2" output.mp4
+
+picture.png 为水印图片， overlay 为水印位置
 
 ## ffmpeg使用语法 {#ffmpeg-usage}
 ffmpeg使用语法：
@@ -185,7 +197,7 @@ ffmpeg使用语法：
 -author string 设置作者  
 -copyright string 设置版权  
 -comment string 设置评论  
--f fmt 强迫采用格式fmt  
+-f fmt 强迫采用格式fmt 输出  
 
 -c[:stream_specifier] codec (input/output, per-stream)  
 -codec[:stream_specifier] codec (input/output, per-stream)  
@@ -219,19 +231,14 @@ ffmpeg使用语法：
 
 -aspect aspect 设置横纵比 4:3 16:9 或 1.3333 1.7777  
 -croptop size 设置顶部切除带大小 像素单位  
-
--cropbottom size –cropleft size –cropright size
-
--padtop size 设置顶部补齐的大小 像素单位
+-cropbottom size –cropleft size –cropright size  
+-padtop size 设置顶部补齐的大小 像素单位  
 
 -padbottom size –padleft size –padright size –padcolor color 设置补齐条颜色(hex,6个16进制的数，红:绿:兰排列，比如 000000代表黑色)
 
--vn 不做视频记录，输出无视频内容
-
--bt tolerance 设置视频码率容忍度kbit/s
-
--maxrate bitrate设置最大视频码率容忍度
-
+-vn 不做视频记录，输出无视频内容  
+-bt tolerance 设置视频码率容忍度kbit/s  
+-maxrate bitrate设置最大视频码率容忍度  
 -minrate bitreate 设置最小视频码率容忍度
 
 -bufsize size 设置码率控制缓冲区大小
@@ -411,13 +418,7 @@ ffmpeg使用语法：
     Per-file main options:
     -f fmt              force format
     -c codec            codec name
-    -codec codec        codec namekramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+    -codec codec        codec name
     -pre preset         preset name
     -map_metadata outfile[,metadata]:infile[,metadata]  set metadata information of outfile from infile
     -t duration         record or transcode "duration" seconds of audio/video
@@ -471,6 +472,7 @@ ffmpeg使用语法：
     -fix_sub_duration   fix subtitles duration
     -canvas_size size   set canvas size (WxH or abbreviation)
     -spre preset        set the subtitle options to the indicated preset
+
 
 
 ## 附录2： 常用视频文件格式详解 {#appendix-2:-common-file-extension}

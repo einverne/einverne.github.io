@@ -8,6 +8,7 @@ tags: [git, ]
 last_updated: 
 ---
 
+之前实验室有个培训
 
 ## What is Git
 
@@ -125,16 +126,22 @@ anyone not afraid of command-line tools
 
 - windows
 
-https://git-scm.com/
+<https://git-scm.com/>
 
 ## Git basic
 
-git init  
-git status  
-git add filename  
-暂存区  
-git commit -m “"  
-git log  
+在开始使用 Git 之前有些配置
+
+	git config --global user.name "John Doe"  # 配置提交用户名
+	git config --global user.email johndoe@example.com  # 配置提交邮箱
+
+
+    git init  
+    git status  
+    git add filename  
+    暂存区  
+    git commit -m “"  
+    git log  
 
 commit message best practices
 
@@ -146,30 +153,30 @@ commit message best practices
 
 ## branch
 
-git branch <branchname>  
-git checkout <branchname>  
-git checkout -b <branchname>  
+    git branch <branchname>  
+    git checkout <branchname>  
+    git checkout -b <branchname>  
 
-git push origin <branchname>
+    git push origin <branchname>
 
-git push origin --delete <branchname>
+    git push origin --delete <branchname>
 
 http://nvie.com/posts/a-successful-git-branching-model/
 
 ## remote
 
-git remote add origin git@blcu.tk:einverne/gitdemo.git  
-git push -u origin master  
-git remote show origin  
+    git remote add origin git@blcu.tk:einverne/gitdemo.git  
+    git push -u origin master  
+    git remote show origin  
 
 ## tag
 
-git tag     # list all tags  
-git tag v0.9  
-git tag -a v1.0 -m “my version 1.0"  
-git show tag name #show tag details  
-git push origin tag name  
-git push origin --tags  
+    git tag     # list all tags  
+    git tag v0.9  
+    git tag -a v1.0 -m “my version 1.0"  
+    git show tag name #show tag details  
+    git push origin tag name  
+    git push origin --tags  
 
 ## git GUI
 

@@ -5,8 +5,39 @@ tagline: "同步好助手"
 description: ""
 category: 产品体验
 tags: [btsync, 产品体验]
-last_updated: 
+last_updated: 2016-12-25
 ---
+
+## 更新
+
+惊闻 btsync 已经改名字，现在叫 Resilio ，官网地址也改为： <https://www.resilio.com/>
+
+可以从 [这里](https://www.resilio.com/platforms/desktop/) 获取不同平台客户端。
+
+Linux 安装 Package 可以参考 <https://help.getsync.com/hc/en-us/articles/206178924> 这里
+
+创建文件 `/etc/apt/sources.list.d/resilio-sync.list`, 添加如下内容：
+
+	deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free
+
+添加公钥：
+
+	wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
+
+安装：
+
+    sudo apt-get update
+    sudo apt-get install resilio-sync
+
+配置文件存储地址 <https://help.getsync.com/hc/en-us/articles/206664690>
+
+Linux packages: /var/lib/resilio-sync
+
+啊，安装好了之后，添加这个 key，当个示例啦 `BB63I5PBPBFDELAPXI6NTF47IPNZQAAJZ` ，一周一本好书。
+
+
+
+## 原文
 
 全称 BitTorrent Sync , 我习惯了叫他 btsync 了。想要了解他的前世今生直接去看维基[百科](https://zh.wikipedia.org/wiki/BitTorrent_Sync)就好了。一句话概括，他就是一个同步工具，类Dropbox，但是利用 P2P等等 bt 种子的技术。当然私人使用当成网盘工具也好，当成分享工具也好，看个人使用了。不过黑客提醒，虽然是去中心化的，但是安全性依然[存在问题](http://www.networkworld.com/article/2848723/microsoft-subnet/hackers-claim-bittorrent-sync-should-not-be-used-for-sensitive-data.html)，最好不要传输私人信息。
 
