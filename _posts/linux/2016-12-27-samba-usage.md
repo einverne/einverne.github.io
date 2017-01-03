@@ -3,7 +3,7 @@ layout: post
 title: "Samba 使用"
 tagline: ""
 description: ""
-category: 经验总结
+category: Linux
 tags: [Samba, SMB, Openwrt, Linux]
 last_updated: 
 ---

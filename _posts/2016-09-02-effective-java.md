@@ -9,7 +9,7 @@ last_updated: 2016-11-08
 ---
 
 
-Java 语言四种类型：
+Java 语言中存在四种类型：
 
 - 接口 interface
 - 类 class
@@ -59,9 +59,9 @@ sum.add(BigInteger.valueOf(10));    // wrong way, sum is still 0
 sum = sum.add(BigInteger.valueOf(10));   // right way, add() return a BigInteger Object.
 ```
 
-# 创建和销毁对象
+## 创建和销毁对象
 
-## 1. 静态工厂方法代替构造器
+### 1. 静态工厂方法代替构造器
 优点：
 
 1. 静态工厂方法有名字；
@@ -69,7 +69,7 @@ sum = sum.add(BigInteger.valueOf(10));   // right way, add() return a BigInteger
 3. 返回原返回类型的任何子类型对象。
 4. 创建参数化类型实例的时候使代码变得更加简洁。
 
-## 2. 遇到多个构造器参数时要考虑使用构造器
+### 2. 遇到多个构造器参数时要考虑使用构造器
 
 Builder 模式，代码易读，模拟了具名的可选参数，build 方法可检验约束条件。 builder 可以自动填充某些域，比如每次创建对象的时自动增加序列号。
 
@@ -77,17 +77,15 @@ Builder 模式，代码易读，模拟了具名的可选参数，build 方法可
 
 当类的参数初始化时有相互关联时使用 Builder 模式。
 
-## 3. 用私有构造器或者枚举类型强化 Singleton 属性
+### 3. 用私有构造器或者枚举类型强化 Singleton 属性
 
 共有静态成员 final 域
 
-```
-public class Elvis {
-    public static final Elvis INSTANCE = new Elvis();
-    private Elvis() { … }
-    public void leaveTheBuilding() {…}
-}
-```
+    public class Elvis {
+        public static final Elvis INSTANCE = new Elvis();
+        private Elvis() { … }
+        public void leaveTheBuilding() {…}
+    }
 
 静态方法所有调用，都会返回同一个对象引用，不会创建其他 Elvis 实例。
 
@@ -105,11 +103,11 @@ public class Elvis {
 ```
 
 
-## 4. 通过私有构造器强化不可实例化的能力
+### 4. 通过私有构造器强化不可实例化的能力
 
 希望一个类不能被实例化，则私有化构造方法
 
-## 5. 避免创建不必要的对象
+### 5. 避免创建不必要的对象
 
 ```
 String s1 = "string";
@@ -120,7 +118,7 @@ String s2 = new String("string");  // don‘t do this
 
 当心无意识的基本类型自动装箱。
 
-## 6. 清除过期的对象引用
+### 6. 清除过期的对象引用
 
 Java 内存泄露可能发生在：
 
@@ -132,14 +130,14 @@ Java 内存泄露可能发生在：
 - 监听器或者其他回调。
 
 
-## 7. 避免使用终结方法
+### 7. 避免使用终结方法
 提供显式的终止方法，要求类客户端在每个实例不再有用的时候调用这个方法。 Java 中 FileInputStream， FileOutputStream，Timer 和 Connection 都具有终结方法。
 
 
-# 第3章
+## 第3章
 所有对象都通用的方法， 非 final 方法（equals、hashCode、toString、clone 和 finalize）都有明确的通用约定，被设计成被覆盖。
 
-## 8. 覆盖 equals 时请遵守通用约定
+### 8. 覆盖 equals 时请遵守通用约定
 
 类的每个实例都只与它自身相等 
 
@@ -157,15 +155,15 @@ equals 等价关系：自反，对称，传递，一致
 
 里氏替换原则 Liskov substitution principle ，类型的任何重要属性也将适用于它的子类型。
 
-## 9. 覆盖 equals() 时一定要覆盖 hashCode()
+### 9. 覆盖 equals() 时一定要覆盖 hashCode()
 
 
-## 10. 始终覆盖 toString
-将类的基本信息放入。
+### 10. 始终覆盖 toString
+将类的基本信息放入。IDE 中一般可以自动生成该方法。
 
-## 11. 谨慎地覆盖 clone
+### 11. 谨慎地覆盖 clone
 
-## 12. 考虑实现 Comparable 接口
+### 12. 考虑实现 Comparable 接口
 实现对象实例之间的比较。
 
 
@@ -371,18 +369,17 @@ Comparator
 
 参数化类型是不可变的
 
-Interface Iterable<T> 接口，实现这个接口可以让对象使用 foreach 循环，或者使用
+`Interface Iterable<T>` 接口，实现这个接口可以让对象使用 foreach 循环，或者使用
 
-```
-// If you have Iterable<String> , you can do:
-for (String str : myIterable) {
-    ...
-}
-```
+    // If you have Iterable<String> , you can do:
+    for (String str : myIterable) {
+        ...
+    }
+
 
 大部分的容器类都实现了这个接口。
 
-http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html
+<http://docs.oracle.com/javase/6/docs/api/java/lang/Iterable.html>
 
 Java 提供了特殊的参数化类型，有限制的通配符类型 bounded wildcard type
 
@@ -573,9 +570,6 @@ BigDecimal
 - 作为集合中的元素、键、值
 
 
-
-
-
 ### 50. 如果其他类型更适合，则尽量避免使用字符串
 
 
@@ -640,9 +634,8 @@ JNI 方法调用本地 Native method
 
 
 
-规则1：不要进行优化
-
-规则2：（仅针对专家）还是不要进行优化，再没有绝对清晰的未优化方案之前不要进行优化。
+- 规则1：不要进行优化
+- 规则2：（仅针对专家）还是不要进行优化，再没有绝对清晰的未优化方案之前不要进行优化。
 
 
 
