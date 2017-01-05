@@ -34,13 +34,13 @@ last_updated:
 
 比如下面的几张截图，需要完成一个返回或者完成的操作，左边，右边，滑动都出现了。并且当从一个应用跳转到另外一个应用的时候，你会注意到状态栏多出一个返回来，而那个返回”竟然是可点击“的，可以用来返回上一个应用。这对于我这个 Android 重度使用者来说完全无法适应，原本使用 Back 键能够完成的事情，现在需要我选择三四种方式，还需要分不同场合选择使用。
 
-<img src="https://lh4.googleusercontent.com/-k7LTODJdIcI/WFAQbq1d4ZI/AAAAAAABHbc/KnHT364EljIMst5RNNjoJGKD67-zmSKwQCL0B/w506-h900-no/iphone_back_1.jpg" width="300px" />
+<img src="https://lh4.googleusercontent.com/-k7LTODJdIcI/WFAQbq1d4ZI/AAAAAAABHbc/KnHT364EljIMst5RNNjoJGKD67-zmSKwQCL0B/w506-h900-no/iphone_back_1.jpg" width="300px" alt="iphone"/>
 
-<img src="https://lh4.googleusercontent.com/-_9CYm2DdnyU/WFAQbpa9V6I/AAAAAAABHbc/mUuzEXMTN4cev9nHqXMyvH00XgBidrhygCL0B/w506-h900-no/iphone_back_2.jpg" width="300px" />
+<img src="https://lh4.googleusercontent.com/-_9CYm2DdnyU/WFAQbpa9V6I/AAAAAAABHbc/mUuzEXMTN4cev9nHqXMyvH00XgBidrhygCL0B/w506-h900-no/iphone_back_2.jpg" width="300px" alt="iphone"/>
 
-<img src="https://lh6.googleusercontent.com/-y9sIdj7XszY/WFAQbqIlBMI/AAAAAAABHbc/M95ldBUNfxQjZ9a823wIED2sKFj_UcExwCL0B/w506-h900-no/iphone_back_3.jpg" width="300px" />
+<img src="https://lh6.googleusercontent.com/-y9sIdj7XszY/WFAQbqIlBMI/AAAAAAABHbc/M95ldBUNfxQjZ9a823wIED2sKFj_UcExwCL0B/w506-h900-no/iphone_back_3.jpg" width="300px" alt="iphone"/>
 
-<img src="https://lh6.googleusercontent.com/-7c4drqCv8SU/WFAQbs2SBpI/AAAAAAABHbc/OnmlqdzLwJ8rAM4UgM4fFhM2kUL9RTB7wCL0B/w506-h900-no/iphone_back_4.jpg" width="300px" />
+<img src="https://lh6.googleusercontent.com/-7c4drqCv8SU/WFAQbs2SBpI/AAAAAAABHbc/OnmlqdzLwJ8rAM4UgM4fFhM2kUL9RTB7wCL0B/w506-h900-no/iphone_back_4.jpg" width="300px" alt="iphone"/>
 
 
 再说回到 Home 键本身， Home 键有如下的操作方式：

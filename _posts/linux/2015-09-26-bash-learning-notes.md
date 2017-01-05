@@ -59,23 +59,19 @@ Command |  Explain
   Alt + Del |  Delete the Word before the cursor.
   Alt + d   |  Delete the Word after the cursor.
  Ctrl + d   |  Delete character under the cursor
- Ctrl + h   |  Delete character before the cursor (Backspace)
-
+ Ctrl + h   |  Delete character before the cursor (Backspace) |
  Ctrl + w   |  Cut the Word before the cursor to the clipboard.
  Ctrl + k   |  Cut the Line after the cursor to the clipboard.
  Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard.
-
   Alt + t   |  Swap current word with previous
  Ctrl + t   |  Swap the last two characters before the cursor (typo).
  Esc  + t   |  Swap the last two words before the cursor.
-
  ctrl + y   |  Paste the last thing to be cut (yank)
   Alt + u   |  UPPER capitalize every character from the cursor to the end of the current word.
   Alt + l   |  Lower the case of every character from the cursor to the end of the current word.
   Alt + c   |  Capitalize the character under the cursor and move to the end of the word.
   Alt + r   |  Cancel the changes and put back the line as it was in the history (revert).
  ctrl + _   |  Undo
- 
  TAB        |  Tab completion for file/directory names
 
 For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER. 
@@ -90,7 +86,6 @@ Command |  Explain
             |  Equivalent to : vim ~/.bash_history. 
   Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
   Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
-
   Ctrl + s  |  Go back to the next most recent command.
             |  (beware to not execute it from a terminal because this will also launch its XOFF).
   Ctrl + o  |  Execute the command found via Ctrl+r or Ctrl+s
