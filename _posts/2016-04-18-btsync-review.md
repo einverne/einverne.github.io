@@ -31,10 +31,14 @@ Linux 安装 Package 可以参考 <https://help.getsync.com/hc/en-us/articles/20
 
 配置文件存储地址 <https://help.getsync.com/hc/en-us/articles/206664690>
 
-Linux packages: /var/lib/resilio-sync
+Linux 下配置文件地址: /var/lib/resilio-sync
 
 啊，安装好了之后，添加这个 key，当个示例啦 `BB63I5PBPBFDELAPXI6NTF47IPNZQAAJZ` ，一周一本好书。
 
+如果想要手动开启或者关闭 Resilio Sync 可以使用如下命令：
+
+	sudo service resilio-sync stop
+    sudo service resilio-sync start
 
 
 ## 原文
@@ -100,7 +104,7 @@ Alternatively, if you're setting up your BTSync server, install `btsync`:
 
 在浏览器中就能够在 http://ip:port/ 访问 Web GUI。
 
-然后在本地获取同步 key ，和VPS 上同步即可。
+然后在本地获取同步 key ，和 VPS 上同步即可。
 
 ## 技巧 {#skills}
 
@@ -120,10 +124,12 @@ Alternatively, if you're setting up your BTSync server, install `btsync`:
 如果觉得这样让 btsync 直接获取证书不安全，[这里](http://askubuntu.com/a/538312/407870) 还有另外一种配置，利用 nginx 的代理。
 
 
-### 分享秘钥的网站
+### 分享密钥的网站
 
-- <http://btsynckeys.com/>
-
+- 推荐指数5星，这是我最早接触到的分享 key 网站，此类网站不宜多，精华就行 <http://btsynckeys.com/>
+- 推荐指数4星 <http://btsync.space/>
+- 一个[论坛](http://bbs.btnimei.xyz/category/7/%E4%B8%8B%E4%BD%A0%E5%A6%B9)
+- 一个导航[站](http://wherebt.com/)
 
 
 ## reference
