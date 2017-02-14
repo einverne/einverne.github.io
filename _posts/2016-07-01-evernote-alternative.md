@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [Evernote]
-last_updated: 2016-10-04
+last_updated: 2017-02-13
 ---
 
 
@@ -24,6 +24,11 @@ OneNote, Google Keep, WizNote, Simplenote, youdao, Laverna
 3. 最好支持多人编辑
 4. 支持笔记分享
 5. 支持代码高亮，其实这一点 Evernote 也做不到
+
+## 2017-02-13
+WizNote 推出来一个比较好玩的功能，新建一个可以分享的群组之后可以想公众号那样分享内容，但是编辑可简单多了，只要编辑 WizNote 中的内容，就自动同步分享。可以参看如下：
+
+<https://note.wiz.cn/pages/manage/biz/payRead.html?kb=8b40bf53-6ce7-4f5e-bbfc-99b2628340f3>
 
 ## 2017-01-05
 在近一个月的寻觅中，依然没有找到好的代替品，于是在年末的时候买了一年的 WizNote 会员，看一年的使用再行选择。
