@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "bash 学习笔记"
-tagline: "bash 学习笔记"
-description: "bash 学习笔记"
+title: "Bash 学习笔记之基本使用"
+tagline: "Bash 学习笔记"
+description: "Bash 学习笔记"
 category: [ Linux, 学习笔记]
-tags: [ linux , bash,]
+tags: [ Linux , bash, vim,]
 last_updated: 2017-01-08
 ---
 
@@ -152,9 +152,9 @@ Ctrl-V  | 引用插入|
 
 ### 特殊文件 {#bash-profile}
 
-最重要的bash文件是 `.bash_profile` ，它在每次用户登陆系统时被读取 `/etc/profile` 。bash 允许有 `.bash_profile` 两个同义文件， C Shell 的 `.bash_login` 以及 Bourne Shell 和 Korn Shell 的 `.profile` 。登录时三者中只有一个被读取，如果用户根目录下 `.bash_profile` 不存在，则 bash 依次查找 `.bash_login` , `.profile`.
+最重要的 Bash文件是 `.bash_profile` ，它在每次用户登陆系统时被读取 `/etc/profile` 。Bash 允许有 `.bash_profile` 两个同义文件， C Shell 的 `.bash_login` 以及 Bourne Shell 和 Korn Shell 的 `.profile` 。登录时三者中只有一个被读取，如果用户根目录下 `.bash_profile` 不存在，则 bash 依次查找 `.bash_login` , `.profile`.
 
-`.bash_profile` 只被登录 shell 读取并执行，如果通过命令键入 bash 启动一个新 Shell， 它就会读取 bashrc 中的命令。
+`.bash_profile` 只被登录 shell 读取并执行，如果通过命令键入 Bash 启动一个新 Shell， 它就会读取 bashrc 中的命令。
 
 `.bash_logout` 在每次 shell 退出时被读取并执行。
 
