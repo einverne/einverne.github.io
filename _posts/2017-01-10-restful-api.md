@@ -18,10 +18,17 @@ Put more succinctly, REST is about transferring the state of resources in a repr
 
 These HTTP methods are often mapped to CRUD verbs as follows:
 
-- Create—POST 新建资源，更新
-- Read—GET 获取资源
-- Update—PUT or PATCH 更新资源，PUT时客户端提供修改的完整资源，PATCH 为客户端提供改变的属性
-- Delete—DELETE 删除资源
+- Create — POST 新建资源，也可用于更新资源
+- Read — GET 获取资源
+- Update — PUT or PATCH 更新资源，PUT时客户端提供修改的完整资源，PATCH 为客户端提供改变的属性
+- Delete — DELETE 删除资源
+
+什么是RESTful架构：
+1. 每一个URI代表一种资源；
+2. 客户端和服务器之间，传递这种资源的某种表现层；
+3. 客户端通过四个HTTP动词，对服务器端资源进行操作，实现"表现层状态转化"。
+
+> 看到这里便可以回答:"PUT 和 POST" 的区别了 ---- POST 用来新建资源，而 PUT 和 POST 都可以用来更新资源提交更新。
 
 对于一个 HTTP 请求可以分成一下部分：
 

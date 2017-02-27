@@ -4,11 +4,15 @@ title: "HBase Shell Command"
 tagline: ""
 description: "HBase 命令行工具"
 category: 学习笔记
-tags: [HBase, Linux]
+tags: [HBase, Linux, Apache,]
 last_updated: 
 ---
 
 HBase Shell 是 HBase 提供的一个简单方便的命令行工具，用它可以直接操作 HBase，对 HBase 进行各种设置。 HBase Shell 提供的命令可以对对 HBase 数据进行增删改查。在上一篇[HBase 介绍](/post/2017/02/hbase-introduction-and-use.html)中对 HBase 做了简答的介绍，也初识了一些命令行。
+
+根据官方的解释 Apache HBase Shell 是 (J)Ruby 下的 IRB(Interactive Ruby Shell)，任何在 IRB 下的命令，在 HBase Shell 下都可以使用。[^hbaseshell]
+
+[^hbaseshell]: <http://hbase.apache.org/book.html#shell>
 
 可以在启动 HBase 之后，通过 `$ ./bin/hbase shell` 来进入 HBase Shell。
 
@@ -215,5 +219,12 @@ shell 命令，把所有的 hbase shell 命令写到一个文件内，类似与 
 
 
 
+## reference
 
+下面是比较完整的一个列表：
 
+<https://learnhbase.wordpress.com/2013/03/02/hbase-shell-commands/>
+
+官方reference
+
+<http://hbase.apache.org/book.html>

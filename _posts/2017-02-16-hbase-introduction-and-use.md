@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "HBase 基本使用"
-tagline: ""
+tagline: "从0到1"
 description: ""
 category: 学习笔记
-tags: [HBase, Database, ]
-last_updated: 
+tags: [HBase, Database, Apache]
+last_updated: 2017-03-01
 ---
 
 
@@ -66,7 +66,7 @@ HBase 通过 row 和 column 确定一份数据（Cell），不同版本值按照
 从 [Apache Download Mirrors](http://www.apache.org/dyn/closer.cgi/hbase/) 下载，从 stable 目录下下载 .tar.gz 的文件，比如 hbase-0.94.27.tar.gz
 
     $ tar xfz hbase-0.94.27.tar.gz
-    $ cd hbase-0.94.27 
+    $ cd hbase-0.94.27
 
 安装依赖基础
 
@@ -106,7 +106,7 @@ HBase 通过 row 和 column 确定一份数据（Cell），不同版本值按照
 
 然后使用如下命令启动 HBase：
 
-	$ ./bin/start-hbase.sh 
+	$ ./bin/start-hbase.sh
 
 starting Master, logging to logs/hbase-user-master-example.org.out
 单机模式启动，停止的脚本也在同目录下
@@ -120,7 +120,7 @@ starting Master, logging to logs/hbase-user-master-example.org.out
     HBase Shell; enter 'help<RETURN>' for list of supported commands.
     Type "exit<RETURN>" to leave the HBase Shell
     Version: 0.90.0, r1001068, Fri Sep 24 13:55:42 PDT 2010
-    hbase(main):001:0> 
+    hbase(main):001:0>
 
 
 ### 初步熟悉
@@ -176,13 +176,13 @@ delete 方法只能删除 column
     hbase(main):012:0> disable 'test'
     0 row(s) in 1.0930 seconds
     hbase(main):013:0> drop 'test'
-    0 row(s) in 0.0770 seconds 
+    0 row(s) in 0.0770 seconds
 
 不清楚命令使用格式，可以使用 `help "list"` 来查看命令的具体使用帮助。
 
-退出使用 exit<Enter> 
+退出使用 exit<Enter>
 
-最后退出可以使用 ./bin/stop-hbase.sh 来停止 hbase。
+最后退出可以使用 `./bin/stop-hbase.sh` 来停止 hbase。
 
 ## 其他问题
 
