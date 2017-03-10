@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Opwnwrt 设置"
+title: "Openwrt 设置"
 tagline: ""
 description: ""
 category: 经验总结
@@ -8,7 +8,7 @@ tags: [Openwrt, Linux, Opkg, ]
 last_updated: 
 ---
 
-在上一篇中讲了[如何刷Openwrt]()，这一篇主要讲一些 Openwrt 的东西，以及配置相关的内容。我有一个主路由器，设置分配的局域网地址为 192.168.1.x，给内网中分配的地址也是 192.168.1.x 开头。
+在上一篇中讲了[如何刷Openwrt](/post/2017/03/tp-link-mr12u-flash-openwrt.html)，这一篇主要讲一些 Openwrt 的东西，以及配置相关的内容。我有一个主路由器，设置分配的局域网地址为 192.168.1.x，给内网中分配的地址也是 192.168.1.x 开头。
 
 但是 Openwrt 默认为 AP 模式，我想要从主路由器 LAN 口连出到新的这个 Openwrt 路由器上，那么便得设置 Openwrt 路由器为 Router 模式以便于级联。
 
@@ -22,9 +22,11 @@ Openwrt 的接口名字太多，最早接触路由器的时候只知道 WLAN 口
 
 - lo 虚拟设备端口，自身回环设备，一般指向 127.0.0.1
 - ra0  rai0 成对出现，无线设备，对应各自的 SSID，分别是 2.4G 和 5G
-- pppoe-wan 虚拟设备，常见的拨号宽带上网
+- `pppoe-wan` 虚拟设备，常见的拨号宽带上网
 - eth0 物理网卡， eth0.1 或者 eth0.2 都是从此设备虚拟而出。
 - `br-lan` 虚拟设备，用于 LAN 口设备桥接，用来使得多个虚拟或物理网络接口的行为好像他们仅有一个网络接口一样。目前路由器普遍将有线LAN口(一般四个)和WIFI无线接口桥接在一起作为统一的LAN。可以使用 `brctl show` 来查看使用情况。
+- eth1 如果路由器有两块网卡，一般 eth1 作为 WAN 口
+- wlan0 一般是无线网卡，无线端口
 
 可以使用如下命令来查看 `br-lan` 配置
 

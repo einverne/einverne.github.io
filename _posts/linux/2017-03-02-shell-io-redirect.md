@@ -58,6 +58,9 @@ last_updated:
     # 对所有.txt文件的输出进行排序, 并且删除重复行.
     # 最后将结果保存到"result-file"中.
 
+在 crontab 任务中，需要使用 `2>&1` 来输出到日志
+
+	* * * * * command >> file.log 2>&1
 
 ## 输入重定向
 
