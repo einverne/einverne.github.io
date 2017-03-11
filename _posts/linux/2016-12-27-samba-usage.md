@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: Linux
 tags: [Samba, SMB, Openwrt, Linux]
-last_updated: 
+last_updated: 2017-03-10
 ---
 
 
@@ -20,9 +20,11 @@ Samba，是种用来让UNIX系列的操作系统与微软Windows操作系统的S
 
 	sudo service smbd start
 
-
 Samba 进程，使用 `-D` 参数开启守护进程。
 
+或者
+
+	sudo /etc/init.d/samba start
 
 
 ### smbpasswd
@@ -59,8 +61,6 @@ smbpasswd(选项)(参数)
 修改用户密码
 
 	smbpasswd einverne
-
-
 
 
 
@@ -114,13 +114,36 @@ smbpasswd(选项)(参数)
         valid users = root			# 允许root读写操作
         read only = no				# 允许写
         guest ok = no				# 不允许匿名
-        create mask = 7777			# 权限
-        directory mask = 7777		# 权限
+        create mask = 0777			# 新文件权限
+        directory mask = 0777		# 新文件夹权限
 
+
+### 配置参数
+
+正如上面提到的，创建一个新的 名为 Openwrt 的共享，需要有些配置，有些配置看名字就能够看出，但是有一些有些复杂。
+
+如果想要创建一个只读的，任何人都可以访问的分享：
+
+    [Share]
+        path = /media/movie
+        comment = this is folder sync from bt
+        read only = yes
+        guest ok = yes
+        create mask = 0777			# 新文件权限
+        directory mask = 0777		# 新文件夹权限
+
+参数：
+
+- create mode – 这个配置定义新创建文件的属性。Samba在新建文件时，会把dos文件的权限映射成对应的unix权限，在映射后所得的权限，会与这个参数所定义的值进行与操作。然后再和下面的force create mode进行或操作，这样就得到最终linux下的文件权限。
+- force create mode – 见上面的描述。相当于此参数所设置的权限位一定会出现在文件属性中。
+- directory mode – 这个配置与create mode参数类似，只是它是应用在新创建的目录上。Samba在新建目录时，会把dos–>linux映射后的文件属性，与此参数所定义的值相与，再和force directory mode相或，然后按这个值去设置目录属性。
+- force directory mode – 见上面的描述。相当于此参数中所设置的权限位一定会出现在目录的属性中。
+- 说明一点，上面的create mode和create mask参数是同义词，用哪个都可以；而directory mode和directory mask参数是相同的。
 
 
 ## reference
 
+- <https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html>
 - <http://man.linuxde.net/smbpasswd>
 - <https://wiki.openwrt.org/doc/uci/samba>
 - <https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html>
