@@ -56,7 +56,6 @@ GEM
     html-pipeline (1.9.0)
       activesupport (>= 2)
       nokogiri (~> 1.4)
-    hz2py (1.0.0)
     i18n (0.7.0)
     jekyll (2.4.0)
       classifier-reborn (~> 2.0)
@@ -146,7 +145,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  hz2py
 
 BUNDLED WITH
    1.11.2

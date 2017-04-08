@@ -255,3 +255,23 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 *[HTML]: Hyper Text Markup Language
 
 因为本 Jekyll 在 `_config.yml` 中配置使用 `kramdown` markdown解释器，所以更多的语法可以参考官方语法[页面](http://kramdown.gettalong.org/syntax.html)
+
+
+## 公式
+
+使用 MathJax
+
+使用行内模式 `$x^2$` 显示为 $x^2$
+
+使用块模式，用 `$$ ... 公式内容 ... $$` 来格式：
+
+$$
+\frac{x1*5+x2*4+x3*3+x4*2+x5}{5}*2
+$$
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+
+
+这里提供在线 LeTex 公式编辑
+
+- <https://www.codecogs.com/latex/eqneditor.php>
