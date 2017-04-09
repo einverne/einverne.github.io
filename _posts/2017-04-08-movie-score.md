@@ -30,6 +30,8 @@ $$
 
 其中， $x_1$ 表示打1颗星的人数，$x_2$ 表示打2颗星的人数，以此类推。由该公式能够看出，豆瓣的评分是很简单的计算，而至少一颗星（2分）的最低评分，也无形中提高了影片的评分，因为豆瓣根本不存在0分的电影，哦，不，还是[有的](https://movie.douban.com/subject/26613473/)。其实，豆瓣一直是一个满分8分的机制，那些超过8分的电影，是一定不会差的。所以曾经有段时间，找不到片子看的时候就直接找8分以上的片子看。
 
+<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/TUYJJ2" title="screenshot-area-2017-04-08-154156"><img src="https://c1.staticflickr.com/3/2913/33791663181_8a86b56d97_z.jpg" width="640" height="575" alt="screenshot-area-2017-04-08-154156"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
 豆瓣的评分机制简单粗暴，在降低用户打分思考的时候，也会造成用户对一部影片的看法截然不同，尤其是在恶意刷分时，会导致最后的评分波动较大。曾经有人开过玩笑说过豆瓣的评分图案，r 型（5星占大多数）的为口碑爆棚的好片，P 型为普通好片，b 型为普通烂片，而 C 型是水军刷出来的烂片，还有 L 型是多少水军都刷不出来的超级烂片。现在想来还是依然非常好玩。
 
 ## 时光网
