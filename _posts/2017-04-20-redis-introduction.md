@@ -1,0 +1,204 @@
+---
+layout: post
+title: "Redis 介绍"
+tagline: ""
+description: ""
+category: 学习笔记
+tags: [Redis, Database, ]
+last_updated: 
+---
+
+Redis(Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源软件,基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一[^1]。
+
+[^1]: <https://db-engines.com/en/ranking/key-value+store>
+
+Redis支持很多的特性:
+
+- 所有数据都必须放在内存中
+- 支持数据持久化:AOF和RDB两种类型
+- 支持异步数据复制
+
+Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以单进程方式处理请求，数据持久化和网络Socket IO等工作是异步进程
+
+
+## 安装 {#install}
+
+官网下载 https://redis.io/download
+
+下载最新的稳定版 Redis，可以从 <http://download.redis.io/redis-stable.tar.gz> 获取最新稳定版
+
+	curl -O http://download.redis.io/redis-stable.tar.gz
+
+解压 tag.gz
+
+	tar xzvf redis-stable.tar.gz
+
+进入解压后目录
+
+	cd redis-stable
+
+编译和安装，运行 make 命令
+
+	make
+
+当二进制文件编译完成之后，运行 test 确保一切都正确
+
+	make test
+
+当所有测试跑通过之后安装到系统
+
+	sudo make install
+
+运行 test 的时候报了一个错误：
+
+> *** [err]: Test replication partial resync: ok psync (diskless: yes, reconnect: 1) in tests/integration/replication-psync.tcl
+
+参考该 [issue](https://github.com/antirez/redis/issues/2715) 使用单核运行 test
+
+	taskset -c 1 sudo make test
+
+## 配置 Redis {#configuration}
+
+在 etc 目录下新建 redis 配置文件目录
+
+	sudo mkdir /etc/redis
+
+将默认配置文件拷贝到配置目录
+
+	sudo cp redis.conf /etc/redis
+
+编辑配置文件
+
+	sudo vim /etc/redis/redis.conf
+
+修改 supervised 为 systemd
+
+    # If you run Redis from upstart or systemd, Redis can interact with your
+    # supervision tree. Options:
+    #   supervised no      - no supervision interaction
+    #   supervised upstart - signal upstart by putting Redis into SIGSTOP mode
+    #   supervised systemd - signal systemd by writing READY=1 to $NOTIFY_SOCKET
+    #   supervised auto    - detect upstart or systemd method based on
+    #                        UPSTART_JOB or NOTIFY_SOCKET environment variables
+    # Note: these supervision methods only signal "process is ready."
+    #       They do not enable continuous liveness pings back to your supervisor.
+    supervised systemd
+
+接下来，寻找 `dir` 配置， 该参数制定 Redis 存储数据的目录，需要一个 Redis 有写权限的位置，使用 `/var/lib/redis`.
+
+    # The working directory.
+    #
+    # The DB will be written inside this directory, with the filename specified
+    # above using the 'dbfilename' configuration directive.
+    #
+    # The Append Only File will also be created inside this directory.
+    #
+    # Note that you must specify a directory here, not a file name.
+    dir /var/lib/redis
+
+修改完毕，保存关闭。
+
+### 创建 systemd unit
+创建 `redis.service` 文件
+
+	sudo vim /etc/systemd/system/redis.service
+
+[Unit] 单元中提供描述，和启动需要在网络可用之后。[Service] 中定义服务的具体动作，自定义用户 redis，以及 `redis-server` 的地址。
+
+
+    [Unit]
+    Description=Redis In-Memory Data Store
+    After=network.target
+
+    [Service]
+    User=redis
+    Group=redis
+    ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf
+    ExecStop=/usr/local/bin/redis-cli shutdown
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target
+
+### 创建 redis 用户，组
+
+创建用户，组
+
+	sudo adduser --system --group --no-create-home redis
+
+创建文件夹
+
+	sudo mkdir /var/lib/redis
+
+给予权限
+
+	sudo chown redis:redis /var/lib/redis
+
+修改权限，普通用户无法访问
+
+	sudo chmod 770 /var/lib/redis
+
+## 运行 Redis {#Run-redis}
+启动
+
+	sudo systemctl start redis
+
+查看状态
+
+	sudo systemctl status redis
+
+显示
+
+    sudo service redis status
+    ● redis.service - Redis In-Memory Data Store
+       Loaded: loaded (/etc/systemd/system/redis.service; disabled; vendor preset: enabled)
+       Active: active (running) since Sat 2017-04-22 18:59:56 CST; 2s ago
+     Main PID: 28750 (redis-server)
+       CGroup: /system.slice/redis.service
+               └─28750 /usr/local/bin/redis-server 127.0.0.1:6379       
+
+    Apr 22 18:59:56 ev redis-server[28750]:   `-._    `-._`-.__.-'_.-'    _.-'
+    Apr 22 18:59:56 ev redis-server[28750]:       `-._    `-.__.-'    _.-'
+    Apr 22 18:59:56 ev redis-server[28750]:           `-._        _.-'
+    Apr 22 18:59:56 ev redis-server[28750]:               `-.__.-'
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower valu
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # Server started, Redis version 3.2.8
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.ov
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage 
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 * DB loaded from disk: 0.000 seconds
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 * The server is now ready to accept connections on port 6379
+
+
+使用 `redis-cli` 客户端测试。
+
+	redis-cli
+
+然后运行 `ping` ，会得到 PONG。
+
+    127.0.0.1:6379> ping
+    PONG
+    127.0.0.1:6379> set test "It's working"
+    OK
+    127.0.0.1:6379> get test
+    "It's working"
+    127.0.0.1:6379> exit
+
+然后重启 redis
+
+	sudo systemctl restart redis.service
+
+然后进入 `redis-cli`:
+
+    127.0.0.1:6379> get test
+    "It's working"
+
+如果能够获得，就证明配置好了。
+
+开机启动
+
+    sudo systemctl enable redis
+
+
+## reference
+
+参考： <https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04>
