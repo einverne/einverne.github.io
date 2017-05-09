@@ -353,9 +353,61 @@ if __name__ == '__main__':
 
 <https://gist.github.com/einverne/0c256fe6351a89c7815b75f0d9964bfe>
 
-连接数据库
+## 推荐命令行
+mysql 自带的命令行工具不会自动补全，这里推荐 `mycli` 可以实现 MySQL 命令行的自动补全和语法高亮。
+
+### 安装
+
+使用 pip 安装
+
+	pip install mycli
+
+### 使用
+
+其基本使用和 mysql 命令行基本一致
+
+```
+mycli [OPTIONS] [DATABASE]
+
+Options:
+  -h, --host TEXT               Host address of the database.
+  -P, --port INTEGER            Port number to use for connection. Honors
+                                $MYSQL_TCP_PORT
+  -u, --user TEXT               User name to connect to the database.
+  -S, --socket TEXT             The socket file to use for connection.
+  -p, --password TEXT           Password to connect to the database
+  --pass TEXT                   Password to connect to the database
+  --ssl-ca PATH                 CA file in PEM format
+  --ssl-capath TEXT             CA directory
+  --ssl-cert PATH               X509 cert in PEM format
+  --ssl-key PATH                X509 key in PEM format
+  --ssl-cipher TEXT             SSL cipher to use
+  --ssl-verify-server-cert      Verify server's "Common Name" in its cert
+                                against hostname used when connecting. This
+                                option is disabled by default
+  -v, --version                 Version of mycli.
+  -D, --database TEXT           Database to use.
+  -R, --prompt TEXT             Prompt format (Default: "\t \u@\h:\d> ")
+  -l, --logfile FILENAME        Log every query and its results to a file.
+  --defaults-group-suffix TEXT  Read config group with the specified suffix.
+  --defaults-file PATH          Only read default options from the given file
+  --myclirc PATH                Location of myclirc file.
+  --auto-vertical-output        Automatically switch to vertical output mode
+                                if the result is wider than the terminal
+                                width.
+  -t, --table                   Display batch output in table format.
+  --csv                         Display batch output in CSV format.
+  --warn / --no-warn            Warn before running a destructive query.
+  --local-infile BOOLEAN        Enable/disable LOAD DATA LOCAL INFILE.
+  --login-path TEXT             Read this path from the login file.
+  -e, --execute TEXT            Execute query to the database.
+  --help                        Show this message and exit.
+```
+
+
+### reference
 
 - <http://zetcode.com/db/mysqlpython/>
 - <http://mysql-python.sourceforge.net/MySQLdb.html>
 - <http://mysql-python.sourceforge.net/>
-
+- <http://mycli.net/>
