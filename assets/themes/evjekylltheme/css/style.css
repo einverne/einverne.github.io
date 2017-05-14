@@ -325,3 +325,11 @@ blockquote a:hover{
 *:hover > .anchorjs-link {
   margin-left: 0.5em !important;
 }
+
+#qr {
+    width: 100%;
+    text-align: center;
+}
+
+#qrcode {
+}

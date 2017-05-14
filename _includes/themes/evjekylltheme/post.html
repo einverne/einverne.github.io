@@ -1,107 +1,124 @@
 <div class="row" itemscope itemtype="http://schema.org/Article">
-	<div class="col-xs-12 col-md-8">
-		<div class="page-header" itemprop="name">
-			<h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
-		</div>
-		<div class="post-meta">
-			{% if page.date %}
-			<span class="entry-date" itemprop="datePublished">Posted on {{ page.date | date: '%B %d, %Y' }}</span>
-			{% endif %}
-			{% if page.last_updated %}
-				, Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
-			{% endif %}
-			<span class="entry-author" itemprop="author">by {{ site.author.name }}</span>
-			| <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}" target="_blank">View revision history</a>
-		</div>
-		<div class="post-content" itemprop="articleBody">
-			{{ content }}
-		</div>
+    <div class="col-xs-12 col-md-8">
+        <div class="page-header" itemprop="name">
+            <h1>{{ page.title }} {% if page.tagline %}
+                <small>{{page.tagline}}</small>
+                {% endif %}
+            </h1>
+        </div>
+        <div class="post-meta">
+            {% if page.date %}
+            <span class="entry-date" itemprop="datePublished">Posted on {{ page.date | date: '%B %d, %Y' }}</span>
+            {% endif %}
+            {% if page.last_updated %}
+            , Last modified on {{ page.last_updated | date: '%B %d, %Y' }}
+            {% endif %}
+            <span class="entry-author" itemprop="author">by {{ site.author.name }}</span>
+            | <a class="revision-histroy" href="https://github.com/einverne/einverne.github.io/commits/master/{{ page.path }}"
+                 target="_blank">View revision history</a>
+        </div>
+        <div class="post-content" itemprop="articleBody">
+            {{ content }}
+        </div>
 
-		<div id="related">
-			<h2>Related Posts</h2>
-			<ul class="posts"><!--当一篇文章有两个tag一样时显示-->
-				{% for post in site.posts %}
-					{% assign sameTagCount = 0 %}
-						{% for tag in post.tags %}
-							{% if page.tags contains tag %}
-								{% assign sameTagCount = sameTagCount | plus:1 %}
-							{% endif %}
-						{% endfor %}
-						{% if sameTagCount >= 2 %}
-								<li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
-						{% endif %}
-				{% endfor %}
-			</ul>
-		</div>
+        <div id="related">
+            <h2>Related Posts</h2>
+            <ul class="posts"><!--当一篇文章有两个tag一样时显示-->
+                {% for post in site.posts %}
+                {% assign sameTagCount = 0 %}
+                {% for tag in post.tags %}
+                {% if page.tags contains tag %}
+                {% assign sameTagCount = sameTagCount | plus:1 %}
+                {% endif %}
+                {% endfor %}
+                {% if sameTagCount >= 2 %}
+                <li><span>{{ post.date | date_to_string }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
 
-		<hr>
-		<nav>
-			<ul class="pager">
-			{% if page.previous %}
-				<li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
-			{% else %}
-				<li class="previous disabled"><a>&larr; Previous（前一篇）</a></li>
-			{% endif %}
-				<li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
-			{% if page.next %}
-				<li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
-			{% else %}
-				<li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
-			{% endif %}
-			</ul>
-		</nav>
-		<hr>
+        <div id="qr">
+            <div id="qrcode"></div>
+            扫描二维码在移动设备查看
+        </div>
 
-		{% include JB/comments %}
-		<blockquote><p class="quote"></p></blockquote>
-	</div>
+        <hr>
+        <nav>
+            <ul class="pager">
+                {% if page.previous %}
+                <li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr;
+                    Previous（前一篇）</a></li>
+                {% else %}
+                <li class="previous disabled"><a>&larr; Previous（前一篇）</a></li>
+                {% endif %}
+                <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
+                {% if page.next %}
+                <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
+                {% else %}
+                <li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <hr>
 
-	<div class="col-xs-12 col-md-4">
-			{% unless page.categories == empty %}
-				<ul class="tag_box">
-					<li><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></li>
-					{% assign categories_list = page.categories %}
-					{% include JB/categories_list %}
-				</ul>
-			{% endunless %}
+        {% include JB/comments %}
+        <blockquote><p class="quote"></p></blockquote>
+    </div>
 
-			{% unless page.tags == empty %}
-				<ul class="tag_box">
-					<li><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></li>
-					{% assign tags_list = page.tags %}
-					{% include JB/tags_list %}
-				</ul>
-			{% endunless %}
-		<div id="floatbox">
-			<div class="g-plusone" data-annotation="inline" data-width="300"></div>
-			<div id="toc"></div></div>
-	</div>
+    <div class="col-xs-12 col-md-4">
+        {% unless page.categories == empty %}
+        <ul class="tag_box">
+            <li><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></li>
+            {% assign categories_list = page.categories %}
+            {% include JB/categories_list %}
+        </ul>
+        {% endunless %}
+
+        {% unless page.tags == empty %}
+        <ul class="tag_box">
+            <li><span class="glyphicon glyphicon-tag" aria-hidden="true"></span></li>
+            {% assign tags_list = page.tags %}
+            {% include JB/tags_list %}
+        </ul>
+        {% endunless %}
+        <div id="floatbox">
+            <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+            <div id="toc"></div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="{{ ASSET_PATH }}/toc.js"></script>
 <script type="text/javascript">
-	function isMobile() {
-		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-	}
-	$(document).ready(function(){
-		$('#toc').toc({ headers: 'h2, h3' });
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    $(document).ready(function () {
+        $('#toc').toc({headers: 'h2, h3'});
 
-		if (!isMobile()) {
-			var tocH = $("#floatbox").offset().top;
-			$(window).scroll(function(){
-				var scroH = $(this).scrollTop();
-				if(scroH >= tocH){
-					$("#floatbox").css({"position":"fixed","top":0});
-				}else{
-					$("#floatbox").css({"position":"static"});
-				}
-			});
-		}
+        if (!isMobile()) {
+            var tocH = $("#floatbox").offset().top;
+            $(window).scroll(function () {
+                var scroH = $(this).scrollTop();
+                if (scroH >= tocH) {
+                    $("#floatbox").css({"position": "fixed", "top": 0});
+                } else {
+                    $("#floatbox").css({"position": "static"});
+                }
+            });
+        }
 
-		$.getJSON('/quotes.json', function(data){
-			var rand = Math.floor(Math.random()*data.quotes.length);
-			var entry = data.quotes[rand].quote +"    --"+ data.quotes[rand].name;
-			$('.quote').text(entry);
-		});
-	});
+        $.getJSON('/quotes.json', function (data) {
+            var rand = Math.floor(Math.random() * data.quotes.length);
+            var entry = data.quotes[rand].quote + "    --" + data.quotes[rand].name;
+            $('.quote').text(entry);
+        });
+
+        jQuery('#qrcode').qrcode({
+            width:128,
+            height:128,
+            text: window.location.href
+        });
+    });
 </script>
