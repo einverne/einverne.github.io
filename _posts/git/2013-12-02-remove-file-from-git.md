@@ -1,7 +1,7 @@
 ---
 title: Remove file from git source control but not delete it from drive
 layout: post
-category : 经验总结, Git
+category : Git
 tagline: ""
 tags : [git , beginner, ]
 ---
