@@ -198,17 +198,11 @@ code {
 	background-color: rgba(0,0,0,0.04);
 	padding: 0;
 	padding-top: 0.2em;
-  padding-bottom: 0.2em;
+    padding-bottom: 0.2em;
 	border-radius: 3px;
 	margin: 0;
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	font-size: 102%;
-}
-
-code::before,
-code::after {
-  letter-spacing: -0.2em;
-  content: "\00a0";
 }
 
 /*
