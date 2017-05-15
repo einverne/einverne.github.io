@@ -38,6 +38,7 @@ using `set -o` to check all the bash options.
 Bash Keyboard Shortcuts 在绝大多数情况下一下快捷键可以直接使用
 
 #### Moving the cursor:
+在终端移动快捷键
 
 Command |  Explain 
 --------|------------|
@@ -52,6 +53,7 @@ Command |  Explain
   Ctrl + xx |  Toggle between the start of line and current cursor position
 
 #### Editing:
+编辑相关的快捷键
 
 Command |  Explain 
 --------|------------|
@@ -61,9 +63,9 @@ Command |  Explain
  Ctrl + d   |  Delete character under the cursor
  Ctrl + h   |  Delete character before the cursor (Backspace)
  - | -
- Ctrl + w   |  Cut the Word before the cursor to the clipboard.
+ Ctrl + w   |  Cut the Word before the cursor to the clipboard. 一般用来快速删除前一个单词，也可以用 Alt + Backspace
  Ctrl + k   |  Cut the Line after the cursor to the clipboard.
- Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard.
+ Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard. 一般用来快速清除当前输入命令
 - | -
   Alt + t   |  Swap current word with previous
  Ctrl + t   |  Swap the last two characters before the cursor (typo).
@@ -241,8 +243,6 @@ Shell变量也是一个拥有取值的名字，bash有一些内置的变量，sh
 引用变量，使用符号 $ , 单引号内部的变量会直接使用而不需要转义，而**双引号内部变量需要转义**。
 
 	echo $varname
-
-
 
 bash 有很多内置变量分布在各个配置文件中。
 
