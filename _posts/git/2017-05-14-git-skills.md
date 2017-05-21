@@ -33,3 +33,29 @@ Git 使用过程中遇到的小技巧，平时没有 commit, merge, branch 用�
 git 有一个命令 `git reflog` 可以查看所有对 HEAD 的变更操作，使用 reflog 命令找到需要恢复的 commit id 然后使用 `git reset --hard <commit-id>` 来恢复到那一次提交就可以了。
 
 
+## 关联本地分支和远程分支
+
+关联本地分支和远程分支，一般情况下使用 git push 时，直接将本地分支推送到远程同名分支，但是如果新项目不是 clone 远程，或者中途曾经更改了 remote，那么有可能 git 就不知道本地分支对应的远程分支，这时候使用 push 或者 pull 的时候就有可能会出错。
+
+使用
+
+    git branch --set-upstream-to=origin/master master 
+
+来将本地 master 分支关联到 origin/master 分支。
+
+或者也可以在 push 时自动关联上
+
+    git push -u origin master
+
+
+## 删除本地某一次提交
+
+本地做了很多修改，而想要放弃其中某一次提交可以使用 `git rebase -i` ， 对于最后一次提交可以使用 `git reset --hard HEAD~1` 来撤销
+
+对于之前的提交，如果想要删除，可以使用
+
+	git rebase -i HEAD~N
+
+来查看本地前 N 次提交，然后编辑文件删除某一次 commit 即可。更多的信息可以参考 [Git book](http://git-scm.com/book/en/Git-Branching-Rebasing)
+
+PS. 不要用来改变已经push 到远端的提交，除非明确的知道想要做的事情，可以使用 force push.
