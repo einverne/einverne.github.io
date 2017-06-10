@@ -8,7 +8,7 @@ tags: [Dropbox,]
 
 Dropbox是一个云端硬盘，你可以在任何有网络的地方访问到它。它本身就足够的强大，和别人共享一个文件夹，添加到文件到该文件夹，文件就能出现在所有共享的人文件夹下。并且因为它公开的API，它变得更加强大。
 
-##同步任意文件夹到 Dropbox
+## 同步任意文件夹到 Dropbox
 
 "如何同步任意文件夹到Dropbox?",这个问题好多人问过我，国内有家坚果云能够实现，其实 Dropbox 完全能够同步PC端任意文件夹的。查看官方的[帮助](https://www.dropbox.com/en/help/12)：
 
@@ -46,7 +46,7 @@ Dropbox是一个云端硬盘，你可以在任何有网络的地方访问到它�
 
 哦，对了Mac OS X和Linux下使用 `ln -s` 吧。
 
-##Dropbox搭建静态网站或博客
+## Dropbox搭建静态网站或博客
 
 你的Dropbox有一个公共文件夹，你在这个文件夹中添加的文件，网络上任何人都可以访问到，只要他们有一个链接指向该文件。从而可以把所有的HTML，JAVASCRIPT，CSS和图像文件放到这个文件夹中， 定向到你的域名，你的迷你网站就正式上线了。
 另外，如果你想有一个更简单的解决方案，使用 [DropPages.com](http://DropPages.com)，[Scriptogr.am](http://Scriptogr.am) 和 [Pancake.io](http://Pancake.io) 这样的应用，它们都可以使用Dropbox免费的发布你的简单的网站。DropPages和Pancake适合定期发布网页，而Scriptogram更适合于博客格式（按时间倒序）。国内还有一家 Farbox ，最初也是同类型的网站，后来渐渐的有了其他功能。
@@ -55,15 +55,15 @@ Dropbox是一个云端硬盘，你可以在任何有网络的地方访问到它�
 
 更多类似 Pancake 服务请看 [alternativeto](http://alternativeto.net/software/pancake-io/) ，比较出名的还有Droppages，和国产的 [Farbox](https://www.farbox.com/)。
 
-##保存网页图片到Dropbox
+## 保存网页图片到Dropbox
 
 Chrome扩展 [Ballloon for Chrome](https://chrome.google.com/webstore/detail/kbmligehjhghebleanjcmenomghmcohn)，这个并不是单纯的Dropbox应用，这个扩展支持的云端存储覆盖面还是挺广泛的，从Dropbox，OneDrive，Google Drive，到Box，以及可能在国外流行的 Copy，SugarSync等等。
 
-##给我发送文件 Send me file direct to Dropbox
+## 给我发送文件 Send me file direct to Dropbox
 
 我使用 [DropITtoMe](http://www.dropitto.me)，你可以通过[这个网页](http://www.dropitto.me/einverne)向我发送文件 up to 75M，发送密码为：einverne
 
-##结合IFTTT产生更多火花
+## 结合IFTTT产生更多火花
 
 ###Save all Gmail attachments to Dropbox
 
@@ -71,19 +71,19 @@ Chrome扩展 [Ballloon for Chrome](https://chrome.google.com/webstore/detail/kbm
 
 Link:[https://ifttt.com/recipes/98759-save-all-your-gmail-attachments-to-dropbox](https://ifttt.com/recipes/98759-save-all-your-gmail-attachments-to-dropbox)
 
-###Send to kindle if file is stored under kindle folder
+### Send to kindle if file is stored under kindle folder
 
 只要有文件存入 kindle 文件夹，自动将文件作为附件发送到 @kindle.com 邮箱。
 
 Link:[https://ifttt.com/recipes/17578-if-stored-in-kindle-dropbox-folder-then-send-it-to-your-kindle](https://ifttt.com/recipes/17578-if-stored-in-kindle-dropbox-folder-then-send-it-to-your-kindle)
 
-###Save all Instagram photos to Dropbox
+### Save all Instagram photos to Dropbox
 
 将Instagram 照片保存到Dropbox
 
 Link:[https://ifttt.com/recipes/56-save-all-your-instagram-photos-to-dropbox](https://ifttt.com/recipes/56-save-all-your-instagram-photos-to-dropbox)
 
-###Save all liked Instagram photos into Dropbox
+### Save all liked Instagram photos into Dropbox
 
 将Instagram 加心照片保存到 Dropbox
 
@@ -91,7 +91,9 @@ Link:[https://ifttt.com/recipes/21350-shuffle-your-liked-instagram-photos-into-a
 
 更多 IFTTT 内容可参考另一篇 [IFTTT](/post/2015/06/ifttt.html) 文章。
 
-otixo.com
+
+## reference
+
 参考文章：
 
 - 最佳Dropbox应用 [http://www.labnol.org/internet/best-dropbox-apps/20672/](http://www.labnol.org/internet/best-dropbox-apps/20672/)
