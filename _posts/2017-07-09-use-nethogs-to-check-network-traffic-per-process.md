@@ -14,7 +14,8 @@ nethogs 自己的介绍
 
 > NetHogs is a small 'net top' tool. Instead of breaking the traffic down per protocol or per subnet, like most such tools do,  it  groups  bandwidth  by  process - and does not rely on a special kernel module to be loaded. So if there's suddenly a lot of network traffic, you can fire up  NetHogs and immediately see which PID is causing this, and if it's some kind of spinning process, kill it.
 
-看介绍就能很快速的知道 nethogs 的设计用途，他就是为了查看单独进程流量情况而被创造出来的。
+看介绍就能很快速的知道 nethogs 的设计用途，他就是为了查看单独进程流量情况而被创造出来的。nethogs 是一个小型的 net top 工具，不和大多数工具那样按照每个协议或者子网的速度，而是按照进程进行带宽分组。 nethogs 不需要依赖某个特殊的内核模块，如果发生了网络阻塞，你可以启动 nethogs 立即看到哪个 PID 造成的，这样就可以轻松的找到占用带宽的程序，然后进行相应的内容控制。
+
 
 ## Install
 
@@ -54,9 +55,23 @@ nethogs 自己的介绍
 	 
 	  TOTAL                                                8.572     239.000 KB/sec
 
+### 自定义刷新频率
+
+在启动 nethogs 时使用 `-d seconds` 参数定义刷新频率
+
+	nethogs -d 1 # 每秒钟刷新
+
+### 交互模式
+
+在进入 nethogs 之后，可以使用如下的交互命令:
+
+m: 修改网速单位
+r: 按照流量排序
+s: 按照发送流量排序
+q: 退出
 
 ## reference
 
 - <https://askubuntu.com/questions/726601>
-- <http://www.slashroot.in/find-network-traffic-and-bandwidth-usage-process-linux>
+- <https://github.com/raboof/nethogs>
 

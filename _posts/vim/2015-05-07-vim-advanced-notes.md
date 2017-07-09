@@ -102,6 +102,13 @@ for example:
 Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列，>增加当前窗口宽度，向右扩展一列。当然 Ctrl-w 之后可以使用 n+< 调整多列宽度
 	Ctrl-w - + 	调整窗口高度
 
+在使用 Nerd tree 插件后，可以使用 Nerd tree 内置的快捷键，在 Nerd tree 中
+
+- i split 一个新窗口打开选中的文件，并跳转到该窗口
+- s vsplit 一个新窗口打开选中文件，并跳到该窗口
+
+
+
 ## Tabs
 Tab is different from the windows in vim. If your fimiliar with Firefox or Chrome, you can understand that a new tab contains a new website. While in vim, a tab can contain several windows and you can move the windows between tabs.
 

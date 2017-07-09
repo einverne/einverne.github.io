@@ -3,7 +3,7 @@ layout: post
 title: "celery best practice"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [celery, python, web, database, redis]
 last_updated: 
 ---

@@ -102,7 +102,7 @@ Windows 下可以使用 net 命令
 
 增加新列
 
-	ALTER TABLE table_name ADD COLUMN [column] VARCHAR(40);
+	ALTER TABLE table_name **ADD COLUMN** [column] VARCHAR(40);
 
 比如新增一列自增id
 
@@ -110,15 +110,16 @@ Windows 下可以使用 net 命令
 
 如果想要自定义新列的位置，可以使用 AFTER
 
-	ALTER TABLE table_name ADD email VARCHAR(40) AFTER name;
+	ALTER TABLE table_name **ADD** email VARCHAR(40) AFTER name;
 
 删除列
 
-	ALTER TABLE table_name DROP column
+	ALTER TABLE table_name **DROP** column
 
-修改列
+修改列，或者修改列类型
 
-	ALTER TABLE tablename MODIFY COLUMN column_name VARCHAR(20);
+	ALTER TABLE tablename **MODIFY COLUMN** column_name VARCHAR(20);
+	ALTER TABLE tablename **ALTER COLUMN** column_name VARCHAR(20);
 
 修改表结构，添加组合 Primary Key，将两列数据作为 PK
 
@@ -130,7 +131,16 @@ Windows 下可以使用 net 命令
 
 	ALTER TABLE [table]  DROP PRIMARY KEY, ADD primary key(column1, column2);
 
+修改表名
+
+    ALTER TABLE origin_table_name **RENAME TO** new_table_name
+
 ### 增删改查
+Like 通配符
+
+- % 表示任意数量的未知字符串
+- `_` 一个未知字符串
+
 插入记录
 
 	INSERT INTO `table_name` (`name`, `signup_date`) VALUES ("Verne", "2017-05-01");
@@ -166,10 +176,11 @@ Order 可以使用 `DESC`, `ASC`
 导出数据
 
 	mysqldump -u [username] -p [database] > db_backup.sql
+	mysqldump -u [username] -p [database] [table_name] > db_backup.sql
 
+导入还原数据
 
-导入数据
-
+	mysql -u [username] -p [database] < db_backup.sql
 	mysql -u [username] -p -h localhost [database] < db_backup.sql
 
 查看数据库中所有用户
