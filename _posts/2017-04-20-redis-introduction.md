@@ -4,11 +4,11 @@ title: "Redis 介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Redis, Database, ]
+tags: [Redis, Database, NoSQL, 学习笔记]
 last_updated: 
 ---
 
-Redis(Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源软件,基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一[^1]。
+Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一[^1]。
 
 [^1]: <https://db-engines.com/en/ranking/key-value+store>
 
@@ -23,6 +23,19 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
 
 ## 安装 {#install}
 
+### 源中安装
+在Debian/Ubuntu/Linux Mint 下直接安装即可，但是 redis 对内核有要求，如果安装失败的时候， `-uname -a` 看一下自己的内核，如果版本太低就升级一下。
+
+	sudo apt-get install redis-server
+
+安装成功之后就可以使用
+
+	sudo service redis-server status # 查看当前状态
+	sudo service redis-server stop/start # 等等来控制 redis-server 的状态
+
+最方便最快捷的安装方式，如果使用 docker 也可以使用 docker 中官方的源。
+
+### 手动安装
 官网下载 https://redis.io/download
 
 下载最新的稳定版 Redis，可以从 <http://download.redis.io/redis-stable.tar.gz> 获取最新稳定版
@@ -198,6 +211,8 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
 
     sudo systemctl enable redis
 
+
+在启动了 redis 之后就可以再熟悉一下他的[命令](/post/2017/04/redis-command.html)了。
 
 ## reference
 
