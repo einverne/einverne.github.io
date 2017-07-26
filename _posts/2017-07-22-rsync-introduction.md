@@ -11,6 +11,8 @@ last_updated:
 
 rsync 全名 Remote Sync，是类unix系统下的数据镜像备份工具。
 
+> rsync - a fast, versatile, remote (and local) file-copying tool
+
 rsync是一个功能非常强大的工具，其命令也有很多功能特色选项
 
 它的特性如下：
@@ -48,6 +50,8 @@ rsync 有六种不同的工作模式：
 5. 从本地机器拷贝文件到远程rsync服务器中。当DEST路径信息包含"::"分隔符时启动该模式。
 
 6. 列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。
+
+这6种方式看似复杂，其实只要记住一些常用参数，然后记住一些常用方法就能够将 rsync 利用起来。
 
 可以man rsync 参考 rsync 文档，了解详细的使用方法，下面解析一些参数的使用
 
@@ -122,11 +126,17 @@ rsync参数的具体解释如下：
 
     rsync -ahvz backup.tar.gz  /backups/  # DESC 不存在时自动创建
 
+将备份文件同步到 `/backups/` 目录下。
+
 同步目录
 
-	rsync -avzh /home/files/ /backups/files 
+	rsync -avzh /home/src /backups/files/
 
-将 `/home/files` 目录下的文件同步发送到 `/backups/files` 目录下。
+将 `/home/src` 目录下的文件同步发送到 `/backups/files` 目录下。记住如果目标地址没有 `src` 目录，rsync 会自动创建改文件夹。
+
+	rsync -avz /home/src/ /backups/files/
+
+SRC 路径末尾的 `/` 表示不自动创建 DEST 文件夹，在 `man rsync` 中的解释就是末尾的 `/` 表示"拷贝当前目录下的文件" ，而不是”拷贝当前的目录“，
 
 ### 远程 shell 拷贝到远程
 使用一个远程shell程序(如rsh、ssh)来实现将本地机器的内容拷贝到远程机器。当DES路径地址包含单个冒号":"分隔符时启动该模式。
