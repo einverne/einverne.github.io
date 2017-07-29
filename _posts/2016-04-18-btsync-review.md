@@ -8,9 +8,11 @@ tags: [btsync, 产品体验]
 last_updated: 2016-12-25
 ---
 
+最近在安装 Resilio Sync 的时候发现，竟然被屏蔽了，官网被屏蔽了竟然连 key 都下载不了，可以使用之前写过的 [proxychains 代理](/post/2017/02/terminal-sock5-proxy.html) 来使用代理下载这个 key。
+
 ## 更新
 
-惊闻 btsync 已经改名字，现在叫 Resilio ，官网地址也改为： <https://www.resilio.com/>
+惊闻 btsync 已经改名字，现在叫 Resilio Sync ，官网地址也改为： <https://www.resilio.com/>
 
 可以从 [这里](https://www.resilio.com/platforms/desktop/) 获取不同平台客户端。
 
@@ -130,6 +132,14 @@ Alternatively, if you're setting up your BTSync server, install `btsync`:
 - 推荐指数4星 <http://btsync.space/>
 - 一个[论坛](http://bbs.btnimei.xyz/category/7/%E4%B8%8B%E4%BD%A0%E5%A6%B9)
 - 一个导航[站](http://wherebt.com/)
+
+### 推荐几个常用 KEY
+
+- 神key BCWHZRSLANR64CGPTXRE54ENNSIUE5SMO
+- 最新电影 BA6RXJ7YOAOOFV42V6HD56XH4QVIBL2P6
+- 经济学人 BYRRPM52YK6Z6TETDQITFXBV647XLCNIO
+- Kindle 中文伴侣精品 BOC3NIGPF2DOKETOF2FAHXJXE2HF24QWC
+- 每周更新图书 BB63I5PBPBFDELAPXI6NTF47IPNZQAAJZ
 
 
 ## reference
