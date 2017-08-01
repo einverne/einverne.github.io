@@ -4,11 +4,11 @@ title: "Redis 常用命令"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Redis, database, 学习笔记]
+tags: [Redis, Database, 学习笔记]
 last_updated: 
 ---
 
-Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set.
+Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类型不用多讲，后两种 set 是单纯的集合， Sorted Set 是有序集合，在集合内可以根据 score 进行排序。
 
 几个常用网址：
 
@@ -17,7 +17,7 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set.
 - 中文命令 <http://redisdoc.com/>
 
 
-对键的命名，”对象类型：对象ID：对象属性“
+对Redis键的命名格式为，”对象类型：对象ID：对象属性“
 
 `redis-cli` 是 Redis 自带的命令行工具(类似于MySQL的mysql命令), 直接在命令行终端与 redis server 执行所有命令和返回响应。下面所有命令都可以在 cli 交互式命令行中执行。
 
@@ -33,7 +33,7 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set.
 
 ## 字符串类型操作命令
 
-字符串类型，最大容量 512MB
+字符串类型，最大容量 512MB，字符串类型可以包含任何数据，图片的二进制，或者序列化的对象。
 
 命令    |  行为
 -----------|----------
@@ -46,12 +46,19 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 将 value 关联到 key，如果 key 有值， SET 命令覆盖。对于某个原本带有生存时间（TTL）的键来说， 当 SET 命令成功在这个键上执行时， 这个键原有的 TTL 将被清除。
 
     SET key value
-
 	GET key
+
+使用 SETNX (set not exists)可以实现如果 key 存在时不做任何操作
+
+	SETNX key value  # 如果 key 存在，则返回 0，如果设置成功返回1
+
+可以使用 SETEX 来针对 key 设置过期时间，以秒为单位
+
+	SETEX key seconds value
 
 
 ### 递增递减数字
-让当前键值递增，操作键不存在时默认为0，当键不是整数时，报错
+让当前键值递增，操作键不存在时默认为0，当键不是整数时，报错. 对不存在的 key ，则设置 key 为 1
 
 	INCR key
 
@@ -59,11 +66,11 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 
 	INCRBY key increment
 
-递减数值
+递减数值,对于不存在的 key，设置为 -1
 
 	DECR key
 
-递减一个量
+递减一个量, DECRBY 为了增加可读性，完全可以使用 INCRBY 一个负值来实现同样的效果
 
 	DECRBY key decrement
 
@@ -88,13 +95,19 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 
 	MGET key [key ...]
 
-设置多个 key value
+设置多个 key value, 一次性设置多个值，返回0 表示没有值被覆盖
 
 	MSET key value [key value ...]
 
+### 其他复杂命令
+
+	SETRANGE key offset value  # 用 value 值覆盖给定 key 从 offset 开始所存储的字符串
+	MSETNX key value key value # 一次性设置多个值， SETNX 的multi 版本
+	GETSET key 				# 设置 key 的值,并返回 key 的旧值
+	GETRANGE key start end  # 截取 start 和 end 偏移量的字符串
 
 ## 散列类型操作命令
-通过 HSET建立的键是散列类型，用过 SET 命令建立的是字符串类型
+通过 HSET 建立的键是散列类型，用过 SET 命令建立的是字符串类型. 散列或者哈希非常适合存储对象，添加和删除操作复杂度平均O（1）.
 
 命令 |  行为
 ---------|--------
@@ -120,24 +133,29 @@ HDEL 	| 如果给定键存在，则移除该键
 
 	HSETNX key field value
 
-### 获取所有域和值
+获取所有域和值
 
 	HGETALL key
 
-### 检查是否存在
 查看哈希表 key 中，给定域 field 是否存在。
 
 	HEXISTS key field
 
-### 增量
 增加数字，返回增值后的字段值
 
 	HINCRBY key field increment
 
-### 删除
 删除一个或者多个字段，返回被删除的字段个数
 
 	HDEL key field [field ...]
+
+获取指定 hash 的 field 数量
+
+	HKEYS key
+
+获取指定 hash 的 values
+
+	HVALS key
 
 ## 列表类型
 
@@ -153,13 +171,11 @@ LPOP 	| 从列表左端弹出一个值，并返回被弹出的值
 LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表的长度，RPUSH 同理
 
 	LPUSH key value [value ...]
-
 	RPUSH key value [value... ]
 
 从左边右边弹出元素
 
 	LPOP key
-
 	RPOP key
 
 获取列表中元素的个数
@@ -192,6 +208,7 @@ LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表�
 
 
 ## 集合类型
+set 是集合，和数学中的集合概念相似。 Redis 的 set 是 String 类型的无序集合，set 元素最大可包含 2 的 32 次方个元素。
 
 向集合中增加一个或者多个元素，如果不存在则创建，如果存在则忽略。SREM 用来从集合中删除一个或者多个元素，并返回删除成功的个数
 
@@ -202,6 +219,14 @@ LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表�
 如果给定的元素存在于集合中，移除该元素
 
 	SREM key member [member ...]
+
+随机返回并删除一个元素
+
+	SPOP key
+
+随机返回一个元素，但是不删除， Redis 2.6 版本之后接受可选 count 参数。
+
+	SRANDMEMBER key [count]
 
 返回集合中的所有元素
 
@@ -235,13 +260,6 @@ LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表�
 	SINTERSTORE destination key [key ...]
 	SUNIONSTORE destination key [key...]
 
-随机从集合中获取一个元素
-
-	SRANDMEMBER key [count]
-
-从集合中弹出一个元素
-
-	SPOP key
 
 ## 有序集合
 
@@ -255,9 +273,13 @@ LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表�
 
 	ZSCORE key member
 
-获取排名在某个范围的元素列表，按照元素分数从小到大顺序返回索引从 start 到 stop 之间的所有元素，包括两端。可选参数可返回元素分数。
+获取排名在某个范围的元素列表，按照元素分数从小到大顺序返回索引从 start 到 stop 之间的所有元素，包括两端。可选参数可返回元素分数。但 stop 为 -1 时返回全部。
 
 	ZRANGE key start stop [WITHSCORES]
+
+按 score 从大到小
+
+	ZREVRANGE key start stop
 
 元素分数从小到大顺序返回元素分数在 min 和 max 之间的元素
 
@@ -291,6 +313,10 @@ LPUSH 用来向列表左边增加元素，返回值表示增加元素后列表�
 
 	ZRANK key member
 
+获取元素的排名，从大到小
+
+	ZREVRANK key member
+
 
 计算多个有序集合的交集，并将结果存储在 destination 键中，同样以有序集合存储，返回 destination 键中的元素个数
 
@@ -311,6 +337,8 @@ Redis 中事务 transaction 是一组命令的集合。事务同命令一样都�
 	EXEC
 
 事务中 WATCH 命令，监控一个或者多个键，一旦其中一个键被修改（或删除），之后的事务就不会执行，监控持续到 EXEC 命令
+
+使用 DISCARD 命令来取消事务，DISCARD 命令来清空事务命令队列并退出事务上下文，回滚。
 
 ## 过期时间
 
@@ -344,85 +372,3 @@ Redis 支持的客户端
 
 	https://redis.io/clients
 
-## 持久化
-
-RDB 方式 和 AOF 方式
-
-### RDB 方式
-
-通过快照 snapshotting 完成，当符合一定条件时 Redis 会自动将内存中的所有数据生成一份副本并存储到硬盘上，这个过程称为”快照“。
-
-以下情况执行快照：
-
-- 根据配置规则进行自动快照
-- 用户执行 SAVE 或者 BGSAVE 命令
-- 执行 FLUSHALL 命令
-- 执行复制 replication
-
-1. 配置规则
-
-save 900 1 表示在15min(900s) 时间内，有一个或者一二以上键被更改则进行快照。
-
-2. SAVE 或 BGSAVE 命令
-
-SAVE 命令时， Redis 同步地进行快照操作，会阻塞所有来自客户端的请求。尽量避免在生产环境使用这一命令。
-
-BGSAVE 命令，后台异步进行快照。查看快照是否成功，通过 LASTSAVE 命令获取最近一次成功执行快照时间，返回结果 Unix 时间戳。
-
-3. FLUSHALL ，Redis 清除数据库所有数据。只要定义了自动快照条件，则会进行快照。如果没有定义自动快照，则不会进行快照。
-
-4. 复制操作时，即使没有定义自动快照条件，也会生成 RDB 快照
-
-Redis 默认将快照文件存储在工作目录中 dump.rdb 文件中，可以通过配置 dir 和 dbfilename 两个参数分别来指定快照文件的存储路径和文件名。
-
-### AOF方式
-
-将 Redis 执行的每一条写命令追加到硬盘文件中。默认没有开启 AOF (append only file) ，可以通过 appendonly 参数启用：
-
-    appendonly yes
-
-AOF 文件保存位置和 RDB 文件位置相同，通过 dir 参数设置，默认为 appendonly.aof ，通过 appendfilename 参数修改：
-
-    appendfilename appendonly.aof
-
-## 集群
-
-结构上，容易发生单点故障，分配不同服务器
-
-容量上，内存容易成为存储瓶颈，需要对数据进行分片
-
-### 复制
-
-复制多副本部署不同服务器，防止一台故障丢失数据。
-
-从数据库配置中：
-
-    slaveof 主数据库地址 主数据库端口
-
-通过复制实现读写分离
-
-### 哨兵
-
-监控 Redis 运行状况。
-
-### 集群
-
-集群的特点在于拥有和单机实例同样的性能，同时在网络分区后能够提供一定的可访问性以及对主数据库故障恢复的支持。
-
-	https://github.com/erikdubbelboer/phpRedisAdmin
-
-## Redis 命令属性
-
-Redis 不同命令拥有不同的属性，是否只读命令，是否是管理员命令，一个命令可以拥有多个属性。
-
-`REDIS_CMD_WRITE` 属性，会修改 Redis 数据库数据
-
-`REDIS_CMD_DENYOOM` 属性，可能增加 Redis 占用的存储空间，显然拥有该属性的命令都拥有 `REDIS_CMD_WRITE` 属性。
-
-`REDIS_CMD_NOSCRIPT` 属性，无法在Redis脚本中执行
-
-`REDIS_CMD_RANDOM` 脚本执行了该属性命令之后，不能执行拥有 `REDIS_CMD_WRITE` 属性命令
-
-`REDIS_CMD_SORT_FOR_SCRIPT` 产生随机结果
-
-`REDIS_CMD_LOADING` 当 Redis 启动时，只会执行拥有该属性的命令
