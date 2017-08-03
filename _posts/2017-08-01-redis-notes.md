@@ -119,3 +119,9 @@ Redis 不同命令拥有不同的属性，是否只读命令，是否是管理�
 ## 其他
 
 phpRedisAdmin 是一个 PHP 实现的 Redis 管理 Web 界面。地址：<https://github.com/erikdubbelboer/phpRedisAdmin>
+
+## reference
+
+- <http://redisdoc.zixuebook.cn/>
+- <https://github.com/JasonLai256/the-little-redis-book/blob/master/cn/redis.md>
+
