@@ -88,4 +88,4 @@ All above had beed test by myself -> <https://pypi.python.org/pypi/douban-dl>
 ## reference
 
 - <http://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/quickstart.html>
-
+- <https://setuptools.readthedocs.io/en/latest/setuptools.html#automatic-script-creation>
