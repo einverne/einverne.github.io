@@ -2,17 +2,21 @@
 layout: post
 title: "我使用的 Xposed module"
 tagline: ""
-description: "Android 上的神器"
+description: "Android 上的神器 Xposed"
 category: 整理合集
 tags: [Android, AndroidDev, Xposed, 整理合集]
 last_updated: 2016-10-03
 ---
 
-什么都不多说，这个神器就如 Chrome 下的 [Tampermonkey](/post/2015/08/userscripts.html),有很多神奇的待发现。
+什么都不多说，这个神器就如 Chrome 下的 [Tampermonkey](/post/2015/08/userscripts.html),有很多神奇的待发现。一句话概括 Xposed 就是 Android 上一款可以修改任意系统进程模式的框架，包括系统进程。下面介绍的 module 基本上都是 Xposed 框架下的插件，实现了各种神奇的功能，有些功能有被官方收录到应用官方功能中的，比如 Instagram 的图片放大功能，有些功能至今还在和官方捉迷藏的，比如微信抢红包插件，还有些功能增强了系统的扩展性，让整个手机能够高效的完成日常的工作，比如在信任WIFI下自动解锁屏幕等等功能。总之 Xposed 框架让整个 Android 系统上升了一个层次。
 
-官网地址：<http://repo.xposed.info/>
+用 Xposed 的自我介绍来说，就是能够在无感知不接触任何 APK 的情况下修改系统或者应用的行为
 
-更新及 change log： <http://forum.xda-developers.com/showthread.php?t=3034811>
+> Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs. 
+
+Xposed 是由 [rovo89](https://github.com/rovo89) 开发和维护的一个项目， 官网地址：<http://repo.xposed.info/>， 源代码地址在 Github: <https://github.com/rovo89/Xposed>
+
+更新及 change log 在 xda 论坛： <http://forum.xda-developers.com/showthread.php?t=3034811>
 
 ![Xposed Framwork](https://lh3.googleusercontent.com/-qCYmQsf81cE/V4kH46p7umI/AAAAAAAA_-U/c4yhnpq-h-8MATH5XQpacc8gOBLUH67xwCL0B/w790-h395-no/xposed.png)
 
@@ -56,11 +60,14 @@ Android 6.0 的 framework zip 包在 [官网](http://dl-xda.xposed.info/framewor
 ### No Lock Home
 原生 Android 的 Smart Lock 只有根据蓝牙，GPS和侦测随身携带，这个 module 增加了可以根据 WIFI，或者 mac 地址或者 LAC CID 来增加信任的地点，感觉这个更加实用。日常实用 WIFI 的地方一般都是自己熟悉的地方，将那些地方的 WIFI AP name 或者 WIFI Mac 地址加入信任列表，这样就不用总在熟悉的地方解锁解锁解锁了。自己熟悉的地方也总不至于丢手机的吧。
 
-### WechatForwarder
-很强大的转发，原先一直想要的转发功能都能搞定了。
+### 20170805 更新 WeXposed
+作者将原本的多个module合并为一个，现在集成了抢红包(自定义关键词过滤)，阻止撤回，防朋友圈删除，扩展表情限制，筛子随机等等等等功能，非常强大
 
-### WechatUnrecalled
-微信不撤回
+	WechatForwarder
+	很强大的转发，原先一直想要的转发功能都能搞定了。
+
+	WechatUnrecalled
+	微信不撤回
 
 ### XInsta
 下载 Instagram 的图片，自从 IFTTT 不让我自动下载图片之后就诞生了这种需求。也正是因为这个需求让我发现并使用了 Xposed，然后又间接的找到了很多好玩的 module ，不过后来又找到了自动下载 ins 照片到 Google Drive 的[方法](/post/2016/09/auto-save-other-instagram-to-google-drive.html)。
@@ -70,6 +77,17 @@ Android 6.0 的 framework zip 包在 [官网](http://dl-xda.xposed.info/framewor
 
 ### NavBar / StatusBar media visualizer [L-M]
 在导航栏或者状态栏显示音乐波形，太赞了。
+
+### No Lock Home
+通过信任连接的 WIFI，或者 WIFI MAC 地址来自动解锁屏幕，感觉比Android自带的 SmartLock 要好用很多。Smart Lock 中的 Body Detect，还算有用，其他根据 GPS 来自动解锁必须得开着高精度GPS， 不仅耗电也不精确。
+
+### LocationReportEnabler
+开启 Google 位置报告
+
+### 网易云音乐插件
+解锁网易云音乐的版权锁定。
+
+地址在: <https://github.com/bin456789/Unblock163MusicClient-Xposed/releases>
 
 ## 不太需要的 module
 使用之后感觉不太需要的 module ，但是很强大的 module
