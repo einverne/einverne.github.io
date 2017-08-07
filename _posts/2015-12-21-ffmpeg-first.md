@@ -84,7 +84,7 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 `-vcodec copy` 和 `-acodec copy` 表示所使用的视频和音频编码格式，为原样拷贝。
 
-对视频切片操作  
+对视频切片操作
 
 比如需要从视频第1分45秒地方，剪10秒画面，-ss 表示开始位置，-t 表示延长时间
 
