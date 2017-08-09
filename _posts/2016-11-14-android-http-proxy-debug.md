@@ -40,7 +40,7 @@ Charles 是 Mac 下非常好用的抓包工具，不仅是对 Android，而 iOS�
 安装完成之后需要配置
 
 - 菜单 Proxy >  Proxy Settings， 选择端口 8888， 勾选 “ Enable transparent HTTP proxying”
-- 菜单 Proxy > SSL Proxy Settings... ，选择 “Enable SSL Proxying", 然后添加，在 HOST 中填入 “*.*" ， Port 中填 443 
+- 菜单 Proxy > SSL Proxy Settings... ，选择 “Enable SSL Proxying", 然后添加，在 HOST 中填入 `*.*` ， Port 中填 443 
 - 在 Help 菜单中，选择 ” SSL Proxying”，分别安装 Mac 端证书，Mobile 端证书，需要在 KeyChain 钥匙串访问中始终信任 Charles 证书，而手机端也要通过 Charles 给出的网络地址来下载证书并安装，Android 相对容易，iOS 比较麻烦。
 
 安装完桌面证书之后，在手机端配置
