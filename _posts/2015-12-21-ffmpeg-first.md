@@ -104,6 +104,11 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
     ffmpeg -i input_video.mp4 -y -f image2 -t 0.001 -ss 10 -s 1920x1080 output.jpg
 
+或者
+
+	ffmpeg -i input_video.mp4 -ss 00:00:06.000 -vframes 1 output.png 
+
+
 把视频的前30帧转换成一个Gif
 
     ffmpeg -i input_video.mp4 -vframes 30 -y -f gif output.gif
@@ -184,10 +189,10 @@ ffmpeg使用语法：
 
 ### 主要选项 {#main-options}
 
--i filename 输入文件  
--y 覆盖输出文件  
--n 不覆盖输出文件，如果输出文件存在则退出  
--t duration (input/output)  
+-i 	filename 输入文件  
+-y 	覆盖输出文件  
+-n 	不覆盖输出文件，如果输出文件存在则退出  
+-t 	duration (input/output)  
     设置纪录时间 hh:mm:ss[.xxx]格式的记录时间也支持,在 `-i` 之前使用，则对输入文件限制记录时间；如果对输出文件使用，则是限制输出文件的时长。  
     
 -ss position  
@@ -204,7 +209,7 @@ ffmpeg使用语法：
     给输入文件指定解码器，给输出文件指定编码器， codec 为编码器名字，如果 codec 值为 `copy` 则默认为和原视频一致。  
     
 -vcodec codec  
-    vcodec 是 -codec:v 的一个别称，强制使用codec编解码方式。如果用copy表示原始编解码数据必须被拷贝。
+    vcodec 是 -codec:v 的一个别称，强制使用codec编解码方式，未设定时使用与输入流相同的编码器。如果用copy表示原始编解码数据必须被拷贝。
 
 -target type 设置目标文件类型(vcd,svcd,dvd) 所有的格式选项（比特率，编解码以及缓冲区大小）自动设置，只需要输入如下的就可以了：
 
@@ -219,8 +224,8 @@ ffmpeg使用语法：
     设置视频输出帧数，是`-frames:v`的别称。
     
 -b bitrate 设置比特率，缺省200kb/s  
--r fps 设置帧频 缺省25  
--s size
+-r fps 设置帧率 缺省25  
+-s size 设置画面的宽高
 
     设置帧大小,分辨率， 格式为wxh 缺省为原视频大小。下面的简写也可以直接使用：
     ntsc 720x480
@@ -229,7 +234,7 @@ ffmpeg使用语法：
     hd1080 1920x1080
     更多[参考](https://ffmpeg.org/ffmpeg-utils.html#toc-Video-size)
 
--aspect aspect 设置横纵比 4:3 16:9 或 1.3333 1.7777  
+-aspect aspect 设置画面比例 4:3 16:9 或 1.3333 1.7777  
 -croptop size 设置顶部切除带大小 像素单位  
 -cropbottom size –cropleft size –cropright size  
 -padtop size 设置顶部补齐的大小 像素单位  
@@ -477,9 +482,7 @@ ffmpeg使用语法：
 
 ## 附录2： 常用视频文件格式详解 {#appendix-2:-common-file-extension}
 
-步入多媒体时代，计算机已经成为家庭娱乐中不可缺少的元素之一，利用电脑不但可以工作，上网查询资料，了解最新的新闻资讯，在休息之余，我们还能利用它来听听音乐，欣赏影视大片。说到影音视频，假如你是一个电影迷，经常利用电脑看影片的话，那就应该不会对诸如AVI、MPEG、MOV、RM等常见视频格式感到陌生吧！现如今各种各样的视频格式如雨后春笋般不断地涌出，但是对于每一种视频格式都要求有相应的软件才能够开放，比如MOV格式文件需要用Quick Time播放，而RM格式的文件却需要Real Player来支持，虽然现在播放器支持的视频种类也很多，但毕竟不十分完美，使得我们经常会遇到这样“尴尬”的事情：辛辛苦苦地网上Download下来一部电影大片，准备好好欣赏时，可是安装在电脑中的播放器却不支持这个格式，不仅心急如焚！那么如何解决这个问题呢？
-
-视频格式介绍： 　　所谓“知己知彼，方能百战不殆！”，熟悉了各种各样的视频格式，才能够为后来的视频格式的转换打好基础。下面就来详细地为给大家介绍一些常见的视频格式：
+常见的视频格式：
 
 1.AVI格式 　　它的英文全称为Audio Video Interleaved，即音频视频交错格式。它于1992年被Microsoft公司推出，随Windows3.1一起被人们所认识和熟知。所谓“音频视频交错”，就是可以将视频和音频交织在一起进行同步播放。这种视频格式的优点是图像质量好，可以跨多个平台使用，但是其缺点是体积过于庞大，而且更加糟糕的是压缩标准不统一，因此经常会遇到高版本Windows媒体播放器播放不了采用早期编码编辑的AVI格式视频，而低版本Windows媒体播放器又播放不了采用最新编码编辑的AVI格式视频。其实解决的方法也非常简单，我们将在后面的视频转换、视频修复部分中给出解决的方案。
 
