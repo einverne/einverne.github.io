@@ -57,7 +57,7 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 
     [supervisord]
     logfile=/tmp/supervisord.log ; 日志文件，默认是 $CWD/supervisord.log
-    logfile_maxbytes=50MB        ; 日志文件大小，超出会 rotate，默认 50MB
+    logfile_maxbytes=50MB        ; 日志文件大小，超出会 rotate (分割），默认 50MB
     logfile_backups=10           ; 日志文件保留备份数量默认 10
     loglevel=info                ; 日志级别，默认 info，其它: debug,warn,trace
     pidfile=/tmp/supervisord.pid ; pid 文件
@@ -214,7 +214,7 @@ Supervisorctl 是 supervisord 的一个命令行客户端工具，启动时需�
 
 经常查看日志文件，包括 supervisord 的日志和各个 pragram 的日志文件，程序 crash 或抛出异常的信息一半会输出到 stderr，可以查看相应的日志文件来查找问题。
 
-Supervisor 有很丰富的功能，还有其他很多项配置，可以在官方文档获取更多信息：http://supervisord.org/index.html
+Supervisor 有很丰富的功能，还有其他很多项配置，可以在官方文档获取更多信息：<http://supervisord.org/index.html>
 
 
 ## 一些问题
@@ -228,11 +228,11 @@ supervisor 官方[提供](https://github.com/Supervisor/initscripts) 的开机�
     sudo chmod +x /etc/init.d/supervisord
     sudo update-rc.d supervisord defaults
 
-Make ensure correct pid in /etc/supervisord.conf which is mapped in /etc/init.d/supervisord
+确保在 `/etc/supervisord.conf` 中配置了正确的 pid， 并且和 `/etc/init.d/supervisord` 相对应：
 
-    example: pidfile=/var/run/supervisord.pid
+    pidfile=/var/run/supervisord.pid
 
-test:
+测试:
 
     service supervisord stop
     service supervisord start
@@ -241,7 +241,7 @@ test:
 
 错误关键字：supervisor can't find command
 
-这时候可以[手动](https://stackoverflow.com/questions/43076406/why-cant-supervisor-find-command-source)开启一个 bash ，或者 sh
+这时候可以[手动](https://stackoverflow.com/questions/43076406/why-cant-supervisor-find-command-source) 开启一个 bash ，或者 sh
 
     commmand=sh -c 'your command'
 
