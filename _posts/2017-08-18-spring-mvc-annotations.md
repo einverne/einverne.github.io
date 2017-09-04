@@ -4,7 +4,7 @@ title: "Spring mvc 的注解"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Spring, Java, Web]
+tags: [Spring, Java, Web, 注解, 拦截器, 反射]
 last_updated: 
 ---
 
@@ -321,3 +321,4 @@ Spring                     	  | javax.inject.*                       | javax.inj
 
 - <http://www.cnblogs.com/digdeep/p/4525567.html>
 - <http://blog.csdn.net/wangyangzhizhou/article/details/51698638>
+- <http://www.techferry.com/articles/spring-annotations.html>

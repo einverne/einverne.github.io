@@ -89,7 +89,13 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 查看 supervisord 是否在运行：
 
     ps aux | grep supervisord
-    
+
+`supervisord` 是 supervisor 的守护进程，但是他自身并没有 reload 选项，因此需要使用
+
+	service supervisor restart  # 来重启 supervisord
+
+如果需要使用其他 conf 文件，在 stop supervisord 之后在使用 `-c` 参数后接配置文件。
+
 
 ## APT安装
 
