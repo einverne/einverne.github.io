@@ -3,7 +3,7 @@ layout: post
 title: "开始使用Vim"
 description: "VIM使用入门，入门教程"
 category: vim
-tags: [vim, tutorial]
+tags: [vim, tutorial, linux, editor]
 ---
 
 ## Brief Introduction

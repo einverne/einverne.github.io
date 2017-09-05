@@ -3,7 +3,7 @@ layout: post
 title: "vim 学习笔记2"
 description: "vim学习笔记2"
 category: [vim, 学习笔记]
-tags: [vim, command]
+tags: [vim, command, linux, editor]
 last_updated: 2015-09-10
 ---
 
@@ -180,4 +180,5 @@ Insert模式下
 差不多看到这里就能够直接看文档了：[http://vimcdoc.sourceforge.net/](http://vimcdoc.sourceforge.net/) 通过文档学习更多符合自己使用习惯的命令或者操作。
 
 ## reference
+
 - <http://vim.wikia.com/wiki/Search_and_replace>
