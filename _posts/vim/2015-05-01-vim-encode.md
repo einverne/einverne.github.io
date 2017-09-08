@@ -3,7 +3,7 @@ layout: post
 title: "Vim字符编码及中文菜单乱码"
 description: "VIM字符编码解决方案，自动识别文件编码，中文菜单乱码"
 category: vim
-tags: [vim, encode, fileencoding]
+tags: [vim,linux, encode, fileencoding]
 last_updated: 2016-07-16
 ---
 

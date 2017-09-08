@@ -7,7 +7,7 @@ tags: [vim, command, linux, editor]
 last_updated: 2015-09-10
 ---
 
-vim学习笔记进阶版，初级版可以参考这篇[文章](/post/2015/05/vim-notes.html)
+Vim 学习笔记进阶版，初级版可以参考这篇[文章](/post/2015/05/vim-notes.html)
 
 ## combine command
 

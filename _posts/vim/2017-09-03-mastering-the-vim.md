@@ -8,7 +8,7 @@ tags: [vim, linux, editor]
 last_updated: 
 ---
 
-I am using Vim for quite a while, but the most valuable of vim is that using of Vim never hit the ceiling. I can always find new features in the using of Vim. I recent watched this [video](https://www.youtube.com/watch?v=wlR5gYd6um0) and found a new way to use Vim.
+我已经用了很长一段时间 Vim 了，但是 Vim 最可贵之处便在于你永远达不到 Vim 的天花板，在使用的过程中我永远会发现操作 Vim 的其他便捷方法。最近看了一个关于 Vim 的[讲座](https://www.youtube.com/watch?v=wlR5gYd6um0) ，革新我对 Vim 命令的认识。可以说掌握这样的一个世界观可以对 Vim 的操作上到另外一个层次。下面就总结一下这个视频中的精髓内容。
 
 @ChrisToomey 定义了一种 Vim Language，Vim 的语法由动词+名词组成，比如：
 
@@ -18,7 +18,7 @@ I am using Vim for quite a while, but the most valuable of vim is that using of 
 
 这个经常使用的命令非常容易记住。
 
-重复和撤销，相信使用过一段时间Vim的人应该会知道 `.` 表示重复上一次命令， `u` 表示撤销上一次操作。而重复和撤销是针对命令而不是针对输入的，因此每使用一次 `.` 或者 `u` 都是命令级别。
+重复和撤销，相信使用过一段时间 Vim 的人应该会知道 `.` 表示重复上一次命令， `u` 表示撤销上一次操作。而重复和撤销是针对命令而不是针对输入的，因此每使用一次 `.` 或者 `u` 都是命令级别。
 
 Verbs: 常用的动作举例
 
@@ -83,3 +83,7 @@ Nouns: Parameterized Text Objects
 	hello world
 
 
+## refernence
+
+- <https://www.youtube.com/watch?v=wlR5gYd6um0>
+- <http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html>
