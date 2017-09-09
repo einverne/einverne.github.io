@@ -3,10 +3,10 @@
   $.fn.toc = function(options) {
     var defaults = {
       noBackToTopLinks: true,
-      title: 'TOC',
+      title: '文章目录',
       minimumHeaders: 3,
       headers: 'h1, h2, h3, h4, h5, h6',
-      listType: 'ol', // values: [ol|ul]
+      listType: 'ul', // values: [ol|ul]
       showEffect: 'show', // values: [show|slideDown|fadeIn|none]
       showSpeed: 'slow' // set to 0 to deactivate effect
     },
@@ -47,7 +47,7 @@
 
     var level = get_level(headers[0]),
       this_level,
-      html = settings.title + " <"+settings.listType+">";
+      html = "<strong>"+settings.title +"</strong>" + " <"+settings.listType+">";
     headers.on('click', function() {
       if (!settings.noBackToTopLinks) {
         window.location.hash = this.id;

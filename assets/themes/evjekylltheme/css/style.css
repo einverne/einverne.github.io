@@ -1,5 +1,5 @@
 body {
-	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+	font-family: Verdana, Hiragino Sans GB, PingFang-SC-Regular, "Microsoft YaHei", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
 	padding-top: 60px;
 }
 
@@ -8,6 +8,9 @@ body {
 }
 
 ol, ul {
+	display: block;
+	list-style-type: disc;
+	margin-left: 5px;
 	padding-left: 20px;
 }
 
@@ -20,7 +23,7 @@ h2 {
 	font-weight: bold;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
-	border-left: 15px solid #2e9fff;
+	border-left: 5px solid #2e9fff;
 }
 
 .mobilepadding {
@@ -44,6 +47,21 @@ h2 {
 
 #toc {
 	margin-top: 10px;
+	border: 1px solid #e2e2e2;
+	padding: 6px;
+	width: 300px;
+	line-height: 1.8;
+}
+
+#toc strong {
+  border-bottom: 1px solid #e2e2e2;
+	display: block;
+	margin-left: 5px;
+}
+
+#toc ul {
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 #floatbox {
@@ -124,8 +142,8 @@ ul.tag_box {
   color: #FFF; }
 
 p {
-  font-size: 110%;
-	text-align: justify;
+  font-size: 16px;
+	/*text-align: justify;*/
 }
 
 p img{
@@ -157,14 +175,14 @@ p img{
   position: relative;
 
   /*Font*/
-  font-family: Georgia, Cambria, serif;
+  font-family: Verdana,'Hiragino Sans GB',冬青黑,'Microsoft YaHei',微软雅黑,SimSun,宋体,Helvetica,Tahoma,'Arial sans-serif';
   font-size: 16px;
   line-height: 1.2;
   color: #444;
   text-align: justify;
 
   /*Borders - (Optional)*/
-  border-left: 15px solid #999;
+  border-left: 5px solid #999;
   border-right: 2px solid #999;
 
   /*Box Shadow - (Optional)*/
@@ -195,14 +213,14 @@ p img{
 
 code {
 	color: #333;
-	background-color: rgba(0,0,0,0.04);
+	background-color: #eff0f1;
 	padding: 0;
 	padding-top: 0.2em;
     padding-bottom: 0.2em;
 	border-radius: 3px;
 	margin: 0;
-	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-	font-size: 102%;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Monaco,Lucida Console,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+	font-size: 105%;
 }
 
 /*
@@ -242,7 +260,7 @@ kbd
   box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
   color:#333;
   display:inline-block;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family: Verdana,Helvetica,sans-serif;
   font-size:11px;
   line-height:1.4;
   margin:0 .1em;
@@ -258,14 +276,14 @@ blockquote{
   position: relative;
 
   /*Font*/
-  font-family: Georgia, serif;
+  font-family: Arial,'Hiragino Sans GB',冬青黑,'Microsoft YaHei',微软雅黑,SimSun,宋体,Helvetica,Tahoma,'Arial sans-serif';
   font-size: 16px;
   line-height: 1.2;
   color: #444;
   text-align: justify;
 
   /*Borders - (Optional)*/
-  border-left: 15px solid #c76c0c;
+  border-left: 5px solid #c76c0c;
   border-right: 2px solid #c76c0c;
 
   /*Box Shadow - (Optional)*/
