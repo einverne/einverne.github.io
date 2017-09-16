@@ -8,6 +8,7 @@ tags: [intro, beginner, jekyll, tutorial]
 last_updated: 2015-09-10
 ---
 
+GitHub 官方默认使用的 markdown 解析器是 kramdown，他的语法和 markdown 定义的内容相差无几，只有一些些扩充，下面是一些常用的 markdown 语法以及在本博客中可能会使用到的语法内容，如果想要了解 kramdown 的语法可以参考官方的 [ref](https://kramdown.gettalong.org/quickref.html#quick-reference)。
 
 # h1 Heading
 
