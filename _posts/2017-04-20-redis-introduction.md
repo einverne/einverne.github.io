@@ -10,6 +10,8 @@ last_updated:
 
 Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一[^1]。
 
+Redis 是 REmote DIctionary Server 远程字典服务 的缩写，他以字典结构存储数据，并允许其他应用通过 TCP 协议来读写字典中的内容。
+
 [^1]: <https://db-engines.com/en/ranking/key-value+store>
 
 Redis支持很多的特性:
@@ -36,7 +38,7 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
 最方便最快捷的安装方式，如果使用 docker 也可以使用 docker 中官方的源。
 
 ### 手动安装
-官网下载 https://redis.io/download
+官网下载 <https://redis.io/download>
 
 下载最新的稳定版 Redis，可以从 <http://download.redis.io/redis-stable.tar.gz> 获取最新稳定版
 

@@ -8,7 +8,7 @@ tags: [Redis, Database, 学习笔记]
 last_updated: 
 ---
 
-Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类型不用多讲，后两种 set 是单纯的集合， Sorted Set 是有序集合，在集合内可以根据 score 进行排序。
+Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类型不用多讲，后两种 set 是单纯的集合， Sorted Set 是有序集合，在集合内可以根据 score 进行排序。 Redis 的命令不区分大小写，但通常情况下使用大写以示区分。
 
 几个常用网址：
 
@@ -17,7 +17,7 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类
 - 中文命令 <http://redisdoc.com/>
 
 
-对Redis键的命名格式为，”对象类型：对象ID：对象属性“
+对Redis键的命名格式并没有强制性的要求，不过一般约定为，”对象类型：对象ID：对象属性“，比如使用 user:1:friends 表示 id 为 1 的用户的好友列表。为了方便后期维护，键的命名一定要有意义。
 
 `redis-cli` 是 Redis 自带的命令行工具(类似于MySQL的mysql命令), 直接在命令行终端与 redis server 执行所有命令和返回响应。下面所有命令都可以在 cli 交互式命令行中执行。
 
@@ -30,6 +30,22 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类
 `--stat` 参数打印状态
 
 如果本地没有安装 Redis，可以通过在线模拟尝试 [Try Redis](https://try.redis.io/)
+
+## 基础命令
+
+获取符合规则的键名列表
+
+	KEYS pattern
+
+pattern 支持 glob 风格的通配符格式。
+
+可以使用 `EXISTS` 命令来判断一个键是否存在
+
+	EXISTS key
+
+使用 `TYPE` 键的数据类型
+
+	TYPE key
 
 ## 字符串类型操作命令
 

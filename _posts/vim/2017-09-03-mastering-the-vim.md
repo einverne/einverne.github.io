@@ -10,6 +10,9 @@ last_updated:
 
 我已经用了很长一段时间 Vim 了，但是 Vim 最可贵之处便在于你永远达不到 Vim 的天花板，在使用的过程中我永远会发现操作 Vim 的其他便捷方法。最近看了一个关于 Vim 的[讲座](https://www.youtube.com/watch?v=wlR5gYd6um0) ，革新我对 Vim 命令的认识。可以说掌握这样的一个世界观可以对 Vim 的操作上到另外一个层次。下面就总结一下这个视频中的精髓内容。
 
+## Text Objects and motions
+
+
 @ChrisToomey 定义了一种 Vim Language，Vim 的语法由动词+名词组成，比如：
 
 	d 删除
@@ -30,19 +33,60 @@ Verbs: 常用的动作举例
 
 Nouns: 常见的动作 Motion
 
-	w word
-	b back
+	w 移动到下一个 word 开始
+	e 移动到下一个 word 的结尾
+	b 移动到上一个 word 的开始 back
 	2j   down 2 lines
 
 定义了很多Vim中的移动
 
 Nouns: Text Objects
 
+	w => words
+	s => sentences
+	p => paragraphs
+	t => tags  (html xml)
+
+
+motions 
+
+	a => all
+	i => in
+	t => 'till
+	f => find forward
+	F => find backward
+
 	iw => inner word
 	it => inner tag
 	i" => inner quotes
 	ip => inner paragraph
 	as => a sentence
+
+	commands
+
+	d => delete(also cut)
+	c => change(delete, then into insert mode)
+	y => yank (copy)
+	v => visual select
+
+
+diw  delete in word
+
+yi)  yank all text inside the parentheses
+
+inside
+
+all include
+
+f include 
+
+va"  visual select all inside double quotes including double quotes
+
+
+
+上面的 Text Object
+
+	{command}{text object or motion}
 
 在单词中间, `diw` 删除光标下的单词，`dit` 删除光标下tag中的内容
 
@@ -81,6 +125,17 @@ Nouns: Parameterized Text Objects
 或者可以使用 `ds"` 来将 surrounding 双引号删除 delete surrounding "
 
 	hello world
+
+
+
+
+## DOT command
+
+
+
+## macro
+
+
 
 
 ## refernence

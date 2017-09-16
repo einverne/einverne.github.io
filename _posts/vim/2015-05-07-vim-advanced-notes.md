@@ -9,6 +9,8 @@ last_updated: 2015-09-10
 
 Vim 学习笔记进阶版，初级版可以参考这篇[文章](/post/2015/05/vim-notes.html)
 
+这篇文章主要分为替换操作，多窗口操作，Vim 的 Tab 操作，以及Visual mode 命令模式等等。
+
 ## combine command
 
 	.    (dot) will repeat the last command
