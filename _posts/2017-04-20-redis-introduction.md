@@ -216,6 +216,15 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
 
 在启动了 redis 之后就可以再熟悉一下他的[命令](/post/2017/04/redis-command.html)了。
 
+## 多数据库支持
+Redis 实例提供了多个用来存储数据库的字典，客户端可以用来指定将数据存储在哪个数据库中，类似关系型数据库可以新建很多个数据库，可以将 Redis 的每一个字典都理解成为一个数据库。
+
+每个数据库对外都是以一个从0开始的递增数字命名， Redis 默认支持 16 个数据库。 客户端与 Redis 建立连接之后会自动选择 0 号数据库，不过随时可以使用 SELECT 命令来更换数据库，比如选择 1 号数据库 `SELECT 1`.
+
+注意：Redis 不支持自定义数据库名，每个数据库都以编号命名；Redis 也不支持为每一个数据库设置不同的访问密码；多个数据库之间并不是完全隔离， `FLUSHALL` 命令可以清空 Redis 实例中所有数据库数据。
+
+
+
 ## reference
 
 参考： <https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04>
