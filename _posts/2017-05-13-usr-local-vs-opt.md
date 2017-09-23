@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "目录 /usr/local vs /opt 的区别"
+title: "目录 /usr/local vs /opt 的区别及 JDK 安装"
 tagline: ""
-description: ""
+description: "JDK 的两种安装方式引出的目录结构对比"
 category: 经验总结
-tags: [Linux, FHS]
+tags: [Linux, FHS, Java, ]
 last_updated: 
 ---
 
@@ -14,6 +14,7 @@ last_updated:
 
 `/opt` 目录一般用来安装非捆绑的软件程序，每个应用都有其自己的子目录，比如在安装Chrome 之后，Chrome 完整的程序和其资源文件都会存在 `/opt/google/chrome` 下。
 
+## 安装JDK 的两种方式
 因此在 Linux 下如果手工安装 JDK 7/8 时，可以将安装路径手动指定到 `/opt` 目录下，方便管理。
 
 安装 JDK 的两种方式，一种是直接通过 apt 包管理来安装
@@ -39,5 +40,20 @@ last_updated:
 
 	source ~/.zshrc
 
+## 更新提供JDK
 
-	
+运行命令会得到目前系统安装的 JDK 或者 JRE，选择序号确定即可。
+
+	$ sudo update-alternatives --config java
+	There are 3 choices for the alternative java (providing /usr/bin/java).
+	  Selection    Path                                            Priority   Status
+	------------------------------------------------------------
+	* 0            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      auto mode
+	  1            /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java   1061      manual mode
+	  2            /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java   1071      manual mode
+	  3            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+	Press enter to keep the current choice[*], or type selection number:
+
+## reference 
+
+- <https://launchpad.net/~webupd8team/+archive/ubuntu/java>
