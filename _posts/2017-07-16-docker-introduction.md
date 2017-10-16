@@ -8,32 +8,34 @@ tags: [Docker, Linux, ]
 last_updated: 
 ---
 
+Docker 是一个能够把开发环境的应用程序自动部署到容器的开源引擎。该引擎的目标是提供一个轻量、快速的环境，能够运行开发者的程序，并方便高效地将程序从开发者的笔记本部署到测试环境，然后再部署到生产环境。 
 
+Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。
 
-Docker 是一个能够把开发环境的应用程序自动部署到容器的开源引擎。该引擎的目标是提供一个轻量、快速的环境，能够运行开发者的程序，并方便高效地将程序从开发者的笔记本部署到测试环境，然后再部署到生产环境。    
-   
-Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。    
-   
-Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。    
-   
-容器是完全使用沙箱机制，相互之间不会有任何接口,更重要的是容器性能开销极低。    
-   
+Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+
+容器是完全使用沙箱机制，相互之间不会有任何接口,更重要的是容器性能开销极低。
+
+Docker 使用客户端-服务端 C/S 架构，使用远程 API 来管理和创建 Docker 容器。
+
+Docker 容器通过 Docker 镜像来创建。容器与镜像的关系类似于面向对象编程中的对象与类。
+
 
 Docker 官网：<http://www.docker.com>
-   
+
 Github Docker 源码：<https://github.com/docker/docker>
 
 
-名词 | 解释    
------|-------    
-Docker 镜像(Images)             |Docker 镜像是用于创建 Docker 容器的模板。        
-Docker 容器(Container)    |容器是独立运行的一个或一组应用。     
+名词 | 解释
+-----|-------
+Docker 镜像(Images)    |Docker 镜像是用于创建 Docker 容器的模板。可以使用 docker images 来查看镜像
+Docker 容器(Container) |容器是独立运行的一个或一组应用。可以使用 docker ps -a 来查看 container
 Docker 客户端(Client) |Docker 客户端通过命令行或者其他工具使用 Docker API (https://docs.docker.com/reference/api/docker_remote_api) 与 Docker 的守护进程通信。       
 Docker 主机(Host)     |一个物理或者虚拟的机器用于执行 Docker 守护进程和容器。     
 Docker 仓库(Registry)   |Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。 Docker Hub(https://hub.docker.com) 提供了庞大的镜像集合供使用     
-Docker Machine      |Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。     
+Docker Machine      |Docker Machine是一个简化Docker安装的命令行工具，通过一个简单的命令行即可在相应的平台上安装Docker，比如VirtualBox、 Digital Ocean、Microsoft Azure。
 
-       
+
 ## 安装
 
 ### Ubuntu
@@ -41,19 +43,17 @@ Docker Machine      |Docker Machine是一个简化Docker安装的命令行工具
 Docker 要求 Ubuntu 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的 Ubuntu 版本是否支持 Docker。
 通过 uname -r 命令查看你当前的内核版本。通过如下命令安装
 
-
     wget -qO- https://get.docker.com/ | sh
 
 启动
 
     sudo service docker start
-    
+
 启动测试运行 hello-world
 
     docker run hello-world
 
 ### Raspberry Pi 树莓派
-
 
 Hypriot team 提供了一个可安装的 [Package](http://blog.hypriot.com/downloads/)，可以不必自己编译安装：
 
@@ -197,16 +197,80 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 比如说：
 
     docker pull registry.docker-cn.com/library/ubuntu:16.04
-    
-### 查看并运行镜像
 
-当拉取完成之后可以使用 `sudo docker images` 来查看本地的镜像列表，可以运行本地镜像
+[Docker Store](https://store.docker.com/) 是发现 Docker 镜像的新地方。
+    
+### 查看镜像
+
+当拉取完成之后可以使用 `sudo docker images` 来查看本地的镜像列表
+
+	$ sudo docker images
+	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+	nginx               latest              1e5ab59102ce        6 days ago          108MB
+	redis               latest              4e482b286430        3 months ago        99MB
+
+列出的信息中，可以看到几个字段
+
+- REPOSITORY 镜像名字，比如 nginx
+- TAG 镜像的标记， latest 或者特定版本号
+- IMAGE ID 镜像的唯一标示
+- CREATED
+- SIZE
+
+默认 `docker images` 只会显示顶层镜像，如果希望显示包含中间层镜像在内的所有镜像，需要添加 `-a` 参数
+
+	docker images -a
+
+`docker images` 命令有 `-f` 参数用来过滤，比如列出 虚悬镜像 dangling image 可以使用
+
+	$ sudo docker images -f dangling=true
+	REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+	<none>              <none>              8e7492c7cb6a        28 minutes ago      122MB
+
+虚悬镜像是指因为官方镜像维护，发布新版本之后有些本地镜像名被取消，虚悬镜像已经没有价值，可以随意删除
+
+	sudo docker rmi $(sudo docker images -q -f dangling=true)
+
+`docker images` 支持更多的过滤器语法，比如，希望看到 `ubuntu:14.04` 之后建立的镜像，可以
+
+	sudo docker images -f since=ubuntu:14.04
+
+想看某个时间之前的镜像，可以把 `since` 改成 `before`
+
+也可以自定输出格式
+
+	sudo docker images --format "{{.ID}}: {{.Repository}}"
+	sudo docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
+
+
+### 运行镜像
+
+可以运行本地镜像
 
     sudo docker run -t -i ubuntu:12.04 /bin/bash
+
+	sudo docker run --name=webserver –p 8080:80 –d nginx
+
+
+- `run` 命令用来创建一个 docker container
+- 如果有 `-p` 参数，用来将 `-p local-machine-port:internal-container-port` 暴露出来，比如 8080:80 将内部的 80 端口映射到 8080 端口
 
 ### 查看当前运行的容器
 
 当运行某一个镜像时，docker 会自动创建一个 container 容器在，该容器中运行该镜像，可以使用 `sudo docker ps -a` 来查看当前正在运行的容器。可以使用 `docker stop [ContainerId]` 来终止一个容器的运行。
+
+### 终止容器
+使用 `docker stop` 来终止一个运行中的容器，当前正在运行或者终止的容器可以使用 `sudo docker ps -a` 来查看。
+
+处于终止状态的容器，可以通过 `docker start` 命令来重新启动。
+
+此外，`docker restart` 命令会将一个运行态的容器终止，然后再重新启动它。
+
+### 进入容器
+但在 `docker run` 时使用 `-d` 参数时，容器会进入后台，可以使用 `attach` 来进入容器
+
+	sudo docker attach <containerid>
+
 
 
 ### 移除容器和镜像

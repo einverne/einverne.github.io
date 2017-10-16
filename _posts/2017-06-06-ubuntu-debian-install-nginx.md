@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ubuntu/Debian install nginx"
+title: "Ubuntu/Debian 安装 nginx"
 tagline: ""
 description: ""
 category: 经验总结
@@ -10,9 +10,10 @@ last_updated:
 
 
 ## installation
-sudo apt-get install nginx
+Use following command to install:
 
-nginx -v
+	sudo apt-get install nginx
+	nginx -v 
 
 all config file is under `/etc/nginx/nginx.conf` 
 
@@ -53,6 +54,8 @@ other parameters:
 
 `/usr/share/nginx/html/`: actual web content, this path can be changed by altering Nginx configuration file.
 
+默认 Ubuntu 16.04 会将 nginx 托管的地址指向 `/var/www/html/` 目录。
+
 ### server configuration
 
 `/etc/nginx`: The nginx configuration directory. All of the configuration files reside here.
@@ -87,7 +90,51 @@ Defines how many threads, or simultaneous instances, of nginx to run. Learn more
 **pid**  
 Defines where nginx will write its master process ID, or PID.
 
+## 设置 Nginx Server Blocks
+Server Blocks 类似 Apache Virtual Hosts 概念，作用就是通过配置让同一台机器同时托管多个域名。
 
+首先创建目录
+
+	sudo mkdir -p /var/www/www.einverne.info/html
+	sudo chmod -R 755 /var/www
+
+如果组和用户不是 `www-data` ，可以用 `sudo chown -R www-data:www-data /var/www/www.einverne.info/html` 来改变
+
+默认情况下 nginx 包含一个 server block ---- default , 创建其他 server block的时候可以以它作为模板
+
+	sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/www.einverne.info
+
+然后修改该配置
+
+```
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /var/www/www.einverne.info/html;
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name www.einverne.info;
+
+	location / {
+			try_files $uri $uri/ =404;
+	}
+}
+```
+
+修改 `vim /etc/nginx/nginx.conf` 中
+
+```
+http {
+    . . .
+
+    server_names_hash_bucket_size 64;
+
+    . . .
+}
+```
+
+使用 `sudo nginx -t` 来测试配置。
 
 
 ## reference
