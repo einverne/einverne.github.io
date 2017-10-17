@@ -84,7 +84,9 @@
         {% endunless %}
         <div id="floatbox">
             <div class="g-plusone" data-annotation="inline" data-width="300"></div>
-            <div id="toc"></div>
+            <div id="post-directory-module">
+                <div id="toc"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -95,19 +97,19 @@
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
     $(document).ready(function () {
-        $('#toc').toc({headers: 'h2, h3'});
-
-        if (!isMobile()) {
-            var tocH = $("#floatbox").offset().top;
-            $(window).scroll(function () {
-                var scroH = $(this).scrollTop();
-                if (scroH >= tocH) {
-                    $("#floatbox").css({"position": "fixed", "top": 0});
-                } else {
-                    $("#floatbox").css({"position": "static"});
-                }
-            });
-        }
+//        $('#toc').toc({headers: 'h2, h3'});
+//
+//        if (!isMobile()) {
+//            var tocH = $("#floatbox").offset().top;
+//            $(window).scroll(function () {
+//                var scroH = $(this).scrollTop();
+//                if (scroH >= tocH) {
+//                    $("#floatbox").css({"position": "fixed", "top": 0});
+//                } else {
+//                    $("#floatbox").css({"position": "static"});
+//                }
+//            });
+//        }
 
         $.getJSON('/quotes.json', function (data) {
             var rand = Math.floor(Math.random() * data.quotes.length);
@@ -116,8 +118,8 @@
         });
 
         jQuery('#qrcode').qrcode({
-            width:128,
-            height:128,
+            width: 128,
+            height: 128,
             text: window.location.href
         });
     });
