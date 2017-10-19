@@ -15,48 +15,47 @@ Swagger 能根据 Spring Controller 接口自动生成一个文档页面，在�
 ## 添加依赖
 在 `pom.xml` 中添加
 
-	<dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger2</artifactId>
-		<version>2.7.0</version>
-	</dependency>
-	<dependency>
-		<groupId>io.springfox</groupId>
-		<artifactId>springfox-swagger-ui</artifactId>
-		<version>2.7.0</version>
-	</dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger2</artifactId>
+        <version>2.7.0</version>
+    </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-swagger-ui</artifactId>
+        <version>2.7.0</version>
+    </dependency>
  
 最新的版本可以在 mvnrepository 上查到，或者上官网或者 github。
 
 ## 添加配置类
 
 
-	@Configuration
-	@EnableSwagger2
-	public class SwaggerConfig {
+    @Configuration
+    @EnableSwagger2
+    public class SwaggerConfig {
 
-		@Bean
-		public Docket helloApi() {
-			return new Docket(DocumentationType.SWAGGER_2)
-					.apiInfo(apiInfo())
-					.select()
-					.apis(RequestHandlerSelectors.basePackage("info.einverne.springboot.demo"))
-					.paths(PathSelectors.any())
-					.build();
-		}
+        @Bean
+        public Docket helloApi() {
+            return new Docket(DocumentationType.SWAGGER_2)
+                    .apiInfo(apiInfo())
+                    .select()
+                    .apis(RequestHandlerSelectors.basePackage("info.einverne.springboot.demo"))
+                    .paths(PathSelectors.any())
+                    .build();
+        }
 
-		private ApiInfo apiInfo() {
-			return new ApiInfoBuilder()
-					// 文档标题
-					.title("API 文档")
-					// 文档描述
-					.description("https://github.com/einverne/thrift-swift-demo/tree/master/spring-boot-demo")
-					.termsOfServiceUrl("https://github.com/einverne/thrift-swift-demo/tree/master/spring-boot-demo")
-					.version("v1")
-					.build();
-		}
-
-	}
+        private ApiInfo apiInfo() {
+            return new ApiInfoBuilder()
+                    // 文档标题
+                    .title("API 文档")
+                    // 文档描述
+                    .description("https://github.com/einverne/thrift-swift-demo/tree/master/spring-boot-demo")
+                    .termsOfServiceUrl("https://github.com/einverne/thrift-swift-demo/tree/master/spring-boot-demo")
+                    .version("v1")
+                    .build();
+        }
+    }
 
 通过`@Configuration`注解，让Spring来加载该类配置。再通过`@EnableSwagger2`注解来启用Swagger2。
 
