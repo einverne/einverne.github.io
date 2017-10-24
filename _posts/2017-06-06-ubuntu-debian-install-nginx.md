@@ -12,8 +12,8 @@ last_updated:
 ## installation
 Use following command to install:
 
-	sudo apt-get install nginx
-	nginx -v 
+    sudo apt-get install nginx
+    nginx -v 
 
 all config file is under `/etc/nginx/nginx.conf` 
 
@@ -37,15 +37,15 @@ user data can be found in conf file.
 
 start nginx
 
-	sudo service nginx start
+    sudo service nginx start
 
 stop nginx
 
-	sudo service nginx stop
+    sudo service nginx stop
 
 other parameters:
 
-	reload        restart       start         status        stop
+    reload        restart       start         status        stop
 
 
 ## nginx files and path
@@ -72,14 +72,14 @@ other parameters:
 ### nginx conf
 nginx conf
 
-	user www-data;
-	worker_processes auto;
-	pid /run/nginx.pid;
+    user www-data;
+    worker_processes auto;
+    pid /run/nginx.pid;
 
-	events {
-		worker_connections 768;
-		# multi_accept on;
-	}
+    events {
+        worker_connections 768;
+        # multi_accept on;
+    }
 
 **user**  
 Defines which Linux user will own and run the nginx. Most Debian-based distributions use `www-data`.
@@ -95,30 +95,30 @@ Server Blocks 类似 Apache Virtual Hosts 概念，作用就是通过配置让�
 
 首先创建目录
 
-	sudo mkdir -p /var/www/www.einverne.info/html
-	sudo chmod -R 755 /var/www
+    sudo mkdir -p /var/www/www.einverne.info/html
+    sudo chmod -R 755 /var/www
 
 如果组和用户不是 `www-data` ，可以用 `sudo chown -R www-data:www-data /var/www/www.einverne.info/html` 来改变
 
 默认情况下 nginx 包含一个 server block ---- default , 创建其他 server block的时候可以以它作为模板
 
-	sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/www.einverne.info
+    sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/www.einverne.info
 
 然后修改该配置
 
 ```
 server {
-	listen 80;
-	listen [::]:80;
+    listen 80;
+    listen [::]:80;
 
-	root /var/www/www.einverne.info/html;
-	index index.html index.htm index.nginx-debian.html;
+    root /var/www/www.einverne.info/html;
+    index index.html index.htm index.nginx-debian.html;
 
-	server_name www.einverne.info;
+    server_name www.einverne.info;
 
-	location / {
-			try_files $uri $uri/ =404;
-	}
+    location / {
+        try_files $uri $uri/ =404;
+    }
 }
 ```
 
