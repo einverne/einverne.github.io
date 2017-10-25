@@ -10,7 +10,19 @@ last_updated:
 
 Nginx 相关的配置
 
-## 全局块
+## 全局块 {#global-conf}
+Nginx 的全局配置是影响整个服务器的配置。
+
+主要有以下几个
+
+Directive                 | Explanation
+--------------------------|-----------------------------
+user                      | user and group
+workr_processes           | 
+error_log                 | log
+pid                       | file where the process ID of the main process is written
+use                       | 连接方式
+worker_connections        | 连接数
 
 ### 配置用户用户组
 
@@ -176,6 +188,9 @@ Nginx 提供 include 配置来引入其他文件
 
 第二种方式使用 `default_type mime-type` 直接配置。
 
+## Server section
+
+
 ### 自定义 Access 日志
 与 `error_log` 不同的是，Nginx 进程运行时访问日志，由 Nginx 提供服务过程中应答前端请求的日志。
 
@@ -229,6 +244,11 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 限制用户通过某一个连接向 Nginx 发送请求次数
 
 	keepalive_requests number;
+
+## 虚拟主机配置
+
+虚拟主机以 `server` 开头，server 内的配置都认为是 虚拟主机 配置。虚拟主机定义了一套由不同 `server_name` 配置区分的资源。虚拟主机一般由 `listen` 、`server_name` 等一组配置决定。
+
 
 ### 配置网络监听
 监听配置方法主要有三种
@@ -417,6 +437,7 @@ Nginx 支持 HTTP Basic Authentication 协议的认证，该协议是一种 HTTP
 			proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
 		}
 	}
+
 
 
 ## reference
