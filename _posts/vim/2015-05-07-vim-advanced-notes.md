@@ -11,22 +11,44 @@ Vim 学习笔记进阶版，初级版可以参考这篇[文章](/post/2015/05/vi
 
 这篇文章主要分为替换操作，多窗口操作，Vim 的 Tab 操作，以及Visual mode 命令模式等等。
 
-## combine command
+## 组合命令 combine command
+Vim 所有的操作都是原子化的，将操作组合起来能够实现非常快捷的Input
 
-	.    (dot) will repeat the last command
-	n<commmand>    will repeat the command n times
+	.    (dot) will repeat the last command 点命令重复上一个命令
+	n<commmand>    will repeat the command n times 将命令重复 n 次
 
 for example:
 
 	2dd    will delete 2 lines
 	3p 	   will paste the text 3 times
 	40idesu [ESC] will write "desu " 40 times
+	5w     向后移动5个单词
+	6j     向下移动6行
 
-## move in one file
+Vim 还支持另一种组合
+
+	di"   光标在引号内， (d)elete (i)nside "  删除在引号之间的内容
+	yi(   光标在括号内， (y)ank (i)nside ()  复制在()中的内容
+	vi]   光标在中括号内， 选中[] 内的内容
+	dtx   向后删除字符直到遇到第一个 `x` 字符， (d)elete (t)ill x
+	ytx   先后复制内容直到遇到第一个 `x` 字符
+
+## 文件中快速跳转
 
 	NG    go to line N, N is a number, like 23G means go to line 23
-	gg    shortcut for 1G - go to the start of the file
-	G     Go to last line
+	:x    跳转到第 x 行 x为行号
+	gg    shortcut for 1G - 跳转到第一行
+	G     跳转到最后一行
+
+## 标记和宏 macro
+
+	ma    将当前位置标记为a，26个字母都可以作为标记，`mb`, `mc` 等
+	'a    跳转到 a 标记位置
+	qa    将所有的键盘操作录制下来，直到再次在命令模式按下 <kbd>q</kbd>， 并存储在 <kbd>a</kbd> 中
+	@a    执行刚刚记录在 <kbd>a</kbd> 中的键盘操作
+	@@    执行上一次 macro 操作
+
+宏命令是 Vim 中最神奇的操作之一，需要慢慢体会
 
 ## 批量替换
 
@@ -112,10 +134,10 @@ Ctrl-w < > 	调整窗口宽度，<缩小当前窗口宽度，向左扩展一列�
 
 
 ## Tabs
-Tab is different from the windows in vim. If your fimiliar with Firefox or Chrome, you can understand that a new tab contains a new website. While in vim, a tab can contain several windows and you can move the windows between tabs.
+在 Vim 中 Tab 和 Windows 是不一样的概念，如果平时使用 Chrome 或者 Firefox，就很好理解 Tab，在 Vim 中每一个 Tab 能够包含多个窗口。
 
 ### Create New tab
-There are lots of ways to create a new tab, here I only intruduce some common commands.
+有很多方法可以创建新 Tab , 这里是最简单方式：
 
 	:tabnew 	create a empty new tab
 	:tabedit {file} 	edit specified file in new tab
@@ -147,7 +169,7 @@ While in normal mode, you can type:
 	gT 			go to previous tab
 	{i}gt 		go to tab in position i
 
-## 更正
+## 修改文本
 
 Insert模式下
 
@@ -172,6 +194,16 @@ Insert模式下
 	
 	:! command 暂时离开 vi 到命令模式下执行 command
 
+## 把命令的结果读入 Vim
+在命令模式下，可以不离开 Vim 进行操作，但如果想要把命令的结果粘贴到 Vim 中，就需要使用 read 命令
+
+	:read !ls -al
+
+Vim 会在当前光标处插入命令执行的结果。
+
+## 增减数字
+将光标停在数字上，Vim  中 <kbd>Ctrl</kbd> + <kbd>X</kbd> 会将数字减1， 而 <kbd>Ctrl</kbd> + <kbd>A</kdb> 能将数字加1 ,默认为8进制。
+
 ## Other
 
 	:verbose set tabstop?    in Vim, it will tell you where the tapstop option value is coming from
@@ -179,7 +211,15 @@ Insert模式下
 	g <C-g>  单词统计
 
 
+
 差不多看到这里就能够直接看文档了：[http://vimcdoc.sourceforge.net/](http://vimcdoc.sourceforge.net/) 通过文档学习更多符合自己使用习惯的命令或者操作。
+
+还有一些参考资料
+
+- <http://vimhelp.appspot.com/>
+- [Practial Vim](http://book.douban.com/subject/10599776/) Vim Tips 的书籍
+- [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) 用 Vim 方式操作Chrome浏览器
+- [Vimer](http://www.vimer.cn/) 一个极好的博客
 
 ## reference
 

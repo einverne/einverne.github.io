@@ -46,9 +46,11 @@ Vim 有四个跟字符编码方式有关的选项，encoding、fileencoding、fi
 ### vimrc中设置
 
 在分析了乱码原因，了解了vim编码的参数之后，就可以根据实际情况来配置了
+
 1. 分析文件编码，配置vim文件文件解析编码fileencodings，让vim能解析出来
 2. 分析系统编码，配置vim内码encoding，如果linux系统语言为ansi，则必须配置内码，否则vim无法处理中文，中文windows下vim内码为gbk，但还是建议统一配置为utf-8
 3. 根据输出配置显示编码，linux系统如果使用了putty或者SecureCRT，需要注意配置termencoding和终端软件一致，windows系统比较少有终端软件，系统能自动解析gdb和utf-8，建议统一配置为utf-8
+
 参考的vim编码配置如下，linux和windows配置相同，linux系统语言编码和ssh终端编码配置为utf-8，windows则不需要配置，即可正常的打开utf-8，gdk等编码的文件
 
 	"vim内部编码

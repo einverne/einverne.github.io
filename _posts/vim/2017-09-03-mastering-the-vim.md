@@ -12,7 +12,6 @@ last_updated:
 
 ## Text Objects and motions
 
-
 @ChrisToomey 定义了一种 Vim Language，Vim 的语法由动词+名词组成，比如：
 
 	d 删除
@@ -27,7 +26,7 @@ Verbs: 常用的动作举例
 
 	d Delete
 	c Change  delete and enter insert mode
-	y yank  copy
+	y yank
 	>  intend 缩进
 	v 选择
 
@@ -36,19 +35,18 @@ Nouns: 常见的动作 Motion
 	w 移动到下一个 word 开始
 	e 移动到下一个 word 的结尾
 	b 移动到上一个 word 的开始 back
-	2j   down 2 lines
+	2j   向下移动 2 lines
 
-定义了很多Vim中的移动
+Vim中定义了很多移动操作
 
-Nouns: Text Objects
+基于内容 Nouns: Text Objects
 
-	w => words
-	s => sentences
-	p => paragraphs
+	w => words 表示移动一个单词
+	s => sentences 移动一个句子
+	p => paragraphs 向下移动一个段落
 	t => tags  (html xml)
 
-
-motions 
+动作 motions 
 
 	a => all
 	i => in
@@ -62,26 +60,17 @@ motions
 	ip => inner paragraph
 	as => a sentence
 
-	commands
+命令 commands
 
 	d => delete(also cut)
 	c => change(delete, then into insert mode)
 	y => yank (copy)
 	v => visual select
 
+组合举例
 
-diw  delete in word
-
-yi)  yank all text inside the parentheses
-
-inside
-
-all include
-
-f include 
-
-va"  visual select all inside double quotes including double quotes
-
+	diw  delete in word
+	yi)  yank all text inside the parentheses
 
 
 上面的 Text Object
@@ -127,15 +116,17 @@ Nouns: Parameterized Text Objects
 	hello world
 
 
-
-
 ## DOT command
-
+Vim 中的 "." 命令，以命令为单位，重复上一个命令。
 
 
 ## macro
+Vim 允许记录一个宏来完成一组命令
 
-
+	qa                  # 将命令记录到寄存器a 中
+	q                   # 再次q 结束记录
+	@a                  # 使用寄存器
+	@@                  # 使用上一次寄存器
 
 
 ## refernence
