@@ -3,7 +3,7 @@ layout: post
 title: "Mastering the Vim"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [vim, linux, editor]
 last_updated: 
 ---

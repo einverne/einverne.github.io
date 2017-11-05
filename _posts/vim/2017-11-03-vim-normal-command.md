@@ -3,7 +3,7 @@ layout: post
 title: "vim normal 命令"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [Vim, Linux]
 last_updated: 
 ---

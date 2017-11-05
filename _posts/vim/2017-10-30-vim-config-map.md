@@ -3,7 +3,7 @@ layout: post
 title: "Vim 键映射"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [Vim, Linux, ]
 last_updated: 
 ---

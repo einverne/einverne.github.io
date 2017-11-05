@@ -3,7 +3,7 @@ layout: post
 title: "Vim 全局命令 g"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [Vim, Regex, Linux]
 last_updated: 
 ---

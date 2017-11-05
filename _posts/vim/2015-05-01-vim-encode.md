@@ -2,7 +2,7 @@
 layout: post
 title: "Vim字符编码及中文菜单乱码"
 description: "VIM字符编码解决方案，自动识别文件编码，中文菜单乱码"
-category: vim
+category: Vim
 tags: [vim,linux, encode, fileencoding]
 last_updated: 2016-07-16
 ---
@@ -90,7 +90,4 @@ fileformats，用于区分操作系统，主要是回车\r\n的区别，fileform
 
 - [http://blog.zheezes.com/vim-ultimate-character-encoding-scheme.html](http://blog.zheezes.com/vim-ultimate-character-encoding-scheme.html)
 - http://www.vimer.cn/2009/10/87.html
-
-
-
 

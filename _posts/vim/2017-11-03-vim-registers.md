@@ -3,7 +3,7 @@ layout: post
 title: "Vim 寄存器"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [Vim, Linux, ]
 last_updated: 
 ---

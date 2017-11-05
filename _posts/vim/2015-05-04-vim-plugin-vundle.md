@@ -2,7 +2,7 @@
 layout: post
 title: "Vim插件Vundle"
 description: "Vim插件Vundle，Vim插件"
-category: vim
+category: Vim
 tags: [vim, vim-plugin, vundle]
 last_updated: 2016-07-16
 ---
