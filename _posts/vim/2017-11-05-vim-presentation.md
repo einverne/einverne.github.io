@@ -68,7 +68,17 @@ last_updated:
     d^  删除光标到行首非空白字符
 	d$  删除光标到该行最后
 	J   删除光标所在行的换行符
-    s,S
+
+## 组合
+
+    Operator + Motion = Action
+
+    dw
+    da'
+
+    Example:
+    This is an 'example' for "word-to-delete".
+    add quote to this "word"
 
 ## 搜索
 
@@ -78,17 +88,18 @@ last_updated:
 	N  - 上一个
 	*  - Word under cursor - forward (bounded)
 	#  - Word under cursor - backward (bounded)
-	:s/p1/p2/g -将当前行中所有p1均用p2替代
 	:n1, n2s/p1/p2/g -将第n1至n2行中所有p1均用p2替代
 	:g/p1/s//p2/g -将文件中所有p1均用p2替换
 
 ## 替换
 
+	:s/p1/p2/g -将当前行中所有p1均用p2替代
     :%s/old/new/g 全局替换
     :'<,'>s/old/new/g 选中之后替换
     :g/^$/d 删除所有空行
-    
 
+    Example:
+    
 ## Text Object
 
     dit, di', di", di), di}, di],
@@ -109,14 +120,6 @@ last_updated:
     print c
 
 ## register
-
-    :reg a 查看寄存器
-    ""   noname buffer last dcsxy
-    "_   blackhole register
-    "%   filename register
-    "/   last search register
-    ":   last command
-
 共有9大类寄存器
 
 - The unnamed register ""
@@ -129,10 +132,38 @@ last_updated:
 - The black hole register "_
 - Last search pattern register "/
 
+寄存器访问
+    "a   寄存器前加 "
+
+其他操作
+
+    :reg a 查看寄存器
+    ""   noname buffer last dcsxy
+    "_   blackhole register
+    "%   filename register
+    "/   last search register
+    ":   last command
+    insert mode <C-r> a insert text in register a
+    "ap  Normal mode paste text in register a
+
+
+
+## Plugin
+
+    surround.vim
+
+    cs"'      change surround " to '
+    cs'<q>    change surround ' to <q>
+    ds'       delete surround '
+    ysiw"     add " to word
+    yss)      add ) to entire line
+
+    Example:
+    "Hello world!"  and other strings
 
 ## start
 
-vimutor
+    vimutor
 
 ## 总结
 
