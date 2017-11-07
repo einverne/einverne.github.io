@@ -49,6 +49,7 @@ last_updated:
     0,^,$
     gg, G
     fx,Fx,tx,Tx,
+    '', g;     move cursor to last edit change
 
     Example: This is a sentence for testing moving with a word and WO-RD test.
 
@@ -68,6 +69,7 @@ last_updated:
     d^  删除光标到行首非空白字符
 	d$  删除光标到该行最后
 	J   删除光标所在行的换行符
+    r,R 替换
 
 ## 组合
 
@@ -105,6 +107,7 @@ last_updated:
     dit, di', di", di), di}, di],
     yi), yi]
     vi', vit
+    ciw, ciw)
 
 ## macro
 
