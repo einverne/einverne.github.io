@@ -156,6 +156,29 @@ Swagger 能根据 Spring Controller 接口自动生成一个文档页面，在�
 
     @ApiImplicitParams({@ApiImplicitParam(name = "TOKEN", value = "Authorization token", required = true, dataType = "string", paramType = "header")})
 
+## 根据环境选择开启 Swagger
+Swagger 提供了 `enable` 方法，可以通过设置该方法来选择开启 Swagger 来在线上环境禁用 Swagger。
+
+    @Bean 
+    public Docket customImplementation(){
+        return new Docket(SWAGGER_2)
+            .apiInfo(apiInfo())
+            .enable(environmentSpeficicBooleanFlag) //<--- Flag to enable or disable possibly loaded using a property file
+            .includePatterns(".*pet.*");
+    }
+
+如果使用 Spring @Profile 也可以
+
+    @Bean
+    @Profile("production")
+    public Docket customImplementation(){
+        return new Docket(SWAGGER_2)
+            .apiInfo(apiInfo())
+            .enable(false) //<--- Flag set to false in the production profile
+            .includePatterns(".*pet.*");
+    }
+
+From: https://stackoverflow.com/a/27976261/1820217
 
 ## reference
 
