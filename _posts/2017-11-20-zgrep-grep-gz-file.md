@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "每天学习一个命令：zgrep 过滤文本"
+title: "每天学习一个命令：zgrep 不解压过滤压缩包中文本"
 tagline: ""
 description: ""
 category: Linux

@@ -8,7 +8,16 @@ tags: [Tmux, Linux, ]
 last_updated: 
 ---
 
-Tmux 是一个很棒的终端复用工具，和 screen 命令类似，但是 Tmux 终极的分屏功能要比 screen 强大很多，当然入门也比 screen 要高很多。
+Tmux 是一个很棒的终端复用工具，和 screen 命令类似，但是 Tmux 终极的分屏功能要比 screen 强大很多，当然入门也比 screen 要高很多。如果你长时间在终端进行编程或者操作，或者你陷入无数的 Tab 而无法自拔，那么你应该需要开始了解一些 Tmux。
+
+本文会从如下几个方面对 Tmux 进行介绍：
+
+1. Tmux 基本使用
+2. Tmux 的基本模块
+        - Windows
+        - Panes
+        - Sessions
+
 
 Tmux主要包括以下几个模块：
 
@@ -23,10 +32,11 @@ Ubuntu/Debian 系下
 	sudo apt-get install tmux
 
 ## 基础概念 {#basic}
+Tmux is a tool that allows running multiple terminal sessions through a single terminal window. It allows you to have terminal sessions running in the background and attach and detach from them as needed, which is very useful. 
 
 ### Tmux 的前缀快捷键
 
-Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和screen默认激活控制台的Ctrl+a不同，Tmux默认的是Ctrl+b。当想要使用快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀默认是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的会话（对应的快捷键是 s），那么你只需要做以下几步：
+Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和screen默认激活控制台的Ctrl+a不同，Tmux默认的是Ctrl+b。当想要使用Tmux的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的会话（对应的快捷键是 s），那么你只需要做以下几步：
 
 1. 按下组合键 Ctrl-b (Tmux 快捷键前缀)
 2. 放开组合键 Ctrl-b
@@ -39,8 +49,10 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 	unbind-key C-b
 	set-option -g prefix C-a
 
+在下文中就使用 `<prefix>` 来代替 Tmux 的前缀快捷键了。
+
 ### Tmux 的配置文件
-每当开启一个新的会话时，Tmux 都会先读取 ~/.tmux.conf 这个文件。该文件中存放的就是对 Tmux 的配置。
+每当开启一个新的会话session时，Tmux 都会先读取 ~/.tmux.conf 这个文件。该文件中存放的就是对 Tmux 的配置。
 
 如果你希望新的配置项能够立即生效，那么你可以将下面这一行配置加入到文件 ~/.tmux.conf 中。
 
@@ -51,34 +63,35 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 
 以下所有的操作都是激活控制台之后，即键入 `<prefix>` 前提下才可以使用的命令
   
-
 基本操作
 
 	<prefix> ?    列出所有快捷键；按q返回    
-	<prefix> d    脱离当前会话,可暂时返回Shell界面，输入Tmux attach能够重新进入之前会话    
-	<prefix> s    选择并切换会话；在同时开启了多个会话时使用    
+	<prefix> d    脱离当前会话,可暂时返回Shell界面，输入`tmux attach`能够重新进入之前会话    
+	<prefix> s    选择并切换会话session；在同时开启了多个会话时使用    
 	<prefix> D    选择要脱离的会话；在同时开启了多个会话时使用    
 	<prefix> :    进入命令行模式；此时可输入支持的命令，例如kill-server所有Tmux会话    
 	<prefix> [    复制模式，光标移动到复制内容位置，空格键开始，方向键选择复制，回车确认，q/Esc退出    
 	<prefix> ]    进入粘贴模式，粘贴之前复制的内容，按q/Esc退出    
-	<prefix> = 	选择性粘贴缓冲区中内容
+	<prefix> = 	  选择性粘贴缓冲区中内容
 	<prefix> ~    列出提示信息缓存；其中包含了之前Tmux返回的各种提示信息    
 	<prefix> t    显示当前的时间    
 	<prefix> Ctrl+z    挂起当前会话    
 
 
 ## session 相关
+Tmux 的一个 Session 可以包含多个 Windows.
 
 	tmux 		  						创建session
 	tmux new -s $session_name  			创建并指定 session 名字
 	tmux ls  							列出存在的 session，包括 session 中存在的 windows
 	tmux attach -t session_name 		进入指定会话session_name
+	tmux a -t $session_name  			进入已存在的session
+	tmux kill-session -t $session_name 	删除指定session
 	<prefix> :kill-session  			删除 session
 	<prefix> d 							临时退出session，回话在后台运行，可以通过 attach 进入指定的会话
-	tmux a -t $session_name  			进入已存在的session
 	<prefix> :kill-server  				删除所有session
-	tmux kill-session -t $session_name 	删除指定session
-	<prefix> s  	从列表中选择session
+    <prefix> :new -s session_name       在 Tmux 中新建 session
+	<prefix> s  	列出所有活跃 session，并可以从列表中选择session
 	<prefix> $  	重命名session
 
 
@@ -94,7 +107,7 @@ window(窗口)在 session 里，一个 session 可以有N个window，并且windo
 	<prefix> , 		重命名window
 	<prefix> f 		在多个window里搜索关键字
 	<prefix> l 	    last window 在相邻的两个window里切换
-	<prefix> 0,1,2  在window之间切换
+	<prefix> 0,1,2  在window之间切换，如果窗口数超过10个，可以使用 `<prefix> 'num` 来切换
 
 ## pane 相关
 
@@ -194,11 +207,26 @@ Tmux内置命令帮助
 	bind -n M-k select-pane -U
 	bind -n M-j select-pane -D
 
-这里另外推荐一个 Plugin，如果不想自己配置，可以使用这个插件[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) ，这个插件做到了在 pane 中移动就像在 vim 中一样，并且可以和 vim 无缝衔接。
+这里另外推荐一个 Plugin，如果不想自己配置，可以使用这个插件[vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) ，这个插件做到了在 pane 中移动就像在 vim 中一样，并且可以和 vim 无缝衔接。使用 Ctrl + hjkl 来在不同的 Panel 中移动。
 
+### 设置 Colorscheme
+在设置完 Tmux 在 Tmux 中使用 Vim 的时候会发现，Vim 的 colorscheme 变的有些奇怪，需要在 `.bashrc` 或者 `.zshrc` 中设置：
+
+    export TERM="xterm-256color"
+
+### 复制模式
+Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步：
+
+- `<prefix> [` 进入复制模式
+- space 开始复制，一共光标进行选择复制
+- Enter 复制并退出复制模式
+- 在将光标移动到指定位置，按 `<prefix> ]` 进行粘贴
 
 ## reference
+
 - <https://tmuxcheatsheet.com/>
 - <https://gist.github.com/MohamedAlaa/2961058>
 - <https://www.sitepoint.com/10-killer-tmux-tips/>
 - <https://github.com/davidbrewer/tmux-conf/blob/master/tmux.conf>
+- <http://mingxinglai.com/cn/2012/09/tmux/>
+- 一本很翔实的书 <https://leanpub.com/the-tao-of-tmux/read>
