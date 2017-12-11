@@ -34,7 +34,7 @@ Ubuntu/Debian 系下
 ## 基础概念 {#basic}
 Tmux is a tool that allows running multiple terminal sessions through a single terminal window. It allows you to have terminal sessions running in the background and attach and detach from them as needed, which is very useful. 
 
-### Tmux 的前缀快捷键
+### Tmux 的前缀快捷键 {#tmux-prefix}
 
 Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和screen默认激活控制台的Ctrl+a不同，Tmux默认的是Ctrl+b。当想要使用Tmux的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的会话（对应的快捷键是 s），那么你只需要做以下几步：
 
@@ -51,7 +51,7 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 
 在下文中就使用 `<prefix>` 来代替 Tmux 的前缀快捷键了。
 
-### Tmux 的配置文件
+### Tmux 的配置文件 #{tmux-conf}
 每当开启一个新的会话session时，Tmux 都会先读取 ~/.tmux.conf 这个文件。该文件中存放的就是对 Tmux 的配置。
 
 如果你希望新的配置项能够立即生效，那么你可以将下面这一行配置加入到文件 ~/.tmux.conf 中。
@@ -77,9 +77,12 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 	<prefix> t    显示当前的时间    
 	<prefix> Ctrl+z    挂起当前会话    
 
+如果要查看当前 Tmux 的配置，可以通过 `tmux show -g` 来查看。
 
 ## session 相关
 Tmux 的一个 Session 可以包含多个 Windows.
+
+在 Tmux 外：
 
 	tmux 		  						创建session
 	tmux new -s $session_name  			创建并指定 session 名字
@@ -87,6 +90,9 @@ Tmux 的一个 Session 可以包含多个 Windows.
 	tmux attach -t session_name 		进入指定会话session_name
 	tmux a -t $session_name  			进入已存在的session
 	tmux kill-session -t $session_name 	删除指定session
+
+在 Tmux 内：
+
 	<prefix> :kill-session  			删除 session
 	<prefix> d 							临时退出session，回话在后台运行，可以通过 attach 进入指定的会话
 	<prefix> :kill-server  				删除所有session
@@ -100,7 +106,7 @@ Tmux 的一个 Session 可以包含多个 Windows.
 window(窗口)在 session 里，一个 session 可以有N个window，并且window可以在不同的session里移动。 window 可以看成是一个 session 的不同 tab。
 
 	<prefix> c 		创建window
-	<prefix> & 		删除window
+	<prefix> & 		删除或者关闭window
 	<prefix> n 		下一个window
 	<prefix> p 		上一个window
 	<prefix> w 		列出现在开启的 window
@@ -222,6 +228,10 @@ Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步�
 - Enter 复制并退出复制模式
 - 在将光标移动到指定位置，按 `<prefix> ]` 进行粘贴
 
+## Tmux 和 iTerm，Guake，Terminator 等终端的区别
+X Windows系统中常用的Xterm，GNU Screen，SSH， GNome中的Terminal，KDE中的Konsole，Mac下常用的iTerm2等，这些软件都属于Terminal Emulator。 iTerm 等只是一个GUI软件，它的窗格只是窗格。而Tmux是终端复用，在一个命令行窗口中不仅可以显示多个Shell的内容，而且可以保持多个会话。 最重要的是：Tmux和Vim一样属于字符终端软件，不需要任何GUI的支持，在远程登录时尤其有用。
+
+
 ## reference
 
 - <https://tmuxcheatsheet.com/>
@@ -230,3 +240,5 @@ Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步�
 - <https://github.com/davidbrewer/tmux-conf/blob/master/tmux.conf>
 - <http://mingxinglai.com/cn/2012/09/tmux/>
 - 一本很翔实的书 <https://leanpub.com/the-tao-of-tmux/read>
+- <http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/>
+- <http://files.floriancrouzat.net/dotfiles/.tmux.conf>
