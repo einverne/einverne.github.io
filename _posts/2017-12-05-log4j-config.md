@@ -259,7 +259,7 @@ Log4J 采用类似 C 语言中的 printf 函数的打印格式格式化日志信
 
 格式化例子：
 
-    log4j.appender.APPENDER_NAME.file.out.layout.ConversionPattern=%d{yyyy MMM dd HH:mm:ss,SSS}%5p{%F\:%L}-%m%n
+    log4j.appender.APPENDER_NAME.file.out.layout.ConversionPattern=%d{yyyy MMM dd HH:mm:ss,SSS}%5p{ \%F\:\%L }-%m%n
 
 注意：
 
@@ -298,10 +298,10 @@ LocationInfo=true:默认值是false,输出java文件和行号
 
 可以在%与模式字符之间加上修饰符来控制其最小宽度、最大宽度、和文本的对齐方式。如：
 
-1) %20c：指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，默认的情况下右对齐。
-2) %-20c:指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，"-"号指定左对齐。
-3) %.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。
-4) %20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边交远销出的字符截掉。
+1. %20c：指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，默认的情况下右对齐。
+2. %-20c:指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，"-"号指定左对齐。
+3. %.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。
+4. %20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边交远销出的字符截掉。
 
 这里上面三个步骤是对前面 Log4j 组件说明的一个简化；下面给出一个具体配置例子，在程序中可以参照执行：
 
