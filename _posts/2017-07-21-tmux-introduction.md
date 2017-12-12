@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Tmux introduction"
+title: "Tmux 使用介绍"
 tagline: ""
-description: ""
+description: "非常棒的终端复用工具，和 Vim 一样，上手难，但使用起来非常方便"
 category: 学习笔记
-tags: [Tmux, Linux, ]
+tags: [tmux, linux, command]
 last_updated: 
 ---
 
