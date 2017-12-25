@@ -88,6 +88,9 @@ POST 提交时
     curl -u ftpuser:ftppassword -T file.txt ftp://ftp.server
     curl -u ftpuser:ftppassword -T "{file1, file2}" ftp://ftp.server
 
+总的来说，curl 的用法比较普通，最常见的也就是用来下载文件，或者直接查看Header，还有在命令行下发送 GET或者 POST 请求，其他用法倒也是有，不过日常并没有经常使用到。
+
+
 ## reference
 
 - <http://man.linuxde.net/curl>
