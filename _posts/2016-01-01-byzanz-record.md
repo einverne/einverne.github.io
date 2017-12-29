@@ -86,6 +86,8 @@ last_updated:
 
 ![byzanz record game](https://lh3.googleusercontent.com/-5BlCCUlOezw/VoZNpK2G3QI/AAAAAAAA5II/ni0WPjejkuo/s1280-Ic42/byzanz_game_test.png)
 
+在我的 <https://github.com/einverne/dotfiles> 项目中有自动安装 byzanz 的脚本，一键安装然后使用即可。
+
 ## 参考 {#reference}
 
 - <http://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast>
