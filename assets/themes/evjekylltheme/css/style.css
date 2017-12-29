@@ -188,8 +188,10 @@ p img {
     display: block;
     margin: 0 auto;
     border-radius: 3px;
-    /*	box-shadow: 0 1px 4px rgba(0,0,0,0.2);*/
     max-width: 100%;
+    -webkit-box-shadow: #999 1px 1px 4px;
+    -moz-box-shadow: #999 1px 1px 4px;
+    box-shadow: #999 1px 1px 4px;
 }
 
 .post-content {
