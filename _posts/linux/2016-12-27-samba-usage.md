@@ -4,7 +4,7 @@ title: "Samba 使用"
 tagline: ""
 description: ""
 category: Linux
-tags: [Samba, SMB, Openwrt, Linux]
+tags: [samba, smb, openwrt, linux]
 last_updated: 2017-03-10
 ---
 

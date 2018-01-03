@@ -88,14 +88,14 @@ Tmux 的一个 Session 可以包含多个 Windows.
 	tmux new -s $session_name  			创建并指定 session 名字
 	tmux ls  							列出存在的 session，包括 session 中存在的 windows
 	tmux attach -t session_name 		进入指定会话session_name
-	tmux a -t $session_name  			进入已存在的session
+	tmux a -t $session_name  			上面的缩写形式，进入已存在的session
 	tmux kill-session -t $session_name 	删除指定session
 
 在 Tmux 内：
 
-	<prefix> :kill-session  			删除 session
+	<prefix> :kill-session  			删除退出当前 session
 	<prefix> d 							临时退出session，回话在后台运行，可以通过 attach 进入指定的会话
-	<prefix> :kill-server  				删除所有session
+	<prefix> :kill-server  				删除所有活跃session
     <prefix> :new -s session_name       在 Tmux 中新建 session
 	<prefix> s  	列出所有活跃 session，并可以从列表中选择session
 	<prefix> $  	重命名session

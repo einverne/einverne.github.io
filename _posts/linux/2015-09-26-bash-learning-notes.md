@@ -4,12 +4,17 @@ title: "Bash 学习笔记之基本使用"
 tagline: "Bash 学习笔记"
 description: "Bash 学习笔记"
 category: [ Linux, 学习笔记]
-tags: [ Linux , bash, vim,]
+tags: [ linux , bash, vim,]
 last_updated: 2017-01-08
 ---
 
+Bash 的前身 shell 是 Unix 系统下的命令行解释器，主要用于用户和系统交互。 Unix 系统上有很多 Shell，首个 Shell，Bourne Shell，1978 年推出，后来又演变出 C Shell，Bash 等不同版本的 Shell。
 
-echo $BASH_VERSION
+Bash 全称为 Bourne-Again Shell，是一个为 GNU 项目编写的的 Unix Shell。Bash 脚本功能强大，尤其是在处理循环或者批量任务时。Bash 是大多数 Linux 平台默认的 Shell，所以学好 Bash 是基础。
+
+首选来看一下 Bash 的版本，输入下面命令
+
+    echo $BASH_VERSION
 
 ## 命令行编辑 Emacs mode vs Vi Mode
 可以使用 `set -o | egrep -w "(vi|emacs)"` 命令查看，当前命令行编辑模式。

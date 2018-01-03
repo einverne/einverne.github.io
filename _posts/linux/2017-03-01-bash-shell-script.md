@@ -365,6 +365,65 @@ ${var:+word} 	| 如果变量 var 被定义，那么返回 word，但不改变 va
 ## 条件语句
 
 ### IF
+条件判断有两种格式，`test EXPRESSION` 和 `[ EXPRESSION ]` , test 判断语句实际应用比较少， `[]` 判断应用比较广。
+
+基本格式
+
+    test EXPRESSION
+
+test 是关键词，表判断， EXPRESSION 被判断语句。
+
+表达式 | 说明
+-------|--------
+test -d File | 判断 File 是不是目录
+test -f File | 判断 File 是不是普通文件
+test -L File | 判断 File 是不是符号链接
+test -r File | 判断 File 是不是可读
+test -s File | 判断 File 是不是文件长度大于0、非空
+test -w File | 判断 File 是不是可写
+test -u File | 判断 File 是不是有 suid 位设置
+test -x File | 判断 File 是不是可执行
+
+格式
+
+    [ EXPRESSION ]
+
+中括号左右必须要有空格隔开
+
+
+表达式|说明
+------|-------
+[ (expr) ]|expr为真
+[ !expr ]|expr为假
+[ expr1 -a expr2 ]|expr1和expr2同时为真
+[ expr1 -o expr2 ]|expr1或expr2为真
+[ -n string ]|string的长度不为0
+[ -z string ]|string的长度为0
+[ string1 = string2 ]|两个字符串string1和string2相等
+[ string1 != string2 ]|两个字符串string1和string2不等
+[ integer1 -eq integer2 ]|两个integer1和integer2整数相等
+[ integer1 -ne integer2 ]|integer1不等于integer2
+[ integer1 -ge integer2 ]|integer1大于或等于integer2
+[ integer1 -gt integer2 ]|integer1大于integer2
+[ integer1 -le integer2 ]|integer1小于或等于integer2
+[ integer1 -lt integer2 ]|integer1小于integer2
+[ file1 -ef file2 ]|文件file1和file2有相同的device和inode数目
+[ file1 -nt file2 ]|file1的修改事件早于file2
+[ file1 -ot file2 ]|file1的修改事件晚于file2
+[ -b file ]|file是块设备
+[ -c file ]|file是字符设备
+[ -d file ]|file是文件夹
+[ -e file ]|file是存在
+[ -f file ]|file是普通文件
+[ -g file ]|file存在，且有group-ID
+[ -G file ]|file存在，且group-ID是有效的
+[ -h file ]|file存在，且是一个硬链接
+[ -L file ]|file存在，且是一个软链接
+[ -r file ]|file存在，且可读
+[ -w file ]|file存在，且可写
+[ -x file ]|file存在，且可执行
+
+下面是一些例子：
 
     if [ expression ]
     then
