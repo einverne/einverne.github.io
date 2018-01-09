@@ -87,6 +87,16 @@ Q2. What is the purpose that we have to generate multiple SSH keys for different
 There is no reason that you have to generate multiple keys for multiple remote Git repository servers, as indicated by the answer to your first question.
 As Jan Hudec has mentioned though, the reason one might choose to use different keys for different Git repositories, would be for an additional layer of security or management control.
 
+Q3. 如果遇到权限问题，可能是新建的 config 文件权限问题
+
+    ssh -T git@gitlab.com
+    Bad owner or permissions on /home/einverne/.ssh/config
+
+比如遇到上述问题，需要修改一下 config 文件权限
+
+    chmod 600 ~/.ssh/config
+    chown $USER ~/.ssh/config
+
 ## reference
 
 From:[stackoverflow](http://stackoverflow.com/questions/18574958/can-one-single-ssh-key-be-used-to-push-to-different-git-remotes)
