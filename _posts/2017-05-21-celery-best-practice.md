@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "celery best practice"
+title: "Celery 最佳实践"
 tagline: ""
-description: ""
+description: "Celery is a fast, reliable, distributed task queue"
 category: 经验总结
-tags: [celery, python, web, database, redis]
+tags: [celery, python, web, database, redis, queue,]
 last_updated: 
 ---
 
-## 不要使用数据库作为 AMQP Broker
-随着worker 的不断增多可能给数据库IO和连接造成很大压力。 Docker 上[很多](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=rabbitmq&starCount=0) 相关的镜像。
+## 尽量不要使用数据库作为 AMQP Broker
+随着worker 的不断增多可能给数据库IO和连接造成很大压力。更具体来说不要把 Celery 的task数据和应用数据放到同一个数据库中。 Docker 上[很多](https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=rabbitmq&starCount=0) 相关的镜像。
 
 
 ## 使用多个队列
@@ -228,9 +228,14 @@ celery 中[默认](http://celery.readthedocs.io/en/latest/userguide/optimizing.h
 
 	celery -A proj worker -l info -Ofair
 
+## 设置worker的数量
+Celery 默认会开启和CPU core一样数量的 worker，如果想要不想开启多个 worker ，可以通过启动时指定 `--concurrency` 选项
+
+    --concurrency=1
 
 ## reference
 
 - <https://denibertovic.com/posts/celery-best-practices/>
 - <https://blog.balthazar-rouberol.com/celery-best-practices>
 - <https://library.launchkit.io/three-quick-tips-from-two-years-with-celery-c05ff9d7f9eb>
+- <https://blog.jixee.me/7-tips-for-working-with-celery/>
