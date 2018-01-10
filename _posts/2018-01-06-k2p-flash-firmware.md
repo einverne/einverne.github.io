@@ -4,7 +4,7 @@ title: "斐讯 k2p 刷机"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [k2p, 路由器, router, openwrt, linux]
+tags: [k2p, 路由器, router, openwrt, linux, phicomm]
 last_updated: 
 ---
 

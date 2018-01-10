@@ -4,7 +4,7 @@ title: "常用 adb command 命令"
 tagline: ""
 description: ""
 category: Android
-tags: [AndroidDev, Android, adb]
+tags: [AndroidDev, android, adb, dev, device]
 last_updated: 2017-02-26
 ---
 
@@ -131,7 +131,20 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
     adb connect <host>[:<port>]
 
-## reference
+远程连接之后就可以使用上面的所有命令，也可卸载远程设备上的应用，也可以安装本地的apk到远程设备上，也可以通过adb命令来控制远程设备上的应用。
 
+通过下面的命令向远程设备安装应用
+
+    adb -s <ip:port> install -r <app.apk>
+
+向远程设备发送按键事件，比如下面向远程设备发送 Powerbutton 按键按下事件
+
+    adb -s <ip:port> shell input keyevent 26
+
+或者启动远程设备上的应用 Start the App
+
+    adb -s <ip:port> shell monkey -p <package name> -c android.intent.category.LAUNCHER 1
+
+## reference
 
 - <https://developer.android.com/studio/command-line/shell.html#shellcommands>
