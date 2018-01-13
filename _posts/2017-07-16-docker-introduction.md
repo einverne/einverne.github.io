@@ -4,7 +4,7 @@ title: "Docker 入门"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Docker, Linux, ]
+tags: [docker, linux, 容器, 虚拟化]
 last_updated: 
 ---
 
