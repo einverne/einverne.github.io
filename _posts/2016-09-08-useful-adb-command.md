@@ -145,6 +145,14 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
     adb -s <ip:port> shell monkey -p <package name> -c android.intent.category.LAUNCHER 1
 
+
+## adb 命令如何显示 package version
+在电视盒子上安装 Youtube 应用的时候，遇到了几个版本，突然想到这个命令
+
+    adb shell dumpsys package com.google.android.youtube | grep version
+
+可以用来查看当前这个 package 的版本号。
+
 ## reference
 
 - <https://developer.android.com/studio/command-line/shell.html#shellcommands>
