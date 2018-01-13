@@ -4,7 +4,7 @@ title: "Android Http 调试及抓包"
 tagline: ""
 description: "Android 开发过程中遇到的Http请求及抓包问题"
 category: 学习笔记
-tags: [Android, AndroidDev, ]
+tags: [android, androiddev, proxy]
 last_updated: 
 ---
 
@@ -140,8 +140,8 @@ Linux 下可以使用
 | 工具名字  |   支持平台    |      授权      |
 |-------------|------------------|---------------|
 | Fiddler  |  只支持Windows  |       |
-|  Charles  | Win/Mac/Linux  三大平台 |   单用户授权$50， 免费使用30天 |
-| Wireshark  |   Win/Mac 只能查看信息 |   | 
+| Charles  | Win/Mac/Linux  三大平台 |   单用户授权$50， 免费使用30天 |
+| Wireshark  |   Win/Mac/Linux |   | 
 | mitmproxy  |  Mac/Linux  命令行工具  |  free  | 
 
 ## reference
