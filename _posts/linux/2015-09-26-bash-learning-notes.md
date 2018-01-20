@@ -116,7 +116,7 @@ Command |  Explain
  Ctrl + s |  Stop output to the screen (for long running verbose commands)
           |  Then use PgUp/PgDn for navigation
  Ctrl + q |  Allow output to the screen (if previously stopped using command above)
- Ctrl + D |  Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
+ Ctrl + D |  退出当前Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
  Ctrl + Z |  Send the signal SIGTSTP to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
 
 
