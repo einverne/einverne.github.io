@@ -11,7 +11,7 @@ last_updated:
 Android 开发中可能需要对网络请求进行调试，这时刻需要对程序发出的请求进行抓包。下面记录一下之前调试使用过的工具和使用方法，以便于未来快速查询。
 
 ## Charles 
-Charles 是 Mac 下非常好用的抓包工具，不仅是对 Android，而 iOS，或者其他局域网能够使用本机http代理的任何设备都能够进行抓包的操作。
+Charles 是 Mac/Linux 下非常好用的抓包工具，不仅是对 Android，而 iOS，或者其他局域网能够使用本机http代理的任何设备都能够进行抓包的操作。
 
 > Charles实现对 Https 进行抓包，使用的原理就是中间人技术（man-in-the-middle）。Charles会动态生成一个使用自己根证书签名的证书，Charles接收web服务器的证书，而客户端浏览器/客户端 接收Charles生成的证书，以此客户端和Charles之间建立Https连接，Charles和Web服务器之间建立Https连接，实现对Https传输信息的抓包。
 
@@ -133,20 +133,21 @@ Linux 下可以使用
 
 更加详细的参数及使用可以参考[^1]
 
+[^1]: <https://wladimir-tm4pda.github.io/porting/tcpdump.html>
+
 ## 其他抓包工具
 
 可以实现抓包的方式有很多，正如上面所讲可以直接在 设备中运行 tcpdump，也可以将流量通过 HTTP 代理转到Charles 抓包，当然如果有条件甚至可以在网卡上实时抓包。
 
-| 工具名字  |   支持平台    |      授权      |
-|-------------|------------------|---------------|
-| Fiddler  |  只支持Windows  |       |
-| Charles  | Win/Mac/Linux  三大平台 |   单用户授权$50， 免费使用30天 |
-| Wireshark  |   Win/Mac/Linux |   | 
-| mitmproxy  |  Mac/Linux  命令行工具  |  free  | 
+| 工具名字  |   支持平台    |      授权      | 官方地址 |
+|-------------|------------------|---------------|------- |
+| Fiddler  |  只支持Windows  |       | https://www.telerik.com/download/fiddler
+| Charles  | Win/Mac/Linux  三大平台 |   单用户授权$50， 免费使用30天 | https://www.charlesproxy.com/download/ 
+| Wireshark  |  Win/Mac/Linux |   | https://www.wireshark.org/download.html
+| mitmproxy  |  Mac/Linux  命令行工具  |  free  | https://mitmproxy.org/
 
 ## reference
 
-[^1]: <https://wladimir-tm4pda.github.io/porting/tcpdump.html>
 - <http://www.cnblogs.com/findyou/p/3491035.html>
 - <https://gadgetcat.wordpress.com/2011/09/11/tcpdump-on-android/>
 

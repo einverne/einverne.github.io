@@ -23,6 +23,7 @@ Nginx 反向代理最重要的一个配置就是 `proxy_pass` ，该配置接受
 ## 常用配置
 
 ### 反代相关配置
+
 反向代理的常用配置选项
 
 Directive                       | Explanation
@@ -54,15 +55,10 @@ Directive                       | Explanation
 
 Directive                       | Explanation
 --------------------------------|--------------------------------
-`ip_hash`                       | 使得客户端的请求能够均匀的分布
-`keepalive`                     | 每一个 worker process 向上游服务器请求缓存的连接数，`proxy_http_version` 需要设置为 `1.1` 并且 `proxy_set_header` 设置为空
-`least_conn`                    | 负载均衡算法，根据 active 连接数来选择下一个连接
-`server`                        | 设置地址，域名或者 IP，或者 Unix-domain socket    一些选项
-										- weight: 设置 server 的权重
-										- `max_fails`: 重试最大次数
-										- `fail_timeout`: 服务器超过该时间会被标记为 Down
-										- `backup`: 只有其他机器都 Down 情况下才会使用该服务器
-										- `down`: 标记为 down 不会处理请求
+`ip_hash`     | 使得客户端的请求能够均匀的分布
+`keepalive`   | 每一个 worker process 向上游服务器请求缓存的连接数，`proxy_http_version` 需要设置为 `1.1` 并且 `proxy_set_header` 设置为空
+`least_conn`  | 负载均衡算法，根据 active 连接数来选择下一个连接
+`server`      | 设置地址，域名或者 IP，或者 Unix-domain socket  一些选项 weight: 设置 server 的权重，`max_fails`: 重试最大次数，`fail_timeout`: 服务器超过该时间会被标记为 Down ，`backup`: 只有其他机器都 Down 情况下才会使用该服务器，`down`: 标记为 down 不会处理请求
 
 ## 示例
 

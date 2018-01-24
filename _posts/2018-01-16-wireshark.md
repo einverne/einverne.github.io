@@ -10,7 +10,7 @@ last_updated:
 
 Wireshark 是一款网络分析工具，也是学习网络协议的工具，原先介绍过的 [Charles](/post/2016/11/android-http-proxy-debug.html) ，[mitmproxy](/post/2017/02/mitmproxy.html) 等HTTP抓包工具，都局限于 HTTP/HTTPS 请求，对于更底层的 TCP/IP，UDP 等协议就无能为力了。Wireshark 可以抓取网卡上的网络包，并实时展示，Wireshark 包括了过滤器，协议显示等等工具。
 
-Wireshark 和其他工具的区别，比如 Charles，mitmproxy，Fiddler 等。Charles, mitmproxy，Fiddler是专门用来捕获HTTP，HTTPS请求的。Wireshark 能获取HTTP，也能获取HTTPS，但是不能解密HTTPS，所以Wireshark看不懂HTTPS中的内容。总结，如果是处理HTTP,HTTPS 还是用Charles, mitmproxy, Fiddler 等, 其他协议比如TCP,UDP,IP,ICMP 等就用wireshark
+Wireshark 和其他工具的区别，比如 Charles，mitmproxy，Fiddler 等。Charles, mitmproxy，Fiddler是专门用来捕获HTTP，HTTPS请求的。Wireshark 能获取HTTP，也能获取HTTPS，但是不能解密HTTPS，所以Wireshark看不懂HTTPS中的内容。总结，如果是处理HTTP,HTTPS 还是用Charles, mitmproxy, Fiddler 等, 其他协议比如TCP,UDP,IP,ICMP 等就用Wireshark
 
 ## 安装 {#install}
 
