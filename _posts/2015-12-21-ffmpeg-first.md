@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "ffmpeg 入门"
+title: "ffmpeg 入门笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ffmpeg, linux]
+tags: [ffmpeg, linux, media, movie, mp4, mp3]
 last_updated: 2015-12-31
 ---
 
@@ -21,6 +21,12 @@ last_updated: 2015-12-31
 压缩同一个视频，视频编码率越大，文件体积越大。视频编码率越大，画质越好，马赛克越少。
 
 MP3一般使用的比特率为 8~320kbps。
+
+#### 可变码率
+可变码率叫做 Variable Bitrate (VBR)，VBR 指的是编码器的输出码率可以根据编码器输入源信号的复杂度自适应调整，目的是为了达到输出质量保持不变。VBR 适用于存储，不太适用流式传输，可以更有效的地利用有限空间。
+
+#### 固定码率
+固定码率叫做 Constant Bitrate (CBR)，CBR 指的是编码器输出码率固定，CBR 不适合存储，CBR 对于复杂内容可能没有足够码率进行编码，从而导致质量下降，同时会在简单内容部分浪费一些码率。
 
 ### 帧数 {#fps}
 每秒钟播放的图片数，单位 fps（英文：Frames Per Second），每秒的帧数或者帧率表示视频文件或者图形处理器场景时每秒钟能够更新的次数。
@@ -169,6 +175,7 @@ Source: <http://superuser.com/a/556031>
 picture.png 为水印图片， overlay 为水印位置
 
 ## ffmpeg使用语法 {#ffmpeg-usage}
+
 ffmpeg使用语法：
 
     ffmpeg [global_options] {[input_file_options] -i input_file} ... {[output_file_options] output_file} ...

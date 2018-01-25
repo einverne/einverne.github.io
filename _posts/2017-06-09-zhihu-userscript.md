@@ -10,7 +10,7 @@ last_updated:
 
 今天偶然间看到一个知乎[问题](https://www.zhihu.com/question/52157612/answer/180534098)：“最良心的软件可以良心到什么程度？”，当时在 Google+ 上点进去粗略看了一样，看到油猴脚本也就坦然了，而添加到稍后阅读，在晚上回来之后准备细看时却惊讶于知乎屏蔽的速度，在尝试使用 Google，bing 和 web archive ，baidu 的历史记录之后终于找回了一些渣滓。
 
-我在很早就已经推荐过 [Tampermonkey](http://einverne.github.io/post/2016/12/tampermonkey.html)， 也借此推荐过 [我用过的 Userscript](http://einverne.github.io/post/2015/08/userscripts.html) 。 而 Tampermonkey 我也用了很多年也曾总结过 Tampermonkey [同步](http://einverne.github.io/post/2016/12/tampermonkey.html)的功能。不过多少年过去了，很多脚本失效的失效，我自己之前写得找电影脚本也因为跨域问题，一直懒没有修复。
+我在很早就已经推荐过 [Tampermonkey](/post/2016/12/tampermonkey.html)， 也借此推荐过 [我用过的 Userscript](/post/2015/08/userscripts.html) 。 而 Tampermonkey 我也用了很多年也曾总结过 Tampermonkey [同步](/post/2016/12/tampermonkey.html)的功能。不过多少年过去了，很多脚本失效的失效，我自己之前写得找电影脚本也因为跨域问题，一直懒没有修复。
 
 幸好看到这样一篇总结帖，看看这两年又更新出来多少新玩法。以下为从历史记录中搜出：
 
@@ -54,5 +54,4 @@ last_updated:
 
 直接在 greasyfork.org 搜索 VIP 即可。
 
-
-
+授人以鱼不如授人以渔，每次看到此类 Collection 的时候总是会想起之前的[那篇文章](/post/2015/08/userscripts.html) 文章中有总结如今非常活跃的几个脚本聚集地。根据关键词应该能够搜索到很多关心的内容。

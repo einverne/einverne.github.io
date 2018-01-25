@@ -3,7 +3,7 @@ layout: post
 title: "我使用的Userscript"
 description: "我使用的Userscript"
 category: 整理合集
-tags: []
+tags: [userscript, tampermonkey]
 ---
 
 
@@ -12,6 +12,7 @@ tags: []
 ![Userscripts](https://lh3.googleusercontent.com/-X8VcfS3BJ_A/VcC4uFGFI9I/AAAAAAAAyk8/ui5CcL9eU2g/s640-Ic42/chrome%252520firefox%252520userscripts.png)
 
 ## 浏览器插件
+
 如果想要在浏览器中快捷方便的管理和安装脚本，可以使用如下的插件：
 
 - Chrome install Tampermonkey [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
@@ -29,10 +30,25 @@ userscripts.org已挂 原因参见：[ghacks.net](http://www.ghacks.net/2014/05/
 
     http://userscripts-mirror.org/scripts/show/175005
 
-新兴诞生的 Userscripts 网站列表：
+新兴诞生的 Userscripts 网站列表
 
-- [http://userscripts-mirror.org/](http://userscripts-mirror.org/)
-- [https://greasyfork.org/zh-CN](https://greasyfork.org/zh-CN)
+### Greasyfork
+[GreasyFork](https://greasyfork.org/) 或许是最受欢迎的后起之秀了。它由 Jason Barnabe 创建,Jason Barnabe 同时也是 [Stylish](https://userstyles.org/) 网站的创办者,在其储存库中有大量的脚本资源。
+
+- 拥有大量的活跃脚本
+- 拥有从 GitHub 同步脚本的功能
+- 非常活跃的开放源码 [GitHub](https://github.com/JasonBarnabe/greasyfork)
+
+### OpenUserJs
+[OpenUserJS](https://openuserjs.org/) 继 GreasyFork 之后开始创办。它由 Sizzle McTwizzle 创建,同样地,在其储存库中也拥有大量的脚本资源。
+
+- 大量的脚本
+- 可以从 GitHub 中进行同步
+- 开放源代码 <https://github.com/OpenUserJs/OpenUserJS.org>
+
+### GitHub/Gist
+可以在 GitHub 或者 gist 中[搜索](https://gist.github.com/search?l=javascript&q=%22user.js%22) 以 `.user.js` 后缀的文件。
+
 
 ## 脚本推荐
 
@@ -87,3 +103,6 @@ userscripts.org已挂 原因参见：[ghacks.net](http://www.ghacks.net/2014/05/
 
 好吧，放弃了，脚本好多失效了，等再发现好用的再更新吧，可以经常到上面提到的两个网站上逛一逛，会有惊喜，昨天就发现了优酷土豆爱奇艺等等国内视频网站的去广告脚本。
 
+## reference
+
+- <https://tampermonkey.net/scripts.php>
