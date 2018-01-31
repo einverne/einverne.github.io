@@ -4,7 +4,7 @@ title: "HBase Shell Command"
 tagline: ""
 description: "HBase 命令行工具"
 category: 学习笔记
-tags: [HBase, Linux, Apache,]
+tags: [hbase, linux, apache,]
 last_updated: 
 ---
 
