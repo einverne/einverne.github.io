@@ -25,14 +25,17 @@ Chevereto 是一款分享照片的程序，可以非常轻松得在自己的服�
 
     wget https://github.com/Chevereto/Chevereto-Free/archive/1.0.9.tar.gz
 
+### Nginx 配置
+新建虚拟主机，修改域名 A 记录指向 VPS，然后配置对应的 `vim /etc/nginx/sites-enabled/photo.einverne.info`
+
 由于 chevereto 默认提供基于 Apache 环境的伪静态规则，故 nginx 的配置是不能用的，需要自己添加规则
 
     server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 80;
+        listen [::]:80;
 
-        root /var/www/html;
-        index index.php index.html index.htm index.nginx-debian.html;
+        root /var/www/photo.einverne.info/html;
+        index index.php index.html index.htm;
 
         server_name server_domain_or_IP;
 
@@ -50,36 +53,48 @@ Chevereto 是一款分享照片的程序，可以非常轻松得在自己的服�
         }
     }
 
+nginx 配置中还要注意一个 `vim /etc/nginx/nginx.conf` 配置中增加：
 
+   server {
+        client_max_body_size 20M;
+        //other lines...
+    } 
 
-配置 MySQL
+修改完重新加载 Nginx 配置 `/etc/init.d/nginx reload` 。
+
+### 配置 MySQL
+安装完 MySQL 之后需要为 Chevereto 新建一个数据库：
 
     mysql -u root -p          # 登录mysql
     create database photo;    # 创建 photo 数据库
 
 
+### 修改 PHP 配置
+默认的PHP上传大小在配置中略有不同，如果想要增大每张照片上传的大小，不仅上面 Nginx 中需要配置，同理 PHP 配置中也需要修改如下 `vim /etc/php/7.0/fpm/php.ini` ：
 
-数据库名、数据库用户名、数据库用户密码，最后的数据表头名可以不变
+    max_execution_time
+    max_input_time
+    memory_limit
+    post_max_size
+    upload_max_filesize
 
+修改完重新加载PHP配置 `/etc/init.d/php7.0-fpm reload` 。
 
-max_execution_time
-max_input_time
-memory_limit
-post_max_size
-upload_max_filesize
+在做完这一系列配置之后，将之前下载的压缩包，在 `/var/www/photo.einverne.info/html/` 目录下解压，然后使用域名访问。如果一切都没有问题，那么 Chevereto 会显示要求数据配置。要求填写：数据库名、数据库用户名、数据库用户密码，还有数据库表头。
 
+这几项在前面安装时都已经完成，新建的数据库名，还有 MySQL 的用户名和密码，最后的数据表头名可以不变。然后下一步会填写管理员的一些信息，最后完成就好。
 
+## 使用
+设置中文，网上很多说需要修改密码，其实，在设置管理员面板中能够直接修改语言为中文。
 
-设置中文：Chevereto默认是英文，但鉴于功能十分简单，是否修改中文也无所谓。修改方法为在config.php修改define(‘LANG’, ‘cn’);
-
-修改图片存储路径：默认是在/images文件夹内，修改方法为在config.php修改define(‘DIR_IM’,’images/‘);
-
-
+修改图片存储路径：默认是在/images文件夹内，修改方法为在config.php修改`define(‘DIR_IM’,’images/‘);` ，这一步其实现在也能够在设置中直接修改。
 
 ## Error
-界面上显示
+如果上传遇到问题，界面上显示
 
     Server error (Internal server error)
+
+一般的情况就是 Nginx 或者 PHP 的上传大小设置不对，上传的图片大于了 Nginx 或者 PHP 能够处理的大小，这是时候调整上传的大小就可以。调试方法如下；
 
 没有给出任何信息，查看 nginx 错误日志
 
