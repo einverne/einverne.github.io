@@ -3,8 +3,8 @@ layout: post
 title: "Trello 简单使用"
 tagline: ""
 description: ""
-category: 
-tags: []
+category: 产品体验
+tags: [todo, web, 产品体验, plan, gtd, checklist, list, card]
 last_updated: 
 ---
 
