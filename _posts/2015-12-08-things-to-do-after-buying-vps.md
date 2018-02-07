@@ -125,6 +125,13 @@ After all this, you can type following command to have a try:
 	scp filename ds:~/filename   # copy file to server
 	ssh ds "ls ~" 		# list server files
 
+### setup hostname
+
+    hostnamectl set-hostname example_hostname
+
+### setup timezone
+
+    dpkg-reconfigure tzdata
 
 ## Test VPS
 
