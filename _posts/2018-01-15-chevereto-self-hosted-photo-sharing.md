@@ -58,7 +58,7 @@ nginx 配置中还要注意一个 `vim /etc/nginx/nginx.conf` 配置中增加：
    server {
         client_max_body_size 20M;
         //other lines...
-    } 
+   } 
 
 修改完重新加载 Nginx 配置 `/etc/init.d/nginx reload` 。
 
