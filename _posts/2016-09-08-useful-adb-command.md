@@ -3,7 +3,7 @@ layout: post
 title: "常用 adb command 命令"
 tagline: ""
 description: ""
-category: Android
+category: 整理合集
 tags: [AndroidDev, android, adb, dev, device]
 last_updated: 2017-02-26
 ---
@@ -27,15 +27,13 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
 将文件复制到 Android 设备上：
 
-`adb push filename.txt /sdcard/Download/`
-
-
+    adb push filename.txt /sdcard/Download/
 
 ## 从设备上拉取文件 adb pull
 
 将文件从 Android 设备上拉回本地
 
-`adb pull /sdcard/Download/filename.txt ~/filename.txt` 
+    adb pull /sdcard/Download/filename.txt ~/filename.txt
 
 ## adb reboot
 
@@ -56,6 +54,24 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
 ` adb shell chmod 666 /data/filename.txt` 
 
+### 屏幕截图
+shell 中可以直接截取设备的屏幕
+
+    adb shell screencap -p /sdcard/screen.png
+    adb pull /sdcard/screen.png
+    adb shell rm /sdcard/screen.png
+
+使用 `screencap` 截图保存到 sdcard 上，使用 `pull` 命令拉到本地并删除sd卡中文件。这种方式比较繁杂，需要三个步骤，如果查看 `screencap -h` 会发现，帮助中有一行，如果不加文件名，命令会将结果输出到标准输出。那么
+
+    adb shell screencap -p | sed 's/\r$//' > screen.png
+
+直接将结果输出到本地，之所以使用 `sed` 是因为需要将多余的 `\r` 删除。`adb shell` 在执行时会将 `\n` 转换为 `\r\n`。
+
+在本地添加 alias
+
+    alias and-screencap="adb shell screencap -p | sed 's/\r$//'"
+    and-screencap > screen.png 
+
 ### shell 中录制屏幕
 
 在 shell 命令中可以使用 `screenrecord` 命令来录制屏幕。需要 Android 4.4 （API Level 19）及以上，该命令将屏幕保存成 MPEG-4 文件。不录制声音。
@@ -72,7 +88,7 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 可选参数：
 
 -  `--help`
-- `--size <width*Height>`  比如 1280\*720.
+- `--size <width*Height>`  比如 `1280*720`.
 - `--bit-rate <rate>`  默认码率 4Mbps，6Mbps 可以设置  6000000.
 - `--time-limit <TIME>` 默认为180 (3min) 设置时间，单位秒
 - `--rotate` 旋转输出
@@ -102,6 +118,26 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 - `adb shell pm list packages --user <USER_ID>` The user space to query.
 
 [^1]: https://gist.github.com/davidnunez/1404789
+
+### 模拟点击和滑动事件
+命令格式
+
+    adb shell input text <string>
+    adb shell input keyevent <key code number or name>
+    adb shell input tap <x> <y>
+    adb shell input swipe <x1> <y1> <x2> <y2> [duration(ms)]
+
+模拟按键的，keycode 为 3 时表示 HOME 键，更多的可以参考后文的附录
+
+    adb shell input keyevent 3
+
+模拟点击时，后面接的 x，y 都是真实屏幕分辨率，比如想要点击屏幕(x,y)=(150,150)像素的位置
+
+    adb shell input tap 150 150
+
+模拟屏幕滑动和tap是一样的，只是需要给出滑动的起点和终点两个坐标值
+
+    adb shell input swipe 150 150 200 200
 
 ## 安装及卸载应用程序 adb install
 
@@ -153,6 +189,104 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
 可以用来查看当前这个 package 的版本号。
 
+## 附录 keyevent
+
+```
+KEYCODE_UNKNOWN=0;
+KEYCODE_SOFT_LEFT=1;
+KEYCODE_SOFT_RIGHT=2;
+KEYCODE_HOME=3;
+KEYCODE_BACK=4;
+KEYCODE_CALL=5;
+KEYCODE_ENDCALL=6;
+KEYCODE_0=7;
+KEYCODE_1=8;
+KEYCODE_2=9;
+KEYCODE_3=10;
+KEYCODE_4=11;
+KEYCODE_5=12;
+KEYCODE_6=13;
+KEYCODE_7=14;
+KEYCODE_8=15;
+KEYCODE_9=16;
+KEYCODE_STAR=17;
+KEYCODE_POUND=18;
+KEYCODE_DPAD_UP=19;
+KEYCODE_DPAD_DOWN=20;
+KEYCODE_DPAD_LEFT=21;
+KEYCODE_DPAD_RIGHT=22;
+KEYCODE_DPAD_CENTER=23;
+KEYCODE_VOLUME_UP=24;
+KEYCODE_VOLUME_DOWN=25;
+KEYCODE_POWER=26;
+KEYCODE_CAMERA=27;
+KEYCODE_CLEAR=28;
+KEYCODE_A=29;
+KEYCODE_B=30;
+KEYCODE_C=31;
+KEYCODE_D=32;
+KEYCODE_E=33;
+KEYCODE_F=34;
+KEYCODE_G=35;
+KEYCODE_H=36;
+KEYCODE_I=37;
+KEYCODE_J=38;
+KEYCODE_K=39;
+KEYCODE_L=40;
+KEYCODE_M=41;
+KEYCODE_N=42;
+KEYCODE_O=43;
+KEYCODE_P=44;
+KEYCODE_Q=45;
+KEYCODE_R=46;
+KEYCODE_S=47;
+KEYCODE_T=48;
+KEYCODE_U=49;
+KEYCODE_V=50;
+KEYCODE_W=51;
+KEYCODE_X=52;
+KEYCODE_Y=53;
+KEYCODE_Z=54;
+KEYCODE_COMMA=55;
+KEYCODE_PERIOD=56;
+KEYCODE_ALT_LEFT=57;
+KEYCODE_ALT_RIGHT=58;
+KEYCODE_SHIFT_LEFT=59;
+KEYCODE_SHIFT_RIGHT=60;
+KEYCODE_TAB=61;
+KEYCODE_SPACE=62;
+KEYCODE_SYM=63;
+KEYCODE_EXPLORER=64;
+KEYCODE_ENVELOPE=65;
+KEYCODE_ENTER=66;
+KEYCODE_DEL=67;
+KEYCODE_GRAVE=68;
+KEYCODE_MINUS=69;
+KEYCODE_EQUALS=70;
+KEYCODE_LEFT_BRACKET=71;
+KEYCODE_RIGHT_BRACKET=72;
+KEYCODE_BACKSLASH=73;
+KEYCODE_SEMICOLON=74;
+KEYCODE_APOSTROPHE=75;
+KEYCODE_SLASH=76;
+KEYCODE_AT=77;
+KEYCODE_NUM=78;
+KEYCODE_HEADSETHOOK=79;
+KEYCODE_FOCUS=80;//*Camera*focus
+KEYCODE_PLUS=81;
+KEYCODE_MENU=82;
+KEYCODE_NOTIFICATION=83;
+KEYCODE_SEARCH=84;
+KEYCODE_MEDIA_PLAY_PAUSE=85;
+KEYCODE_MEDIA_STOP=86;
+KEYCODE_MEDIA_NEXT=87;
+KEYCODE_MEDIA_PREVIOUS=88;
+KEYCODE_MEDIA_REWIND=89;
+KEYCODE_MEDIA_FAST_FORWARD=90;
+KEYCODE_MUTE=91;
+```
+
 ## reference
 
 - <https://developer.android.com/studio/command-line/shell.html#shellcommands>
+- <https://developer.android.com/reference/android/view/KeyEvent.html>

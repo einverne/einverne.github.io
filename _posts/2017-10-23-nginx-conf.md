@@ -4,11 +4,25 @@ title: "Nginx 配置详解"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Nginx, Web, Server, Linux]
+tags: [nginx, web, server, linux, proxy,]
 last_updated: 
 ---
 
-Nginx 相关的配置
+Nginx 的相关介绍及安装可以参考之前的一篇[文章](/post/2017/06/ubuntu-debian-install-nginx.html)
+
+Nginx 相关的配置， Nginx 中的配置有两种分类，一种为单纯的指令，另一种为上下文。
+
+指令，包含名称和参数名，以分号结束，比如
+
+    gzip on;
+
+上下文通常声明一个作用域，比如 server 块
+
+    server {
+        listen 80;
+    }
+
+在上下文中使用相同的指令时需要小心，一般子级上下文中的指令会覆盖父级中定义的值。
 
 ## 全局块 {#global-conf}
 Nginx 的全局配置是影响整个服务器的配置。

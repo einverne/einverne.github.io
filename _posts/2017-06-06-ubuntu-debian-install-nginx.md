@@ -4,11 +4,13 @@ title: "Ubuntu/Debian 安装 nginx"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Linux, Nginx, Ubuntu, Debian, Web]
+tags: [linux, nginx, ubuntu, debian, web]
 last_updated: 
 ---
 
 Nginx 是非常流行的 HTTP/HTTPS 服务器软件，它也可以作为反向代理服务器，邮件代理服务器，可以用于负载均衡，缓存等等。
+
+基本的Nginx 由 master 进程和 worker 进程组成， master 读取配置文件，并维护 worker 进程，而 worker 会对请求进行处理。
 
 Nginx 有两个主要的分支可供安装，stable 和 mainline 。这两个分支的主要区别可以从下图看出：
 
@@ -18,7 +20,7 @@ stable 分支并不意味着比 mainline 更加稳定可靠，事实上 mainline
 
 Nginx [官方](https://www.nginx.com/blog/nginx-1-12-1-13-released/) 建议可以在任何时候使用 mainline 分支。而在生产环境使用 stable 分支。
 
-## installation
+## 安装 {#installation}
 Use following command to install:
 
     sudo apt-get install nginx
@@ -42,7 +44,7 @@ user data can be found in conf file.
 
 `sudo nginx -t` to test and print log.
 
-## manage nginx
+## 管理 nginx {#manage-nginx}
 
 start nginx
 
@@ -56,23 +58,24 @@ other parameters:
 
     reload        restart       start         status        stop
 
-## nginx files and path
+## nginx 的配置文件及路径
 
-### content
+### 托管网站内容 content
 
 `/usr/share/nginx/html/`: actual web content, this path can be changed by altering Nginx configuration file.
 
 默认 Ubuntu 16.04 会将 nginx 托管的地址指向 `/var/www/html/` 目录。
 
-### server configuration
+### 服务配置 server configuration
+Nginx 的主要配置都集中在 `/etc/nginx` 目录下：
 
 `/etc/nginx`: The nginx configuration directory. All of the configuration files reside here.
 
-`/etc/nginx/sites-available/`: The directory where per-site "server blocks" can be stored. Nginx will not use the configuration files found in this directory unless they are linked to the sites-enabled directory (see below). Typically, all server block configuration is done in this directory, and then enabled by linking to the other directory.
+- `/etc/nginx/sites-available/`: The directory where per-site "server blocks" can be stored. Nginx will not use the configuration files found in this directory unless they are linked to the sites-enabled directory (see below). Typically, all server block configuration is done in this directory, and then enabled by linking to the other directory.
 
-`/etc/nginx/sites-enabled/`: The directory where enabled per-site "server blocks" are stored. Typically, these are created by linking to configuration files found in the sites-available directory.
+- `/etc/nginx/sites-enabled/`: The directory where enabled per-site "server blocks" are stored. Typically, these are created by linking to configuration files found in the sites-available directory.
 
-### log
+### 日志文件 log
 `/var/log/nginx/access.log`: Every request to your web server is recorded in this log file unless Nginx is configured to do otherwise.
 
 `/var/log/nginx/error.log`: Any Nginx errors will be recorded in this log.
@@ -99,7 +102,7 @@ Defines how many threads, or simultaneous instances, of nginx to run. Learn more
 Defines where nginx will write its master process ID, or PID.
 
 ## 设置 Nginx Server Blocks
-Server Blocks 类似 Apache Virtual Hosts 概念，作用就是通过配置让同一台机器同时托管多个域名。
+Server Blocks 类似 Apache Virtual Hosts(虚拟主机) 概念，作用就是通过配置让同一台机器同时托管多个域名。
 
 首先创建目录
 
@@ -108,7 +111,7 @@ Server Blocks 类似 Apache Virtual Hosts 概念，作用就是通过配置让�
 
 如果组和用户不是 `www-data` ，可以用 `sudo chown -R www-data:www-data /var/www/www.einverne.info/html` 来改变
 
-默认情况下 nginx 包含一个 server block ---- default , 创建其他 server block的时候可以以它作为模板
+默认情况下 nginx 包含一个默认的 server block 叫做 default , 创建其他 server block 的时候可以以它作为模板:
 
     sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/www.einverne.info
 

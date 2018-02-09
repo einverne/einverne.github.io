@@ -4,7 +4,7 @@ title: "Nginx 反向代理 Google 配置"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Linux, Nginx, Web, Proxy, Google]
+tags: [linux, nginx, web, proxy, google]
 last_updated: 
 ---
 
