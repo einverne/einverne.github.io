@@ -276,3 +276,7 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 
 只有当容器停止运行时才可以将其删除，确认容器已经停止，使用 `sudo docker rm [Container Id]` 来删除一个容器， 使用 `sudo docker rmi [ImageId]` 来删除一个本地的镜像。
 
+
+## 其他参考链接
+
+- <https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn>
