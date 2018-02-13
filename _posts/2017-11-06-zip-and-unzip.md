@@ -51,6 +51,10 @@ zip 是一个非常常见的压缩工具，很多平台包括 Unix, VMS, MSDOS, 
     unzip -l dest.zip
     unzip -v dest.zip
 
+在 Linux 下经常遇到 zip 乱码的情况呢，其实因为 Windows或者其他系统下生成默认使用 GBK/GB2312 编码，而在 Linux 下默认为 UTF8，所以可以使用 unzip 的 `-O` 参数，这个参数 只有 `unzip 1.6` 及以上版本才有。
+
+    unzip -O cp936 file.zip -d /path/to/folder
+
 ## reference
 
 - man zip
