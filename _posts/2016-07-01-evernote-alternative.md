@@ -4,7 +4,7 @@ title: "Evernote 代替品"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Evernote]
+tags: [evernote, wiznote, notebook, ]
 last_updated: 2017-02-13
 ---
 
