@@ -31,6 +31,33 @@ cerebroApp 是一款用 Javascript 实现的启动器，跨平台，支持插件
 
 代码地址: <https://github.com/KELiON/cerebro>
 
+### 改变快速启动hotkeys
+当尝试在 Perferences 中修改启动快捷键时你会发现无法修改，查看官方的文档可以看到:
+
+    Config file path
+    Windows: %APPDATA%/Cerebro/config.json
+    Linux: $XDG_CONFIG_HOME/Cerebro/config.json or ~/.config/Cerebro/config.json
+    macOS: ~/Library/Application Support/Cerebro/config.json
+
+修改配置文件，可以看到默认定义的快捷键是 `Control + Space` 我习惯使用 `Alt + Space`
+
+### 安装插件
+安装插件非常简单，在 cerebro 中直接输入 `plugins hash` 即可。
+
+在 Cerebro 中访问粘贴板 <https://github.com/codingmatty/cerebro-plugin-clipboard>
+
+直接在 Cerebro 中获取 hash ，安装 [cerebro-hash](https://www.npmjs.com/package/cerebro-hash) ，然后先键入 hash 加上空格后面是需要 hash 的字符串。
+
+    hash [input]
+    hash (algorithm) [input]
+    (algorithm) [input]
+
+有道翻译插件 <https://github.com/lcjnil/cerebro-youdao> 输入 `youdao hello` 来查询
+
+还有 BASE64 加密解密，时间戳 等等插件，自己添加即可。
+
+更多有用的 Cerebro 扩展插件可以在这里获取: <https://github.com/lubien/awesome-cerebro>
+
 ## albertlauncher
 同样是一款开源启动器，不过他只有 Linux 版本，安装过程也是比较简单。功能区别不是很大。它使用 C/C++ Qt 写成。同样支持插件。
 
