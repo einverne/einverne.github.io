@@ -4,7 +4,7 @@ title: "Linux 安装 nodejs"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Linux, nodejs,]
+tags: [linux, nodejs, npm, js, javascript, ]
 last_updated: 
 ---
 
@@ -17,7 +17,7 @@ last_updated:
 
 [官网](https://nodejs.org/en/download/package-manager/) 提供的安装方式
 
-	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 	sudo apt-get install -y nodejs
 
 也是网络环境无法安装
