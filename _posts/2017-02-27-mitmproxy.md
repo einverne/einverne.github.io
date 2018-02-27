@@ -4,7 +4,7 @@ title: "mitmproxy 抓包"
 tagline: ""
 description: ""
 category: 
-tags: [mitmproxy, Android, ]
+tags: [mitmproxy, android, proxy, linux, http, debug, reverse]
 last_updated: 
 ---
 
@@ -112,7 +112,6 @@ Q  不提示直接退出
 
 用于调试Android 或者 iOS 客户端，打包比较复杂的时候，强行将客户端请求从线上地址指向本地调试地址。可以使用 `mitmproxy scripting API` mitmproxy 提供的事件驱动接口。
 
-
 加上将线上地址，指向本地 8085 端口，文件为 `redirect_request.py`
 
     #!/usr/bin/env python
@@ -128,20 +127,13 @@ Q  不提示直接退出
 
 一个完整的HTTP flow 会依次触发 `requestheaders`, `request`, `responseheaders` 和 `response`。
 
-
-
 ### 启用 SOCKS5 代理
 
 添加参数 `--socks` 可以使用 mitmproxy 的 SOCK5代理
 
-
-
 ### 透明代理
 
 透明代理是指将网络流量直接重定向到网络端口，不需要客户端做任何设置。这个特性使得透明代理非常适合不能对客户端进行配置的时候，比如说 Android 应用等等。
-
-
-
 
 ## 几个问题
 
@@ -151,11 +143,11 @@ Q  不提示直接退出
 
 为关闭状态，否则无法让无线局域网中的设备之间通信。
 
-
-
 ## reference
 
-- <https://github.com/mitmproxy/mitmproxy>
+- 代码地址: <https://github.com/mitmproxy/mitmproxy>
+- 官网地址: <https://mitmproxy.org/>
+- 文档地址: <https://readthedocs.org/projects/mitmproxy/>
 - <http://docs.mitmproxy.org/en/stable/install.html>
 - <https://blog.heckel.xyz/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/>
 - <http://liuxiang.logdown.com/posts/192057-use-mitmproxy-to-monitor-http-requests>
