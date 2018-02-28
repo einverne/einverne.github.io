@@ -8,12 +8,15 @@ tags: [linux, nodejs, npm, js, javascript, ]
 last_updated: 
 ---
 
-大部分情况下 Debian/Ubuntu 下只要使用包管理直接安装 
+nodejs 安装其实非常简单，大部分情况下 Debian/Ubuntu 下只要使用包管理直接安装 
 
 	sudo apt-get install nodejs
 	sudo apt-get install npm
 
-即可，可是今天网络环境太差，不是 npm package not found 就是 update 半天不动。
+即可。
+
+## 脚本安装
+可是今天网络环境太差，不是 npm package not found 就是 update 半天不动。
 
 [官网](https://nodejs.org/en/download/package-manager/) 提供的安装方式
 
@@ -22,6 +25,7 @@ last_updated:
 
 也是网络环境无法安装
 
+## 二进制安装
 所以使用 二进制 安装
 
 在官网 <https://nodejs.org/en/download/> 找到编译好的二进制文件
