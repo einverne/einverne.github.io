@@ -4,7 +4,7 @@ title: "斐讯 T1 盒子去除广告"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [android, box, adb, apk, ads, phicomm, 斐讯]
+tags: [android, box, adb, apk, ads, phicomm, 斐讯, tv, 电视盒子,]
 last_updated: 
 ---
 
@@ -61,6 +61,7 @@ GPU：ARM Mali-T820MP3 GPU up to 750MHz
 
 或者用“悟空遥控器”这个应用，当贝市场里可以搜索它来安装，但也要在手机上下载安装“悟空遥控器”APP，里面有个“本地APK推送”，用它就可以安装你想要装的应用了，只要有APK安装包。
 
+最后这篇[文章](/post/2018/01/android-tv-applications.html) 是我使用过并且觉得不错的 Android TV 的应用，可以参考。
 
 ## reference
 

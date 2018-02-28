@@ -4,7 +4,7 @@ title: "Android 电视盒子可用的应用备份"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [android, adb, packages,]
+tags: [android, tv, adb, packages,]
 last_updated: 
 ---
 
