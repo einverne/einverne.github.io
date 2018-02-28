@@ -3,7 +3,7 @@ layout: post
 title: "h5ai 目录列表程序"
 tagline: ""
 description: ""
-category: 经验分享
+category: 经验总结
 tags: [linux, php, nginx, h5ai, file]
 last_updated: 
 ---
