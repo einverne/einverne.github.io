@@ -63,6 +63,7 @@ shell 中可以直接截取设备的屏幕
 
 使用 `screencap` 截图保存到 sdcard 上，使用 `pull` 命令拉到本地并删除sd卡中文件。这种方式比较繁杂，需要三个步骤，如果查看 `screencap -h` 会发现，帮助中有一行，如果不加文件名，命令会将结果输出到标准输出。那么
 
+    adb shell screencap -p > screen.png
     adb shell screencap -p | sed 's/\r$//' > screen.png
 
 直接将结果输出到本地，之所以使用 `sed` 是因为需要将多余的 `\r` 删除。`adb shell` 在执行时会将 `\n` 转换为 `\r\n`。
