@@ -12,3 +12,4 @@ Thumbs.db
 *.un~
 
 .idea
+.ruby-version
