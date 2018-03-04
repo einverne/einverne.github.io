@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Linux 查看磁盘信息命令 di"
+title: "每天学习一个命令： Linux 查看磁盘信息命令 di"
 tagline: ""
 description: ""
 category: Linux
-tags: [Linux, 磁盘管理]
+tags: [linux, 磁盘管理, disk, df, ]
 last_updated: 
 ---
 
