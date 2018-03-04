@@ -195,8 +195,13 @@ p img {
 }
 
 .post-content {
-    line-height: 1.5;
+    line-height: 1.8;
 }
+
+.post-content ::selection {
+    background-color: #dee2e6; 
+ }
+
 
 .post-content p img.emoji {
     display: inline;
@@ -254,10 +259,11 @@ p img {
 code {
     color: #333;
     background-color: #eff0f1;
-    padding: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    border-radius: 3px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 4px;
     margin: 0;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Monaco, Lucida Console, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
     font-size: 105%;
@@ -301,10 +307,11 @@ kbd {
     color: #333;
     display: inline-block;
     font-family: Verdana, Helvetica, sans-serif;
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.8em;
     margin: 0 .1em;
-    padding: .1em .6em;
+    padding: 0.1em 0.6em;
     text-shadow: 0 1px 0 #fff;
 }
 
