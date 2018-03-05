@@ -4,7 +4,7 @@ title: "headless chrome puppeteer"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Chrome, Headless Chrome]
+tags: [chrome, headless-chrome, linux,]
 last_updated: 
 ---
 
