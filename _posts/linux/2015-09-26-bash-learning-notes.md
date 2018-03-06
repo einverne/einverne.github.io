@@ -3,7 +3,7 @@ layout: post
 title: "Bash 学习笔记之基本使用"
 tagline: "Bash 学习笔记"
 description: "Bash 学习笔记"
-category: [ Linux, 学习笔记]
+category: [ Linux ]
 tags: [ linux , bash, vim,]
 last_updated: 2017-01-08
 ---
@@ -36,88 +36,88 @@ Set Emacs Mode in bash:
 
 using `set -o` to check all the bash options.
 
-### Emacs 编辑模式
+## Emacs 编辑模式
 
 [完整 Emacs编辑模式快捷键](http://ss64.com/bash/syntax-keyboard.html)，文档[link](/assets/readline-emacs-editing-mode-cheat-sheet.pdf)
 
 Bash Keyboard Shortcuts 在绝大多数情况下一下快捷键可以直接使用
 
-#### Moving the cursor:
+### 移动光标 Moving the cursor
 在终端移动快捷键
 
 Command |  Explain 
 --------|------------|
-  Ctrl + a  |  Go to the beginning of the line (Home)
-  Ctrl + e  |  Go to the End of the line (End)
-  Ctrl + p  |  Previous command (Up arrow)
-  Ctrl + n  |  Next command (Down arrow)
-   Alt + b  |  Back (left) one word
-   Alt + f  |  Forward (right) one word
-  Ctrl + f  |  Forward one character
-  Ctrl + b  |  Backward one character
-  Ctrl + xx |  Toggle between the start of line and current cursor position
+Ctrl + a  |  移动到命令最前 Go to the beginning of the line (Home)
+Ctrl + e  |  移动到行尾 Go to the End of the line (End)
+Ctrl + p  |  上一个命令 Previous command (Up arrow)
+Ctrl + n  |  下一个命令 Next command (Down arrow)
+ Alt + b  |  不删除命令的情况下，向前移动一个单词 Back (left) one word
+ Alt + f  |  向后一个单词 Forward (right) one word
+Ctrl + f  |  Forward one character
+Ctrl + b  |  Backward one character
+Ctrl + xx |  在行首和当前光标的位置来回切换 Toggle between the start of line and current cursor position
 
-#### Editing:
+### 编辑 Editing
 编辑相关的快捷键
 
 Command |  Explain 
 --------|------------|
- Ctrl + L   |  Clear the Screen, similar to the clear command
-  Alt + Del |  Delete the Word before the cursor.
-  Alt + d   |  Delete the Word after the cursor.
- Ctrl + d   |  Delete character under the cursor
- Ctrl + h   |  Delete character before the cursor (Backspace)
+Ctrl + L   |  Clear the Screen, similar to the clear command
+Alt + Del |  Delete the Word before the cursor.
+Alt + d   |  Delete the Word after the cursor.
+Ctrl + d   |  Delete character under the cursor
+Ctrl + h   |  Delete character before the cursor (Backspace)
  - | -
- Ctrl + w   |  Cut the Word before the cursor to the clipboard. 一般用来快速删除前一个单词，也可以用 Alt + Backspace
- Ctrl + k   |  Cut the Line after the cursor to the clipboard.
- Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard. 一般用来快速清除当前输入命令
+Ctrl + w   |  Cut the Word before the cursor to the clipboard. 一般用来快速删除前一个单词，也可以用 Alt + Backspace
+Ctrl + k   |  Cut the Line after the cursor to the clipboard.
+Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard. 一般用来快速清除当前输入命令
 - | -
-  Alt + t   |  Swap current word with previous
- Ctrl + t   |  Swap the last two characters before the cursor (typo).
- Esc  + t   |  Swap the last two words before the cursor.
+Alt + t   |  Swap current word with previous
+Ctrl + t   |  Swap the last two characters before the cursor (typo).
+Esc  + t   |  Swap the last two words before the cursor.
 - | -
- ctrl + y   |  Paste the last thing to be cut (yank)
+ Ctrl + y   |  Paste the last thing to be cut (yank)
   Alt + u   |  UPPER capitalize every character from the cursor to the end of the current word.
   Alt + l   |  Lower the case of every character from the cursor to the end of the current word.
   Alt + c   |  Capitalize the character under the cursor and move to the end of the word.
   Alt + r   |  Cancel the changes and put back the line as it was in the history (revert).
- ctrl + _   |  Undo
+ Ctrl + _   |  Undo
 - | -
  TAB        |  Tab completion for file/directory names
 
 For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER. 
 type just enough characters to uniquely identify the directory you wish to open.
 
-#### History:
+### 历史 History
 
 Command |  Explain 
 --------|------------|
-  Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history. 
-  Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
-  Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
+Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history. 
+Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
+Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
 - |-
-  Ctrl + s  |  Go back to the next most recent command. <br/> (beware to not execute it from a terminal because this will also launch its XOFF).
-  Ctrl + o  |  Execute the command found via Ctrl+r or Ctrl+s
-  Ctrl + g  |  Escape from history searching mode
-        !!  |  Repeat last command
-      !abc  |  Run last command starting with abc
-    !abc:p  |  Print last command starting with abc
-        !$  |  Last argument of previous command
-   ALT + .  |  Last argument of previous command
-        !*  |  All arguments of previous command
+Ctrl + s  |  Go back to the next most recent command. <br/> (beware to not execute it from a terminal because this will also launch its XOFF).
+Ctrl + o  |  Execute the command found via Ctrl+r or Ctrl+s
+Ctrl + g  |  Escape from history searching mode
+      !!  |  Repeat last command
+    !abc  |  Run last command starting with abc
+  !abc:p  |  Print last command starting with abc
+      !$  |  Last argument of previous command
+ALT + .  |  Last argument of previous command
+     !*  |  All arguments of previous command
 ^abc­^­def|   Run previous command, replacing abc with def
 
-#### Process control:
+### 进程控制 Process control
 
 Command |  Explain 
 --------|------------|
- Ctrl + C |  Interrupt/Kill whatever you are running (SIGINT)
- Ctrl + L |  Clear the screen
- Ctrl + s |  Stop output to the screen (for long running verbose commands)
-          |  Then use PgUp/PgDn for navigation
- Ctrl + q |  Allow output to the screen (if previously stopped using command above)
- Ctrl + D |  退出当前Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
- Ctrl + Z |  Send the signal SIGTSTP to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
+Ctrl + C |  Interrupt/Kill whatever you are running (SIGINT)
+Ctrl + L |  Clear the screen
+Ctrl + s |  Stop output to the screen (for long running verbose commands)
+         |  Then use PgUp/PgDn for navigation
+Ctrl + q |  Allow output to the screen (if previously stopped using command above)
+Ctrl + D |  退出当前Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
+Ctrl + Z |  Send the signal SIGTSTP to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
 
 
 最常使用的应该还是 `Ctrl-a`, `Ctrl-e`, `Ctrl-f`, `Ctrl-b`, `Ctrl-l`, `Ctrl-h`, `Ctrl-w`, `Ctrl-k`, `Ctrl-u`, `Ctrl-y`, `Ctrl-r`.
@@ -143,7 +143,7 @@ Ctrl-U  | 从光标位置开始删除行 ，向后删除到行首|
 Ctrl-V  | 引用插入|
 
 
-### Vi 编辑模式
+## Vi 编辑模式
 通过设置 `set -o vi` 进入Vi编辑模式，正常环境为输入模式，对命令进行修改则按 <kbd>Esc</kbd>。完整命令[参考](/assets/bash-vi-editing-mode-cheat-sheet.pdf).
 
 命令包括 <kbd>h</kbd>, <kbd>l</kbd>, <kbd>w</kbd>, <kbd>b</kbd> 等等Vi中使用的命令，可参考另外一篇[Vim学习笔记](/post/2015/05/vim-notes.html)。
@@ -251,7 +251,7 @@ Shell变量也是一个拥有取值的名字，bash有一些内置的变量，sh
 
 bash 有很多内置变量分布在各个配置文件中。
 
-#### 内置变量
+### 内置变量
 
 PATH变量，帮助shell找到输入的命令。输入 `echo $PATH` 得到类似：
 
