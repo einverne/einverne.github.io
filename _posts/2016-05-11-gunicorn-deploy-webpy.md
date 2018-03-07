@@ -4,13 +4,13 @@ title: "gunicorn 部署 web.py 应用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Python, Gunicorn, webpy, web,]
+tags: [python, gunicorn, webpy, web, server,]
 last_updated: 
 ---
 
 整理文档之，部署 web.py 应用
 
-之前有一个项目使用了 web.py 作为 web server，必然遇到的一个问题就是完成代码之后的部署，网上简单的搜索了一下就确定使用 gunicorn ，比较简单的 wsgi， web server gateway interface。
+之前有一个项目使用了 web.py 作为 web server，必然遇到的一个问题就是完成代码之后的部署，网上简单的搜索了一下就确定使用 gunicorn ，比较简单的 wsgi，全称是 web server gateway interface。
 
 ## gunicorn
 Gunicorn 'Green Unicorn' 是一个 Python WSGI HTTP Server for UNIX. Gunicorn 兼容众多 Python Web 框架，能轻松集成，并且消耗资源少，速度快。
@@ -33,7 +33,9 @@ Gunicorn 'Green Unicorn' 是一个 Python WSGI HTTP Server for UNIX. Gunicorn �
 其中code就是指code.py，application就是那个wsgifunc的名字。
 这样运行的话， gunicorn 默认作为一个监听 127.0.0.1:8000 的web server，可以在本机通过： http://127.0.0.1:8000 访问。
 
-    gunicorn -b 192.168.0.123:8080 code:application
+    gunicorn -w 1 -b 127.0.0.1:8000 code:application
+
+其中 `-w` 指定 worker 数量， `-b` 指定监听地址
 
 ## Nginx 反向代理
 Gunicorn 是 WSGI HTTP 服务，通常将其放到 Nginx 服务器后

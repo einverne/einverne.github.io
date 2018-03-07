@@ -280,3 +280,4 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 ## 其他参考链接
 
 - <https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn>
+- <https://peihsinsu.gitbooks.io/docker-note-book/content/what-is-container.html>
