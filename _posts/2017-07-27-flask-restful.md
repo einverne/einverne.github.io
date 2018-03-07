@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "flask restful"
+title: "Flask restful"
 tagline: ""
 description: ""
 category: 
-tags: [Linux, Flask, JSON, RESTful, Web, Python]
+tags: [linux, flask, json, restful, web, python]
 last_updated: 
 ---
 
 
 ## 使用 JSON 作为交换格式
-
 
 处理 JSON 时，请求和响应头的 `Content-Type` 设置为 `application/json` 。
 
@@ -42,7 +41,6 @@ last_updated:
 	print r.json()
 
 
-
 模拟 RESTful 接口
 
 
@@ -70,7 +68,6 @@ last_updated:
 
 使用内置类型装换
 
-
 	@app.route('/page/<int:num>')
 	def page(num):
 		print num
@@ -89,9 +86,7 @@ any    | 所有
 uuid | uuid string
 
 
-
-
-更加复杂的用法
+复杂的用法，比如定义一个范围
 
 	@app.route('/page/<int:num1>-<int:num2>')
 	def page(num1, num2):
@@ -101,10 +96,9 @@ uuid | uuid string
 
 自定义转换器
 
+自定义的转换器是一个继承 `werkzeug.routing.BaseConverter` 的类，修改 `to_python` 和 `to_url` 方法即可。`to_python` 方法用于将url中的变量转换后供被 `@app.route` 包装的函数使用，`to_url` 方法用于 `flask.url_for` 中的参数转换。
 
-自定义的转换器是一个继承 `werkzeug.routing.BaseConverter` 的类，修改 `to_python` 和 `to_url` 方法即可。`to_python` 方法用于将url中的变量转换后供被@app.route包装的函数使用，`to_url` 方法用于 `flask.url_for` 中的参数转换。
-
-下面是一个示例，将HelloWorld/index.py修改如下：
+下面是一个示例，将 `HelloWorld/index.py` 修改如下：
 
 	from flask import Flask, url_for
 	from werkzeug.routing import BaseConverter
@@ -132,7 +126,7 @@ uuid | uuid string
 		app.run(debug=True)
 
 
-浏览器访问http://127.0.0.1:5000/page/123后，HelloWorld/index.py的输出信息是：
+浏览器访问 <http://127.0.0.1:5000/page/123> 后，HelloWorld/index.py 的输出信息是：
 
 	123 
 	/page/hi
@@ -177,18 +171,5 @@ uuid | uuid string
 	/static//uploads/01.jpg
 
 url for 后接方法名
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

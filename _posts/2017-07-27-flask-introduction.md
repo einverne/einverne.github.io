@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "flask introduction"
+title: "Flask 使用介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Python, Web, Flask]
+tags: [python, web, flask, django]
 last_updated: 
 ---
-
 
 Flask是一个轻量级的基于python的web框架。
 
@@ -32,10 +31,13 @@ Flask是一个轻量级的基于python的web框架。
 创建 `index.py` 文件，在文件中放入以下内容：
 
 	from flask import Flask
+
 	app = Flask(__name__)
+
 	@app.route('/')
 	def hello_world():
 		return 'Hello World!'
+
 	if __name__ == '__main__':
 		app.run()
 
@@ -44,12 +46,11 @@ Flask是一个轻量级的基于python的web框架。
 	python index.py 
 	 * Running on http://127.0.0.1:5000/
 
-变量app是一个Flask实例，当客户端访问/时，将响应hello_world()函数返回的内容。这不是返回Hello World!这么简单，Hello World! 只是HTTP响应报文的实体部分，状态码等信息既可以由Flask自动处理，也可以通过编程来制定。
+变量app是一个Flask实例，当客户端访问根目录 `/` 时，将响应 `hello_world()` 函数返回的内容。这不是返回Hello World!这么简单，Hello World! 只是HTTP响应报文的实体部分，状态码等信息既可以由Flask自动处理，也可以通过编程来制定。
 
 
 ## Tips
 ### 更改静态资源地址
-
 
 在创建 Flask 时使用额外的参数，具体可参考 `__doc__`
 
@@ -85,10 +86,13 @@ Flask是一个轻量级的基于python的web框架。
 ### 获取 POST 请求参数
 
 	from flask import Flask, request
+
 	app = Flask(__name__)
+
 	@app.route('/')
 	def hello_world():
 		return 'hello world'
+
 	@app.route('/register', methods=['POST'])
 	def register():
 		print request.headers
@@ -98,6 +102,7 @@ Flask是一个轻量级的基于python的web框架。
 		print request.form.getlist('name')
 		print request.form.get('nickname', default='little apple')
 		return 'welcome'
+
 	if __name__ == '__main__':
 		app.run(debug=True)
 
@@ -109,12 +114,10 @@ Flask是一个轻量级的基于python的web框架。
 	print r.text
 
 
-
-
-
 ## reference
 
 - <https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world>
+- <http://docs.jinkan.org/docs/flask/quickstart.html>
 
 
 
