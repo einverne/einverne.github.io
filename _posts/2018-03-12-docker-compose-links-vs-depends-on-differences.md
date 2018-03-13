@@ -60,7 +60,7 @@ last_updated:
 
 这个例子中 db ，redis 容器启动顺序要优先于 web 容器；当启动 web 容器时会自动创建 redis 和 db 容器。
 
-不过需要注意的是， `depends_on` 不会等到 db 和 redis 容器 `ready` 再启动，web 容器仅仅等到 redis 和 db 容器启动就开始启动。
+不过需要注意的是， `depends_on` 不会等到 db 和 redis 容器 `ready` 再启动，web 容器仅仅等到 redis 和 db 容器启动就开始启动。具体可参考官网[启动顺序](https://docs.docker.com/compose/startup-order/)了解。
 
 
 [^refer]: <https://medium.com/@giorgioto/docker-compose-yml-from-v1-to-v2-3c0f8bb7a48e#.ukh8ajps0>
