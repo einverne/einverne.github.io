@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "privoxy forward socks to http"
+title: "使用 privoxy 转发 socks 到 http"
 tagline: ""
 description: ""
-category: 
-tags: []
+category: 经验总结
+tags: [linux, proxy, socks, http, proxychains, ]
 last_updated: 
 ---
 
