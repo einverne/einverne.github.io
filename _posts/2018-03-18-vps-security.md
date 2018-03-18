@@ -1,0 +1,66 @@
+---
+layout: post
+title: "VPS 安全设置"
+tagline: ""
+description: ""
+category: 经验总结
+tags: [linux, vps, server, ssh ,config, scan]
+last_updated: 
+---
+
+以前也写过一篇文章叫做[购买VPS之后需要做的事情](/post/2015/12/things-to-do-after-buying-vps.html)其中也提到了一些安全设置来确保VPS的安全性，但是那篇文章更多的集中于设置和配置。那这篇文章就集中总结归纳一下需要特别注意的安全问题。
+
+## SSH 端口和登录
+SSH 默认使用22端口，我们和VPS打交道用的最多的就是这一个端口，修改 `/etc/ssh/sshd_config` 中 `Port` 的设置，修改为其他端口，然后使用
+
+    ssh -p <设置的端口> name@server.ip
+
+来指定端口访问，虽然修改为非默认端口也避免不了被扫描出来，但概率要稍微低一点。
+
+推荐使用公钥、私钥来登录 VPS，在本机 `ssh-copy-id name@server.ip` 将本地公钥[拷贝](/post/2016/06/ssh-copy-id.html)到远程 `~/.ssh/authorized_keys` 文件中
+
+## 禁止 root 账户SSH登录
+限制 root 账户登录 SSH 同理，修改 `/etc/ssh/sshd_config` 将 `PermitRootLogin` 值改为 no。注意之前先[新建可用账户](/post/2015/12/things-to-do-after-buying-vps.html)，然后再禁用 root 登录。
+
+## 禁用 ping
+不响应 ping，修改 `/proc/sys/net/ipv4/icmp_echo_ignore_all` 文件，0 为允许，1 为禁止
+
+    # 禁止 ping
+    echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+    # 允许 ping
+    echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+## 限制账号多重登录
+编辑 `/etc/security/limits.conf` 添加配置：
+
+    *               hard    maxlogins       2
+
+## 安装 fail2ban
+Fail2ban 是一个能够保护SSH等常用端口暴力破解的工具
+
+    sudo apt install fail2ban
+
+项目的配置地址在 `/etc/fail2ban/` 目录下。其中可以找到一个 `jail.conf` 的配置文件，该文件可能在升级时被覆盖，所以可以拷贝一份 `cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local` 来编辑 local 文件，fail2ban 配置文件优先级：
+
+- /etc/fail2ban/jail.conf
+- /etc/fail2ban/jail.d/*.conf，按字母顺序排列
+- /etc/fail2ban/jail.local
+- /etc/fail2ban/jail.d/*.local，按字母顺序排列
+
+编辑 `/etc/fail2ban/jail.local` 
+
+    [DEFAULT]
+    # "ignoreip" can be an IP address, a CIDR mask or a DNS host. Fail2ban will not
+    # ban a host which matches an address in this list. Several addresses can be
+    # defined using space separator.
+    ignoreip = 127.0.0.1/8 123.45.67.89
+
+    # "bantime" is the number of seconds that a host is banned.
+    bantime  = 600
+    
+    # A host is banned if it has generated "maxretry" during the last "findtime"
+    # seconds.
+    findtime = 600
+    maxretry = 3
+
+更多的配置可以参考[这篇文章](https://linode.com/docs/security/using-fail2ban-for-security/)
