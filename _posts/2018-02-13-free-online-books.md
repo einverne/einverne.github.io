@@ -47,6 +47,12 @@ last_updated:
 
 可推送，可下载，注册用户可以共享电子书，网站由 WordPress 所写。
 
+## 鸠摩搜索
+
+    https://www.jiumodiary.com/
+
+主要是微博网盘和百度网盘共享书籍，质量层次不齐
+
 ## 其他
 mLook 精校电子书，注册需要邀请码
 

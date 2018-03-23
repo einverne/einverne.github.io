@@ -4,7 +4,7 @@ title: "Clonezilla 克隆系统"
 tagline: ""
 description: "问题的提出到解决"
 category: 经验总结
-tags: [clonezilla, linux,]
+tags: [clonezilla, linux, backup, clone, ssd, system,]
 last_updated: 
 ---
 
@@ -58,7 +58,7 @@ update-grub2   #更新启动引导
 
 ## 修改 Linux 分区 UUID
 
-以下为翻译，原文见参考[1][1]
+以下为翻译，原文见[参考][^1]
 
 ### UUID 介绍
 Linux 分区的 UUID 的全称是 Universally Unique IDentifier。 这个 ID 会被用在不同的地方用来标识硬盘分区。最常见的就是在 `/etc/fstab` 文件中， 这个文件用来再系统启动时挂载分区。以下是一个小例子：
@@ -107,4 +107,4 @@ sudo tune2fs /dev/sde5 -U f0acce91-a416-474c-8a8c-43f3ed3768f9
 
 ## reference
 
-[1]: <http://www.sudo-juice.com/how-to-change-the-uuid-of-a-linux-partition/>
+[^1]: <http://www.sudo-juice.com/how-to-change-the-uuid-of-a-linux-partition/>
