@@ -65,7 +65,7 @@ Chrome扩展 [Ballloon for Chrome](https://chrome.google.com/webstore/detail/kbm
 
 ## 结合IFTTT产生更多火花
 
-###Save all Gmail attachments to Dropbox
+### Save all Gmail attachments to Dropbox
 
 将Gmail附件添加到 Dropbox，网络上有些应用可以生成一个Dropbox的邮箱，发送到邮箱就能将文件存入Dropbox，我觉得还是没有这个方便，我自己的Gmail，我自己的账号，安全性好，并且不容易忘记。
 
