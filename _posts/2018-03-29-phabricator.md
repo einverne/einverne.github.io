@@ -27,29 +27,28 @@ Phabricator 提供了个命令行叫 arc （Arcanist），使用 `arc` 命令来
     arc upgrade
 
 ### Ubuntu/Debian/Linux Mint
+在 Linux 下使用
 
-```
-sudo apt update && sudo apt-get install php7.0-cli php7.0-curl php-pear
-
-# 任意其它目录也可以
-mkdir ~/phabricator
-cd ~/phabricator
-# 如果下载慢的话，可以先尝试设置一下proxy: export https_proxy="ip:3128"
-git clone https://github.com/facebook/libphutil.git
-git clone https://github.com/facebook/arcanist.git
-
-# 编辑~/.bashrc，加入如下一行，之后source ~/.bashrc
-export PATH="$PATH:$HOME/phabricator/arcanist/bin/"
-# 如果没有项目配置，可以运行下面的命令设置全局的参数：
-arc set-config default https://<phabricator server address>
-arc install-certificate
-# 按照屏幕提示，访问http://<phabricator server address>/conduit/token/ ,把token copy/paste下来
-# 在~/.bashrc里添加下面两行
-export EDITOR=vim
-alias arc='LC_ALL=C arc'
-# 并在命令行执行
-source ~/.bashrc
-```
+    sudo apt update && sudo apt-get install php7.0-cli php7.0-curl php-pear
+    
+    # 任意其它目录也可以
+    mkdir ~/phabricator
+    cd ~/phabricator
+    # 如果下载慢的话，可以先尝试设置一下proxy: export https_proxy="ip:3128"
+    git clone https://github.com/facebook/libphutil.git
+    git clone https://github.com/facebook/arcanist.git
+    
+    # 编辑~/.bashrc，加入如下一行，之后source ~/.bashrc
+    export PATH="$PATH:$HOME/phabricator/arcanist/bin/"
+    # 如果没有项目配置，可以运行下面的命令设置全局的参数：
+    arc set-config default https://<phabricator server address>
+    arc install-certificate
+    # 按照屏幕提示，访问http://<phabricator server address>/conduit/token/ ,把token copy/paste下来
+    # 在~/.bashrc里添加下面两行
+    export EDITOR=vim
+    alias arc='LC_ALL=C arc'
+    # 并在命令行执行
+    source ~/.bashrc
 
 ### Windows
 
@@ -76,34 +75,33 @@ source ~/.bashrc
     arc set-config editor "vim"
 
 ### 本地开发流程
+如下：
 
-```
-# 本地开发，新建feature
-arc feature feature_1
-# 或 git checkout -b feature_1
-# 修改本地文件,然后提交
-git add
-git commit
- 
-# 提交code review
-arc diff
-# 通过--reviewers name参数可以指定reviewer
- 
-# 这里可以和一个Task（比如T123）关联起来，在Summary那个域里填上Ref T123，或者Fixes T123
-# 两者的区别是Fixes在代码提交后会自动关闭Task，Ref不会
-# 也可以提交code review之后，在浏览器里操作
- 
-# 本地修改后再次提交code review（这个revision是上次创建code review时的id，比如D1252）
-arc diff --update 1252
-# --update 1252 也可以不加，默认会合到上一个review中
- 
-# reviewer已经Accept之后，提交代码（不要用git push！）：
-arc land feature_1
-# 如果报错找不到对应的revision，带上revision号（比如1252）运行：
-arc land --revision 1252
-# land之后，feature branch会被自动删除
-# land 使用后会将当前分支 merge 或者squash merge 到master分支，提供详细的提交信息，推送到master并且删除本地分支
-```
+    # 本地开发，新建feature
+    arc feature feature_1
+    # 或 git checkout -b feature_1
+    # 修改本地文件,然后提交
+    git add
+    git commit
+     
+    # 提交code review
+    arc diff
+    # 通过--reviewers name参数可以指定reviewer
+     
+    # 这里可以和一个Task（比如T123）关联起来，在Summary那个域里填上Ref T123，或者Fixes T123
+    # 两者的区别是Fixes在代码提交后会自动关闭Task，Ref不会
+    # 也可以提交code review之后，在浏览器里操作
+     
+    # 本地修改后再次提交code review（这个revision是上次创建code review时的id，比如D1252）
+    arc diff --update 1252
+    # --update 1252 也可以不加，默认会合到上一个review中
+     
+    # reviewer已经Accept之后，提交代码（不要用git push！）：
+    arc land feature_1
+    # 如果报错找不到对应的revision，带上revision号（比如1252）运行：
+    arc land --revision 1252
+    # land之后，feature branch会被自动删除
+    # land 使用后会将当前分支 merge 或者squash merge 到master分支，提供详细的提交信息，推送到master并且删除本地分支
 
 
 ## QA
