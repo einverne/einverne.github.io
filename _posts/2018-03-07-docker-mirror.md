@@ -8,7 +8,7 @@ tags: [docker, google, cloud, images]
 last_updated: 
 ---
 
-有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。
+有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。Docker Hub 为用户提供无限数量的公开镜像托管服务，但是仅提供一个私有镜像托管。Docker Hub 上镜像分为两类，一类为官方镜像，ubuntu，redis 等等由权威三方开发和维护通过 Docker 官方认证，另一类就是普通用户镜像。
 
 ## 使用 registry mirrors
 手动修改 Docker 配置 `/etc/docker/daemon.json` 文件
@@ -55,6 +55,10 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc)的加速地址
 
 - <https://console.cloud.google.com/gcr/images/google-containers/GLOBAL?location=GLOBAL&project=google-containers>
 
+### 阿里云
+这里是阿里云提供的镜像托管服务
+
+- <https://dev.aliyun.com/search.html>
 
 然后[有人](http://dockone.io/question/1216)把 `gcr.io/google-containers` 下所有的 Docker 镜像都同步到了中央库
 

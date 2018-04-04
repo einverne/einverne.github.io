@@ -135,7 +135,6 @@ Hypriot team 提供了一个可安装的 [Package](http://blog.hypriot.com/downl
 
 Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装成功，网上查说源中的内容有些问题，使用自己的添加的 Repository 才可以：
 
-
     # First import the GPG key
      
     sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 \
@@ -255,6 +254,7 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 
 - `run` 命令用来创建一个 docker container
 - 如果有 `-p` 参数，用来将 `-p local-machine-port:internal-container-port` 暴露出来，比如 8080:80 将内部的 80 端口映射到 8080 端口
+- `-d` 用来使用 daemon 后台运行
 
 ### 查看当前运行的容器
 
@@ -267,6 +267,8 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 
 此外，`docker restart` 命令会将一个运行态的容器终止，然后再重新启动它。
 
+`docker kill <ID>` 可以用来强制停止一个容器
+
 ### 进入容器
 但在 `docker run` 时使用 `-d` 参数时，容器会进入后台，可以使用 `attach` 来进入容器
 
@@ -276,6 +278,7 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 
 只有当容器停止运行时才可以将其删除，确认容器已经停止，使用 `sudo docker rm [Container Id]` 来删除一个容器， 使用 `sudo docker rmi [ImageId]` 来删除一个本地的镜像。
 
+删除所有容器，可以使用 `docker rm $(docker ps -a -q)` ， `-q` 参数表示只列出容器ID。
 
 ## 其他参考链接
 
