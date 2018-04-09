@@ -4,7 +4,7 @@ title: "Git 配置多个 ssh key"
 tagline: ""
 description: "同时使用Gitlab/Github ssh key"
 category: Git
-tags: [Git, Github, Gitlab, ssh]
+tags: [git, github, gitlab, ssh]
 last_updated: 
 ---
 

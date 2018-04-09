@@ -4,7 +4,7 @@ title: "ssh-copy-id 复制本地公钥命令详解 免密码登录远程主机"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ssh, password,]
+tags: [ssh, password, linux, ssh-copy-id,]
 last_updated: 
 ---
 

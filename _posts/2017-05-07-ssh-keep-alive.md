@@ -4,7 +4,7 @@ title: "保持SSH连接"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ssh, linux,]
+tags: [ssh, linux, git, github, gitlab, ]
 last_updated: 
 ---
 
@@ -12,7 +12,6 @@ last_updated:
 
 SSH是Secure Shell的缩写, 是一个应用层的加密网络协议, 它不只可以用于远程登录, 远程命令执行,还可用于数据传输.
 当然它由ssh Client和ssh Server端组成, 有很多实现, Ubuntu上就默认安装的OpenSSH, Client端叫做ssh, Server端叫做sshd.   OpenSSH只用来做远程登录和命令执行.
-
 
 ## 免密登录
 查看本地 `~/.ssh/` 目录是否有 `id_rsa.pub`，如果没有，在本地创建公钥
@@ -80,7 +79,7 @@ Sets a timeout interval in seconds after which if no data has been received from
 如果需要在多个窗口中打开同一个服务器连接，可以尝试添加 `~/.ssh/config`，添加两行
 
     ControlMaster auto
-	ControlPath ~/.ssh/%h-%p-%r
+    ControlPath ~/.ssh/connection-%r@%h:%p
 
 配置之后，第二条连接共享第一次建立的连接，加快速度。
 
@@ -104,7 +103,12 @@ Sets a timeout interval in seconds after which if no data has been received from
 		ServerAliveCountMax 20
 		TCPKeepAlive no
 		ControlMaster auto
-		ControlPath ~/.ssh/%h-%p-%r
+		ControlPath ~/.ssh/connection-%r@%h:%p
 		ControlPersist 4h
 		Compression yes
+
+## 同一台机器配置多个key
+
+之前写过一篇文章总结，在同一台机器上同时使用 GitHub，和 GitLab 的key，可以具体参考[这里](/post/2015/08/git-with-multi-ssh-key.html)
+
 
