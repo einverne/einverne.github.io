@@ -4,7 +4,7 @@ title: "URL 短域名"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [Github, Google]
+tags: [github, google, short-url, url, ]
 last_updated: 
 ---
 
@@ -73,6 +73,13 @@ Google 的短域名服务其实已经用很久了 <https://goo.gl/> ，相比来
 - 直接在生成的短域名后加上 `.qr` 可以查看二维码，比如 <https://goo.gl/xEeWKp> 添加 qr <https://goo.gl/xEeWKp.qr>
 
 ## 开源版本
+
+YOURLS 项目，使用 PHP 实现短域名 <https://github.com/YOURLS/YOURLS> 项目到目前已经非常完善了。
+
+
+更多的项目可以参考: <https://github.com/topics/url-shortener>
+
+## 学习版本
 
 PHP 版本 <https://github.com/takashiki/Ourls>
 
