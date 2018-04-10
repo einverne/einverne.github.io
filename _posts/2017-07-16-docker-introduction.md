@@ -256,6 +256,7 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 - 如果有 `-p` 参数，用来将 `-p local-machine-port:internal-container-port` 暴露出来，比如 8080:80 将内部的 80 端口映射到 8080 端口
 - `-d` 用来使用 daemon 后台运行
 
+
 ### 查看当前运行的容器
 
 当运行某一个镜像时，docker 会自动创建一个 container 容器在，该容器中运行该镜像，可以使用 `sudo docker ps -a` 来查看当前正在运行的容器。可以使用 `docker stop [ContainerId]` 来终止一个容器的运行。
@@ -279,6 +280,7 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 只有当容器停止运行时才可以将其删除，确认容器已经停止，使用 `sudo docker rm [Container Id]` 来删除一个容器， 使用 `sudo docker rmi [ImageId]` 来删除一个本地的镜像。
 
 删除所有容器，可以使用 `docker rm $(docker ps -a -q)` ， `-q` 参数表示只列出容器ID。
+
 
 ## 其他参考链接
 
