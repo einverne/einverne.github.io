@@ -3,7 +3,7 @@ layout: post
 title: "docker volumes 中 -v 和 -mount 区别"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [学习笔记, Docker]
 tags: [docker, dockerfile, command, docker-compose, linux,]
 last_updated: 
 ---
