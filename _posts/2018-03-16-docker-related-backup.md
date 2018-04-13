@@ -78,8 +78,18 @@ Volume 可以叫做 `数据卷`，可供一个或者多个容器使用：
       alpine \
       tar xvf /[TEMPORARY_DIRECTORY_TO_STORE_BACKUP_FILE]/[BACKUP_FILENAME].tar -C /[TEMPORARY_DIRECTORY_STORING_EXTRACTED_BACKUP] --strip 1
 
+如果是数据库容器，比如 mysql 容器，备份数据可以使用如下方式
+
+    docker exec [CONTAINER_NAME] /usr/bin/mysqldump -u root --password=root [DATABASE] > backup.sql
+
+然后使用下面的命令来恢复
+
+    cat backup.sql | docker exec -i [CONTAINER_NAME] /usr/bin/mysql -u root --password=root [DATABASE]
+
+对于 docker compose 启动的多个容器，可能因为宿主机器变化而导致 docker 容器的id有变化，可能在回复数据之后，还需要对数据库连接的地址进行修改才能完整的恢复。
 
 ## reference
 
 - <https://stackoverflow.com/a/26339848/1820217>
 - <https://stackoverflow.com/a/39125414/1820217>
+- <https://gist.github.com/spalladino/6d981f7b33f6e0afe6bb>
