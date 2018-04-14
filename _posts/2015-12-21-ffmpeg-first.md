@@ -58,28 +58,34 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 ## 用法举例 {#examples}
 
+### 显示文件信息
 显示视频信息
 
     ffmpeg -i input.avi
 
+### 批量截图
 将视频拆分多张图片，每一帧图片，保存到 frames 文件夹下，命名 frame001.png这种。可以加上-r 参数以用来限制每秒的帧数，`-r 10` 就表示每秒10帧。
 
     ffmpeg -i input.mp4 frames/frame%03d.png
 
+### 图片合成视频
 将多张图片合成视频
 
     ffmpeg -i frames/frame%3d.png output.mp4
 
+### 从视频中提取音频
 从视频文件中提取音频并保存为 mp3
 
     ffmpeg -i input.mp4 -f mp3 output.mp3
 
 如果需要可以在中间加上 `-ar 44100 -ac 2 -ab 192` 系数，表示采样率 44100 ，通道2立体声，码率192 kb/s.
 
+### 将声音合成到视频
 将声音合成到视频中
 
     ffmpeg -i input_music.mp3 -i input_video.mp4 output.mp4
 
+### 转化格式
 格式之间转换 大部分的情况下直接运行一下即可
 
     ffmpeg -i input.mp4 output.avi
@@ -90,12 +96,22 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 `-vcodec copy` 和 `-acodec copy` 表示所使用的视频和音频编码格式，为原样拷贝。
 
+转换文件格式
+
+    ffmpeg -y -i input_video.mp4 -bitexact -vcodec h263 -b 128 -r 15 -s 176x144 -acodec aac -ac 2 -ar 22500 -ab 24 -f 3gp test.3gp
+
+或
+
+    ffmpeg -y -i test.wmv -ac 1 -acodec libamr_nb -ar 8000 -ab 12200 -s 176x144 -b 128 -r 15 test.3gp
+
+### 视频切片操作
 对视频切片操作
 
 比如需要从视频第1分45秒地方，剪10秒画面，-ss 表示开始位置，-t 表示延长时间
 
     ffmpeg -i input.mp4 -ss 00:01:45 -t 10 output.mp4
 
+### 加速减速视频
 加速视频
 
     ffmpeg -i input.mp4 -vf “setpts=0.5*PTS” output.mp4
@@ -106,7 +122,8 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 此操作对音频无影响
 
-视频10秒的地方(-ss 参数)截取一张1920x1080尺寸大小的，格式为jpg的图片  -ss后跟的时间单位为秒
+### 视频截图
+视频10秒的地方(`-ss` 参数)截取一张1920x1080尺寸大小的，格式为jpg的图片  `-ss`后跟的时间单位为秒
 
     ffmpeg -i input_video.mp4 -y -f image2 -t 0.001 -ss 10 -s 1920x1080 output.jpg
 
@@ -114,7 +131,7 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 	ffmpeg -i input_video.mp4 -ss 00:00:06.000 -vframes 1 output.png 
 
-
+### 合成 gif
 把视频的前30帧转换成一个Gif
 
     ffmpeg -i input_video.mp4 -vframes 30 -y -f gif output.gif
@@ -131,6 +148,7 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
     ffmpeg -i bg.mp3 -i frame.%3d.jpg -s hd720 -vcodec mpeg4 output.avi
 
+### 查看ffmpeg支持格式
 要查看你的ffmpeg支持哪些格式，可以用如下命令：
 
     ffmpeg -formats | less
@@ -155,20 +173,13 @@ Debian/Ubuntu/Linux Mint 下安装ffmpeg很简单：
 
 Source: <http://superuser.com/a/556031>
 
-转换文件格式
 
-    ffmpeg -y -i input_video.mp4 -bitexact -vcodec h263 -b 128 -r 15 -s 176x144 -acodec aac -ac 2 -ar 22500 -ab 24 -f 3gp test.3gp
-
-或
-
-    ffmpeg -y -i test.wmv -ac 1 -acodec libamr_nb -ar 8000 -ab 12200 -s 176x144 -b 128 -r 15 test.3gp
-
-利用ffmpeg屏幕录制
+### 利用ffmpeg屏幕录制
 
 参考：<https://trac.ffmpeg.org/wiki/Capture/Desktop>
 
 
-添加水印
+### 添加水印
 
 	ffmpeg -i input.mp4 -i picture.png -filter_complex overlay="(main_w/2)-(overlay_w/2):(main_h/2)-(overlay_h)/2" output.mp4
 
