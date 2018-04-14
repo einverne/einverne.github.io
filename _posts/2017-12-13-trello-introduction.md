@@ -8,18 +8,17 @@ tags: [todo, web, 产品体验, plan, gtd, checklist, list, card]
 last_updated: 
 ---
 
-新工具 Trello
-
+新工具 Trello，说新工具也好，新的规划板也好，Trello 已经代替了我制定规划的其他应用，我曾经尝试过无数的时间管理项目管理工具，没有一个让我有使用 Trello 的舒畅感。
 
 ## Trello 是什么
-Trello 自己的介绍说自己是一个基于网页端的项目管理应用。但在我个人看来，他是一个极好的GTD 管理工具，作为个人的 Board，如果是多人使用，那就是一个很好的协作管理工具。
+Trello 自己的介绍说自己是一个基于网页端的项目管理应用。但在我个人看来，作为个人的 Board，他是一个极好的GTD 管理工具，如果是多人使用，那就是一个很好的协作管理工具。
 
 ## Trello 怎么用
 怎么用其实是一个非常个人的习惯问题，他作为一个效率工具提供了各种可能，不仅能够作为简单的待办事项管理工具，甚至能够在十几或者几十人的团队中担任项目管理的工具。
 
-这里就要说到 Trello 中的几个概念，看板、列表、卡片。幸而 Trello 的官方介绍非常详细，连中文译名也是朗朗上口，大赞。
+这里就要说到 Trello 中的几个概念，看板、列表、卡片。幸而 Trello 的官方介绍非常详细，连中文译名也是朗朗上口，大赞。如果想要了解 Trello 如何得此名字可以看[这篇文章](/post/2018/04/gtld-xyz.html)。
 
-一个 Trello 看板是装满卡片的各种列表的列表， 它属于一个团队或你本人。可以把他看成是一个黑板，或者一个 Working Area，或者叫 Workspace。
+一个 Trello 看板是装满卡片的各种列表的列表，它属于一个团队或你本人。可以把他看成是一个黑板，或者一个 Working Area，或者叫 Workspace。
 
 Trello 的列表是承载卡片的容器，不同的工作团队可以根据自己的 Workflow 来定制自己的列表，如果个人作为一个 GTD 的工具，使用官方推荐的，建立三个列表----Todo，Doing，Done，也是不错的。
 
@@ -34,7 +33,6 @@ Trello 的列表是承载卡片的容器，不同的工作团队可以根据自�
 Trello 团队使用 150 多个看板来管理产品进度[^trello]
 
 [^trello]: <https://zapier.com/blog/how-trello-uses-trello/>
-
 
 > Project management apps turn ambitious ideas into workable plans.
 
@@ -56,15 +54,38 @@ Trello 作为一个项目管理或者时间管理的工具，提醒是必不可�
 
 Trello 更加有效的是订阅模式，如果只对某一个 任务（Card）感兴趣，可以只关心该卡片的变动通知。
 
-
 如果你还不知道怎么开始的话，可以简单的看看这个
 
 <http://help.trello.com/category/694-category>
 
 ## 使用小技巧
 
-### 新建 List
+### 快速新建 List
 在看板中双击就能在当前位置新建 List，输入名字就能够快速建立 List
+
+### 快速插入图片
+如果在网站上浏览到一个图片，可以右键选择复制图片，然后在 Trello 的卡片中可以使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 来插入图片。或者如果你更愿意使用拖拽，也可以直接将网页中的图片拖拽到卡片中。
+
+### 充分利用卡片中的 Checklist
+Trelle 的卡片功能丰富，你可以拿卡片做任何想做的事情，但是别忘了你还可以插入一个 Checklist，可以在 Checklist 中填入每一步待办事项，然后做完之后依次check。即使卡片没有展开，在列表的缩略图上也能清晰地看到卡片有多少项任务没有做完。
+
+## Trello Gold
+Trello Gold 类似于其他网站的高级会员，可以通过购买获取，也可以通过邀请获取。使用 Gold 会员有如下几个好处：
+
+- 使用额外的 Stickers
+- 可以自定义背景图片
+- 更大的附件，单文件最大可以250M
+- 上传自定义emoji
+- 保存搜索结果
+
+对于普通使用来说，这些额外的附加效果几乎可以忽略，都是一些低频次操作。但如果你是重度用户不妨先邀请身边的好友来先体验下 Gold 版的 Trello。比如你可以邀请小伙伴一起制定计划：
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/c1k37M" title="Trello screenshot demo"><img src="https://farm1.staticflickr.com/784/41398386352_e386a855cb_z.jpg" alt="Trello screenshot demo"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+另外我有几个公开的 board，如果感兴趣可以加入：
+
+- wiki <https://trello.com/invite/b/6t44aSfR/c90b2dae27de64e99bc2a4a392a19dde/wiki> 我使用 Trello 来做个人简单 Wiki 整理，定期会整理到 Blog
+- board game <https://trello.com/invite/b/bomWGYYW/3775af2c46133f14a842e6b4d724bd99/board-game> 这是当时玩桌游的时候整理的 board
 
 ## reference
 
