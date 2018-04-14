@@ -63,6 +63,8 @@ GPU：ARM Mali-T820MP3 GPU up to 750MHz
 
 最后要强烈推荐一个投屏App，乐播投屏，因为斐讯T1并没有 DLNA 的功能，但幸而只要一个 App 就能够解决，这样就能够将手机爱奇艺上的内容快速的投屏到盒子上。
 
+<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/482WA9" title="斐讯t1_home_screen"><img src="https://farm1.staticflickr.com/863/41398286542_f6c19fcd83_z.jpg" alt="斐讯t1_home_screen"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
 ## su 密码
 恩山最近的帖子更新了 T1 su 的密码，记录一下
 

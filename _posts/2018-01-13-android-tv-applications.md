@@ -41,6 +41,10 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 - 小薇直播
 - 电视家3.0
 
+放一张截图
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/J06gea" title="斐讯t1_直播"><img src="https://farm1.staticflickr.com/898/41398289612_b34704693f_z.jpg" alt="斐讯t1_直播"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
 ## 网络视频
 网络视频是我用的最多的了，我本人用 哔哩哔哩 最多
 
