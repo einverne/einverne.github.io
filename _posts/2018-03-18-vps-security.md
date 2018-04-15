@@ -10,6 +10,12 @@ last_updated:
 
 以前也写过一篇文章叫做[购买VPS之后需要做的事情](/post/2015/12/things-to-do-after-buying-vps.html)其中也提到了一些安全设置来确保VPS的安全性，但是那篇文章更多的集中于设置和配置。那这篇文章就集中总结归纳一下需要特别注意的安全问题。
 
+## 保持系统更新
+经常检查系统更新，尤其是出现重大安全问题时一定更新到最新的系统，以 Debian/Ubuntu/LinuxMint 为例
+
+    apt-get update
+    apt-get upgrade
+
 ## SSH 端口和登录
 SSH 默认使用22端口，我们和VPS打交道用的最多的就是这一个端口，修改 `/etc/ssh/sshd_config` 中 `Port` 的设置，修改为其他端口，然后使用
 
@@ -21,6 +27,9 @@ SSH 默认使用22端口，我们和VPS打交道用的最多的就是这一个�
 
 ## 禁止 root 账户SSH登录
 限制 root 账户登录 SSH 同理，修改 `/etc/ssh/sshd_config` 将 `PermitRootLogin` 值改为 no。注意之前先[新建可用账户](/post/2015/12/things-to-do-after-buying-vps.html)，然后再禁用 root 登录。
+
+    adduser [nickname_you_want]
+    adduser [nickname_you_want] sudo        # 或者 visudo
 
 ## 禁用 ping
 不响应 ping，修改 `/proc/sys/net/ipv4/icmp_echo_ignore_all` 文件，0 为允许，1 为禁止
@@ -64,3 +73,21 @@ Fail2ban 是一个能够保护SSH等常用端口暴力破解的工具
     maxretry = 3
 
 更多的配置可以参考[这篇文章](https://linode.com/docs/security/using-fail2ban-for-security/)
+
+## 如何查看日志
+当你发现服务器有异常请求时，如何查看服务器用户登录日志。首先查看当前服务器登录的用户
+
+    w
+
+使用该命令可以查看当前连接在线的用户，然后使用
+
+    last
+ 
+来查看过去一段时间的登录用户，包括登录用户名，登录IP，登录时间，时长等等。如果发现异常等级即使处理。
+
+然后检查 `sudo less /var/log/auth.log` 文件查看登录日志。
+
+
+## reference
+
+- <https://www.linode.com/docs/security/securing-your-server/>
