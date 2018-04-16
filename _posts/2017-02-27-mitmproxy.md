@@ -45,6 +45,12 @@ mitmproxy 工作步骤：
 2. 浏览器或移动端访问 mitm.it 来安装 mitmproxy 提供的证书
 3. 在 mitmproxy 提供的命令行下，或者 mitmweb 提供的浏览器界面中就能看到 Android 端发出的请求。
 
+如果遇到 iOS 11 以上，访问网页时出现 `This Connection is Not private`
+
+![mitmproxy error](https://i.stack.imgur.com/U9KM9.png)
+
+在确保证书安装的前提下，需要到 Settings > General > About > Certificate Trust Setting 开启[证书信任](https://support.apple.com/en-us/HT208125)。
+
 官方提供的安装方式：<http://mitmproxy.org/doc/certinstall.html>
 
 ## 三个命令
@@ -151,3 +157,4 @@ Q  不提示直接退出
 - <http://docs.mitmproxy.org/en/stable/install.html>
 - <https://blog.heckel.xyz/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/>
 - <http://liuxiang.logdown.com/posts/192057-use-mitmproxy-to-monitor-http-requests>
+- <https://stackoverflow.com/a/46378145/1820217>
