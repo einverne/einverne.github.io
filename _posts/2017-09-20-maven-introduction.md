@@ -4,7 +4,7 @@ title: "Maven 介绍"
 tagline: ""
 description: "项目管理工具 Maven"
 category: 学习笔记
-tags: [maven, Java, build]
+tags: [maven, java, build, ]
 last_updated: 
 ---
 
@@ -33,7 +33,7 @@ Debian/Ubuntu/Linux Mint 下
 	保存并关闭。
 
 - 使配置生效必须重启机器或者在命令行输入： source ~/.bashrc
-- 查看Maven是否安装成功： mvn -version
+- 查看Maven是否安装成功： `mvn -version`
 
 如果进行了上面步骤在任意目录中mvn命令不能使用，可以在 `/etc/profile` 文件后面加入下面三行 `sudo vim ~/.bashrc`
 
@@ -50,26 +50,26 @@ Debian/Ubuntu/Linux Mint 下
 Maven 最熟悉的一个概念就是 POM，Maven 项目会有一个 pom.xml 文件， 在这个文件里面添加相应配置，Maven 就会自动帮你下载相应 jar 包
 
     <dependency>
-      <groupId>com.google.firebase</groupId>  项目名
-      <artifactId>firebase-admin</artifactId>  项目模块
-      <version>5.3.1</version>  项目版本
+      <groupId>com.google.firebase</groupId>    项目名
+      <artifactId>firebase-admin</artifactId>   项目模块
+      <version>5.3.1</version>                  项目版本
     </dependency>
 
-项目名-项目模块-项目版本 三个坐标定义了项目在 Maven 世界中的基本坐标，任何 jar，pom， war 都是基于这些坐标进行区分的。
+`项目名-项目模块-项目版本` 三个坐标定义了项目在 Maven 世界中的基本坐标，任何 jar，pom， war 都是基于这些坐标进行区分的。
 
-`groupId` 定义了项目组，组和项目所在组织或公司，或者开源项目名称，一般为公司域名反写，比如 com.google.firebase 等等
+- `groupId` 定义了项目组，组和项目所在组织或公司，或者开源项目名称，一般为公司域名反写，比如 com.google.firebase 等等
 
-`artifactId` 定义了 Maven 项目的名称，在组中的唯一 ID，在同一个项目中可能有不同的子项目，可以定义不同的 artifactId。 artifactId 也是构建完成项目后生成的 jar 包或者 war 包的文件名的一部分。
+- `artifactId` 定义了 Maven 项目的名称，在组中的唯一 ID，在同一个项目中可能有不同的子项目，可以定义不同的 artifactId。 artifactId 也是构建完成项目后生成的 jar 包或者 war 包的文件名的一部分。
 
-`version` 顾名思义，就是项目的版本号，如果项目维发布，一般在开发中的版本号习惯性加上SNAPSHOT， 比如 1.0-SNAPSHOT
+- `version` 顾名思义，就是项目的版本号，如果项目维发布，一般在开发中的版本号习惯性加上SNAPSHOT， 比如 1.0-SNAPSHOT
 
 根据上面的例子，比如上面定义的Maven坐标，可以在对应的中央仓库中 `https://repo1.maven.org/maven2/com/google/firebase/firebase-admin/5.3.1/` 目录下找到对应的文件。
 
-`scope` 定义了依赖范围，如果依赖范围为 test ，那么该依赖只对测试有效，也就是说在测试代码中引入 junit 有效，在主代码中用 junit 会造成编译错误。如果不声明依赖范围则默认为 compile ，表示该依赖对主代码和测试代码都有效。
+- `scope` 定义了依赖范围，如果依赖范围为 test ，那么该依赖只对测试有效，也就是说在测试代码中引入 junit 有效，在主代码中用 junit 会造成编译错误。如果不声明依赖范围则默认为 compile ，表示该依赖对主代码和测试代码都有效。
 
 Maven 有以下几种依赖范围：
 
-- **compile** 编译依赖， 在编译、测试、运行都有效
+- **compile** 编译依赖，在编译、测试、运行时都有效
 - **test** 测试依赖，只对于测试 classpath 有效， JUnit 典型
 - **provided** 已提供依赖，只在编译和测试有效，运行时无效， servlet-api 编译和测试项目时需要该依赖，但是在运行项目时，由于容器已经提供，不需要 Maven 重复引入
 - **runtime** 运行时依赖，对于测试和运行有效，编译主代码无效， JDBC驱动实现，项目主代码编译只需要JDK提供的JDBC接口，只有执行测试或者运行项目才需要实现上述接口的具体JDBC驱动
@@ -78,13 +78,13 @@ Maven 有以下几种依赖范围：
 
 依赖范围和classpath 的关系
 
-依赖范围 Scope |   编译classpath有效   | 测试classpath有效   | 运行classpath有效 | 例子
-------------- |------------------------|------------------|-----------------|--------
-compile        | Y                    | Y                 | Y               | spring-core
-test           | -                     | Y                  | -              | junit
-provided       | Y                     | Y                  | -              | servlet-api
-runtime          | -                    | -                  | Y             | JDBC 驱动
-system          | Y                     | Y                 | -              | 本地的， Maven 仓库之外的类库
+依赖范围 Scope |   编译classpath有效  | 测试classpath有效   | 运行classpath有效 | 例子
+--------------|-----------------------|---------------------|-----------------|--------
+compile       | Y                     | Y                   | Y               | spring-core
+test          | -                     | Y                   | -              | junit
+provided      | Y                     | Y                   | -              | servlet-api
+runtime       | -                     | -                   | Y             | JDBC 驱动
+system        | Y                     | Y                   | -              | 本地的， Maven 仓库之外的类库
 
 
 Maven 依赖调解  Dependency Mediation ，第一原则：路径最近者优先；第二原则：第一声明者优先。
@@ -113,7 +113,7 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 
 清理项目，包含三个阶段
 
-- pre-clean 执行清理前需要完成的工作
+- `pre-clean` 执行清理前需要完成的工作
 - clean 清理上一次构建生成的文件
 - post-clean 执行一次清理后需要完成的工作
 
@@ -183,8 +183,6 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 	mvntomcat:run 启动tomcat服务
 	mvn clean package -DMaven.test.skip=true 清除以前的包后重新打包，跳过测试类
 	mvn clean package 清除以前的包后重新打包
-
-
 
 
 ## reference
