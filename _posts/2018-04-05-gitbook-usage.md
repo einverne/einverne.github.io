@@ -4,7 +4,7 @@ title: "Gitbook 使用记录"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [gitbook, git, github, book]
+tags: [gitbook, git, github, book, publish, ]
 last_updated: 
 ---
 
@@ -29,7 +29,7 @@ gitbook 的使用可以简单的归纳为如下两步：
 - 使用 gitbook build 编译书籍到静态网站
 - 使用 gitbook serve 本地访问书籍
 
-在使用 `gitbook init` 之后本地会生成两个文件 `README.md` 和 `SUMMARY.md` ，这两个文件都是必须的，一个为介绍，一个为目录结构。
+在使用 `gitbook init` 之后本地会生成两个文件 `README.md` 和 `SUMMARY.md` ，这两个文件都是必须的，一个为本书介绍，一个为本书目录结构。
 
 ## gitbook 插件
 Gitbook 拥有很多插件来扩展 Gitbook 的功能，比如支持数学公式，支持Google统计，评论等等。插件可以在 <https://plugins.gitbook.com/> 找到。
