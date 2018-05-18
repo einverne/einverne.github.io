@@ -179,8 +179,8 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 	mvn package 根据项目生成的jar
 	mvn install 在本地Repository中安装jar
 	mvn eclipse:eclipse 生成eclipse项目文件
-	mvnjetty:run 启动jetty服务
-	mvntomcat:run 启动tomcat服务
+	mvn jetty:run 启动jetty服务
+	mvn tomcat:run 启动tomcat服务
 	mvn clean package -DMaven.test.skip=true 清除以前的包后重新打包，跳过测试类
 	mvn clean package 清除以前的包后重新打包
 
