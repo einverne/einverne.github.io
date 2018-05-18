@@ -55,7 +55,7 @@ HTTP响应也由四个部分组成，分别是：状态行、消息报头、空�
 
 
 ## 理解 HTTPS
-看到一篇使用[信鸽来解释HTTPS](www.oschina.net/translate/https-explained-with-carrier-pigeons)的文章，信息量足够，也很生动的解释了非对称加密以及产生的问题和解法。
+看到一篇使用[信鸽来解释HTTPS](http://www.oschina.net/translate/https-explained-with-carrier-pigeons)的文章，信息量足够，也很生动的解释了非对称加密以及产生的问题和解法。
 
 通过信鸽传递盒子，解释了HTTPS的非对称加密公私钥的问题
 
