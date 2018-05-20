@@ -74,6 +74,8 @@ Fail2ban 是一个能够保护SSH等常用端口暴力破解的工具
 
 更多的配置可以参考[这篇文章](https://linode.com/docs/security/using-fail2ban-for-security/)
 
+fail2ban 的日志可以在 `/var/log/fail2ban.log` 查看。
+
 ## 如何查看日志
 当你发现服务器有异常请求时，如何查看服务器用户登录日志。首先查看当前服务器登录的用户
 
