@@ -4,7 +4,7 @@ title: "每天学习一个命令：curl 命令行下载工具"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [linux, curl, command]
+tags: [linux, curl, command, network]
 last_updated: 
 ---
 
@@ -89,6 +89,23 @@ POST 提交时
     curl -u ftpuser:ftppassword -T "{file1, file2}" ftp://ftp.server
 
 总的来说，curl 的用法比较普通，最常见的也就是用来下载文件，或者直接查看Header，还有在命令行下发送 GET或者 POST 请求，其他用法倒也是有，不过日常并没有经常使用到。
+
+## 外延 wget
+wget是一个下载文件的工具，它用在命令行下。对于Linux用户是必不可少的工具，我们经常要下载一些软件或从远程服务器恢复备份到本地服务器。wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。
+
+    wget https://www.google.com
+
+## 外延 axel
+Axel是 Linux 下一款不错的 HTTP 或 FTP 高速下载工具。支持多线程下载、断点续传，且可以从多个地址或者从一个地址的多个连接来下载同一个文件，适合网速不给力时多线程下载以提高下载速度。
+
+使用10个线程同时下载文件
+
+    axel -n 10 url
+
+## 外延 mwget
+多线程版本 wget，同时使用5个线程下载
+
+    mwget -n 5 url
 
 
 ## reference
