@@ -79,6 +79,24 @@ HTTP响应也由四个部分组成，分别是：状态行、消息报头、空�
 
 维持长连接会有一定的系统开销，用户量少不容易看出系统瓶颈，一旦用户量上去了，就很有可能把服务器资源（内存/CPU/网卡）耗尽，所以使用需谨慎。
 
+## 301 vs 302
+HTTP 协议 redirect 有两个状态码 301 和 302，对于这两个状态码协议上是这么写的
+
+- 301 Permanently Moved
+- 302 Temporarily Moved
+
+浏览器在处理这两个状态码时行为不一样，对于 Chrome / Firefox 会永久的缓存 301 跳转[^1]，浏览器会尽可能的永久保存该跳转，除非手动清除浏览器缓存，或者浏览器缓存将满为新内容腾出空间。如果不想跳转被浏览器缓存，可以使用 `Cache-Control` 和 `Expires` 两个头。
+
+- Cache-Control: max-age=3600
+- Expires: Thu, 01 Dec 2014 16:00:00 GMT
+- Cache-Control: no-cache
+- Cache-Control: no-store
+
+
+关于Chrome中如何清除永久的301跳转可以参考[这篇文章](/post/2018/04/clear-chrome-cache-redirection.html)
+
+[^1]: https://stackoverflow.com/a/21396547/1820217
+
 
 ## reference
 
