@@ -54,6 +54,11 @@ nethogs 自己的介绍
 	 
 	  TOTAL                                                8.572     239.000 KB/sec
 
+指定某块网卡
+
+    nethogs eth0
+
+
 ### 自定义刷新频率
 
 在启动 nethogs 时使用 `-d seconds` 参数定义刷新频率

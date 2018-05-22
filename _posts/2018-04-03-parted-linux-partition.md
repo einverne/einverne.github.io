@@ -8,7 +8,7 @@ tags: [linux, parted, gparted, partition, clonezilla,]
 last_updated: 
 ---
 
-`parted` 命令可以对磁盘进行分区和管理，和 fdisk 相比，能够支持 2T 以上磁盘。
+`parted` 是GNU组织开发的一款功能强大的磁盘分区和分区大小调整工具，命令可以对磁盘进行分区和管理，和 fdisk 相比，能够支持 2T 以上磁盘。它可以处理最常见的分区格式，包括：ext2、ext3、fat16、fat32、NTFS、ReiserFS、JFS、XFS、UFS、HFS以及Linux交换分区。
 
 功能特点：
 
@@ -18,6 +18,22 @@ last_updated:
 `parted` 有两种使用方式
 
 ## 命令行方式
+定义分区表格式
+
+    parted -s /dev/sda mklabel gpt
+
+划分主分区
+
+    parted -s /dev/sda mkpart primary ext4 1 10G
+
+划分逻辑分区
+
+    parted -s /dev/sda mkpart logic 10G 20G
+
+查看分区情况
+
+    parted -s /dev/sda p
+
 直接使用一行命令来完成分区操作
 
     parted /dev/sdb mklabel gpt mkpart 1 ext4 1 5T

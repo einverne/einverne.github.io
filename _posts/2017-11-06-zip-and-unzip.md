@@ -55,6 +55,9 @@ zip 是一个非常常见的压缩工具，很多平台包括 Unix, VMS, MSDOS, 
 
     unzip -O cp936 file.zip -d /path/to/folder
 
+## 外延
+Linux 下经常遇到 tar.gz tar.bz2 这样的压缩包，这个时候可能就需要使用到 tar 这个命令。
+
 ## reference
 
 - man zip
