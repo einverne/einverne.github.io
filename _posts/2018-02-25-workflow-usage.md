@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Workflow for iOS 使用"
+title: "Workflow for iOS 使用指南"
 tagline: ""
 description: ""
 category: 经验总结
@@ -18,11 +18,14 @@ Workflow 的功能应该由使用者决定，而不是开发者，所以 Workflo
 ### 图片九宫格
 将方形图片切割为9格图片，Workflow [地址](https://workflow.is/workflows/7319fb05a18f49f7bbfc2ed28bb46724)
 
+### Google 粘贴板
+用Google搜索当前粘贴板中的文字或者图片，[Workflow](https://workflow.is/workflows/a724b32274334345bb94f3f1869a5f9d)
+
 ### 隐身相机
 在不启动相机界面的同时拍照，并保存到相册， Workflow [地址](https://workflow.is/workflows/2466e3f50b6e4cae8f72137cfcd75a26) 这一个 Workflow 只有一个选项选择前置还是后置摄像头，如果你想要更加复杂的 Workflow 允许你选择连拍数量的可以使用[这个](https://workflow.is/workflows/8728b548747c46a4b04c38878e3db417)
 
 ### 下载到小米路由器
-在手机上复制下载链接运行该Workflow即可，[地址](https://workflow.is/workflows/f505f2141b474fba825407624efcb14c)
+在手机上复制下载链接运行该Workflow即可，[地址](https://workflow.is/workflows/69f5cdbee8b94f928534a8ef3ff2324e)
 
 ### 切分全景图
 将横向的全景图切分为多个图片方便分享到 Instagram，[地址](https://workflow.is/workflows/b67ce0525f4c44d8983f75af66d6efe4)
