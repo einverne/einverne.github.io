@@ -20,22 +20,26 @@ Openwrt 的接口名字太多，最早接触路由器的时候只知道 WLAN 口
 
 可以使用 `ifconfig` 来查看设备，常见的几个端口：
 
-- lo 虚拟设备端口，自身回环设备，一般指向 127.0.0.1
-- ra0  rai0 成对出现，无线设备，对应各自的 SSID，分别是 2.4G 和 5G
+- `lo` 虚拟设备端口，自身回环设备，一般指向 127.0.0.1
+- `ra0`  `rai0` 成对出现，无线设备，对应各自的 SSID，分别是 2.4G 和 5G
 - `pppoe-wan` 虚拟设备，常见的拨号宽带上网
-- eth0 物理网卡， eth0.1 或者 eth0.2 都是从此设备虚拟而出。
+- `eth0` 物理网卡， eth0.1 或者 eth0.2 都是从此设备虚拟而出。
 - `br-lan` 虚拟设备，用于 LAN 口设备桥接，用来使得多个虚拟或物理网络接口的行为好像他们仅有一个网络接口一样。目前路由器普遍将有线LAN口(一般四个)和WIFI无线接口桥接在一起作为统一的LAN。可以使用 `brctl show` 来查看使用情况。
-- eth1 如果路由器有两块网卡，一般 eth1 作为 WAN 口
-- wlan0 一般是无线网卡，无线端口
+- `eth1` 如果路由器有两块网卡，一般 eth1 作为 WAN 口
+- `wlan0` 一般是无线网卡，无线端口
 
 可以使用如下命令来查看 `br-lan` 配置
 
-    ~ brctl show
+    brctl show
+
     bridge name bridge id       STP enabled interfaces
     br-lan      7fff.64098005e1bb   no      eth0.1 rai0 ra0
 
 br-lan = eth0.1 + rai0 + ra0，即将有线LAN口和无线网统一划分为 LAN。
 
+下面张图比较直观：
+
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/einverne/27528019117/in/dateposted/" title="openwrt-interface"><img src="https://farm2.staticflickr.com/1723/27528019117_5798e19506_z.jpg" alt="openwrt-interface"></a>
 
 ## 更改内网地址
 
@@ -95,6 +99,6 @@ Openwrt morning配置只有上述图片的 LAN 口，下面的 WAN 口通过如�
 - http://wizju.com/post/102/
 - http://wizju.com/post/94/
 - http://unix.stackexchange.com/questions/57309/how-can-i-tell-whether-a-network-interface-is-physical-device-or-virtual-alia
-- https://wiki.openwrt.org/zh-cn/doc/networking/network.interfaces
+- Linux 网络接口 https://wiki.openwrt.org/zh-cn/doc/networking/network.interfaces
 - https://wiki.openwrt.org/zh-cn/doc/uci/network/switch
 
