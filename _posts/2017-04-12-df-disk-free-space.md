@@ -66,3 +66,6 @@ df 全称 disk filesystem，用于显示 Linux 系统磁盘利用率。
     tmpfs            2.0M   888  2.0M    1% /run
     /dev/sdb1         15M  1.8M   13M   12% /
 
+## 相关
+
+查看磁盘占用 [du](/post/2018/03/du-find-out-which-fold-take-space.html)

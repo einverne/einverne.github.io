@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "如何找到一首背景乐"
+title: "如何找到一首歌的名字"
 tagline: ""
-description: ""
+description: "如何在影视剧中出现背景音乐的时候知道这首歌的名字"
 category: 整理合集
 tags: [music, collection, bgm, song, ]
 last_updated: 

@@ -30,6 +30,34 @@ Workflow 的功能应该由使用者决定，而不是开发者，所以 Workflo
 ### 每天领取支付宝红包
 支付宝去年推出的分享领红包活动，虽然一开始诚意满满，不过后来就只能每天领1毛了，不过1毛也是肉嘛，反正 Workflow 点一下够省事，[地址](https://workflow.is/workflows/3bdc85bd9f7f4c5798a65dd1962c0cfe)
 
+### 网易云音乐听歌识曲
+一键打开网易云音乐听歌识曲，[地址](https://workflow.is/workflows/9f2c52235abe4ec6ab0124c93b17e2e7)
+
+### 网购历史价格查询
+
+- <https://workflow.is/workflows/02c35ccbf309439e8c781a2f88c0c6a9>
+
+### 下载文件
+下载文件到本地或者 Dropbox
+
+- <https://workflow.is/workflows/00c0fecd3cf04ae6a315aa28c243eb7b>
+
+### 下载Instagram图片和视频
+
+- <https://workflow.is/workflows/e1e828660f164894bec880051fcedb49>
+
+### 下载 YouTube 视频
+
+- <https://workflow.is/workflows/d64a462ecf6743d6bbb6a5411af2b8c8>
+
+### 网购历史价格查询
+
+- <https://workflow.is/workflows/02c35ccbf309439e8c781a2f88c0c6a9>
+
+### 获取bilibili视频封面
+
+- <https://workflow.is/workflows/165ab36a1c7d47b68cf1195071b151e6>
+
 还有更多好用的可以从下面的网站上获取，我平时常用的
 
 - App Store 换区
@@ -50,4 +78,6 @@ Workflow 的功能应该由使用者决定，而不是开发者，所以 Workflo
 
 最最重要的一点就是网络服务提供足够的API能够让 Workflow 能够轻易的调用，如果有翻译服务提供了公开可调用的API，我们就可以在 Workflow 中，获取粘贴板内容，将内容发送给翻译服务请求结果，并且将结果以通知或者其他形式告诉给用户，这样一个翻译的 Workflow 就实现了。
 
+## reference
 
+- <https://workflow.is/docs>
