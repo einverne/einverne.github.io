@@ -1,12 +1,12 @@
 ---
-title: Remove file from git source control but not delete it from drive
+title: 从 git 版本控制中删除文件而不删除硬盘中文件
 layout: post
 category : Git
 tagline: ""
-tags : [git , beginner, ]
+tags : [git, beginner, linux, ]
 ---
 
-Git学习----从git移除文件而不删除硬盘文件
+Git 学习笔记 ---- 从 git 移除文件而不删除硬盘中的文件，你可能遇到过不小心将一个不需要的文件，或者另外一个重要的包含私密配置的文件添加到了 git 版本库中，这个时候你想从版本库中将其删除，而又不想影响到本地的文件，这个时候就需要使用到本文中需要使用到的内容。
 
 从版本库中移除一个文件，停止对该文件的版本控制
 
@@ -15,7 +15,7 @@ Every once in awhile a file gets checked into git that isn't supposed to be ther
 By adding the `–cached` option to the `git rm` command, you are able to remote the file file from git control while keeping the file in your working tree. They command syntax is:
 
     git rm --cached file
-     
+
 Git will no longer track this file even though it is still on your hard drive.
 After running the above command, be sure to add an entry to your `.gitignore` file so that 'file' doesn't show up in `'git status'` and that it can't accidentally be re-added later.
 

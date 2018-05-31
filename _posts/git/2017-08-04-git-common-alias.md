@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "git common alias"
+title: "给常用的 git 命令添加 alias 提升效率"
 tagline: ""
 description: ""
-category: 
-tags: []
-last_updated: 
+category: 学习笔记
+tags: [git, alias, linux, ]
+last_updated:
 ---
 
 
-之前有写过 Git alias 的[文章](/post/2013/12/Git-note.html#git-aliases), 不过过去很多时间，现在对Git命令越来越熟悉就希望更快的提高输入效率，也越来越感受到 alias 的重要性，不管是直接在bash中的 alias 还是 Git 的alias。所以准备找一些合适的 alias 添加到自己的 gitconfig 文件中长期使用。
+之前有写过 Git alias 的[文章](/post/2013/12/Git-note.html#git-aliases), 不过过去很多时间，现在对 Git 命令越来越熟悉就希望更快的提高输入效率，也越来越感受到 alias 的重要性，不管是直接在 bash 中的 alias 还是 Git 的 alias。所以准备找一些合适的 alias 添加到自己的 gitconfig 文件中长期使用。
 
 ## 添加 alias
 
@@ -36,11 +36,8 @@ last_updated:
 
 如果这样设置之后就可以使用 `git co <branch>` 来切换分支了。
 
-
-
 ## bash alias
 可以在 `~/.bashrc` 或者 `~/.zshrc` 中设置 `alias g=git` 这样就可以使用 g checkout 来代替 git checkout 了。
-
 
 
 ## reference

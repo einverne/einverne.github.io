@@ -5,26 +5,27 @@ tagline: ""
 description: "git history, basic, workflow, and basic branch skills"
 category: Git
 tags: [git, ]
-last_updated: 
+last_updated:
 ---
 
-之前实验室有个培训
+之前做过一个简单的 git 的介绍，下面是 PPT 的摘录。
 
 ## What is Git
 
 > Git is a free and open source distributed version control system(VCS) designed to handle everything from small to very large projects with speed and efficiency.
 
-Git是一个分散式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。Linus Torvalds 自嘲的取名“git”，该词源自英国俚语，意思大约是“混账[^1]”。
+Git 是一个分散式版本控制软件，最初由林纳斯·托瓦兹（Linus Torvalds）创作，于 2005 年以 GPL 发布。最初目的是为更好地管理 Linux 内核开发而设计。Linus Torvalds 自嘲的取名“git”，该词源自英国俚语，意思大约是“混账 [^1]”。
 
 ## 版本控制系统 {#version-control}
 
 ### Version Control Example
 Microsoft Word
-如果你用Microsoft Word写过长篇大论，那你一定有这样的经历：
+如果你用 Microsoft Word 写过长篇大论，那你一定有这样的经历：
 
-想删除一个段落，又怕将来想恢复找不回来怎么办？有办法，先把当前文件“另存为……”一个新的Word文件，再接着改，改到一定程度，再“另存为……”一个新文件，这样一直改下去，最后你的Word文档变成了这样：
+想删除一个段落，又怕将来想恢复找不回来怎么办？有办法，先把当前文件“另存为……”一个新的 Word 文件，再接着改，改到一定程度，再“另存为……”一个新文件，这样一直改下去，最后你的 Word 文档变成了这样：
 
 Wikis
+
 https://zh.wikipedia.org/w/index.php?title=Git&amp;action=history
 
 Undo
@@ -106,13 +107,13 @@ anyone not afraid of command-line tools
 
 2. 编码问题，如果在多平台使用请千万使用 UTF-8 编码
 
-	使用Windows的童鞋要特别注意：
-	千万不要使用Windows自带的记事本编辑任何⽂文本⽂文件。原因是Microsoft开发记事本的团
-	队使⽤用了⼀一 个非常弱智的⾏行为来保存UTF-8编码的⽂文件，他们⾃自作聪明地在每个⽂文件开头添
-	加了0xefbbbf（⼗十六进制）的字符，你会遇到很多不可思议的问题，比 如，网页第一⾏行可
+	使用 Windows 的童鞋要特别注意：
+	千万不要使用 Windows 自带的记事本编辑任何⽂文本⽂文件。原因是 Microsoft 开发记事本的团
+	队使⽤用了⼀一 个非常弱智的⾏行为来保存 UTF-8 编码的⽂文件，他们⾃自作聪明地在每个⽂文件开头添
+	加了 0xefbbbf（⼗十六进制）的字符，你会遇到很多不可思议的问题，比 如，网页第一⾏行可
 	能会显⽰示⼀一个“?”，明明正确的程序⼀一编译就报语法错误，等等，都是由记事本的弱智⾏行
-	为带来的。建议你下载Notepad++代替记事本，不但功能强⼤大，而且免费！记得把
-	Notepad++的默认编码设置为UTF-8 without BOM即可
+	为带来的。建议你下载 Notepad++ 代替记事本，不但功能强⼤大，而且免费！记得把
+	Notepad++ 的默认编码设置为 UTF-8 without BOM 即可
 
 ## install
 
@@ -136,16 +137,16 @@ anyone not afraid of command-line tools
 	git config --global user.email johndoe@example.com  # 配置提交邮箱
 
 
-    git init  
-    git status  
-    git add filename  
-    暂存区  
-    git commit -m “"  
-    git log  
+    git init
+    git status
+    git add filename
+    # 暂存区
+    git commit -m “"
+    git log
 
 commit message best practices
 
-- short single-line summary ( less then 50 characters 或者 小于25个汉字)
+- short single-line summary ( less then 50 characters 或者 小于 25 个汉字）
 - optionally followed by a blank line and a more complete description
 - keep each line to less than 72 characters
 - write commit messages in present tense, not past tense
@@ -153,9 +154,9 @@ commit message best practices
 
 ## branch
 
-    git branch <branchname>  
-    git checkout <branchname>  
-    git checkout -b <branchname>  
+    git branch <branchname>
+    git checkout <branchname>
+    git checkout -b <branchname>
 
     git push origin <branchname>
 
@@ -165,18 +166,18 @@ http://nvie.com/posts/a-successful-git-branching-model/
 
 ## remote
 
-    git remote add origin git@blcu.tk:einverne/gitdemo.git  
-    git push -u origin master  
-    git remote show origin  
+    git remote add origin git@blcu.tk:einverne/gitdemo.git
+    git push -u origin master
+    git remote show origin
 
 ## tag
 
-    git tag     # list all tags  
-    git tag v0.9  
-    git tag -a v1.0 -m “my version 1.0"  
-    git show tag name #show tag details  
-    git push origin tag name  
-    git push origin --tags  
+    git tag     # list all tags
+    git tag v0.9
+    git tag -a v1.0 -m “my version 1.0"
+    git show tag name #show tag details
+    git push origin tag name
+    git push origin --tags
 
 ## git GUI
 
@@ -188,15 +189,15 @@ https://github.com/github/gitignore
 
 ### alias
 
-git config --global alias.st status  
-git config --global alias.co checkout  
-git config --global alias.ci commit  
-git config --global alias.br branch  
-git config --global alias.unstage 'reset HEAD --'  
-git config --global alias.last 'log -1 HEAD'  
+    git config --global alias.st status
+    git config --global alias.co checkout
+    git config --global alias.ci commit
+    git config --global alias.br branch
+    git config --global alias.unstage 'reset HEAD --'
+    git config --global alias.last 'log -1 HEAD'
 
 ## GitLab server
 
-http://server.address
+    http://server.address
 
 [^1]: http://git.or.cz/gitwiki/GitFaq#head-90fa13ebe170116f1586156e73b549cc2135b784

@@ -4,7 +4,7 @@ title: "How to Write a Git commit message"
 tagline: ""
 description: ""
 category: Git
-tags: [Git, Github]
+tags: [git, github, ]
 last_updated: 
 ---
 
