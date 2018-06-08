@@ -4,7 +4,7 @@ title: "kafka 基础知识笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [kafka, linkedin, message, ]
+tags: [kafka, linkedin, message, broker, ]
 last_updated:
 ---
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "利用Jenkins持续集成Android程序"
+title: "利用 Jenkins 持续集成 Android 程序"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Android, Jenkins, gradle, ci]
-last_updated: 
+tags: [android, jenkins, gradle, ci]
+last_updated:
 ---
 
-Jenkins 是 Java 编写的开源持续集成（Continuous integration）工具[^Jenkins]。在上一篇推荐网站中提到的 [AlternativeTo](/post/2016/04/alternativeto.html) 中去搜索一下，能够看到很多持续集成的[工具](http://alternativeto.net/software/jenkins/)，像 GitHub 上经常看到的 Travis CI， 还有 Jenkins 的前身 Hudson。
+Jenkins 是 Java 编写的开源持续集成（Continuous integration）工具 [^Jenkins]。在上一篇推荐网站中提到的 [AlternativeTo](/post/2016/04/alternativeto.html) 中去搜索一下，能够看到很多持续集成的[工具](http://alternativeto.net/software/jenkins/)，像 GitHub 上经常看到的 Travis CI， 还有 Jenkins 的前身 Hudson。
 
 ## 安装
 
@@ -21,7 +21,7 @@ Linux 下：
     sudo apt-get update
     sudo apt-get install jenkins
 
-直接安装源中的Package有几点需要注意：
+直接安装源中的 Package 有几点需要注意：
 
 1. Jenkins 会以守护进程（daemon）随机启动， 查看 `/etc/init.d/jenkins`。
 2. 创建了 `jenkins` 用户来运行服务
@@ -33,7 +33,7 @@ Linux 下：
 
 ## 全局配置
 
-这里默认已经有 Android 开发环境，也就是 JDK， Android-SDK，Gradle 都已经是完整的。进入 `http://localhost:8080` 配置，首次今日需要验证身份信息，验证之后创建用户，然后下载插件，进入之后，系统管理-> 管理插件，需要安装以下插件：
+这里默认已经有 Android 开发环境，也就是 JDK， Android-SDK，Gradle 都已经是完整的。进入 `http://localhost:8080` 配置，首次今日需要验证身份信息，验证之后创建用户，然后下载插件，进入之后，系统管理 -> 管理插件，需要安装以下插件：
 
 - Android Lint Plugin
 - Git plugin
@@ -41,23 +41,23 @@ Linux 下：
 
 如有其他插件 GitHub , gitlab 啦，可以就使用环境来选择安装。
 
-更新玩插件，进入 系统管理->Global Tool Configuration , 然后配置 JDK 目录， Gradle 目录，Git目录。当然需要知道当前自己机器上的绝对地址：
+更新玩插件，进入 系统管理 ->Global Tool Configuration , 然后配置 JDK 目录， Gradle 目录，Git 目录。当然需要知道当前自己机器上的绝对地址：
 
 - JDK： /usr/lib/jvm/java-7-openjdk-amd64
 - Gradle： /home/einverne/android-studio/gradle/gradle-2.10
 - Git： git
 
-系统管理-> 系统系统设置：
+系统管理 -> 系统系统设置：
 
 Environment variables 下添加：
 
-键 ： ANDROID_HOME    值：/home/einverne/Android/Sdk
+键 ： `ANDROID_HOME`    值：`/home/einverne/Android/Sdk`
 
 如果这一行不添加，而 Android Studio 的工程没有在 `local.properties` 中指定 `sdk.dir=/home/einverne/Android/Sdk` 的话， Jenkins build failed, cannot found Android sdk[^1].
 
 ## 项目配置
 
-配置好上面的环境，新建项目，名字+"构建一个自由风格的软件项目"。 然后进入项目，配置
+配置好上面的环境，新建项目，名字 +"构建一个自由风格的软件项目"。 然后进入项目，配置
 
 ### General
 
@@ -73,7 +73,7 @@ Environment variables 下添加：
 
 ### 构建环境
 
-这边基本上在全局环境配置的时候就已经满足，细化一下build 环境。
+这边基本上在全局环境配置的时候就已经满足，细化一下 build 环境。
 
 ### 构建
 
@@ -96,7 +96,7 @@ Jenkins 默认启用 Lint 检查，所以需要在 `build.gradle` 中 `android` 
         abortOnError false;
     }
 
-图文教程，Windows下教程参考下面文章。
+图文教程，Windows 下教程参考下面文章。
 
 ## reference
 

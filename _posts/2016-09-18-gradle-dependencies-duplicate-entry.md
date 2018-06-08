@@ -4,8 +4,8 @@ title: "Gradle 重复导入错误"
 tagline: ""
 description: ""
 category: Android
-tags: [Android, AndroidDev, Gradle, Google]
-last_updated: 
+tags: [android, androiddev, gradle, google]
+last_updated:
 ---
 
 记录一下纠结了两天的问题。
@@ -18,7 +18,7 @@ Error:Execution failed for task ':mobile:packageAllDebugClassesForMultiDex'.
 > java.util.zip.ZipException: duplicate entry:android/support/annotation/AnyRes.class
 ```
 
-这个问题是因为项目中引入了 `support-annotations` 包，但是导入的其他 jar 包中包含了这个package，重复导致了 `duplicate entry` 错误。
+这个问题是因为项目中引入了 `support-annotations` 包，但是导入的其他 jar 包中包含了这个 package，重复导致了 `duplicate entry` 错误。
 在 app 的 `build.gradle` 中加入：
 
 ```
@@ -48,7 +48,7 @@ buildTypes {
 ```
 
 这里竟然 debug 和 release 使用了同样的 minifyEnabled 配置，默认情况下 minifyEnabled 应该是 false，设置成 true 之后，debug 下无法调试，无法设置断点。查看 git 历史这个问题竟然从项目初始就这样，真无法想象他们是怎么调试的。然后将 minifyEnabled 设置成 false 之后就产生了 multiDex 错误，然后是上面的错误。
-buildTypes 下 `minifyEnabled` 选项， 设置为 true 情况下， debug 无法设置断点及调试[^2], 但是这个选线在 release 下非常有用，可以减少包的大小，缩减无用代码（shrink unless codes）。
+buildTypes 下 `minifyEnabled` 选项， 设置为 true 情况下， debug 无法设置断点及调试 [^2], 但是这个选线在 release 下非常有用，可以减少包的大小，缩减无用代码（shrink unless codes）。
 
 
 修改后的配置：
@@ -66,7 +66,7 @@ buildTypes {
 }
 ```
 
-multiDex 的错误倒是还好解决[^1]，设置：
+multiDex 的错误倒是还好解决 [^1]，设置：
 
 ```
 android {
@@ -124,7 +124,7 @@ android {
 如果想要配置本地 jar 包，可以依照下面顺序：
 
 
-- 将jar 包放入 libs 目录
+- 将 jar 包放入 libs 目录
 - 右击 jar 包，选择 “Add as library”
 - 确认 `compile files('libs/xxx.jar')` 在 `build.gradle` 文件中，或者 `compile fileTree(dir: 'libs', include: '*.jar')`
 - rebuild
@@ -150,8 +150,8 @@ android {
 ```
 
 Note:
-- `jcenter()` 是远端库的URL缩写， Gradle 支持本地和远程库。
-- Gradle 如果发现依赖需要使用其他依赖会自动pull其他依赖。
+- `jcenter()` 是远端库的 URL 缩写， Gradle 支持本地和远程库。
+- Gradle 如果发现依赖需要使用其他依赖会自动 pull 其他依赖。
 
 
 ### 多项目配置
@@ -228,12 +228,12 @@ android{
 
 下排除。
 
-更加系统的学习 Android Gradle build system 可以参考官方文档，或者中文译本[^3]。
+更加系统的学习 Android Gradle build system 可以参考官方文档，或者中文译本 [^3]。
 
 关于 `build.gradle` 文件中的字段属性，可以参考 [Android Plugin DSL Reference](http://google.github.io/android-gradle-dsl/current/).
 
-
 ## referencee
-[^1]: [StackOverflow](http://stackoverflow.com/questions/26609734/how-to-enable-multidexing-with-the-new-android-multidex-support-library) 和 [官网](https://developer.android.com/studio/build/multidex.html) 
+
+[^1]: [StackOverflow](http://stackoverflow.com/questions/26609734/how-to-enable-multidexing-with-the-new-android-multidex-support-library) 和 [官网](https://developer.android.com/studio/build/multidex.html)
 [^2]: http://stackoverflow.com/questions/31926189/android-debugging-with-minifyenabled-true
 [^3]: [Gradle for Android](https://chaosleong.gitbooks.io/gradle-for-android/)
