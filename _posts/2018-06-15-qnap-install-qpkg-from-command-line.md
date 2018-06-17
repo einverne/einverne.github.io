@@ -10,10 +10,10 @@ last_updated:
 
 如果想要给威联通安装一个 qpkg 的安装包时，最直观界面方式就是在 App Center 中，[右上角](https://www.qnap.com/en/how-to/knowledge-base/article/how-to-install-qnap-applications-qpkg-files-manually)，将本地的 `.qpkg` 文件上传到 NAS 并安装。
 
-但是这种方式在外网图形界面加载很慢的情况下是非常难用的，那么这个时候如果能使用命令行安装就非常方便。需要在系统中预先开启 SSH 连接，当然这一步早就做好了。然后使用 ssh 连接登录上。比如下面以安装 Entware [为例](https://github.com/Entware/Entware-ng/wiki/Install-on-QNAP-NAS)：
+但是这种方式在外网图形界面加载很慢的情况下是非常难用的，那么这个时候如果能使用命令行安装就非常方便。需要在系统中预先开启 SSH 连接，当然这一步早就做好了。然后使用 ssh 连接登录上。比如下面以安装 Entware [为例](https://github.com/Entware/Entware/wiki/Install-on-QNAP-NAS)：
 
-    wget http://pkg.entware.net/binaries/x86-64/installer/Entware-ng_0.97.qpkg
-    sh Entware-ng_0.97.qpkg
+    wget http://bin.entware.net/other/Entware_1.00std.qpkg
+    sh Entware_1.00std.qpkg
 
 经过这两个步骤就 OK 了。使用 `opkg` 命令可能需要重新登录 NAS SSH。
 
@@ -29,7 +29,7 @@ last_updated:
 - x86-32: <http://pkg.entware.net/binaries/x86-32/Packages.html>
 - x86-64: <http://pkg.entware.net/binaries/x86-64/Packages.html>
 
-安装日志如下：
+下面是安装 ng 0.97 版本的日志：
 
     wget http://pkg.entware.net/binaries/x86-64/installer/Entware-ng_0.97.qpkg
     --2018-06-15 10:05:57--  http://pkg.entware.net/binaries/x86-64/installer/Entware-ng_0.97.qpkg
