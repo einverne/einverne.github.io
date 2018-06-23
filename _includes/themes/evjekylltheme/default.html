@@ -14,7 +14,7 @@
 		<link rel="author" href="https://plus.google.com/+{{ site.author.google }}"/>
 
 	{% if page.url == "/404.html" %}
-		<meta http-equiv = "refresh" content = "5;url=/">
+		<meta http-equiv = "refresh" content = "3;url=/">
 	{% endif %}
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -52,6 +52,8 @@
 	</script>  
 	<script type="text/javascript" src="{{ ASSET_PATH }}/MathJax-2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
   </head>
 
   <body>
@@ -95,7 +97,6 @@
         </div>
 				{{ content }}
 			</div>
-
 
 		</div>
 
