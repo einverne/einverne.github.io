@@ -1,5 +1,4 @@
 (function($){
-
   /* add _blank to each link */
   $(document).ready(function() {
     $('a[href]').each(function() {
@@ -7,6 +6,7 @@
         $(this).attr({target: '_blank' });
       }
     });
+    $("iframe[src*='youtube.com']").wrap('<div class="videowrapper" />');
 		anchors.options = {
 			visible: 'always',
 			icon: '¶'
