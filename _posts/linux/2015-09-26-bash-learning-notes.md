@@ -28,24 +28,24 @@ All the above assume that bash is running in the default Emacs setting, if you p
 
 Set Vi Mode in bash:
 
-	$ set -o vi 
+	$ set -o vi
 
 Set Emacs Mode in bash:
 
-	$ set -o emacs 
+	$ set -o emacs
 
 using `set -o` to check all the bash options.
 
 ## Emacs 编辑模式
 
-[完整 Emacs编辑模式快捷键](http://ss64.com/bash/syntax-keyboard.html)，文档[link](/assets/readline-emacs-editing-mode-cheat-sheet.pdf)
+[完整 Emacs 编辑模式快捷键](http://ss64.com/bash/syntax-keyboard.html)，文档 [link](/assets/readline-emacs-editing-mode-cheat-sheet.pdf)
 
 Bash Keyboard Shortcuts 在绝大多数情况下一下快捷键可以直接使用
 
 ### 移动光标 Moving the cursor
 在终端移动快捷键
 
-Command |  Explain 
+Command |  Explain
 --------|------------|
 Ctrl + a  |  移动到命令最前 Go to the beginning of the line (Home)
 Ctrl + e  |  移动到行尾 Go to the End of the line (End)
@@ -60,7 +60,7 @@ Ctrl + xx |  在行首和当前光标的位置来回切换 Toggle between the st
 ### 编辑 Editing
 编辑相关的快捷键
 
-Command |  Explain 
+Command |  Explain
 --------|------------|
 Ctrl + L   |  Clear the Screen, similar to the clear command
 Alt + Del |  Delete the Word before the cursor.
@@ -85,14 +85,14 @@ Esc  + t   |  Swap the last two words before the cursor.
 - | -
  TAB        |  Tab completion for file/directory names
 
-For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER. 
+For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER.
 type just enough characters to uniquely identify the directory you wish to open.
 
 ### 历史 History
 
-Command |  Explain 
+Command |  Explain
 --------|------------|
-Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history. 
+Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history.
 Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
 Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
 - |-
@@ -109,14 +109,14 @@ ALT + .  |  Last argument of previous command
 
 ### 进程控制 Process control
 
-Command |  Explain 
+Command |  Explain
 --------|------------|
 Ctrl + C |  Interrupt/Kill whatever you are running (SIGINT)
 Ctrl + L |  Clear the screen
 Ctrl + s |  Stop output to the screen (for long running verbose commands)
          |  Then use PgUp/PgDn for navigation
 Ctrl + q |  Allow output to the screen (if previously stopped using command above)
-Ctrl + D |  退出当前Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
+Ctrl + D |  退出当前 Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
 Ctrl + Z |  Send the signal SIGTSTP to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
 
 
@@ -139,14 +139,14 @@ Ctrl-L  | 清除屏幕，将当前行放到屏幕最上面 |
 Ctrl-M  | 等同于 RETURN |
 Ctrl-O  | 等同于 RETURN 随后在显示历史命令中下一行 |
 Ctrl-T  | 颠倒光标左右两个字符，将光标向前移一个|
-Ctrl-U  | 从光标位置开始删除行 ，向后删除到行首| 
+Ctrl-U  | 从光标位置开始删除行 ，向后删除到行首|
 Ctrl-V  | 引用插入|
 
 
 ## Vi 编辑模式
-通过设置 `set -o vi` 进入Vi编辑模式，正常环境为输入模式，对命令进行修改则按 <kbd>Esc</kbd>。完整命令[参考](/assets/bash-vi-editing-mode-cheat-sheet.pdf).
+通过设置 `set -o vi` 进入 Vi 编辑模式，正常环境为输入模式，对命令进行修改则按 <kbd>Esc</kbd>。完整命令[参考](/assets/bash-vi-editing-mode-cheat-sheet.pdf).
 
-命令包括 <kbd>h</kbd>, <kbd>l</kbd>, <kbd>w</kbd>, <kbd>b</kbd> 等等Vi中使用的命令，可参考另外一篇[Vim学习笔记](/post/2015/05/vim-notes.html)。
+命令包括 <kbd>h</kbd>, <kbd>l</kbd>, <kbd>w</kbd>, <kbd>b</kbd> 等等 Vi 中使用的命令，可参考另外一篇 [Vim 学习笔记](/post/2015/05/vim-notes.html)。
 
 - 通过按键 `Esc` , `Ctrl+l（L lower case）` ，clear screen。
 - Ctrl-w
@@ -159,7 +159,7 @@ Ctrl-V  | 引用插入|
 
 ### 特殊文件 {#bash-profile}
 
-最重要的 Bash文件是 `.bash_profile` ，它在每次用户登陆系统时被读取 `/etc/profile` 。Bash 允许有 `.bash_profile` 两个同义文件， C Shell 的 `.bash_login` 以及 Bourne Shell 和 Korn Shell 的 `.profile` 。登录时三者中只有一个被读取，如果用户根目录下 `.bash_profile` 不存在，则 bash 依次查找 `.bash_login` , `.profile`.
+最重要的 Bash 文件是 `.bash_profile` ，它在每次用户登陆系统时被读取 `/etc/profile` 。Bash 允许有 `.bash_profile` 两个同义文件， C Shell 的 `.bash_login` 以及 Bourne Shell 和 Korn Shell 的 `.profile` 。登录时三者中只有一个被读取，如果用户根目录下 `.bash_profile` 不存在，则 bash 依次查找 `.bash_login` , `.profile`.
 
 `.bash_profile` 只被登录 shell 读取并执行，如果通过命令键入 Bash 启动一个新 Shell， 它就会读取 bashrc 中的命令。
 
@@ -181,12 +181,12 @@ Ctrl-V  | 引用插入|
 
 ### 选项 {#option}
 
-别名可以为命令创建方便的名字，它们实际上并不改变shell的行为。选项则不然。基本命令：
+别名可以为命令创建方便的名字，它们实际上并不改变 shell 的行为。选项则不然。基本命令：
 
-	set -o optionname	-号 开启
-    set +o optionname	+号 关闭
+	set -o optionname	- 号 开启
+    set +o optionname	+ 号 关闭
 
-检查bash所有可选项，使用 `set -o` 打印所有列表。
+检查 bash 所有可选项，使用 `set -o` 打印所有列表。
 
 shopt 选项
 
@@ -229,7 +229,7 @@ shopt 选项
 
 选项     |       解释      |
 --------|-------------|
-emacs  | emacs编辑模式 |
+emacs  | emacs 编辑模式 |
 vi         | vi 编辑模式  |
 ignoreeof | 不允许单独使用 Ctrl-D 退出  |
 noclobber | 不允许输出重定向（>）覆盖已存在的文件 |
@@ -239,7 +239,7 @@ nounset | 试图使用未定义变量时给出错误
 
 ### 变量 {#variable}
 
-Shell变量也是一个拥有取值的名字，bash有一些内置的变量，shell编程也可以自定义变量。按照惯例，内置变量名均为大写，当然也有两个例外。
+Shell 变量也是一个拥有取值的名字，bash 有一些内置的变量，shell 编程也可以自定义变量。按照惯例，内置变量名均为大写，当然也有两个例外。
 
 	varname=value
 
@@ -253,7 +253,7 @@ bash 有很多内置变量分布在各个配置文件中。
 
 ### 内置变量
 
-PATH变量，帮助shell找到输入的命令。输入 `echo $PATH` 得到类似：
+PATH 变量，帮助 shell 找到输入的命令。输入 `echo $PATH` 得到类似：
 
 	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 

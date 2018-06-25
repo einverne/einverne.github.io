@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [antigen, zsh, bash, linux, vim, tmux]
-last_updated: 
+last_updated:
 ---
 
 antigen 是 zsh 的插件管理工具，在他 GitHub 主页上的一句话非常形象的解释了他的功能。
