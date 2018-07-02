@@ -29,6 +29,10 @@ last_updated:
 - x86-32: <http://pkg.entware.net/binaries/x86-32/Packages.html>
 - x86-64: <http://pkg.entware.net/binaries/x86-64/Packages.html>
 
+需要注意的是安装 Entware 之后很多命令都存放在 `/opt/bin` 目录下，需要修改 `/root` 目录下的 `.bashrc` 文件中的 PATH 来使这些命令被命令行所见。
+
+    export PATH=/opt/bin:$PATH
+
 下面是安装 ng 0.97 版本的日志：
 
     wget http://pkg.entware.net/binaries/x86-64/installer/Entware-ng_0.97.qpkg
