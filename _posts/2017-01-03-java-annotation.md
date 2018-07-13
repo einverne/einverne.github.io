@@ -76,7 +76,7 @@ last_updated:
 注解的属性也叫做 annotation type element declarations，看起来像方法，但是不是。注解**只有 annotation type element declarations**，没有方法。注解的 annotation type element declarations 在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该 annotation type element declarations 的名字，其返回值定义了该 annotation type element declarations 的类型。
 
 ## 元注解
-有四种元注解，可以理解成定义注解的注解。
+有如下元注解 (meta-annotation)，可以理解成定义注解的注解。
 
 注解名字 | 解释
 -----|--------
@@ -86,7 +86,7 @@ last_updated:
 @Inherited | 允许子类继承父类中的注解
 @Repeatable | 表示该注解可以在同一个定义地方被多次使用
 
-Java 8 引入了 [Repeating Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/repeating.html).
+前四个注解是 Java 5 引入，后 Java 8 引入了 [Repeating Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/repeating.html).
 
 ## Repeating Annotations
 可重复的注解是 Java 8 引入的内容，为什么需要可重复的注解呢？举个官方文档上的例子，比如说定义了一个定时任务，有两种方式来驱动
