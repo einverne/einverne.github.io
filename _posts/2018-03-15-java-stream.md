@@ -8,7 +8,9 @@ tags: [java, java-stream, java-collections, guava, java8]
 last_updated:
 ---
 
-Java 8 中 stream 大大简化了 Collection 的操作，所以这篇文章就简单的了解下 stream 的基本用法，关于 collect，flatmap，map 等等更加高级的用法可能还需要另开一篇总结。
+Java 8 中 stream 大大简化了 Collection 的操作，所以这篇文章就简单的了解下 stream 的基本用法，关于 collect，flatmap，map 等等更加高级的用法可能还需要[另开一篇](/post/2018/03/java-stream-collect-flatmap-reduce-usage.html) 总结。
+
+Stream API 借助于同样新出现的 Lambda 表达式，极大的提高编程效率和程序可读性。同时它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。
 
 ## 创建 stream
 有很多种方法
@@ -41,6 +43,12 @@ filter 返回的流中只包含满足断言 (predicate) 的数据。
             .boxed()
             .collect(Collectors.toList());
     System.out.println(list); // [2, 4, 6, 8]
+
+对于原始类型，stream 无法处理，需要调用 boxed 将其装换成对应的 wrapper class
+
+    List<Integer> ints = IntStream.of(1,2,3,4,5)
+                    .boxed()
+                    .collect(Collectors.toList());
 
 ### map
 map 方法将流中的元素映射成另外的值，新的值类型可以和原来的元素的类型不同。
@@ -106,16 +114,9 @@ sorted() 将流中的元素按照自然排序方式进行排序，如果元素�
 ### skip
 skip 返回丢弃了前 n 个元素的流，如果流中的元素小于或者等于 n，则返回空的流。
 
-### boxed
-对于原始类型，stream 无法处理，需要调用 boxed 将其装换成对应的 wrapper class
-
-    List<Integer> ints = IntStream.of(1,2,3,4,5)
-                    .boxed()
-                    .collect(Collectors.toList());
-
 
 ## terminal operations
-终点
+终点操作，这些操作都是返回 Void ，所以不能在调用之后再使用中间操作。
 
 ### match
 这一组方法用来检查流中的元素是否满足断言。
@@ -138,7 +139,7 @@ skip 返回丢弃了前 n 个元素的流，如果流中的元素小于或者等
     System.out.println(Stream.<Integer>empty().noneMatch(i -> i > 0)); //true
 
 ### count
-count 返回流中的元素数量
+count 返回流中的元素数量，返回类型 `long`
 
     long count = Stream.of(1, 2, 3, 4).count();
     System.out.println(count);
@@ -167,7 +168,7 @@ forEach 遍历流的每一个元素，执行指定的 action。它是一个终�
 max 返回流中的最大值，min 返回流中的最小值。
 
 ### reduce
-reduce 是常用的一个方法，事实上很多操作都是基于它实现的。
+reduce 是常用的一个方法，事实上很多操作都是基于它实现的。在流上执行一个缩减操作，返回的结果是 `Optional` ，其中包含缩减的结果。
 
 它有几个重载方法：
 

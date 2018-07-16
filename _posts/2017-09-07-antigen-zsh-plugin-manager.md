@@ -26,26 +26,26 @@ antigen 是 zsh 的插件管理工具，在他 GitHub 主页上的一句话非�
 
 
 ```
-source /path-to-antigen-clone/antigen.zsh
+    source /path-to-antigen-clone/antigen.zsh
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+    # Load the oh-my-zsh's library.
+    antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
+    # Bundles from the default repo (robbyrussell's oh-my-zsh).
+    antigen bundle git
+    antigen bundle heroku
+    antigen bundle pip
+    antigen bundle lein
+    antigen bundle command-not-found
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+    # Syntax highlighting bundle.
+    antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme robbyrussell
+    # Load the theme.
+    antigen theme robbyrussell
 
-# Tell antigen that you're done.
-antigen apply
+    # Tell antigen that you're done.
+    antigen apply
 ```
 
 使配置生效 `source ~/.zshrc`
