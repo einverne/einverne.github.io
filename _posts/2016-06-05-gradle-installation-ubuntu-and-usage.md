@@ -8,8 +8,9 @@ tags: [gradle, ubuntu, linux, usage, build-system, jvm, java]
 last_updated:
 ---
 
+Gradle 的核心是基于 Groovy 的 领域特定语言 (DSL)，目的是为了代替 XML 繁多的构建工具。
 
-## 安装
+## 自动安装
 可以使用这个 [PPA](https://launchpad.net/~cwchien/+archive/ubuntu/gradle)
 
     sudo add-apt-repository ppa:cwchien/gradle
