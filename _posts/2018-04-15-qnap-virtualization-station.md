@@ -4,7 +4,7 @@ title: "威联通折腾篇三：Virtualization Station 安装虚拟机"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [nas, virtualization, hypervisor, vm, container, docker, virtualization-station, ]
+tags: [qnap, qnap-tutorial, nas, virtualization, hypervisor, vm, container, docker, virtualization-station, ]
 last_updated:
 ---
 

@@ -3,8 +3,8 @@ layout: post
 title: "威联通折腾篇五：安装 Transmission 下载 BT"
 tagline: ""
 description: ""
-category:
-tags: []
+category: 经验总结
+tags: [qnap, qnap-tutorial, download, bt,]
 last_updated:
 ---
 
