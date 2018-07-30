@@ -4,13 +4,12 @@ title: "使用 supervisor 管理进程"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [supervisor, python]
-last_updated: 
+tags: [supervisor, python, linux, client-server, process, ]
+last_updated:
 ---
 
 
 Supervisor (http://supervisord.org) 是一个用 Python 开发的进程管理工具（client/server)，可以很方便的用来启动、重启、关闭进程（不仅仅是 Python 进程）。除了对单个进程的控制，还可以同时启动、关闭多个进程，比如很不幸的服务器出问题导致所有应用程序都被杀死，此时可以用 supervisor 同时启动所有应用程序而不是一个一个地敲命令启动。
-
 
 ## 安装
 
@@ -27,19 +26,18 @@ Supervisor 可以运行在 Linux、Mac OS X 上。如前所述，supervisor 是 
 Supervisor 有两个主要的组成部分：
 
 - supervisord，运行 Supervisor 时会启动一个进程 supervisord，它负责
-    
+
     1. 启动所管理的进程，并将所管理的进程作为自己的子进程来启动，而且可以在所管理的进程出现崩溃时自动重启。
     2. 响应客户端命令
     3. 日志输出管理
-    
-- supervisorctl，是命令行管理工具，可以用来执行 stop、start、restart 等命令，对这些子进程进行管理。
 
+- supervisorctl，是命令行管理工具，可以用来执行 stop、start、restart 等命令，对这些子进程进行管理。
 
 ## 手动 supervisord 配置
 
 Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需要用到其中一小部分。安装完成之后，可以编写配置文件，来满足自己的需求。为了方便，我们把配置分成两部分：supervisord（supervisor 是一个 C/S 模型的程序，这是 server 端，对应的有 client 端：supervisorctl）和应用程序（即我们要管理的程序）。
 
-首先来看 supervisord 的配置文件。安装完 supervisor 之后，可以运行echo_supervisord_conf 命令输出默认的配置项，也可以重定向到一个配置文件里（如果是apt安装，则默认配置在 /etc/supervisor/supervisord.conf 下）：
+首先来看 supervisord 的配置文件。安装完 supervisor 之后，可以运行 echo_supervisord_conf 命令输出默认的配置项，也可以重定向到一个配置文件里（如果是 apt 安装，则默认配置在 /etc/supervisor/supervisord.conf 下）：
 
     echo_supervisord_conf > /etc/supervisord.conf
 
@@ -57,9 +55,9 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 
     [supervisord]
     logfile=/tmp/supervisord.log ; 日志文件，默认是 $CWD/supervisord.log
-    logfile_maxbytes=50MB        ; 日志文件大小，超出会 rotate (分割），默认 50MB
+    logfile_maxbytes=50MB        ; 日志文件大小，超出会 rotate （分割），默认 50MB
     logfile_backups=10           ; 日志文件保留备份数量默认 10
-    loglevel=info                ; 日志级别，默认 info，其它: debug,warn,trace
+    loglevel=info                ; 日志级别，默认 info，其它：debug,warn,trace
     pidfile=/tmp/supervisord.pid ; pid 文件
     nodaemon=false               ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
     minfds=1024                  ; 可以打开的文件描述符的最小值，默认 1024
@@ -80,11 +78,9 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
     files = relative/directory/*.ini    ; 可以是 *.conf 或 *.ini
 
 
-我们把上面这部分配置保存到 /etc/supervisord.conf（或其他任意有权限访问的文件），然后启动 supervisord（通过 -c 选项指定配置文件路径，如果不指定会按照这个顺序查找配置文件：$CWD/supervisord.conf, $CWD/etc/supervisord.conf, /etc/supervisord.conf）
-
+我们把上面这部分配置保存到 /etc/supervisord.conf（或其他任意有权限访问的文件），然后启动 supervisord（通过 -c 选项指定配置文件路径，如果不指定会按照这个顺序查找配置文件：`$CWD/supervisord.conf`, `$CWD/etc/supervisord.conf`, `/etc/supervisord.conf`）
 
     supervisord -c /etc/supervisord.conf
-
 
 查看 supervisord 是否在运行：
 
@@ -92,12 +88,12 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 
 `supervisord` 是 supervisor 的守护进程，但是他自身并没有 reload 选项，因此需要使用
 
-	service supervisor restart  # 来重启 supervisord
+	sudo service supervisor restart  # 来重启 supervisord
+    sudo /etc/init.d/supervisor restart
 
 如果需要使用其他 conf 文件，在 stop supervisord 之后在使用 `-c` 参数后接配置文件。
 
-
-## APT安装
+## APT 安装
 
 可以使用 `sudo service supervisor status` 来查看 supervisord 的服务状态
 
@@ -115,7 +111,6 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 
     cd /home/einverne/projects/program_name
     gunicorn -c gunicorn.py wsgi:app
-
 
 现在编写一份配置文件来管理这个进程（需要注意：用 supervisord 管理时，gunicorn 的 daemon 选项需要设置为 False）：
 
@@ -146,24 +141,24 @@ Supervisor 相当强大，提供了很丰富的功能，不过我们可能只需
 
 使用 group 开启或者关闭一组程序，在配置目录下加上额外的配置文件
 
-    [group:group1] 
+    [group:group1]
     programs=group-member-1,group-member-2   ; each refers to 'x' in [program:x] definitions
     priority=999                  ; the relative start priority (default 999)
-    
-    [program:group-member-1] 
-    command=xxx 
-    autostart=true 
-    autorestart=true 
-    user=redis 
-    stdout_logfile=xxx 
+
+    [program:group-member-1]
+    command=xxx
+    autostart=true
+    autorestart=true
+    user=redis
+    stdout_logfile=xxx
     stderr_logfile=xxx
 
     [program:group-member-2]
-    command=xxx 
-    autostart=true 
-    autorestart=true 
-    user=redis 
-    stdout_logfile=xxx 
+    command=xxx
+    autostart=true
+    autorestart=true
+    user=redis
+    stdout_logfile=xxx
     stderr_logfile=xxx
 
 添加了 group 配置之后， 进程管理名就变成了 group1:group-member-1 这样的形式，可以使用如下方法启动一组程序
@@ -198,19 +193,16 @@ Supervisorctl 是 supervisord 的一个命令行客户端工具，启动时需�
     $ supervisorctl reload
     $ supervisorctl update
 
-
-
 ## 日志管理
 
-当 supervisor 的日志文件大小超过 `stdout_logfile_maxbytes` 时，之前的日志文件会被放到 logfile.log.1 文件中备份。可以在相应program配置中配置如下两项改变日志的行为：
+当 supervisor 的日志文件大小超过 `stdout_logfile_maxbytes` 时，之前的日志文件会被放到 logfile.log.1 文件中备份。可以在相应 program 配置中配置如下两项改变日志的行为：
 
-- 配置 `stdout_logfile_maxbytes` 为0 时，所有的日志文件都会被放到一个文件中
-- 配置 `stdout_logfile_backups` 为0 时，当日志文件太大时，旧文件就会被删除而不是移动到单独的文件中。
+- 配置 `stdout_logfile_maxbytes` 为 0 时，所有的日志文件都会被放到一个文件中
+- 配置 `stdout_logfile_backups` 为 0 时，当日志文件太大时，旧文件就会被删除而不是移动到单独的文件中。
 
 配置 `stderr_logfile_maxbytes` 和 `stderr_logfile_backups` 类似。
 
-这样的日志方式叫做 log file rotation 
-
+这样的日志方式叫做 log file rotation
 
 ## 其它
 
@@ -238,7 +230,7 @@ supervisor 官方[提供](https://github.com/Supervisor/initscripts) 的开机�
 
     pidfile=/var/run/supervisord.pid
 
-测试:
+测试：
 
     service supervisord stop
     service supervisord start
