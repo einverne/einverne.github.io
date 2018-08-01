@@ -4,7 +4,7 @@ title: "Maven 介绍"
 tagline: ""
 description: "项目管理工具 Maven"
 category: 学习笔记
-tags: [maven, java, build, ]
+tags: [maven, java, build, management,  ]
 last_updated:
 ---
 
@@ -43,7 +43,7 @@ Debian/Ubuntu/Linux Mint 下
 	export Maven_HOME
 	export PATH=${PATH}:${Maven_HOME}/bin
 
-设置好 Maven 的路径之后，需要运行下面的命令 source ~/.bashrc 使刚刚的配置生效
+设置好 Maven 的路径之后，需要运行下面的命令 `source ~/.bashrc` 使刚刚的配置生效
 
 ## Maven 作用
 
@@ -140,7 +140,6 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 - verify 运行任何检查，验证包是否有效且达到质量标准。
 - install 将包安装到 Maven 本地仓库，供本地 Maven 项目使用
 - deploy 复制到远程仓库，供其他人使用
-
 
 
 ### site 生命周期
