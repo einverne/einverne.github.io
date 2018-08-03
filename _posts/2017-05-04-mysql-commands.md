@@ -5,7 +5,7 @@ tagline: ""
 description: "记录常用的 MySQL 命令，防止遗忘"
 category: 经验总结
 tags: [mysql, database, linux]
-last_updated: 
+last_updated:
 ---
 
 mysql 命令行操作相关内容，防止遗忘。mysql 常用命令记录，总结。
@@ -104,7 +104,7 @@ Windows 下可以使用 net 命令
 
 	ALTER TABLE table_name **ADD COLUMN** [column] VARCHAR(40);
 
-比如新增一列自增id
+比如新增一列自增 id
 
 	ALTER TABLE [table] ADD COLUMN [column] int NOT NULL AUTO_INCREMENT PRIMARY KEY;
 
@@ -173,6 +173,10 @@ Order 可以使用 `DESC`, `ASC`
 	TRUNCATE table [table]
 
 ### 其他命令
+查看创建表 DDL
+
+    show create table [table_name];
+
 导出数据
 
 	mysqldump -u [username] -p [database] > db_backup.sql
@@ -215,6 +219,12 @@ Order 可以使用 `DESC`, `ASC`
 
 	DROP USER ‘user1’@‘localhost';
 
+如果在创建新用户时提醒密码 weak，则可以使用如下命令来禁用密码校验
+
+    uninstall plugin validate_password;
+    // MySQL 8.0.4 以上
+    UNINSTALL COMPONENT 'file://component_validate_password';
+
 
 ## 远程连接
 如果想要远程通过 root 连接 MySQL，先查看一下 MySQL 配置 `/etc/mysql.my.cnf`，需要注释其中
@@ -231,8 +241,8 @@ Order 可以使用 `DESC`, `ASC`
 	mysql>select host, user from user;
 
 
-## Python 连接操作MySQL
-Python 2.x 中使用 MySQLdb 来连接 MySQL 数据库。在 Python 3.x 中使用 P有MySQL，使用方式 `import pymysql`，而其他操作几乎一致。
+## Python 连接操作 MySQL
+Python 2.x 中使用 MySQLdb 来连接 MySQL 数据库。在 Python 3.x 中使用 P 有 MySQL，使用方式 `import pymysql`，而其他操作几乎一致。
 
 ```
 #!/usr/bin/env python3
@@ -242,7 +252,7 @@ import MySQLdb
 
 """
 pip install MySQL-python
-MySQLdb 是用于Python链接Mysql数据库的接口，它实现了 Python 数据库 API 规范 V2.0，基于 MySQL C API 上建立的。
+MySQLdb 是用于 Python 链接 Mysql 数据库的接口，它实现了 Python 数据库 API 规范 V2.0，基于 MySQL C API 上建立的。
 
 在使用 Python 连接之前确保已经有数据表建立
 
