@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "building and distributing python packages with setuptools"
+title: "使用 setuptools 创建并发布 python 包"
 tagline: ""
 description: ""
-category: 
-tags: []
-last_updated: 
+category: 学习笔记
+tags: [python, linux, packages, module, ]
+last_updated:
 ---
 
 If you write something, and you want to share with the world. And let others use through `pip install`, you can upload your package to pypi.
 
 ## Create project layout
-Put your code in some fold like `douban`. Write your own `setup.py` to give basic info about this lib or package. And you can put a README.md file and LICENSE file
+Put your code in some fold like `douban`. Write your own `setup.py` to give basic info about this lib or package. And you can put a `README.md` file and LICENSE file
 
 	douban-dl/
 		LICENSE.txt
@@ -25,12 +25,12 @@ Put your code in some fold like `douban`. Write your own `setup.py` to give basi
 ## Create setup.py to describe project
 setup file often used to describe your project, you can have a template like this:
 
-	from setuptools import setup, find_packages 
+	from setuptools import setup, find_packages
 
 	def readme():
 		with open('README.md') as f:
 			return f.read()
-	
+
 	requirements = [
 		"bs4",
 		"requests"
@@ -52,7 +52,7 @@ setup file often used to describe your project, you can have a template like thi
 		keywords="douban downloader",
 		packages=find_packages(exclude=["tests"]),
 		license='MIT',
-	    install_requires=requirements,	
+	    install_requires=requirements,
 	)
 
 ## Create .pypirc file
@@ -83,7 +83,7 @@ And upload
 
 this command upload archive file to pypi. `bdist_wininst` option alse create windows distribution.
 
-All above had beed test by myself -> <https://pypi.python.org/pypi/douban-dl>
+All above had beed tested by myself -> <https://pypi.python.org/pypi/douban-dl>
 
 ## reference
 

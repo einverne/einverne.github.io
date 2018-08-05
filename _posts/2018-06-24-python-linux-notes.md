@@ -4,7 +4,7 @@ title: "Python Linux 系统管理与自动化运维读书笔记"
 tagline: ""
 description: ""
 category: 读书笔记
-tags: [python, linux, notes, ]
+tags: [python, linux, notes, deploy, ]
 last_updated:
 ---
 

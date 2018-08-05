@@ -4,8 +4,8 @@ title: "flask admin"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Flask, Web, Python, Linux, ]
-last_updated: 
+tags: [flask, web, python, linux, ]
+last_updated:
 ---
 
 Flask Admin 是 Flask 的一个管理插件，类似于 Django Admin 一样的存在，可以很方便的帮助开发者实现管理界面，并且能够提供一套和数据库对应的界面。
@@ -13,7 +13,7 @@ Flask Admin 是 Flask 的一个管理插件，类似于 Django Admin 一样的�
 - 官网地址：<https://flask-admin.readthedocs.io/en/latest/>
 - 源代码： <https://github.com/flask-admin/flask-admin>
 
-Flask-Admin提供一个现成的SQLAlchemy模型接口。它以类执行并接受2个参数：模型类和数据库会话。
+Flask-Admin 提供一个现成的 SQLAlchemy 模型接口。它以类执行并接受 2 个参数：模型类和数据库会话。
 
 初始化 Flask Admin
 
@@ -23,6 +23,7 @@ Flask-Admin提供一个现成的SQLAlchemy模型接口。它以类执行并接�
 	app = Flask(__name__)
 
 	admin = Admin(app)
+
 # Add administrative views here
 
 	app.run()
@@ -58,7 +59,7 @@ Flask-Admin提供一个现成的SQLAlchemy模型接口。它以类执行并接�
 	admin = Admin(app)
 	admin.add_view(ModelView(User, db.session))
 
-构造自己的 ModelView，要定制这些模型视图，有两个选择：一是覆盖 ModelView 类的公有属性，二是覆盖它的方法。 
+构造自己的 ModelView，要定制这些模型视图，有两个选择：一是覆盖 ModelView 类的公有属性，二是覆盖它的方法。
 
 	from flask.ext.admin.contrib.sqla import ModelView
 

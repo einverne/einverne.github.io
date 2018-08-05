@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Install fonts under Linux"
+title: "在 Linux 下安装字体"
 tagline: "Important thing must do after install linux"
 description: ""
 category: Linux
-tags: [linux, linux mint, fonts,]
-last_updated: 
+tags: [linux, linux-mint, fonts, font, truetype, ]
+last_updated:
 ---
 
 Most of computer fonts people using are TrueTpye fonts. TrueType fonts end with .ttf , which stand for TrueType Font. This tutorial shows how to install TrueType fonts in Linux (Debian, Ubuntu, Linux Mint, etc).
@@ -71,7 +71,7 @@ If you dual boot your computer, mount the Windows and copy the files
     sudo cp -r /media/Windows/Fonts/*.ttf /usr/share/fonts/truetype/WindowsFonts/
     sudo cp -r /media/Windows/Fonts/*.TTF /usr/share/fonts/truetype/WindowsFonts/
 
-Install open source Chinese fonts, like文泉驿-微米黑 文泉驿-正黑
+Install open source Chinese fonts, like 文泉驿 - 微米黑 文泉驿 - 正黑
 
     sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei
 
@@ -101,7 +101,7 @@ To lists font faces that cover Chinese language:
 Output will be all available Chinese fonts.
 
 ### Fix WPS for Linux font missing error
-After I installed WPS for Linux under Linux Mint 17.2, I met this problem, "系统缺失字体symbol、wingdings、wingdings 2、wingdings 3、wedding”. According to the copyright, WPS for Linux doesn’t contains these five fonts. You can only find these five fonts and install them in the right place like I said before. One way to find these fonts is to find them in Microsoft Windows system. And another way is to download these files from Internet and install.
+After I installed WPS for Linux under Linux Mint 17.2, I met this problem, "系统缺失字体 symbol、wingdings、wingdings 2、wingdings 3、wedding”. According to the copyright, WPS for Linux doesn’t contains these five fonts. You can only find these five fonts and install them in the right place like I said before. One way to find these fonts is to find them in Microsoft Windows system. And another way is to download these files from Internet and install.
 
 ## Install Korean fonts
 Use following command to search Korean font
@@ -112,13 +112,13 @@ and use this command to install Korean font to linux:
 
 	sudo apt-get install fonts-unfonts-core fonts-unfonts-extra
 
-### Common sense
-Fonts type:
+### 常识 {#common-sense}
+字体类型：
 
-- Sans-serif=无衬线体=黑体：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。
-- Serif=衬线体=白体：同上
-- Monospace=等宽字体，意思是字符宽度相同：同上
-- 点阵字体=位图字体
+- `Sans-serif` 无衬线体 = 黑体：并不是具体一款字体，而是一类字体，选择它其实等于选择这类字体中优先级最高的那款字体。
+- `Serif` 衬线体 = 白体：同上
+- `Monospace` 等宽字体，意思是字符宽度相同：同上
+- `点阵字体`  位图字体
 
 无衬线体更适合电脑屏幕阅读，衬线体适合打印。因为衬线可以使得人视线平齐于一行。也就是说不会读破行。
 
