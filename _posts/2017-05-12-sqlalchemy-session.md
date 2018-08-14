@@ -4,7 +4,7 @@ title: "SQLAlchemy session 使用问题"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [python, sqlalchemy, mysql]
+tags: [python, sqlalchemy, mysql, orm, sql, session, flask, ]
 last_updated:
 ---
 

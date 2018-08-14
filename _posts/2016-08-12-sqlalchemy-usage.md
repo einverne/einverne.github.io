@@ -48,7 +48,7 @@ The Python SQL Toolkit and Object Relational Mapper
         id = Column(Integer, primary_key=True)
         name =  Column(String(50))
 
-`declarative_base()` 方法会返回一个 base class，所有自己定义的 class 都要从此继承。定义好之后 [sqlalchemy.schema.Table](http://docs.sqlalchemy.org/en/latest/core/metadata.html#sqlalchemy.schema.Table) 和 [sqlalchemy.orm.mapper](http://docs.sqlalchemy.org/en/latest/orm/mapping_api.html#sqlalchemy.orm.mapper) 会产生。结果可以从类变量获取
+`declarative_base()` 方法会返回一个 base class，所有自己定义的 class 都要从此继承。关于定义类（表）中数据类型的选择，可以参考文末的对应关系。定义好之后 [sqlalchemy.schema.Table](http://docs.sqlalchemy.org/en/latest/core/metadata.html#sqlalchemy.schema.Table) 和 [sqlalchemy.orm.mapper](http://docs.sqlalchemy.org/en/latest/orm/mapping_api.html#sqlalchemy.orm.mapper) 会产生。结果可以从类变量获取
 
     # access the mapped Table
     SomeClass.__table__
@@ -158,3 +158,25 @@ SQLAlchemy 同样也支持直接使用 Text 来写 sql 语句，具体可以参�
     session.query(func.count(User.id)).scalar()
 
 更多关于外键等等，可以查看官网：<http://docs.sqlalchemy.org/en/latest/orm/tutorial.html>
+
+## SQLAlchemy vs Python vs SQL 数据结构对应表
+
+SQLAlchemy              | Python                    | SQL
+------------------------|---------------------------|---------------------------
+BigInteger              | int                       | BIGINT
+Boolean                 | bool                      | BOOLEAN or SMALLINT
+Date                    | datetime.date             | DATE (SQLite: STRING )
+DateTime                | datetime.datetime         | DATETIME (SQLite: STRING )
+Enum                    | str                       | ENUM or VARCHAR
+Float                   | float or Decimal          | FLOAT or REAL
+Integer                 | int                       | INTEGER
+Interval                | datetime.timedelta        | INTERVAL or DATE from epoch
+LargeBinary             | byte                      | BLOB or BYTEA
+Numeric                 | decimal.Decimal           | NUMERIC or DECIMAL
+Unicode                 | unicode                   | UNICODE or VARCHAR
+Text                    | str                       | CLOB or TEXT
+Time                    | datetime.time             | DATETIME
+
+## reference
+
+- 《Essential SQLAlchemy 2nd Edition 2015》
