@@ -2,9 +2,9 @@
 layout: post
 title: "Shell/Bash script 学习笔记"
 tagline: ""
-description: ""
+description: "本文介绍 bash 脚本赋值语句，控制语句等等"
 category: Linux
-tags: [linux, shell, bash]
+tags: [linux, shell, bash, sh, zsh, ]
 last_updated:
 ---
 

@@ -191,7 +191,7 @@ Ctrl-V  | 引用插入|
 shopt 选项
 
 选项 | 含义
----- | ----
+-----|-----
 -p   | 显示可选设置及其当前取值
 -s   | 设置
 -u   | 失效
@@ -228,13 +228,13 @@ shopt 选项
     xtrace              off
 
 选项     |       解释      |
---------|-------------|
-emacs  | emacs 编辑模式 |
-vi         | vi 编辑模式  |
-ignoreeof | 不允许单独使用 Ctrl-D 退出  |
-noclobber | 不允许输出重定向（>）覆盖已存在的文件 |
-noglob | 不允许扩展文件名通配符如*和？
-nounset | 试图使用未定义变量时给出错误
+---------|-------------|
+emacs       | emacs 编辑模式 |
+vi          | vi 编辑模式  |
+ignoreeof   | 不允许单独使用 Ctrl-D 退出  |
+noclobber   | 不允许输出重定向（>）覆盖已存在的文件 |
+noglob      | 不允许扩展文件名通配符如*和？
+nounset     | 试图使用未定义变量时给出错误
 
 
 ### 变量 {#variable}
@@ -259,11 +259,11 @@ PATH 变量，帮助 shell 找到输入的命令。输入 `echo $PATH` 得到类
 
 
 变量      |     含义
---------|--------------|
-HOME  |  主目录
-SECONDS  |  调用 shell 的秒数
-BASH       |   正在运行的 shell 实例路径名
-BASH_VERSION | shell 版本号
-BASH_VERSINFO | shell 版本信息数组
-PWD        |  当前目录
-OLDPWD   |  最后一个 cd 命令前的目录
+------------|--------------|
+HOME        |  主目录
+SECONDS     |  调用 shell 的秒数
+BASH        |   正在运行的 shell 实例路径名
+BASH_VERSION    | shell 版本号
+BASH_VERSINFO   | shell 版本信息数组
+PWD             |  当前目录
+OLDPWD          |  最后一个 cd 命令前的目录
