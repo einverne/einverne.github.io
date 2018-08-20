@@ -10,7 +10,7 @@ last_updated:
 
 最近在使用 Linux 版有道的时候发现非常卡，影响正常使用，所以就发现了这个 GoldenDict。以前在 Win 下用过 [lingoes](http://www.lingoes.cn/) 但是无奈只有 Win 版本。
 
-GoldenDict 是一种开源词典，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。
+GoldenDict 是一种开源词典，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。基于 GNU GPL  第三版以上协议。
 
 ## 安装
 
@@ -24,19 +24,26 @@ GoldenDict 是一种开源词典，它像 Eudict、Mdict、Lingoes 以及 BlueDi
 
 支持的字典格式
 
-- Babylon .BGL files, complete with images and resources
-- StarDict .ifo/.dict./.idx/.syn dictionaries
+- Babylon .BGL files, Babylon（巴比伦）词典的 .BGL 格式文件，完整保留全部图片及其他资源
+- StarDict .ifo/.dict./.idx/.syn dictionaries StarDict（星际译王）
 - Dictd .index/.dict(.dz) dictionary files
-- ABBYY Lingvo .dsl source files, together with abbreviations. The files can be optionally compressed with dictzip. Dictionary resources can be packed together into a .zip file.
-- ABBYY Lingvo .lsa/.dat audio archives. Those can be indexed separately, or be referred to from .dsl files.
+- ABBYY Lingvo .dsl 源文件，together with abbreviations. The files can be optionally compressed with dictzip. Dictionary resources can be packed together into a .zip file.
+- ABBYY Lingvo .lsa/.dat 格式音频档案 . Those can be indexed separately, or be referred to from .dsl files.
 - Lingoes 灵格斯词霸 .ld2 这里需要指出来的是 ld2 格式只有移动版 Android 才支持
 
 更多支持的格式可以参考[这里](https://github.com/goldendict/goldendict/wiki/Supported-Dictionary-Formats)
 
-支持 Windows, Linux, Mac, Android，Android 版是[商业软件](https://play.google.com/store/apps/details?id=mobi.goldendict.android)，免费版最多能用 5 本词典，支持分享查词。
+其他功能特色
 
-完美支持单词复数，ing 形式等变形（软件设置中 morphology）
-
+- 支持 Windows, Linux, Mac, Android，Android 版是[商业软件](https://play.google.com/store/apps/details?id=mobi.goldendict.android)，免费版最多能用 5 本词典，支持分享查词。
+- 完美支持单词复数，ing 形式等变形（软件设置中 morphology）
+- 支持查阅 Wikipedia、Wikitionary 及任何其他基于 Mediawiki 的站点。
+- 支持使用模板化的 Url 样式来使用任何网页。
+- 支持查找与收听 forvo.com 网站上面的发音。
+- 基于 hunspell 的词法系统，用于词语的溯源及拼法建议。
+- 能够索引任意路径下面的音频文件以查找语音。
+- 弹出搜索功能：一个小窗口会弹出，用于显示在另一程序中选中的单词的词义。
+- 支持全局热键，可在任何一点触发该程序，或直接从剪切板中查找词义。
 
 ## 字典安装
 
