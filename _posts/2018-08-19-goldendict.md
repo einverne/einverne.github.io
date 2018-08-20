@@ -59,11 +59,19 @@ zdic
 
 ### 离线字典
 
-简明英汉字典增强版，收录 324 万词条
+#### 简明英汉字典增强版
+收录 324 万词条
 
 - <https://github.com/skywind3000/ECDICT/wiki/%E7%AE%80%E6%98%8E%E8%8B%B1%E6%B1%89%E5%AD%97%E5%85%B8%E5%A2%9E%E5%BC%BA%E7%89%88>
 
-牛津高阶英汉双解 第四版 (En-zh_CN)- 英汉双解，bgl 格式，排版美观，无发音
+#### 牛津高阶英汉双解 第四版 (En-zh_CN)- 英汉双解
+bgl 格式，排版美观，无发音
+
+#### 21 世纪英汉汉英双向词典
+
+
+#### 朗文 5
+
 
 
 解压后，在词典 - 文件添加路径即可
@@ -77,6 +85,15 @@ GoldenDict 默认情况下，比如屏幕取词获取 “stores” 默认是没�
 
 然后在 编辑 ->词典 ->词典来源 ->构词法规则库 中设置规则目录，在我的电脑上是 `/usr/share/myspell/dicts` ，当然也可以将下载的文件拷贝到该目录中记载即可。
 
+## 其他编程资源
+一个使用 Python 编写的生成 .mdx 文件的脚本
+
+- <https://github.com/zhansliu/writemdict>
+
+一份关于 MDD 和 MDX 文件格式的分析
+
+- <https://bitbucket.org/xwang/mdict-analysis>
+
 ## reference
 
 - <http://goldendict.org/>
@@ -86,3 +103,4 @@ GoldenDict 默认情况下，比如屏幕取词获取 “stores” 默认是没�
 - lingoes 词典 <http://www.lingoes.cn/zh/dictionary/index.html>
 - <https://xinyo.org/archives/61412/> 朗文 5、韦伯 11、牛津 8（均含发音）词典包
 - <https://www.cnblogs.com/oucbl/p/6839493.html>
+- 字典推荐 <https://www.jianshu.com/p/817284262546>

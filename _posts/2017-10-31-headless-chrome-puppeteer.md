@@ -5,18 +5,18 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [chrome, headless-chrome, linux,]
-last_updated: 
+last_updated:
 ---
 
 Headless 最早的时候在 PhantomJS 听说过这个概念，后来在 GitHub 各种项目中总有人不断提起这个概念，而最新看到的新闻便是 Chrome 开始支持 Headless，也正激起了我了解的欲望。
 
-## 什么是 Headless Chrome 
+## 什么是 Headless Chrome
 
 Headless Chrome 是一个没有前台界面，只在后台运行的浏览器。浏览器正常的所有解析，渲染都可以由其完成。而开发者可以通过 client 和这个浏览器建立连接，通过 Google 提供的 Chrome DevTools Protocol [协议](https://chromedevtools.github.io/devtools-protocol/) 来进行交互。总的来说 Headless 浏览器提供了可编程化的浏览器工具，一切通过人工在 Chrome 中完成的事情，都可以通过编程来在 Headless Chrome 中实现。
 
-Headless Chrome 和 Chrome 59 一起发布，Headless Chrome 将 Chromium 和 Blink 渲染引擎提供的现代WEB平台的特性带到了命令行。
+Headless Chrome 和 Chrome 59 一起发布，Headless Chrome 将 Chromium 和 Blink 渲染引擎提供的现代 WEB 平台的特性带到了命令行。
 
-Headless 浏览器能够提供自动化测试环境，服务于不需要UI界面的服务端。比如说你想要测试一个网页在真实的浏览器中的显示，并保存成PDF。
+Headless 浏览器能够提供自动化测试环境，服务于不需要 UI 界面的服务端。比如说你想要测试一个网页在真实的浏览器中的显示，并保存成 PDF。
 
 
 ## 使用

@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "mitmproxy 抓包"
+title: "使用 mitmproxy 抓包"
 tagline: ""
 description: ""
-category: 
+category:
 tags: [mitmproxy, android, proxy, linux, http, debug, reverse]
-last_updated: 
+last_updated:
 ---
 
-在之前的文章[Android 抓包](/post/2016/11/android-http-proxy-debug.html) 中介绍过 Mac 下 Charles 进行客户端的抓包，那篇文章中最后介绍其他工具的时候提到了 mitmproxy 这样一款命令行工具，最近使用来看，也是非常强大的工具。这里就简单记录一下。
+在之前的文章 [Android 抓包](/post/2016/11/android-http-proxy-debug.html) 中介绍过 Mac 下 Charles 进行客户端的抓包，那篇文章中最后介绍其他工具的时候提到了 mitmproxy 这样一款命令行工具，最近使用来看，也是非常强大的工具。这里就简单记录一下。
 
-mitmproxy 是用 Python 和C 开发的一款支持 HTTP(S) 的中间人代理软件（man-in-the-middle proxy），不同于Fiddler2，burpsuite等类似功能工具，mitmproxy可在终端下运行并且可以用来拦截、修改、重放和保存HTTP/HTTPS 请求。mitmproxy 可以辅助 WEB 及客户端调试、开发和测试，是一个渗透测试的工具。
+mitmproxy 是用 Python 和 C 开发的一款支持 HTTP(S) 的中间人代理软件（man-in-the-middle proxy），不同于 Fiddler2，burpsuite 等类似功能工具，mitmproxy 可在终端下运行并且可以用来拦截、修改、重放和保存 HTTP/HTTPS 请求。mitmproxy 可以辅助 WEB 及客户端调试、开发和测试，是一个渗透测试的工具。
 
 
 ## 安装
@@ -24,24 +24,27 @@ mitmproxy 是用 Python 和C 开发的一款支持 HTTP(S) 的中间人代理软
 
 我从源里面拉的版本为 0.15 版，而 pip3 安装的为 1.02 版本，相差版本足有一年。
 
+或者熟悉 Docker 可以使用官方打包好的镜像
+
+- <https://hub.docker.com/r/mitmproxy/mitmproxy/>
 
 ## 工作原理
 mitmproxy 实现原理：
 
-1. 客户端发起一个到 mitmproxy 的连接，并且发出HTTP CONNECT请求，
-2. mitmproxy 作出响应(200)，模拟已经建立了CONNECT通信管道，
-3. 客户端确信它正在和远端服务器会话，然后启动SSL连接。在SSL连接中指明了它正在连接的主机名(SNI)，
-4. mitmproxy 连接服务器，然后使用客户端发出的 SNI 指示的主机名建立SSL连接，
-5. 服务器以匹配的 SSL 证书作出响应，这个 SSL 证书里包含生成的拦截证书所必须的通用名(CN)和服务器备用名(SAN)，
-6. mitmproxy 生成拦截证书，然后继续进行与第３步暂停的客户端SSL握手，
-7. 客户端通过已经建立的SSL连接发送请求，
-8. mitmproxy 通过第４步建立的SSL连接传递这个请求给服务器。
+1. 客户端发起一个到 mitmproxy 的连接，并且发出 HTTP CONNECT 请求，
+2. mitmproxy 作出响应 (200)，模拟已经建立了 CONNECT 通信管道，
+3. 客户端确信它正在和远端服务器会话，然后启动 SSL 连接。在 SSL 连接中指明了它正在连接的主机名 (SNI)，
+4. mitmproxy 连接服务器，然后使用客户端发出的 SNI 指示的主机名建立 SSL 连接，
+5. 服务器以匹配的 SSL 证书作出响应，这个 SSL 证书里包含生成的拦截证书所必须的通用名 (CN) 和服务器备用名 (SAN)，
+6. mitmproxy 生成拦截证书，然后继续进行与第 3 步暂停的客户端 SSL 握手，
+7. 客户端通过已经建立的 SSL 连接发送请求，
+8. mitmproxy 通过第 4 步建立的 SSL 连接传递这个请求给服务器。
 
 <a data-flickr-embed="true"  href="https://www.flickr.com/photos/einverne/33103496396/in/album-72157677227076474/" title="how-mitmproxy-works-transparent-https"><img src="https://c1.staticflickr.com/3/2868/33103496396_253be91392_z.jpg" width="572" height="326" alt="how-mitmproxy-works-transparent-https"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 mitmproxy 工作步骤：
 
-1. 设置系统\浏览器\终端等的代理地址和端口为同一局域网中 mitmproxy 所在电脑的 IP 地址，比如我的PC 开启 mitmproxy 之后，设置 8080 端口，本地IP 为 192.168.1.130，那么设置 Android HTTP 代理为 192.168.1.130:8080
+1. 设置系统、浏览器、终端等的代理地址和端口为同一局域网中 mitmproxy 所在电脑的 IP 地址，比如我的 PC 开启 mitmproxy 之后，设置 8080 端口，本地 IP 为 192.168.1.130，那么设置 Android HTTP 代理为 192.168.1.130:8080
 2. 浏览器或移动端访问 mitm.it 来安装 mitmproxy 提供的证书
 3. 在 mitmproxy 提供的命令行下，或者 mitmweb 提供的浏览器界面中就能看到 Android 端发出的请求。
 
@@ -57,8 +60,8 @@ mitmproxy 工作步骤：
 
 在完成 mitmproxy 的安装之后，mitm 提供的三个命令
 
-- mitmproxy 会提供一个在终端下的图形界面，具有修改请求和响应，流量重放等功能，具体操作方式有点vim的风格
-- mitmdump可设定规则保存或重放请求和响应，mitmdump的特点是支持inline脚本，由于拥有可以修改request和response 中每一个细节的能力，批量测试，劫持等都可以轻松实现
+- mitmproxy 会提供一个在终端下的图形界面，具有修改请求和响应，流量重放等功能，具体操作方式有点 vim 的风格
+- mitmdump 可设定规则保存或重放请求和响应，mitmdump 的特点是支持 inline 脚本，由于拥有可以修改 request 和 response 中每一个细节的能力，批量测试，劫持等都可以轻松实现
 - mitmweb 提供的一个简单 web 界面，简单实用，初学者或者对终端命令行不熟悉的可以用 mitmweb 界面
 
 
@@ -76,15 +79,15 @@ mitmproxy 工作步骤：
 ```
 基本快捷键
 
-b  保存请求/返回头
+b  保存请求 / 返回头
 C  将请求内容导出到粘贴板，按 C 之后会有选择导出哪一部分
-d  删除flow 请求
+d  删除 flow 请求
 E  将 flow 导出到文件
 w  保存所有 flow 或者该 flow
 W  保存该 flow
 L  加载保存的 Flow
-m  添加/取消 Mark 标记，会在请求列表该请求前添加红色圆圈
-z  清空flow list 和 eventlog
+m  添加 / 取消 Mark 标记，会在请求列表该请求前添加红色圆圈
+z  清空 flow list 和 eventlog
 /  在详情界面，可以使用 / 来搜索，大小写敏感
 i  开启 interception pattern 拦截请求
 
@@ -94,8 +97,8 @@ j, k       上下
 h, l        左右
 g, G   go to beginning, end
 space    下一页
-pg up/down   上一页/下一页
-ctrl+b/ctrl+f    上一页/下一页
+pg up/down   上一页 / 下一页
+ctrl+b/ctrl+f    上一页 / 下一页
 arrows 箭头     上下左右
 
 
@@ -105,7 +108,7 @@ Q  不提示直接退出
 
 ```
 
-同样在 mitmproxy 中不同界面中使用 <kbd>?</kbd> 可以获取不同的帮助，在请求详细信息中 m 快捷键的作用就完全不同 m 在响应结果中，输入m可以选择body的呈现方式，比如json，xml等 e 编辑请求、响应 a 发送编辑后的请求、响应。
+同样在 mitmproxy 中不同界面中使用 <kbd>?</kbd> 可以获取不同的帮助，在请求详细信息中 m 快捷键的作用就完全不同 m 在响应结果中，输入 m 可以选择 body 的呈现方式，比如 json，xml 等 e 编辑请求、响应 a 发送编辑后的请求、响应。
 因此在熟悉使用 `?` 之后，多次使用并熟悉快捷键即可。就如同在 Linux 下要熟悉使用 man 命令一样，在不懂地方请教 Google 一样，应该是习惯性动作。多次反复之后就会变得非常数量。
 
 
@@ -116,7 +119,7 @@ Q  不提示直接退出
 
 比如将指定 url 的请求指向新的地址
 
-用于调试Android 或者 iOS 客户端，打包比较复杂的时候，强行将客户端请求从线上地址指向本地调试地址。可以使用 `mitmproxy scripting API` mitmproxy 提供的事件驱动接口。
+用于调试 Android 或者 iOS 客户端，打包比较复杂的时候，强行将客户端请求从线上地址指向本地调试地址。可以使用 `mitmproxy scripting API` mitmproxy 提供的事件驱动接口。
 
 加上将线上地址，指向本地 8085 端口，文件为 `redirect_request.py`
 
@@ -127,15 +130,15 @@ Q  不提示直接退出
             flow.request.host = '127.0.0.1'
             flow.request.port = 8085
 
-则使用 `mitmweb -s redirect_request.py` 来调用此脚本，则通过 mitm 的请求都会指向本地。
+则使用 `mitmweb -s redirect_request.py` 来调用此脚本，则通过 mitm 的请求都会指向本地 http://127.0.0.1:8085。
 
-更多的脚本可以参考：<https://github.com/mitmproxy/mitmproxy/tree/master/examples/simple>
+更多的脚本可以[参考](https://github.com/mitmproxy/mitmproxy/tree/master/examples/simple)
 
-一个完整的HTTP flow 会依次触发 `requestheaders`, `request`, `responseheaders` 和 `response`。
+一个完整的 HTTP flow 会依次触发 `requestheaders`, `request`, `responseheaders` 和 `response`。
 
 ### 启用 SOCKS5 代理
 
-添加参数 `--socks` 可以使用 mitmproxy 的 SOCK5代理
+添加参数 `--socks` 可以使用 mitmproxy 的 SOCK5 代理
 
 ### 透明代理
 
@@ -151,9 +154,9 @@ Q  不提示直接退出
 
 ## reference
 
-- 代码地址: <https://github.com/mitmproxy/mitmproxy>
-- 官网地址: <https://mitmproxy.org/>
-- 文档地址: <https://readthedocs.org/projects/mitmproxy/>
+- 代码地址：<https://github.com/mitmproxy/mitmproxy>
+- 官网地址：<https://mitmproxy.org/>
+- 文档地址：<https://readthedocs.org/projects/mitmproxy/>
 - <http://docs.mitmproxy.org/en/stable/install.html>
 - <https://blog.heckel.xyz/2013/07/01/how-to-use-mitmproxy-to-read-and-modify-https-traffic-of-your-phone/>
 - <http://liuxiang.logdown.com/posts/192057-use-mitmproxy-to-monitor-http-requests>

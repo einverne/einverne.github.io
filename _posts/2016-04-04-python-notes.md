@@ -8,6 +8,102 @@ tags: [python, class, inheritance, ]
 last_updated:
 ---
 
+## String Bytes and Unicode in Python
+例子
+
+    # Python 2
+
+    >>> print type("Hello World!")
+    <type 'str'>
+    # this is a byte string
+
+    >>>print type(u"Hello World!")
+    <type 'unicode'>
+    # this is a Unicode string
+
+Python 3
+
+    # Python 3
+
+    >>> print(type("Hello World!"))
+    <class 'str'>
+    # this is a Unicode string
+
+    >>> print(type(b"Hello World!"))
+    <class 'bytes'>
+    # this is a byte string
+
+总而言之，Python 2 中字面 str 以 bytes 存储，前缀 u'hello' 表示 unicode 对象，以 unicode 存储。
+
+而 Python 3，字面 str 以 Unicode 存储，前缀 b'hello' 表示获取 bytes 对象，或者 str.encode() 来获取 bytes 对象。
+
+Python 3.x 中有三种 string 对象类型，一种是文本类型，另外两种是二进制数据
+
+- `str` 表示 Unicode 文本 (both 8bit and wider)
+- `bytes` 表示二进制内容
+- `bytearray`，一种可变的 `bytes` 类型
+
+### encoding vs decoding
+类型转换
+
+- encoding 是将 string 根据 encoding name 转变为 raw bytes
+- decoding 是将 raw string 根据 encoding name 转变为 string
+
+将 string 转换为 raw bytes
+
+- `str.encode()` 或者 `str(B, encoding)`
+
+将 raw bytes 转变为 str
+
+- `bytes(S, encoding)` 或者 `bytes.decode()`
+
+### Unicode 编码
+在处理 Unicode 编码文本，Python 支持
+
+- "\xNN" hex byte value escapes
+- "\uNNNN" and "\UNNNNNNNN" Unicode escapes，在 unicode escapes 中，前一种使用 4 个十六进制数字编码 2-byte(16-bit) 字符串，后一种使用 8 个十六进制数字编码 4-byte(32-bit) 文本
+
+### ASCII 编码
+在处理 ASCII 编码时
+
+    >>> ord('X')
+    88
+    >>> chr(88)
+    'X'
+
+    >>> S = 'XYZ'
+    >>> S.encode('ascii')               # Values 0..127 in 1 byte (7 bits) each
+    >>> S.encode('latin-1')             # Values 0..255 in 1 byte (8 bits) each
+    S.encode('utf-8')                   # Values 0..127 in 1 byte, 128..2047 in 2, others 3 or 4
+
+### 非 ASCII 编码
+在处理非 ASCII 编码时，可能会用到之前提到的 Unicode 编码
+
+    >>> chr(0xc4)                       # 0xC4, 0xE8: characters outside ASCII's range
+    >>> S = '\xc4\xe8'                  # Single byte 8-bit hex escapes
+    >>> S = '\u00c4\u00e8'              # 16-bit Unicode escapes
+    >>> len(S)                          # 2 characters long (not number of bytes!)
+
+### 编解码非 ASCII 编码
+如果我们使用 `encode` 来将一个非 ASCII 字符串使用 ASCII 编码转变为 raw bytes ，会抛出错误。
+
+    >>> S = '\u00c4\u00e8'
+    >>> S.encode('ascii')
+    UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-1:
+    ordinal not in range(128)
+
+    >>> S.encode('latin-1')             # One byte per character
+    b'\xc4\xe8'
+
+    >>> S.encode('utf-8')               # Two bytes per character
+    b'\xc3\x84\xc3\xa8'
+
+    >>> len(S.encode('latin-1')))
+    2
+    >>> len(S.encode('utf-8'))
+    4
+
+
 ## 多重继承
 在 Python 中如果一个类继承自多个类，这种行为被称为多重继承 multiple inheritance，虽然多重继承非常有用，但是需要注意一些问题，否则会出现不可预见的问题。
 
