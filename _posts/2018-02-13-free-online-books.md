@@ -5,10 +5,10 @@ tagline: ""
 description: ""
 category: 整理合集
 tags: [books, free, website, kindle ]
-last_updated: 
+last_updated:
 ---
 
-一年前使用 kindle 的时候有 kindle10000 ，还有无数的 kindle push 网站，去年突然一下子关闭一下子蒙了，这一年多来，陆陆续续又发现了一些很不错的站点。现在整理整理分享一下。我电脑中还有大概五六十G的当年kindle人倒闭时全站资源的打包只是一直都还么有时间建立索引，整理出来，有时间还是要整理一下的。
+一年前使用 kindle 的时候有 kindle10000 ，还有无数的 kindle push 网站，去年突然一下子关闭一下子蒙了，这一年多来，陆陆续续又发现了一些很不错的站点。现在整理整理分享一下。我电脑中还有大概五六十 G 的当年 kindle 人倒闭时全站资源的打包只是一直都还么有时间建立索引，整理出来，有时间还是要整理一下的。
 
 ## 我的小书屋
 
@@ -23,7 +23,9 @@ last_updated:
 
     http://www.kindlepush.com
 
-书籍比较全，每天可推送两本，下载一本，
+书籍比较全，每天可推送两本，下载一本
+
+2018-08-01 更新 kindlepush 网站也关站了，基本上也应该是盗版的原因吧，现在的资源站基本上只要做大了也就面临着闭站的风险了。
 
 ## 书伴
 
@@ -58,13 +60,13 @@ mLook 精校电子书，注册需要邀请码
 
     http://plugin.mlook.mobi/
 
-周读
+周读，资源都是放在百度盘上的
 
     http://ireadweek.com/
 
 ## 计算机相关
 
-https://github.com/justjavac/free-programming-books-zh_CN
-
+- https://github.com/justjavac/free-programming-books-zh_CN
+- 相关 Kindle 的 [tips](/post/2016/06/kindle-tips.html)
 
 
