@@ -4,7 +4,7 @@ title: "SQLAlchemy 使用记录"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [python, mysql, sqlalchemy, orm, ]
+tags: [python, mysql, sqlalchemy, orm, sql, ]
 last_updated:
 ---
 
@@ -115,6 +115,27 @@ The Python SQL Toolkit and Object Relational Mapper
     our_user = session.query(User).filter_by(name='ed').first()
 
 也能够将刚刚 add 的实例检索出来，真正的提交只有执行 `session.commit()` 之后。
+
+如果发现单一插入数据库比较费时，那么在 SQLAlchemy 1.0.0 之后，可以使用新引入的特性批量操作。
+
+在 Session 中有
+
+- Session.bulk_save_objects()
+- Session.bulk_insert_mappings()
+- and Session.bulk_update_mappings()
+
+简单的例子：
+
+    s = Session()
+    objects = [
+        User(name="u1"),
+        User(name="u2"),
+        User(name="u3")
+    ]
+    s.bulk_save_objects(objects)
+    s.commit()
+
+详情见[官网 bulk operations](http://docs.sqlalchemy.org/en/rel_1_0/orm/persistence_techniques.html#bulk-operations)
 
 ## Querying
 

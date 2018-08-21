@@ -347,6 +347,21 @@ time()                  | 当前时间，秒
 
 random 模块包括返回随机数的函数，可以用于模拟或者任何产生随机数的程序。
 
+## f-Strings
+f-Strings 在 Python 3.6 以后引入的新特性，新语法，用来输出格式化的文本 (PEP 498)
+
+    >>> name = "Eric"
+    >>> age = 74
+    >>> f"Hello, {name}. You are {age}."
+    'Hello, Eric. You are 74.'
+
+Python 以前的格式化输出，总或多或少有些毛病
+
+    >>> "Hello, %s. You are %s." % (name, age)
+    >>> "Hello, {}. You are {}.".format(name, age)
+
+关于输出字符串各种方式的优缺点、性能比较可以参考[这篇](https://realpython.com/python-f-strings/)
+
 ## reference
 
 - Python 基础教程
