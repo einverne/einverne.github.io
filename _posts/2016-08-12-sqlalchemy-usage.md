@@ -35,6 +35,25 @@ The Python SQL Toolkit and Object Relational Mapper
 
 另外这个字符串也可以使用 [sqlalchemy.engine.url.URL](http://docs.sqlalchemy.org/en/latest/core/engines.html#sqlalchemy.engine.url.URL) 实例。
 
+对于 MySQL 而言，driver 可以有如下选择
+
+    # default
+    engine = create_engine('mysql://scott:tiger@localhost/foo')
+
+    # mysql-python
+    engine = create_engine('mysql+mysqldb://scott:tiger@localhost/foo')
+    # sudo apt-get install libmysqlclient-dev
+    # pip install mysqlclient
+
+    # MySQL-connector-python
+    engine = create_engine('mysql+mysqlconnector://scott:tiger@localhost/foo')
+
+    # OurSQL
+    engine = create_engine('mysql+oursql://scott:tiger@localhost/foo')
+
+    # pymysql
+    engine = create_engine('mysql+pymysql://user:pass@localhost/foo')
+
 ## Declare a Mapping
 定义和数据库 Map 的实体
 

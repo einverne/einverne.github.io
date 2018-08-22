@@ -4,7 +4,7 @@ title: "Linux 下超好用字典 GoldenDict"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [dict, linux, goldendict, youdao, ]
+tags: [dict, linux, goldendict, youdao, dictionary, free-dictionary, offline-dictionary, ]
 last_updated:
 ---
 
@@ -67,7 +67,7 @@ zdic
 ### 离线字典
 
 #### 简明英汉字典增强版
-收录 324 万词条
+收录 324 万词条，如果只是单纯的想要划词翻译，并不是那么在意英语学习，这本字典足矣。
 
 - <https://github.com/skywind3000/ECDICT/wiki/%E7%AE%80%E6%98%8E%E8%8B%B1%E6%B1%89%E5%AD%97%E5%85%B8%E5%A2%9E%E5%BC%BA%E7%89%88>
 
@@ -80,10 +80,31 @@ bgl 格式，排版美观，无发音
 #### 朗文 5
 
 
+#### WordNet 3.0
+
+
+- <http://goldendict.org/screenshots.php?show=wordnet#pic>
+- 下载地址 <https://sourceforge.net/projects/goldendict/files/dictionaries/>
+
+
+### 其他字典
+首推 pdawiki，这个论坛上有非常多精美的字典，不过要求门槛比较高，新人一般很难下载到这些离线的字典。
+
+- <https://www.pdawiki.com/forum/forum.php>
+
+goldendict 官网给出的字典
+
+- <http://goldendict.org/dictionaries.php>
 
 解压后，在词典 - 文件添加路径即可
 
-    http://download.huzheng.org/zh_CN/
+- <http://download.huzheng.org/zh_CN/>
+
+胡正网站给出了非常多语言的字典
+
+babylon 免费的字典
+
+- <http://www.babylon-software.com/free-dictionaries/>
 
 ## 词形匹配
 GoldenDict 默认情况下，比如屏幕取词获取 “stores” 默认是没有结果的，但是其实并不是 GoldenDict 的问题，只需要导入构词法规则库就能够让 GoldenDict 自动判断复数从而进行查词。
@@ -93,6 +114,15 @@ GoldenDict 默认情况下，比如屏幕取词获取 “stores” 默认是没�
 然后在 编辑 ->词典 ->词典来源 ->构词法规则库 中设置规则目录，在我的电脑上是 `/usr/share/myspell/dicts` ，当然也可以将下载的文件拷贝到该目录中记载即可。
 
 ## 其他编程资源
+使用 stardict-tools 可以将 stardict 格式的字典转变成可读的格式
+
+    sudo apt-get install stardict-tools
+    # 工具安装之后会在 `/usr/lib/stardict-tools/` 目录下
+
+一个将各种字典文件转变格式的脚本
+
+- <https://github.com/ilius/pyglossary>
+
 一个使用 Python 编写的生成 .mdx 文件的脚本
 
 - <https://github.com/zhansliu/writemdict>
@@ -101,10 +131,15 @@ GoldenDict 默认情况下，比如屏幕取词获取 “stores” 默认是没�
 
 - <https://bitbucket.org/xwang/mdict-analysis>
 
+wikipedia 的离线包，很大，好几十个 G
+
+- <http://wiki.kiwix.org/wiki/Main_Page>
+
 ## reference
 
 - <http://goldendict.org/>
 - Source Code <https://github.com/goldendict/goldendict>
+- SourceForge <https://sourceforge.net/projects/goldendict/files/>
 - <https://blog.yuanbin.me/posts/2013-01/2013-01-31_23-07-00/>
 - <http://forum.ubuntu.org.cn/viewtopic.php?f=95&t=265588>
 - lingoes 词典 <http://www.lingoes.cn/zh/dictionary/index.html>
