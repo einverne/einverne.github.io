@@ -14,10 +14,64 @@ last_updated:
 
 有一个比较简单的解法就是初始化两个 Flask App 实例，一个用来启动，一个用来给 Celery 创造上下文。
 
-不要在 create_app() 中再创建 Celery 实例。比如新建 `celery_worker.py` 来初始化 celery 实例，而在另外的文件中初始化 `Flask()` 实例。
+不要在 `create_app()` 中再创建 Celery 实例。比如新建 `celery_worker.py` 来初始化 celery 实例，而在另外的文件中初始化 `Flask()` 实例。
+
+项目结构大致如下：
+
+    ├── README.md
+    ├── app
+    │   ├── __init__.py
+    │   ├── config.py
+    │   ├── forms
+    │   ├── models
+    │   ├── tasks
+    │   │   ├── __init__.py
+    │   │   └── email.py
+    │   └── views
+    │   │   ├── __init__.py
+    │   │   └── account.py
+    ├── celery_worker.py
+    ├── manage.py
+    └── wsgi.py
+
+图中
+
+- manage.py 用来初始化 Flask instance
+- celery_worker.py 用来初始化 Celery 并且作为 Celery worker 的入口
+
+在 `app/__init__.py`
+
+    from celery import Celery
+    from flask import Flask
+
+    from app.config import BaseConfig
+
+    celery = Celery(__name__, broker=BaseConfig.CELERY_BROKER_URL)
+
+
+    def create_app():
+        app = Flask(__name__)
+        # ....
+        celery.conf.update(app.config)	# 更新 celery 的配置
+        # ...
+        return app
+
+在 `celery_worker.py`
+
+    from app import create_app, celery
+
+    app = create_app()
+    app.app_context().push()
+
+这个文件有两个操作，一个为初始化 Flask 实例，也就初始化了 Celery 实例，然后第二个操作是使用 Flask 的 application context，celery 的所有操作都会在这个环境中执行。
+
+然后就可以启动 Celery `celery worker -A celery_worker.celery -l INFO`
+
 
 ## reference
 
+- <https://blog.miguelgrinberg.com/post/celery-and-the-flask-application-factory-pattern>
+- <http://mattupstate.com/blog/how-i-structure-my-flask-applications/>
 - <https://github.com/thrisp/flask-celery-example/blob/master/app.py>
 - <https://github.com/miguelgrinberg/flask-celery-example/blob/master/app.py>
 - <https://github.com/paicha/gxgk-wechat-server/blob/master/main/plugins/queue.py>
