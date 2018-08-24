@@ -9,10 +9,10 @@ last_updated:
 ---
 
 最近在使用 Linux 版有道的时候发现非常卡，影响正常使用，所以就发现了这个 GoldenDict。以前在 Win 下用过 [lingoes](http://www.lingoes.cn/) 但是无奈只有 Win 版本。
-
 GoldenDict 是一种开源词典，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。基于 GNU GPL  第三版以上协议。
 
 ## 安装
+Ubuntu/Linux Mint 下安装非常简单
 
     sudo apt install goldendict
 
@@ -71,10 +71,7 @@ zdic
 #### 简明英汉字典增强版
 收录 324 万词条，如果只是单纯的想要划词翻译，并不是那么在意英语学习，而只想要快速获知单词含义，这本字典足矣。不管是单词还是短语，这本词典收录非常详细。
 
-- <https://github.com/skywind3000/ECDICT/wiki/%E7%AE%80%E6%98%8E%E8%8B%B1%E6%B1%89%E5%AD%97%E5%85%B8%E5%A2%9E%E5%BC%BA%E7%89%88>
-
-
-#### 21 世纪英汉汉英双向词典
+- <https://github.com/skywind3000/ECDICT/wiki/>
 
 #### Longman Dictionary of Contemporary English 5th Edition （朗文当代高级英语辞典第五版） 五星推荐
 记得当时上学的时候，隔壁寝室英语专业的学长唯一给我推荐的字典就是朗文当代（LDOCE5），后来渐渐的才了解到，这本英英词典收录单词量最大，例句最多，搭配和用法也最全。
@@ -209,6 +206,10 @@ babylon 免费的字典
 
 - <http://www.babylon-software.com/free-dictionaries/>
 
+最后这里有近 5 个 G 的英英和英俄字典，应该是个俄国人分享的
+
+- <https://cloud.mail.ru/public/CUeM/oCccvrZsA/>
+
 ### 字典相关
 引进词典又分为英系和美系两大类，目前英系词典占据中国市场的主导地位，著名的品牌如牛津、朗文、剑桥、麦克米伦、柯林斯，简称“牛朗剑麦柯”（谐音“牛郎见迈克”）合称“英国五虎”。
 
@@ -229,13 +230,13 @@ GoldenDict 和其他可选字典的对比
 
 在 [stardict](http://stardict.sourceforge.net/) 被移除的 Sourceforge 页面上给出了一系列的 Alternative 选择
 
-功能                | GoldenDict         | Babiloo              | LightLang         | Lingoes               | Dicto
---------------------|--------------------|----------------------|-------------------|-----------------------|----------------------------
-链接                | https://github.com/goldendict/goldendict | https://code.google.com/archive/p/babiloo/ 已停止 | https://code.google.com/archive/p/lightlang/ 已停止开发 | http://www.lingoes.net/ | http://dicto.org.ru/
-支持格式 | 特别多，见上文 | SDictionary, and StarDict formats | 俄语 | 私有格式 | XDXF dictionaries
-平台     | GUN/Linux, Mac, Windows, Android | Linux, Windows, Mac | Linux only | Windows only | Windows only
-特色功能 | 见上文 | 已停止维护 略 | 已停止维护略 | 轻便简洁，但是有广告 | 只面向俄语 略
-License  | GNU GPLv3+ | GPL v3 | GPL v2 |
+字典软件        | 链接              | 支持格式                  | 平台                  | 特色功能                  | License
+----------------|-------------------|---------------------------|-----------------------|---------------------------|-------------------
+GoldenDict      | https://github.com/goldendict/goldendict | 特别多，见上文 | GUN/Linux, Mac, Windows, Android | 见上文 | GNu GPLv3+
+Babiloo     | https://code.google.com/archive/p/babiloo/ 已停止 | SDictionary, and StarDict formats | Linux, Windows, Mac | 已停止维护 | GPL v3
+LightLang   | https://code.google.com/archive/p/lightlang/ 已停止开发 | 俄语 | Linux only | 已停止维护略 | GPL v2
+Lingoes     | http://www.lingoes.net/ | 私有格式 | Windows only | Windows 下比较好用，但有广告 |
+Dicto       | http://dicto.org.ru/ | XDXF dictionaries | windows only | 只面向俄语 略 |
 
 
 ## 其他编程资源
@@ -260,6 +261,16 @@ wikipedia 的离线包，很大，好几十个 G
 
 - <http://wiki.kiwix.org/wiki/Main_Page>
 
+原来只是想要找到一个 Linux 下代替有道的桌面词典，没想到竟然过了一个礼拜，这一个礼拜每天回来的第一件事情就是整理可用的字典。在一个礼拜的努力下，终于已经完美可用。这一个礼拜所看过的字典版本已经超过了我过去二十多年的数量，也让我发现了原来学习英语一直以来都缺失了这么重要的一环。真的有些单词，英英解释起来要比中文要轻松许多。今天也同样遇到了一个 argument 和 parameter 两个单词在编程的语境中经常被翻译成一个词 ---- 参数，但其实仔细看英英解释就能发现
+
+- argument 是 a reference or value that is passed to a function, procedure, subroutine, command, or program
+- parameter 是 a set of fixed limits that control the way that something should be done
+
+虽然两者本身的含义也非常类似，在计算机术语中几乎也是等价，但是英英的解释能看到，argument 是调用者的传参，而 parameter 是定义方法或者函数时候的参数，虽然两者表达的东西是一样的，但是其实有着一定的区别。
+
+再比如之前也提到的 `walk`, `wander`, `stride`, `pace`, `wade` 都有走的意思，但是其实每个单词使用的场景都不一样都需要仔细考虑。或许这就是语言学习最难过的一关，这也是学习者无论如何都很难超越母语使用者最为重要的一点了吧。
+
+
 ## reference
 
 - <http://goldendict.org/>
@@ -273,3 +284,4 @@ wikipedia 的离线包，很大，好几十个 G
 - 字典推荐 <https://www.jianshu.com/p/817284262546>
 - <https://zhuanlan.zhihu.com/p/20214473>
 - 各个版本字典介绍 <https://book.douban.com/review/2292414/>
+- <https://dictionaryphile.github.io/>
