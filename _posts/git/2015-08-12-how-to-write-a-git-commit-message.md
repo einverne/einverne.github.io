@@ -5,13 +5,13 @@ tagline: ""
 description: ""
 category: Git
 tags: [git, github, ]
-last_updated: 
+last_updated:
 ---
 
-曾经收藏过的一篇文章[How to write a Git commit message](http://chris.beams.io/posts/git-commit/)，今天无意中点开却发现网站无法访问，故而使用Google Cache恢复该文。后来发现作者网站虽然无法访问，但是作者将网站[开源](https://github.com/cbeams/chris.beams.io)了。
+曾经收藏过的一篇文章 [How to write a Git commit message](http://chris.beams.io/posts/git-commit/)，今天无意中点开却发现网站无法访问，故而使用 Google Cache 恢复该文。后来发现作者网站虽然无法访问，但是作者将网站[开源](https://github.com/cbeams/chris.beams.io) 了。
 
 <center>
-<a href="http://xkcd.com/1296/"><img src="http://imgs.xkcd.com/comics/git_commit.png" alt="xkcd"/></a>
+<a href="http://xkcd.com/1296/"><img src="https://imgs.xkcd.com/comics/git_commit.png" alt="xkcd"/></a>
 </center>
 
 ## Introduction: Why good commit messages matter
@@ -169,7 +169,7 @@ Or, `git shortlog`, which groups commits by user, again showing just the subject
 
     Walter Gibbs (1):
           Introduce protoype chess program
-          
+
 There are a number of other contexts in git where the distinction between subject line and body kicks in—but none of them work properly without the blank line in between.
 
 
@@ -181,11 +181,11 @@ There are a number of other contexts in git where the distinction between subjec
 
 GitHub's UI is fully aware of these conventions. It will warn you if you go past the 50 character limit:
 
-![gh1](http://i.imgur.com/zyBU2l6.png)
+![gh1](https://i.imgur.com/zyBU2l6.png)
 
 And will truncate any subject line longer than 69 characters with an ellipsis:
 
-![gh2](http://i.imgur.com/27n9O8y.png)
+![gh2](https://i.imgur.com/27n9O8y.png)
 
 So shoot for 50 characters, but consider 69 the hard limit.
 
@@ -222,7 +222,7 @@ _Imperative mood_ just means "spoken or written as if giving a command or instru
  - Clean your room
  - Close the door
  - Take out the trash
- 
+
 Each of the seven rules you're reading about right now are written in the imperative ("Wrap the body at 72 characters", etc).
 
 The imperative can sound a little rude; that's why we don't often use it. But it's perfect for git commit subject lines. One reason for this is that **git itself uses the imperative whenever it creates a commit on your behalf**.

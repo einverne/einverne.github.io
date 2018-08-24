@@ -4,11 +4,11 @@ title: "全平台录制 GIF：LICEcap"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [gif, 经验总结, record]
-last_updated: 
+tags: [gif, 经验总结 , record , tools ]
+last_updated:
 ---
 
-以前写过一篇[文章](/post/2016/01/byzanz-record.html)讲的是如何在 Linux 下使用 byzanz 来录制 GIF，并且能够达到很好的效果，并且文件大小非常合适网络分享。现在就介绍下在其他两大平台 Win/Mac 下录制 GIF 的工具。
+以前写过一篇[文章](/post/2016/01/byzanz-record.html) 讲的是如何在 Linux 下使用 byzanz 来录制 GIF，并且能够达到很好的效果，并且文件大小非常合适网络分享。现在就介绍下在其他两大平台 Win/Mac 下录制 GIF 的工具。
 
 ## LICEcap
 录屏 GIF 工具名字叫做： LICEcap 。这也是一款我在使用很长时间之后感觉非常好用的工具。他的官网地址：
@@ -25,13 +25,13 @@ last_updated:
 
 更多其他的技巧和优点可查看他官网，目前为止他满足了我所有的需求。
 
-使用:
+使用：
 
-![record](http://www.cockos.com/licecap/how_to_licecap.gif)
+![record](https://www.cockos.com/licecap/how_to_licecap.gif)
 
 输出文件：
 
-![output](http://www.cockos.com/licecap/demo2.gif)
+![output](https://www.cockos.com/licecap/demo2.gif)
 
 
 ## ScreenToGif
