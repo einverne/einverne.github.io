@@ -4,7 +4,7 @@ title: "每天学习一个命令：find 查找文件"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [linux, find, file, command]
+tags: [linux, find, file, command, search, ]
 last_updated:
 ---
 
@@ -53,12 +53,13 @@ last_updated:
 - `w` two byte
 - `k` kB 千字节
 - `M` MB
-- `G`
+- `G` GB
 
 `size` 后面的参数可以使用 `+` 或者 `-` 或者不加来标识，超过，少于，或者正好。
 
     find / -size +700M   # 表示查找大于 700M 的文件
-    find / -size -50c    # 表示查找小于 50 自己的文件
+    find / -size -50c    # 表示查找小于 50 byte 的文件
+    find . -size 50M     # 表示在当前目录查找正好 50M 的文件
 
 ### 通过时间来查找文件
 

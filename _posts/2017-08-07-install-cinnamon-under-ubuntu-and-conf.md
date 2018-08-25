@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [Ubuntu, Linux, Cinnamon, LinuxMint]
-last_updated: 
+last_updated:
 ---
 
 Ubuntu 16.04 LTS 或者 Ubuntu 17.04 下可以通过 PPA 来安装 Cinnamon，感谢[维护者](https://launchpad.net/~embrosyn/+archive/ubuntu/cinnamon)
@@ -35,6 +35,7 @@ Ubuntu 16.04 LTS 或者 Ubuntu 17.04 下可以通过 PPA 来安装 Cinnamon，�
 
 然后重启 nemo 即可。
 
+关于 Nemo 更多的使用，可以参考我博客上另外的文章。
 
 ## reference
 
