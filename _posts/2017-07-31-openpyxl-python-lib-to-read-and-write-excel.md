@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "openpyxl python lib to read and write excel"
+title: "使用 openpyxl python lib 来读写 Excel"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Python, ]
-last_updated: 
+tags: [python, excel, openpyxl, ]
+last_updated:
 ---
 
 Openpyxl 是一个用来处理 Excel 格式文件的 Python 库，它能用来处理 Excel 2007 及以上版本的 excel 文件，也就是 .xlsx/.xlsm/.xltx/.xltm 格式的表格文件。
@@ -37,7 +37,7 @@ Openpyxl 是一个用来处理 Excel 格式文件的 Python 库，它能用来�
 
 		def write_row(self):
 			ws = self.wb.active
-			for row in range(1, 10):  # 1 到 10行
+			for row in range(1, 10):  # 1 到 10 行
 				ws.append(range(10))  # 10 列
 			self.wb.save(self.name)
 
@@ -95,6 +95,10 @@ Openpyxl 是一个用来处理 Excel 格式文件的 Python 库，它能用来�
 
 openpyxl 还有很多重量级的功能，比如绘图等等，具体可参考文档。
 
+## 其他
+Python 其他处理 Excel 的库
+
+- <https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/>
 
 ## reference
 
