@@ -1,0 +1,49 @@
+---
+layout: post
+title: "各种邀请链接整理"
+tagline: ""
+description: ""
+category: 整理合集
+tags: [referral, site, website, register, login]
+last_updated:
+---
+
+这里全部是推广链接，如果你觉得我的文章有用，帮忙点击一下可好？
+
+## VPS
+
+### DirectSpace
+从 14 年开始用，只遇到过一次宕机，虽然是 ovz 的但架个代理也完全足够了，况且两年才 15 刀干啥不续费。
+
+- <https://gtk.pw/ds>
+
+### Linode
+用的日本的节点，稳得不行，5 刀一个月
+
+- <https://gtk.pw/linode>
+
+## 网盘
+
+### Dropbox
+Dropbox 用到如今最好的网盘，我也[只推荐 Dropbox](/post/2015/07/dropbox-tips.html)
+
+- <https://db.tt/isyvu6ny>
+
+## 论坛
+
+### v2ex
+
+- <https://gtk.pw/v2ex>
+- <https://www.v2ex.com/?r=einverne>
+
+### 恩山无线
+路由器，电视盒子（机顶盒），大神都在这里
+
+- <https://gtk.pw/right>
+- <http://www.right.com.cn/forum/?fromuser=einverne>
+
+### pdawiki
+这是一个电子词典的论坛，goldendict 时获知，里面有各种电子词典分享，论坛中的人也很友好，千万不要注水
+
+- <https://www.pdawiki.com/forum/?fromuser=288470>
+- <https://www.pdawiki.com/forum/thread-11779-1-1.html?x=288470>
