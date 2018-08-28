@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "使用 Celery Once 来防止Celery重复执行同一个任务"
+title: "使用 Celery Once 来防止 Celery 重复执行同一个任务"
 tagline: ""
 description: ""
 category: 学习笔记
 tags: [celery, celery-once, redis, broker, queue, task, unique, python]
-last_updated: 
+last_updated:
 ---
 
-在[使用](/post/2017/04/celery-introduction.html) Celery 的时候发现有的时候 Celery 会将同一个任务执行两遍，我遇到的情况是相同的任务在不同的worker中被分别执行，并且时间只相差几毫秒。这问题我一直以为是自己哪里处理的逻辑有问题，后来发现[其他人](https://github.com/celery/celery/issues/4400)也有类似的问题，然后基本上出问题的都是使用 Redis 作为 Broker 的，而我这边一方面不想将 Redis 替换掉，就只能在 task 执行的时候加分布式锁了。
+在[使用](/post/2017/04/celery-introduction.html) Celery 的时候发现有的时候 Celery 会将同一个任务执行两遍，我遇到的情况是相同的任务在不同的 worker 中被分别执行，并且时间只相差几毫秒。这问题我一直以为是自己哪里处理的逻辑有问题，后来发现[其他人](https://github.com/celery/celery/issues/4400) 也有类似的问题，然后基本上出问题的都是使用 Redis 作为 Broker 的，而我这边一方面不想将 Redis 替换掉，就只能在 task 执行的时候加分布式锁了。
 
 不过在 Celery 的 issue 中搜索了一下，有人使用 Redis 实现了[分布式锁](https://github.com/celery/celery/issues/3270)，然后也有人使用了 [Celery Once](https://github.com/cameronmaske/celery-once)。 大致看了一下 Celery Once ，发现非常符合现在的情况，就用了下。
 
@@ -59,7 +59,7 @@ Celery Once 也是利用 Redis 加锁来实现，他的使用非常简单，参�
         sleep(30)
         return a + b
 
-更多详细的参数可以参考GitHub，或者直接阅读源码。
+更多详细的参数可以参考 GitHub，或者直接阅读源码。
 
 ## reference
 

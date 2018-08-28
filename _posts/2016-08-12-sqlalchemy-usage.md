@@ -217,6 +217,25 @@ Unicode                 | unicode                   | UNICODE or VARCHAR
 Text                    | str                       | CLOB or TEXT
 Time                    | datetime.time             | DATETIME
 
+## 其他重要内容
+
+### 在定义 Model 时定义表引擎和编码
+在 model 中使用 `__table_args__` 来定义
+
+    class User(BaseModel):
+        __tablename__ = 'users'
+        __table_args__ = {
+            "mysql_engine": "InnoDB",    # 引擎
+            "mysql_charset": "utf8"         # 编码
+        }
+
+        ...
+
+### 模型属性名和表字段名不一样
+在定义 Column 时指定
+
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+
 ## reference
 
 - 《Essential SQLAlchemy 2nd Edition 2015》

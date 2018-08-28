@@ -225,6 +225,9 @@ Order 可以使用 `DESC`, `ASC`
     // MySQL 8.0.4 以上
     UNINSTALL COMPONENT 'file://component_validate_password';
 
+将表从一个 schema 中移动到另外的 schema 中
+
+    alter table old_db.table_name rename new_db.table_name
 
 ## 远程连接
 如果想要远程通过 root 连接 MySQL，先查看一下 MySQL 配置 `/etc/mysql.my.cnf`，需要注释其中
