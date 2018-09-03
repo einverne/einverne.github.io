@@ -4,13 +4,15 @@ title: "常用 adb command 命令"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [AndroidDev, android, adb, dev, device]
+tags: [android-dev, android, adb, dev, device, ]
 last_updated: 2017-02-26
 ---
 
-一些常用的 adb 命令，包括Android录屏，及从电脑复制文件，从 Android 设备拉取文件等等。
+一些常用的 adb 命令，包括 Android 录屏，及从电脑复制文件，从 Android 设备拉取文件等等。
 
-adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列指令给 Android 设备，包括但不限于基本的 Linux 指令。只要手机或者任何 Android 设备开启了Debug模式并且取得信任，adb 命令几乎可以用来做任何事情。因此网络上也存在使用 adb 来入侵同一局域网下的 Android 盒子的例子。
+adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列指令给 Android 设备，包括但不限于基本的 Linux 指令。只要手机或者任何 Android 设备开启了 Debug 模式并且取得信任，adb 命令几乎可以用来做任何事情。因此网络上也存在使用 adb 来入侵同一局域网下的 Android 盒子的例子。
+
+adb 使用的默认端口是 5037.
 
 ## 查看连接设备 adb devices
 来查看设备是否已经连接
@@ -19,9 +21,25 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
     List of devices attached
     2dd11c6e	device
 
-## 杀掉adb进程
+获取设备状态
+
+    adb get-state
+
+返回的结果可能有三种
+
+- device: 设备正常连接
+- offline: 连接异常，设备无响应
+- unknown: 没有连接设备
+
+## 杀掉 adb 进程
+在连接异常时，而已杀死服务重启尝试
 
     adb kill-server
+    adb start-server
+
+## 打印日志
+
+    adb logcat
 
 ## 将文件推送到设备上 adb push
 
@@ -45,23 +63,32 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
 或者使用 `adb reboot recovery` 直接进入 recovery 模式
 
-## adb shell
-直接使用该命令可以进入手机的 Shell.
+## 端口重定向
+将宿主机上某端口重定向到设备端口
+
+    adb forward tcp:8008 tcp:8008
+
+执行命令后所有发往宿主机 8008 端口的数据都会被转发到 Android 设备 8008 上。
+
+## adb shell 命令
+直接使用该命令可以进入手机的 Shell。 adb 其他命令是 adb 自带的命令，而 `adb shell` 则是调用的 Android 设备上的命令。Android 设备的命令放在 `/system/bin` 目录下。
+
+比如 `adb shell which ls` 返回的结果会告诉你找到的是 `/system/bin/ls` 这个命令。
 
 ### 修改权限
 
 进入 Android Shell 之后就可以使用任何 Linux 命令来直接操作 Android 设备， 比如：
 
-` adb shell chmod 666 /data/filename.txt` 
+    adb shell chmod 666 /data/filename.txt
 
-### 屏幕截图
+### screencap 屏幕截图
 shell 中可以直接截取设备的屏幕
 
     adb shell screencap -p /sdcard/screen.png
     adb pull /sdcard/screen.png
     adb shell rm /sdcard/screen.png
 
-使用 `screencap` 截图保存到 sdcard 上，使用 `pull` 命令拉到本地并删除sd卡中文件。这种方式比较繁杂，需要三个步骤，如果查看 `screencap -h` 会发现，帮助中有一行，如果不加文件名，命令会将结果输出到标准输出。那么
+使用 `screencap` 截图保存到 sdcard 上，使用 `pull` 命令拉到本地并删除 sd 卡中文件。这种方式比较繁杂，需要三个步骤，如果查看 `screencap -h` 会发现，帮助中有一行，如果不加文件名，命令会将结果输出到标准输出。那么
 
     adb shell screencap -p > screen.png
     adb shell screencap -p | sed 's/\r$//' > screen.png
@@ -71,9 +98,9 @@ shell 中可以直接截取设备的屏幕
 在本地添加 alias
 
     alias and-screencap="adb shell screencap -p | sed 's/\r$//'"
-    and-screencap > screen.png 
+    and-screencap > screen.png
 
-### shell 中录制屏幕
+### screenrecord 在 shell 中录制屏幕
 
 在 shell 命令中可以使用 `screenrecord` 命令来录制屏幕。需要 Android 4.4 （API Level 19）及以上，该命令将屏幕保存成 MPEG-4 文件。不录制声音。
 
@@ -91,16 +118,18 @@ shell 中可以直接截取设备的屏幕
 -  `--help`
 - `--size <width*Height>`  比如 `1280*720`.
 - `--bit-rate <rate>`  默认码率 4Mbps，6Mbps 可以设置  6000000.
-- `--time-limit <TIME>` 默认为180 (3min) 设置时间，单位秒
+- `--time-limit <TIME>` 默认为 180 (3min) 设置时间，单位秒
 - `--rotate` 旋转输出
 - `--verbose` 显示 log 信息，如果不设置，不显示任何信息
 
-### 列出Android 设备上所有安装的应用
-使用如下命令[^1]:
+### 列出 Android 设备上所有安装的应用
+`pm` 可以记忆成 package manager ，使用 pm 命令可以获取设备上应用相关的信息。
+
+使用如下命令 [^1]:
 
 	adb shell 'pm list packages'
 
-使用如下命令去除前面的 package: 
+使用如下命令去除前面的 package:
 
     adb shell pm list packages | awk -F ":" '{print $2}'
     # 或者，-f 用来输出第二部分， -d 用来标示分割符号
@@ -109,36 +138,74 @@ shell 中可以直接截取设备的屏幕
 在使用 adb shell 进入 手机 Shell 之后可以使用， pm help 来获取更多关于 pm 命令的详情。关于 pm 的命令。
 
 - `adb shell pm list packages`
-- `adb shell pm list packages -f` See their associated file.
+- `adb shell pm list packages -f` 列出包名及对应的 apk 名及存放的位置
 - `adb shell pm list packages -d` Filter to only show disabled packages.
 - `adb shell pm list packages -e` Filter to only show enabled packages.
 - `adb shell pm list packages -s` Filter to only show system packages.
 - `adb shell pm list packages -3` Filter to only show third party packages.
-- `adb shell pm list packages -i` See the installer for the packages.
+- `adb shell pm list packages -i` 应用包名及其安装来源 com.android.vending 表示从官方 Play Store 安装
 - `adb shell pm list packages -u` Also include uninstalled packages.
-- `adb shell pm list packages --user <USER_ID>` The user space to query.
+- `adb shell pm list packages --user <KEYWORDS>` The user space to query.
+
+在命令后直接添加关键词能够根据关键字过滤结果。
+
+    adb shell pm path com.android.chrome
+
+能够给出应用的 apk 路径。
+
+    adb shell pm dump com.android.chrome
+
+能够列出指定应用的各种信息
+
+如果 apk 文件在 Android 设备上，可以使用
+
+    adb shell pm install /path/to/apk
+    adb shell pm uninstall package_name
+    adb shell pm clear  # 清除应用数据
 
 [^1]: https://gist.github.com/davidnunez/1404789
 
-### 模拟点击和滑动事件
+### am
+启动一个指定的 Activity
+
+    adb shell am start -n com.oneplus.camera/.OPCameraActivity
+
+强制停止应用
+
+    adb shell am force-stop pacakge_name
+
+### input 模拟点击和滑动事件
 命令格式
 
     adb shell input text <string>
     adb shell input keyevent <key code number or name>
-    adb shell input tap <x> <y>
+    adb shell input tap <x> <y>             # 点击事件
     adb shell input swipe <x1> <y1> <x2> <y2> [duration(ms)]
 
 模拟按键的，keycode 为 3 时表示 HOME 键，更多的可以参考后文的附录
 
     adb shell input keyevent 3
 
-模拟点击时，后面接的 x，y 都是真实屏幕分辨率，比如想要点击屏幕(x,y)=(150,150)像素的位置
+模拟点击时，后面接的 x，y 都是真实屏幕分辨率，比如想要点击屏幕 (x,y)=(150,150) 像素的位置
 
     adb shell input tap 150 150
 
-模拟屏幕滑动和tap是一样的，只是需要给出滑动的起点和终点两个坐标值
+模拟屏幕滑动和 tap 是一样的，只是需要给出滑动的起点和终点两个坐标值
 
     adb shell input swipe 150 150 200 200
+
+### ime 列出输入法
+列出设备上的输入法
+
+    adb shell ime list [-a] [-s]
+    adb shell ime enable ID
+    adb shell ime disable ID
+    adb shell ime set ID
+
+### wm
+获取设备分辨率
+
+    adb shell wm size
 
 ## 安装及卸载应用程序 adb install
 
@@ -146,16 +213,16 @@ shell 中可以直接截取设备的屏幕
 
     adb install app.apk
 
-可以使用 `-r` 命令更新应用 
+可以使用 `-r` 命令覆盖安装应用
 
-`adb install -r apkfilename.apk` 
+`adb install -r apkfilename.apk`
 
 `adb install` 的其他参数
 
 - `adb install -l app.apk` forward lock application
 - `adb install -r app.apk` 替换存在的应用
 - `adb install -t app.apk` 允许测试包
-- `adb install -s app.apk` 在sdcard上安装
+- `adb install -s app.apk` 在 sdcard 上安装
 - `adb install -d app.apk` 允许比现在安装版本更低的包 allow version code downgrade
 - `adb install -p app.apk` 增量更新 partial application install
 
@@ -164,11 +231,11 @@ shell 中可以直接截取设备的屏幕
 使用 `adb uninstall -k apkfilename.apk` 可以卸载应用，但是保留数据。
 
 ## adb connect
-通过网络来使用 adb，可以通过该命令来连接网络上开放远程调试的设备。
+通过网络来使用 adb，可以通过该命令来连接网络上开放远程调试的设备（比如 Android 机顶盒之类）。
 
     adb connect <host>[:<port>]
 
-远程连接之后就可以使用上面的所有命令，也可卸载远程设备上的应用，也可以安装本地的apk到远程设备上，也可以通过adb命令来控制远程设备上的应用。
+远程连接之后就可以使用上面的所有命令，也可卸载远程设备上的应用，也可以安装本地的 apk 到远程设备上，也可以通过 adb 命令来控制远程设备上的应用。
 
 通过下面的命令向远程设备安装应用
 
@@ -189,6 +256,19 @@ shell 中可以直接截取设备的屏幕
     adb shell dumpsys package com.google.android.youtube | grep version
 
 可以用来查看当前这个 package 的版本号。
+
+## 获取当前正在运行的应用 Activity Name
+使用 adb shell dumpsys
+
+    adb shell dumpsys activity activities | grep 'Hist #'
+
+      * Hist #0: ActivityRecord{b71f1a7 u0 com.oneplus.camera/.OPCameraActivity t4826}
+      * Hist #0: ActivityRecord{5de041d u0 slide.cameraZoom/.CameraZoomActivity t4825}
+      * Hist #0: ActivityRecord{1e2287c u0 mobi.acpm.inspeckage/.ui.MainActivity t4824}
+      * Hist #0: ActivityRecord{e96e625 u0 com.google.android.calendar/.AllInOneCalendarActivity t4812}
+      * Hist #0: ActivityRecord{cf38cb2 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.OpaActivity t4711}
+      * Hist #0: ActivityRecord{ff685a1 u0 com.android.launcher3/.Launcher t4639}
+      * Hist #0: ActivityRecord{78edd61 u0 com.android.systemui/.recents.RecentsActivity t4652}
 
 ## 附录 keyevent
 

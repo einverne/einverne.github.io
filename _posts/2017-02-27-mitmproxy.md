@@ -152,6 +152,15 @@ Q  不提示直接退出
 
 为关闭状态，否则无法让无线局域网中的设备之间通信。
 
+### 在 Linux 下让 Chrome 信任 mitmproxy 的 CA 证书
+主要是
+
+    sudo apt-get install libnss3-tools
+    certutil -d sql:$HOME/.pki/nssdb -A -t C -n mitmproxy -i ~/.mitmproxy/mitmproxy-ca-cert.pem
+
+
+From: [github](https://github.com/mitmproxy/mitmproxy/issues/551)
+
 ## reference
 
 - 代码地址：<https://github.com/mitmproxy/mitmproxy>

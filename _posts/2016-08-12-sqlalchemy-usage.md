@@ -236,6 +236,18 @@ Time                    | datetime.time             | DATETIME
 
     id = Column('id', Integer, primary_key=True, autoincrement=True)
 
+
+## 编码问题
+在使用 mysqldb 这个 driver 的时候莫名其妙遇到编码的问题，数据库，表，都是 utf8mb4，在 CentOS6 下面死活用不了 utf8mb4 作为连接编码
+
+    can't initialize character set utf8mb4 (path /usr/share/mysql/charsets/)
+
+一直都是这个错误，但在我本地一切 OK，这时候我想是不是机器 driver 的问题，换成 [pymysql](https://github.com/PyMySQL/PyMySQL) 之后就 OK 了。
+
+    http://docs.sqlalchemy.org/en/latest/dialects/mysql.html#charset-selection
+
+也是醉了。
+
 ## reference
 
 - 《Essential SQLAlchemy 2nd Edition 2015》

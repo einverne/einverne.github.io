@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [celery, python, queue, task, distribution]
-last_updated: 
+last_updated:
 ---
 
 Celery 简单来说就是一个分布式消息队列。简单、灵活且可靠，能够处理大量消息，它是一个专注于实时处理的任务队列，同时也支持异步任务调度。Celery 不仅可以单机运行，也能够同时在多台机器上运行，甚至可以跨数据中心。
@@ -21,13 +21,13 @@ Celery 中比较关键的概念：
 
 ## 安装 Celery
 
-直接使用 python 工具 pip 或者 easy_install 来安装:
+直接使用 python 工具 pip 或者 easy_install 来安装：
 
     $ pip install celery
 
 ## 安装 Broker
 
-Celery 支持多种 broker, 但主要以 RabbitMQ 和 Redis 为主，其他都是试验性的，虽然也可以使用， 但是没有专门的维护者。如何在 RabbitMQ 和 Redis之间选择呢？
+Celery 支持多种 broker, 但主要以 RabbitMQ 和 Redis 为主，其他都是试验性的，虽然也可以使用， 但是没有专门的维护者。如何在 RabbitMQ 和 Redis 之间选择呢？
 
 > RabbitMQ is feature-complete, stable, durable and easy to install. It’s an excellent choice for a production environment.
 
@@ -58,10 +58,10 @@ Celery 本身的配置项是很多的，但是如果要让它跑起来，你只�
     def add(x, y):
        return x + y
 
-上述代码创建了一个 celery 的实例 app，可以通过它来创建任务和管理 workers。在上面的例子中，我们创建了一个简单的任务 task，它返回了两个数相加后的结果。然后启动celery 服务，通过它来监听是否有任务要处理。
+上述代码创建了一个 celery 的实例 app，可以通过它来创建任务和管理 workers。在上面的例子中，我们创建了一个简单的任务 task，它返回了两个数相加后的结果。然后启动 celery 服务，通过它来监听是否有任务要处理。
 
     $ celery worker -A task -l info
- 
+
 - `-A` 选项指定 celery 实例 app 的位置，本例中 `task.py` 中自动寻找，当然可以直接指定 `celery worker -A task.app -l info`
 - `-l` 选项指定日志级别， `-l` 是 `--loglevel` 的缩略形式
 
@@ -88,7 +88,7 @@ Celery 本身的配置项是很多的，但是如果要让它跑起来，你只�
         'No result backend configured.  '
     NotImplementedError: No result backend configured.  Please see the documentation for more information.
 
-报错了: No result backend configured. 错误信息告诉我们没有配置 result backend。因为 celery 会将任务的 状态或结果保存在 result backend，result backend 的选择也有很多，本例中依然选用 redis 作为 result backend。
+报错了：No result backend configured. 错误信息告诉我们没有配置 result backend。因为 celery 会将任务的 状态或结果保存在 result backend，result backend 的选择也有很多，本例中依然选用 redis 作为 result backend。
 
 我们修改 task.py 的代码，添加上 result backend 的设置，保存后重启 celery worker。
 
@@ -116,7 +116,7 @@ or:
 
     easy_install flower
 
-flower 使用简介，首先启动通过命令行启动 flower 进程:
+flower 使用简介，首先启动通过命令行启动 flower 进程：
 
     flower -A proj --port=5555
 
@@ -138,7 +138,7 @@ Celery 同样也支持定时任务：
 
     from datetime import timedelta
     from celery.schedules import crontab
- 
+
     app.conf.beat_schedule = {
         # Executes every Monday morning at 7:30 A.M
         'add-every-monday-morning': {
@@ -154,7 +154,7 @@ Celery 同样也支持定时任务：
             'options': {
                 'queue': 'queue_name'
             }
-        }, 
+        },
     }
 
 要启动定时任务，需要启动一个心跳进程，假设
@@ -162,6 +162,16 @@ Celery 同样也支持定时任务：
     celery beat -A celery_app.celery_config -s /path/to/celerybeat-schedule -l info
 
 其中 `-s` 参数指定 celerybeat 文件保存的位置。beat 主要的功能就是将 task 下发到 broker 中，让 worker 去消费。
+
+## 取消队列中任务
+取消队列中任务，可以使用命令行，也可以导入 celery app 然后使用 `control()`
+
+    celery -A proj -Q queue_name purge      # 取消队列 queue_name 中的任务
+    # or
+    from proj.celery import app
+    app.control.purge()
+
+From：[stackoverflow](https://stackoverflow.com/a/7155348/1820217)
 
 ## reference
 

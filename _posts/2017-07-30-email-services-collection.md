@@ -23,3 +23,9 @@ last_updated:
 
 - https://sendcloud.sohu.com/price.html
 
+## Amazon SES
+如果是通过 Amazon EC2 托管的程序，每个月前 62000 封邮件免费。
+
+- <https://aws.amazon.com/cn/ses/>
+
+
