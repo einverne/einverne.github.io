@@ -39,4 +39,8 @@ last_updated:
     du --exclude=/path
 
 
+### 只报告目录占用空间总量
+
+    du -hs
+
 更多的命令使用方法可以参考 [tecmint](https://www.tecmint.com/check-linux-disk-usage-of-files-and-directories/)

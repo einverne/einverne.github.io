@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "书库免费的电子书站点"
+title: "免费的电子书站点收集"
 tagline: ""
 description: ""
 category: 整理合集
@@ -37,6 +37,21 @@ last_updated:
 
 记得以前不叫这个名字的，可推送漫画，漫画比较全，有连载。
 
+## bookset 我的精品书库
+看站点应该只是个人在维护的。
+
+    https://bookset.me/
+
+## epubee
+一个电子书在线转换工具，也提供热门书的下载和推送。
+
+    http://cn.epubee.com/
+
+## 高清杂志
+这是一个杂志的合集，需要付费
+
+    http://www.gqzzw.com/
+
 ## 古腾堡
 
     http://readfree.me/
@@ -69,4 +84,4 @@ mLook 精校电子书，注册需要邀请码
 - https://github.com/justjavac/free-programming-books-zh_CN
 - 相关 Kindle 的 [tips](/post/2016/06/kindle-tips.html)
 
-
+最后，在能力范围内请支持正版。
