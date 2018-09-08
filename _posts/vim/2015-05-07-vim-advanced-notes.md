@@ -32,11 +32,27 @@ Vim 还支持另一种组合
 	vi]   光标在中括号内， 选中 [] 内的内容
 	dtx   向后删除字符直到遇到第一个 `x` 字符， (d)elete (t)ill x
 	ytx   向后复制内容直到遇到第一个 `x` 字符
+
+以下是命令 c 加上一些操作，其他 d(elete) y(ank) v(iual) 都可以接
+
     ctx   向后修改内容到 `x`，也就是意味着删除光标到 `x` 中间内容，并进入插入模式
+    ci"                 改写双引号中的内容
+    ci'                 改写单引号中的内容
+    cib                 改写小括号中的内容
+    cab                 改写小括号中的内容（包含小括号本身）
+    ci)                 改写小括号中的内容
+    ci]                 改写中括号中内容
+    ciB                 改写大括号中内容
+    caB                 改写大括号中的内容（包含大括号本身）
+    ci}                 改写大括号中内容
+    cit                 改写 xml tag 中的内容
+    cis                 改写当前句子
+    c2w                 改写下两个单词
+    ct(                 改写到小括号前
 
 ## 文件中快速跳转
 
-	NG    go to line N, N is a number, like 23G means go to line 23
+	nG    go to line N, N is a number, like 23G means go to line 23
 	:x    跳转到第 x 行 x 为行号
 	gg    shortcut for 1G - 跳转到第一行
 	G     跳转到最后一行
@@ -52,6 +68,14 @@ Vim 还支持另一种组合
 宏命令是 Vim 中最神奇的操作之一，需要慢慢体会，关于宏命令可以参考[这篇](/post/2017/11/vim-macro.html)
 
 ## 批量替换
+简单的大小写替换可以使用：
+
+    ~       替换大小写
+    g~iw    替换当前单词大小写
+    gUiw    将单词转为大写
+    guiw    将单词转为小写
+    gUU     全行转为大写
+    guu     全行转为小写
 
 在全文中用一个单词替换另外一个单词
 
