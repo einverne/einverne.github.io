@@ -204,12 +204,12 @@ SQLAlchemy 同样也支持直接使用 Text 来写 sql 语句，具体可以参�
 SQLAlchemy              | Python                    | SQL
 ------------------------|---------------------------|---------------------------
 BigInteger              | int                       | BIGINT
+Integer                 | int                       | INTEGER
 Boolean                 | bool                      | BOOLEAN or SMALLINT
 Date                    | datetime.date             | DATE (SQLite: STRING )
 DateTime                | datetime.datetime         | DATETIME (SQLite: STRING )
 Enum                    | str                       | ENUM or VARCHAR
 Float                   | float or Decimal          | FLOAT or REAL
-Integer                 | int                       | INTEGER
 Interval                | datetime.timedelta        | INTERVAL or DATE from epoch
 LargeBinary             | byte                      | BLOB or BYTEA
 Numeric                 | decimal.Decimal           | NUMERIC or DECIMAL
