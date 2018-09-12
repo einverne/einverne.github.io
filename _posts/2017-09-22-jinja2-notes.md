@@ -11,14 +11,15 @@ last_updated:
 jinja2 是基于 Python 的模板引擎。
 
 ## 种类
+注意下面的 \ 是因为模板需要转义，使用时需要去掉，另外大括号和 % 之间的空格也需要去掉。
 
-    {% ... %}  Statements 控制结构，比如 if/elif/else for-loops，macros，block 等等
-    {{ ... }}  Expressions 表达式，用来输出结果
-    {# ... #}  Comments 注释
-    #  ... ##  Line Statements
+    \{\% ... \%\}  Statements 控制结构，比如 if/elif/else for-loops，macros，block 等等
+    \{\{ ... \}\}  Expressions 表达式，用来输出结果
+    \{\# ... \#\}  Comments 注释
+    \#  ... \#\#  Line Statements
 
 ## 表达式及过滤器
-{{ name }} 结构表示一个变量
+`{{ name }}` 结构表示一个变量
 
 过滤器用法
 
