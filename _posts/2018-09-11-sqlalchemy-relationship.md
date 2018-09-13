@@ -75,9 +75,10 @@ relationship，第一个参数是类名，backref 参数是添加一个属性，
 
 relationship 中 lazy 是加载方式，默认是 select，在查询时自动查询所有数据。lazy 属性根据需求决定，如果每次查询 User 都需要获取 Address，那么 select 可以使用。如果两个表互相有外键指向对方，则 relationship 中 lazy 不能为默认值，需要 dynamic 动态加载。
 
+数据库中，一对多关系是最常用的关系类型，它可以把一个记录和一组相关的记录联系在一起，实现这种关系，只要在多一侧加入一个外键，指向一这侧关联的记录。
 
 ## 多对一关系
-多对一，其实和一对多本质上是一样的，参考上面，一对多，一个用户可以有多个地址，而多对一其实就是多个地址对应于一个用户
+多对一，其实和一对多本质上是一样的，参考上面，一对多，一个用户可以有多个地址，而多对一其实就是多个地址对应于一个用户。大部分的其他关系都可以从一对多关系中衍生。
 
 ## 一对一关系
 在一对一的双向关系中，使用 uselist 来表示，比如“计划生育”下，父母只能有一个小孩，孩子也只能有一对父母，所以使用 `uselist=False`
@@ -94,6 +95,8 @@ relationship 中 lazy 是加载方式，默认是 select，在查询时自动查
         parent = relationship("Parent", back_populates="child")
 
 ## 多对多关系
+一对多，多对一关系和一对一关系至少有一侧是单个实体，所以记录之间的联系通过外键实现，让外键指向这个单一实体。但是实现多对多显然不行。以典型的学生选课为例子，学生表和课程表，显然不能在学生表中加入一个指向课程的外键，以为一个学生可以选择多个课程，一个外键不够用，同样，也不能在课程表中加入一个指向学生的外键，因为一个课程会有很多学生选择，两侧都需要一组外键。解决这种问题的方法就是添加第三张表，这个表称为关联表。这样，多对多关系就可以分解为原表和关联表之前的两个一对多关系。
+
 多对多关系会在两个类之间增加一个关联的表，使用 relationship() 方法中的 `secondary` 参数。
 
 实现多对多主要可以分为三个步骤：
@@ -104,21 +107,27 @@ relationship 中 lazy 是加载方式，默认是 select，在查询时自动查
 
 比如：
 
-    association_table = Table('association', Base.metadata,
-        Column('left_id', Integer, ForeignKey('left.id')),
-        Column('right_id', Integer, ForeignKey('right.id'))
+    registrations = db.Table(
+        'registrations',
+        db.Column('student_id', db.Integer, db.ForeignKey('students.id')),
+        db.Column('class_id', db.Integer, db.ForeignKey('classes.id'))
     )
 
-    class Parent(Base):
-        __tablename__ = 'left'
-        id = Column(Integer, primary_key=True)
-        children = relationship("Child",
-                        secondary=association_table,
-                        backref="parents")      # 注意这里使用的是 backref，如果使用的是 back_populates 则需要写两份
 
-    class Child(Base):
-        __tablename__ = 'right'
-        id = Column(Integer, primary_key=True)
+    class Student(db.Model):
+        __tablename__ = 'students'
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(64))
+        classes = db.relationship('Class',
+                                  secondary=registrations,
+                                  backref=db.backref('students', lazy='dynamic'),
+                                  lazy='dynamic')
+
+
+    class Class(db.Model):
+        __tablename__ = 'classes'
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(64))
 
 或者使用 Association Object
 
