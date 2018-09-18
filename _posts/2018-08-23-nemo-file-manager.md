@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "nemo file manager"
+title: "使用 Nemo 文件管理器"
 tagline: ""
 description: ""
-category:
-tags: []
+category: 经验总结
+tags: [nemo, cinnamon, file-manager, ubuntu, linux-mint,]
 last_updated:
 ---
 
@@ -180,8 +180,28 @@ Nemo Actions 将 Nemo 文件管理器的功能上升了另外一个层面，如�
 
 当然其他的都可以完成了。
 
+## 配置
+默认情况下 Ubuntu 下面默认的文件管理器还是 nautilus.desktop ， 可以使用如下命令查看默认的文件管理器
+
+    xdg-mime query default inode/directory
+
+我电脑上返回的结果是 `nautilus-folder-handler.desktop`
+
+如果本地机器已经安装了 nemo，那么可以使用如下命令将默认的文件管理器设置为 nemo
+
+    xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+
+如果想要恢复之前的设置，将 `nemo.desktop` 设置回去即可
+
+    xdg-mime default nautilus.desktop inode/directory application/x-gnome-saved-search
+
+然后可以使用 `xdg-open $HOME` 来验证有没有生效。
+
+
+
 ## reference
 
 - <https://github.com/linuxmint/nemo-extensions>
 - <https://wiki.archlinux.org/index.php/Nemo>
 - <http://www.webupd8.org/2016/11/nemo-320-with-unity-patches-and-without.html>
+- <https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-default-filemanager>
