@@ -5,7 +5,7 @@ tagline: ""
 description: "问题的提出到解决"
 category: 经验总结
 tags: [clonezilla, linux, backup, clone, ssd, system,]
-last_updated: 
+last_updated:
 ---
 
 之前遇到的一个问题，安装 Linux Mint 的系统分区快要满了，但是我又不想重装系统，于是就提出来这样的一个问题。当时整天得想着如何解决这样的一个问题比较好，于是有了这篇文章。当然也借由这篇文章讲述一个复杂问题的提出到解答的整个过程。其他类似问题的解决过程也是类似的。
@@ -16,11 +16,11 @@ last_updated:
 
 问题相关：Windows 下有 Ghost 类似的工具可以协助完成 Windows 系统镜像的制作，并且可以完整恢复系统，而 Mac 下有 Time Machine 类似的工具，似乎可以还原整个系统。我想 Linux 下应该也存在类似的工具。
 
-问题解决：经过Google，Linux 下备份系统的方式可以有很多，我不想使用命令行，如果有现成工具最好，最后锁定关键词   “Clonezilla”，一款非常强大的备份工具，可以用来备份硬盘，分区到镜像，或者直接写入其他硬盘或者分区。
+问题解决：经过 Google，Linux 下备份系统的方式可以有很多，我不想使用命令行，如果有现成工具最好，最后锁定关键词   “Clonezilla”，一款非常强大的备份工具，可以用来备份硬盘，分区到镜像，或者直接写入其他硬盘或者分区。
 
-之后搜索 Clonezilla 相关教程以及使用，借助 YouTube 熟悉使用过程，下载iso镜像，安装硬盘，制作启动U盘，从U盘启动电脑，熟悉电脑硬盘的名称，sda1，sdb1，sdb2，sdc1，类似的名称，基本上 sda 就是一块硬盘，后面接的数字是分区，在使用 Clonezilla 的过程中一定要小心数据，目标一定要指定空分区，或者空磁盘，否则目标磁盘的数据会全部被清除。
+之后搜索 Clonezilla 相关教程以及使用，借助 YouTube 熟悉使用过程，下载 iso 镜像，安装硬盘，制作启动 U 盘，从 U 盘启动电脑，熟悉电脑硬盘的名称，sda1，sdb1，sdb2，sdc1，类似的名称，基本上 sda 就是一块硬盘，后面接的数字是分区，在使用 Clonezilla 的过程中一定要小心数据，目标一定要指定空分区，或者空磁盘，否则目标磁盘的数据会全部被清除。
 
-在我的真实例子中，我的 Linux Mint 安装在一块硬盘的一个分区中，利用命令或者GUI，查看该分区的名称，然后我的解决方法是给电脑新安装了一块 SSD，将光驱位换了。然后给该硬盘分区，并查看该分区的名称，然后利用学习到的 Clonezilla 来完成系统从一个分区到另一个分区的克隆。
+在我的真实例子中，我的 Linux Mint 安装在一块硬盘的一个分区中，利用命令或者 GUI，查看该分区的名称，然后我的解决方法是给电脑新安装了一块 SSD，将光驱位换了。然后给该硬盘分区，并查看该分区的名称，然后利用学习到的 Clonezilla 来完成系统从一个分区到另一个分区的克隆。
 
 ![clonezilla clone linux partition](https://lh5.googleusercontent.com/-eOO4iMnZMZw/V1blbHZWFzI/AAAAAAAA-xQ/nO2ZKbY9nHIRO7YJoFpYWuYJAgiJg6h7wCL0B/w1212-h900-no/IMG_20160606_224814.jpg)
 
@@ -29,20 +29,20 @@ last_updated:
 如下使用 `sudo blkid` 查看 UUID。
 
 ```
-/dev/sda1: UUID="a7a98d76-5dab-4272-8b9a-b82042b279c5" TYPE="ext4" 
-/dev/sdb1: LABEL="Program" UUID="000E3FDB00097ED7" TYPE="ntfs" 
-/dev/sdb5: LABEL="Document" UUID="000C3A300002F285" TYPE="ntfs" 
-/dev/sdb6: LABEL="Media" UUID="0005653100096CB5" TYPE="ntfs" 
-/dev/sdb7: UUID="ad6f91df-ba08-4fad-8efc-ac1254320e2d" TYPE="swap" 
-/dev/sdb8: UUID="5f920149-5676-46ef-b545-e50be77c65e2" TYPE="ext4" 
-/dev/sdc1: LABEL="System" UUID="EEBACEF9BACEBCF9" TYPE="ntfs" 
-/dev/sdc2: UUID="8A0005F80005EBCF" TYPE="ntfs" 
+/dev/sda1: UUID="a7a98d76-5dab-4272-8b9a-b82042b279c5" TYPE="ext4"
+/dev/sdb1: LABEL="Program" UUID="000E3FDB00097ED7" TYPE="ntfs"
+/dev/sdb5: LABEL="Document" UUID="000C3A300002F285" TYPE="ntfs"
+/dev/sdb6: LABEL="Media" UUID="0005653100096CB5" TYPE="ntfs"
+/dev/sdb7: UUID="ad6f91df-ba08-4fad-8efc-ac1254320e2d" TYPE="swap"
+/dev/sdb8: UUID="5f920149-5676-46ef-b545-e50be77c65e2" TYPE="ext4"
+/dev/sdc1: LABEL="System" UUID="EEBACEF9BACEBCF9" TYPE="ntfs"
+/dev/sdc2: UUID="8A0005F80005EBCF" TYPE="ntfs"
 ```
 
 在完成从分区到分区的克隆之后，修复系统磁盘 UUID 以及启动引导 grub。这里花费了一些时间去了解 grub 的启动过程。学习了一些命令。
 
 ```
-sudo blkid   #查看磁盘UUID
+sudo blkid   #查看磁盘 UUID
 sudo fdisk -l  #查看磁盘
 
 vim /etc/fstab  #磁盘的信息
@@ -83,10 +83,10 @@ UUID=aabe7e48-2d11-421f-8609-7ea9d75e7f9b none            swap    sw            
 第一步，首先利用 `sudo blkid` 来获取分区标示。
 
 ```
-/dev/sdb1: UUID="aabe7e48-2d11-421f-8609-7ea9d75e7f9b" TYPE="swap" 
-/dev/sdc1: UUID="9467f4de-4231-401f-bcaa-fee718d49e85" TYPE="ext4" 
+/dev/sdb1: UUID="aabe7e48-2d11-421f-8609-7ea9d75e7f9b" TYPE="swap"
+/dev/sdc1: UUID="9467f4de-4231-401f-bcaa-fee718d49e85" TYPE="ext4"
 /dev/sdc3: UUID="93a54a4a-e0f5-4152-ae59-2245e8d16ee4" TYPE="ext4"
-/dev/sde5: UUID="9467f4de-4231-401f-bcaa-fee718d49e85" TYPE="ext4" 
+/dev/sde5: UUID="9467f4de-4231-401f-bcaa-fee718d49e85" TYPE="ext4"
 /dev/sde6: LABEL="var" UUID="30433f28-1b79-4b4d-9985-fef5b1c886b5" TYPE="ext4"
 ```
 

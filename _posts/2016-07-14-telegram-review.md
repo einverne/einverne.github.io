@@ -4,20 +4,20 @@ title: "Telegram 技巧"
 tagline: ""
 description: ""
 category: 产品体验
-tags: [Telegram, IM, ]
-last_updated: 
+tags: [telegram, im, ]
+last_updated:
 ---
 
 
-感觉是时候写一篇 Telegram 的安利文了。Telegram 简单介绍就是一款 IM， 及时聊天工具。当然其实他远远的超越了一个IM，却依然保持了作为一个IM应有的速度和快捷。
+感觉是时候写一篇 Telegram 的安利文了。Telegram 简单介绍就是一款 IM， 及时聊天工具。当然其实他远远的超越了一个 IM，却依然保持了作为一个 IM 应有的速度和快捷。
 
-对于基本功能，[電腦玩物 Telegram 10技](http://www.playpcesor.com/2015/12/telegram-10.html) 已经将 Telegram 的主要功能及使用技巧说得非常明白了，就不再多说了。其中我最喜欢的几点：
+对于基本功能，[電腦玩物 Telegram 10 技](http://www.playpcesor.com/2015/12/telegram-10.html) 已经将 Telegram 的主要功能及使用技巧说得非常明白了，就不再多说了。其中我最喜欢的几点：
 
 - 跨平台，这也正是我一直坚持 Hangout 的原因之一，我不喜欢整天抱着手机，我在电脑前的时间可比拿手机的时间长，我也不希望我坐下之后需要花很长的时间，打开一个客户端输入密码，然后还要花一段时间同步消息，关键有些客户端之间还不能同步消息记录。而 Telegram 给我的体验就和 Hangout 一致，多个平台，多个设备几乎能够在同一时间受到消息，我也能够在任何一个客户端回复，并且所有客户端的消息都是同步的。
-- Bot ，聊天机器人，很久之前的 Gtalk 也是支持机器人的，对那个自动翻译的机器人还是略有记忆，只是后来就没有后来了。而 Telegram 正是将聊天机器人这个命题重新书写了。开放的Bot系统，让 Telegram 成为了一个全能的平台，他是一个 IM ，他也可以是一个翻译工具，只需要一个翻译bot，他也可以是一个RSS阅读器，只需要一个RSS订阅bot，他也可以是一个Tinder，只需要一个约会bot...... Telegram 可以变成想要的任何工具，更不说官方集成的 @gif， @bold，@sticker [等等 bot](https://core.telegram.org/bots)  。
+- Bot ，聊天机器人，很久之前的 Gtalk 也是支持机器人的，对那个自动翻译的机器人还是略有记忆，只是后来就没有后来了。而 Telegram 正是将聊天机器人这个命题重新书写了。开放的 Bot 系统，让 Telegram 成为了一个全能的平台，他是一个 IM ，他也可以是一个翻译工具，只需要一个翻译 bot，他也可以是一个 RSS 阅读器，只需要一个 RSS 订阅 bot，他也可以是一个 Tinder，只需要一个约会 bot...... Telegram 可以变成想要的任何工具，更不说官方集成的 @gif， @bold，@sticker [等等 bot](https://core.telegram.org/bots)  。
 - 开放，作为一个 IM，应该能够包容万千也能够开放的分享，这就提到了 Telegram 支持的媒体内容，文字，链接，音频，视频，gif，表情贴图，能够想到的几乎所有内容都可以兼容，甚至有人直接 Telegram 来当音乐播放器。并且 Telegram 在图片以及 Gif 分享的时候做了很多的优化处理，我在日常使用中几乎没有感受到任何卡顿，甚至流量的消耗也在我可接受的范围。
 
-以下就是几个非常吸引人的Point：
+以下就是几个非常吸引人的 Point：
 
 ## Sticker
 
@@ -59,11 +59,20 @@ inline bot，可以利用这个 bot 将普通的 emoji 转成其他表情贴图�
 
 然后是一些其他好玩的第三方 bot：
 
-- @GroupButler\_bot 用来管理群组的bot，可以设置 rules , 管理垃圾消息等等
+- @GroupButler\_bot 用来管理群组的 bot，可以设置 rules , 管理垃圾消息等等
 - @storebot 用来发现其他 bot 的 bot
 - @utubebot 下载 YouTube 视频
 - @Instasave\_bot 用来下载 instagram 的 bot
 
+### 如何寻找有趣的 bot
+网站
+
+- https://thereisabotforthat.com/
+- https://storebot.me/
+
+或者通过 bot
+
+- https://telegram.me/storebot
 
 ## SuperGroup
 最为人熟知的就是 Telegram 的聊天群了，在一个没有社交关系基础的 Message App 上，最快吸引大众的就是这个 Group 了，通过群组来建立最初的社交基础。而最初的 Group 功能没有那么强大，管理员也只能是创建群的人，后来 Telegram 升级了一次 supergroup ，于是乎 supergroup 就已经拥有了 Message App 该有的功能，管理员权限，置顶消息，消息管理，搜索等等功能，甚至可以再群中添加 bot 来实现一些自定义的功能。
