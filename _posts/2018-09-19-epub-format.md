@@ -179,4 +179,6 @@ opf 文件定义了读者在顺序阅读时用到的章节和顺序，而 ncx �
 
 ## reference
 
+- <http://idpf.org/epub/201>
 - <https://vernlium.github.io/2015/06/10/epub%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90/>
+- 使用 Python 通过 jinja2 模板生成 mobi 文件<https://www.cnblogs.com/buptzym/p/5249662.html>

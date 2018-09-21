@@ -143,6 +143,15 @@ Kindle 相关工具集
 
     https://github.com/ywzhaiqi/MyKindleTools
 
+Calibre 的 ebook-meta 工具
+
+    https://manual.calibre-ebook.com/generated/en/ebook-meta.html
+
+利用该工具能够快速的获取各种格式电子书的 mata 信息，包括封面信息。[^s]
+
+[^s]: <https://stackoverflow.com/a/35501566/1820217>
+
+
 ## reference
 
 - [Sigil](https://sigil-ebook.com/) a multi-platform EPUB ebook editor
