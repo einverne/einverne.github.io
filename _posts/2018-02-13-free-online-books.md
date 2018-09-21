@@ -47,6 +47,21 @@ last_updated:
 
     http://cn.epubee.com/
 
+## 掌上书苑
+一个类似论坛的分享网站
+
+    https://www.cnepub.com/
+
+## 我要 kindle 电子书
+这也是个人站长维护的电子书分享站点
+
+    http://51kindle.me/
+
+## kindle178
+
+
+    www.kindle178.com
+
 ## 高清杂志
 这是一个杂志的合集，需要付费
 
