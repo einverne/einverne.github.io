@@ -51,6 +51,7 @@ last_updated:
 一个类似论坛的分享网站
 
     https://www.cnepub.com/
+    https://www.soepub.com/
 
 ## 我要 kindle 电子书
 这也是个人站长维护的电子书分享站点
@@ -84,6 +85,11 @@ last_updated:
     https://www.jiumodiary.com/
 
 主要是微博网盘和百度网盘共享书籍，质量层次不齐
+
+## olecn
+少量的电子书，基本都在百度网盘
+
+    http://www.olecn.com/category/book/
 
 ## 其他
 mLook 精校电子书，注册需要邀请码
