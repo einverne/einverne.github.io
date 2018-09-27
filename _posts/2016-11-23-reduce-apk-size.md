@@ -4,33 +4,33 @@ title: "Android 减小 APK 大小"
 tagline: ""
 description: "缩减 Android APK 文件大小"
 category: 学习笔记
-tags: [Android, AndroidDev, TinyPNG,]
-last_updated: 
+tags: [android, androiddev, tinypng,]
+last_updated:
 ---
 
+Android 应用程序打包之后生成的 apk 文件包含了运行 Android 所需要的所有资源，APK 文件大小影响用户下载应用的时间，在早先流量非常珍贵的时候非常重要，如今虽然 wifi 速度大大的提升了，但是 APK 文件的大小也依然很重要。
 
 ## 了解 APK 结构
 
 通常一个 APK 包括以下目录：
 
-- META-INF/  包括 CERT.SF 和 CERT.RSA 证书文件， MANIFEST.MF
-- assets/ 包含 App 的资源文件，可以通过  AssetManager 获取
-- res/ 包括App 图片等等资源文件，不会被编译进 resources.arsc
-- lib/ 包括编译的库文件，该目录包括一系列为不同平台打包的子目录，比如 armeabi, armeabi-v7a, arm64-v8a, x86, x86\_64, 和 mips
+- `META-INF/`  包括 CERT.SF 和 CERT.RSA 证书文件， MANIFEST.MF
+- `assets/` 包含 App 的资源文件，可以通过  AssetManager 获取
+- `res/` 包括 App 图片等等资源文件，不会被编译进 resources.arsc
+- `lib/` 包括编译的库文件，该目录包括一系列为不同平台打包的子目录，比如 armeabi, armeabi-v7a, arm64-v8a, x86, x86\_64, 和 mips
 
-APK 还包括以下文件，AndroidManifest.xml 是强制必须的：
+APK 还包括以下文件，`AndroidManifest.xml` 是强制必须的：
 
-- resources.arsc 包括编译过的资源文件。这个文件包含了 /res/values/ 目录下定义好的所有的 XML 内容。Packaging Tool 提取 XML 内容，并压缩到二进制。该文件包含了不同语言的字符串，样式，还有不包含在 resources.arsc 文件中的资源路径，比如 layout 文件和图片。
-- class.dex 包含编译过后的代码文件，可以被 Dalvik/ART 识别。如果开发者使用 **multidex** 来避免 [the 65536 method limit](http://developer.android.com/tools/building/multidex.html#about)  那么包中可能存在多个 Dex 文件。
-- AndroidManifest.xml 包含 Android 的 manifest 文件。该文件包含了应用的名字，版本，权限申请和引用的库文件。
+- `resources.arsc` 包括编译过的资源文件。这个文件包含了 /res/values/ 目录下定义好的所有的 XML 内容。Packaging Tool 提取 XML 内容，并压缩到二进制。该文件包含了不同语言的字符串，样式，还有不包含在 resources.arsc 文件中的资源路径，比如 layout 文件和图片。
+- `class.dex` 包含编译过后的代码文件，可以被 Dalvik/ART 识别。如果开发者使用 **multidex** 来避免 [the 65536 method limit](http://developer.android.com/tools/building/multidex.html#about)  那么包中可能存在多个 Dex 文件。
+- `AndroidManifest.xml` 包含 Android 的 manifest 文件。该文件包含了应用的名字，版本，权限申请和引用的库文件。
 
 
-
-在谈到具体缩减APK大小步骤之前，可以使用 Android Studio 内置的 APK 分析工具来分析现有 APK 内容文件。入口位置在：Build -> Analyze Apk ，然后选择APK即可，然后会显示：
+在谈到具体缩减 APK 大小步骤之前，可以使用 Android Studio 内置的 APK 分析工具来分析现有 APK 内容文件。入口位置在：Build -> Analyze Apk ，然后选择 APK 即可，然后会显示：
 
 ![apk size](https://lh4.googleusercontent.com/-Rvz8aL-ciRk/WDUKm27OVNI/AAAAAAABGgE/ejEoH5GFKM0OlgPbNFm9566biwgyvdMDwCL0B/w521-h240-no/%25E5%25B1%258F%25E5%25B9%2595%25E6%2588%25AA%25E5%259B%25BE%2B2016-11-18%2B11.55.03.png)
 
-## 减少APK大小
+## 减少 APK 大小
 
 APK 文件的大小影响着应用的加载，内存的使用，消耗多少电力。减小 APK 大小的最简单的方法就是减少资源文件数量和大小。比如，可以移除程序内不再使用的资源图片，或者可以使用可变大小的 [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html) 来代替现有的图片文件。下面是一些常用做法。
 
@@ -51,7 +51,7 @@ APK 文件的大小影响着应用的加载，内存的使用，消耗多少电�
             }
         }
 
-    在开启 shrinkResources 之后效果还是挺明显，经过我的尝试，30M的App，能够缩减1M~3M大小，而只需要增加一行代码，何乐不为。而在平时开发中，如果遇到删减代码的时候，最好将资源文件一同删去，免去在打包时无用文件占用资源。
+    在开启 shrinkResources 之后效果还是挺明显，经过我的尝试，30M 的 App，能够缩减 1M~3M 大小，而只需要增加一行代码，何乐不为。而在平时开发中，如果遇到删减代码的时候，最好将资源文件一同删去，免去在打包时无用文件占用资源。
 
 	具体参照 <https://developer.android.com/studio/build/shrink-code.html>
 
@@ -90,7 +90,7 @@ APK 文件的大小影响着应用的加载，内存的使用，消耗多少电�
     - 对于 WebP 格式图片来说目前还有一些值得注意：1. Web 文件格式只支持 4+ 以上 Android 设备 2. WebP 文件相较于 PNG 图片需要消耗更多的系统额外时间去 decode 图片。并且 Google Play 只支持包含 PNG 格式图标的 APK，如果需要使用 Google Play 来发布应用，则不要使用 WebP 来制作应用图标。
 
 - 在不影响效果的前提下可以尽量压缩图片资源，图片一定不要放到非 drawable 目录下，除非你有足够的理由，不放在 drawable 下的图片没有 png crunch
-- 减少帧动画中图片帧，帧动画会明显的增加包大小，一般在 App 中使用一张 PNG 来表示动画的一帧。如果动画只有 15 FPS，那么在设计导出图片时尽量减少图片的数量，而不是使用30张图片来做15帧的动画，比如在程序中有个动画是用了60帧，后来使用bash，删去一般图片，并调整代码，而效果几乎看不出区别。
+- 减少帧动画中图片帧，帧动画会明显的增加包大小，一般在 App 中使用一张 PNG 来表示动画的一帧。如果动画只有 15 FPS，那么在设计导出图片时尽量减少图片的数量，而不是使用 30 张图片来做 15 帧的动画，比如在程序中有个动画是用了 60 帧，后来使用 bash，删去一般图片，并调整代码，而效果几乎看不出区别。
 
         for((a=1;a<62;a=a+2))
         do
@@ -129,7 +129,7 @@ APK 文件的大小影响着应用的加载，内存的使用，消耗多少电�
 - 不要包含重复 assets，strings， bitmap 等等
 - 使用 [Drawable](https://developer.android.com/reference/android/graphics/drawable/Drawable.html) 对象来重复使用图片资源文件，比如需要一个向左，一个向右的箭头，则可以使用同一张资源图片，而定义 Drawable 来在运行时构建图片
 
-避免资源重复是最显而易见可以减少APK大小的方法，而如果产生了重复代码，则一定要考虑是否代码抽象不够，重复的内容是否能够抽象出单独的方法，然后重构产生重复的地方。
+避免资源重复是最显而易见可以减少 APK 大小的方法，而如果产生了重复代码，则一定要考虑是否代码抽象不够，重复的内容是否能够抽象出单独的方法，然后重构产生重复的地方。
 
 
 ### 广泛地使用 Lint 工具
@@ -157,7 +157,7 @@ Lint 工具分析 resources 比如 /res 下的文件，但是会跳过 assets �
 - 音频文件：尽可能可以使用 AAC，mp3 等压缩格式，如果 midi 格式可以就用 midi 格式的，不要使用 wav 等无损格式
 - 视频文件：尽可能使用 H264 AVC 文件格式
 - JSON、数据库类的配置文件：要想办法节制，可以考虑放置一部分基础配置，其它从网络下载，做好“大而全”和“小而做出一些效果上的折中”两种决定间的权衡与选择
-- 字体：尽可能控制程序中使用的字体、字形数目，确定需要额外引入字体的，如果显示的字符数目有限（比如只有数字或只有英文字母），使用 fontforge 等工具对字体进行裁剪后再放入程序，具体剪裁方法参考 <http://wiki.unity3d.com/index.php?title=Create_a_new_TrueType_font_using_a_subset_of_characters_from_an_existing_TrueType_font>
+- 字体：尽可能控制程序中使用的字体、字形数目，确定需要额外引入字体的，如果显示的字符数目有限（比如只有数字或只有英文字母），使用 fontforge 等工具对字体进行裁剪后再放入程序，具体剪裁方法参考 [这里](http://wiki.unity3d.com/index.php?title=Create_a_new_TrueType_font_using_a_subset_of_characters_from_an_existing_TrueType_font)
 
 > Images: PNG or JPEG. Use PNGs; since it is a lossless format it is very suitable for textures and artwork as there will be no visual artefacts from the compression. If there are space constraints, use JPEGs or a combination of PNGs and JPEGs. A high quality JPEG image may work fine for large photo-realistic images, which the JPEG compression scheme is optimised for.
 
@@ -168,7 +168,7 @@ Lint 工具分析 resources 比如 /res 下的文件，但是会跳过 assets �
 #### 使用 FFmpeg 缩减音频
 AAC-LC is the default for all of the AAC encoders supported by ffmpeg.
 
-可以使用如下 ffmpeg 转码:
+可以使用如下 ffmpeg 转码：
 
     ffmpeg -i input.wav -codec:a aac output.aac
 
@@ -184,7 +184,7 @@ Additional options that might be worth considering is setting the Constant Rate 
 	ffmpeg -i input.mp4 -vcodec libx264 -crf 20 output.mp4
 
 
-摘自[StackOverflow](http://unix.stackexchange.com/a/38380/115007)
+摘自 [StackOverflow](http://unix.stackexchange.com/a/38380/115007)
 
 ### 缩减 Dex 文件大小
 
@@ -192,7 +192,7 @@ Additional options that might be worth considering is setting the Constant Rate 
 
 依赖的库文件，包括 gradle 依赖、引用的 jar 包、aar 包等自己的代码
 
-针对 Google Play Service，在依赖时尽量分开，使用到某一部分时尽量只依赖使用到的部分，而不是把整个库都pull 下来。比如在项目中只需要使用到 GCM，和 Ads，那么在申明依赖时只引用两个即可。各个部分的依赖在[developers.google.com](https://developers.google.com/android/guides/setup) 上可以查到。
+针对 Google Play Service，在依赖时尽量分开，使用到某一部分时尽量只依赖使用到的部分，而不是把整个库都 pull 下来。比如在项目中只需要使用到 GCM，和 Ads，那么在申明依赖时只引用两个即可。各个部分的依赖在 [developers.google.com](https://developers.google.com/android/guides/setup) 上可以查到。
 
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'com.google.android.gms:play-services-ads:8.4.0'

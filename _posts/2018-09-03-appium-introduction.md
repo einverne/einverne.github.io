@@ -32,7 +32,7 @@ Jason Huggins 在 2004 年发起了 Selenium 项目，Jason 和他所在的团�
 - Android 4.2+ [UIAutomator](http://developer.android.com/tools/help/uiautomator/index.html)  2.3+ [Google Instrumentation](http://developer.android.com/reference/android/app/Instrumentation.html)
 
 ## 安装
-Appium Server
+Appium Server，npm 命令的安装可以查看[这里](/post/2017/10/linux-install-nodejs.html)
 
     npm install -g appium
 
@@ -62,7 +62,7 @@ client 可以参考这里，支持 Ruby，Python，Java，JS，OC，PHP，C# 等
     info AppiumDoctor Everything looks good, bye!
     info AppiumDoctor
 
-总结来看：
+总结来看，完成 Appium 安装需要经过如下的步骤：
 
 - JDK，配置 `JAVA_HOME`
 - Android SDK，配置 `ANDROID_HOME`
@@ -74,9 +74,6 @@ client 可以参考这里，支持 Ruby，Python，Java，JS，OC，PHP，C# 等
 
 ### Appium Desired Capabilities
 大致可以认为 k-v 的配置，具体可以参考[官网](http://appium.io/docs/en/writing-running-appium/caps/)
-
-
-
 
 ## SDK 辅助工具
 Android SDK 提供了一些辅助工具，大都在 SDK tools 目录下，不同系统可能命名方式有些差异，但基本都能够识别。
