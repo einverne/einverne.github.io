@@ -85,6 +85,16 @@ last_updated:
     |    0      2986      G   /usr/lib/xorg/Xorg                           101MiB |
     +-----------------------------------------------------------------------------+
 
+## Cinnamon 耗电
+重启电脑 Cinnamon 报错
+
+![cinnamon running without video hardware acceleration](/assets/Linux-Mint-Running-in-software-rendering-mode-error.png)
+
+> Running in software rendering mode
+> Cinnamon is currently running without video hardware acceleration and, as a result, you may observe much higher than normal CPU usage.
+> There could be a problem with your drivers or some other issue. For the best experience, it is recommended that you only use this mode for troubleshooting purposes.
+
+
 
 ## reference
 
