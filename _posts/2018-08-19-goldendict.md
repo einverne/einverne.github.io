@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux 下超好用字典 GoldenDict"
+title: "Linux 下非常好用的字典 GoldenDict"
 tagline: ""
 description: ""
 category: 经验总结

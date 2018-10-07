@@ -2,7 +2,7 @@
 layout: post
 title: "ffmpeg 入门笔记"
 tagline: ""
-description: ""
+description: "使用 ffmpeg 进行转码"
 category: 学习笔记
 tags: [ffmpeg, linux, media, movie, mp4, mp3, format, ffplay, ffprobe]
 last_updated: 2015-12-31
@@ -16,7 +16,7 @@ last_updated: 2015-12-31
 在进入 ffmpeg 入门之前有一些基本概念需要了解，我在查看 ffmpeg 的时候回头查阅了这些资料，觉得先行了解比较好，这些概念都是视频或者音频中的基本概念。
 
 ### 比特率 {#bit-rate}
-比特率，英文为 bit rate，描述每秒钟输出多少 KB 的参数，单位是 Kbps，也就是 kbit/s，8Kbit/s = 1KB/s。也就是说 800Kbps 意思就是每秒视频就要占用 100KB 磁盘空间。对于音频文件也存在比特率，同理。压缩同一个视频，视频编码率越大，文件体积越大。视频编码率越大，画质越好，马赛克越少。
+比特率，英文为 bit rate，描述每秒钟输出多少 KB 的参数，单位是 Kbps，也就是 kbit/s，8Kbit/s = 1KB/s。也就是说 800Kbps 意思就是每秒视频就要占用 100KB 磁盘空间。对于音频文件也存在比特率，同理。压缩同一个视频，视频比特率越大，文件体积越大。视频比特率越大，画质越好，马赛克越少。
 
 MP3 一般使用的比特率为 8~320kbps。
 
@@ -24,7 +24,7 @@ MP3 一般使用的比特率为 8~320kbps。
 
 bitrate 可以理解为 file size / duration
 
-比如一个文件 20.8 M 市场为 1min，那么
+比如一个视频文件 20.8 M 时长为 1min，那么
 
     bitrate = 20.8M bit/60s = 20.8 * 1024 * 1024 * 8 bit/60s = 2831 Kbps
 
@@ -32,23 +32,22 @@ bitrate 可以理解为 file size / duration
 
     2831 Kbps - 128 Kbps = 2703 Kbps
 
-H.264 建议
+H.264 标准建议
 
 视频大小    |	分辨率	| 建议码率
 ------------|-----------|------------
-480P  | 720X480	    |1800Kbps
-720P  | 1280X720	    |3500Kbps
-1080P |	1920X1080	|8500Kbps
-
+480P  | 720X480	    | 1800Kbps
+720P  | 1280X720	| 3500Kbps
+1080P |	1920X1080	| 8500Kbps
 
 #### 可变码率
-可变码率叫做 Variable Bitrate (VBR)，也叫作动态比特率编码，VBR 指的是编码器的输出码率可以根据编码器输入源信号的复杂度自适应调整，目的是为了达到输出质量保持不变。VBR 适用于存储，不太适用流式传输，可以更有效的地利用有限空间。
+可变码率叫做 Variable Bitrate (VBR)，也叫作**动态比特率编码**，VBR 指的是编码器的输出码率可以根据编码器输入源信号的复杂度自适应调整，目的是为了达到输出质量保持不变的同时节省存储空间。VBR 适用于存储，不太适用流式传输，可以更有效的地利用有限空间。
 
 #### 固定码率
 固定码率叫做 Constant Bitrate (CBR)，CBR 指的是编码器输出码率固定，CBR 不适合存储，CBR 对于复杂内容可能没有足够码率进行编码，从而导致质量下降，同时会在简单内容部分浪费一些码率。
 
 ### 帧数 {#fps}
-每秒钟播放的图片数，单位 fps（英文：Frames Per Second），每秒的帧数或者帧率表示视频文件或者图形处理器场景时每秒钟能够更新的次数。
+帧数，又被叫做帧率，指的是每秒钟播放的图片数，单位 fps（英文：Frames Per Second），每秒的帧数或者帧率表示视频文件或者图形处理器场景时每秒钟能够更新的次数。
 
 高的帧率可以得到更流畅、更逼真的画面。一般来说 30fps 就是可以接受的，但是将性能提升至 60fps 则可以明显提升交互感和逼真感，但是一般来说超过 75fps 一般就不容易察觉到有明显的流畅度提升了。如果帧率超过屏幕刷新率只会浪费图形处理的能力，因为显示器不能以这么快的速度更新，这样超过刷新率的帧率就浪费掉了。
 
@@ -82,7 +81,7 @@ Debian/Ubuntu/Linux Mint 下安装 ffmpeg 很简单：
 
     ffmpeg -i input.avi
 
-### 批量截图
+### 将视频拆分图片 批量截图
 将视频拆分多张图片，每一帧图片，保存到 frames 文件夹下，命名 frame001.png 这种。可以加上 -r 参数以用来限制每秒的帧数，`-r 10` 就表示每秒 10 帧。
 
     ffmpeg -i input.mp4 frames/frame%03d.png
@@ -566,3 +565,4 @@ ffmpeg 使用语法：
 - <https://mrhanlon.com/posts/convert-an-mp4-to-gif-with-ffmpeg/>
 - <http://superuser.com/questions/436056/how-can-i-get-ffmpeg-to-convert-a-mov-to-a-gif>
 - <http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html>
+- <https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55>
