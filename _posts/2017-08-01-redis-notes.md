@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Redis 笔记"
+title: "Redis 读书笔记"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,13 +8,15 @@ tags: [redis, database, database, key-value, db, ]
 last_updated:
 ---
 
+这篇文章主要介绍 Redis 的持久化机制，主从复制等等
+
 ## 持久化机制
 
-Redis 支持两种持久化方式，RDB 方式 和 AOF 方式
+通常情况下 Redis 会将数据存储于内存中，但 Redis 也支持持久化。Redis 支持两种持久化方式，RDB 方式 和 AOF 方式。RDB 通过快照方式，将内存数据写入磁盘。而 AOF 方式则是类似 MySQL 日志方式，记录每次更新的日志。前者性能高，但是可能引起一定的数据丢失，后者相反。
 
 ### RDB 方式
 
-RDB 通过快照 snapshotting 完成，也是 Redis 默认的持久化方式，当符合一定条件时 Redis 会自动将内存中的所有数据以快照方式保存一份副本到硬盘上 (dump.rdb)，这个过程称为”快照“。
+RDB 通过快照 snapshotting 完成，也是 Redis 默认的持久化方式，当符合一定条件时 Redis 会自动将内存中的所有数据以快照方式保存一份副本到硬盘上 (dump.rdb)，这个过程称为"快照"。
 
 Redis 根据以下情况执行快照：
 
@@ -51,6 +53,7 @@ Redis 默认将快照文件存储在工作目录中 dump.rdb 文件中，可以�
 ### AOF 方式
 
 快照的方式是一定间隔备份一次，它的缺点就是如果 Redis 意外挂掉的话，就会丢失最后一次快照之后的所有修改。如果应用要求不能丢失任何修改可以采用 AOF 持久化方式。
+
 AOF 将 Redis 执行的每一条**写命令**追加到硬盘文件中（默认为 appendonly.aof)。默认没有开启 AOF (append only file) ，可以通过 appendonly 参数启用：
 
     appendonly yes
@@ -115,6 +118,27 @@ Redis 不同命令拥有不同的属性，是否只读命令，是否是管理�
 - `REDIS_CMD_RANDOM` 脚本执行了该属性命令之后，不能执行拥有 `REDIS_CMD_WRITE` 属性命令
 - `REDIS_CMD_SORT_FOR_SCRIPT` 产生随机结果
 - `REDIS_CMD_LOADING` 当 Redis 启动时，只会执行拥有该属性的命令
+
+## Redis 事务
+Redis 由单线程处理所有 client 请求，在接收到 client 发送的命令后会立即处理并返回结果，但是当 client 发出 `multi` 命令后，这个连接会进入事务上下文，连接后续命令并不会立即执行，而是先放到队列中，当收到 `exec` 命令后，redis 顺序执行队列中所有命令，并将结果一起返回。
+
+    get keydemo
+    multi
+    set keydemo 10
+    set keydemo 20
+    exec
+    get keydemo
+
+在 multi 开始之后可以使用 `discard` 来取消事务。
+
+## Redis 的乐观锁
+乐观锁，指的是每次拿数据时认为别人不会修改，不上锁，而在提交更新市判断期间是否有别人更新该数据。
+
+乐观锁使用数据库版本记录实现，需要满足提交版本必须大于当前记录版本才能执行更新的乐观锁策略。
+
+Redis 从 2.1 版本开始支持乐观锁，可以使用 watch 显式对 key 加锁。watch 命令会监视给定的 key，在 exec 结束时如果监视 key 从调用 watch 后发生过变化，则事务会失败。
+
+
 
 ## 其他
 

@@ -4,11 +4,11 @@ title: "Redis 常用命令"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Redis, Database, 学习笔记]
-last_updated: 
+tags: [redis, database, 学习笔记 ]
+last_updated:
 ---
 
-Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类型不用多讲，后两种 set 是单纯的集合， Sorted Set 是有序集合，在集合内可以根据 score 进行排序。 Redis 的命令不区分大小写，但通常情况下使用大写以示区分。
+Redis 是典型的 KV 数据库，通常所说的 Redis 数据结构指的是 Value 的数据结构，常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类型不用多讲，几乎每种语言都存在，后两种 set 是单纯的集合， Sorted Set 是有序集合，在集合内可以根据 score 进行排序。Redis 的命令不区分大小写，但通常情况下使用大写以示区分。
 
 几个常用网址：
 
@@ -17,9 +17,9 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类
 - 中文命令 <http://redisdoc.com/>
 
 
-对Redis键的命名格式并没有强制性的要求，不过一般约定为，”对象类型：对象ID：对象属性“，比如使用 user:1:friends 表示 id 为 1 的用户的好友列表。为了方便后期维护，键的命名一定要有意义。
+对 Redis 键的命名格式并没有强制性的要求，不过一般约定为，”对象类型：对象 ID：对象属性“，比如使用 `user:1:friends` 表示 id 为 1 的用户的好友列表。为了方便后期维护，键的命名一定要有意义。
 
-`redis-cli` 是 Redis 自带的命令行工具(类似于MySQL的mysql命令), 直接在命令行终端与 redis server 执行所有命令和返回响应。下面所有命令都可以在 cli 交互式命令行中执行。
+`redis-cli` 是 Redis 自带的命令行工具（类似于 MySQL 的 mysql 命令）, 直接在命令行终端与 redis server 执行所有命令和返回响应。下面所有命令都可以在 cli 交互式命令行中执行。
 
 ## 交互式命令参数
 
@@ -29,7 +29,7 @@ Redis 常用的数据结构有 String, Hash, List, Set, Sorted Set. 前三种类
 
 `--stat` 参数打印状态
 
-如果本地没有安装 Redis，可以通过在线模拟尝试 [Try Redis](https://try.redis.io/)
+如果本地没有安装 Redis，可以通过在线模拟尝试 [Try Redis](https://try.redis.io/)。
 
 ## 基础命令
 
@@ -47,6 +47,24 @@ pattern 支持 glob 风格的通配符格式。
 
 	TYPE key
 
+默认使用 cli 命令登录之后是 redis 的 0 数据库，可以使用 select 命令来切换数据库
+
+    SELECT 1
+
+将 key 从一个数据库移动到另外一个数据库可以使用 move 命令
+
+    MOVE key <db index>
+
+从所有 key 中随机选择一个 key
+
+    RANDOMKEY
+
+重命名 key
+
+    RENAME key new_key
+
+
+
 ## 字符串类型操作命令
 
 字符串类型，最大容量 512MB，字符串类型可以包含任何数据，图片的二进制，或者序列化的对象。
@@ -55,7 +73,7 @@ pattern 支持 glob 风格的通配符格式。
 -----------|----------
 GET  	| 获取存储在键中的值
 SET   	| 给 KEY 设置值
-DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
+DEL 	| 删除存储在 KEY 中的值，该命令可以用于所有类型
 
 ### 赋值与取值
 
@@ -64,9 +82,9 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
     SET key value
 	GET key
 
-使用 SETNX (set not exists)可以实现如果 key 存在时不做任何操作
+使用 SETNX (set not exists) 可以实现如果 key 存在时不做任何操作
 
-	SETNX key value  # 如果 key 存在，则返回 0，如果设置成功返回1
+	SETNX key value  # 如果 key 存在，则返回 0，如果设置成功返回 1
 
 可以使用 SETEX 来针对 key 设置过期时间，以秒为单位
 
@@ -74,7 +92,7 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 
 
 ### 递增递减数字
-让当前键值递增，操作键不存在时默认为0，当键不是整数时，报错. 对不存在的 key ，则设置 key 为 1
+让当前键值递增，操作键不存在时默认为 0，当键不是整数时，报错。对不存在的 key ，则设置 key 为 1
 
 	INCR key
 
@@ -82,11 +100,11 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 
 	INCRBY key increment
 
-递减数值,对于不存在的 key，设置为 -1
+递减数值，对于不存在的 key，设置为 -1
 
 	DECR key
 
-递减一个量, DECRBY 为了增加可读性，完全可以使用 INCRBY 一个负值来实现同样的效果
+递减一个量，DECRBY 为了增加可读性，完全可以使用 INCRBY 一个负值来实现同样的效果
 
 	DECRBY key decrement
 
@@ -96,7 +114,7 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 
 
 ### 向尾部追加值
-如果key 已经存在，并且 value 是一个字符串，那么 APPEND 将 value 追加到末尾
+如果 key 已经存在，并且 value 是一个字符串，那么 APPEND 将 value 追加到末尾
 
 	APPEND key value
 
@@ -106,24 +124,24 @@ DEL 	| 删除存储在KEY中的值，该命令可以用于所有类型
 	STRLEN key
 
 
-### 多key操作
+### 多 key 操作
 获取多个值
 
 	MGET key [key ...]
 
-设置多个 key value, 一次性设置多个值，返回0 表示没有值被覆盖
+设置多个 key value, 一次性设置多个值，返回 0 表示没有值被覆盖
 
 	MSET key value [key value ...]
 
 ### 其他复杂命令
 
 	SETRANGE key offset value  # 用 value 值覆盖给定 key 从 offset 开始所存储的字符串
-	MSETNX key value key value # 一次性设置多个值， SETNX 的multi 版本
-	GETSET key 				# 设置 key 的值,并返回 key 的旧值
+	MSETNX key value key value # 一次性设置多个值， SETNX 的 multi 版本
+	GETSET key 				# 设置 key 的值，并返回 key 的旧值
 	GETRANGE key start end  # 截取 start 和 end 偏移量的字符串
 
 ## 散列类型操作命令
-通过 HSET 建立的键是散列类型，用过 SET 命令建立的是字符串类型. 散列或者哈希非常适合存储对象，添加和删除操作复杂度平均O（1）.
+通过 HSET 建立的键是散列类型，用过 SET 命令建立的是字符串类型。散列或者哈希非常适合存储对象，添加和删除操作复杂度平均 O（1）.
 
 命令 |  行为
 ---------|--------
@@ -175,10 +193,11 @@ HDEL 	| 如果给定键存在，则移除该键
 
 ## 列表类型
 
-有序的字符串列表，向列表两端添加元素，或者获取列表的某一个片段。列表类型内部使用双向链表，向列表两端添加元素时间复杂度O(1)
+有序的字符串列表，向列表两端添加元素，或者获取列表的某一个片段。列表类型内部使用双向链表，向列表两端添加元素时间复杂度 O(1)
 
 命令 | 行为
 -------|--------
+LPUSH 	| 给定值加入列表左端
 RPUSH 	| 给定值加入列表右端
 LRANGE 	| 获取列表给定范围的所有值
 LINDEX 	| 获取列表在给定位置上的单个元素
@@ -258,11 +277,11 @@ set 是集合，和数学中的集合概念相似。 Redis 的 set 是 String �
 
 	SDIFF key [key ...]
 
-集合交集运算 A交B
+集合交集运算 A 交 B
 
 	SINTER key [key ..]
 
-集合并集 A并B
+集合并集 A 并 B
 
 	SUNION key [key...]
 
@@ -317,7 +336,7 @@ set 是集合，和数学中的集合概念相似。 Redis 的 set 是 String �
 
 	ZREM key member [member ...]
 
-按照排名范围删除元素，元素分数从小到大顺序（索引0表示最小值），删除指定排名范围内的所有元素，并返回删除的数量
+按照排名范围删除元素，元素分数从小到大顺序（索引 0 表示最小值），删除指定排名范围内的所有元素，并返回删除的数量
 
 	ZREMRANGEBYRANK key start stop
 
@@ -325,7 +344,7 @@ set 是集合，和数学中的集合概念相似。 Redis 的 set 是 String �
 
 	ZREMRANGEBYSCORE key min max
 
-获得元素的排名，从小到大顺序，分数最小排名为0。
+获得元素的排名，从小到大顺序，分数最小排名为 0。
 
 	ZRANK key member
 
@@ -362,24 +381,23 @@ Redis 中事务 transaction 是一组命令的集合。事务同命令一样都�
 
 	EXPIRE key seconds
 
-返回1表示成功，0为键不存在或者设置失效。 EXPIRE 命令参数必须为整数，最小单位为1秒，如果想要更加精确的控制过期时间可以使用 PEXPIRE 命令，单位为毫秒，也可以使用 PTTL 来以毫秒为单位返回剩余时间。
+返回 1 表示成功，0 为键不存在或者设置失效。 EXPIRE 命令参数必须为整数，最小单位为 1 秒，如果想要更加精确的控制过期时间可以使用 PEXPIRE 命令，单位为毫秒，也可以使用 PTTL 来以毫秒为单位返回剩余时间。
 
 
 	TTL key
 
-TTL 命令查看键多久时间被删除，当键不存在时返回 -2，当键不过期时返回-1
-
+TTL 命令查看键多久时间被删除，当键不存在时返回 -2，当键不过期时返回 -1
 
 	PERSIST key
 
-取消键的过期时间，成功清除返回1，否则返回0
+取消键的过期时间，成功清除返回 1，否则返回 0
 
 SORT 命令对列表类型，集合类型和有序集合类型键进行排序，可以完成关系型数据库中连接查询类似的任务。
 
 SORT 命令时
 
 - 尽可能减少待排序键中的元素数量
-- 使用LIMIT参数只获取需要的数据
+- 使用 LIMIT 参数只获取需要的数据
 - 排序的数据比较大，尽可能使用 STORE 参数将结果缓存
 
 ## Redis Client

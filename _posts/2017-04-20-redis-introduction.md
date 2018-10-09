@@ -4,29 +4,29 @@ title: "Redis 介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Redis, Database, NoSQL, 学习笔记]
-last_updated: 
+tags: [redis, database, nosql, 学习笔记 ]
+last_updated:
 ---
 
-Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一[^1]。
+Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一 [^1]。
 
 Redis 是 REmote DIctionary Server 远程字典服务 的缩写，他以字典结构存储数据，并允许其他应用通过 TCP 协议来读写字典中的内容。
 
 [^1]: <https://db-engines.com/en/ranking/key-value+store>
 
-Redis支持很多的特性:
+Redis 支持很多的特性：
 
 - 所有数据都必须放在内存中
-- 支持数据持久化:AOF和RDB两种类型
+- 支持数据持久化：AOF 和 RDB 两种类型
 - 支持异步数据复制
 
-Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以单进程方式处理请求，数据持久化和网络Socket IO等工作是异步进程
+Redis Cluster 常用 5 种数据结构 (String, Lists, Sets, Sorted Set, Hash) 以单进程方式处理请求，数据持久化和网络 Socket IO 等工作是异步进程
 
 
 ## 安装 {#install}
 
 ### 源中安装
-在Debian/Ubuntu/Linux Mint 下直接安装即可，但是 redis 对内核有要求，如果安装失败的时候， `-uname -a` 看一下自己的内核，如果版本太低就升级一下。
+在 Debian/Ubuntu/Linux Mint 下直接安装即可，但是 redis 对内核有要求，如果安装失败的时候， `-uname -a` 看一下自己的内核，如果版本太低就升级一下。
 
 	sudo apt-get install redis-server
 
@@ -170,7 +170,7 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
        Active: active (running) since Sat 2017-04-22 18:59:56 CST; 2s ago
      Main PID: 28750 (redis-server)
        CGroup: /system.slice/redis.service
-               └─28750 /usr/local/bin/redis-server 127.0.0.1:6379       
+               └─28750 /usr/local/bin/redis-server 127.0.0.1:6379
 
     Apr 22 18:59:56 ev redis-server[28750]:   `-._    `-._`-.__.-'_.-'    _.-'
     Apr 22 18:59:56 ev redis-server[28750]:       `-._    `-.__.-'    _.-'
@@ -179,7 +179,7 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
     Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower valu
     Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # Server started, Redis version 3.2.8
     Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.ov
-    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage 
+    Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage
     Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 * DB loaded from disk: 0.000 seconds
     Apr 22 18:59:56 ev redis-server[28750]: 28750:M 22 Apr 18:59:56.445 * The server is now ready to accept connections on port 6379
 
@@ -214,12 +214,12 @@ Redis Cluster 常用5种数据结构(String, Lists, Sets, Sorted Set, Hash) 以�
     sudo systemctl enable redis
 
 
-在启动了 redis 之后就可以再熟悉一下他的[命令](/post/2017/04/redis-command.html)了。
+在启动了 redis 之后就可以再熟悉一下他的[命令](/post/2017/04/redis-command.html) 了。
 
 ## 多数据库支持
 Redis 实例提供了多个用来存储数据库的字典，客户端可以用来指定将数据存储在哪个数据库中，类似关系型数据库可以新建很多个数据库，可以将 Redis 的每一个字典都理解成为一个数据库。
 
-每个数据库对外都是以一个从0开始的递增数字命名， Redis 默认支持 16 个数据库。 客户端与 Redis 建立连接之后会自动选择 0 号数据库，不过随时可以使用 SELECT 命令来更换数据库，比如选择 1 号数据库 `SELECT 1`.
+每个数据库对外都是以一个从 0 开始的递增数字命名， Redis 默认支持 16 个数据库。 客户端与 Redis 建立连接之后会自动选择 0 号数据库，不过随时可以使用 SELECT 命令来更换数据库，比如选择 1 号数据库 `SELECT 1`.
 
 注意：Redis 不支持自定义数据库名，每个数据库都以编号命名；Redis 也不支持为每一个数据库设置不同的访问密码；多个数据库之间并不是完全隔离， `FLUSHALL` 命令可以清空 Redis 实例中所有数据库数据。
 
