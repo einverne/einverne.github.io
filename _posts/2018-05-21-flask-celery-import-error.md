@@ -67,6 +67,29 @@ last_updated:
 
 然后就可以启动 Celery `celery worker -A celery_worker.celery -l INFO`
 
+## 在 Flask 外部使用 Flask-SQLAlchemy
+这里便引出了另外一个问题，如何在 Flask 外部使用 SQLAlchemy 中定义好的 model，当我们定义好和数据库相对应的 Object 之后，难免有些时候需要在 Flask 外部使用，比如清洗一些数据，或者单独跑一些数据时，这时没有 Flask Context 环境，那么这个时候需要借助 `app_context()` 函数：
+
+    from my_package import create_app
+
+    app = create_app(my_envrionment)
+
+    with app.app_context():
+        # your code here
+
+在 Context 上下文环境中就能够使用定义好的 model 了。另外一种方法是使用 `@with_appcontext` 装饰器：
+
+    from flask.cli import with_appcontext
+
+    @click.command(name='db-init-data')
+    @with_appcontext
+    def db_init_data():
+        """Init db with some data"""
+        admin = User(fname='John', lname='Smith', email='jsmith@google.com')
+        db.session.add(admin)
+        db.session.commit()
+
+来自 [stackoverflow](https://stackoverflow.com/a/50572705/1820217)
 
 ## reference
 

@@ -130,6 +130,10 @@ Flask 是一个轻量级的基于 python 的 web 框架。
 - 第一种类似文件系统中访问文件夹，访问一个结尾不带斜线的 URL 会被 Flask 重定向到带斜线的规范 URL 去
 - 第二种类似 Unix-like 系统中的路径名，访问结尾带斜线的 URL 会产生一个 404 “Not Found” 错误。
 
+## RESTful
+
+Flask 下有 Flask-Restless 结合 SQLAlchemy 轻松实现 RESTful 。
+
 ## reference
 
 - <https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world>
