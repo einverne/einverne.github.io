@@ -8,6 +8,29 @@ tags: [python, class, inheritance, ]
 last_updated:
 ---
 
+## 打开文件的模式
+python 文件处理时会遇到 `open("filename", "mode")` 这个函数后面的参数模式：
+
+- `r` 只读模式打开文件，文件指针在文件开头
+- `rb` 以二进制读，文件指针在文件开头
+- `r+` 读写模式 (cannot truncate a file)，文件指针在文件开头
+- `rb+` 以二进制文件读或者写，文件指针在文件开头
+- `w` 以写模式打开文件，只写入，任何同名文件会被覆盖，如果文件不存在会创建新文件写入
+- `w+` 读写模式 (can truncate a file)
+- `wb` 以二进制模式写，同名文件覆盖，不存在创建新文件
+- `wb+` 以二进制模式读写，同名文件覆盖，不存在创建
+- `a` 附加模式，在文件末增加，文件指针在文件末尾，如果文件不存在会创建新的文件写
+- `ab` 以二进制形式附加，文件指针在末尾
+- `a+` 附加，和读 打开文件，指针在文件末尾
+- `ab+` 以二进制打开文件读或者附加，如果文件存在，文件指针指向文件末尾
+- `x` python 3 中新模式，如果文件存在会创建失败
+
+所以可以总结一些规律
+
+- b 模式是以二进制形式打开
+- +  如果放在 `r` 后，是读写，放在 `w` 后也是 读写，所以有 + 模式表示读和写
+
+
 ## String Bytes and Unicode in Python
 例子
 
@@ -151,7 +174,7 @@ Python 2.4 中，引入了**装饰器**(decorators) 的语法，能够对任何�
     date2 = Date.from_string('11-09-2012')
     is_date = Date.is_date_valid('11-09-2012')
 
-`classmethod` 必须有一个指向 class object 的 reference 作为第一参数，而 staticmethod 则不需要。
+`classmethod` 必须有一个指向 class object 的 reference 作为第一参数，而 staticmethod 则不需要。classmethod 通常被用来作为构造函数重载。
 
 ### Class Method
 C++ 有重载的功能，但是 Python 缺乏重载的机制，所以就有了 `classmethod`，可以想象成另外一个构造函数
@@ -365,4 +388,5 @@ Python 以前的格式化输出，总或多或少有些毛病
 ## reference
 
 - Python 基础教程
+- <https://stackoverflow.com/a/23566951/1820217>
 - <https://pythonguidecn.readthedocs.io/zh/latest/>
