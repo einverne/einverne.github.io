@@ -4,13 +4,13 @@ title: "Podcast 托管"
 tagline: ""
 description: "Podcast 托管，及申请攻略"
 category: 经验总结
-tags: [Podcast, Google, iTunes, ]
-last_updated: 
+tags: [podcast, google, itunes, ]
+last_updated:
 ---
 
-Podcast 近两年又突然火起来，一度认为 Podcast 是最近才流行起来的媒体，后来才发现这种媒介[早在上世纪80年代就诞生](https://en.wikipedia.org/wiki/History_of_podcasting) 。近两年被再一次提起可能iOS 系统内置播客系统是个契机，一时间让 Podcast 进入大众的视听，而国内近些年也陆陆续续出现了很多播客平台，喜马拉雅，荔枝等等， 播客这种形式在播客，视频播客新奇之后似乎很难找到自己的定位，但是在日常生活中还是有很多情况适用播客，在开车等双手双眼需要时刻准备着的时候，播客系统可以可以代替收音机，而在长途跋涉需要闭目养神时，播客也可以成为音乐的代替。
+Podcast 近两年又突然火起来，一度认为 Podcast 是最近才流行起来的媒体，后来才发现这种媒介[早在上世纪 80 年代就诞生](https://en.wikipedia.org/wiki/History_of_podcasting) 。近两年被再一次提起可能 iOS 系统内置播客系统是个契机，一时间让 Podcast 进入大众的视听，而国内近些年也陆陆续续出现了很多播客平台，喜马拉雅，荔枝等等， 播客这种形式在播客，视频播客新奇之后似乎很难找到自己的定位，但是在日常生活中还是有很多情况适用播客，在开车等双手双眼需要时刻准备着的时候，播客系统可以可以代替收音机，而在长途跋涉需要闭目养神时，播客也可以成为音乐的代替。
 
-但是经过这么多年的演进， Podcast 还是依赖于 RSS 2.0 标准，不论是 iTunes 还是 Play Music ，虽然 Google 已经用关闭 Google Reader 来表明对 RSS 的态度，却还是依然无法将 Podcast 从 RSS 剥离。其实这也很矛盾，就像之前看到的一则评论，Google 托管了最大的视频播客YouTube，却连小小的音频文件都懒得托管。所以无奈才有了此篇文章。
+但是经过这么多年的演进， Podcast 还是依赖于 RSS 2.0 标准，不论是 iTunes 还是 Play Music ，虽然 Google 已经用关闭 Google Reader 来表明对 RSS 的态度，却还是依然无法将 Podcast 从 RSS 剥离。其实这也很矛盾，就像之前看到的一则评论，Google 托管了最大的视频播客 YouTube，却连小小的音频文件都懒得托管。所以无奈才有了此篇文章。
 
 ## Podcast Hosting
 
@@ -20,13 +20,13 @@ Podcast 近两年又突然火起来，一度认为 Podcast 是最近才流行起
 - Google Drive，如何导出直链自行 Google
 - SoundCloud，有高级版
 - Internet Archive
-- 最后 Cloudup 我使用的方案，支持1000个文件托管，具体可参看之前总结的一篇[文章](/post/2015/04/cloudup.html)
+- 最后 Cloudup 我使用的方案，支持 1000 个文件托管，具体可参看之前总结的一篇[文章](/post/2015/04/cloudup.html)
 
 其实苹果官网也给了一个 Podcast Hosting 的[列表](https://itunespartner.apple.com/en/podcasts/partnersearch) 可以查看。
 
 ## Generate RSS feed
 
-iTunes 和 Google Play Music 都需要不同格式的 RSS，需要特别考虑。另外音频最好带封面 1400*1400 px 到 2048*2048 px 大小，这个是 iTunes Store 需要的。 
+iTunes 和 Google Play Music 都需要不同格式的 RSS，需要特别考虑。另外音频最好带封面 1400*1400 px 到 2048*2048 px 大小，这个是 iTunes Store 需要的。
 
 
 
@@ -161,7 +161,7 @@ iTunes 中需要的 Feed 文件格式：
 
 最后可以从这里访问到网站 <https://einverne.github.io/podcast> ，网站源代码在 <https://github.com/einverne/podcast> 。
 
-Demo 的Play Music 地址在 [这里](https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Idd56uz65i4rnl4uen2urtpjzvq?t%3D%25E9%259D%2599%25E5%2590%25AC)
+Demo 的 Play Music 地址在 [这里](https://goo.gl/app/playmusic?ibi=com.google.PlayMusic&isi=691797987&ius=googleplaymusic&link=https://play.google.com/music/m/Idd56uz65i4rnl4uen2urtpjzvq?t%3D%25E9%259D%2599%25E5%2590%25AC)
 
 
 
