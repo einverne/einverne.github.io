@@ -55,4 +55,30 @@ Big endian vs Little endian 大端和小端，对于整型、长整型等数据�
 
 一般来说，x86 系列 CPU 都是 little-endian 的字节序，PowerPC 通常是 big-endian，网络字节顺序也是 big-endian 还有的 CPU 能通过跳线来设置 CPU 工作于 Little endian 还是 Big endian 模式。
 
+## 扩展
+Linux 有很多命令可以用来查看 cpu 的信息，如果不使用 `lscpu` 那么可以直接查看 `less /proc/cpuinfo` 文件。
 
+或者使用 `sudo lshw -class processor`
+
+或者
+
+    sudo dmidecode -t 4 | less
+
+或者
+
+    sudo apt install hardinfo
+    hardinfo | less
+
+或者
+
+    sudo apt install cpuid
+    cpuid
+
+或者
+
+    sudo apt install inxi
+    inxi -C
+
+## reference
+
+- <https://www.binarytides.com/linux-cpu-information/>

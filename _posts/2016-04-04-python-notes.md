@@ -8,6 +8,18 @@ tags: [python, class, inheritance, ]
 last_updated:
 ---
 
+## 星号解压列表元组
+简单的解压列表和元组就省略，如果在解压时想要忽略一个元素，之前我们知道可以使用 `_` 来忽略
+
+    first, _ = ("Ein", "Verne")
+
+这是第二个元素不关心，也就不取了，但是如果要忽略一批元素呢
+
+    >>> record = ('ACME', 50, 3.14, (06,04,1989))
+    >>> name, *_, (*_, year) = record
+
+这时就可以批量忽略中间的 50, 3.14 还有括号中的月份日期了。
+
 ## 打开文件的模式
 python 文件处理时会遇到 `open("filename", "mode")` 这个函数后面的参数模式：
 
@@ -388,5 +400,6 @@ Python 以前的格式化输出，总或多或少有些毛病
 ## reference
 
 - Python 基础教程
+- Python Cookbook 第三版
 - <https://stackoverflow.com/a/23566951/1820217>
 - <https://pythonguidecn.readthedocs.io/zh/latest/>

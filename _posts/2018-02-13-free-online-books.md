@@ -4,7 +4,7 @@ title: "免费的电子书站点收集"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [books, free, website, kindle ]
+tags: [books, free, website, kindle, pdf, mobi, epub, ]
 last_updated:
 ---
 
@@ -99,6 +99,11 @@ mLook 精校电子书，注册需要邀请码
 周读，资源都是放在百度盘上的
 
     http://ireadweek.com/
+
+## PDFDRIVE
+这是一个面向英文阅读者的 PDF 分享网站，托管了很多高清的 PDF 资源。
+
+    https://www.pdfdrive.com/
 
 ## 计算机相关
 
