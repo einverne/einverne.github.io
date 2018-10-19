@@ -105,6 +105,21 @@ mLook 精校电子书，注册需要邀请码
 
     https://www.pdfdrive.com/
 
+## Library Genesis
+Library Genesis 是科学论文和书籍搜索引擎
+
+    http://gen.lib.rus.ec
+
+## LibGen
+LibGen
+
+    http://libgen.io
+
+## SaltTiger
+个人维护的，基本和计算机相关，大部分都是英文图书
+
+    https://salttiger.com/
+
 ## 计算机相关
 
 - https://github.com/justjavac/free-programming-books-zh_CN
