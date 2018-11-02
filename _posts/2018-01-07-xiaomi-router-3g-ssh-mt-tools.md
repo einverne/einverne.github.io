@@ -22,6 +22,8 @@ last_updated:
 > 按住reset按钮之后重新接入电源，指示灯变为黄色闪烁状态即可松开reset键；
 > 等待3-5秒后安装完成之后，小米路由器会自动重启，之后您就可以尽情折腾啦 ：）
 
+如果Chrome浏览器出现错误提示："This site can’t be reached. d.miwifi.com refused to connect. ERR_CONNECTION_REFUSED"，需要手动将`http`替换为`https`。
+
 ## 刷入 MT 工具箱
 MT工具箱是目前第三方插件里面最为方便易用的插件集合
 
@@ -127,3 +129,4 @@ U盘一般是/extdisks/开头，后面的可能不一样，我的是：/extdisks
 
 - <http://www.miui.com/thread-7520321-1-2.html>
 - <https://blog.digua.co/post/105/mi-r3g-chinatelecom-padavan>
+- <http://tw.miui.com/thread-31394-1-1.html>
