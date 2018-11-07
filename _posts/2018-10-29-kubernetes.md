@@ -82,8 +82,8 @@ The Adapter pattern 可以理解成将输出标准化。考虑一种模式，一
 ### 使用 Minikube 快速搭建单节点集群
 具体的教程参考[官网](https://github.com/kubernetes/minikube)
 
-### 使用 microk8s
-参考[这里](/post/2018/10/microk8s.html)
+### 使用 microk8s 安装
+microk8s 是另外一个用以提供 Kubernetes 快速安装的工具，参考[这里](/post/2018/10/microk8s.html)
 
 ## 使用
 

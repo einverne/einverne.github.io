@@ -4,8 +4,8 @@ title: "每天学习一个命令：df 查看磁盘剩余空间"
 tagline: ""
 description: ""
 category: Linux
-tags: [linux, df, disk, 磁盘空间,]
-last_updated: 
+tags: [linux, df, disk, 磁盘空间 ,]
+last_updated:
 ---
 
 之前也介绍过 [di](/post/2017/10/disk-information-command.html) disk information，不过系统默认不带，需要自己安装，如果遇到没有权限安装时，就可以使用 df 来查看当前机器剩余磁盘空间。
