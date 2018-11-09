@@ -58,18 +58,24 @@ Angular 自带一个开发服务器，可以在本地轻松构建和调试，进
 
 更加详细的可以参考官网 [quickstart](https://angular.cn/guide/quickstart)
 
-## 使用
+## 使用 {#usage}
 在学完官网的 Hero demo 之后对 AngularJS 有了一个基本印象，对于基本的 MVC，在 AngularJS 中通过学习 Java 中，定义好 Service 通过依赖注入到模板和 Component 中。
 
 ![angularjs overview](/assets/angularjs-overview.png)
 
 组件和模板定义 Angular 的视图，然后在视图中注入 Service 提供服务。
 
-### 模块
+### 模块 {#module}
 模块称为 NgModule，存放一些内聚的代码和模板，每个 Angular 都至少有一个 NgModule 类，根模板，习惯上命名为 AppModule，位于 `app.module.ts`。
 
-### 组件
+### 组件 {#components}
 组件控制屏幕上一小片区域，在类中定义组件的逻辑，为视图提供支持。@Component 装饰器会指出紧随其后的那个类是个组件类，并为其指定元数据。
+
+每一个 Component 由以下部分组成：
+
+- Template
+- Class
+- Metadata
 
 AngularJS 有一套自己的模板语法，这个需要熟悉一下。
 
@@ -85,10 +91,41 @@ AngularJS 支持双向数据绑定，大致语法如下：
 - `(event) = "handler"`
 - `[(ng-model)] = "property"`
 
-### 服务
-Angular 将组件和服务区分，提高模块性和复用性，服务应该提供某一类具体的功能。Angular 通过依赖注入来将逻辑和组件分离。
+### 服务 {#services}
+Angular 将组件和服务区分，提高模块性和复用性，服务应该提供某一类具体的功能。Angular 通过依赖注入来将逻辑和组件分离。服务可以被多个 Component 共用。
+
+## 独特的语法
+Angular 有一套自己的 HTML 标记语法，比如在 `app.component.ts` 中定义
+
+    title = '这是一个 AngularJS-demo 演示';
+
+那就可以通过类似于模板的语法来访问该变量：
+
+    Welcome to {{ title }}!
+
+又比如条件语句 `ngIf`，后面的 isLogin 是在 class 中定义好的 boolean 变量：
+
+    <div *ngIf="isLogin">Hi {{username}}</div>
+
+或者循环 `ngFor`，for 后面接一个表达式
+
+    *ngFor = "let variable of variablelist"
+
+比如：
+
+    <a *ngFor="let nav of navs">{{nav}}</a>
+
+## Directive
+Directive 一般被叫做指令，Angular 中有三种类型的指令：
+
+- 组件，是一种特殊的包含模板的指令
+- 结构指令 (structural directives)，通过添加和移除 DOM 元素的指令，包括 ngFor, ngIf
+- 属性指令，改变元素显示和行为的指令，ngStyle
+
+Angular2 中，属性指令至少需要一个带有 `@Directive` 装饰器修饰的控制器类，官网有一个很好的 `highlight.directive.ts` [例子](https://v2.angular.io/docs/ts/latest/guide/attribute-directives.html)。
 
 
+本文 demo 源码： <https://gitlab.com/einverne/angularjs-demo>
 
 
 ## reference
