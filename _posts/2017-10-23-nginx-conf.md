@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [nginx, web, server, linux, proxy,]
-last_updated: 
+last_updated:
 ---
 
 Nginx 的相关介绍及安装可以参考之前的一篇[文章](/post/2017/06/ubuntu-debian-install-nginx.html)
@@ -32,7 +32,7 @@ Nginx 的全局配置是影响整个服务器的配置。
 Directive                 | Explanation
 --------------------------|-----------------------------
 user                      | user and group
-workr_processes           | 
+workr_processes           |
 error_log                 | log
 pid                       | file where the process ID of the main process is written
 use                       | 连接方式
@@ -55,7 +55,7 @@ Nginx 配置文件中，每一条配置都必须以分号结束。
 
 ### 配置 worker process 数
 
-worker process 是 Nginx 并发关键所在，理论上 worker process 值越大，可支持并发数也越多，但实际也受到软件，操作系统，硬件（CPU和磁盘）等制约。
+worker process 是 Nginx 并发关键所在，理论上 worker process 值越大，可支持并发数也越多，但实际也受到软件，操作系统，硬件（CPU 和磁盘）等制约。
 
 	worker_processes number | auto;
 
@@ -208,7 +208,7 @@ Nginx 提供 include 配置来引入其他文件
 ### 自定义 Access 日志
 与 `error_log` 不同的是，Nginx 进程运行时访问日志，由 Nginx 提供服务过程中应答前端请求的日志。
 
-Nginx 服务器支持对服务日志的格式、大小、输出等进行配置，需要使用两个配置 `access_log` 和 `log_format` 
+Nginx 服务器支持对服务日志的格式、大小、输出等进行配置，需要使用两个配置 `access_log` 和 `log_format`
 
 	access_log path [format [buffer=size]];
 
@@ -239,7 +239,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 	47.88.236.38 - [24/Oct/2017:10:25:30 +0800] GET /post/2017/10/things-to-do-after-install-wordpress.html?ajax_load=page HTTP/1.1 200 6961 https://www.einverne.info/ Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
 
-可以查看到上面格式的日志，`IP 本地时间 请求方法 请求路劲 HTTP状态 发送数据大小 以及 HTTP refer 和 User Agent`.
+可以查看到上面格式的日志，`IP 本地时间 请求方法 请求路劲 HTTP 状态 发送数据大小 以及 HTTP refer 和 User Agent`.
 
 
 ### 配置连接超时时间
@@ -275,7 +275,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 	listen port [default_server] [setfib=number] [backlog=number] [rcvbuf=size] [sndbuf=size] [accept_filter=filter] [deferred] [bind] [ipv6only=on|off] [ssl];
 
-第三种配置 UNIX Domain Socket 
+第三种配置 UNIX Domain Socket
 
 	listen unix:path [default_server] [backlog=number] [rcvbuf=size] [sndbuf=size] [accept_filter=filter] [deferred] [bind] [ssl];
 
@@ -284,7 +284,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 - backlog 设置监听函数 listen() 最多运行多少网络连接同时处于挂起状态
 - rcvbuf 监听 socket 接受缓存区大小
 - sndbuf 监听 socket 发送缓存区大小
-- ssl 回话使用 SSL模式
+- ssl 回话使用 SSL 模式
 
 ### 配置虚拟主机名称
 
@@ -298,11 +298,11 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 Nginx 规定第一个名称作为虚拟主机的主要名
 
-name 中可以使用通配符 `*` ，但通配符只能放到首尾，name中还能使用正则表达式，使用 `~` 开始
+name 中可以使用通配符 `*` ，但通配符只能放到首尾，name 中还能使用正则表达式，使用 `~` 开始
 
 	server_name ~^ww\d+\.einverne\.info$;
 
-匹配 `ww1.einverne.info` 但不匹配 `www.einverne.info` 
+匹配 `ww1.einverne.info` 但不匹配 `www.einverne.info`
 
 对于不同的匹配方式，Nginx 按照如下优先级选择虚拟主机
 
@@ -329,8 +329,8 @@ name 中可以使用通配符 `*` ，但通配符只能放到首尾，name中还
 了解了 location 块匹配规则，再来看一下各个可选项的含义：
 
 - `=` 用于非正则 uri 前，要求字符串与 uri 严格匹配，如果匹配成功，则停止向下搜索，并立即处理此请求
-- `~` 表示该uri包含正则，并且区分大小写
-- `~*` 表示uri 包含正则，不区分大小写
+- `~` 表示该 uri 包含正则，并且区分大小写
+- `~*` 表示 uri 包含正则，不区分大小写
 - `^~` 用于非正则 uri 前，Nginx 服务器找到标示 uri 和请求字符串匹配程度最高的 location 后立即使用该 location 处理请求，不再匹配 location 块的正则 url
 
 如果 uri 包含正则，则必须使用 `~` 和 `~*` 。 而对于 `^~` 会对 uri 中的 urlencode 内容解码， `%20` 会被理解为空格。
@@ -343,10 +343,10 @@ Nginx 接受到请求之后，在服务器指定目录中寻求资源
 
 path 为 Nginx 接受到请求之后查找资源的根目录路劲。 path 变量可以包含 Nginx 服务器预设的大多数变量，但要注意 `$document_root` 和 `$realpath_root` 不可用。
 
-该配置可以再 http块、 server 块或者 location 块中进行配置。
+该配置可以再 http 块、 server 块或者 location 块中进行配置。
 
 
-### 更改 location 的URI
+### 更改 location 的 URI
 在 location 块中，除了使用 root 命令指明请求处理根目录，还可以使用 alias 配置来改变 location 接收到的 URI 请求
 
 	alias path;
@@ -385,12 +385,12 @@ path 就是修改后的根路劲。
 ### 基于 IP 配置 Nginx 访问权限
 Nginx 支持两种途径的基本访问控制，一种是由 HTTP 标准模块的 `ngx_http_access-modele` 支持，通过 IP 来判断客户端是否拥有对 Nginx 的访问权限
 
-allow 配置用于设置Nginx 客户端 IP访问
+allow 配置用于设置 Nginx 客户端 IP 访问
 
 	allow address | CIDR | all;
 
 - address 允许访问的客户端 IP，不支持同时设置多个
-- CIDR 允许访问的客户端 CIDR 地址， 202.112.18.23/25，前 32 位 IP 地址，后面 ”/25“ 表示前25位是网络，其余代表主机部分
+- CIDR 允许访问的客户端 CIDR 地址， 202.112.18.23/25，前 32 位 IP 地址，后面 ”/25“ 表示前 25 位是网络，其余代表主机部分
 - all 代表允许所有客户端访问
 
 deny 配置，顾名思义
@@ -456,4 +456,4 @@ Nginx 支持 HTTP Basic Authentication 协议的认证，该协议是一种 HTTP
 
 ## reference
 
-- Nginx高性能Web服务器详解
+- Nginx 高性能 Web 服务器详解

@@ -94,6 +94,19 @@ AngularJS 支持双向数据绑定，大致语法如下：
 ### 服务 {#services}
 Angular 将组件和服务区分，提高模块性和复用性，服务应该提供某一类具体的功能。Angular 通过依赖注入来将逻辑和组件分离。服务可以被多个 Component 共用。
 
+### Controller
+在 Angular 1.x 时代，Controller 也是很重要的一个部分，一个 Controller 应该是最简单，并且只对一个 view 负责的角色。如果要在 Controller 之间共享信息那么可以使用上面提及的 Service。
+
+### Directive
+Directive 一般被叫做指令，Angular 中有三种类型的指令：
+
+- 组件，是一种特殊的包含模板的指令
+- 结构指令 (structural directives)，通过添加和移除 DOM 元素的指令，包括 ngFor, ngIf
+- 属性指令，改变元素显示和行为的指令，ngStyle
+
+Angular2 中，属性指令至少需要一个带有 `@Directive` 装饰器修饰的控制器类，官网有一个很好的 `highlight.directive.ts` [例子](https://v2.angular.io/docs/ts/latest/guide/attribute-directives.html)。
+
+
 ## 独特的语法
 Angular 有一套自己的 HTML 标记语法，比如在 `app.component.ts` 中定义
 
@@ -114,15 +127,6 @@ Angular 有一套自己的 HTML 标记语法，比如在 `app.component.ts` 中�
 比如：
 
     <a *ngFor="let nav of navs">{{nav}}</a>
-
-## Directive
-Directive 一般被叫做指令，Angular 中有三种类型的指令：
-
-- 组件，是一种特殊的包含模板的指令
-- 结构指令 (structural directives)，通过添加和移除 DOM 元素的指令，包括 ngFor, ngIf
-- 属性指令，改变元素显示和行为的指令，ngStyle
-
-Angular2 中，属性指令至少需要一个带有 `@Directive` 装饰器修饰的控制器类，官网有一个很好的 `highlight.directive.ts` [例子](https://v2.angular.io/docs/ts/latest/guide/attribute-directives.html)。
 
 
 本文 demo 源码： <https://gitlab.com/einverne/angularjs-demo>
