@@ -5,12 +5,12 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [linux, nginx, ubuntu, debian, web]
-last_updated: 
+last_updated:
 ---
 
 Nginx 是非常流行的 HTTP/HTTPS 服务器软件，它也可以作为反向代理服务器，邮件代理服务器，可以用于负载均衡，缓存等等。
 
-基本的Nginx 由 master 进程和 worker 进程组成， master 读取配置文件，并维护 worker 进程，而 worker 会对请求进行处理。
+基本的 Nginx 由 master 进程和 worker 进程组成， master 读取配置文件，并维护 worker 进程，而 worker 会对请求进行处理。
 
 Nginx 有两个主要的分支可供安装，stable 和 mainline 。这两个分支的主要区别可以从下图看出：
 
@@ -26,7 +26,7 @@ Use following command to install:
     sudo apt-get install nginx
     nginx -V
 
-all config file is under `/etc/nginx/nginx.conf` 
+all config file is under `/etc/nginx/nginx.conf`
 
 all vhost is under `/etc/nginx/sites-available`
 
@@ -92,17 +92,17 @@ nginx conf
         # multi_accept on;
     }
 
-**user**  
+**user**
 Defines which Linux user will own and run the nginx. Most Debian-based distributions use `www-data`.
 
-**worker_process**  
+**worker_process**
 Defines how many threads, or simultaneous instances, of nginx to run. Learn more [here](http://wiki.nginx.org/CoreModule#worker_processes)
 
-**pid**  
+**pid**
 Defines where nginx will write its master process ID, or PID.
 
 ## 设置 Nginx Server Blocks
-Server Blocks 类似 Apache Virtual Hosts(虚拟主机) 概念，作用就是通过配置让同一台机器同时托管多个域名。
+Server Blocks 类似 Apache Virtual Hosts（虚拟主机） 概念，作用就是通过配置让同一台机器同时托管多个域名。
 
 首先创建目录
 
@@ -111,7 +111,7 @@ Server Blocks 类似 Apache Virtual Hosts(虚拟主机) 概念，作用就是通
 
 如果组和用户不是 `www-data` ，可以用 `sudo chown -R www-data:www-data /var/www/www.einverne.info/html` 来改变
 
-默认情况下 nginx 包含一个默认的 server block 叫做 default , 创建其他 server block 的时候可以以它作为模板:
+默认情况下 nginx 包含一个默认的 server block 叫做 default , 创建其他 server block 的时候可以以它作为模板：
 
     sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/www.einverne.info
 
@@ -176,9 +176,9 @@ http {
 
 	sudo apt-get install openssl libssl-dev libperl-dev
 
-zlib 库，提供 Gzip 模块支持，压缩headers
+zlib 库，提供 Gzip 模块支持，压缩 headers
 
-	apt-get install -y zlib1g zlib1g-dev 
+	apt-get install -y zlib1g zlib1g-dev
 
 XML xslt
 
@@ -203,7 +203,7 @@ GeoIP Library
 
 Configure 后面的参数在编译时会需要用到
 
-在反向代理中替换原网页内容，需要在编译时加入第三方模块 substitution 
+在反向代理中替换原网页内容，需要在编译时加入第三方模块 substitution
 
 	git clone https://github.com/yaoweibin/ngx_http_substitutions_filter_module
 
@@ -211,15 +211,15 @@ Configure 后面的参数在编译时会需要用到
 
 	git clone https://github.com/cuber/ngx_http_google_filter_module
 
-然后进入 Nginx 源代码目录
+然后进入 Nginx 源代码目录，注意参数中 `--add-module` 后面需要加入上面提及的两个 module 路径：
 
 	cd nginx-1.13.6/
 	./configure \
-	> --with-cc-opt='-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-debug --with-pcre-jit --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_addition_module --with-http_dav_module --with-http_geoip_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module --with-http_v2_module --with-http_sub_module --with-http_xslt_module --with-stream --with-stream_ssl_module --with-mail --with-mail_ssl_module --with-threads \
-	> --add-module=../ngx_http_substitutions_filter_module \
-	> --add-module=../ngx_http_google_filter_module
+	--with-cc-opt='-g -O2 -fPIE -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2' --with-ld-opt='-Wl,-Bsymbolic-functions -fPIE -pie -Wl,-z,relro -Wl,-z,now' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-debug --with-pcre-jit --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_addition_module --with-http_dav_module --with-http_geoip_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_image_filter_module --with-http_v2_module --with-http_sub_module --with-http_xslt_module --with-stream --with-stream_ssl_module --with-mail --with-mail_ssl_module --with-threads \
+	--add-module=../ngx_http_substitutions_filter_module \
+	--add-module=../ngx_http_google_filter_module
 
-设置后，开始检查编译参数和环境，如果少了某些安装包，或者需要特定版本的lib就会报错，Google 一下需要的依赖包安装即可。安装之后再次 `./configure` 
+设置后，开始检查编译参数和环境，如果少了某些安装包，或者需要特定版本的 lib 就会报错，Google 一下需要的依赖包安装即可。安装之后再次 `./configure`
 
 检查通过显示
 
@@ -258,19 +258,19 @@ Configure 后面的参数在编译时会需要用到
 
 ### 常用配置
 
-Options                | Explanation          
------------------------|-------------------------
+Options                  | Explanation
+-------------------------|-------------------------
 `--prefix=<path>`        | 安装的根目录，默认为 `/usr/local/nginx`
-`--sbin-path=<path>`     | *nginx* 二进制文件路劲，如果没有设定，则使用 prefix 作为相对路劲
-`--conf-path=<path>`    | 配置路径
-`--error-log-path=<path>` | 错误log
-`--pid-path=<path>`     | nginx 写pid文件，通常在 `/var/run` 下
+`--sbin-path=<path>`     | **nginx** 二进制文件路劲，如果没有设定，则使用 prefix 作为相对路劲
+`--conf-path=<path>`     | 配置路径
+`--error-log-path=<path>` | 错误 log
+`--pid-path=<path>`      | nginx 写 pid 文件，通常在 `/var/run` 下
 `--lock-path=<path>`   | 共享内存锁文件
 `--user=<user>`        | 在哪个用户下运行 worker processes
 `--group=<group>`      | 组
-`--with-debug`          | 开启debug log 生产环境不要启用
+`--with-debug`          | 开启 debug log 生产环境不要启用
 `--with-http_ssl_module` | 开启 HTTP SSL 模块，支持 HTTPS
-`--with-http_realip_module` | 开启真实来源IP
+`--with-http_realip_module` | 开启真实来源 IP
 `--with-http_flv_module` | 开启 flash 视频流
 `--with-http_mp4_module` | 开启 H.264/AAC 文件视频流
 `--with-http_gzip_static_module` | 开启预压缩文件传前检查，防止文件被重复压缩
@@ -282,3 +282,4 @@ Options                | Explanation
 ## reference
 
 - <https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04>
+- <https://github.com/cuber/ngx_http_google_filter_module>

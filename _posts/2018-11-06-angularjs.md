@@ -68,6 +68,10 @@ Angular 自带一个开发服务器，可以在本地轻松构建和调试，进
 ### 模块 {#module}
 模块称为 NgModule，存放一些内聚的代码和模板，每个 Angular 都至少有一个 NgModule 类，根模板，习惯上命名为 AppModule，位于 `app.module.ts`。
 
+在 1.x 时代，可以使用如下代码定义模块
+
+    angular.module('myApp', []);
+
 ### 组件 {#components}
 组件控制屏幕上一小片区域，在类中定义组件的逻辑，为视图提供支持。@Component 装饰器会指出紧随其后的那个类是个组件类，并为其指定元数据。
 
@@ -105,6 +109,15 @@ Directive 一般被叫做指令，Angular 中有三种类型的指令：
 - 属性指令，改变元素显示和行为的指令，ngStyle
 
 Angular2 中，属性指令至少需要一个带有 `@Directive` 装饰器修饰的控制器类，官网有一个很好的 `highlight.directive.ts` [例子](https://v2.angular.io/docs/ts/latest/guide/attribute-directives.html)。
+
+## 数据绑定
+数据模型对象 `$scope` 是一个简单的 Javascript 对象，其属性可以被视图，或者 Controller 访问。双向数据绑定意味着如果视图中数值发生变化，数据 Model 会根据脏检查意识到该变化，而数据 Model 发生变化，视图也会依据变化重新渲染。
+
+简单的数据绑定
+
+    <input ng-model="person.name" type="text" placeholder="Yourname">
+    <h1>Hello\{\{ person.name \}\}</h1>
+
 
 
 ## 独特的语法
