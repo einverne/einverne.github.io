@@ -10,13 +10,13 @@ last_updated:
 
 Nginx 的相关介绍及安装可以参考之前的一篇[文章](/post/2017/06/ubuntu-debian-install-nginx.html)
 
-Nginx 相关的配置， Nginx 中的配置有两种分类，一种为单纯的指令，另一种为上下文。
+Nginx 相关的配置， Nginx 中的配置有两种分类，一种为单纯的指令 (directive)，另一种为上下文配置块 (configuration context)。
 
-指令，包含名称和参数名，以分号结束，比如
+指令 (directive)，包含**名称**和**参数名**，以分号结束，比如
 
     gzip on;
 
-上下文通常声明一个作用域，比如 server 块
+**上下文**通常声明一个作用域，比如 server 块
 
     server {
         listen 80;
@@ -25,14 +25,14 @@ Nginx 相关的配置， Nginx 中的配置有两种分类，一种为单纯的�
 在上下文中使用相同的指令时需要小心，一般子级上下文中的指令会覆盖父级中定义的值。
 
 ## 全局块 {#global-conf}
-Nginx 的全局配置是影响整个服务器的配置。
+Nginx 的全局配置是影响整个 WEB 服务器的配置。
 
 主要有以下几个
 
 Directive                 | Explanation
 --------------------------|-----------------------------
-user                      | user and group
-workr_processes           |
+user                      | worker process 在配置的 user and group 下运行
+workr_processes           | 最多的 worker processes 数量，可支持并发数，通常的做法是指定和 CPU cores 数量一致
 error_log                 | log
 pid                       | file where the process ID of the main process is written
 use                       | 连接方式
@@ -55,7 +55,7 @@ Nginx 配置文件中，每一条配置都必须以分号结束。
 
 ### 配置 worker process 数
 
-worker process 是 Nginx 并发关键所在，理论上 worker process 值越大，可支持并发数也越多，但实际也受到软件，操作系统，硬件（CPU 和磁盘）等制约。
+worker process 是 Nginx 并发关键所在，理论上 worker process 值越大，可支持并发数也越多，但实际也受到软件，操作系统，硬件（CPU 和磁盘）等资源的制约。
 
 	worker_processes number | auto;
 
@@ -86,7 +86,6 @@ Nginx 提供 include 配置来引入其他文件
 	include file;
 
 - file 是要引入的配置文件，支持相对路劲和正则匹配
-
 
 ### 最大连接数
 设置每一个 worker process 同时开启的最大连接数
@@ -204,7 +203,6 @@ Nginx 提供 include 配置来引入其他文件
 
 ## Server section
 
-
 ### 自定义 Access 日志
 与 `error_log` 不同的是，Nginx 进程运行时访问日志，由 Nginx 提供服务过程中应答前端请求的日志。
 
@@ -261,11 +259,11 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 ## 虚拟主机配置
 
-虚拟主机以 `server` 开头，server 内的配置都认为是 虚拟主机 配置。虚拟主机定义了一套由不同 `server_name` 配置区分的资源。虚拟主机一般由 `listen` 、`server_name` 等一组配置决定。
+虚拟主机配置以 `server` 开头，server 内的配置都认为是 **虚拟主机** 配置。虚拟主机定义了一套由不同 `server_name` 配置区分的资源。虚拟主机一般由 `listen` 、`server_name` 等一组配置决定。
 
 
 ### 配置网络监听
-监听配置方法主要有三种
+监听配置方法主要有三种：
 
 第一种配置监听 IP 地址
 
@@ -318,6 +316,8 @@ name 中可以使用通配符 `*` ，但通配符只能放到首尾，name 中�
 不是很常用，暂时略
 
 ### 配置 location 块
+location 指令在 virtual server 部分使用，用来比欧式 URI 怎么处理。
+
 语法
 
 	location [ = | ~ | ~* | ^~ ] uri { ... }
@@ -361,6 +361,7 @@ path 就是修改后的根路劲。
 
 当 location 块接收到 `/data/index.html` 请求时，匹配成功，根据 alias 配置， Nginx 在 `/var/www/data/` 目录下找到 `index.html` 并响应请求。
 
+关于 root 和 alias 的[区别](/post/2018/11/nginx-location-root-alias.html) 可以参考这篇[文章](/post/2018/11/nginx-location-root-alias.html)
 
 ### 设置网站默认首页
 在用户发出请求时，请求地址可以不填写首页完整路劲

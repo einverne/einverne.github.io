@@ -18,6 +18,10 @@ last_updated:
 
 - <https://draw.io>
 
+### gliffy
+所见即所得，有 Chrome 扩展，可离线，和 Google Drive 有结合
+
+- <https://www.gliffy.com/>
 
 ### ProcessOn
 国内的画图网站，可以实时写作

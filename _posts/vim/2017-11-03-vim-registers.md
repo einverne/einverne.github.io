@@ -1,16 +1,18 @@
 ---
 layout: post
-title: "Vim 寄存器"
+title: "Vim 中的寄存器"
 tagline: ""
 description: ""
 category: Vim
-tags: [Vim, Linux, ]
-last_updated: 
+tags: [vim, linux, editor, skill, ]
+last_updated:
 ---
 
-Vim 的寄存器可以看成 Vim 中额外用来存储信息的区域，虽然看不见，但是如果使用 `x`, `s`, `y`, `p` 等等命令的时候都无意识的使用到了 Vim 的寄存器(register).
+计算机中通常所说的寄存器 Register 一般指的是 CPU 中的寄存器，用来暂存 CPU 处理所需要的指令，数据等等。 Vim 中同样也有寄存器的概念，使用的方式和概念也和 CPU 是非常类似的。
 
-Vim 中每一个 register 都可以通过添加双引号的方式来访问，比如 `"a` 来访问 a 寄存器。
+Vim 的寄存器可以看成 Vim 中额外用来存储信息的区域，虽然看不见，但是如果使用 `x`, `s`, `y`, `p` 等等命令的时候都无意识的使用到了 Vim 的寄存器 (register).
+
+Vim 中每一个 register 都可以通过添加**双引号**的方式来访问，比如 `"a` 来访问 a 寄存器。
 
 可以通过选择然后使用 `y` 来将内容放到寄存器中，比如 `"ay` 来将选择的内容 yank 复制到 `"a` 寄存器。 可以使用 `"ap` 来粘贴 a 寄存器中的内容。
 
@@ -35,13 +37,13 @@ Vim 有自己的 unnamed 或者说默认寄存器，可以通过 `""` 来访问�
 `"0` 寄存器永远保存着 yank 的最新内容，其他寄存器保存这历史 9 个内容，从 1 到 9 从新到老。如果复制了新的文字，永远可以通过 `"0p` 来粘贴。
 
 ## 只读寄存器 read only register
-Vim 中有四个只读寄存器 `".`, `"%`, `":`, `"#` , 最后插入的文字被保存在 `".` 中，如果想要在其他地方使用刚刚输入的文字，非常方便。
+Vim 中有四个**只读**寄存器 `".`, `"%`, `":`, `"#` , 最后插入的文字被保存在 `".` 中，如果想要在其他地方使用刚刚输入的文字，非常方便。
 
-`"%` 保存 Vim 最开始打开时，到当前文件的完整路径。最常用的组合就是将当前的路径放到粘贴板
+`"%` 保存 Vim 最早开始打开时，当前文件的完整路径。最常用的组合就是将当前的路径放到粘贴板
 
     :let @+=@%
 
-`let` 命令用来向寄存器写入， `"+`是粘贴板寄存器，将 `"%` 内容写入粘贴板
+`let` 命令用来**向寄存器写入**， `"+`是粘贴板寄存器，将 `"%` 内容写入粘贴板
 
 `":` 最近执行命令寄存器。如果最近保存过文件 `:w` ，那么 `w` 会保存在寄存器中。可以使用 `@:` 来执行前一次命令。再比如使用替换命令替换了一行中的内容 `:s/foo/bar` ，那么将光标移动到另一行再次使用 `@:` 就能够再次替换。
 
@@ -63,7 +65,7 @@ Vim 中有四个只读寄存器 `".`, `"%`, `":`, `"#` , 最后插入的文字�
     :let @/="keywords"
 
 ## 寄存器和宏 Macro 的关系
-或许很多不熟悉 Vim 寄存器的用户曾经使用过 Vim 的 Macro， Vim 可以使用 Macro 来录制一连串命令，然后重复。(可以使用 :h recording 来查看更多)。
+或许很多不熟悉 Vim 寄存器的用户曾经使用过 Vim 的 Macro， Vim 可以使用 Macro 来录制一连串命令，然后重复。（可以使用 :h recording 来查看更多）。
 
 Vim 使用寄存器来保存 Macro 的命令。比如使用 `qw` 来录制 Macro ，寄存器 `"w` 会被用来记录所有录制的内容，所有的内容都有文本的形式存放。
 
@@ -94,7 +96,7 @@ Vim 中的寄存器一共分为 9 大类：
 4. 26 named registers "a to "z or "A to "Z
 5. four read-only registers ":, "., "% and "#
 6. the expression register "=
-7. The selection and drop registers "*, "+ and "~ 
+7. The selection and drop registers "*, "+ and "~
 8. The black hole register "_
 9. Last search pattern register "/
 

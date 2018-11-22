@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Raspberry pi 自动挂载NTFS USB设备"
+title: "Raspberry pi 自动挂载 NTFS USB 设备"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [linux, raspberrypi,]
-last_updated: 
+tags: [linux, raspberrypi, mount, ]
+last_updated:
 ---
 
 
@@ -160,7 +160,7 @@ last_updated:
 
 
 
-通过编辑fstab来让系统自动挂载
+通过编辑 fstab 来让系统自动挂载
 
     sudo vim /etc/fstab
 
@@ -168,7 +168,7 @@ last_updated:
 
     /dev/sda1 /mnt/hdd ext4 defaults 0 0
 
-从而实现USB设备的自动挂载
+从而实现 USB 设备的自动挂载
 
     sudo vim /etc/udev/rules.d/10-usbstorage.rules
 
@@ -182,6 +182,9 @@ last_updated:
     ACTION=="add", ENV{ID_FS_TYPE}=="vfat", ENV{mount_options}="iocharset=utf8,umask=000"
     ACTION=="add", ENV{ID_FS_TYPE}=="ntfs", ENV{mount_options}="iocharset=utf8,umask=000"
     ACTION=="add", RUN+="/bin/mkdir -p /media/%E{dir_name}", RUN+="/bin/mount -o $env{mount_options} /dev/%k /media/%E{dir_name}"
-    ACTION=="remove", ENV{dir_name}!="", RUN+="/bin/umount -l /media/%E{dir_name}", RUN+="/bin/rmdir /media/%E{dir_name}" 
+    ACTION=="remove", ENV{dir_name}!="", RUN+="/bin/umount -l /media/%E{dir_name}", RUN+="/bin/rmdir /media/%E{dir_name}"
     LABEL="media_by_label_auto_mount_end"
 
+如果要卸载文件系统，比如将挂载的 `/media/sda1` 卸载
+
+    umount /media/sda1

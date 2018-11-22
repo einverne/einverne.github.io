@@ -8,7 +8,14 @@ tags: [maven, java, build, management, build-tool]
 last_updated:
 ---
 
-Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 src/main/java/ 目录下的主源码，testCompile 目标用来编译位于 src/test/java/ 目录下的测试源码。
+Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，而是将所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 src/main/java/ 目录下的主源码，testCompile 目标用来编译位于 src/test/java/ 目录下的测试源码。
+
+## maven-archetype-plugin
+Archetype 插件允许用户从模板中创建 Maven 项目，该插件需要 Java 6 及以上版本。[^1]
+
+[^1]: <http://maven.apache.org/archetype/maven-archetype-plugin/index.html>
+
+
 
 ## maven-compiler-plugin
 compiler 插件是最常用到的一个，定义 build 的 Java 版本。
@@ -261,6 +268,7 @@ http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin
 
 ## reference
 
+- <http://maven.apache.org/archetype/maven-archetype-plugin/index.html>
 - <https://maven.apache.org/plugins/maven-compiler-plugin/index.html>
 - <https://maven.apache.org/surefire/maven-surefire-plugin/index.html>
 - <http://maven.apache.org/maven-release/maven-release-plugin/index.html>

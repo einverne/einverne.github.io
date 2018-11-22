@@ -58,4 +58,6 @@ git 有一个命令 `git reflog` 可以查看所有对 HEAD 的变更操作，�
 
 来查看本地前 N 次提交，然后编辑文件删除某一次 commit 即可。更多的信息可以参考 [Git book](http://git-scm.com/book/en/Git-Branching-Rebasing)
 
+需要注意的是，rebase 交互界面出现的 commit 由老到新，使用下面的命令比如 squash 则会向上合并。
+
 PS. 不要用来改变已经 push 到远端的提交，除非明确的知道想要做的事情，可以使用 force push.

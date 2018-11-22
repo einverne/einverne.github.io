@@ -57,10 +57,8 @@ Maven 最熟悉的一个概念就是 POM，Maven 项目会有一个 pom.xml 文�
 
 `项目名 - 项目模块 - 项目版本` 三个坐标定义了项目在 Maven 世界中的基本坐标，任何 jar，pom， war 都是基于这些坐标进行区分的。
 
-- `groupId` 定义了项目组，组和项目所在组织或公司，或者开源项目名称，一般为公司域名反写，比如 com.google.firebase 等等
-
-- `artifactId` 定义了 Maven 项目的名称，在组中的唯一 ID，在同一个项目中可能有不同的子项目，可以定义不同的 artifactId。 artifactId 也是构建完成项目后生成的 jar 包或者 war 包的文件名的一部分。
-
+- `groupId` 定义了项目组，组和项目所在组织或公司，或者开源项目名称，一般为公司域名反写，比如 com.google.firebase 等等。Maven 项目和实际项目并不一定是一对一关系，比如 SpringFramework 实际项目，对应的 Maven 项目会有很多，spring-core， spring-context 等等，更进一步推荐 groupId 应当定义项目隶属的实际项目，如果定义到组织或者公司，那么一个组织下可能会有很多实际项目，造成混乱
+- `artifactId` 定义了 Maven 项目的名称，在组中的唯一 ID，在同一个项目中可能有不同的子项目，可以定义不同的 artifactId，可以理解为 Maven 项目的模块。artifactId 也是构建完成项目后生成的 jar 包或者 war 包的文件名的一部分。
 - `version` 顾名思义，就是项目的版本号，如果项目维发布，一般在开发中的版本号习惯性加上 SNAPSHOT， 比如 1.0-SNAPSHOT
 
 根据上面的例子，比如上面定义的 Maven 坐标，可以在对应的中央仓库中 `https://repo1.maven.org/maven2/com/google/firebase/firebase-admin/5.3.1/` 目录下找到对应的文件。
@@ -106,6 +104,7 @@ Maven 的仓库分为远程仓库和本地仓库，当第一次运行 Maven 命�
 - <http://www.mvnbrowser.com>
 
 ## Maven 核心概念 生命周期和插件
+
 Maven 的生命周期是抽象的，实际行为都有插件完成。
 
 ### clean 生命周期
@@ -113,8 +112,8 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 清理项目，包含三个阶段
 
 - `pre-clean` 执行清理前需要完成的工作
-- clean 清理上一次构建生成的文件
-- post-clean 执行一次清理后需要完成的工作
+- `clean` 清理上一次构建生成的文件
+- `post-clean` 执行一次清理后需要完成的工作
 
 ### default 生命周期
 
@@ -182,6 +181,10 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 	mvn clean package -DMaven.test.skip=true 清除以前的包后重新打包，跳过测试类
 	mvn clean package 清除以前的包后重新打包
 
+## 简单例子
+创建一个 Maven 项目
+
+    mvn
 
 ## reference
 

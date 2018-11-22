@@ -4,7 +4,7 @@ title: "Maven 依赖管理"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [maven, build, java, linux]
+tags: [maven, build, java, linux, build-system, ]
 last_updated:
 ---
 
@@ -60,10 +60,10 @@ maven 区别对待 release 版本构件和 snapshot 版本，snapshot 为开发�
 需要注意的是，settings.xml 中 server 元素下 id 的值必须与 POM 中 repository 或 snapshotRepository 下 id 的值完全一致。将认证信息放到 settings 下而非 POM 中，是因为 POM 往往是它人可见的，而 settings.xml 是本地的。配置完成后就可以通过 `mvn deploy` 进行发布了。
 
 ## Maven 依赖原则
-
+在之前的 Maven 介绍中也有提及，这边展开。
 
 ## Maven 解决依赖冲突
-在之前的 [maven 介绍](/post/2017/09/maven-introduction.html) 中指出来 Maven 的传递性依赖两个原则，第一就近原则，第二依赖路劲距离一样则优先定义的依赖。
+在之前的 [maven 介绍](/post/2017/09/maven-introduction.html) 中指出来 Maven 的传递性依赖两个原则，第一**就近原则**，第二依赖路径距离一样则优先定义的依赖。
 
 而当项目比较复杂之后，避免不了可能会出现打包时依赖的 jar 出现冲突。当引入新的依赖，发现项目中突然出现很多 method not found，或者 class not found 问题，基本上可以确定是因为依赖产生了冲突。
 
@@ -86,7 +86,7 @@ maven 区别对待 release 版本构件和 snapshot 版本，snapshot 为开发�
 通过查看其中可能导致冲突的 jar 包，然后使用 exclusions 来排除掉。
 
     <dependency>
-      <groupId>com.xiaomi.xchat</groupId>
+      <groupId>info.einverne.chat</groupId>
       <artifactId>common-biz</artifactId>
       <version>1.0.0-SNAPSHOT</version>
       <exclusions>
