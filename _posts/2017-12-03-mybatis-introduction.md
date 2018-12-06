@@ -4,10 +4,9 @@ title: "MyBatis 介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [mybatis, mysql, orm, ]
+tags: [mybatis, mysql, orm, java, ]
 last_updated:
 ---
-
 
 MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。
 
@@ -38,6 +37,51 @@ MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。
 - 插件
 
 接口层相对较简单，核心是 SqlSession 接口，接口定义了 MyBatis 暴露给应用程序的 API。
+
+## 基本使用流程
+所以如果要使用 MyBatis 基本有如下几个步骤：
+
+- 开发 Java 类，编写 Mapper 定义 SQL
+- 获取 SqlSessionFactory
+- 获取 SqlSession
+- 面向对象方式操作数据
+- 关闭事务，关闭 SqlSession
+
+SqlSession 是 MyBatis 关键对象，持久化操作的对象，类似 JDBC 中 Connection。SqlSession 对象完全包含以数据库为背景的所有执行 SQL 操作的方法，底层封装了 JDBC 连接。每个线程都应该有自己的 SqlSession 实例，SqlSession 实例线程不安全，不能共享，绝对不要将 SqlSession 实例引用放到类静态字段或者实例字段中。使用完 SqlSession 一定关闭。
+
+## Mapper 文件
+Mapper 文件针对 SQL 文件构建。
+
+### select
+select 语句用来映射查询语句。
+
+    <select id="selectUser" parameterType="int" resultType="hashmap">
+        SELECT * FROM USER WHERE ID = #{id}
+    </select>
+
+这个语句被称为 selectUser，接受 int 参数，返回 HashMap 类型。
+
+### insert, update, delete
+比如
+
+    <insert id="insertUser">
+        insert into USER (id, username, password, email, address)
+        values (#{id},#{username},#{password},#{email},#{address})
+    </insert>
+
+### sql
+sql 元素用来定义可重用的 SQL 代码。
+
+### Parameter
+如果 parameterType 传入一个对象，那么 `#{id}` 在查询时会去对象属性查询。
+
+    <insert id="insertUser" parameterType="User">
+        insert into USER (id, username, password, email, address)
+        values (#{id},#{username},#{password},#{email},#{address})
+    </insert>
+
+### ResultMaps
+ResultMaps 元素是 MyBatis 中最重要最强大的元素，告诉 MyBatis 从结果集中取出数据转换成 Java Object。
 
 ## 怎么用
 MyBatis 是一个比较大的项目，下面包含了很多[子项目](http://blog.mybatis.org/p/products.html)，如果看这个项目列表就能够清晰的看到一些
