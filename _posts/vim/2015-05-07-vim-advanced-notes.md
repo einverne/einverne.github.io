@@ -127,16 +127,20 @@ Vim 还支持另一种组合
 在 Normal 模式下使用以下命令新建窗口
 
 	:split 			水平分割窗口，内容一样
+	:sp 			split 缩写
 	:10split 		水平分割窗口，新窗口高度 10 行
 	:split filename 窗口中打开新文件
 	:new 			功能和 split 一样
-	:sp 			split 缩写
-	Ctrl-w s,v 		分割窗口的快捷方式，s 水平分割，v 垂直分割
 	:vsplit 		垂直分割窗口，简写 :vs
+    :vsp            垂直分割
+	Ctrl-w s,v 		分割窗口的快捷方式，s 水平分割，v 垂直分割
+    :clo[se]        关闭窗口
 	Ctrl-w c 		关闭当前窗口
+    :on[ly]         只保留激活的窗口，关闭其他窗口
 
 ### 窗口间移动
 
+	Ctrl-w w          w 窗口间循环移动  Ctrl-w Ctrl-w 同样
 	Ctrl-w h,j,k,l    Ctrl 按下，按下 w 松开，Ctrl 松开，按 hjkl 对应左下上右
 
 ### 移动窗口
@@ -145,12 +149,14 @@ Vim 还支持另一种组合
 
 ### 窗口最大化
 
-	Ctrl-w o    让当前文件占据整个窗口
+	Ctrl-w o    让当前文件占据整个窗口，同时会关闭其他窗口
 
 ### 调整窗口大小
 
     `Ctrl-w < >` 	调整窗口宽度，`<` 缩小当前窗口宽度，向左扩展一列，`>` 增加当前窗口宽度，向右扩展一列。当然 `Ctrl-w` 之后可以使用 `n+<` 调整多列宽度
 	`Ctrl-w - +` 	调整窗口高度
+    `Ctrl-w_`       高度最大化
+    `Ctrl-w|`       宽度最大化
 
 在使用 Nerd tree 插件后，可以使用 Nerd tree 内置的快捷键，在 Nerd tree 中
 
@@ -158,7 +164,7 @@ Vim 还支持另一种组合
 - `s` vsplit 一个新窗口打开选中文件，并跳到该窗口
 
 ## Tabs
-在 Vim 中 Tab 和 Windows 是不一样的概念，如果平时使用 Chrome 或者 Firefox，就很好理解 Tab，在 Vim 中每一个 Tab 能够包含多个窗口。
+在 Vim 中 Tab 和 Windows 是不一样的概念，如果平时使用 Chrome 或者 Firefox，就很好理解 Tab，中文可以翻译为标签页，但是 Vim 中 Tab 和正在编辑的 buffer 不是一对一的关系，在 Vim 中每一个 Tab 能够包含多个窗口 Window。
 
 ### Create New tab
 有很多方法可以创建新 Tab , 这里是最简单方式：
@@ -169,9 +175,9 @@ Vim 还支持另一种组合
 ### Manage tabs
 Some ways to close tabs:
 
-	:tabclose 	close current tab
+	:tabc[lose]	close current tab
 	:tabclose {i} 	close i-th tab
-	:tabonly 	close all other tabs
+	:tabo[nly]	只保留当前 tab，close all other tabs
 
 Some ways to move tabs:
 
@@ -182,8 +188,8 @@ Some ways to move tabs:
 
 Ways to move between tabs:
 
-	:tabn 		go to next tab
-	:tabp 		go to previous tab
+	:tabn[ext] 		    go to next tab
+	:tabp[revious] 		go to previous tab
 	:tabfirst 	go to first tab
 	:tablast 	go to last tab
 
@@ -225,8 +231,6 @@ Insert 模式下
 
 Vim 会在当前光标处插入命令执行的结果。
 
-## 增减数字
-将光标停在数字上，Vim  中 <kbd>Ctrl</kbd> + <kbd>X</kbd> 会将数字减 1， 而 <kbd>Ctrl</kbd> + <kbd>A</kdb> 能将数字加 1 , 默认为 8 进制。
 
 ## Other
 

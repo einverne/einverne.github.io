@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Vim 键映射"
+title: "vimrc 配置中 Vim 键映射"
 tagline: ""
 description: ""
 category: Vim
-tags: [Vim, Linux, ]
-last_updated: 
+tags: [vim, linux, editor, ]
+last_updated:
 ---
 
 Vim 本身有很多快捷键，vimrc 也可以配置很多快捷键，当然 Vim 也支持将不同的键映射到不同的键或者命令上。
@@ -16,20 +16,20 @@ Vim 本身有很多快捷键，vimrc 也可以配置很多快捷键，当然 Vim
 - vmap
 - imap
 
-分别对应着修改普通模式(Normal) ，选择模式(Visual)，和插入模式(Insert) 下的键映射。
+分别对应着修改普通模式 (Normal) ，选择模式 (Visual)，和插入模式 (Insert) 下的键映射。
 
 对于这几种模式，可以参考 [Vim 模式](/post/2015/05/vim-mode.html)
 
 ## Map 命令
-其实对于 map 命令的种类远不止于此 
+其实对于 map 命令的种类远不止于此
 
-- noremap  非递归映射
+- noremap  非递归映射 non-recursive
 - nmap
 - vmap
 - imap
 - cmap 在命令模式下生效
 
-递归映射，就是如果当快捷键 a 被映射成 b, b 又被映射成 c ,那么他们是递归的，那么 a 就是被映射成 c
+递归映射的意思就是如果当快捷键 a 被映射成 b, b 又被映射成 c , 那么他们是递归的，那么 a 就是被映射成 c
 
 	map b a
 	map c b
@@ -38,7 +38,7 @@ Vim 本身有很多快捷键，vimrc 也可以配置很多快捷键，当然 Vim
 
 	map c a
 
-默认的 map 是递归的，除了 noremap 
+默认的 map 是递归的，除了 noremap
 
 unmap 解除映射
 
@@ -48,9 +48,9 @@ mapclear 命令
 
 mapclear 直接清除相关模式下所有的映射，也可以添加很多前缀，表示影响的模式
 
-所以总结一下大概有如下命令:
+所以总结一下大概有如下命令：
 
-	:map   :noremap   :unmap   :mapclear 
+	:map   :noremap   :unmap   :mapclear
 	:nmap  :nnoremap  :nunmap  :nmapclear
 	:vmap  :vnoremap  :vunmap  :vmapclear
 	:imap  :inoremap  :iunmap  :imapclear
@@ -59,7 +59,6 @@ mapclear 直接清除相关模式下所有的映射，也可以添加很多前�
 ## 查看当前 Vim 配置的键绑定
 
 通过在 vimrc 中配置不同的快捷键，影响不同模式下 Vim 的快捷键，那么可以在普通模式下使用 `:map` 来查看当前 Vim 配置的快捷键。
-
 
 ## 如何测试 map 生效
 
