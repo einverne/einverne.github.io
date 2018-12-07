@@ -236,6 +236,25 @@ Time                    | datetime.time             | DATETIME
 
     id = Column('id', Integer, primary_key=True, autoincrement=True)
 
+### 定义多列组合唯一索引
+有些时候定义表时需要多列组合唯一，比如
+
+    class User(Base):
+        field1 = Column(Integer, primary_key=True)
+        field2 = Column(Integer, primary_key=True)
+
+那么可以
+
+    class User(Base):
+        field1 = Column(Integer)
+        field2 = Column(Integer)
+        __table_args__ = (
+            UniqueConstraint('field2', 'field1'),
+            {},
+        )
+
+From: [StackOverflow](https://stackoverflow.com/a/9036128/1820217)
+
 
 ## 编码问题
 在使用 mysqldb 这个 driver 的时候莫名其妙遇到编码的问题，数据库，表，都是 utf8mb4，在 CentOS6 下面死活用不了 utf8mb4 作为连接编码

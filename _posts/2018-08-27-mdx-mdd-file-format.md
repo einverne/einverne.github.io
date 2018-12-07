@@ -8,7 +8,7 @@ tags: [python, goldendict, mdx, mdd, dict, ]
 last_updated:
 ---
 
-MDict 将字典定义（关键字，解释）放在 MDX 文件中，字典相关的其他文件，比如图片，发音，样式放在 MDD 文件中，虽然存放的内容是不一样的，但是两种文件的结构是一致的。
+MDict 将字典定义（关键字，解释）放在 MDX 文件中，字典相关的其他资源样式文件，比如图片，发音，样式放在 MDD 文件中，虽然存放的内容是不一样的，但是两种文件的结构是一致的。
 
 ## 源文件格式
 
@@ -45,7 +45,7 @@ MDict 的 html 格式
 
 在 html 中嵌入声音的方法
 
-使用链接<a href="sound://keyword.spx">keyword</a> 这样的形式，点击该链接的时候可以进行发音 发音仅支持.wav 和.spx 格式的音频文件
+使用链接 `<a href="sound://keyword.spx">keyword</a>` 这样的形式，点击该链接的时候可以进行发音 发音仅支持.wav 和.spx 格式的音频文件
 
 内部重定向（内容链接）
 
@@ -55,9 +55,9 @@ MDict 的 html 格式
 
 例如 color 和 colour 都指向相同的内容，制作词典时可以正常编写 color 词条，但对于 colour 词条，可以写成：
 
-colour
-@@@LINK=color
-</>
+    colour
+    @@@LINK=color
+    </>
 
 当显示 colour 条目的内容时，程序会自动找到 color 的内容进行显示，链接是可以多重嵌套的。
 
@@ -70,4 +70,4 @@ colour
 
 一个 Python 库可以用来制作 mdx 词典
 
-- https://github.com/zhansliu/writemdict
+- <https://github.com/zhansliu/writemdict>
