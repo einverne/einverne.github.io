@@ -270,6 +270,25 @@ shell 中可以直接截取设备的屏幕
       * Hist #0: ActivityRecord{ff685a1 u0 com.android.launcher3/.Launcher t4639}
       * Hist #0: ActivityRecord{78edd61 u0 com.android.systemui/.recents.RecentsActivity t4652}
 
+## 从 Android 中备份应用
+有一个常见的场景就是在需要备份已经安装的 app，导出 apk 的时候，如果是手机的的话借助 ES Explorer 能快速搞定，如果是机顶盒那么就要 adb connect 之后用命令来备份了。用到的命令上文都有提及，首先要知道需要备份的应用的包名 package name
+
+    adb shell pm list packages
+
+然后获取该应用的完整路径
+
+    adb shell pm path com.example.app
+
+输出结果会是类似于
+
+    package:/data/app/com.example.app-2.apk
+
+这样的路径，然后使用 pull 命令将文件备份到本地
+
+    adb pull /data/app/com.example.app-2.apk /path/to/local/destination/app.apk
+
+然后在目标目录下就能看到备份的内容了。
+
 ## 附录 keyevent
 
 ```
