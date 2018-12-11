@@ -3,25 +3,47 @@ layout: post
 title: "每天学习一个命令：tar 压缩和解压文件"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Linux
 tags: [tar, linux, archive, extract, command]
-last_updated: 
+last_updated:
 ---
 
-tar 本质上只是一个打包命令，可以将存放在多个地方的文件或者文件夹打包第一个文件中，结合其他的压缩程序再将打包后的档案文件压缩。所以看到 `.tar.gz`, `.tar.bz2`, `.tar.xz` 等等文件其实是 tar 文件之后进行 Gzip, Bzip2, XZ 压缩之后的文件。
+tar 本质上只是一个打包命令，可以将多个文件或者文件夹打包到一个 tar 文件中，结合其他的压缩程序再将打包后的档案文件压缩。所以看到 `.tar.gz`, `.tar.bz2`, `.tar.xz` 等等文件其实是 tar 文件之后进行 Gzip, Bzip2, XZ 压缩之后的文件。
 
+## 命令格式
 
-## 使用
+    tar [-] A --catenate --concatenate | c --create | d --diff --compare |
+         --delete | r --append | t --list | --test-label | u --update | x
+         --extract --get [options] [pathname ...]
+
+tar 命令常用参数
+
+    -c      创建 archive
+    -x      解压文件
+    -f ARCHIVE      使用该 ARCHIVE
+    -v      输出 verbose 日志
+    -t      测试压缩文件内容
+
+    -z, --gzip, --gunzip,  gzip 格式
+    -j  支持 bzip2 格式
+
+## 使用实例
 常见的压缩和解压用法
 
     tar -cvf filename.tar /folder    # 仅打包不压缩
     tar -xvf filename.tar            # 解压包
 
+压缩解压 gzip
+
     tar -zcvf filename.tar.gz /folder # gzip 压缩
     tar -zxvf filename.tar.gz         # 当前目录下解压文件
 
+压缩解压 bzip2 / bz2
+
     tar -jcvf filename.tar.bz2 /folder # bzip2 压缩
     tar -jxvf filename.tar.bz2 -C /path # 解压
+
+压缩解压 tar.xz
 
     tar -Jcvf filename.tar.xz /folder  # xz 压缩
     tar -Jxvf filename.tar.xz          # 解压
@@ -31,16 +53,16 @@ tar 本质上只是一个打包命令，可以将存放在多个地方的文件�
 - `-c` 表示创建
 - `-x` 表示解压
 - `-t` 表示查看压缩包内容
-    
+
         注意 c/x/t 三个参数不能同时使用
 
 - `-v` 表示打印出日志
-- `-j` 表示 bzip2
-- `-J` 表示 xz
-- `-z` 表示 gzip
+- `-j` 表示 bzip2 压缩方法
+- `-J` 表示 xz 压缩方法
+- `-z` 表示 gzip 压缩方法
 - `-f ARCHIVE` 后面接文件，`-f` 后面需要直接接压缩包名
 
-经过上面的解释，可以习惯上可以记忆成 压缩格式 (z/j/J) + 压缩/解压/查看 (c/x/t) + v + f 文件名
+经过上面的解释，可以习惯上可以记忆成 压缩格式 (z/j/J) + 压缩 / 解压 / 查看 (c/x/t) + v + f 文件名
 
 ### 列出压缩包内的文件
 
@@ -51,20 +73,44 @@ tar 本质上只是一个打包命令，可以将存放在多个地方的文件�
 
 ### 保留文件原始属性
 
-    tar -zcvpf file.tar.gz /etc 
+    tar -zcvpf file.tar.gz /etc
 
-这里多了一个 `-p` 参数，保留原始属性时使用
+这里多了一个 `-p` 参数，保留原始属性时使用，比如打包时不想改变文件的权限等等。
 
-### 排除文件或文件夹
+### 打包时排除文件或文件夹
+比如说在打包 `/etc` 和 `/home` 目录到 file.tar.gz 文件中时排除 `/path` 目录
 
     tar --exclude /path -zcvf file.tar.gz /etc /home
 
 这里注意 `--exclude` 参数
 
+### 打包比特定时间更新的文件
+使用 `-N` 参数来打包更新的文件
 
-## Gzip Bzip2 vs XZ 
+    tar -N "2016/01/01" -zcvf download.tar.gz /home/einverne/Download
 
-Gzip, Bzip2 和 XZ 是 UNIX 系统下常见的压缩工具。
+比如只打包指定目录下文件日期新于 20160101 的文件。
 
+### 解压到指定目录
+使用 `-C` 参数来指定解压到的目录
+
+    tar -zxvf filename.tar.gz -C /path/to/
+
+使用 `-C` 参数将压缩包内容解压到目录 `/path/to/filename`
+
+## Gzip Bzip2 vs XZ
+
+Gzip, Bzip2 和 XZ 是 UNIX 系统下常见的压缩工具。 xz 是一个使用 LZMA 压缩算法的无损数据压缩文件格式，xz 文件格式的压缩率更高。
 
 [这里](https://www.rootusers.com/gzip-vs-bzip2-vs-xz-performance-comparison/) 有篇文章对比了三个工具的压缩率，压缩时间等等
+
+### xz 文件
+如果不使用上面提及的一步压缩和解压方式，可以拆看先解压，再拆包
+
+    xz -d file.tar.xz
+    tar -xvf file.tar
+
+创建同理
+
+    tar -cvf file.tar /file
+    xz -z file.tar

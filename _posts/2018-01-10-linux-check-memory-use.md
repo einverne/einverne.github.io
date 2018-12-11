@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [linux, memory, ram, free, command]
-last_updated: 
+last_updated:
 ---
 
 在 Linux 下，命令行就是一切，GUI 不是任何时候都可用的，所以掌握一定的常用命令，能够方便日常使用，比如查看进程，查看内存占用，等等，这篇文章就总结了一下 Linux 下查看当前系统占用内存的命令。
@@ -24,7 +24,7 @@ last_updated:
 > A buffer is something that has yet to be "written" to disk.
 > A cache is something that has been "read" from the disk and stored for later use.
 
-上面的解释非常清晰， buffer 用于存放要输出到disk的数据，cache是存放disk上读取的数据，这两者都为了提高IO性能由OS控制管理的。
+上面的解释非常清晰， buffer 用于存放要输出到 disk 的数据，cache 是存放 disk 上读取的数据，这两者都为了提高 IO 性能由 OS 控制管理的。
 
 还有一些其他比较有用的参数，比如 `free -h` 显示比较可读 `h for human`，还有 `free -g` 使用 GB 为单位显示信息。
 
@@ -34,6 +34,11 @@ last_updated:
 第二种方法就是直接读取 `/proc/meminfo` 文件， `/proc` 文件系统并不是真实的文件系统，不真正包含文件，他是虚拟文件系统，存储的是当前内核运行状态的一系列特殊文件。
 
 运行命令 `cat /proc/meminfo` 检查其中的 `MemTotal, MemFree, Buffers, Cached, SwapTotal, SwapFree` 这几个字段，显示的内容和 `free` 命令是一样的。
+
+    cat /proc/meminfo
+    less /proc/meminfo
+    more/proc/meminfo
+    egrep --color 'Mem|Cache|Swap' /proc/meminfo
 
 ## vmstat
 
@@ -73,13 +78,13 @@ last_updated:
 
 ## top
 
-`top` 命令通常被用来检查每一个进程的内存和CPU使用，但其实也可以用他来查看系统整个的内存使用，最上方的数据就能看到。
+`top` 命令通常被用来检查每一个进程的内存和 CPU 使用，但其实也可以用他来查看系统整个的内存使用，最上方的数据就能看到。
 
 同样，可视化程度更高的 `htop` 也能够快速的查看到使用的内存
 
 ## dmidecode
 
-通过一下命令也可以查看，这个命令只能够查看到物理内存条的大小，但是可以提供给我们一个信息就是系统的总内存，是由两个8G内存组成，而不是由8个2G内存条组成。
+通过一下命令也可以查看，这个命令只能够查看到物理内存条的大小，但是可以提供给我们一个信息就是系统的总内存，是由两个 8G 内存组成，而不是由 8 个 2G 内存条组成。
 
     sudo dmidecode -t 17
 
@@ -156,4 +161,15 @@ last_updated:
     /0/19/2                    memory         [empty]
     /0/19/3                    memory         [empty]
     /0/100/1f.2                memory         Memory controller
+
+## GUI
+
+同样可以使用 GUI 来查看，Gnome System Monitor 提供一个简单的界面显示系统进程，内存和文件系统。可以使用以下命令在终端开启
+
+    gnome-system-monitor
+
+## reference
+
+- <https://www.cyberciti.biz/faq/linux-check-memory-usage/>
+
 

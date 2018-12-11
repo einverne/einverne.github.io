@@ -5,10 +5,10 @@ tagline: ""
 description: ""
 category: Linux
 tags: [linux, grep, regex, gz]
-last_updated: 
+last_updated:
 ---
 
-Linux 下按照正则过滤文本的命令 grep 非常强大，grep 能够把正则匹配的行打印出来。
+Linux 下按照正则过滤文本的命令 grep 非常强大，grep 能够把正则匹配的行打印出来。而 zgrep 则能够对压缩包内容进行正则匹配。zgrep 全称是 search compressed files for a regular expression
 
 grep 的命令格式是
 
@@ -20,6 +20,8 @@ grep 的命令格式是
 
     -i   忽略字符大小写区别
     -v   显示不包含正则的所有行
+
+关于更多的 grep 的内容可以参考另外一篇文章，zgrep 和 grep 用法类似，不过操作的对象是压缩的内容。支持 bzip2，gzip，lzip， xz 等等。
 
 ## zgrep 使用
 但如果想要过滤 Nginx 的 access_log.gz 的压缩文件的内容，如果先解压，然后过滤出有用的文本，再把文件压缩回去，这就变的非常不方便。
