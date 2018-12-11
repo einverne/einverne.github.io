@@ -25,7 +25,7 @@ cron 守护进程是一个由实用程序和配置文件组成的小型子系统
 
 守护进程 cron 连续运行，每分钟检查一次配置文件中的修改。cron 读取系统范围的和针对用户的 crontab 、相应地更新事件调度计划并执行这一分钟内应该执行的所有命令。这个守护进程还捕捉每个作业的输出（如果有输出的话），并把结果通过电子邮件发送给作业的所有者。
 
-可以在三个位置定义与系统相关的作业：/etc/crontab、/etc/cron.d 中的任何文件以及特殊目录 /etc/cron.hourly、/etc/cron.daily、/etc/cron.weekly 和 /etc/cron.monthly：
+可以在三个位置定义与系统相关的作业：`/etc/crontab`、`/etc/cron.d` 中的任何文件以及特殊目录 /etc/cron.hourly、/etc/cron.daily、/etc/cron.weekly 和 /etc/cron.monthly：
 
 - 主要的系统 crontab 是 /etc/crontab。这个文件有独特的语法（在下面讨论），其中定义的每个作业根据它自己的时间表（比如每小时两次或每天一次）作为指定的用户运行。使用 /etc/crontab 调度各种管理和维护任务。
 - 还可以在 /etc/cron.d 目录中维护一组 crontab。通过创建 crontab，按照逻辑对属于某一子系统的命令进行分组。例如，PHP 5 编程语言的包在 /etc/cron.d 中安装一个名为 php5 的 crontab，它会定期清除不使用的会话。/etc/cron.d 中的文件采用与 /etc/crontab 相同的语法，每个作业按照自己的时间表并作为特定的用户运行。
@@ -69,6 +69,7 @@ crontab 的语法格式：
     |     |     +--------- day of month (1 - 31)
     |     +----------- hour (0 - 23)
     +------------- min (0 - 59)
+
     一个标准的 crontab 配置需要符合如下：
 
     分 时 日 月 星期 要运行的命令
@@ -270,6 +271,16 @@ cron 使用 /usr/bin/sh 的命令，默认有以下内置变量：
 ### 其他注意事项
 
 在 crontab 中 % 是有特殊含义的，表示换行的意思。如果要用的话必须进行转义 `\%`，如经常用的 `date '+%Y%m%d'` 在 crontab 里是不会执行的，应该换成 `date '+\%Y\%m\%d'`。
+更新系统时间时区后需要重启 cron, 在 ubuntu 中服务名为 cron:
+
+    service cron restart
+
+Ubuntu/Mint 下启动、停止与重启 cron:
+
+    sudo /etc/init.d/cron start
+    sudo /etc/init.d/cron stop
+    sudo /etc/init.d/cron restart
+
 
 
 ## reference
