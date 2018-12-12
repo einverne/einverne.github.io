@@ -10,6 +10,16 @@ last_updated:
 
 ThreadLocal 线程本地变量，每个线程保存变量的副本，对副本的改动，对其他的线程而言是透明的。
 
+## 特性
+
+- The object is not shared between threads, so it can be used without the need for synchronization
+- it is available throughout the life of the thread, meaning you don’t have to pass it all over the place through method calls
+
+## 适用场景
+
+- 每个线程都需要自己的数据存储对象
+- 实例被多个方法共享，但是不希望多线程共享
+
 ## 常用方法
 
     // 设置当前线程的线程局部变量的值
