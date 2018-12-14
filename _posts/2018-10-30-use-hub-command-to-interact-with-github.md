@@ -26,6 +26,17 @@ Mac 或者 Go 安装可以参考[这里](https://hub.github.com/)
 
 当第一次和 GitHub 有交互时会弹出用户名和密码用来生成 OAuth token，token 保存在 `~/.config/hub` 文件中。或者可以提供 `GITHUB_TOKEN` 环境变量，值是拥有 repo 权限的 access token。
 
+如果需要设置 zsh 的 autocomplete 可以
+
+    # Setup autocomplete for zsh:
+    mkdir -p ~/.zsh/completions
+    cp ./hub-linux-amd64-$VERSION/etc/hub.zsh_completion ~/.zsh/completions/_hub
+    echo "fpath=(~/.zsh/completions $fpath)" >> ~/.zshrc
+    echo "autoload -U compinit && compinit" >> ~/.zshrc
+
+    echo "eval "$(hub alias -s)"" >> ~/.zshrc
+
+
 ## 使用
 
 ### 贡献者

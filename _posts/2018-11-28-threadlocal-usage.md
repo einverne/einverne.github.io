@@ -20,6 +20,8 @@ ThreadLocal 线程本地变量，每个线程保存变量的副本，对副本�
 - 每个线程都需要自己的数据存储对象
 - 实例被多个方法共享，但是不希望多线程共享
 
+一个典型的例子就是用 ThreadLocal 来保存一次请求的 Session 数据，程序的不同地方可能需要读取 Session 的内容，也要往 Session 中写入数据。
+
 ## 常用方法
 
     // 设置当前线程的线程局部变量的值
@@ -59,3 +61,4 @@ ThreadLocal 对象是给定线程中对象的引用，因此在服务端使用�
 ## reference
 
 - <https://stackoverflow.com/a/817926/1820217>
+- <https://stackoverflow.com/a/1490980/1820217>

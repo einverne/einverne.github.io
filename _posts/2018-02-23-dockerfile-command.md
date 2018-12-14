@@ -4,8 +4,8 @@ title: "dockerfile 指令"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [linux, docker]
-last_updated: 
+tags: [linux, docker, docker-image,]
+last_updated:
 ---
 
 通常情况下，我们并不使用 `docker commit` 方法来构建镜像，而是使用 `Dockerfile` 的定义文件和 `docker build` 命令来构建镜像。更多 Docker [入门](/post/2017/07/docker-introduction.html) 的内容可以参考之前的文章。
@@ -68,7 +68,7 @@ ADD 指令用来将构建环境下的文件和目录复制到镜像中。
 ADD 指令通过目的地址参数末尾的字符来判断文件源是目录还是文件，如果目标地址以 `/` 结尾，那么 Docker 就认为源地址指向的是一个目录，如果目的地址不是 `/` 结尾，那么源地址就是文件。
 
 ## COPY
-COPY 指令和ADD很类似，根本不同是 COPY 只关心在构建上下文中复制本地文件，而不会去做文件提取和解压的工作。
+COPY 指令和 ADD 很类似，根本不同是 COPY 只关心在构建上下文中复制本地文件，而不会去做文件提取和解压的工作。
 
 如果目的位置不存在， Docker 会自动创建所需要的目录结构
 
@@ -77,4 +77,4 @@ ONBUILD 指令能为镜像添加触发器，当一个镜像被用作其他镜像
 
 ## reference
 
-- 《第一本Docker书》
+- 《第一本 Docker 书》

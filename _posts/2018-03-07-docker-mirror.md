@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [docker, google, cloud, images]
-last_updated: 
+last_updated:
 ---
 
 有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。Docker Hub 为用户提供无限数量的公开镜像托管服务，但是仅提供一个私有镜像托管。Docker Hub 上镜像分为两类，一类为官方镜像，ubuntu，redis 等等由权威三方开发和维护通过 Docker 官方认证，另一类就是普通用户镜像。
@@ -18,18 +18,18 @@ last_updated:
             "加速地址"
         ],
         "insecure-registries": []
-    } 
+    }
 
-修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。下面就总结一下国内的Docker镜像站点。
+修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。下面就总结一下国内的 Docker 镜像站点。
 
 ### DaoCloud
-DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc)的加速地址:
+DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc) 的加速地址：
 
     http://6ce28dce.m.daocloud.io
 
 这个地址不同用户看起开不一样，可以使用我的，也可以自己注册。
 
-这个地址不知道是不是长久地址，不过失效，可以到他的官方[网站](http://6ce28dce.m.daocloud.io)查看。
+这个地址不知道是不是长久地址，不过失效，可以到他的官方[网站](http://6ce28dce.m.daocloud.io) 查看。
 
 ### Docker cn
 也可以使用 Docker 官方提供的镜像
@@ -40,7 +40,7 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc)的加速地址
 
 ### 个人维护的镜像
 
-[mritd](https://mritd.me/2017/03/21/private-maintenance-docker-mirror-registry/)反向代理了主流的三大仓库（Docker Hub，gcr.io，quay.io）。
+[mritd](https://mritd.me/2017/03/21/private-maintenance-docker-mirror-registry/) 反向代理了主流的三大仓库（Docker Hub，gcr.io，quay.io）。
 
 ## docker registries
 不得不说的 hub.docker.com，官方提供
@@ -60,7 +60,7 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc)的加速地址
 
 - <https://dev.aliyun.com/search.html>
 
-然后[有人](http://dockone.io/question/1216)把 `gcr.io/google-containers` 下所有的 Docker 镜像都同步到了中央库
+然后[有人](http://dockone.io/question/1216) 把 `gcr.io/google-containers` 下所有的 Docker 镜像都同步到了中央库
 
 - <https://hub.docker.com/u/googlecontainer/>
 
