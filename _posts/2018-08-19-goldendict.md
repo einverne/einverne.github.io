@@ -47,6 +47,9 @@ Ubuntu/Linux Mint 下安装非常简单
 - 弹出搜索功能：一个小窗口会弹出，用于显示在另一程序中选中的单词的词义。
 - 支持全局热键，可在任何一点触发该程序，或直接从剪切板中查找词义。
 
+### GoldenDict 开机启动
+在 Linux gnome 桌面环境下，可能会发现 GoldenDict 设置选项中的开机启动是灰色的按钮无法选中。其实 gnome 自己有一个开机管理的应用叫做 startup application，在这个应用中添加 GoldenDict 即可。
+
 ## 字典安装
 
 ### 在线字典
