@@ -7,7 +7,7 @@ title: Verne in GitHub
 <div class="row">
   <div class="col-xs-12 col-md-8">
     {% for post in paginator.posts %}
-    {% capture summary %}{{post.content | split:'<!--more-->' |first }}{% endcapture%}
+    {% capture summary %}{{post.content | split:'<!--more--> ' |first }}{% endcapture%}
     <h1><a class="title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
     <div class="post_at_index">
       {{summary}}
@@ -27,7 +27,7 @@ title: Verne in GitHub
 
     <!-- Pagination links -->
     <nav>
-      <ul class="pagination">
+      <ul class="pagination hidden-xs">
         {% if paginator.previous_page %}
         {% if paginator.previous_page == 1 %}
         <li>
@@ -48,23 +48,49 @@ title: Verne in GitHub
         <li class="active">
           <a>1</a>
         </li>
+        {% for count in (2..5) %}
+        <li>
+          <a href="/page{{count}}">{{count}}</a>
+        </li>
+        {% endfor %}
+        <li><span>...</span></li>
+        <li><a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a></li>
         {% else %}
         <li>
           <a href="/">1</a>
         </li>
         {% endif %}
 
-        {% for count in (2..paginator.total_pages) %}
-        {% if count == paginator.page %}
+        {% if paginator.page < paginator.total_pages and paginator.page > 1 %}
+          {% if paginator.page > 5 %}
+            {% for count in (2..5) %}
+            <li>
+              <a href="/page{{count}}">{{count}}</a>
+            </li>
+            {% endfor %}
+            <li class="disabled"><span>...</span></li>
+            <li class="active"><a>{{paginator.page}}</a></li>
+          {% else %}
+            {% for count in (2..5) %}
+              {% if paginator.page == count %}
+                <li class="active"><a>{{count}}</a></li>
+                {% else %}
+                <li><a href="/page{{count}}">{{count}}</a></li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <li class="disabled"><span>...</span></li>
+          <li><a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a></li>
+        {% else %}
+        {% endif %}
+
+        {% if paginator.page == paginator.total_pages %}
+        <li><span>...</span></li>
         <li class="active">
-          <a>{{count}}</a>
+          <a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a>
         </li>
         {% else %}
-        <li>
-          <a href="/page{{count}}">{{count}}</a>
-        </li>
         {% endif %}
-        {% endfor %}
 
         {% if paginator.next_page %}
         <li>
