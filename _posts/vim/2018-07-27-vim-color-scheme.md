@@ -3,7 +3,7 @@ layout: post
 title: "Vim 的颜色主题"
 tagline: ""
 description: ""
-category: vim
+category: Vim
 tags: [vim, color-scheme, color, scheme,]
 last_updated:
 ---

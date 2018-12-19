@@ -3,7 +3,7 @@ layout: post
 title: "Kafka 副本备份机制"
 tagline: ""
 description: ""
-category: Kafka
+category: 学习笔记
 tags: [kafka, message, broker, replication,]
 last_updated:
 ---
