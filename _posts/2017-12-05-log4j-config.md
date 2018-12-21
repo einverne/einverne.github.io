@@ -226,7 +226,7 @@ Java web 项目里面的日志的位置配置支持变量
 　　log4j.appender.A1=org.apache.log4j.ConsoleAppender // 这里指定了日志输出的第一个位置 A1 是控制台 ConsoleAppender
 　　
 ## 配置日志信息的格式
-有时用户希望根据自己的喜好格式化自己的日志输出。Log4j 可以在 Appenders 的后面附加 Layouts 来完成这个功能。Layouts 提供了四种日志输出样式，如根据 HTML 样式、自由指定样式、包含日志级别与信息的样式和包含日志时间、线程、类别等信息的样式等等。
+如果希望格式化自己的日志输出，Log4j 可以在 Appenders 的后面附加 Layouts 来完成这个功能。Layouts 提供了四种日志输出样式，如根据 HTML 样式、自由指定样式、包含日志级别与信息的样式和包含日志时间、线程、类别等信息的样式等等。
 
 其语法表示为：
 
@@ -244,10 +244,10 @@ Java web 项目里面的日志的位置配置支持变量
 
 "fully.qualified.name.of.layout.class" 可以指定下面 4 个格式中的一个：
 
-- org.apache.log4j.HTMLLayout（以 HTML 表格形式布局），
-- org.apache.log4j.PatternLayout（可以灵活地指定布局模式），
-- org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），
-- org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）
+- org.apache.log4j.HTMLLayout
+- org.apache.log4j.PatternLayout
+- org.apache.log4j.SimpleLayout
+- org.apache.log4j.TTCCLayout
 
 ### 输出格式
 Log4J 采用类似 C 语言中的 printf 函数的打印格式格式化日志信息，打印参数如下：
@@ -630,6 +630,7 @@ Web 配置 log4j, 需求增加以下内容到 `WEB-INF/web.xml`
 
 ## reference
 
+- <https://wiki.apache.org/logging-log4j/Log4jXmlFormat>
 - <http://www.cnblogs.com/tqsummer/archive/2010/08/26/1809232.html>
 - <http://www.slf4j.org/docs.html>
 - <https://logging.apache.org/log4j/2.x/>

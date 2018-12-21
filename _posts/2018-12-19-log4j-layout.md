@@ -10,6 +10,13 @@ last_updated:
 
 log4j 下的 PatternLayout 只是 Layout 的一种，用来格式化日志文件的输出。在 PatternLayout 中，配置一个样板字符串，通过该字符串来定义输出格式。
 
+log4j 还提供了其他三种 Layout
+
+- org.apache.log4j.HTMLLayout（以 HTML 表格形式布局）
+- org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串）
+- org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）
+
+
 这个类的目标是格式化 LoggingEvent 输出结果，这个结果依赖 `conversion pattern`.
 
 conversion pattern 和 C 语言下面的 printf 方法非常类似。conversion patter 由逐字文本和格式化控制表达式（conversion specifiers) 组成。
