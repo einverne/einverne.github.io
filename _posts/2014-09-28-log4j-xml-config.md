@@ -53,6 +53,8 @@ appender 的配置
 ## 不同的 package 使用不同的 appender
 则在定义 logger 时 name 中指定对应的 package name，然后引用对应的 appender。
 
+## 不同的 appender 相同的文件
+log4j 不支持不同的 appender 打印到相同的文件中。
 
 ## reference
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "MyBatis 介绍"
+title: "MyBatis 使用介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [mybatis, mysql, orm, java, ]
+tags: [mybatis, mysql, orm, java, 教程 ,  ]
 last_updated:
 ---
 
-MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。
+MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。用简单的话来说就是可以将数据库表映射到 Object 中 MyBatis 就是中间辅助处理的框架。
 
 ## 整体架构
 分为三层
@@ -87,7 +87,7 @@ ResultMaps 元素是 MyBatis 中最重要最强大的元素，告诉 MyBatis 从
 MyBatis 是一个比较大的项目，下面包含了很多[子项目](http://blog.mybatis.org/p/products.html)，如果看这个项目列表就能够清晰的看到一些
 
 - MyBatis 3 项目自身，提供核心的功能
-- Generator 代码生成，可以快速生成 Mapper 和 Object
+- Generator 代码生成，是一款 maven 插件，可以快速生成 Mapper 和对应的 Object 实体文件
 - mybatis spring 则是和 Spring 的整合，项目列表页上还有和 Spring Boot 的结合 和 Guice 的结合，和 Memcache 的整合等等
 
 Ant 则直接在 classpath 引入 [jar 包](https://github.com/mybatis/mybatis-3/releases)，Maven 则
@@ -106,7 +106,7 @@ Ant 则直接在 classpath 引入 [jar 包](https://github.com/mybatis/mybatis-3
       <version>x.x.x</version>
     </dependency>
 
-mybatis generator
+mybatis generator 作为插件引入：
 
     <project ...>
        ...
@@ -126,6 +126,7 @@ mybatis generator
       ...
     </project>
 
+更多关于 MyBatis Generator 的内容可以参考[这里](/post/2014/08/mybatis-generator.html)
 
 ## reference
 

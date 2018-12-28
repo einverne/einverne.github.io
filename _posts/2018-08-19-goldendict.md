@@ -373,6 +373,14 @@ LightLang   | https://code.google.com/archive/p/lightlang/ 已停止开发 | 俄
 Lingoes     | http://www.lingoes.net/ | 私有格式 | Windows only | Windows 下比较好用，但有广告 |
 Dicto       | http://dicto.org.ru/ | XDXF dictionaries | windows only | 只面向俄语 略 |
 
+## 其他在线字典
+Collins online
+
+- https://www.collinsdictionary.com/
+
+Cambridge online
+
+- https://dictionary.cambridge.org/us/
 
 ## 其他编程资源
 使用 stardict-tools 可以将 stardict 格式的字典转变成可读的格式

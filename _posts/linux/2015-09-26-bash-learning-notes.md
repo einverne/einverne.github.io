@@ -43,26 +43,26 @@ using `set -o` to check all the bash options.
 Bash Keyboard Shortcuts 在绝大多数情况下一下快捷键可以直接使用
 
 ### 移动光标 Moving the cursor
-在终端移动快捷键
+在终端移动快捷键，下面几个快捷键在命令行中非常有用，尤其是当命令比较长时，在行前，行末快速切换能够提高不少效率。而如果要修改命令行中间内容，这时候组合使用 alt ctrl 和 b f 则能够快速定位到中间修改的内容，再进行修改。
 
 Command |  Explain
---------|------------|
+--------|------------
 Ctrl + a  |  移动到命令最前 Go to the beginning of the line (Home)
 Ctrl + e  |  移动到行尾 Go to the End of the line (End)
 Ctrl + p  |  上一个命令 Previous command (Up arrow)
 Ctrl + n  |  下一个命令 Next command (Down arrow)
  Alt + b  |  不删除命令的情况下，向前移动一个单词 Back (left) one word
  Alt + f  |  向后一个单词 Forward (right) one word
-Ctrl + f  |  Forward one character
-Ctrl + b  |  Backward one character
+Ctrl + b  |  光标向前移动一个字符 Backward
+Ctrl + f  |  光标向后移动一个字符 Forward
 Ctrl + xx |  在行首和当前光标的位置来回切换 Toggle between the start of line and current cursor position
 
 ### 编辑 Editing
-编辑相关的快捷键
+编辑相关的快捷键，对我而言 Ctrl + w 是一个非常常用的快捷键，当输入发生错误时，直接快速删除前一个单词再进行修正。
 
-Command |  Explain
---------|------------|
-Ctrl + L   |  Clear the Screen, similar to the clear command
+Command   |  Explain
+----------|------------
+Ctrl + L  |  Clear the Screen, similar to the `clear` command
 Alt + Del |  Delete the Word before the cursor.
 Alt + d   |  Delete the Word after the cursor.
 Ctrl + d   |  Delete character under the cursor
@@ -71,31 +71,32 @@ Ctrl + h   |  Delete character before the cursor (Backspace)
 Ctrl + w   |  Cut the Word before the cursor to the clipboard. 一般用来快速删除前一个单词，也可以用 Alt + Backspace
 Ctrl + k   |  Cut the Line after the cursor to the clipboard.
 Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard. 一般用来快速清除当前输入命令
-- | -
-Alt + t   |  Swap current word with previous
+-----------|----------------------
+Alt + t    |  Swap current word with previous
 Ctrl + t   |  Swap the last two characters before the cursor (typo).
 Esc  + t   |  Swap the last two words before the cursor.
-- | -
+-----------|----------------------
  Ctrl + y   |  Paste the last thing to be cut (yank)
   Alt + u   |  UPPER capitalize every character from the cursor to the end of the current word.
   Alt + l   |  Lower the case of every character from the cursor to the end of the current word.
   Alt + c   |  Capitalize the character under the cursor and move to the end of the word.
   Alt + r   |  Cancel the changes and put back the line as it was in the history (revert).
  Ctrl + _   |  Undo
-- | -
+------------|-------------------------------
  TAB        |  Tab completion for file/directory names
 
 For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER.
 type just enough characters to uniquely identify the directory you wish to open.
 
 ### 历史 History
+查询 bash 命令历史，快速执行历史命令
 
 Command |  Explain
 --------|------------|
 Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history.
 Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
 Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
-- |-
+----------|-------------------------
 Ctrl + s  |  Go back to the next most recent command. <br/> (beware to not execute it from a terminal because this will also launch its XOFF).
 Ctrl + o  |  Execute the command found via Ctrl+r or Ctrl+s
 Ctrl + g  |  Escape from history searching mode
@@ -103,21 +104,21 @@ Ctrl + g  |  Escape from history searching mode
     !abc  |  Run last command starting with abc
   !abc:p  |  Print last command starting with abc
       !$  |  Last argument of previous command
-ALT + .  |  Last argument of previous command
-     !*  |  All arguments of previous command
+ALT + .   |  Last argument of previous command
+     !*   |  All arguments of previous command
 ^abc­^­def|   Run previous command, replacing abc with def
 
 ### 进程控制 Process control
+下面几个命令可以控制命令行中正在执行的进程，包括中止进程，放置进程到后台，唤起进程等等。
 
 Command |  Explain
 --------|------------|
 Ctrl + C |  Interrupt/Kill whatever you are running (SIGINT)
-Ctrl + L |  Clear the screen
 Ctrl + s |  Stop output to the screen (for long running verbose commands)
          |  Then use PgUp/PgDn for navigation
 Ctrl + q |  Allow output to the screen (if previously stopped using command above)
 Ctrl + D |  退出当前 Shell Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
-Ctrl + Z |  Send the signal SIGTSTP to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
+Ctrl + Z |  Send the signal `SIGTSTP` to the current task, which suspends it. <br/>  To return to it later enter fg 'process name' (foreground).
 
 
 最常使用的应该还是 `Ctrl-a`, `Ctrl-e`, `Ctrl-f`, `Ctrl-b`, `Ctrl-l`, `Ctrl-h`, `Ctrl-w`, `Ctrl-k`, `Ctrl-u`, `Ctrl-y`, `Ctrl-r`.
