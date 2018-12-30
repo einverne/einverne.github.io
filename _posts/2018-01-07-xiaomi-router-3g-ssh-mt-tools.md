@@ -1,37 +1,37 @@
 ---
 layout: post
-title: "小米路由器 3G 开启SSH 安装 MT 工具箱"
+title: "小米路由器 3G 开启 SSH 安装 MT 工具箱"
 tagline: ""
 description: ""
 category: 经验总结
 tags: [router, xiaomi,]
-last_updated: 
+last_updated:
 ---
 
-下面是小米路由器折腾记录，包括开启 SSH，然后安装 MT 工具箱，主要是为了其中的两个插件，一个是去广告，一个是SS代理，不过附带竟然发现了 frp 插件，开心啊。下面就是具体的记录。
+下面是小米路由器折腾记录，包括开启 SSH，然后安装 MT 工具箱，主要是为了其中的两个插件，一个是去广告，一个是 SS 代理，不过附带竟然发现了 frp 插件，开心啊。下面就是具体的记录。
 
 ## 小米路由器刷入开发版
-[下载](http://www1.miwifi.com/miwifi_download.html) 开发版，在后台点击上传安装开发版的bin，然后等待重启，完成开发版安装。
+[下载](http://www1.miwifi.com/miwifi_download.html) 开发版，在后台点击上传安装开发版的 bin，然后等待重启，完成开发版安装。
 
 ## 小米路由器开始 SSH
-小米帐号绑定小米路由器，设置路由器可正常上网，并使用手机版小米wifi绑定路由器，然后在绑定小米账号的前提下，进入 <https://d.miwifi.com/rom/ssh> 这个网站，然后找到 SSH 登录的 root 密码，之后会用到。
+小米帐号绑定小米路由器，设置路由器可正常上网，并使用手机版小米 wifi 绑定路由器，然后在绑定小米账号的前提下，进入 <https://d.miwifi.com/rom/ssh> 这个网站，然后找到 SSH 登录的 root 密码，之后会用到。
 
-> 工具包使用方法：小米路由器需升级到开发版0.5.28及以上，小米路由器mini需升级到开发版0.3.84及以上，小米路由器3即将支持。注意：稳定版不支持。
-> 请将下载的工具包bin文件复制到U盘（FAT/FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin；
-> 断开小米路由器的电源，将U盘插入USB接口；
-> 按住reset按钮之后重新接入电源，指示灯变为黄色闪烁状态即可松开reset键；
-> 等待3-5秒后安装完成之后，小米路由器会自动重启，之后您就可以尽情折腾啦 ：）
+> 工具包使用方法：小米路由器需升级到开发版 0.5.28 及以上，小米路由器 mini 需升级到开发版 0.3.84 及以上，小米路由器 3 即将支持。注意：稳定版不支持。
+> 请将下载的工具包 bin 文件复制到 U 盘（FAT/FAT32 格式）的根目录下，保证文件名为 miwifi_ssh.bin；
+> 断开小米路由器的电源，将 U 盘插入 USB 接口；
+> 按住 reset 按钮之后重新接入电源，指示灯变为黄色闪烁状态即可松开 reset 键；
+> 等待 3-5 秒后安装完成之后，小米路由器会自动重启，之后您就可以尽情折腾啦 ：）
 
-如果Chrome浏览器出现错误提示："This site can’t be reached. d.miwifi.com refused to connect. ERR_CONNECTION_REFUSED"，需要手动将`http`替换为`https`。
+如果 Chrome 浏览器出现错误提示："This site can’t be reached. d.miwifi.com refused to connect. ERR_CONNECTION_REFUSED"，需要手动将`http`替换为`https`。
 
 ## 刷入 MT 工具箱
-MT工具箱是目前第三方插件里面最为方便易用的插件集合
+MT 工具箱是目前第三方插件里面最为方便易用的插件集合
 
-KMS 服务器，VSFTP 服务器，VPN 服务器，远程管理，ARIA2，Koolproxy广告过滤，阿呆喵广告过滤，Shadowsocks，webshell， frp 服务
+KMS 服务器，VSFTP 服务器，VPN 服务器，远程管理，ARIA2，Koolproxy 广告过滤，阿呆喵广告过滤，Shadowsocks，webshell， frp 服务
 
-Misstar Tools 2.0工具箱安装，经过上面的几个步骤，开启 SSH 之后，使用 `ssh root@192.168.31.1` 来连接路由器，使用之前获取的 SSH root 密码登录，进去之后 `passwd` 修改 root 密码，以方便下一次使用，然后直接执行如下代码，就能安装 MT 工具箱。
+Misstar Tools 2.0 工具箱安装，经过上面的几个步骤，开启 SSH 之后，使用 `ssh root@192.168.31.1` 来连接路由器，使用之前获取的 SSH root 密码登录，进去之后 `passwd` 修改 root 密码，以方便下一次使用，然后直接执行如下代码，就能安装 MT 工具箱。
 
-    wget http://www.misstar.com/tools/appstore/install.sh -O /tmp/install.sh && chmod a+x /tmp/install.sh && /tmp/install.sh 
+    wget http://www.misstar.com/tools/appstore/install.sh -O /tmp/install.sh && chmod a+x /tmp/install.sh && /tmp/install.sh
 
 卸载
 
@@ -50,12 +50,12 @@ Misstar Tools 2.0工具箱安装，经过上面的几个步骤，开启 SSH 之�
 
 from: <http://bbs.xiaomi.cn/t-13765387>
 
-### 方法二：修改页面ID
+### 方法二：修改页面 ID
 
 使用 Chrome 打开 MT 插件管理页面，使用开发者工具，定位页面中任意一个 安装 按钮，然后找到代码中的 `id="ftp"` 字样，修改为 `id="ss"` ，然后点安装，成功后会回到 MT 工具箱首页，配置使用即可。
 
 ## 刷其他固件
-按照上面官方的步骤操作完路由器就已经获取root权限了，再使用ssh工具连接路由即可，建议在进行下一步操作之前备份原版分区文件
+按照上面官方的步骤操作完路由器就已经获取 root 权限了，再使用 ssh 工具连接路由即可，建议在进行下一步操作之前备份原版分区文件
 
     root@XiaoQiang:~# cat /proc/mtd
     dev:    size   erasesize  name
@@ -75,13 +75,13 @@ from: <http://bbs.xiaomi.cn/t-13765387>
     mtd13: 012a6000 0001f000 "ubi_rootfs"
     mtd14: 030ec000 0001f000 "data"
 
-查看U盘挂载的位置命令：
+查看 U 盘挂载的位置命令：
 
     df -h
 
-U盘一般是/extdisks/开头，后面的可能不一样，我的是：/extdisks/sda4/
+U 盘一般是 `/extdisks/` 开头，后面的可能不一样，我的是： `/extdisks/sda4/`
 
-备份小米路由器3G原版分区到文件，每行是一条命令，分别执行，最后一条可能会报错，可不用理会，最有用的是mtd0-mtd4
+备份小米路由器 3G 原版分区到文件，每行是一条命令，分别执行，最后一条可能会报错，可不用理会，最有用的是 mtd0-mtd4
 
     dd if=/dev/mtd0 of=/extdisks/sda4/rom/ALL.bin
     dd if=/dev/mtd1 of=/extdisks/sda4/rom/Bootloader.bin
@@ -102,7 +102,7 @@ U盘一般是/extdisks/开头，后面的可能不一样，我的是：/extdisks
 
 首先，下载 Breed 刷入不死 breed，
 
-下载地址：<https://breed.hackpascal.net/>  (搜索 breed-mt7621-xiaomi-r3g.bin)
+下载地址：<https://breed.hackpascal.net/>  （搜索 breed-mt7621-xiaomi-r3g.bin)
 
 用命令下载，在电脑终端中运行
 
@@ -118,11 +118,33 @@ U盘一般是/extdisks/开头，后面的可能不一样，我的是：/extdisks
     cd /tmp
     mtd -r write breed-mt7621-xiaomi-r3g.bin Bootloader
 
-机器会重新启动，指示灯变蓝，确保电脑设置为自动获取 IP 地址，使用网线连接。刷入成功后，断掉电源，用东西顶住复位键不松开，然后再接上电源等待10秒左右放开复位键，浏览器输入 http://192.168.1.1  即可进行Breed Web恢复界面：
+机器会重新启动，指示灯变蓝，确保电脑设置为自动获取 IP 地址，使用网线连接。刷入成功后，断掉电源，用东西顶住复位键不松开，然后再接上电源等待 10 秒左右放开复位键，浏览器输入 http://192.168.1.1  即可进行 Breed Web 恢复界面：
 
-如果要刷入其他固件，打开Breed Web恢复控制台，点击左侧“固件更新”，钩选“固件”，选择固件，再点“上传”
+如果要刷入其他固件，打开 Breed Web 恢复控制台，点击左侧“固件更新”，钩选“固件”，选择固件，再点“上传”
 
 更多内容可查看： <http://www.right.com.cn/forum/thread-161906-1-1.html>
+
+## 小米路由器的目录结构
+小米路由器基本上沿用了 Linux 的目录结构，但是也有一些区别，在用了一段时间之后发现某些目录被写满了导致一些第三方服务无法开启，也是很恼人了。这里及列一下这些目录的作用，以便于清理。
+
+    /       根目录
+    bin    二进制可执行命令
+    boot   bootloader 启动相关
+    data   用户数据文件
+    dev    设备文件，驱动等等
+    etc    配置文件
+    extdisks        外置硬盘挂载点
+    lib     共享库
+    mnt     临时挂载点
+    opt     可选程序安装点
+    proc    系统内存映射虚拟目录，可用来获取系统信息
+    root    系统管理员主目录
+    sbin    系统管理命令
+    sys
+    userdisk    路由硬盘（一般为内置）
+    usr         存放应用程序和文件
+    tmp        临时存放点
+    www         浏览器网页存放区
 
 
 ## reference

@@ -4,7 +4,7 @@ title: "2017 年读书笔记"
 tagline: ""
 description: ""
 category: 思考感悟
-tags: [book, reanding]
+tags: [book, reading, collection, ]
 last_updated:
 ---
 
