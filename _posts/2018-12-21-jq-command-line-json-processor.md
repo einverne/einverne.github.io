@@ -10,6 +10,8 @@ last_updated:
 
 jq 是一个命令行下的 JSON 字符串处理工具，就像 sed 对于文本一样，jq 对应着 json 文件，jq 命令可以不同方式转换 JSON。jq 可以接受文本输入，默认情况下，jq 从 stdin 读取 JSON 流。通过和管道的组合可以非常方便的处理 JSON。
 
+> jq is a lightweight and flexible command-line JSON processor
+
 
 ## 使用实例
 
@@ -31,7 +33,7 @@ jq 命令，原文格式化输出：
 
     jq -c . input.json
 
-### 过滤文本
+### 获取特定文本
 比如上面的字符串
 
     { "foo": "lorem", "bar": "ipsum" }
@@ -47,6 +49,12 @@ jq 命令，原文格式化输出：
 如果 key 不存在则返回 null
 
 key 的书写方式支持 `.key.key` 级联的访问。
+
+## 外延
+在线练习场
+
+- <https://jqplay.org/>
+
 
 ## reference
 
