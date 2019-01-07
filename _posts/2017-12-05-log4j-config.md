@@ -337,6 +337,18 @@ LocationInfo=true: 默认值是 false, 输出 java 文件和行号
     log4j.appender.ROLLING_FILE.layout=org.apache.log4j.PatternLayout
     log4j.appender.ROLLING_FILE.layout.ConversionPattern=[framework] %d - %c -%-4r [%t] %-5p %c %x - %m%n 　　
 
+
+## log4j 日志等级
+
+- DEBUG: 纯 debug 信息，可以有隐私数据，可以有性能问题，可以很大，但线上一定不会打这个日志，只有在线下 debug 或极端情况线上 debug 的时候才会用到
+- INFO: 一般性的采集信息，觉得很有用的信息可以打出来，不可滥用，会有性能问题。大部分情况下线上服务器会在 INFO 级别，不应该有核心隐私数据
+- WARN: 程序不合理状态，需要巡检时注意的状况。处于性能瓶颈时，线上服务器可能会临时调到 WARN 级别，所以该日志应当非常少，只在异常的状态才打出来，应当被注意并修复异常状态
+- ERROR: 发生服务端错误，如存储错误、RPC 错误、进入 bug 路径等，该日志级别通常伴随不可用，并直接返回 error。所有 error 日志被看到之后，都应该逻辑调查原因并避免其出现
+- FATAL: 致命性错误，极少打，一般该错误伴随 panic 或直接重启
+
+建议使用 lombok 的 @Slf4j 注解。
+
+
 ## Log4j 比较全面的配置
 
 LOG4J 的配置之简单使它遍及于越来越多的应用中：Log4J 配置文件实现了输出到控制台、文件、回滚文件、发送日志邮件、输出到数据库日志表、自定义标签等全套功能。

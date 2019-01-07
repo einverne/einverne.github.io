@@ -21,4 +21,21 @@ GCP 的 Compute Engine 在不同的机房都有分布，在创建 Compute Engine
     sudo -i
     sudo su
 
+## 使用 SSH 登录
+默认情况下 Google 是禁止密码登录 SSH，我一般情况下会创建一个新用户
+
+    adduser xxx
+
+然后给该用户提供登录权限
+
+    vi /etc/ssh/sshd_config
+
+编辑
+
+    PasswordAuthentication yes
+
+然后重启
+
+    service sshd restart
+
 
