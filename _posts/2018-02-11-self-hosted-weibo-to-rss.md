@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "搭建自己的Weibo转RSS服务"
+title: "搭建自己的 Weibo 转 RSS 服务"
 tagline: ""
 description: ""
 category: 经验总结
 tags: [linux, docker, weibo, rss, inoreader,]
-last_updated: 
+last_updated:
 ---
 
-认识我的人都是知道我一直使用RSS订阅信息，但是互联网越来越闭塞的现在，每一家公司都在自建后花园，把所有的信息封闭在内部，几乎现在没有任何内容型平台提供 RSS 输出了，所以也才有了这篇文章。以前我使用的微博转RSS的服务大都已经挂掉，唯一一家微博档案最近也似乎有些危险。不过幸好查到下面两个项目，让微博定义RSS不在困难。
+认识我的人都是知道我一直使用 RSS 订阅信息，但是互联网越来越闭塞的现在，每一家公司都在自建后花园，把所有的信息封闭在内部，几乎现在没有任何内容型平台提供 RSS 输出了，所以也才有了这篇文章。以前我使用的微博转 RSS 的服务大都已经挂掉，唯一一家微博档案最近也似乎有些危险。不过幸好查到下面两个项目，让微博定义 RSS 不在困难。
 
 - https://github.com/DIYgod/Weibo2RSS
 - https://github.com/zgq354/weibo-rss
@@ -23,7 +23,7 @@ last_updated:
     docker build -t <tag> .
     docker run -p 3000:3000 -d --name weibo-rss --restart=always <tag>
 
-默认程序会监听服务器的 3000 端口，可以通过 Nginx 的 proxy_pass 指令配置请求转发
+默认程序会监听服务器的 3000 端口，可以通过 Nginx 的 proxy_pass 指令配置请求转发。
 
 ## reference
 
