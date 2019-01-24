@@ -24,7 +24,7 @@ Apache ZooKeeper 是 Apache 软件基金会的一个软件项目，为大型分�
 
 通常实际使用场景比如管理 HBase 集群，配置管理，和 Kafka 配合等等，Zookeeper 设计更专注于任务协作，并没有提供任何锁的接口或通用存储数据接口。
 
-![zk service](http://zookeeper.apache.org/doc/r3.4.5/images/zkservice.jpg)
+![zk service](https://zookeeper.apache.org/doc/r3.4.5/images/zkservice.jpg)
 
 Zookeeper 不适合用来作为海量存储，对于大量数据的存储应该考虑数据库或者分布式文件系统。
 
