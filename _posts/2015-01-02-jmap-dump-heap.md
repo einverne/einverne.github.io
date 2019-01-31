@@ -8,7 +8,7 @@ tags: [jmap, jstack, jdk, jvm, java,]
 last_updated:
 ---
 
-jdk 自带的 命令用来 dump heap info，或者查看 ClassLoader info，等等。
+jdk 自带的命令用来 dump heap info，或者查看 ClassLoader info，等等。
 
 ## 命令格式
 
@@ -31,6 +31,7 @@ jdk 自带的 命令用来 dump heap info，或者查看 ClassLoader info，等�
 ### 查看堆对象信息
 统计对象 count ，live 表示在使用
 
+    jamp -histo pid
     jmap -histo:live pid
 
 ### 查看 classLoader
