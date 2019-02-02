@@ -107,13 +107,11 @@ mLook 精校电子书，注册需要邀请码
     https://www.pdfdrive.com/
 
 ## Library Genesis
-Library Genesis 是科学论文和书籍搜索引擎
+Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的学术（盗版）书网站，以英文语言作品为主，辅以法、德、日、西、葡、意、俄、阿、土等语言作品。[^libgen]
+
+[^libgen]: <https://www.douban.com/note/651658406/>
 
     http://gen.lib.rus.ec
-
-## LibGen
-LibGen
-
     http://libgen.io
 
 ## SaltTiger
@@ -131,4 +129,6 @@ LibGen
 - https://github.com/justjavac/free-programming-books-zh_CN
 - 相关 Kindle 的 [tips](/post/2016/06/kindle-tips.html)
 
-最后，在能力范围内请支持正版。
+最后，在能力范围内请支持正版。个人已买 Kindle Unlimited，部分书籍能够买到也尽量会购买。部分不会发行的电子书用来在 Kindle 上读。
+
+
