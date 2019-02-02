@@ -62,6 +62,8 @@ Learning 系列的图书也是 O'Reilly 出版社的系列，这系列的图书�
 ## Head First
 Head First 系列的图书看的不多，最出名的可能是那本《Head First 设计模式》了吧，但是 Head First 系列书我查了一下都比较老，这个系列可能是这里面最没有存在感的一个系列了。至于特色部分等我看一些之后回来补上。
 
+补充 Head First 系列，之所以叫做 Head First 是这个系列的图书开创了一种学习模式，通过大量的配图，对话，营造一种比较好的理解方式，通过联想记忆，让读者能够长时间集中注意力然后达到学习的目的。
+
 常见：
 
 - 《Head First Android Development》
