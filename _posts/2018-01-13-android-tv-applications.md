@@ -5,10 +5,10 @@ tagline: ""
 description: ""
 category: 整理合集
 tags: [android, tv, adb, packages,]
-last_updated: 
+last_updated:
 ---
 
-用盒子也已经很多年了，几年来家里，自己用，也积累了一些常用的应用。这两天又拿到了 T1 盒子，又才想起来整理这样一份单子，这样不用每一次都一遍一遍的尝试了。记得以前 VST ，泰捷视频都还很不错的时候，再后来广电发了禁令，再后来这片市场混乱发展，各家大型网站优酷，爱奇艺又不敢公开大搞，却又在背后偷偷摸摸。再到现在几乎被什么芒果，CIBN垄断，内容没什么可看，却什么都要收费。我始终抱有一个观点，如果电视盒子这一块开放发展，国内的厂家完全能够占领全世界的盒子市场，好几年前用的 Android 盒子就已经能够满足我的大部分需求，并且应用设计也早 Google 自己推出 Android TV 盒子以及规范 Android TV 应用好多年。可惜这一块市场被一道禁令打到了地下。
+用盒子也已经很多年了，几年来家里，自己用，也积累了一些常用的应用。这两天又拿到了 T1 盒子，又才想起来整理这样一份单子，这样不用每一次都一遍一遍的尝试了。记得以前 VST ，泰捷视频都还很不错的时候，再后来广电发了禁令，再后来这片市场混乱发展，各家大型网站优酷，爱奇艺又不敢公开大搞，却又在背后偷偷摸摸。再到现在几乎被什么芒果，CIBN 垄断，内容没什么可看，却什么都要收费。我始终抱有一个观点，如果电视盒子这一块开放发展，国内的厂家完全能够占领全世界的盒子市场，好几年前用的 Android 盒子就已经能够满足我的大部分需求，并且应用设计也早 Google 自己推出 Android TV 盒子以及规范 Android TV 应用好多年。可惜这一块市场被一道禁令打到了地下。
 
 Android 盒子安装应用的方法，大概可以分为这几个：
 
@@ -24,31 +24,31 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 
 - 奇珀市场 http://down.7po.com/
 - 沙发管家 http://www.shafa.com/
-- 当贝市场 智能电视应用市场 
+- 当贝市场 智能电视应用市场
 
 地址就不都给了，Google 搜一下很快。
 
 ## 直播
 电视直播的应用，以前用 VST 和 泰捷还行，不过现在已经废了，然后现在 HDP 做的也还不错。
 
-2018年3月3号更新，发现了一款叫做 **超级直播** 的应用，非常好用。使用超级直播的时候，在播放页面点击设置，然后选择 “二维码扫一扫开启更多功能”，并在二维码显示之后，连续多次点击出现的二维码多次，即可解锁隐藏功能。隐藏功能开启6000以后的频道，包括可以查看多个台湾、香港的频道，频道范围在 6xxx  可能上下有些偏差，65xx 开始会有抢先观看的电影。
+2018 年 3 月 3 号更新，发现了一款叫做 **超级直播** 的应用，非常好用。使用超级直播的时候，在播放页面点击设置，然后选择 “二维码扫一扫开启更多功能”，并在二维码显示之后，连续多次点击出现的二维码多次，即可解锁隐藏功能。隐藏功能开启 6000 以后的频道，包括可以查看多个台湾、香港的频道，频道范围在 6xxx  可能上下有些偏差，65xx 开始会有抢先观看的电影。
 
 一下排名按照易用程度：
 
 - 超级直播
-- HDP直播
+- HDP 直播
 - 直播狗
 - 小薇直播
-- 电视家3.0
+- 电视家 3.0
 
 放一张截图
 
-<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/J06gea" title="斐讯t1_直播"><img src="https://farm1.staticflickr.com/898/41398289612_b34704693f_z.jpg" alt="斐讯t1_直播"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/J06gea" title="斐讯 t1_直播"><img src="https://farm1.staticflickr.com/898/41398289612_b34704693f_z.jpg" alt="斐讯 t1_直播"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 ## 网络视频
 网络视频是我用的最多的了，我本人用 哔哩哔哩 最多
 
-- bilibili 
+- bilibili
 - 银河奇异果
 - 云视听极光
 - CIBN 高清影视
@@ -79,3 +79,6 @@ YouTube for TV
 
 下载地址： <https://apkpure.com/youtube-tv-watch-record-live-tv/com.google.android.apps.youtube.unplugged>
 
+## 网上下载不到的应用备份
+
+- bilibili 等 <https://app.box.com/s/vgvjeptnzg0ubnkeb6urku93xsafk28b>
