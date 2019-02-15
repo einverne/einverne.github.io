@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "freemarker Java 模板引擎"
+title: "Java 模板引擎 freemarker"
 tagline: ""
 description: ""
 category:
@@ -9,6 +9,10 @@ last_updated:
 ---
 
 FreeMarker is a free Java-based template engine, originally focusing on dynamic web page generation with MVC software architecture. However, it is a general purpose template engine, with no dependency on servlets or HTTP or HTML, and is thus often used for generating source code, configuration files or e-mails. [by wikiPedia](https://en.wikipedia.org/wiki/Apache_FreeMarker)
+
+Official site:
+
+- <http://freemarker.org/>
 
 ## Maven dependencies
 Since with maven-based project, add these requirement to __pom.xml__
@@ -52,6 +56,7 @@ Since with maven-based project, add these requirement to __pom.xml__
 
 ## Syntax
 
+### default value
 Starting from freemarker 2.3.7, you can use [this syntax](http://freemarker.org/docs/dgui_template_exp.html#dgui_template_exp_missing) :
 
     ${(object.attribute)!}
@@ -59,6 +64,53 @@ Starting from freemarker 2.3.7, you can use [this syntax](http://freemarker.org/
 or, if you want display a default text when the attribute is `null` :
 
     ${(object.attribute)!"default text"}
+
+### list
+If you have a list as `List<Food> menu`
+
+    <#list menu as food>
+        ${food.name} ${food.price?string.currency}
+    </#list>
+
+### if/switch
+
+    <#if var == 1>
+    1
+    <#elseif var == 2>
+    2
+    <#else>
+    0
+    </#if>
+
+and switch
+
+    <#switch y>
+    <#case "one">
+        one
+        <#break>
+    <#case "two">
+        two
+        <#break>
+    <#case "three">
+        three
+        <#break>
+    <#default>
+        zero
+    </#switch>
+
+### function
+
+    <#function fact n>
+      <#if n == 0>
+        <#return 1 />
+      <#else>
+        <#return fact(n - 1) * n />
+      </#if>
+    </#function>
+
+    <#list 0..10 as i>
+      ${i}! => ${fact(i)}
+    </#list>
 
 ## reference
 

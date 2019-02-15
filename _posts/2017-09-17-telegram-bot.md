@@ -10,7 +10,7 @@ last_updated:
 
 最近因为好奇所以大致的看了一下 Telegram 的 bot，[很早](/post/2016/07/telegram-review.html) 就开始用 Telegram 但事实上，我大部分情况下就是将 Telegram 作为一个跨平台同步工具和备份工具来使用，直到最近因为 Ingress 的一些朋友和一个图书群我对 Telegram 才有了更多的使用，也在 Telegram 发现了每周会推送一本书的 Channel。
 
-所以我想照着有一个叫做 to_kindle_bot 的号自己写了一个将图书发送到 kindle  邮箱的机器人，bot 要实现的功能很简单，就是将图书资源发送给 bot 之后将图书发送邮件推送到关联的 kindle 邮箱。将任务拆解开，主要的步骤也比较简单
+所以我想照着有一个叫做 to_kindle_bot 的号自己写了一个将图书发送到 kindle 邮箱的机器人，bot 要实现的功能很简单，就是将图书资源发送给 bot 之后将图书发送邮件推送到关联的 kindle 邮箱。将任务拆解开，主要的步骤也比较简单
 
 - 首先要了解的就是 Telegram bot 的 API
 - 再次存储用户的 kindle 邮箱
@@ -44,4 +44,8 @@ last_updated:
 
 bot 现在为止一共有 `start` `help` `email` `settings` 这几个功能，除开 settings 功能还未完成， email 命令用来设置 kindle 邮箱，start 和 help 命令用来显示帮助，settings 功能我设想可以让用户选择一个频率，bot 会自动在这个频率下发送一本书到 kindle 邮箱中。
 
-另外如果大家喜欢电子书，我用 Flask 练手的电子书网站 <http://book.einverne.info> 也欢迎使用。
+另外如果大家喜欢电子书，我用 Flask 练手的电子书网站 <https://book.einverne.info> 也欢迎使用。
+
+## reference
+
+- <https://core.telegram.org/bots>

@@ -124,6 +124,15 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 
     http://www.booklist.mobi/
 
+## epdf
+英文 PDF
+
+    https://epdf.tips/
+
+## manybooks
+
+    https://manybooks.net/
+
 ## 计算机相关
 
 - https://github.com/justjavac/free-programming-books-zh_CN
