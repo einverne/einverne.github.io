@@ -8,7 +8,9 @@ tags: [design-pattern, factory, singleton, builder, ]
 last_updated:
 ---
 
-本文主要归纳设计模式中的创建模式 (creational pattern)，主要包括了工厂模式，单例多例，建造者模式，和原型模式。
+本文主要归纳设计模式中的创建模式 (creational pattern)，主要包括了工厂模式，单例多例，建造者模式，和原型模式等。
+
+创建模式是指对象的实例化过程，这些模式都提供了一种将对象实例化从客户端分离的方法。
 
 ## 简单工厂
 主要分为三个部分，工厂，抽象产品，具体产品。

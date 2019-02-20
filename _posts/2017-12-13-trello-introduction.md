@@ -89,6 +89,13 @@ Trelle 的卡片功能丰富，你可以拿卡片做任何想做的事情，但�
 - `Space` 快速将卡片 assign 给自己，或者快速移除
 - `s` 开关 watch，关注一个 卡片之后，所有和卡片相关的操作都会收到提醒
 
+### 从浏览器快速添加到卡片
+除了使用 Chrome 的扩展，还可以将下面这个页面保存为书签，点击书签就可以将当前页面保存到 Trello
+
+    https://trello.com/add-card
+
+更多 Tip 可以参考[这里](https://trello.com/b/QtjSVKOf/)
+
 ## Trello Gold
 Trello Gold 类似于其他网站的高级会员，可以通过购买获取，也可以通过邀请获取。使用 Gold 会员有如下几个好处：
 
