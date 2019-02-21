@@ -4,7 +4,7 @@ title: "MyBatis Generator Plugins"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [mybatis, mybatis-generator, java, orm, ]
+tags: [mybatis, mybatis-generator, java, orm, mysql,]
 last_updated:
 ---
 

@@ -20,7 +20,7 @@ last_updated:
 ## 多态工厂方法
 又称为工厂方法。
 
-> The Factory Method Pattern defi nes an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+> The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 分为四个部分，抽象工厂，具体工厂，抽象产品，具体产品。将产品实例化放到具体工厂子类中实现，抽象出工厂的一般方法。通常一个具体工厂产出一种具体产品。
 
@@ -33,11 +33,11 @@ last_updated:
 
 **抽象工厂**和**工厂方法**的区别在于，抽象工厂模式中，一个工厂可以提供多个抽象产品。在工厂方法模式中，由“具体工厂”决定提供哪一类具体产品；在抽象工厂中，由客户端决定返回哪一类产品。
 
-## 单例
+## 单例 {#singleton}
 至始至终只有一个实例。
 
 ## 多例
-一个类存在多个自身的实例，多例类需要自己创建，管理自己的实例，并向外提供自己的实例。
+一个类存在多个自身的实例，并且多例类需要自己创建，管理自己的实例，并向外提供自己的实例。
 
 常见的线程池，数据库连接池就是多例的使用案例。
 
@@ -63,9 +63,13 @@ last_updated:
 - 相较于工厂模式，客户端需要额外的知识来创建对象
 
 ## 原型模式 {#prototype}
-通过原型指明要创建的对象类型，然后通过该原型创造更多的对象实例。Java 中可以通过 `clone()` 来实现，或者反序列化。
+通过原型指明要创建的对象类型，然后通过该原型创造更多的对象实例。Java 中可以通过 `clone()` ，或者反序列化来实现。原型模式允许客户端在不知道对象具体内部细节的情况下创建实例。
 
 一个比较具体的使用场景，比如要对比两个对象修改前后的差异，可以在修改前复制一个对象实例，然后修改之后对比。再比如一次比较重的数据库查询，可以缓存该对象，再下一次请求到来时直接返回该对象的复制。
+
+一些比较适合的场景：
+
+- 当创建一个实例比较昂贵或者复杂时
 
 原型模式的优点：
 

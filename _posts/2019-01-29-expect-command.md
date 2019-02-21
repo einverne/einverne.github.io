@@ -19,9 +19,9 @@ Debian/Ubuntu/Linux Mint 系安装非常简单
 ## 关键命令
 expect 下几个非常重要的指令：
 
-- spawn: 启动进程（由 spawn 启动的进程的输出可以被 expect 所捕获）
+- spawn: **启动进程**（由 spawn 启动的进程的输出可以被 expect 所捕获）
 - expect: 从进程接收字符串，期望获得字符串
-- send: 向进程发送字符串，用于模拟用户的输入。注意一定要加 `\r` 回车
+- send: 向进程发送字符串，用于模拟用户的输入，注意一定要加 `\r` 回车
 - interact: 用户交互
 
 spawn 指令用来开启比如 Shell, FTP, SSH ,SCP 等等的交互指令。
@@ -37,6 +37,12 @@ argc 表示命令行参数个数，后面分别表示各个参数项，0 表示�
         exit 1
     }
 
+    if {[llength $argv] == 0} {
+        puts stdout "need server name as param"
+        exit 1
+    }
+
+
 ### 输入输出
 
     puts stderr "Usage: $argv0 login passwaord.n "
@@ -45,6 +51,7 @@ argc 表示命令行参数个数，后面分别表示各个参数项，0 表示�
 
 ### 变量赋值
 
+    set argv [lindex $argv 0]
     set user "einverne"
     set count 3
     set ip "192.168.2.1"
@@ -84,6 +91,17 @@ switch 分支
       }
     }
 
+if else 分支
+
+    set NUM 1
+    if { $NUM < 5 } {
+        puts "\Smaller than 5\n"
+    } elseif { $NUM > 5 } {
+        puts "\Bigger than 5\n"
+    } else {
+        puts "\Equals 5\n"
+    }
+
 ### 循环
 while 循环语法
 
@@ -94,6 +112,39 @@ while 循环语法
         set NUM [ expr $NUM + 1 ]
     }
 
+for 循环
+
+    for {set NUM 0} {$NUM <= 5} {incr NUM} {
+        puts "\nNUM = $NUM"
+    }
+    puts ""
+
+
+### 自定义方法
+
+定义
+
+    proc myfunc { TOTAL } {
+        set TOTAL [expr $TOTAL + 1]
+        return "$TOTAL"
+    }
+
+使用
+
+    set NUM [myfunc $NUM]
+
+### 使用正则表达式判断
+
+    if {[regexp {^[0-9]+$} $NUM]} {
+      Do something
+    } else {
+      Exit
+    }
+
+其他表示
+
+    if {![regexp {\D+} $NUM]}
+    if {![string match {[^0-9]+} $NUM]}
 
 ## 实例
 

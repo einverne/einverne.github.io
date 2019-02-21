@@ -4,7 +4,7 @@ title: "Mybatis Generator 配置详解"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [mybatis, ]
+tags: [mybatis, orm, mysql, ]
 last_updated:
 ---
 
