@@ -32,6 +32,15 @@ Java 的集合就是一个典型的，利用了模板方法模式的例子。Jav
 
 观察者模式定义了一种**一对多**的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象在状态上发生变化时，会通知所有观察者对象，使它们能够自动更新自己。
 
+### java.util.Observable 的坑
+很容易看到 JDK 中的 Observable 是一个类，不是一个接口，甚至没有实现任何一个接口。正因为这样，Observable 子类化的过程，不允许添加 Observable 的行为到 superclass，这就限制了重用这些类的可能。
+
+另外应为没有 Observable 接口，那么就不能有自己的实现来和 Java 内置的 Observer 接口交互。
+
+再次，看 Observable 类中的 setChanged() 方法，是 protected，这意味着你只能子类化 Observable，而不能创建一个 Observable 的实例然后将其放到新的对象中。
+
+所以总结来说就是，如果能够继承 Observable 那就用 JDK 提供的额方式，如果想要更多的扩展性那就用自己的方式实现观察者模式，而不要使用 JDK 的方法。
+
 
 ## 迭代器模式 {#iterator}
 

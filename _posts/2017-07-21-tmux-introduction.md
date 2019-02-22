@@ -124,7 +124,7 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> " 		横切 split pane horizontal，后面会 remap 这个键
 	<prefix> %      竖切 split pane vertical，后面 remap 这个键
 	<prefix> o 		按顺序在 pane 之间移动
-	<prefix> x      删除 pane
+	<prefix> x      关闭 pane
 	<prefix> z      最大化 pane 和恢复原状
 	<prefix> !      移动 pane 至 window
 	<prefix> "空格" 更换 pane 排版

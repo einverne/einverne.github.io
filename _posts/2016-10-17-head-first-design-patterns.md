@@ -33,3 +33,16 @@ The what varies and "encapsulate" it so it won't affect the rest of your code.
 
 Program to an interface really means "Program to a supertype"
 
+
+## The Open-Closed Principle
+开闭原则
+
+> Classes should be open for extension, but close for modification.
+
+第一次听到开闭原则的时候可能会有些疑惑，但是这个原则其实是让架构容易扩展的同时不影响到原来的代码。比如观察者模式，我们可以轻松的在不修改被观察者代码的情况下，通过增加观察者来实现对系统的扩展。
+
+开闭原则下的模式：
+
+- Observer 模式
+- 工厂模式
+
