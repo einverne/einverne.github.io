@@ -10,6 +10,33 @@ last_updated:
 
 Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，而是将所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 src/main/java/ 目录下的主源码，testCompile 目标用来编译位于 src/test/java/ 目录下的测试源码。
 
+## maven-source-plugin
+maven-source-plugin 打包插件，会根据当前的源码文件创建 jar 包。默认情况下 jar 文件会在项目 target 目录下。
+
+如果没有进行特殊配置，maven 会按照标准接口查找和处理各种类型文件。一个标准的 maven 项目
+
+    ├── project.iml
+    ├── pom.xml
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   └── resources
+    │   └── test
+    │       ├── java
+    │       └── resources
+    └── target
+        ├── classes
+        │   └── info
+        ├── generated-sources
+        │   └── annotations
+        ├── generated-test-sources
+        │   └── test-annotations
+        └── test-classes
+
+`src/main/java` 和 `src/test/java` 中的所有 `*.java`  文件都会在 compile 和 test-compile 阶段被编译，结果会分别放到 `target/classes` 和 `target/test-classes` 目录中。
+
+`src/main/resources` 和 `src/test/resources` 这两个目录的文件也会被复制到 `target/classes` 和 `target/test-classes` 目录中。打包插件默认会将 `target/classes` 中的所有内容打包到 jar 包或者 war 包中。
+
 ## maven-archetype-plugin
 Archetype 插件允许用户从模板中创建 Maven 项目，该插件需要 Java 6 及以上版本。[^1]
 
@@ -18,7 +45,7 @@ Archetype 插件允许用户从模板中创建 Maven 项目，该插件需要 Ja
 
 
 ## maven-compiler-plugin
-compiler 插件是最常用到的一个，定义 build 的 Java 版本。
+compiler 插件是最常用到的一个，定义 build 的 Java 版本，编译 Java 代码。
 
 pom 文件定义，默认的 source 和 target 都是 1.5。
 
@@ -45,7 +72,15 @@ pom 文件定义，默认的 source 和 target 都是 1.5。
       [...]
     </project>
 
-## maven-surefire-plugin
+## maven-dependency-plugin
+maven-dependency-plugin 是处理依赖相关的插件，该插件有很多 goal，常用的比如 `mvn dependency:tree`， `mvn dependency:analyze` 等等。
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+    </plugin>
+
 surefire 是 maven 的单元测试的插件，默认情况下 surefire 会执行文件名以 Test 开头或者结尾的测试用例，或者以 TestCase 结尾的用例。
 
 pom 文件中定义，需要 Maven 2.2.1 or 3.x, and JDK 1.6 or higher
