@@ -114,6 +114,8 @@ Trello Gold 类似于其他网站的高级会员，可以通过购买获取，�
 - wiki <https://trello.com/b/6t44aSfR/wiki> 我使用 Trello 来做个人简单 Wiki 整理，定期会整理到 Blog
 - board game <https://trello.com/b/bomWGYYW/board-game> 这是当时玩桌游的时候整理的 board
 
+如果看到这里你想要注册，那么通过我的邀请[链接](https://trello.com/einverne/recommend) 注册，你我都将得到 1 个月的 Gold 会员。
+
 ## reference
 
 - <https://trello.com/guide/pro-tips.html>
