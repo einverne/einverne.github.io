@@ -133,11 +133,14 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 
     https://manybooks.net/
 
+## 好读
+
+    http://www.haodoo.net/
+
 ## 计算机相关
 
 - https://github.com/justjavac/free-programming-books-zh_CN
 - 相关 Kindle 的 [tips](/post/2016/06/kindle-tips.html)
 
 最后，在能力范围内请支持正版。个人已买 Kindle Unlimited，部分书籍能够买到也尽量会购买。部分不会发行的电子书用来在 Kindle 上读。
-
 
