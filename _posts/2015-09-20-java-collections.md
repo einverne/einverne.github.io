@@ -208,6 +208,55 @@ Set 的实现类基于 Map 实现
         extends AbstractSet<E>
         implements Set<E>, Cloneable, java.io.Serializable
 
+### TreeSet
+有序 Set 集合，基于 TreeMap 实现，非同步的
+
+    public class TreeSet<E> extends AbstractSet<E>
+        implements NavigableSet<E>, Cloneable, java.io.Serializable {
+
+## Enumeration Vs Iterator
+枚举类和迭代器，都能用来变量集合，他们都是接口
+
+    public interface Enumeration<E> {
+        boolean hasMoreElements();
+        E nextElement();
+    }
+
+    public interface Iterator<E> {
+        boolean hasNext();
+        E next();
+        void remove();
+    }
+
+Enumeration 只能够读取集合数据，不能修改；而 Iterator 能够删除
+
+Iterator 支持 fail-fast 机制（多个线程对集合内容操作），而 Enumeration 不支持。
+
+## Comparable Vs Comparator
+Comparable 是排序接口，一个类如果实现了 Comparable 接口，意味着该类支持排序。
+
+    public interface Comparable<T> {
+        public int compareTo(T o);
+    }
+
+通过 x.compareTo(y) 函数比较 x, y 大小，返回负数则 `x < y`， 返回 0 则 `x=y`，返回正数则 `x>y`
+
+Comparator 是比较接口，如果要控制某个类的次序，而类本身不支持排序（没有实现 Comparable 接口）那么可以建立一个类比较器。
+
+    public interface Comparator<T> {
+        int compare(T o1, T o2);
+        boolean equals(Object obj);
+    }
+
+Comparable 相当于“内部比较器”，而 Comparator 相当于“外部比较器”。如果你无法修改某个类来改变其实现，而又想要让他实现排序，那么只能够使用外部比较器了。
+
+## equals Vs ==
+`==` 作用是判断两个对象地址是否相等，即判断两个对象是不是同一个对象。
+
+equals 作用也是判断两个对象是否相等，但有两种情况：
+
+- 类没有覆盖 equals 方法，等价于 ==
+- 类覆盖了 equals 方法，若相同，则返回 true
 
 
 

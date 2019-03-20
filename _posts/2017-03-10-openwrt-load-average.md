@@ -4,7 +4,7 @@ title: "Openwrt 平均负载"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Openwrt, Linux, ]
+tags: [openwrt, linux, cpu, ]
 last_updated: 
 ---
 

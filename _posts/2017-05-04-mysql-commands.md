@@ -243,6 +243,28 @@ Order 可以使用 `DESC`, `ASC`
 	mysql>update user set host = '%' where user = 'root';
 	mysql>select host, user from user;
 
+## sql 命令中的 \G
+在使用 mysql 命令行的时候如果查询结果比较大的时候，可以在语句后面加上 `\G;` 来将结果垂直方式展现，可以更好的查看结果。那么 \G 到底是什么意思呢。
+
+我们都知道 sql 语句需要使用分号 `;` 来结束，事实上分号是 `\g` 的速记。go 命令在 sql 的历史中曾经存在，现在有些批量语句也可以通过 go 命令来提交给 server 执行。`\G` 命令似乎继承了 `\g` 命令的字母，大写来表示另外一种行为，查看 help 能看到
+
+    mysql> help
+      ...
+      \g  go  Send command to mysql server.
+      \G  ego Send command to mysql server, display result vertically.
+      ...
+
+在上述的 help 中也会发现 mysql 有一个 `ego` 命令，字母 e 表示的是垂直模式，然而在从 mysql 的选项来看 `mysql --vertical` 或者 `mysql -E` 可以开启使用垂直方式显示结果的行为
+
+    man mysql...
+      ...
+      --vertical, -E
+      Print query output rows vertically (one line per column value).
+      Without this option, you can specify vertical output for individual
+      statements by terminating them with \G.
+      ...
+
+你为什么使用 `-E` 来作为垂直模式呢，因为 `-V`, `-v` 和 `-e` 都已经被占用有别的行为了。
 
 ## Python 连接操作 MySQL
 Python 2.x 中使用 MySQLdb 来连接 MySQL 数据库。在 Python 3.x 中使用 P 有 MySQL，使用方式 `import pymysql`，而其他操作几乎一致。

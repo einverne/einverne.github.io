@@ -10,12 +10,17 @@ last_updated:
 
 这里全部是推广链接，如果你觉得我的文章有用，帮忙点击一下可好？
 
-## 网站应用
+## 工具应用
 
 ### Trello
 看板应用
 
 - <https://trello.com/einverne/recommend>
+
+### Airbnb
+民宿
+
+- <https://abnb.me/e/YynYPCsLWU>
 
 ## VPS
 
