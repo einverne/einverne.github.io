@@ -238,8 +238,8 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 
 也可以自定输出格式
 
-	sudo docker images --format "{{.ID}}: {{.Repository}}"
-	sudo docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
+	sudo docker images --format "\{\{.ID\}\}: \{\{.Repository\}\}"
+	sudo docker images --format "table \{\{.ID\}\}\t\{\{.Repository\}\}\t\{\{.Tag\}\}"
 
 本地镜像保存在 Docker 宿主机 `/var/lib/docker` 目录下，每个镜像都保存在 Docker 所采用的存储驱动目录下，比如 aufs 或者 devicemapper。 可以在 `/var/lib/docker/containers` 目录下看到所有的容器。
 

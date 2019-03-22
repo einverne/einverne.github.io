@@ -19,11 +19,11 @@ jinja2 是基于 Python 的模板引擎。
     \#  ... \#\#  Line Statements
 
 ## 表达式及过滤器
-`{{ name }}` 结构表示一个变量
+`\{\{ name \}\}` 结构表示一个变量
 
 过滤器用法
 
-    Hello, {{ name|capitalize }}
+    Hello, \{\{ name|capitalize \}\}
 
 常用的过滤器
 
@@ -153,9 +153,9 @@ NoneOf | 确保输入值不在可选值列表中
 在模板中使用
 
     <form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name(id='my-text-field') }}
-    {{ form.submit() }}
+    \{\{ form.hidden_tag() \}\}
+    \{\{ form.name.label \}\} \{\{ form.name(id='my-text-field') \}\}
+    \{\{ form.submit() \}\}
     </form>
 
 

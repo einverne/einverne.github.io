@@ -3,9 +3,9 @@ layout: post
 title: "Flask 上传文件"
 tagline: ""
 description: ""
-category: 
+category:
 tags: [flask, web, python, linux,]
-last_updated: 
+last_updated:
 ---
 
 Flask 处理上传的文件非常简单，总结归纳可以分为三步：
@@ -54,10 +54,10 @@ werkzeug 库可以判断文件名是否安全，例如防止文件名是 `/../te
 	if __name__ == '__main__':
 		app.run(debug=True)
 
-`app.config`中的config是字典的子类，可以用来设置自有的配置信息，也可以设置自己的配置信息。函数 `allowed_file(filename)` 用来判断filename是否有后缀以及后缀是否在`app.config['ALLOWED_EXTENSIONS']`中。
+`app.config`中的 config 是字典的子类，可以用来设置自有的配置信息，也可以设置自己的配置信息。函数 `allowed_file(filename)` 用来判断 filename 是否有后缀以及后缀是否在`app.config['ALLOWED_EXTENSIONS']`中。
 
 ## 过滤文件名
-这里使用了 `werkzeug` 自带的 `secure_filename` 方法，该方法会过滤所有非ASCII码，对于中文文件名处理就不怎么友好了，所以我们可以定义自己的 `secure_filename` 方法
+这里使用了 `werkzeug` 自带的 `secure_filename` 方法，该方法会过滤所有非 ASCII 码，对于中文文件名处理就不怎么友好了，所以我们可以定义自己的 `secure_filename` 方法
 
     def secure_filename(filename):
         """
@@ -102,10 +102,10 @@ Flask 提供了 `getlist` 方法
 	file_content = request.files['image01'].stream.read()
 
 
-## 使用template
+## 使用 template
 在 template 目录下新建 `upload.html` ，确保在 HTML 表单中设置 enctype="multipart/form-data" 属性
 
-	<form action="{{ url_for('.upload_file') }}" method=post enctype=multipart/form-data>
+	<form action="\{\{ url_for('.upload_file') \}\}" method=post enctype=multipart/form-data>
 		<div class="form-group">
 		  <label for="exampleInputFile">上传文件</label>
 		  <input type="file" name="file">

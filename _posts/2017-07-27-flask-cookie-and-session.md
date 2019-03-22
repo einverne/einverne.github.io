@@ -5,11 +5,11 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [flask, web, python]
-last_updated: 
+last_updated:
 ---
 
 
-因为HTTP协议是无状态的，即服务器不知道用户上一次做了什么，这严重阻碍了交互式Web应用程序的实现，所以引入了 Cookie 和 Session。
+因为 HTTP 协议是无状态的，即服务器不知道用户上一次做了什么，这严重阻碍了交互式 Web 应用程序的实现，所以引入了 Cookie 和 Session。
 
 ## session
 
@@ -25,13 +25,13 @@ last_updated:
 	@app.route('/login')
 	def login():
 		page = '''
-		<form action="{{ url_for('do_login') }}" method="post">
+		<form action="\{\{ url_for('do_login') \}\}" method="post">
 			<p>name: <input type="text" name="user_name" /></p>
 			<input type="submit" value="Submit" />
 		</form>
 		'''
 		return render_template_string(page)
-		
+
 	@app.route('/do_login', methods=['POST'])
 	def do_login():
 		name = request.form.get('user_name')
