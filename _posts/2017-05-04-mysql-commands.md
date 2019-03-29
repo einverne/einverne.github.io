@@ -177,6 +177,10 @@ Order 可以使用 `DESC`, `ASC`
 
     show create table [table_name];
 
+查看表的索引
+
+    SHOW INDEX FROM [table];
+
 导出数据
 
 	mysqldump -u [username] -p [database] > db_backup.sql
