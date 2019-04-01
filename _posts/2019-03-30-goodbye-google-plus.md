@@ -20,11 +20,11 @@ last_updated:
 
 ## 两篇怀念
 
-![](/assets/screencapture-plus-google-u-1-2019-03-30-10_33_20.png)
+![mourn1](/assets/screencapture-plus-google-u-1-2019-03-30-10_33_20.png)
 
 和
 
-![](/assets/screencapture-plus-google-u-1-2019-03-30-10_32_35.png)
+![mourn2](/assets/screencapture-plus-google-u-1-2019-03-30-10_32_35.png)
 
 ## 功能
 现在回过头来想当时 Google+ 发布的盛况，几乎每一个功能都能够独立作为一个产品，并且可以秒杀同类的产品。
