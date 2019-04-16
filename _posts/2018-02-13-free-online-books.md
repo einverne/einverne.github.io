@@ -137,6 +137,15 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 
     http://www.haodoo.net/
 
+## 一些聚合搜索网站
+全国图书馆参考咨询联盟
+
+    http://www.ucdrs.superlib.net/
+
+读秀
+
+    http://www.duxiu.com
+
 ## 计算机相关
 
 - https://github.com/justjavac/free-programming-books-zh_CN

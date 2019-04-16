@@ -34,12 +34,20 @@ last_updated:
 
 - <https://gtk.pw/linode>
 
+## 云产品
+
+- <https://portal.qiniu.com/signup?code=3lpr3y1coclzm>
+
 ## 网盘
 
 ### Dropbox
 Dropbox 用到如今最好的网盘，我也[只推荐 Dropbox](/post/2015/07/dropbox-tips.html)
 
 - <https://db.tt/isyvu6ny>
+
+### PCloud
+
+- <https://my.pcloud.com/#page=register&invite=VKXvZKvEM17>
 
 ## 论坛
 
