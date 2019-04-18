@@ -4,13 +4,13 @@ title: "Git 使用过程中遇到的小技巧"
 tagline: ""
 description: "Git 使用过程中遇到的小技巧，偶尔需要使用，记录一下"
 category: Git
-tags: [git, linux, 经验总结，]
+tags: [git, linux, 经验总结 , version-control, ]
 last_updated:
 ---
 
 Git 使用过程中遇到的小技巧，平时没有 commit, merge, branch 用的那么勤快，但是需要时也需要查看一下，因此记录一下，以免忘记。
 
-## 将其他分之中多次提交合并到 master 的一次提交
+## 将其他分支中多次提交合并到 master 的一次提交
 
 开发中经常使用分支开发，因此不可避免的在开发中向 dev，或者 bugfix 分支进行多次提交，而有些提交可能仅仅为了测试，commit message 也没有认认真真写，所以当开发完成，或者 bug 修复完成想要合并到 master 分支时，不希望保留中间糟糕的提交信息，有一种方法是使用 merge 的 `--squash` 。
 
@@ -25,6 +25,7 @@ Git 使用过程中遇到的小技巧，平时没有 commit, merge, branch 用�
 
 > Produce the working tree and index state as if a real merge happened (except for the merge information), but do not actually make a commit or move the HEAD, nor record $GIT_DIR/MERGE_HEAD to cause the next git commit command to create a merge commit. This allows you to create a single commit on top of the current branch whose effect is the same as merging another branch (or more in case of an octopus).
 
+其实如果不介意数一下提交次数的话使用 git rebase -i 也是可以实现的，不过这个就是在自己的 feature 分支上先将所有的零碎提交合并成一次，然后再 merge 了。
 
 ## 恢复 hard reset 丢失的 commit
 
@@ -61,3 +62,14 @@ git 有一个命令 `git reflog` 可以查看所有对 HEAD 的变更操作，�
 需要注意的是，rebase 交互界面出现的 commit 由老到新，使用下面的命令比如 squash 则会向上合并。
 
 PS. 不要用来改变已经 push 到远端的提交，除非明确的知道想要做的事情，可以使用 force push.
+
+## 重命名本地分支
+虽然这个操作不是经常需要具体做，但是有的时候不免会遇到，记录一下
+
+    git branch -m <new-name>
+
+## 查看两个星期内的改动
+
+    git whatchanged --since='2 weeks ago'
+
+
