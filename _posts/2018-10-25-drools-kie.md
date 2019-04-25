@@ -122,6 +122,16 @@ Drools 大体可以分为两个部分：Authoring 构建 和 Runtime 运行。
 ### Runtime
 运行时则是在执行规则的服务，kie 提供了 server 可以用来执行规则。
 
+如果要 clone KIE 中的规则，那么在项目的 General Settings 中获取 SSH 地址
+
+    git clone ssh://0.0.0.0:8001/MySpace/example
+
+这个地址需要注意，如果是使用 Docker 安装的，那么在 clone 的地址中需要加入用户
+
+    git clone ssh://admin@0.0.0.0:8001/MySpace/example
+
+然后再使用密码即可。
+
 ## reference
 
 - <http://www.drools.org/>
