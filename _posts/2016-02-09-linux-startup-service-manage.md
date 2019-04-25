@@ -4,7 +4,7 @@ title: "Linux 启动项管理"
 tagline: ""
 description: ""
 category: Linux
-tags: [linux, 学习笔记]
+tags: [linux, 学习笔记 ]
 last_updated: 
 ---
 

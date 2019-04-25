@@ -18,17 +18,19 @@ Debian/Ubuntu/Linux Mint 下
 
 	sudo apt install maven
 
-如果要手动安装则按照下面步骤
+如果要手动安装则按照下面步骤，选择一个合适的版本
 
-- 下载 Maven 最新安装包，地址 <http://Maven.apache.org/download.cgi> 比如 apache-Maven-3.3.9-bin.tar.gz
-- `tar -zxvf apache-Maven-3.3.9-bin.tar.gz`
-- 将 apache-Maven-3.3.9 目录移动到 /usr/local 目录 命令： `sudo mv apache-maven-3.3.9/ /usr/local/`
+- 下载 Maven 最新安装包，地址 <http://maven.apache.org/download.cgi> 比如 apache-Maven-3.3.9-bin.tar.gz
+- `tar zxvf apache-Maven-3.3.9-bin.tar.gz`
+- 将 apache-Maven-3.3.9 目录移动到 /opt/ 目录 命令： `sudo mv apache-maven-3.3.9/ /opt/`
+- 创建链接 `sudo ln -s /opt/apache-maven-3.3.9/ /opt/maven`
 - root 身份修改配置命令 `sudo vi ~/.bashrc` 在文件最后添加：
 
 		#set Maven environment
-		M2_HOME=/usr/local/apache-maven-3.3.9
-		export Maven_OPTS="-Xms256m -Xmx512m"
-		export PATH=$M2_HOME/bin:$PATH
+        #export Maven_OPTS="-Xms256m -Xmx512m"
+        export M2_HOME=/opt/maven
+        export M2=$M2_HOME/bin
+        export PATH=$M2:$PATH
 
 	保存并关闭。
 
