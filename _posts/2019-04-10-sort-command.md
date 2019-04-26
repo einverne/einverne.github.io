@@ -52,7 +52,11 @@ sort 命令用来对文件行进行排序，常用的一些参数
 ### 使用自定义分隔符
 
     sort -t: -nk3 /etc/passwd
+    sort -t' ' -k3,3 file
 
 `-t` 后面接 `:` 表示以 `:` 来分割列，最常见的比如 `/etc/passwd` 文件，以 `:` 来区分一行中的各个列
 
+### 合并两个文件并且移除重复行
+一个典型的 sort 应用场景
 
+    sort file1 file2 | uniq
