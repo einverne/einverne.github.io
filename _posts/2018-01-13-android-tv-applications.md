@@ -4,7 +4,7 @@ title: "Android 电视盒子可用的应用备份"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [android, tv, adb, packages,]
+tags: [android, tv, adb, packages, apk, applications, ]
 last_updated:
 ---
 
@@ -60,7 +60,7 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 盒子带 samba ，能读局域网内 samba 共享的视频，那就需要一个本地播放器，最好支持的解码格式越多越好，在 Android 手机上我买过 MX Player Pro，不过免费的 KMPlayer 也不错。
 
 - ES 文件管理器
-- 小白文件管理器
+- 小白文件管理器 v1.2 版本
 - MX Player Pro
 
 ## 系统工具
