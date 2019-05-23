@@ -262,7 +262,18 @@ cron 使用 /usr/bin/sh 的命令，默认有以下内置变量：
 
     0 */3 * * * /usr/local/apache2/apachectl restart >/dev/null 2>&1
 
-"/dev/null 2>&1"表示先将标准输出重定向到 /dev/null，然后将标准错误重定向到标准输出，由于标准输出已经重定向到了 /dev/null，因此标准错误也会重定向到 /dev/null，这样日志输出问题就解决了。
+"/dev/null 2>&1" 表示先将标准输出重定向到 /dev/null，然后将标准错误重定向到标准输出，由于标准输出已经重定向到了 /dev/null，因此标准错误也会重定向到 /dev/null，这样日志输出问题就解决了。
+
+将这条语句拆解开来看：
+
+- `>` 是重定向符
+- `/dev/null` 是一个黑洞，任何发送给它的数据都会被丢弃
+- `2` 是标准错误的文件描述符
+- `>` 同上
+- `&` symbol for file descriptor
+- `1` 标准输出描述符
+
+可以参考 [Linux IO Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html) 来了解更多。
 
 ### 系统级任务调度与用户级任务调度
 

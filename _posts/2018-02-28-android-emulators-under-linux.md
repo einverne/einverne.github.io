@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Linux 下的Android emulators"
+title: "Linux 下的 Android emulators"
 tagline: ""
 description: ""
 category: 整理合集
 tags: [android, linux, emulator, ]
-last_updated: 
+last_updated:
 ---
 
 待办事项中一直有一个 Genymotion 模拟器的处理，挂在待办已经好几个月了，终于有时间来找一找 Linux 的安卓模拟器了， Genymotion 曾经很好用，可惜的是如今似乎已经收费。
@@ -18,11 +18,15 @@ last_updated:
 
 Anbox 这个项目还是属于起步阶段，但是体验还是非常不错的，如果遇到安装之后无法打开，或者无法安装 `Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]` 这种错误时，也不沮丧。
 
-官网地址: <https://anbox.io/>
+如果要在 Anbox 中安装 arm 和 Google Play 可以参考这个[项目](https://github.com/geeks-r-us/anbox-playstore-installer)
+
+官网地址：<https://anbox.io/>
 
 ## Genymotion
 很可惜的是他已经不再提供免费的开发者 License。
 
-官网: <https://www.genymotion.com/>
+官网：<https://www.genymotion.com/>
 
+## reference
 
+- <https://www.linuxuprising.com/2018/07/anbox-how-to-install-google-play-store.html>

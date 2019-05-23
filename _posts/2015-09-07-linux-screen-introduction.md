@@ -42,6 +42,21 @@ Screen 让用户之前也可以分享 Session，只要 Screen 状态存在，其
 
 如果有多个 Screen，则需要使用 `screen -ls` 来查看 Session 的 ID。然后 `screen -r id` 来 attach。
 
+### 修改 screen session name
+如果在 screen session 内部，使用：
+
+    Ctrl + a 然后按下 :sessionname new_name
+
+注意这里的 Ctrl + a 是 screen 的 prefix, 还有命令之前的冒号一定要加。
+
+如果在 screen 外
+
+    screen -S old_name -X sessionname new_session_name
+
+上面两个方法可以修改真正的 session name 但是在并不会修改窗口的名字，如果要修改界面窗口的名字则需要
+
+    Ctrl + a 然后使用 Shift + a 再输入名字，则能够修改窗口显示的名字
+
 ### 切换多个 Screens
 
     Ctrl-a n        下一个 screen
@@ -71,3 +86,4 @@ screen 可以在 `/etc/screenrc` 和 `$HOME/.screenrc` 两个文件中添加更�
 ## reference
 
 - <https://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/>
+- <https://unix.stackexchange.com/q/27780/115007>
