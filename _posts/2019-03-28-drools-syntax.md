@@ -125,9 +125,11 @@ Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不
 - Arithmetic operators (`+, -, *, /, %`) 算数操作符
 - Relational operators (`>, >=, ==, !=`) 关系操作符
 - Logical operators 逻辑操作符
-    - conjunction (and, &&, ",") 与
-    - disjunction (or, ||) 或
-    - negation (!, do not confuse with not) 取反 (!, 不要和 not 混淆）
+
+    - conjunction (`and, &&, ","`) 与
+    - disjunction (`or, ||`) 或
+    - negation (`!`, do not confuse with not) 取反 (!, 不要和 not 混淆）
+
 - Drools operators (in, matches, etc...) | Drools 操作符 (in, matches, 等等...)
 
 一些操作符都非常通俗易懂，这里有几个需要特别注意
@@ -135,7 +137,7 @@ Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不
 ### 约束连接
 对象内部多个约束连接，可以使用 `&&`, `||` 或者 `,(and)` 。优先级 `&&` > `||`
 
-"," 与 "&&" "||" 不能混用，在 && 和 || 出现的语句中不能出现 ","
+`,` 与 `&&` `||` 不能混用，在 `&&` 和 `||` 出现的语句中不能出现 `,`
 
 ### 比较操作符
 Drools 中一共提供了 12 种类型的比较操作符，`>, >=, <, <=, ==, != ,contains, not contains, memberof, not memberof, matches, not matches` 。前六个比较常用，不介绍了。

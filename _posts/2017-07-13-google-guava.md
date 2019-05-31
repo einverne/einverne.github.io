@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Guava 库"
+title: "Google Guava 库学习笔记"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,9 +8,26 @@ tags: [google, guava, java, java-lib, lib, utils,]
 last_updated:
 ---
 
-Guava 有很多学习材料
+Guava 是 Google 开源的 Java 核心类库，包含了 Java 开发中众多的核心功能，其中最著名最好用的也就是合集和缓存相关的工具了。
+
+Guava 有很多学习材料，比如官方 Wiki
 
 - <https://github.com/google/guava/wiki>
+
+源码包的简单说明：
+
+　　com.google.common.annotations：普通注解类型。
+　　com.google.common.base：基本工具类库和接口。
+　　com.google.common.cache：缓存工具包，非常简单易用且功能强大的 JVM 内缓存。
+　　com.google.common.collect：带泛型的集合接口扩展和实现，以及工具类，这里有很多好用的集合。
+　　com.google.common.eventbus：发布订阅风格的事件总线
+　　com.google.common.hash： 哈希工具包
+　　com.google.common.io：I/O 工具包
+　　com.google.common.math：原始算术类型和超大数的运算工具包
+　　com.google.common.net：网络工具包
+　　com.google.common.primitives：八种原始类型和无符号类型的静态工具包
+　　com.google.common.reflect：反射工具包
+　　com.google.common.util.concurrent：多线程工具包
 
 ## Optional
 Optional 存在的意义就是为了替换 `null`，null 存在的大部分情况用户是无法知道方法想要返回的什么。null 多数情况下并不意味着返回值没有值，一些情况下可能表示 error，甚至也有人用 null 来表示成功，或者表示成功了但是没有返回值。因此 Optional 存在的意义并不是可读性，而是强迫使用他的人思考返回值应该是什么。
@@ -19,7 +36,10 @@ Optional 存在的意义就是为了替换 `null`，null 存在的大部分情�
 
 [^1]: 链接 <https://stackoverflow.com/a/9561334/1820217>
 
-## Immutable Collections
+## 集合类
+Guava 的集合类是对 JDK 集合类的扩展。
+
+### Immutable Collections
 不可变对象有很多好处：
 
 - 不受信任的库可以安全使用
@@ -155,6 +175,57 @@ LoadingCache<Key, Graph> graphs = CacheBuilder.newBuilder()
              }
            });
 ```
+
+## Functional idioms
+
+## Files 文件操作
+
+### Copy
+复制文件，复制文件要求源地址和目的地址不一致。如果目的地址文件存在则会被**直接覆盖**。
+
+    File original  = new File("path/to/original");
+    File copy = new File("path/to/copy");
+    Files.copy(original, copy);
+
+查看方法签名，还支持
+
+    public static void copy(File from, OutputStream to) {}
+    public static void write(byte[] from, File to) {}
+
+### Move/Rename
+移动或者重命名文件
+
+    File original = new File("src/main/resources/copy.txt");
+    File newFile = new File("src/main/resources/newFile.txt");
+    Files.move(original, newFile); // 移动或重命名文件，类似 Unix 中的 mv
+
+### Read
+将文件读取为字符串列表
+
+    List<String> readLines = Files.readLines(file, Charsets.UTF_8);
+
+### Write
+写文件，或者附加内容到文件
+
+    File file = new File("quote1.txt");
+    String hamletQuoteStart = "To be, or not to be";
+    Files.write(hamletQuoteStart,file, Charsets.UTF_8);// 写文件
+
+    String hamletQuoteEnd = ",that is the question";
+    Files.append(hamletQuoteEnd,file,Charsets.UTF_8); // 追加文件
+
+    String overwrite = "Overwriting the file";
+    Files.write(overwrite, file, Charsets.UTF_8); // 重写文件
+
+
+### File Hash
+为文件生成 Hash 值
+
+    File file = new File("src/main/resources/sampleTextFileOne.txt");
+    HashCode hashCode = Files.hash(file, Hashing.md5());
+    System.out.println(hashCode);
+
+
 
 ## reference
 

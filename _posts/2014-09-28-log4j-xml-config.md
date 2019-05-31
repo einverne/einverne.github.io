@@ -8,6 +8,8 @@ tags: [log4j, log4j12, log4j12-config, ]
 last_updated:
 ---
 
+我们都知道 log4j 有两种配置文件的语法，本文主要介绍 XML 格式的配置格式。
+
 log4j XML 配置的一些细节记录。
 
 ## priority 和 level 的区别

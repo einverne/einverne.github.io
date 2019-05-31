@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "使用Shell命令来对 Unix 时间戳和日期进行转换 date 命令"
+title: "使用 Shell 命令来对 Unix 时间戳和日期进行转换 date 命令"
 tagline: ""
 description: "熟悉 Shell 命令来对日期进行转换"
 category: 学习笔记
 tags: [shell, linux]
-last_updated: 
+last_updated:
 ---
 
-在程序中经常要使用到 Unix timestamp 和日期的转换，通常情况下都是Google一个时间戳转换的网页在进行转换，其实 Linux 命令中就有能够快速实现转换的命令。主要都是集中在 date 这个命令。date 命令主要用于显示或设定系统时间和日期。
+在程序中经常要使用到 Unix timestamp 和日期的转换，通常情况下都是 Google 一个时间戳转换的网页在进行转换，其实 Linux 命令中就有能够快速实现转换的命令。主要都是集中在 date 这个命令。date 命令主要用于显示或设定系统时间和日期。
 
 ## 修改系统的时区
 Linux 用来修正系统的时区
@@ -22,7 +22,7 @@ Linux 用来修正系统的时区
 ### 获取当前的 unix timestamp
 
 
-	date +%s    # 返回 11 位时间戳，%s 表示从 1970-01-01 0点(epoch开始的秒数
+	date +%s    # 返回 11 位时间戳，%s 表示从 1970-01-01 0 点 (epoch 开始的秒数
 	date +%s%3N # 返回 14 位时间戳，毫秒
 	date +%s%N  # 返回 11 + 9 位纳秒
 
@@ -35,10 +35,11 @@ Linux 用来修正系统的时区
 
 
 ### 将 string 日期转成日期
-使用 `-d` 参数可以用来将输入 String 转成特定格式日期，如果不指定具体时间，date会使用 `00:00:00`
+使用 `-d` 参数可以用来将输入 String 转成特定格式日期，如果不指定具体时间，date 会使用 `00:00:00`
 
 	$ date -d "06/04/1989"
 	Sun Jun  4 00:00:00 CDT 1989
+1559192456
 	$ date -d "04 June 1989"
 	Sun Jun  4 00:00:00 CDT 1989
 	$ date -d "June 04 1989"
@@ -56,13 +57,17 @@ Linux 用来修正系统的时区
 	Sat May 27 17:30:01 CST 2017
 	$ date -d '100 days ago'  # 同上
 	Sat May 27 17:31:10 CST 2017
-	$ date -d 'next monday'    
+	$ date -d 'next monday'
 	Mon Sep 11 00:00:00 CST 2017
+
+或者 -d 选项还可以有这样的语法
+
+    date -d@1559192456
 
 
 ### 格式化参数
 
-可以使用+来输出不同格式
+可以使用 + 来输出不同格式
 
 	date +%<format options>
 
@@ -73,7 +78,7 @@ Linux 用来修正系统的时区
 
 Format options|	Purpose of Option	| Output
 date +%a	| 缩略方式显示星期 (like Mon, Tue, Wed)	|Thu
-date +%A	| 全称显示星期(like Monday, Tuesday)	|Thursday
+date +%A	| 全称显示星期 (like Monday, Tuesday)	|Thursday
 date +%b	| Displays Month name in short (like Jan, Feb, Mar )	|Feb
 date +%B	| Displays Month name in full short (like January, February)	|February
 date +%d	| Displays Day of month (e.g., 01)	|07
@@ -93,7 +98,7 @@ date +%Y	| Displays full year i.e. YYYY	|2013
 date +%Z	| alphabetic time zone abbreviation (e.g., EDT)	|IS
 
 
-## reference 
+## reference
 
 - <https://stackoverflow.com/a/16548827/1820217>
 - <http://www.cnblogs.com/peida/archive/2012/12/13/2815687.html>

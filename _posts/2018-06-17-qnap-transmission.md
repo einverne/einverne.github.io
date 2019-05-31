@@ -20,12 +20,14 @@ last_updated:
 - `/opt/QTransmission/etc`
 - `/share/CACHEDEV1_DATA/.qpkg/QTransmission/etc`
 
-为什么有两个路径呢，是因为 opt 目录下的路径其实是一个软连接，指向真实在 `/share/CACHEDEV1_DATA/.qpkg/QTransmission` 的目录。
+为什么有两个路径呢，是因为 opt 目录下的路径其实是一个软链接，指向真实在 `/share/CACHEDEV1_DATA/.qpkg/QTransmission` 的目录。
 
 如果要修改 WEB 界面的端口，需要同时修改 `/mnt/HDA_ROOT/.config/qpkg.conf` 里面 QTransmission 配置的端口。
 
 ## 配置
 安装完成后直接在威联通 WEB 界面上点击进入，然后使用 qnap - qnap 登录。设置限速、关闭 DHT，然后在路由器上做端口转发，保证 51413 端口开放。
+
+使用 vi 修改配置 `vi /share/CACHEDEV1_DATA/.qpkg/QTransmission/etc/settings.json`，需要注意的是在修改配置的时候，停用 QTransmission，否则再启用 QTransmission 就会恢复到默认配置。
 
 其他常用的配置
 
@@ -37,4 +39,13 @@ last_updated:
 
 等等。
 
-不过经过我这番尝试，我的 51413 端口依然无法连上，所以放弃了。代替方案先用小米路由器好了。
+## 启动脚本
+默认情况下可以尝试使用如下命令来启动和停止。
+
+    /etc/init.d/QTransmission.sh start
+    /etc/init.d/QTransmission.sh stop
+
+
+## 问题
+如果启动之后 51413 端口在界面上依然显示无法连接，可以尝试等待一段时间再试试。我的实际测试情况是界面上无法连接，但是实际还是能够正常工作。
+

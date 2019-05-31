@@ -36,6 +36,11 @@ last_updated:
 
 当第一次调用 `get()` 方法时，如果 value 不存在则会触发 `load()` 方法，load 方法不能返回 null，否则会报错。
 
+### LoadingCache 不能 Cache null
+LoadingCache 是不支持缓存 null 值的，如果 load 回调方法返回 null，则在 get 的时候会抛出异常。
+
+如果在 CacheLoader 中抛出异常，那么 Cache 会认为没有完成，所以新的值不会被 Cache。基于这一条规则，那么如何避免在 CacheLoader 中因为缓存 null 而抛出异常，那就是编程者自己处理 null 异常。
+
 ## get() vs getUnchecked()
 最正统的查询 `LoadingCache` 的方法是调用 `get(k)` 方法，这个方法如果查询到已经缓存的值会立即返回，否则使用缓存的 `CacheLoader` 自动加载一个新值到缓存并返回。因为 `CacheLoader` 可能会抛出异常，那么如果有异常，则`LoadingCache.get(k)` 会抛出 `ExecutionException` 异常。而如果 CacheLoader 抛出 unchecked 未检查的异常，则 `get(k)` 方法会抛出 `UncheckedExecutionException` 异常。
 
@@ -44,7 +49,7 @@ last_updated:
 ## 定时回收
 CacheBuilder 在构建 Cache 时提供了两种定时回收的方法
 
-- expireAfterAccess(long, TimeUnit) 缓存项在给定时间内没有被读或写访问，则回收
+- expireAfterAccess(long, TimeUnit) : 缓存项在给定时间内没有被读或写访问，则回收
 - expireAfterWrite(long, TimeUnit)：缓存项在给定时间内没有被写访问（创建或覆盖），则回收
 
 ## reference

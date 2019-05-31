@@ -4,7 +4,7 @@ title: "Java collections"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [java, jdk, design-pattern, ]
+tags: [java, jdk, design-pattern, collection, ]
 last_updated:
 ---
 
