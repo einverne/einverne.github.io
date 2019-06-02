@@ -14,6 +14,11 @@ adb 的全称是 Android Debug Bridge, 这个命令可以用来发送一系列�
 
 adb 使用的默认端口是 5037.
 
+Ubuntu 系下安装
+
+    sudo apt-get install android-tools-adb
+    sudo apt-get install android-tools-fastboot
+
 ## 查看连接设备 adb devices
 来查看设备是否已经连接
 
@@ -53,11 +58,20 @@ adb 使用的默认端口是 5037.
 
     adb pull /sdcard/Download/filename.txt ~/filename.txt
 
+## 检查设备是否已经 root
+
+    adb shell
+
+然后进入之后输入 `su` 查看手机是否会弹出 root 授权窗口。
+
 ## adb reboot
 
 重启设备，在刷机时经常使用
 
-## adb reboot-bootloader
+## 进入 bootloader
+使用
+
+    adb reboot bootloader
 
 重启进去 bootloader
 
