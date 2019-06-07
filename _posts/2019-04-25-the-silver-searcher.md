@@ -4,7 +4,7 @@ title: "The Silver Searcher 使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ack-grep, search, ]
+tags: [ack-grep, search, grep, ]
 last_updated:
 ---
 
@@ -27,10 +27,10 @@ As the man describe, recursively search for PATTERN in PATH.
 
 ## Usage
 
-Most options are like grep, like `-i`, `-v`, `-B`, `-A` etc
+Most options are similar to grep, like `-i`, `-v`, `-B`, `-A` etc
 
 ### Find text under a path
-most use case will be find a keyword from a bunch of files.
+most use case will be find a keyword from a bunch of files. 最常用的一个方式便是在目录中搜索关键词，ag 能够非常快速的搜索文件内容，所以非常适合查询日志，或者代码等文本文件。
 
     ag keyword /path/to/
 
@@ -38,17 +38,31 @@ most use case will be find a keyword from a bunch of files.
 
     ag -c keyword /path/
 
-### Custom the depth of searching
+### 自定义查询深度
 Default depth is 25, if you want unlimited, you should use -1
 
     ag --depth NUM keyword .
 
-### To find only filenames
+### 查找包含关键字的文件名
 If you forget the filename, but only remeber only few letters, you can use `-g` to print only filenames.
+
+`-g` 选项表示查询文件名，而不会去查询文件内容。比如说想要查询目录下文件名中包含 Pattern 的文件名，那么可以使用：
 
     ag -g PATTERN .
 
-results will be only filenames.
+results will be only filenames. 这样结果就只会打印出符合的文件名。
+
+### 打印出包含关键字的文件名
+上面 `-g` 选项只会去查询文件名，那么如果想要查找内容中包含某个关键字的文件名，可以使用 `-l` 选项：
+
+    ag -l 'pattern' /path/to
+
+使用 `-L` 会显示没有匹配的文件名
+
+### 在特定的文件中查询
+ag 提供了 `-G` 选项，可以用来缩小查询的范围，`-G PATTERN` 可以指定 Pattern，那么 ag 只会在 `-G` 指定的文件中查询，比如只查询 `.+\.java` 以 `.java` 结尾的文件。
+
+    ag -G ".+\.java" "string to search" /path/to
 
 For more details, you can check `man ag`
 

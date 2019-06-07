@@ -52,6 +52,23 @@ OnePlus 7 Pro 折腾记。
 
 From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/guide-root-oneplus-7-pro-patched-boot-t3931205)
 
+## Magisk
+
+- 确保已经安装 Magisk v17.2 版本
+- Download Riru-Core [riru-core-v19.1](https://github.com/RikkaApps/Riru/releases/download/v19/magisk-riru-core-v19.zip)
+- Download EdXposed From [magisk-EdXposed-v0.4.2.3_alpha-release](https://github.com/ElderDrivers/EdXposed/releases/download/v0.4.2.3_a/magisk-EdXposed-SandHook-v0.4.2.3_alpha-release.zip)
+- 在 Magisk Module 中，点击 + 号，选择 Riru-Core 和 EdXposed
+- 然后重启手机，然后下载 EdXposed Apk From [here](https://github.com/ElderDrivers/EdXposed/releases/download/v0.3.1.7/EdXposedInstaller_v2.2.4-release.apk)
+
+From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/root-oneplus-7-pro-install-magisk-t3931256)
+
+## 更新系统 OTA 之后保留 recovery root 等
+
+- 使用全量包更新，然后在 System , System, 设置中使用本地更新，**切记更新完成不要立即重启**
+- 打开 Magisk ，点击 Magisk 一行的安装，在弹出的对话框中点击安装
+- 然后在弹出的对话框 (select Method) 中选择 `Install to Inactive Slot (After OTA)` 选项 （中文应该是，安装到未使用的槽位，安装完 OTA 后）
+- 最后安装重启
+
 ## 使用 adb 备份数据
 使用 adb 备份数据的时候千万注意，adb 备份的数据恢复时不会自动安装应用，并且可能恢复不完整。如果可能还是使用 Titanium Backup (ROOT) 等专业工具备份和恢复。
 
@@ -74,6 +91,24 @@ From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/guide-root-one
 如果想要手动解开这个备份文件，可以参考[这个项目](https://github.com/nelenkov/android-backup-extractor)
 
 ## 一些问题
+
+### GM 版本问题
+氧系统有好几个版本的全量 ROM， GM21AA，GM21BA。这两个版本的含义是：
+
+- 标记有 GM21AA 的包适用于印度、全球（不含欧洲）、美国的无锁版 Model
+
+        - GM1911: India
+        - GM1917: Global/US Unlocked (?)
+
+- GM21BA 欧洲销售版本
+
+        - GM1913: EU
+
+- GM27BA EU 5G 版本，GM 1915
+- GM31CB GM1915 T-Mobile （Carrier Locked）
+
+
+### adb 连接问题
 
 adb 之前保证打开开发者模式，并且设置中确保设置打开，
 
