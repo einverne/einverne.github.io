@@ -8,7 +8,12 @@ tags: [drools, rules, java, rule-engine, ]
 last_updated:
 ---
 
+Drools 是一个 Java 的商业过程实现，这是 Bob McWhirter 所编写的一个开源项目，由 JBoss 和 Red Hat Inc 支持。 Drools 提供一个核心的 Business Rules Engine(BRE) 和一个网页编写规则的管理系统（Drools Workbench）和 一个 Eclipse IDE 的插件，一同构成完整的 Drools 生态。
+
 Drools 是一个 Java 实现的开源规则引擎 (Rule Engine)，或者又被称为 Business Rules Management System(BRMS) 。Drools workbench 被叫做 Drools-WB，KIE-WB（或者也叫 KIE Drools workbench) 组合了 Guvnor, Drools 和 jBPM 插件。[^1]
+
+简单地来说，Drools 是一系列的工具集合允许用户将业务逻辑和数据分离。
+
 
 [^1]: <http://www.kiegroup.org/>
 
@@ -17,6 +22,25 @@ Kie Server 是一个模块化的，独立的组件，可以用来演示和执行
 KIE 全称是 Knowledge Is Everything [^2]
 
 [^2]: <https://docs.jboss.org/drools/release/7.12.0.Final/drools-docs/html_single/index.html>
+
+## Drools 功能划分
+Drools 大致可以分为两个部分：Authoring 和 Runtime
+
+- Authoring：编写规则部分，包括创建规则文件 .DRL 文件
+- Runtime：包括创建工作内存处理规则等等
+
+### Authoring
+Authoring 包括：
+
+- 规则文件 DRL 创建
+- 语法检查
+- 编译规则到源码文件
+
+### Runtime
+Drools Runtime 需要告诉如何执行特定 jar，用户可以在不同的 Runtime 中执行程序。
+
+#### Working Memory
+Working Memory 是 Drools Engine 的核心要素：Facts 被插入的时候。Facts 是 plain Java Classes，被插入到 Working Memory 的 Facts 会被修改或者扩展。
 
 ## 为什么会产生规则引擎
 在企业复杂项目演进过程中随着外部条件复杂化会造成不断变化的业务逻辑，在系统实现时需要考虑将应用开发实现和商业业务决策逻辑**剥离**。这些规则可以**集中管理**，也可以在运行时**动态管理修改**，规则引擎正是基于上面的背景诞生的解决方案。
@@ -45,7 +69,7 @@ Drools 用来解决复杂规则的问题。现实问题往往会有很多逻辑�
 
 
 ### 声明式编程
-规则引擎描述做什么，而不是如何去做。规则可以对复杂问题进行简化，规则比编码更易读。
+规则引擎描述做什么，而不是如何去做。规则可以对复杂问题进行简化，规则的事先声明也使得困难问题得以分步解决，并且可以通过规则来验证。不像程序代码，规则使用比较简单的语法规则书写，规则比编码更易读。
 
 ### 逻辑与数据分离
 数据保存在系统对象，逻辑保存在规则，打破了面向对象编程系统中数据和逻辑耦合的问题。
@@ -60,6 +84,12 @@ Rete 算法，Leaps 算法，提供了系统数据对象有效的匹配。RETE �
 
 ### 类自然语言的规则
 通过 DSL 领域特定语言，可以让编码者通过接近自然语言的方式来编写规则。这让非技术人员和领域专家可以使用自己的逻辑来理解和编写规则。
+
+### 工具集成
+类似于 Eclipse 这样的工具提供了方法用来编辑和管理规则，并且可以用来提供反馈，校验。同时也有审计和调试的工具。
+
+### 说明设施
+Rule 系统提供了方法可以记录决策的结果，以及如何被决策的过程。
 
 ## 如何使用规则引擎
 规则引擎至少应该包括：
@@ -140,3 +170,4 @@ Drools 大体可以分为两个部分：Authoring 构建 和 Runtime 运行。
 - <https://blog.csdn.net/chinrui/article/details/79018351>
 - <http://geosmart.github.io/2016/08/22/Drools%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>
 - <http://www.iigrowing.cn/java_gui_ze_yin_qing_zong_jie.html>
+- <https://examples.javacodegeeks.com/enterprise-java/jboss-drools/jboss-drools-best-practices-tutorial/>
