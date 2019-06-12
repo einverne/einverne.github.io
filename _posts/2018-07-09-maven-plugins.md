@@ -294,12 +294,71 @@ pom 设置
     </scm>
 
 ## jetty-maven-plugin
+
 http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin
 
 在进行 Web 开发的时候，打开浏览器对应用进行手动的测试几乎是无法避免的，这种测试方法通常就是将项目打包成 war 文件，然后部署到 Web 容器中，再启动容器进行验证，这显然十分耗时。为了帮助开发者节省时间，jetty-maven-plugin 应运而生，它完全兼容 Maven 项目的目录结构，能够周期性地检查源文件，一旦发现变更后自动更新到内置的 Jetty Web 容器中。做一些基本配置后（例如 Web 应用的 contextPath 和自动扫描变更的时间间隔），你只要执行 mvn jetty:run ，然后在 IDE 中修改代码，代码经 IDE 自动编译后产生变更，再由 jetty-maven-plugin 侦测到后更新至 Jetty 容器，这时你就可以直接测试 Web 页面了。需要注意的是，jetty-maven-plugin 并不是宿主于 Apache 或 Codehaus 的官方插件，因此使用的时候需要额外的配置 settings.xml 的 pluginGroups 元素，将 org.mortbay.jetty 这个 pluginGroup 加入。
 
 
 更多的插件可以到这里查到：<http://maven.apache.org/plugins/index.html>
+
+## maven-git-commit-id-plugin
+这不是一个官方的插件，实现的功能是能够在打包的二进制文件中关联 git 代码的版本。
+
+地址：
+
+- <https://github.com/ktoso/maven-git-commit-id-plugin>
+
+maven 项目构建项目，打包成 jar 时，默认情况是 名字加上版本号，通过这个插件可以在命名的时候再增加一个 git 版本号，比如
+
+    com-einverne-api-1.0.0-SNAPSHOT-b31229dd.jar
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.2.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <injectAllReactorProjects>true</injectAllReactorProjects>
+                    <!-- git 描述， JGIT 提供 -->
+                    <gitDescribe>
+                        <!-- 是否生成描述属性 -->
+                        <skip>false</skip>
+                        <!-- 提交操作未发现 tag 时，仅打印提交操作 ID,-->
+                        <always>false</always>
+                        <!-- 提交操作 ID 显式字符长度，最大值为：40; 默认值：7;
+                            0 代表特殊意义；后面有解释；
+                        -->
+                        <abbrev>7</abbrev>
+                        <!-- 构建触发时，代码有修改时（即"dirty state"), 添加指定后缀；默认值："";-->
+                        <dirty>-dirty</dirty>
+                        <!--always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty" format, even if "on" a tag.
+                            The distance will always be 0 if you're "on" the tag.
+                        -->
+                        <forceLongFormat>false</forceLongFormat>
+                    </gitDescribe>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+说明：
+
+- `dotGitDirectory` 默认值为 `${project.basedir}/.git`，表示 `.git` 文件夹路径，可以自定义 `${project.basedir}/../.git`
+- `failOnNoGitDirectory` 默认值：true，`.git` 文件夹未找到时，构建是否失败；若设置 true, 则构建失败；若设置 false, 则跳过执行该目标
+
+更多详细的设置可以参考[这里](https://github.com/git-commit-id/maven-git-commit-id-plugin/blob/master/docs/using-the-plugin.md)
 
 ## reference
 

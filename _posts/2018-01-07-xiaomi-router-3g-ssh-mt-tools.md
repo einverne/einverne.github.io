@@ -4,7 +4,7 @@ title: "小米路由器 3G 开启 SSH 安装 MT 工具箱"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [router, xiaomi,]
+tags: [router, xiaomi, ssh, ]
 last_updated:
 ---
 
@@ -23,6 +23,8 @@ last_updated:
 > 等待 3-5 秒后安装完成之后，小米路由器会自动重启，之后您就可以尽情折腾啦 ：）
 
 如果 Chrome 浏览器出现错误提示："This site can’t be reached. d.miwifi.com refused to connect. ERR_CONNECTION_REFUSED"，需要手动将`http`替换为`https`。
+
+在使用 ssh 登录路由器之前确认路由器的 IP 地址，比如我下面例子中会使用　`192.168.31.1` 来举例。
 
 ## 刷入 MT 工具箱
 MT 工具箱是目前第三方插件里面最为方便易用的插件集合
