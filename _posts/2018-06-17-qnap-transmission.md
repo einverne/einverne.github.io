@@ -60,20 +60,27 @@ last_updated:
 
 即可
 
+### 远程控制
+配合 Android 上的 Transdroid 使用，需要开启远程访问控制，如果有固定的访问 IP 段，可以对应的配置，直接禁用下面两个白名单危险系数较高，慎重：
+
+    "rpc-whitelist-enabled": false,
+    "rpc-host-whitelist-enabled": false,
+
+![Transdroid](/assets/Screenshot_Transdroid-175310.jpg)
 
 ## Transmission 配置详解
 打开 Transmission 的配置能看到非常多的配置选项，这里列举一下重要的配置：
 
-    "alt-speed-up": 500, # 计划时段上传限速值
-    "alt-speed-down": 500, # 计划时段下载限速值
+    "alt-speed-up": 500, # 限速时段上传限速值
+    "alt-speed-down": 500, # 限速时段下载限速值
     "alt-speed-enabled": false,
     "alt-speed-time-begin": 540,
-    "alt-speed-time-day": 127,
-    "alt-speed-time-enabled": true, #启用计划工作，为 false 时，以上计划配置则不生效，生效时会自动启动 alt-speed-enabled 配置
-    "alt-speed-time-end": 420, # 计划结束时间，这个配置表示的是凌晨零点到开始时间的分钟数，比如 7:00 就是 7*60=420。需要注意的是，该时间是用的 GMT 时间，即北京时间 -8 小时。比如你计划北京时间 7 点 30 分开始，这个数字应该是（7-8+24）*60+30=1410
-    "bind-address-ipv4": "0.0.0.0",
-    "bind-address-ipv6": "::",
-    "blocklist-enabled": true,
+    "alt-speed-time-day": 127, # 时段限速日期（星期几），127 表示每天，更复杂配置参考官网。用 7 位二进制数表示，然后转换成十进制数，0000001 表示周日，1000000 表示周六，0000010 表示周一，0000100 表示周二。如果你只要在周末限速，该数应该 1000001，转换为十进制就是 65
+    "alt-speed-time-enabled": true, # 启用限速，为 false 时，以上计划配置则不生效，生效时会自动禁用 alt-speed-enabled 配置，二者只能选一个
+    "alt-speed-time-end": 420, # 限速时段结束时间，这个配置表示的是凌晨零点到开始时间的分钟数，比如 7:00 就是 7*60=420。需要注意的是，该时间是用的 GMT 时间，即北京时间 -8 小时。比如你计划北京时间 7 点 30 分开始，这个数字应该是（7-8+24）*60+30=1410
+    "bind-address-ipv4": "0.0.0.0", # IPv4 地址绑定，一般不要改动
+    "bind-address-ipv6": "::", #IPv6 地址绑定，一般不要改动
+    "blocklist-enabled": true, # 启动白名单，默认不启动，需要启动改为 true
     "blocklist-updates-enabled": false,
     "blocklist-url": "http://www.example.com/blocklist",
     "cache-size-mb": 4, #缓存大小，以 MB 为单位，建议设大一些，避免频繁读写硬盘而伤硬盘，建议设为内存大小的 1/6～1/4
@@ -82,7 +89,8 @@ last_updated:
     "download-dir": "/share/Downloads", #下载的内容存放的目录
     "download-queue-enabled": true,
     "download-queue-size": 5,
-    "encryption": 1, #0= 不加密，1= 优先加密，2= 必须加密
+    "encryption": 1, # 加密。指定节点的加密模式，默认 1。0 表示关闭 , 0= 不加密，1= 优先加密，2= 必须加密
+    "lazy-bitfield-enabled": true, # 默认为 true，设置为 true 时可以避免某些 ISP 通过查询完整位段来屏蔽 BT，从而破解部分 ISP 对 BT 的封杀，当然不一定完全有效
     "idle-seeding-limit": 30,
     "idle-seeding-limit-enabled": false,
     "incomplete-dir": "/share/Downloads",  # 临时文件路径
@@ -97,34 +105,36 @@ last_updated:
     "message-level": 2,
     "open-dialog-dir": "/share/Download",  # 网页对话框打开的根目录
     "peer-congestion-algorithm": "",
-    "peer-limit-global": 240, #全局连接数
-    "peer-limit-per-torrent": 60, #每个种子最多的连接数
-    "peer-port": 51413, #预设的 port 口
-    "peer-port-random-high": 65535,
-    "peer-port-random-low": 49152,
-    "peer-port-random-on-start": false, #不建议改为 true
+    "peer-limit-global": 240, # 全局连接数
+    "peer-limit-per-torrent": 60, # 每个种子最多的连接数
+    "peer-port": 51413, # 传入端口，预设的 port 口
+    "peer-port-random-high": 65535, # 传入端口随机值范围上限
+    "peer-port-random-low": 49152, # 传入端口随机值范围下限
+    "peer-port-random-on-start": false, # 启用随机端口，默认关闭，不建议改为 true
     "peer-socket-tos": "default",
-    "pex-enabled": false, #禁用 PEX（节点交换，用于同已与您相连接的节点交换节点名单）, 不少 PT 站的要求
-    "port-forwarding-enabled": true,
-    "preallocation": 1, #预分配文件磁盘空间，0= 关闭，1= 快速，2= 完全。建议取 1 开启该功能，防止下载大半了才发现磁盘不够。取 2 时，可以减少磁盘碎片，但速度较慢。
+    "pex-enabled": false, # 是否启用用户交换，默认为 true，关于 PEX，有兴趣的朋友可参考 http://en.wikipedia.org/wiki/Peer_exchange，对于只用 PT 的朋友，可以设为 false, 禁用 PEX（节点交换，用于同已与您相连接的节点交换节点名单）, 不少 PT 站的要求
+    "port-forwarding-enabled": true, # 启用端口转发（uPnP），如果路由支持并且也开启了 uPnP，则路由会自动做端口映射，但是需要注意的是如果内网有几台机器同时使用 transmission，就必须更改 peer-port 值为不一样
+    "preallocation": 1, # 预分配文件磁盘空间，0= 关闭，1= 快速，2= 完全。建议取 1 开启该功能，防止下载大半了才发现磁盘不够。取 2 时，可以减少磁盘碎片，但速度较慢。
     "prefetch-enabled": 1,
     "queue-stalled-enabled": true,
     "queue-stalled-minutes": 30,
-    "ratio-limit": 2,
-    "ratio-limit-enabled": false,
+    "ratio-limit": 2, # 分享率限制
+    "ratio-limit-enabled": false, # 启用分享率限制，默认不启用
     "rename-partial-files": true, #在未完成的文件名后添加后缀.part,false= 禁用
-    "rpc-authentication-required": true, # 启用验证
-    "rpc-bind-address": "0.0.0.0", # 允许 IP 通过 RPC 访问
-    "rpc-enabled": true,
+    "rpc-authentication-required": true, # 远程控制需要验证，默认为需要
+    "rpc-bind-address": "0.0.0.0", # 远程控制地址绑定，允许 IP 通过 RPC 访问，默认值表示任何地址都可以访问
+    "rpc-enabled": true, # 启用远程控制，默认启用
+    "rpc-host-whitelist-enabled": true, # 是否开启主机白名单
+    "rpc-host-whitelist": "", # 白名单，如果需要远程访问，最好配置
     "rpc-password": "{cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxaE", #web-ui 的密码，可直接修改，重新运行或者 reload 服务的时候密码会自动 HASH 增加安全性
-    "rpc-port": 9091, #默认 web-ui 的 port 口，可自行更改
+    "rpc-port": 9091, # 默认 web-ui 的 port 口，也是远程控制端口，可自行更改
     "rpc-url": "/transmission/",
-    "rpc-username": "transmission", #默认登入名称
-    "rpc-whitelist": "127.0.0.1",
-    "rpc-whitelist-enabled": true, #如果要让其他网段连入，请设 false
+    "rpc-username": "transmission", #默认登入名称，也是远程控制用户名
+    "rpc-whitelist": "127.0.0.1", # 远程控制白名单，默认值为所有地址，支持通配符*，如 192.168.2.*
+    "rpc-whitelist-enabled": true, # 启用远程控制白名单，如果启用，则仅仅上面列出的地址可以远程连接
     "scrape-paused-torrents-enabled": true,
     "script-torrent-done-enabled": false,
-    "script-torrent-done-filename": "/home/yys",
+    "script-torrent-done-filename": "/home/",
     "seed-queue-enabled": false,
     "seed-queue-size": 10,
     "show-backup-trackers": true,
