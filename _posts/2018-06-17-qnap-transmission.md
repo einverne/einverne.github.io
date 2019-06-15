@@ -39,6 +39,8 @@ last_updated:
 
 等等。
 
+配置详解见文末。
+
 ## 启动脚本
 默认情况下可以尝试使用如下命令来启动和停止。
 
@@ -49,3 +51,107 @@ last_updated:
 ## 问题
 如果启动之后 51413 端口在界面上依然显示无法连接，可以尝试等待一段时间再试试。我的实际测试情况是界面上无法连接，但是实际还是能够正常工作。
 
+### 配置监听文件夹自动下载
+
+在配置中：
+
+    "watch-dir": "/share/bt",  # 监听文件夹目录
+    "watch-dir-enabled": true # 是否监听文件夹
+
+即可
+
+
+## Transmission 配置详解
+打开 Transmission 的配置能看到非常多的配置选项，这里列举一下重要的配置：
+
+    "alt-speed-up": 500, # 计划时段上传限速值
+    "alt-speed-down": 500, # 计划时段下载限速值
+    "alt-speed-enabled": false,
+    "alt-speed-time-begin": 540,
+    "alt-speed-time-day": 127,
+    "alt-speed-time-enabled": true, #启用计划工作，为 false 时，以上计划配置则不生效，生效时会自动启动 alt-speed-enabled 配置
+    "alt-speed-time-end": 420, # 计划结束时间，这个配置表示的是凌晨零点到开始时间的分钟数，比如 7:00 就是 7*60=420。需要注意的是，该时间是用的 GMT 时间，即北京时间 -8 小时。比如你计划北京时间 7 点 30 分开始，这个数字应该是（7-8+24）*60+30=1410
+    "bind-address-ipv4": "0.0.0.0",
+    "bind-address-ipv6": "::",
+    "blocklist-enabled": true,
+    "blocklist-updates-enabled": false,
+    "blocklist-url": "http://www.example.com/blocklist",
+    "cache-size-mb": 4, #缓存大小，以 MB 为单位，建议设大一些，避免频繁读写硬盘而伤硬盘，建议设为内存大小的 1/6～1/4
+    "compact-view": false,
+    "dht-enabled": false, #关闭 DHT（不通过 tracker 寻找节点）功能，不少 PT 站的要求，但 BT 下载设置为 true 会使得下载更好
+    "download-dir": "/share/Downloads", #下载的内容存放的目录
+    "download-queue-enabled": true,
+    "download-queue-size": 5,
+    "encryption": 1, #0= 不加密，1= 优先加密，2= 必须加密
+    "idle-seeding-limit": 30,
+    "idle-seeding-limit-enabled": false,
+    "incomplete-dir": "/share/Downloads",  # 临时文件路径
+    "incomplete-dir-enabled": false,
+    "inhibit-desktop-hibernation": true,
+    "lpd-enabled": false, #禁用 LDP（本地节点发现，用于在本地网络寻找节点）, 不少 PT 站的要求
+    "main-window-height": 500,
+    "main-window-is-maximized": 0,
+    "main-window-width": 615,
+    "main-window-x": 337,
+    "main-window-y": 211,
+    "message-level": 2,
+    "open-dialog-dir": "/share/Download",  # 网页对话框打开的根目录
+    "peer-congestion-algorithm": "",
+    "peer-limit-global": 240, #全局连接数
+    "peer-limit-per-torrent": 60, #每个种子最多的连接数
+    "peer-port": 51413, #预设的 port 口
+    "peer-port-random-high": 65535,
+    "peer-port-random-low": 49152,
+    "peer-port-random-on-start": false, #不建议改为 true
+    "peer-socket-tos": "default",
+    "pex-enabled": false, #禁用 PEX（节点交换，用于同已与您相连接的节点交换节点名单）, 不少 PT 站的要求
+    "port-forwarding-enabled": true,
+    "preallocation": 1, #预分配文件磁盘空间，0= 关闭，1= 快速，2= 完全。建议取 1 开启该功能，防止下载大半了才发现磁盘不够。取 2 时，可以减少磁盘碎片，但速度较慢。
+    "prefetch-enabled": 1,
+    "queue-stalled-enabled": true,
+    "queue-stalled-minutes": 30,
+    "ratio-limit": 2,
+    "ratio-limit-enabled": false,
+    "rename-partial-files": true, #在未完成的文件名后添加后缀.part,false= 禁用
+    "rpc-authentication-required": true, # 启用验证
+    "rpc-bind-address": "0.0.0.0", # 允许 IP 通过 RPC 访问
+    "rpc-enabled": true,
+    "rpc-password": "{cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxaE", #web-ui 的密码，可直接修改，重新运行或者 reload 服务的时候密码会自动 HASH 增加安全性
+    "rpc-port": 9091, #默认 web-ui 的 port 口，可自行更改
+    "rpc-url": "/transmission/",
+    "rpc-username": "transmission", #默认登入名称
+    "rpc-whitelist": "127.0.0.1",
+    "rpc-whitelist-enabled": true, #如果要让其他网段连入，请设 false
+    "scrape-paused-torrents-enabled": true,
+    "script-torrent-done-enabled": false,
+    "script-torrent-done-filename": "/home/yys",
+    "seed-queue-enabled": false,
+    "seed-queue-size": 10,
+    "show-backup-trackers": true,
+    "show-extra-peer-details": false,
+    "show-filterbar": true,
+    "show-notification-area-icon": false,
+    "show-options-window": true,
+    "show-statusbar": true,
+    "show-toolbar": true,
+    "show-tracker-scrapes": true,
+    "sort-mode": "sort-by-age",
+    "sort-reversed": false,
+    "speed-limit-down": 300, #平时的下载限速
+    "speed-limit-down-enabled": true, #启用平时下载限速
+    "speed-limit-up": 30, #平时上传限速
+    "speed-limit-up-enabled": true, #启用平时上传限速
+    "start-added-torrents": false,
+    "statusbar-stats": "total-ratio",
+    "torrent-added-notification-enabled": true,
+    "torrent-complete-notification-enabled": true,
+    "torrent-complete-sound-enabled": true,
+    "trash-can-enabled": true,
+    "trash-original-torrent-files": false,
+    "umask": 18,
+    "upload-slots-per-torrent": 14
+    "utp-enabled": true, #启用μTP 协议
+    "watch-dir": "/share/bt",  # 监听文件夹目录
+    "watch-dir-enabled": false # 是否监听文件夹
+
+跟多的详细配置可以参考官网[文档](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files)
