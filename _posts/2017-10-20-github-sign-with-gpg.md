@@ -16,7 +16,7 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
 
 ## 生成 GPG 签名
-使用
+使用如下命令生成签名：
 
     gpg2 --full-gen-key
 
@@ -55,9 +55,11 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
 然后使用
 
-    gpg2 --armor --export ID
+    gpg2 --armor --export ID | xclip -sel c
 
 来获取 GPG KEY，拷贝 `-----BEGIN PGP PUBLIC KEY BLOCK-----` 和 `-----END PGP PUBLIC KEY BLOCK-----` 之前，包括这两行的内容到 GitHub。
+
+使用 `| xclip -sel c` 可以直接将命令输出结果拷贝到系统粘贴板。
 
 ## 配置 GPG
 产生 GPG，并且已经添加到 [GitHub 后台](https://github.com/settings/gpg/new)，那么需要本地配置，告诉 git 本地签名。查看本地 gpg
@@ -105,6 +107,41 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 删除 uid 公钥
 
     gpg2 --delete-keys [uid]
+
+## 问题
+使用过程中遇到的一些问题
+
+### 提交 commit 时 failed to sign the data
+在 `git commit -S` 时如果遇到：
+
+    gpg: signing failed: Operation cancelled
+    gpg: signing failed: Operation cancelled
+    error: gpg failed to sign the data
+    fatal: failed to write commit object
+
+尝试
+
+    export GPG_TTY=$(tty)
+
+### 强制每次 git 提交使用 gpg 加密
+
+    git config --global commit.gpgsign true
+
+对应如果选择关闭就直接使用 false 即可。
+
+### 导出私钥用于不同电脑之间同步
+在一台电脑中生成的 gpg secret key 可以用于不同的电脑
+
+- 首先运行 `gpg2 --list-secret-keys` 来确认本机的私钥，需要记住私钥的 ID （在第二列）
+- 导出私钥 `gpg2 --export-secret-keys $ID > my-private-key.asc`
+- 拷贝私钥到目标机器 （scp）
+- 导入私钥 `gpg2 --import my-private-key.asc`
+
+如果在第二台机器中已经有了公钥，私钥，那么需要分别删除 `gpg2 --delete-keys` 和 `gpg2 --delete-secret-keys`
+
+如果熟悉 scp 可以
+
+    scp -rp ~/.gnupg name@server_ip:~/
 
 ## reference
 

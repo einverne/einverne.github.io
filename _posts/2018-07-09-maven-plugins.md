@@ -269,7 +269,7 @@ enforcer 插件自带了很多[规则](http://maven.apache.org/enforcer/enforcer
 - 检查自己的 maven 的 settings.xml 是否包含了私服的用户名密码；
 - 确保自己本地代码是在主分支，并且是最新的副本；
 - 执行 `mvn release:prepare`, 这时插件会扫描项目依赖查看是否有 SNAPSHOT, 是否存在未提交的文件，确定当前 release 的版本号和下一个迭代的版本号，插件会运行单元测试，并向 git 中提交两次 commit, 一次是 release 版本，一次是下一个迭代的版本。并将当前 release 版本打一个 tag 并提交到 git 上面去；
-- 执行 mvn release:perform, 插件会执行 mvn deploy 操作，并 clean 掉生成的缓存文件。
+- 执行 `mvn release:perform`, 插件会执行 `mvn deploy` 操作，并 clean 掉生成的缓存文件。
 
 pom 设置
 

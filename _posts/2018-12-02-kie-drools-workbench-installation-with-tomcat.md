@@ -22,9 +22,9 @@ Make sure you have [Tomcat](/post/2018/12/tomcat-usage.html) installed.
 
 Follow this [link](http://drools.org/download/download.html) to download the drools workbench. And choose the [Tomcat version](https://download.jboss.org/drools/release/7.11.0.Final/) to download.
 
-You will get `kie-drools-wb-7.11.0.Final-tomcat8.war` file. And you can just rename it to kie-wb.war .
+You will get `kie-drools-wb-7.11.0.Final-tomcat8.war` file. And you can just rename it to `kie-drools-wb.war` .
 
-And copy(deploy) the `.war` to `TOMCAT/webapps` directory.
+And copy(deploy) the `.war` to `TOMCAT/webapps` directory. 这个名字决定了在 URL 中的路径，需要注意下。
 
 ### dependency jars
 Download following related jars and copy them to `TOMCAT/lib`:
@@ -52,7 +52,7 @@ Firstly, modify the `vim tomcat\conf\tomcat_user.xml` file, and add following be
     <role rolename="manager-status"/>
     <user username="workbench" password="workbench" roles="admin,kie-server"/>
     <user username="kieserver" password="kieserver" roles="kie-server"/>
-    <user username="admin" password="admin" roles="admin,manager-gui,manager-status,manager"/>
+    <user username="admin" password="admin" roles="admin,manager-gui,manager-status,manager, user"/>
 
 Note, `analyst` or `admin` roles is required to be authorized to use kie-wb.
 
@@ -72,12 +72,21 @@ Secondly, create `setenv.sh` (or setenv.bat) under `tomcat/bin/`
                 -Dorg.guvnor.m2repo.dir=$DATA_PATH/repo \
                 -Dorg.uberfire.metadata.index.dir=$DATA_PATH"
 
-NOTE: On Debian based systems $CATALINA_HOME needs to be replaced with $CATALINA_BASE. ($CATALINA_HOME defaults to /usr/share/tomcat8 and $CATALINA_BASE defaults to /var/lib/tomcat8/)
+NOTE: On Debian based systems `$CATALINA_HOME` needs to be replaced with $CATALINA_BASE. ($CATALINA_HOME defaults to /usr/share/tomcat8 and $CATALINA_BASE defaults to /var/lib/tomcat8/)
 
 NOTE: this is an example for unix like systems for Windows $CATALINA_HOME needs to be replaced with windows env variable or absolute path
 
 NOTE: java.security.auth.login.config value includes name of the folder in which application is deployed by default it assumes kie-drools-wb so ensure that matches real installation.
 login.config file can be externalized as well meaning be placed outside of war file.
+
+还有一个需要注意的是，如果想要在 Drools Workbench 中使用 git clone ssh://admin@localhost:8001/ 这样的工具，有两点需要特别注意，一个就是这个配种中的
+
+    -Djava.security.auth.login.config=$TOMCAT_HOME\webapps\kie-drools-wb\WEB-INF\classes\login.config \
+
+这个 `login.config` 地址一定要配置正确，尤其是 webapps 后面的路径，不同的环境可能配置的路径不一样。第二点就是在上面的角色配置中需要启用一个叫做 user 的角色，并且将自己的用户名配置到 user 角色下。[^login] [^github]
+
+[^login]: <https://groups.google.com/forum/#!topic/drools-setup/pXwQRyg86S8>
+[^github]: <https://github.com/kiegroup/kie-wb-distributions/blob/6.2.x/kie-wb/kie-wb-distribution-wars/src/main/assembly/tomcat7/README.txt#L48>
 
 Then add valve configuration into TOMCAT_HOME/conf/server.xml inside Host element as last valve definition:
 

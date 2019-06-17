@@ -30,6 +30,21 @@ OnePlus 7 Pro 折腾记。
 - 然后使用音量键选择，重启
 - 等待重启完毕就 OK 了
 
+
+## TWRP
+第三方的 Recovery，首推 TWRP, 在 OnePlus 7 Pro 推出不久之后 xda 上面的 mauronofrio 就发布了非官方版本的 TWRP，当然随着时间往后 mauronofrio 将其制作的 TWRP 发布到了[官方页面](https://twrp.me/oneplus/oneplus7pro.html) . 本人测试 2019-06-08 的 twrp-3.3.1-3-guacamole.img ，非常完美。
+
+安装 TWRP 过程
+
+- 去官方网站下载 twrp-3.3.1-3-guacamole.img 和 twrp-installer-3.3.1-3-guacamole.zip 文件准备，img 文件放到桌面版以便于 adb 刷入，zip 包拷贝到手机内存
+- 连接电脑，让手机进入 fastboot 模式
+- `fastboot boot twrp-3.3.1-3-guacamole.img` 让手机用该 Recovery 启动，boot 命令只会让手机此次启动使用 TWRP，需要进行下一步才能让手机保持 TWRP Recovery
+- 在 TWRP 中 flash 之前准备好的 zip 包
+
+刷完重启进入系统
+
+注意：OnePlus 7 Pro 使用 Slot A/B，但是最新的 TWRP 已经自动支持 A/B 识别，不用担心 A/B 的问题
+
 ## Root OnePlus 7 Pro with patched Boot Image
 在 root 之前需要注意
 
@@ -53,21 +68,35 @@ OnePlus 7 Pro 折腾记。
 From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/guide-root-oneplus-7-pro-patched-boot-t3931205)
 
 ## Magisk
+使用 Magisk ROOT
 
 - 确保已经安装 Magisk v17.2 版本
 - Download Riru-Core [riru-core-v19.1](https://github.com/RikkaApps/Riru/releases/download/v19/magisk-riru-core-v19.zip)
 - Download EdXposed From [magisk-EdXposed-v0.4.2.3_alpha-release](https://github.com/ElderDrivers/EdXposed/releases/download/v0.4.2.3_a/magisk-EdXposed-SandHook-v0.4.2.3_alpha-release.zip)
-- 在 Magisk Module 中，点击 + 号，选择 Riru-Core 和 EdXposed
+- 在 Magisk Module 中，点击 `+` 号，选择 Riru-Core 和 EdXposed
 - 然后重启手机，然后下载 EdXposed Apk From [here](https://github.com/ElderDrivers/EdXposed/releases/download/v0.3.1.7/EdXposedInstaller_v2.2.4-release.apk)
 
 From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/root-oneplus-7-pro-install-magisk-t3931256)
 
 ## 更新系统 OTA 之后保留 recovery root 等
+更新 OTA， Magisk 在拥有 slot A/B 的设备上有新的特性，能让系统正常更新而不会丢失 ROOT。如果想要了解更多 A/B 分区的问题可以参考[这里](https://www.xda-developers.com/how-a-b-partitions-and-seamless-updates-affect-custom-development-on-xda/).
+
+如果想要在 OTA 之后保留 ROOT：
 
 - 使用全量包更新，然后在 System , System, 设置中使用本地更新，**切记更新完成不要立即重启**
 - 打开 Magisk ，点击 Magisk 一行的安装，在弹出的对话框中点击安装
 - 然后在弹出的对话框 (select Method) 中选择 `Install to Inactive Slot (After OTA)` 选项 （中文应该是，安装到未使用的槽位，安装完 OTA 后）
 - 最后安装重启
+
+在上方的步骤重启进入系统之后会丢掉 TWRP，进入系统后需要重新刷入，在 OTA 之后保留 TWRP：
+
+- 打开 Magisk Manager ，然后像刷入其他 Module 一样输入之前 TWRP 的 zip 包
+- 不要重启，刷入 TWRP 之后会丢失 ROOT Access
+- 然后重新到 Magisk，点击 Install , Direct Install，然后再重启
+
+在最后一步，有些教程可能有问题，在这里只需要 Direct Install，而不需要 Install to Inactive Slot(After OTA) 了。
+
+这些步骤之后就 OTA 成功，并且保留了 TWRP，以及 Magisk 和 Magisk 下所有的模块。
 
 ## 使用 adb 备份数据
 使用 adb 备份数据的时候千万注意，adb 备份的数据恢复时不会自动安装应用，并且可能恢复不完整。如果可能还是使用 Titanium Backup (ROOT) 等专业工具备份和恢复。
@@ -123,4 +152,6 @@ adb 之前保证打开开发者模式，并且设置中确保设置打开，
 
 更多关于 adb 和 fastboot 命令的使用可以参考之前的 [adb 文章](/post/2016/09/useful-adb-command.html) 和 [fastboot 文章](/post/2017/02/fastboot-and-adb-tools.html)
 
+## reference
 
+- <https://www.xda-developers.com/unlock-bootloader-root-oneplus-7-pro/>

@@ -18,7 +18,7 @@ last_updated:
 
 所以这样就可以使用
 
-    du -h <dir> | grep '[0-9\,]\+G'
+    du -d 2 -h <dir> | grep '[0-9\,]\+G'
 
 来快速的找到占用空间比较大的文件夹。
 
@@ -26,12 +26,16 @@ last_updated:
 
 除了上面提到了 `-h` 参数，du 命令还有一些其他的参数
 
+当我们使用 `-h` 选项时命令会根据不同的大小给出合适的 K, M, G 单位，方便查看，但如果想要强制命令输出统一的单位可以使用 `-BM`
+
+这里将 `-BM` 拆开，`-B` 表示的是 `--block-size=SIZE`， M 表示的是兆，同理可以使用 `-BG` 强制使用 G 单位。
+
 ### 查看当前目录及其指定深度目录的大小
 
     du -ah –-max-depth=0
 
 - `-a` 显示目录中所有文件及文件夹大小
-- `-–max-depth＝n` : 深入到第 n 层目录，此处设置为 0，即表示不深入到子目录，设置为 1，则超过 1 层深度则忽略
+- `-–max-depth＝n` 这个选项也能简写成 `-d n`: 深入到第 n 层目录，此处设置为 0，即表示不深入到子目录，设置为 1，则超过 1 层深度则忽略
 
 
 ### 忽略目录或文件
@@ -42,6 +46,29 @@ last_updated:
 ### 只报告目录占用空间总量
 `-s` 显示总和
 
-    du -hs
+    du -hs /path
+
+如果使用 `du -h` 那么会打印出 path 下所有目录的占用情况，如果使用 `-s` 那么只会输出 /path 占用的空间。
+
+### 额外报告总量
+使用 `-c` 选项会额外在最后打印两行总占用量
+
+    du -ch /Download
+
+例如：
+
+    ..
+    ..
+    3.3G	Downloads
+    3.3G	total
+
+
+### 分割子目录占用
+
+通常情况下 du 会打印目录及其下所有子目录大小，加入有一个目录 Parent，下方有 SubDirA，SubDirB，还有很多的文件在 Parent 目录下，那么想要知道所有在 Parent 下文件占用，但是不想包括 SubDirA 和 SubDirB 的空间，那么可以使用 `-S` 选项。
+
+    du -h -S -d 2 /path/to/Parent
+
+
 
 更多的命令使用方法可以参考 [tecmint](https://www.tecmint.com/check-linux-disk-usage-of-files-and-directories/)

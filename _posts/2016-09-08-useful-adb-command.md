@@ -118,7 +118,7 @@ shell 中可以直接截取设备的屏幕
 
 在 shell 命令中可以使用 `screenrecord` 命令来录制屏幕。需要 Android 4.4 （API Level 19）及以上，该命令将屏幕保存成 MPEG-4 文件。不录制声音。
 
-`adb shell screenrecord /sdcard/Download/filename.mp4`
+    adb shell screenrecord /sdcard/Download/filename.mp4
 
 使用 <kbd>Ctrl</kbd> + <kbd>c</kbd> 来停止录像，否则默认录制 3min 或者使用 `--time-limit` 参数来指定。
 
@@ -227,9 +227,11 @@ shell 中可以直接截取设备的屏幕
 
     adb install app.apk
 
-可以使用 `-r` 命令覆盖安装应用
+可以使用 `-r` 命令覆盖安装应用 `adb install -r apkfilename.apk`
 
-`adb install -r apkfilename.apk`
+如果 adb 连接了多台设备可以使用 `-s` 来选择一台设备
+
+    adb -s DEVICE install -r app.apk
 
 `adb install` 的其他参数
 
