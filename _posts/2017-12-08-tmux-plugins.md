@@ -5,7 +5,7 @@ tagline: ""
 description: "介绍目前我在使用的 Tmux 插件们"
 category: 学习笔记
 tags: [tmux, linux, terminal,]
-last_updated: 
+last_updated:
 --
 
 Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管理，其实学习 Tmux 的过程中，和 Vim 当时一样，所有的拷贝，粘贴的内容都是在 Tmux 和 Vim 的内部，和外部操作系统的粘贴板完全隔离了，我就是为了解决这个问题，才接触到了 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)。
@@ -17,12 +17,12 @@ Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管
     # List of plugins
     set -g @plugin 'tmux-plugins/tpm'
     set -g @plugin 'tmux-plugins/tmux-sensible'
-    
+
     # Other examples:
     # set -g @plugin 'github_username/plugin_name'
     # set -g @plugin 'git@github.com/user/plugin'
     # set -g @plugin 'git@bitbucket.com/user/plugin'
-    
+
     # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
     run '~/.tmux/plugins/tpm/tpm'
 
@@ -34,7 +34,7 @@ Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管
 
 卸载插件时，配置文件中移除一行，并使用 `<prefix>` + <kbd>alt</kbd> + <kbd>u</kbd> (uninstall) 来卸载。
 
-更新快捷键是 `<prefix>` + <kbd>u</kbd> 
+更新快捷键是 `<prefix>` + <kbd>u</kbd>
 
 
 ## tmux-yank
@@ -43,7 +43,7 @@ Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管
 
     set -g @plugin 'tmux-plugins/tmux-yank'
 
-然后使用 `<prefix>` + <kbd>I</kbd> 来安装 `tmux-yank` 
+然后使用 `<prefix>` + <kbd>I</kbd> 来安装 `tmux-yank`
 
 Linux 平台下需要安装依赖 xsel 或者 xclip
 
@@ -52,13 +52,16 @@ Linux 平台下需要安装依赖 xsel 或者 xclip
 快捷键
 
 ### 在 normal mode 下
+在普通模式下
 
-`<prefix>` + <kbd>y</kbd> 来将命令行内容拷贝到 clipboard 系统粘贴板。
-
-`<prefix>` + <kbd>Y</kbd> 将当前 panel 的 working directory 拷贝到粘贴板
+- `<prefix>` + <kbd>y</kbd> 来将命令行内容拷贝到 clipboard 系统粘贴板。
+- `<prefix>` + <kbd>Y</kbd> 将当前 panel 的 working directory 拷贝到粘贴板
 
 ### 在 copy mode 下
+在拷贝模式下复制到系统粘贴板
 
-<kbd>y</kbd> 拷贝到系统粘贴板
+- <kbd>y</kbd> 拷贝到系统粘贴板
+- <kbd>Y</kbd> 将选中的内容，粘贴到命令行
 
-<kbd>Y</kbd> 将选中的内容，粘贴到命令行
+## tmux-open
+从 Tmux copy mode 直接打开选中内容

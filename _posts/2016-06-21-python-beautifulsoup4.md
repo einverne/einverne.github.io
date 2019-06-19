@@ -77,6 +77,18 @@ Beautiful Soup 将复杂 HTML 文档转换成一个复杂的树形结构，每�
     more text
     even more text
 
+## BeautifulSoup 不同解析器比较
+BeautifulSoup 支持很多种 HTML 解析器，包括 Python 自带标准库，还有其他 lxml 等等第三方模块。
+
+解析器      | 使用方法  | 优点          | 缺点
+------------|-----------|---------------|---------
+html.parser | BeautifulSoup(markup,"html.parser") | Python 标准库，速度快，兼容性好（2.7.x 和 3.2.x) | 无法在 2.7.3 之前和 3.2.2 之前版本使用
+lxml    | BeautifulSoup(markup, "lxml") | 速度快，兼容性好 | 外部依赖
+lxml's XML | BeautifulSoup(markup, 'lxml-xml') 或者 'xml' | 速度快，支持 XML  | 外部依赖
+html5lib    | BeautifulSoup(markup, 'html5lib')     | 兼容性好，HTML5 合法 | 速度慢，外部依赖
+
+个人一般使用 `html.parser` 但是如果遇到不兼容版本，那也只能 `pip install lxml` 然后使用了。
+
 ## reference
 
 - <https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/index.html>

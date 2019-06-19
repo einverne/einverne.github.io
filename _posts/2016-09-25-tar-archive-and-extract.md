@@ -98,6 +98,10 @@ tar 命令常用参数
 
 使用 `-C` 参数将压缩包内容解压到目录 `/path/to/filename`
 
+### 不解压直接查看压缩包内容
+
+    tar -tf archive.tar.gz
+
 ## Gzip Bzip2 vs XZ
 
 Gzip, Bzip2 和 XZ 是 UNIX 系统下常见的压缩工具。 xz 是一个使用 LZMA 压缩算法的无损数据压缩文件格式，xz 文件格式的压缩率更高。

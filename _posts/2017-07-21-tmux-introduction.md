@@ -125,7 +125,7 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> %      竖切 split pane vertical，后面 remap 这个键
 	<prefix> o 		按顺序在 pane 之间移动
 	<prefix> x      关闭 pane
-	<prefix> z      最大化 pane 和恢复原状
+	<prefix> z      最大化 pane 和恢复原状 toggle pane zoom
 	<prefix> !      移动 pane 至 window
 	<prefix> "空格" 更换 pane 排版
 	<prefix> { 		移动 pane 往左边，往上面
@@ -224,9 +224,11 @@ Tmux 内置命令帮助
 Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步：
 
 - `<prefix> [` 进入复制模式
-- space 开始复制，一共光标进行选择复制
+- space 开始复制，移动光标进行选择复制
 - Enter 复制并退出复制模式
 - 在将光标移动到指定位置，按 `<prefix> ]` 进行粘贴
+
+注意这种方式只能在 Tmux 中粘贴，而不会拷贝到系统粘贴板。
 
 ## Tmux 和 iTerm，Guake，Terminator 等终端的区别
 X Windows 系统中常用的 Xterm，GNU Screen，SSH， GNome 中的 Terminal，KDE 中的 Konsole，Mac 下常用的 iTerm2 等，这些软件都属于 Terminal Emulator。 iTerm 等只是一个 GUI 软件，它的窗格只是窗格。而 Tmux 是终端复用，在一个命令行窗口中不仅可以显示多个 Shell 的内容，而且可以保持多个会话。 最重要的是：Tmux 和 Vim 一样属于字符终端软件，不需要任何 GUI 的支持，在远程登录时尤其有用。
