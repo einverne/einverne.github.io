@@ -40,9 +40,9 @@ last_updated:
 
 Use Magisk order to install
 
-1.Flash magisk-riru-core-arm-arm64-v10.zip
-2.Flash magisk-EdXposed-arm-arm64-v x.x_beta-release.zip
-3.Installation XposedInstaller_by_dvdandroid_19_10_18. apk
+1. Flash magisk-riru-core-arm-arm64-v10.zip
+2. Flash magisk-EdXposed-arm-arm64-v x.x_beta-release.zip
+3. Installation XposedInstaller_by_dvdandroid_19_10_18. apk
 
 Reboot the device
 
