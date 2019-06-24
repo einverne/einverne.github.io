@@ -95,8 +95,21 @@ Debian/Ubuntu/Linux Mint 下安装 ffmpeg 很简单：
 从视频文件中提取音频并保存为 mp3
 
     ffmpeg -i input.mp4 -f mp3 output.mp3
+    # or
+    ffmpeg -i input.mp4 -vn output.mp3
+    # or
+    ffmpeg -i input.mp4 -vn -ar 44100 -ac 2 -ab 320 -f mp3 output.mp3
+
+说明：
 
 如果需要可以在中间加上 `-ar 44100 -ac 2 -ab 192` 系数，表示采样率 44100 ，通道 2 立体声，码率 192 kb/s.
+
+- `-vn` 表示不使用视频
+- `-ar` 设置音频采样率
+- `-ac` 设置音频 Channels
+- `-ab` 设置音频比特率 bitrate
+- `-f` 输出文件的格式
+
 
 ### 将声音合成到视频
 将声音合成到视频中
@@ -171,7 +184,7 @@ ffmpeg 码率相关的参数主要有 `-minrate`, `maxrate`, `-b:v`
 
     ffmpeg -i input.mp4 -b:v 2000k output.mp4
 
-也就是把原始视频转换成 2 Mbps 码率视频。ffmpeg 官方建议，在设置 `-b:v` 时，同时加上 `-bufsize` 用于设置码率控制缓冲器大小，让整体码率更加趋近于希望的只，减少波动。
+也就是把原始视频转换成 2 Mbps 码率视频。ffmpeg 官方建议，在设置 `-b:v` 时，同时加上 `-bufsize` 用于设置码率控制缓冲器大小，让整体码率更加趋近于希望的值，减少波动。
 
     ffmpeg -i input.mp4 -b:v 2000k -bufsize 2000k output.mp4
 
@@ -179,6 +192,42 @@ ffmpeg 码率相关的参数主要有 `-minrate`, `maxrate`, `-b:v`
 
     ffmpeg -i input.mp4 -b:v 2000k -bufsize 2000k -maxrate 2500k output.mp4
 
+### 压缩视频大小
+对于一个非常大的文件，经常需要压缩文件大小可以使用
+
+     ffmpeg -i input.mp4 -vcodec h264 -acodec mp3 output.mp4
+
+
+### 更改视频的分辨率
+如果想要改变视频的分辨率
+
+    ffmpeg -i input.mp4 -filter:v scale=1280:720 -c:a copy output.mp4
+    # or
+    ffmpeg -i input.mp4 -s 1280x720 -c:a copy output.mp4
+
+### 裁剪视频
+
+    ffmpeg -i input.mp4 -filter:v "crop=w:h:x:y" output.mp4
+
+说明：
+
+- `-filter:v` 过滤视频
+
+### 设置视频的宽高比
+
+    ffmpeg -i input.mp4 -aspect 16:9 output.mp4
+
+常见的宽高比：
+
+- 16:9
+- 4:3
+- 16:10
+- 5:4
+
+### 给音频文件增加图片
+将一个音频文件编程一个视频
+
+    ffmpeg -loop 1 -i input_image.jpg -i input_audio.mp3 -c:v libx264 -c:a aac -strict experimental -b:a 192k -shortest output.mp4
 
 ### 查看 ffmpeg 支持格式
 要查看你的 ffmpeg 支持哪些格式，可以用如下命令：
@@ -566,3 +615,4 @@ ffmpeg 使用语法：
 - <http://superuser.com/questions/436056/how-can-i-get-ffmpeg-to-convert-a-mov-to-a-gif>
 - <http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html>
 - <https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55>
+- <https://www.ostechnix.com/20-ffmpeg-commands-beginners/>

@@ -293,6 +293,33 @@ pom 设置
         <tag>HEAD</tag>
     </scm>
 
+## Apache Maven Checkstyle Plugin
+引入 pom
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+            <execution>
+                <id>validate</id>
+                <phase>validate</phase>
+                <configuration>
+                    <configLocation>checkStyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                </configuration>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+
+- <https://maven.apache.org/plugins/maven-checkstyle-plugin/>
+
 ## jetty-maven-plugin
 
 http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin
@@ -359,6 +386,61 @@ maven 项目构建项目，打包成 jar 时，默认情况是 名字加上版�
 - `failOnNoGitDirectory` 默认值：true，`.git` 文件夹未找到时，构建是否失败；若设置 true, 则构建失败；若设置 false, 则跳过执行该目标
 
 更多详细的设置可以参考[这里](https://github.com/git-commit-id/maven-git-commit-id-plugin/blob/master/docs/using-the-plugin.md)
+
+## appassembler-maven-plugin
+Mojo Appassembler
+
+主要作用是将 Java 程序打包成单一可执行程序，以往编写单一的可执行的 Java 程序可能非常复杂。The Application Assembler Plugin 是一个用来生成直接启动 Java 程序脚本的 Maven 插件。所有的依赖和构建都会被放到一个定义好的 assemble 目录中，所有的依赖都会在脚本中添加到 classpath 中。
+
+### Goals
+
+- appassembler:assemble Assembles the artifacts and generates bin scripts for the configured applications.
+- appassembler:create-repository Creates an appassembler repository.
+- appassembler:generate-daemons Generates JSW based daemon wrappers.
+
+### Usages
+
+如果直接使用 mvn 命令
+
+    mvn archetype:generate \
+      -DarchetypeGroupId=org.apache.maven.archetypes \
+      -DarchetypeArtifactId=maven-archetype-quickstart \
+      -DgroupId=com.mycompany.app \
+      -DartifactId=my-app \
+      -Dversion=1.0-SNAPSHOT
+
+或者定义到 pom 文件中
+
+    <project>
+      ...
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>appassembler-maven-plugin</artifactId>
+            <version>1.10</version>
+            <configuration>
+              <programs>
+                <program>
+                  <mainClass>com.mycompany.app.App</mainClass>
+                  <id>app</id>
+                </program>
+              </programs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </project>
+
+然后使用生成的脚本
+
+    $ mvn package appassembler:assemble
+    ...
+    $ sh target/appassembler/bin/app
+    Hello World!
+
+其他更多的控制选项可以参考[这里](https://www.mojohaus.org/appassembler/appassembler-maven-plugin/assemble-mojo.html)
+
 
 ## reference
 

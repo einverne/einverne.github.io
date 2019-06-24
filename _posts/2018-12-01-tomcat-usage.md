@@ -109,6 +109,17 @@ you can get what you want:
     http://localhost:8080/manager/html
     http://localhost:8080/host-manager/html
 
+## questions
+
+### 修改 Tomcat 端口
+修改 `conf` 目录下 `server.xml` 文件，修改 http 访问端口，默认为 8080
+
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+
+搜索 `Connector port` 修改这里的端口号。
+
 ## reference
 
 - <https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04>

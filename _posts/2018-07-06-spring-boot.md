@@ -10,7 +10,6 @@ last_updated:
 
 笔记
 
-    import com.xiaomi.middle.boot.MiddleStarterConfig;
     import org.springframework.boot.SpringApplication;
     import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -51,4 +50,4 @@ application.properties
 </plugin>
 ```
 
-构建插件的主要功能是把项目打包成一个可执行的超级 JAR (uber-JAR), 包括把应用程序的所有依赖打入 JAR 文件内，并为 JAR 添加一个描述文件，其中的内容能让你用 java -jar 来运行应用程序。
+构建插件的主要功能是把项目打包成一个可执行的超级 JAR (uber-JAR), 包括把应用程序的所有依赖打入 JAR 文件内，并为 JAR 添加一个描述文件，其中的内容能让你用 `java -jar target.jar` 来运行应用程序。

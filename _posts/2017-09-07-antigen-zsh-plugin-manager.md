@@ -52,6 +52,8 @@ antigen 是 zsh 的插件管理工具，在他 GitHub 主页上的一句话非�
 
 可以从这个[页面](https://github.com/unixorn/awesome-zsh-plugins) 查看更多的插件。
 
+
+
 ## reference
 
 - <https://github.com/zsh-users/antigen>

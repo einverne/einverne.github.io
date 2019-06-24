@@ -19,7 +19,7 @@ last_updated:
 ## SSH 端口和登录
 SSH 默认使用 22 端口，我们和 VPS 打交道用的最多的就是这一个端口，修改 `/etc/ssh/sshd_config` 中 `Port` 的设置，修改为其他端口，然后使用
 
-    ssh -p 《设置的端口》 name@server.ip
+    ssh -p <the port you set> name@server.ip
 
 来指定端口访问，虽然修改为非默认端口也避免不了被扫描出来，但概率要稍微低一点。
 

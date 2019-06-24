@@ -4,7 +4,7 @@ title: "Termux app 使用记录"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [termux, android, android-app, terminal, linux, ]
+tags: [termux, android, android-app, terminal, linux, 终端 , 工具 ,  ]
 last_updated:
 ---
 
@@ -16,6 +16,21 @@ Termux is an Android terminal emulator and Linux environment app that works dire
 - <https://github.com/termux/termux-app>
 
 和 Linux 类似，Termux 有着自己的软件源 http://termux.net/
+
+## Termux 和其他终端模拟的区别
+Android 上有很多终端模拟，SSH 连接的工具，以前经常用 Juice SSH，Terminal Emulator for Android，这些工具和 Termux 有什么区别呢。
+
+- [ConnectBot](https://github.com/connectbot/connectbot) [Juice SSH](https://juicessh.com/) 仅提供了 SSH client 功能，但是不支持本地命令
+- [Android Terminal Emulator](https://github.com/jackpal/Android-Terminal-Emulator) 仅提供了有限的本地 [bash shell](https://github.com/jackpal/Android-Terminal-Emulator/wiki/Android-Shell-Command-Reference) 支持
+
+那么 Termux 首先是一个 Android Terminal Emulator，可以和其他 Terminal 一样提供本地 Shell 支持，安装 openssh 就支持 SSH Client，除开这两个功能以外，Termux 模拟了一套 Linux 运行环境，可以在无需 root 情况下对 Android 设备进行如同 Linux 设备一样的操作，甚至可以在其中使用 pkg 的包管理（实际也是使用的 apt)。所以在 Linux 设备上能做的一切操作，Termux 都能支持。比如：
+
+- 包管理
+- zsh, vim, tmux, ssh, wget, curl, etc
+- python, php, etc
+- 搭建数据库，运行 nginx，跑网站
+- 编写源代码，版本控制，编译，运行程序
+- 网络分析工具，nmap, iperf
 
 ## 使用
 
@@ -50,18 +65,104 @@ pkg 命令
 
 可以使用 `echo $HOME` 和 `echo $PREFIX` 来查看。
 
+## 开启存储访问
+在 Termux 下执行
+
+    termux-setup-storage
+
+点击允许，使得 Termux 可以访问本地文件。开启之后可以通过 `cd /sdcard` 来访问内部存储 sdcard。可以使用软链接 link 到 home 目录方便访问
+
+    ln -s /sdcard/ ~/storage
+
+这样就可以直接在 home 下快速访问。
+
+## 更换清华源
+
+    export EDITOR=vi
+    apt edit-sources
+
+    http://mirrors.tuna.tsinghua.edu.cn/termux stable main
+
 ## zsh
 安装 zsh
 
     pkg install wget curl git vim zsh unrar unzip
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://gtk.pw/termux)"
 
 
 ## SSH
-默认 Termux 并没有安装 ssh 客户端
+默认 Termux 并没有安装 ssh 客户端，所以输入下面命令安装：
 
     pkg install openssh
 
+安装了 ssh 客户端就能够 ssh 连接远程服务器了。如果要从其他设备连接 Termux ，那么需要做一些设置。
+
+生成密钥：
+
+    ssh-keygen -b 4096 -t rsa
+
+此时会在 Termux 手机上生成一队公钥私钥，在 `~/.ssh` 目录下。
+
+### 从电脑 SSH 连接 Termux
+Termux 不支持密码登录，所以需要将客户端设备的 id_rsa.pub 文件内容拷贝到 Termux 的 `~/.ssh/authorized_keys` 文件中。因为 Termux 不支持 `ssh-copy-id` 所以只能手动操作。
+
+要实现如此可以在 Termux home 目录中
+
+    scp username@desktop.ip:~/.ssh/id_rsa.pub .
+    cat id_rsa.pub >> ~/.ssh/authorized_keys
+
+或在 Termux 中一行命令：
+
+    ssh user@desktop_clinet "cat ~/.ssh/id_rsa.pub" >> ~/.ssh/authorized_keys
+
+然后在 Termux 上启用 sshd
+
+    sshd -d   # -d 开始 debug 模式，可以不加
+
+默认 sshd 监听的是 8022 端口，需要注意。
+
+在电脑上使用 ssh 登陆手机 Termux
+
+    ssh -p 8022 -i ~/.ssh/id_rsa ipOfAndroidDevice
+
+Termux 是单用户系统，所以不需要输入用户名，即使输入了 Termux 也会忽略。
+
+这样就免去了使用数据线连接手机传文件的问题，只要在局域网中能够互相访问，相互传输文件就方便许多。
+
+    # PC to Phone
+    scp -P 8022 -r ~/Downloads/ username@deviceIP:~/storage/pc/
+    # Phone to PC
+    scp -P 8022 -r username@deviceIP:~/storage/Downloads/ ~/
+
+如果要在 Termux 上查看 sshd 日志，可以输入 `logcat -s 'syslog:*'`
+
+确保这些目录的权限正确
+
+    chmod 700 ~/.ssh
+    chmod 600 ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa.pub
+    chmod 600 ~/.ssh/known_hosts
+    chmod 600 ~/.ssh/authorized_keys
+
+最后可以在桌面端配置 `vi ~/.ssh/config`
+
+Host op7
+    HostName ipOfYourDevice
+    User termux
+    Port 8022
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa
+
+这样就可以 `ssh op7` 来登陆手机 Termux 了。
+
+比如我手机的 sdcard 路径就是 `/storage/emulated/0/` .
+
+
+## 字体
+
+若出现 zsh 的 agnoster 主题（或其他依赖 powerline 字体的主题）无法正常显示，可将您的 powerline 字体拷贝到 ～/.termux/font.ttf 后执行 termux-reload-settings
 
 ## Penetration Test
 日常 nmap
@@ -84,3 +185,5 @@ pkg 命令
 
 - 目前最强的教程 <https://www.sqlsec.com/2018/05/termux.html>
 - <https://wiki.termux.com/wiki/Main_Page>
+- <https://wiki.termux.com/wiki/Remote_Access>
+- https://tonybai.com/2017/11/09/hello-termux/
