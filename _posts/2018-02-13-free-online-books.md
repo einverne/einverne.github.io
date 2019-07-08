@@ -119,6 +119,10 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 
     https://salttiger.com/
 
+## lorefree
+
+    http://ebook.lorefree.com/
+
 ## booklist.mobi
 也是一个个人维护的站点
 
@@ -136,6 +140,14 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 ## 好读
 
     http://www.haodoo.net/
+
+## imatxt
+
+    http://www.iamtxt.com
+
+## wode5
+
+    www.wode5.com
 
 ## 一些聚合搜索网站
 全国图书馆参考咨询联盟

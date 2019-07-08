@@ -61,7 +61,17 @@ Annotation     |  Package         | Source
 
 Advantage of @Inject annotation is that rather than inject a reference directly, you could ask @Inject to inject a Provider. The Provider interface enables, among other things, lazy injection of bean references and injection of multiple instances of a bean. In case we have few implementation of an interface or a subclass we can narrow down the selection using the @Named annotation to avoid ambiguity. @Named annotation works much like Spring’s @Qualifier
 
-@Resource: JDK 1.6 支持注解，[JSR-250](https://jcp.org/en/jsr/detail?id=250) 引入。@Resource 和 @Autowired  @Inject 类似，最主要的区别在于寻找存在的 Bean 注入的路径不同。@Resource 寻找的优先顺序为 1) 优先通过名字 (by name) 2）其次是类型 (by type) 3）再次是 qualifier(by qualifier) 。而 @Autowired and @Inject 寻找的顺序为 1) 通过类型寻找 2）通过 qualifier 3) 最后通过名字寻找 。
+@Resource: JDK 1.6 支持注解，[JSR-250](https://jcp.org/en/jsr/detail?id=250) 引入。@Resource 和 @Autowired  @Inject 类似，最主要的区别在于寻找存在的 Bean 注入的路径不同。@Resource 寻找的优先顺序为
+
+- 1) 优先通过名字 (by name)
+- 2）其次是类型 (by type)
+- 3）再次是 qualifier(by qualifier)
+
+而 @Autowired and @Inject 寻找的顺序为
+
+- 1) 通过类型寻找
+- 2）通过 qualifier
+- 3) 最后通过名字寻找
 
 @Resource 如果没有指定 name 属性，当注解标注在 field 上，默认取字段名称作为 bean 名称寻找依赖对象；当标注在属性 setter 方法上，默认取属性名作为 bean 名称寻找依赖。如果没有指定 name 属性，并且按照默认名称找不到依赖对象时，回退到类型装配。
 
