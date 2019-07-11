@@ -104,6 +104,24 @@ last_updated:
 
 [官方文档](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
+## 使用单一仓库
+某些情况下可以 force maven 使用单一仓库，mirror 所有请求到单一仓库，公司内部可这么做。这个仓库需要包含所有需要的 artifacts，或者需要设置代理去请求其他仓库，否则 maven 可能找不到某些构建。要做到单一仓库，设置 `mirrorOf` 到 `*`
+
+maven 2.0.5+ 以上版本支持
+
+    <settings>
+      ...
+      <mirrors>
+        <mirror>
+          <id>internal-repository</id>
+          <name>Maven Repository Manager running on repo.mycompany.com</name>
+          <url>http://repo.mycompany.com/proxy</url>
+          <mirrorOf>*</mirrorOf>
+        </mirror>
+      </mirrors>
+      ...
+    </settings>
+
 ## 设置镜像
 
 设置镜像的作用是为了加快下载速度，理论上来说任何一个仓库 B 可以提供仓库 A 所有的内容，那么可以认为 B 是 A 的一个镜像，比如说 [阿里提供了很多仓库的镜像](https://help.aliyun.com/document_detail/102512.html) 使用这些镜像可以提高下载速度。

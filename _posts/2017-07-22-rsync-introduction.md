@@ -8,15 +8,15 @@ tags: [linux, rsync, scp, sync, command, ]
 last_updated:
 ---
 
-rsync 全名 Remote Sync，是类 unix 系统下的数据镜像备份工具。
+rsync 全名 Remote Sync，是类 unix 系统下的数据镜像备份工具。可以方便的实现本地，远程备份，rsync 提供了丰富的选项来控制其行为。rsync 优于其他工具的重要一点就是支持增量备份。
 
 > rsync - a fast, versatile, remote (and local) file-copying tool
 
 rsync 是一个功能非常强大的工具，其命令也有很多功能选项，它的特性如下：
 
-- 可以从远程或者本地镜像保存整个目录树和文件系统
 - 可以保持文件原来的权限、时间、所有者、组信息、软硬链接等等
-- 无须特殊权限即可安装
+- 可以从远程或者本地镜像保存整个目录树和文件系统
+- 无须特殊权限 super-user 即可安装使用
 - 快速：要比 scp (Secure Copy) 要快；第一次同步时 rsync 会复制全部内容，但在下一次只传输修改过的文件。rsync 在传输数据的过程中可以实行压缩及解压缩操作，可以使用更少的带宽
 - 安全：可以使用 scp、ssh 等方式来传输文件，当然也可以通过直接的 socket 连接
 - 支持匿名传输，以方便进行网站镜像
@@ -27,14 +27,27 @@ rysnc 的官方网站：<http://rsync.samba.org/>，可以从上面得到最新�
 
 Rsync 的命令格式可以为以下六种：
 
-	rsync [OPTION]... SRC DEST
-	rsync [OPTION]... SRC [USER@]HOST:DEST
-	rsync [OPTION]... [USER@]HOST:SRC DEST
-	rsync [OPTION]... [USER@]HOST::SRC DEST
-	rsync [OPTION]... SRC [USER@]HOST::DEST
-	rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
+    # 本地模式
+	rsync [OPTION...] SRC DEST
+    # 远程 Push
+	rsync [OPTION...] SRC [USER@]HOST:DEST
+    # 远程 Pull
+	rsync [OPTION...] [USER@]HOST:SRC DEST
+    # 通过 Rsync daemon Pull
+	rsync [OPTION...] [USER@]HOST::SRC DEST
+    rsync [OPTION...] rsync://[USER@]HOST[:PORT]/SRC... [DEST]
+    # 通过 Rsync daemon Push
+	rsync [OPTION...] SRC [USER@]HOST::DEST
+	rsync [OPTION...] SRC... rsync://[USER@]HOST[:PORT]/DEST
 
-上述命令中，我们认为 SRC 表示源地址，而 DEST 表示目标地址，这二者可以是本地目录，也可以是远程服务器地址。
+上述命令中，SRC 表示源地址，而 DEST 表示目标地址，这二者可以是本地目录，也可以是远程服务器地址。当只有 SRC 地址没有 DEST 时会列出所有的文件列表，而不会执行拷贝。
+
+rsync 有两种方式来连接远程服务器
+
+- 使用 remote shell 程序，比如 ssh 或者 rsh
+- 或者直接通过 TCP 来连接 daemon 
+
+这两种方式的直接区别体现在路径中的冒号(:) ，当只有一个冒号时使用 remote shell，当有两个冒号时使用 daemon 连接。
 
 rsync 有六种不同的工作模式：
 
