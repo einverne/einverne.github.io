@@ -164,6 +164,12 @@ Host op7
 
 若出现 zsh 的 agnoster 主题（或其他依赖 powerline 字体的主题）无法正常显示，可将您的 powerline 字体拷贝到 ～/.termux/font.ttf 后执行 termux-reload-settings
 
+## adb
+
+如果开启了 Android 远程调试，那么使用 adb connect ip 就方便许多，安装 adb 以备不时之需。
+
+- <https://github.com/MasterDevX/Termux-ADB>
+
 ## Penetration Test
 日常 nmap
 
