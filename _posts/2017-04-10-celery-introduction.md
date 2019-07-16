@@ -173,6 +173,24 @@ Celery 同样也支持定时任务：
 
 From：[stackoverflow](https://stackoverflow.com/a/7155348/1820217)
 
+## celery 在 supervisor 中 root 不能启动问题
+Celery 不能用 root 用户启动，所以在 supervisor 中启动时会报错：
+
+    If you really want to continue then you have to set the C_FORCE_ROOT
+    environment variable (but please think about this before you do).
+
+    User information: uid=0 euid=0 gid=0 egid=0
+
+解决办法
+
+    from celery import Celery, platforms
+    platforms.C_FORCE_ROOT = True
+
+或者 supervisor 配置中
+
+    environment=C_FORCE_ROOT="true"
+
+
 ## reference
 
 - <http://liuzxc.github.io/blog/celery/>

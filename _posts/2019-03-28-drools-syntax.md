@@ -221,7 +221,7 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 
     insert(new Object());
 
-一旦调用 insert 函数， Drools 会重新与所有规则再重新匹配一次，对于没有设置 no-loop 属性为 true 的规则，如果条件满足，不管之前是否执行过都会再执行一次，这个特性不仅存在于 insert 函数，update，retract 宏函数都有该特性，所以某些情况下考虑不周可能造成死循环。
+一旦调用 insert 函数， Drools 会**重新**与所有规则再重新匹配一次，对于没有设置 no-loop 属性为 true 的规则，如果条件满足，不管之前是否执行过都会再执行一次，这个特性不仅存在于 insert 函数，update，retract 宏函数都有该特性，所以某些情况下考虑不周可能造成死循环。
 
 ### update
 对 Fact 进行更新
