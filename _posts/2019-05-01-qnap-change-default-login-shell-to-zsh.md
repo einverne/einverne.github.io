@@ -56,3 +56,19 @@ ZSH 一些强大的功能：
 
 等等。
 
+## Tips
+
+如果在使用过程中发现,delete功能异常,比如delete虽然删除了字符但是向右多显示一个空格，而且不显示移动光标
+那么可以编辑*zsh*配置文件
+``` shell
+vi ~/.zshrc
+```
+在.zshrc里添加
+``` shell
+TERM=xterm
+```
+保存, 然后执行, 使配置生效
+``` shell
+source ~/.zshrc
+```
+
