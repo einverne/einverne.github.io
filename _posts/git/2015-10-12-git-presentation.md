@@ -4,7 +4,7 @@ title: "git presentation"
 tagline: ""
 description: "git history, basic, workflow, and basic branch skills"
 category: Git
-tags: [git, ]
+tags: [git, linux, version-control, ]
 last_updated:
 ---
 
