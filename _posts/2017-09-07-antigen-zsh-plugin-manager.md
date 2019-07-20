@@ -20,6 +20,8 @@ antigen 是 zsh 的插件管理工具，在他 GitHub 主页上的一句话非�
 
     apt-get install zsh-antigen
 
+或者直接 git clone 该项目，然后指定 antigen.zsh 的位置。
+
 ## 配置
 
 如果使用过 Vim 的 [Vundle](/post/2015/05/vim-plugin-vundle.html) 对 antigen 的配置应该不陌生。
@@ -51,6 +53,31 @@ antigen 是 zsh 的插件管理工具，在他 GitHub 主页上的一句话非�
 使配置生效 `source ~/.zshrc`
 
 可以从这个[页面](https://github.com/unixorn/awesome-zsh-plugins) 查看更多的插件。
+
+更加详细的配置可以参考[我的配置](https://github.com/einverne/dotfiles/blob/master/.zshrc)
+
+## 直接在终端中使用 antigen
+在安装 antigen 之后可以直接在命令行输入 `antigen version` 来查看版本。或者使用其他命令来直接安装插件，更新插件等等。
+
+    ➜ antigen version
+    apply       -- Load all bundle completions
+    bundle      -- Install and load the given plugin
+    bundles     -- Bulk define bundles
+    cache-gen   -- Generate cache
+    cleanup     -- Clean up the clones of repos which are not used by any bundles currently lo
+    help        -- Show this message
+    init        -- Load Antigen configuration from file
+    list        -- List out the currently loaded bundles
+    purge       -- Remove a cloned bundle from filesystem
+    reset       -- Clears cache
+    restore     -- Restore the bundles state as specified in the snapshot
+    revert      -- Revert the state of all bundles to how they were before the last antigen up
+    selfupdate  -- Update antigen itself
+    snapshot    -- Create a snapshot of all the active clones
+    theme       -- Switch the prompt theme
+    update      -- Update all bundles
+    use         -- Load any (supported) zsh pre-packaged framework
+    version     -- Display Antigen version
 
 
 

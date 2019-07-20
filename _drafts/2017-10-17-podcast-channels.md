@@ -184,6 +184,12 @@ BBC documentary：上面介绍地基本都出自美国……BBC 的节目从内�
 Monocle 杂志出品的广播 app：Monocle 死忠粉必推。尤其是跟旅行、电影、文学相关的几档节目，更值得听。很能体现 Monocle 的风格。
 
 
+NPR Up first 综合新闻
+
+纽约时报的 The Daily 专题报道
+
+ABC The Dropout 听深度报道
+
 ## Podcast 客户端推荐
 早之前在 Android 的时候买过 Pocket Cast 可是竟然发现这家每个平台都要收费，不管是 Web ，还是 Android/iOS 客户端，每一个都是单独收费，尽管能够同步订阅列表，但后来转用 iOS 也就放弃了这个客户端，我用过的几个还不错的
 
