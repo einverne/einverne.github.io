@@ -32,7 +32,7 @@ Apktook 是一个反编译(reverse engineering) 工具，可以用来反编译An
 
 地址: <https://ibotpeaches.github.io/Apktool/>
 
-### 安装 {#install}
+###  apktool 安装 {#apktool-installation}
 
 各平台的安装[指南](https://ibotpeaches.github.io/Apktool/install/)，如果使用 Linux 可以使用如下简易步骤：
 
@@ -44,7 +44,7 @@ Apktook 是一个反编译(reverse engineering) 工具，可以用来反编译An
 6. 给予以上两者执行权限 `chmod +x /usr/local/bin/apktool`
 7. 在终端执行 `apktool`
 
-### 使用 {#usage}
+### apktool 使用 {#apktool-usage}
 
 1. 拿到 APK 安装包，比如 xxx.apk
 2. 在APK同目录下，执行 `apktool d xxx.apk`
