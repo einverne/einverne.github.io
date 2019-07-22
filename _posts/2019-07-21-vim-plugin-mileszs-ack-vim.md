@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Vim 插件之：ack.vim"
+title: "Vim 插件之全局搜索：ack.vim"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ 学习笔记 , vim-plugin ]
 tags: [vim, vim-plugin, ack, ack-grep, ag, search, grep, ]
 last_updated:
 ---
@@ -70,6 +70,8 @@ ack.vim 的功能是给 Vim 提供 [ack](http://beyondgrep.com/) 的功能，可
 
     " 高亮搜索关键词
     let g:ackhighlight = 1
+
+更多可以使用 `:help ack` 来查看
 
 更多可以参考我的 [dotfiles](https://github.com/einverne/dotfiles)
 

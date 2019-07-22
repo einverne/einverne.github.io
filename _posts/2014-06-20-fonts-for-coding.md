@@ -13,6 +13,10 @@ last_updated:
 - <https://fonts.adobe.com/fonts/source-code-pro>
 
 
+## Fria Code
+
+- <https://github.com/tonsky/FiraCode>
+
 ## Hasklig
 
 - <https://github.com/i-tu/Hasklig>
