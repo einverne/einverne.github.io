@@ -112,3 +112,20 @@ Change surroundings is `cs`. 接受两个参数，目标，和替换内容
 加入上面的三行内容，想要给后面的内容增加双引号，那么可以使用列选选择然后 S + `"` 就可以快速添加。
 
 
+## Conclusion
+
+    Normal mode
+    -----------
+    ds  - delete a surrounding
+    cs  - change a surrounding
+    ys  - add a surrounding
+    yS  - add a surrounding and place the surrounded text on a new line + indent it
+    yss - add a surrounding to the whole line
+    ySs - add a surrounding to the whole line, place it on a new line + indent it
+    ySS - same as ySs
+
+    Visual mode
+    -----------
+    s   - in visual mode, add a surrounding
+    S   - in visual mode, add a surrounding but place text on new line + indent it
+
