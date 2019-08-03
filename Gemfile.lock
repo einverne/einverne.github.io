@@ -263,6 +263,3 @@ DEPENDENCIES
   github-pages
   html-proofer
   hz2py
-
-BUNDLED WITH
-   1.17.3
