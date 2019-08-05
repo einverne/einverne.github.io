@@ -1,51 +1,38 @@
 ---
 layout: post
-title: "Android Kernel"
+title: "Android 内核中的 CPU 调频"
 tagline: ""
 description: ""
-category: 学习笔记
-tags: [android, kernel, linux-kernel, aosp, ]
+category:
+tags: [android, kernel, cpu-governor,]
 last_updated:
 ---
 
-说到 [Android Kernel](https://source.android.com/devices/architecture/kernel) 那就不得不说到 Linux Kernel，Android Kernel 基于 Linux Kernel 的[长期稳定版本](https://kernelnewbies.org/DevelopmentStatistics)，
 
-## Linux Kernel
-首先 Linux Kernel 是什么？ Linux Kernel 是在 GNU GPL v2 开源许可下开源的硬件底层驱动，包括了 CPU 调度，存储管理，IO 管理，等等。Linux Kernel 是 GPL 开源，所以为了适用移动设备内存，CPU 频率，耗电等特点，Google 将这部分 Linux Kernel 做了修改，并按照 GPL 将修改开源了。
+CPU 调频模块主要分为三块：
 
-> The kernel has complete control over the system.
+- CPUFreq 核心模块，核心模块主要是公共的 API 和逻辑
+- CPUFreq 驱动，处理和平台相关的逻辑，设置 CPU 频率和电压
+- CPUFreq governor，频率控制器，CPU 调频的策略，CPU 在什么负载，什么场景下使用多少频率
 
-Android 最早的内核是基于 Linux 2.6 内核的，在很长一段时间内，Android 的 Kernel 一直使用非常老版本的 Linux Kernel，但是随着时间发展，渐渐的每一个版本的 Android 发布都再使用最新的 Linux Kernel [^1].
+最后第三部分 governor 也是本文重点。传统的 CPU governor 选择，以 Performance 和 Powersave 举例，就是一个让 CPU 跑在最高频率，一个让 CPU 跑在最低频率，所有动作都在初始化时设置。
 
-[^1]: <https://en.wikipedia.org/wiki/Android_version_history>
+## 调频器策略
+OnDemand, Conservative 或者 Interactive 内部都含有一个计时器，每隔一段时间就会去对 CPU 负载采样。这是一种基于负载采样的调频器策略。
 
-## Android Kernel
-回到 Android Kernel，不同设别出厂的时候就会带一个 stock 官方的 kernel，当然这个 Kernel 是稳定可以用于日常使用的。但是有些官方优化的 Kernel 并没有发挥硬件的最佳，所以 xda 上就有很多人发布不同的 Kernel，可以支持一些电池的优化，或者对硬件一些更好的支持。
+而另外一种策略是，从内核调度器中直接取得 CPU 负载，这就是基于调度器的 governor。基于调度器的 CPU 调频策略会通过 PELT(per entity load tracking) 来统计各个任务的负载，映射到一个范围。内核中负载均衡通过这些统计值来平衡 CPU 之间的任务，基于调度器的 governor 就是通过把各个 CPU 负载映射到 CPU 频率来完成调频动作，负载越高，CPU 频率也越高。内核社区中有个方案：
 
-### ElementalX
-ElementalX 内核是一个我从 Nexus 6, OnePlus 3 开始就使用过的 Kernel，由 [flar2](https://forum.xda-developers.com/member.php?u=4684315) 开发。
+- ARM 和 Linaro 主导项目 cpufreq_sched
+- Intel 主导的 shedutil
 
-ElementalX 内核的突出特点就是稳定，在不牺牲稳定性的前提下对系统做一些优化，比如滑动手势，亮度模式，震动模式，声音控制，文件系统格式等等。
-
-个人使用的情况也是非常稳定，没有遇到过任何硬件不兼容问题。
-
-- <https://elementalx.org/devices/>
-
-### Franco Kernel
-Franco Kernel 由 [franciscofranco](https://forum.xda-developers.com/member.php?u=3292224) 开发，是非常著名的一个 Kernel，支持非常多的设备。
-
-- <https://kernels.franco-lnx.net/>
-
-### blu_spark
-blu_spark kernel 由 [eng.stk](https://forum.xda-developers.com/member.php?u=3873953) 开发。
-
-更多的 kernel 可以查阅[这里](https://www.xda-developers.com/most-popular-custom-kernels-for-android/)
 
 ## CPU 调频器 {#cpu-governor}
 
 ### OnDemand
 
 OnDemand 是一个比较老的 linux kernel 中的调频器，当负载达到 CPU 阈值时，调频器会迅速将 CPU 调整到最高频率。由于这种偏向高频的特性，使得它有出色的流动性，但与其他调频器相比可能对电池寿命产生负面影响。OnDemand 在过去通常被制造商选用，因为它经过了充分测试并且很可靠，但已经过时，并且正在被 Google 的 interactive 控制器取代。
+
+对于 OnDemand 会启用计时器，定时去计算 CPU 负载，当负载超过 80% 时，OnDemand 会将 CPU 频率调到最高。
 
 ### OndemandX
 基本上是拥有 暂停、唤醒配置的 OnDemand，没有在 OnDemand 上做更多的优化。
@@ -60,6 +47,8 @@ Performance 调频器将手机的 CPU 固定在最大频率。
 该调速器将手机偏置为尽可能频繁地选择尽可能低的时钟速率。换句话说，在 Conservative 调频器提高 CPU 时钟速度之前，必须在 CPU 上有更大且更持久的负载。根据开发人员实现此调频器的方式以及用户选择的最小时钟速度，Conservative 调频器可能会引入不稳定的性能。另一方面，它可以有利于电池寿命。
 
 Conservative 调频器也经常被称为“slow OnDemand”。原始的、未经修改的 Conservative 是缓慢并且低效的。较新版本和修改版本 Conservative（来自某些内核）响应速度更快，并且几乎可以用于任何用途。
+
+和 OnDemand 一样，会通过定时器来检测 CPU 负载，对 Conservative ，当负载较高时，会以 5% 步增调高频率，当负载低于一个值时，以 5% 步伐递减。
 
 ### Userspace
 这种调频器在移动设备中极为罕见，它允许用户执行的任何程序设置 CPU 的工作频率。此调频器在服务器或台式 PC 中更常见，其中应用程序（如电源配置文件应用程序）需要特权来设置 CPU 时钟速度。
@@ -93,13 +82,11 @@ Scary 基于 Conservative 并增加了一些 smartass 的特征，它相应地�
 
 
 ### schedutil
+schedutil 是最新版本 Linux 内核（4.7+）中的 EAS 调控器，旨在更好地与 Linux 内核调度程序集成。它使用内核的调度程序来接收 CPU 利用率信息并根据此输入做出决策。作为结果，schedutil 可以比依赖于定时器的 Interactive 等常规调控器更快，更准确地响应 CPU 负载。
 
-
-Schedutil is the newest CPUFreq governor introduced back during Linux 4.7 as an alternative to ondemand, performance, and others. What makes Schedutil different and interesting is that it makes use of CPU scheduler utilization data for its decisions about CPU frequency control
+更多的 governor 可以访问下方的 xda 链接。
 
 ## reference
 
-- <https://android.googlesource.com/kernel/>
-- <https://source.android.com/devices/architecture/kernel/releases.html>
-- <https://www.xda-developers.com/most-popular-custom-kernels-for-android/>
+- <https://forum.gamer.com.tw/C.php?bsn=60559&snA=37800>
 - <https://forum.xda-developers.com/general/general/ref-to-date-guide-cpu-governors-o-t3048957>
