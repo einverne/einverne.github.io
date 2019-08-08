@@ -162,7 +162,7 @@ sed 的命令为 '2,5d' ， d 就是删除。sed 后面接的命令，请务必�
 ### 数据的搜寻并替换
 结尾的 g 表示匹配所有的
 
-    sed 's/ 要被取代的字串 / 新的字串 /g' file.txt
+    sed 's/regex/replace/g' file.txt
 
 假如没有结尾的 g，比如
 
@@ -189,8 +189,16 @@ sed 可以启用 `-i` 选项直接修改文件的内容，不必使用管道命�
 
 sed 可以直接修改文件内容，这样对于大文本，可以不需要使用 vim 打开在进行编辑，直接使用 sed 行读取编辑就能够实现行修改和替换的作用。
 
+### 过滤部分内容
+利用替换可以将不需要的内容替换成空
+
+    sed -n -e 's/^.*id=//p'
+
+可以打印 id= 后面的内容，然后再做处理。
+
 ## reference
 
+- tldr sed
 - <http://vbird.dic.ksu.edu.tw/linux_basic/0330regularex_2.php#sed>
 - <http://www.cnblogs.com/stephen-liu74/archive/2011/11/17/2245130.html>
 

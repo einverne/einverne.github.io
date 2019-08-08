@@ -128,8 +128,9 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
     https://salttiger.com/
 
 ## lorefree
+以区块链为依托，每天 10 本免费下载，目前藏书量已经十几万。
 
-    http://ebook.lorefree.com/
+    https://ebook.lorefree.com/
 
 ## booklist.mobi
 也是一个个人维护的站点
@@ -160,6 +161,16 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 ## SkEbooks
 
     https://skebooks.com
+
+## b-ok
+英文书为主，非常大的库
+
+    https://b-ok.cc/s/
+
+## epubw
+全站免费，全站度盘。书籍质量较高，有封面，目录，不过令人担忧的是度盘，随时可能失效
+
+    https://epubw.com/
 
 ## 一些聚合搜索网站
 全国图书馆参考咨询联盟

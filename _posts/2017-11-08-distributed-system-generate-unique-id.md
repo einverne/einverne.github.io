@@ -4,7 +4,7 @@ title: "分布式系统中唯一 ID 的生成方法"
 tagline: ""
 description: ""
 category: 
-tags: []
+tags: [java, 发号器 , id, auto-increase, mysql]
 last_updated: 
 ---
 
@@ -12,11 +12,11 @@ last_updated:
 
 但在一个存在多个 Shards 的分布式系统 (例如多个 MySQL 实例组成一个集群, 在这个集群中插入数据), 这个问题会变得复杂, 所生成的全局的 unique ID 要满足以下需求:
 
-- 保证生成的 ID 全局唯一
+- 唯一性，保证生成的 ID 全局唯一
 - 今后数据在多个 Shards 之间迁移不会受到 ID 生成方式的限制
-- 生成的 ID 中最好能带上时间信息, 例如 ID 的前 k 位是 Timestamp, 这样能够直接通过对 ID 的前 k 位的排序来对数据按时间排序
+- 有序性，生成的 ID 中最好能带上时间信息, 例如 ID 的前 k 位是 Timestamp, 这样能够直接通过对 ID 的前 k 位的排序来对数据按时间排序
 - 生成的 ID 最好不大于 64 bits
-- 生成 ID 的速度有要求. 例如, 在一个高吞吐量的场景中, 需要每秒生成几万个 ID (Twitter 最新的峰值到达了 143,199 Tweets/s, 也就是 10万+/秒)
+- 可用性，生成 ID 的速度有要求. 例如, 在一个高吞吐量的场景中, 需要每秒生成几万个 ID (Twitter 最新的峰值到达了 143,199 Tweets/s, 也就是 10万+/秒)
 - 整个服务最好没有单点
 
 在要满足前面 6 点要求的场景中, 怎么来生成全局 unique ID 呢?
