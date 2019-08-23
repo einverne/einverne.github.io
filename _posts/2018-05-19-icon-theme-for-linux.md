@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "个人非常喜欢的几个icon 主题"
+title: "个人非常喜欢的几个 icon 主题"
 tagline: ""
 description: ""
 category: 整理合集
 tags: [linux, icon-theme, unity, theme, ]
-last_updated: 
+last_updated:
 ---
 
 
@@ -35,7 +35,8 @@ last_updated:
     sudo add-apt-repository ppa:noobslab/icons
     sudo apt-get update
     sudo apt-get install ultra-flat-icons
-    
-更多的ICON主题可以看
+
+更多的 ICON 主题可以看
 
 - <https://gtk.pw/jY2ac>
+- <https://www.noobslab.com/p/themes-icons.html>

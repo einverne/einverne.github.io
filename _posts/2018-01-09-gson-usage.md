@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Gson 使用"
+title: "Gson 使用笔记"
 tagline: ""
 description: ""
 category: 学习笔记
 tags: [java, gson, json, google]
-last_updated: 
+last_updated:
 ---
 
 Gson 是 Google 发布的一个用于序列化和反序列化 json 的工具库，可以非常轻松的实现 json 到 java Object 的转变，也同样非常简单的可以将一个 Java 实例序列化为 json。
@@ -22,7 +22,7 @@ MyType target2 = gson.fromJson(json, MyType.class); // deserializes json into ta
     Type listType = new TypeToken<List<String>>() {}.getType();
     List<String> target = new LinkedList<String>();
     target.add("blah");
-    
+
     Gson gson = new Gson();
     String json = gson.toJson(target, listType);
     List<String> target2 = gson.fromJson(json, listType);
@@ -87,7 +87,7 @@ Gson 默认情况下会使用 POJO 一致的属性名去解析和生成 json 字
 
 ### 使用 transient 关键字
 
-在 java 序列化是，一旦变量被 `transient` 修饰，变量将不再是持久化的一部分，变量内容在序列化后无法获得访问。同样如果在使用 Gson 序列化 json 的时候，添加关键字 transient 同样，Gson 也会[忽略](https://sites.google.com/site/gson/gson-user-guide#TOC-Finer-Points-with-Objects)该字段:
+在 java 序列化是，一旦变量被 `transient` 修饰，变量将不再是持久化的一部分，变量内容在序列化后无法获得访问。同样如果在使用 Gson 序列化 json 的时候，添加关键字 transient 同样，Gson 也会[忽略](https://sites.google.com/site/gson/gson-user-guide#TOC-Finer-Points-with-Objects) 该字段：
 
     private transient int id;
 
@@ -101,8 +101,8 @@ Gson 默认情况下会使用 POJO 一致的属性名去解析和生成 json 字
 
 最早不知道 `transient` 关键字的时候，看文档中只写了 `@Expose` 注解，但其实效果是一样的。使用 `@Expose` 注解来保留关心的字段，其他不需要的字段可以不注解，同样能够达到效果。
 
-    private int id; // 忽略id
-    @Expose private String name;    //保留name
+    private int id; // 忽略 id
+    @Expose private String name;    // 保留 name
 
 如果使用 `@Expose` 注解，那么则需要使用 `GsonBuilder()`
 
@@ -110,7 +110,7 @@ Gson 默认情况下会使用 POJO 一致的属性名去解析和生成 json 字
 
 ### 自定义 ExclusionStrategy 规则
 
-如果有更加复杂的排除规则，比如某一批Field，或者指定的 Class 不需要 serialize ，可以使用 `ExclusionStrategy` 来自定规则。
+如果有更加复杂的排除规则，比如某一批 Field，或者指定的 Class 不需要 serialize ，可以使用 `ExclusionStrategy` 来自定规则。
 
     import com.google.gson.ExclusionStrategy;
     import com.google.gson.FieldAttributes;
@@ -141,7 +141,7 @@ Gson 默认情况下会使用 POJO 一致的属性名去解析和生成 json 字
         }
     }
 
-比如说上面这个，就忽略 PersonStrategy 类中的 Field "id"，还有 Car 类。如果使用这种方式，那么需要在构造 gson 时:
+比如说上面这个，就忽略 PersonStrategy 类中的 Field "id"，还有 Car 类。如果使用这种方式，那么需要在构造 gson 时：
 
     Gson gson = new GsonBuilder().setExclusionStrategies(new ExcluStrategy()).create();
 
@@ -180,6 +180,28 @@ AnnotationExclusionStrategy 类
         System.out.println(s);
     }
 
+## 将 JSON 中小写下划线转成驼峰
+
+    Gson gson = new GsonBuilder()
+    .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+    .create();
+
+## 反序列化时默认值
+某一些情况下在反序列化 json 到 Object 时，在某些字段 JSON 中缺失时，想要给 Object 提供一个默认值，但是 Gson 在处理原始类型时，比如 int 字段，如果缺失会自动赋值为 0，某些情况下是不符合预期的。Gson 在设定默认值时需要，在 Object 构造函数中初始化该字段，并且实现 `InstanceCreator` 接口。
+
+    public class RawDataInstanceCreator implements InstanceCreator<RawData> {
+
+      @Override
+      public RawData createInstance(Type type) {
+        return new RawData();
+      }
+    }
+
+构造时传入：
+
+    Gson gson = new GsonBuilder()
+        .registerTypeAdapter(RawData.class, new RawDataInstanceCreator())
+        .create();
 
 ## reference
 

@@ -8,7 +8,9 @@ tags: [linux, guake, zsh, vim, agnoster, fonts, solarized]
 last_updated: 2016-10-01
 ---
 
-配置zsh guake 小记
+Guake is a drop-down terminal for the GNOME desktop which includes split terminal functionality, session save/restore, support for transparency, and many other features.
+
+配置 zsh guake 小记
 
 ## Install zsh
 
@@ -58,6 +60,8 @@ According to this: <https://github.com/coolwanglu/guake-colors-solarized> `git c
 
 - `Alt + C` for copy text to clipboard
 - `Alt + V` for paste text from clipboard
+
+Guake 自带的终端内搜索 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>
 
 ## finally
 
