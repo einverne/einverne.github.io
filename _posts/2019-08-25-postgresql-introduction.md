@@ -287,7 +287,7 @@ PostgreSQL 允许将字段定义成变长或者变长的一维或者多维数组
 插入数组
 
 	CREATE TABLE tmp (bt int[]);
-	INSERT INTO tmp VALUES('{{1,1,1}, {2,2,2}, {3,3,3}}');
+	INSERT INTO tmp VALUES('\{\{1,1,1\}, \{2,2,2\}, \{3,3,3\}\}');
 	SELECT * FROM tmp;
 
 除开这些基础类型，PostgreSQL 还支持非常多的复杂类型，比如 json, xml 等等，具体可以参考[官网](https://www.postgresql.org/docs/9.5/datatype.html) , 这些复杂类型的使用可以单开一篇文章来讲了，初识篇就到此。
