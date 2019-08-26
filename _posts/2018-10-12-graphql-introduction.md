@@ -71,6 +71,16 @@ GraphQL 对外提供只有一个接口，所有请求通过该接口处理，Gra
 - GraphQL 的调用完全由客户端控制，不会产生无用传输流量
 - GraphQL 会根据定义好的类型系统自动生成说明文档，省去了文档同步更新的麻烦
 
+## 其他语言扩展
+
+### Python
+
+- <https://medium.com/@fasterpancakes/graphql-server-up-and-running-with-50-lines-of-python-85e8ada9f637>
+- <https://graphene-python.org>
+
+### JS
+
+- <https://github.com/graphile/postgraphile>
 
 ## 其他扩展
 
