@@ -8,7 +8,7 @@ tags: [rime, hangul, korean, japanese, input-method, open-source,]
 last_updated:
 ---
 
-
+总结一些 Rime 下韩语输入方案。
 
 ## 韩语输入方案
 韩文字母输入键盘布局有 Dubeolsik(두벌식, 2-set)， Sebeolsik Final (세벌식 최종, 3-set) , Sebeolsik 390, Sebeolsik Noshift
@@ -17,6 +17,26 @@ last_updated:
 简称 2-set, 这可能是使用最为广泛的一种键盘布局了，南韩从 1969 年起就开始使用。该键盘布局非常有特点，辅音 Consonants 在左边，元音 vowels 在右边。所以能非常轻松地做到左右开工。
 
 ![Dubeolsik](/assets/hangul-keyboard-layout/KB_South_Korea.svg)
+
+标准的 2-set 键盘布局已经成为了主流标准，在如今的移动设备中这个键盘布局也已经称为了事实标准。
+
+对于这个键盘布局，突出的特点就是左右子音和母音的划分。具体的使用可以参考[这篇文档](/assets/hangul-keyboard-layout/Hangeul_keyboard.pdf).
+
+而对于这个键盘布局 Rime 的方案可以参考『这里』()
+
+韩文键盘布局：A=ㅁ，B=ㅠ，C=ㅊ，D=ㅇ，E=ㄷㄸ，F=ㄹ，G=ㅎ，H=ㅗ，I=ㅑ，J=ㅓ，K=ㅏ，L=ㅣ，M=ㅡ，N=ㅜ，O=ㅐㅒ，P=ㅔㅖ，Q=ㅂㅃ，R=ㄱ ㄲ，S=ㄴ，T=ㅅㅆ，U=ㅕ，V=ㅍ，W=ㅈㅉ，X=ㅌ，Y=ㅛ，Z=ㅋ
+要打出紧音只需要按住 shift 在按相应的松音键就可以了，比如按 Q 键显示ㅂ，按住 shift 再按 Q 就会打出ㅃ。
+
+左手辅音、右手元音
+
+
+紧音指的是ㄲ/ㄸ/ㅃ/ㅆ/ㅉ 五个音
+
+ㄲ ：shift + ㄱ
+ㄸ： shift +ㄷ
+ㅃ： shift +ㅂ
+ㅆ： shift +ㅅ
+ㅉ： shift +ㅈ
 
 
 ### 세벌식 390
@@ -42,11 +62,19 @@ Sebeolsik Final (세벌식 최종; 3-set Final) 这是上一个布局的最终�
 ### GongjinCheong Romaja 输入法
 这是遵循韩文罗马化标准 GongjinCheong 的输入法。
 
+![GongjinCheong Romaja](/assets/hangul-keyboard-layout/gongjincheong-romaja.png)
 
+GongjinCheong 和下方的 HNC 有些许的差异。
 
 ### HNC Romaji 输入法
+这一套输入法其实遵循着 McCune-Reischauer Romanization 罗马化方案，是西方世界最早将韩文罗马化的方案。也是目前非常流行的韩文转写方案。[^1][^2]
 
-单母音
+![HNC Romaja](/assets/hangul-keyboard-layout/hnc-romaja.png)
+
+[^1]: <https://en.wikipedia.org/wiki/McCune–Reischauer>
+[^2]: <https://www.library.illinois.edu/ias/koreancollection/koreanromanizationtable/>
+
+单母音 모은
 
 ```
 ㅣ i	ㅡ w
@@ -58,15 +86,15 @@ Sebeolsik Final (세벌식 최종; 3-set Final) 这是上一个布局的最终�
 双母音
 
 ```
-ㅐ ai	ㅔ ei
-ㅒ yai	ㅖ yei
+		ㅐ ai	ㅔ ei
+		ㅒ yai	ㅖ yei
 ㅘ oa	ㅙ oai	ㅚ oi
 ㅝ uo	ㅞ uei	ㅟ ui
 			ㅢ wi
 ```
 
 
-单子音
+单子音 자은
 
 ```
 ㄱ g	ㅋ k	ㄴ n
@@ -82,27 +110,20 @@ Sebeolsik Final (세벌식 최종; 3-set Final) 这是上一个布局的最终�
 ㄲ gg	ㄸ dd	ㅃ bb	ㅆ ss	ㅉ jj
 ```
 
+### Rime hangyl
+Rime 的韩语转写方案非以上提交的任何标准，不过最像后面两种罗马化方案，有一些微小的差别，但是却非常的好用。
 
+和 HNC 的主要差别在于 w 和 y 的差异，在 HNC 键盘中 w 是 `ㅡ` 而 Rime 方案中则是 `ㅜ` ，而另外一个 y ，HNC 是 `ㅣ` ， Rime 的方案则是 `ㅡ`，实际使用上来看 ，而者这两天区别几乎可以忽略不计。
 
-韩文键盘布局：A=ㅁ，B=ㅠ，C=ㅊ，D=ㅇ，E=ㄷㄸ，F=ㄹ，G=ㅎ，H=ㅗ，I=ㅑ，J=ㅓ，K=ㅏ，L=ㅣ，M=ㅡ，N=ㅜ，O=ㅐㅒ，P=ㅔㅖ，Q=ㅂㅃ，R=ㄱ ㄲ，S=ㄴ，T=ㅅㅆ，U=ㅕ，V=ㅍ，W=ㅈㅉ，X=ㅌ，Y=ㅛ，Z=ㅋ
-要打出紧音只需要按住 shift 在按相应的松音键就可以了，比如按 Q 键显示ㅂ，按住 shift 再按 Q 就会打出ㅃ。
+![rime hangyl](/assets/hangul-keyboard-layout/rime-hangyl.png)
 
-左手辅音、右手元音
-
-
-紧音指的是ㄲ/ㄸ/ㅃ/ㅆ/ㅉ 五个音
-
-ㄲ ：shift + ㄱ
-ㄸ： shift +ㄷ
-ㅃ： shift +ㅂ
-ㅆ： shift +ㅅ
-ㅉ： shift +ㅈ
-
+Rime 解决方案： <https://github.com/einverne/rime-hangul>
 
 ### 韩语打字练习
 
 韩语打字练习推荐
 
+- <https://www.koreanji.com/study/korean-language/hangeul/how-to-type-hangeul/>
 - <https://10fastfingers.com/typing-test/korean>
 - <http://play.typeracer.com/?universe=lang_ko>
 - <http://www.tajamaster.com>
@@ -116,7 +137,11 @@ Sebeolsik Final (세벌식 최종; 3-set Final) 这是上一个布局的最终�
 - <https://github.com/lotem/rime-kana>
 - <https://github.com/biopolyhedron/rime-jap-poly>
 
-
 ## reference
 
+- <https://github.com/einverne/rime-hangul>
 - <https://support.apple.com/en-in/guide/korean-input-method/welcome/mac>
+- <https://guides.mtholyoke.edu/c.php?g=102012&p=663147>
+- <http://blog.klerelo.com/2014/08/mac-comment-ecrire-en-coreen-avec-son.html>
+- <http://deltazone.pixnet.net/blog/post/341170670-rime%e8%a8%ad%e5%ae%9a%e6%aa%94-%e9%9f%93%e8%aa%9e>
+- 陈辉：韩语罗马字表记法的历史与现状
