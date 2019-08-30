@@ -10,6 +10,26 @@ last_updated:
 
 Most of computer fonts people using are TrueTpye fonts. TrueType fonts end with .ttf , which stand for TrueType Font. This tutorial shows how to install TrueType fonts in Linux (Debian, Ubuntu, Linux Mint, etc).
 
+## Linux 字体文件夹
+
+Linux 下字体都被存放在 `/usr/share/fonts` 下。
+
+把字体文件拷贝到这个目录之后，需要执行
+
+	# create an index of scalable font files for X
+	mkfontscale
+	# create an index of X font files in a directory
+	mkfontdir
+	fc-cache -fv
+
+## 查看已安装字体
+
+使用如下命令来查看已安装字体：
+
+	fc-list
+	# 查看中文字体
+	fc-list :lang=zh
+
 ## General way to install TrueType fonts
 All of the TrueType fonts are under `/usr/share/fonts/truetype`, simplest way is to copy ttf file to this directory and give it the right permission. For example, if you want to install Ubuntu font family manually. You can download the font file from [official site](http://font.ubuntu.com).
 

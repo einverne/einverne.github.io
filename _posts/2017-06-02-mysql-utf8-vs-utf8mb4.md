@@ -31,8 +31,11 @@ MySQL 中的字符序名称遵从命名惯例：以字符序对应的字符集�
 
 - SHOW CHARACTER SET;
 - SHOW COLLATION;
-- SHOW VARIABLES LIKE ‘character%’;
-- SHOW VARIABLES LIKE ‘collation%’;
+- SHOW VARIABLES LIKE 'character%';
+- SHOW VARIABLES LIKE 'collation%';
+- 查看数据库的字符集 `use dbname;SELECT @@character_set_database, @@collation_database;`
+- 查看表的字符集 `SHOW TABLE STATUS where name like 'table_name';`
+- 查看表中列的字符集 `SHOW FULL COLUMNS FROM table_name;`
 
 其他一些修改语句
 
@@ -41,4 +44,7 @@ MySQL 中的字符序名称遵从命名惯例：以字符序对应的字符集�
     # 修改表：
     ALTER TABLE table_name CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
     # 修改表字段：
-    ALTER TABLE table_name CHANGE column_name column_name VARCHAR(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    ALTER TABLE table_name MODIFY column_name VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    ALTER TABLE table_name CHANGE column_name column_name VARCHAR(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
