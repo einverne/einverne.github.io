@@ -1,16 +1,18 @@
 ---
 layout: post
-title: "The Silver Searcher 使用"
+title: "The Silver Searcher: ag 使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ack-grep, search, grep, ]
+tags: [ack-grep, search, grep, ag, ]
 last_updated:
 ---
 
 Once I wrote a post about [ack-grep](/post/2017/10/ack-grep.html), and Franklin Yu left a comment about the silver searcher. He said this tool is much faster than the ack-grep. So this post is about The Silver Searcher. As always, I will introduce what is the Silver Searcher, how to install and use it.
 
 Follow the [link](https://geoff.greer.fm/ag/), we can see that author claim that this tool started off as a clone of ack, but then diverged slightly. And in most case, this tool is 5-10x faster then ack.
+
+ag 是一个全文检索工具，非常适合查询大量文本文件，或者源代码的场景。
 
 ## Installation
 
@@ -29,7 +31,7 @@ As the man describe, recursively search for PATTERN in PATH.
 
 Most options are similar to grep, like `-i`, `-v`, `-B`, `-A` etc
 
-### Find text under a path
+### 查询路径下的内容 Find text under a path
 most use case will be find a keyword from a bunch of files. 最常用的一个方式便是在目录中搜索关键词，ag 能够非常快速的搜索文件内容，所以非常适合查询日志，或者代码等文本文件。
 
     ag keyword /path/to/

@@ -43,6 +43,8 @@ last_updated:
 
     https://bookset.me/
 
+2019年9月1日更新，看来是也不存在了。
+
 ## epubee
 一个电子书在线转换工具，也提供热门书的下载和推送。
 
