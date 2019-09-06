@@ -8,7 +8,7 @@ tags: [postgresql, sql, mysql, db, database, ]
 last_updated:
 ---
 
-要介绍 PostgreSQL 通过几个关键词就可以，开源，对象关系型数据库。
+要介绍 PostgreSQL 通过几个关键词就可以，开源，对象关系型数据库。本文主要是学习过程中的一些笔记，都是基础内容，大部分都是看得基础入门书籍和官方的文档内容，老手请直接跳过。
 
 ## History
 PostgreSQL 发展历程可以追溯到 1986 年，加州伯克利分校开发了一个名叫 Postgres 的关系型数据库服务器，这份代码被 Illustra 公司发展成为了一个商业化产品。到 1994 年， Andrew Yu 和 Jolly Chen 向 Postgres 中增加了 SQL 语言解释器 ---- Postgres95，随后公布了其源码，成为一个开放源码数据库。
@@ -18,7 +18,7 @@ PostgreSQL 发展历程可以追溯到 1986 年，加州伯克利分校开发了
 2011 年 9 月 12 日，PostgreSQL 9.1 发布，提供了强大的更新，同步复制，最近相邻索引，外部数据封装等功能。
 
 ## Installation
-在 Linux Mint 19 上安装：
+在 Linux Mint 19，或者其他 Debian/Ubuntu 系列上安装：
 
 	sudo apt install postgresql postgresql-contrib
 
@@ -71,6 +71,8 @@ PostgreSQL 的配置文件在 `/etc/postgresql/10/main/postgresql.conf`
 ### GUI 管理工具 pgAdmin
 
 详情见官网： <https://www.pgadmin.org/download/>
+
+安装方式也都特别简单，略过。
 
 ### 命令行方式
 PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户操作
@@ -125,10 +127,12 @@ PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户�
 
 	psql -U your_username -d sample_db -h 127.0.0.1 -p 5432
 
-然后输入 your_username 的密码即可登录控制台。
+然后输入 your_username 的密码即可登录控制台。注意这里的 `-d` 参数是必须的。
 
 
 ### 修改数据库
+对数据库的基本操作，和 MySQL 类似，只要懂得 SQL基本就可以略过下面大部分的内容。
+
 创建
 
 	CREATE DATABASE sample_db;
@@ -201,11 +205,11 @@ PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户�
 
 ## 其他控制台命令
 
-	\h            explain sql, such as \h select
-	\?
-	\l 			list all db
+	\h            	explain sql, such as \h select
+	\?				help
+	\l 				list all db
 	\c [database_name] 		connect to db
-	\d 			list all tables of current db
+	\d 				list all tables of current db
 	\d [table_name] 	show table structure, like describe table in mysql
 	\du 			list all user
 	\e 				open text editor
@@ -215,17 +219,17 @@ PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户�
 
 ### 整数类型
 
-类型 		｜ 字节数 		｜说明　| 取值范围
--------------|-------|-------|---------------
-SMALLINT 	| 2　字节　｜　小整数 | -32768 ~ 32767
-INT 	| 4　字节　｜　整数       | -2147483648 ~ 2147483647
-BIGINT 	| 8　字节　｜　大整数     | -92233720368547758089 ~ 9223372036854774807
+类型 		| 字节数 		| 说明　| 取值范围
+----------|-------------|-------|---------------
+SMALLINT  | 2　字节　|　小整数 | -32768 ~ 32767
+INT 	| 4　字节　|　整数       | -2147483648 ~ 2147483647
+BIGINT 	| 8　字节　|　大整数     | -92233720368547758089 ~ 9223372036854774807
 
 ### 浮点数
 
-类型 		｜ 字节数 		｜说明　| 取值范围
+类型 		| 字节数 		|说明　| 取值范围
 -------------|-------|-------|---------------
-REAL 		| 4 | 6 位十进制数字精度　｜　1E-37 ~ 1E+37
+REAL 		| 4 | 6 位十进制数字精度　|　1E-37 ~ 1E+37
 DOUBLE PRECISION | 8 | 15 位十进制数字精度　| 1E-307 ~ 1E+308
 
 PostgreSQL 支持 SQL 标准表示，float 和 float(p) 声明非精确的数值类型。p 声明以二进制表示的最低可接受精度。
@@ -236,7 +240,7 @@ PostgreSQL 支持 SQL 标准表示，float 和 float(p) 声明非精确的数值
 范围之外的 p 值将导致错误，没有声明精度的 float 将被当作 DOUBLE PRECISION。
 
 ### 任意精度类型
-NUMERIC 表示数值是任意精度，使用 NUMERIC(M, N) 表示，M 称为精度，总位数，N 表示标度，表示小数的位数。比如 123.456 ，精度是 6, 标度是 3
+NUMERIC 表示数值是任意精度，使用 `NUMERIC(M, N)` 表示，M 称为精度，总位数，N 表示标度，表示小数的位数。比如 123.456 ，精度是 6, 标度是 3
 
 超出精度则四舍五入处理。
 
@@ -244,16 +248,16 @@ NUMERIC 表示数值是任意精度，使用 NUMERIC(M, N) 表示，M 称为精�
 TIME, DATE, TIMESTAMP 和 INTERVAl，每一个类型都有合法取值范围，当不合法时会以零值插入到数据库。
 
 
-类型 		｜ 字节数 		｜说明　| 取值范围
+类型 		| 字节数 		| 说明　| 取值范围
 -------------|-------|-------|---------------
-TIME 	| 8 字节 ｜ 一天内时间 ｜ 00:00:00 - 24:00:00 插入 HHMMSS 字符串会自动转成时间 HH:MM:SS
-DATE 	｜ 4 字节 ｜ 日期 ｜ YYYY-MM-DD
+TIME 	| 8 字节 | 一天内时间 | 00:00:00 - 24:00:00 插入 HHMMSS 字符串会自动转成时间 HH:MM:SS
+DATE 	| 4 字节 | 日期 | YYYY-MM-DD
 TIMESTAMP | 8 字节 | 日期和时间 | YYYY-MM-DD HH:MM:SS
 
 ### 字符串类型
 字符串类型
 
-类型 		｜ 字节数 		｜说明　| 取值范围
+类型 		| 字节数 		|说明　| 取值范围
 -------------|-------|-------|---------------
 CHAR(n)/CHARACTER(n) |  | 固定长度非二进制，不足补空白 | 由 n 决定
 VARCHAR(n)/CHARACTER VARYING(n) | | 变长非二进制，有长度限制 | n 决定
@@ -294,5 +298,6 @@ PostgreSQL 允许将字段定义成变长或者变长的一维或者多维数组
 
 ## reference
 
+- 《PostgreSQL9从零开始学》
 - <https://github.com/dhamaniasad/awesome-postgres>
 - <https://linux4one.com/how-to-install-postgresql-on-linux-mint-19/>
