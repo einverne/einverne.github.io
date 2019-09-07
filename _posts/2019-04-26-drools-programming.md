@@ -8,7 +8,7 @@ tags: [drools, drl, jboss, java, rule-engine, ]
 last_updated:
 ---
 
-关于 Drools 更多的[介绍](/post/2018/10/drools-kie.html) 可以参考之前的[文章](/post/2018/10/drools.kie.html)。
+关于 Drools 更多的[介绍](/post/2018/10/drools-kie.html) 可以参考之前的[文章](/post/2018/10/drools-kie.html)。
 
 这篇文章主要讲解如何在项目中执行 DRL 文件并取得结果。
 
