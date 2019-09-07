@@ -17,6 +17,8 @@ PostgreSQL 发展历程可以追溯到 1986 年，加州伯克利分校开发了
 
 2011 年 9 月 12 日，PostgreSQL 9.1 发布，提供了强大的更新，同步复制，最近相邻索引，外部数据封装等功能。
 
+[这张图](https://db-engines.com/en/ranking_trend/system/PostgreSQL) 充分的可以说明 PostgreSQL 的发展及流行程度。
+
 ## Installation
 在 Linux Mint 19，或者其他 Debian/Ubuntu 系列上安装：
 
@@ -119,6 +121,7 @@ PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户�
 
     /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start
 
+在 PostgreSQL 中，超级用户角色连接到数据库允许绕过所有数据库权限检查，登录权限除外。因此不要轻易使用超级用户权限，PostgreSQL 文档建议将大多数数据库作为非超级用户角色管理。
 
 ## Usage
 
@@ -131,7 +134,7 @@ PostgreSQL 只能在 postgres 用户下管理，所以可以切换到该用户�
 
 
 ### 修改数据库
-对数据库的基本操作，和 MySQL 类似，只要懂得 SQL基本就可以略过下面大部分的内容。
+对数据库的基本操作，和 MySQL 类似，只要懂得 SQL 基本就可以略过下面大部分的内容。
 
 创建
 
@@ -298,6 +301,6 @@ PostgreSQL 允许将字段定义成变长或者变长的一维或者多维数组
 
 ## reference
 
-- 《PostgreSQL9从零开始学》
+- 《PostgreSQL9 从零开始学》
 - <https://github.com/dhamaniasad/awesome-postgres>
 - <https://linux4one.com/how-to-install-postgresql-on-linux-mint-19/>
