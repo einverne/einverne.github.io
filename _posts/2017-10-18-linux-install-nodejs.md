@@ -5,10 +5,10 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [linux, nodejs, npm, js, javascript, ]
-last_updated: 
+last_updated:
 ---
 
-nodejs 安装其实非常简单，大部分情况下 Debian/Ubuntu 下只要使用包管理直接安装 
+nodejs 安装其实非常简单，大部分情况下 Debian/Ubuntu 下只要使用包管理直接安装
 
 	sudo apt-get install nodejs
 	sudo apt-get install npm
@@ -43,3 +43,7 @@ nodejs 安装其实非常简单，大部分情况下 Debian/Ubuntu 下只要使�
 	npm -v
 
 输出即可。
+
+## reference
+
+- <https://github.com/nodesource/distributions/blob/master/README.md>
