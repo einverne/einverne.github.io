@@ -2,7 +2,7 @@
 layout: post
 title: "Useful tmux tips"
 tagline: ""
-description: ""
+description: "一些有用的 Tmux 小技巧"
 category: 学习笔记
 tags: [tmux, linux, commands, terminal,]
 last_updated:
