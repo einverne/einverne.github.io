@@ -8,13 +8,15 @@ tags: [linux, linux-mint, fonts, font, truetype, ]
 last_updated:
 ---
 
-Most of computer fonts people using are TrueTpye fonts. TrueType fonts end with .ttf , which stand for TrueType Font. This tutorial shows how to install TrueType fonts in Linux (Debian, Ubuntu, Linux Mint, etc).
+Most of computer fonts people using are TrueTpye fonts. TrueType fonts end with `.ttf`, which stand for [TrueType Font](/post/2015/05/font.html). This tutorial shows how to install [TrueType fonts](/post/2015/05/font.html) in Linux (Debian, Ubuntu, Linux Mint, etc).
 
-## Linux 字体文件夹
+## Linux 字体文件夹 {#font-folders}
 
-Linux 下字体都被存放在 `/usr/share/fonts` 下。
+Linux 下默认安装的字体都被存放在 `/usr/share/fonts` 下。
 
-把字体文件拷贝到这个目录之后，需要执行
+如果是个人使用可以将字体文件拷贝到 `~/.fonts` 目录中。所有支持的字体文件路径可以通过系统的 `/etc/fonts/fonts.conf` 文件查看到。
+
+把字体文件拷贝到对应的目录之后，需要执行
 
 	# create an index of scalable font files for X
 	mkfontscale
@@ -83,7 +85,7 @@ or Linux Mint user can find this package in the Software Manager, just search it
 
 ## Install Chinese fonts
 
-.ttf files are the English fonts, while .TTF files are Chinese fonts. If we check the `C:\Windows\Fonts` under Microsoft Windows, there are 3 kind of fonts. One is the .fon fonts, which is the DOS system font, and other two fonts are .ttf and .TTF. We can just make a copy of all .ttf and .TTF file and copy all the files to `/usr/share/fonts/` directory under Linux. Although it is illegal under Microsoft's TOC, but we can still do it. :)
+`.ttf` files are the English fonts, while .TTF files are Chinese fonts. If we check the `C:\Windows\Fonts` under Microsoft Windows, there are 3 kind of fonts. One is the `.fon` fonts, which is the DOS system font, and other two fonts are `.ttf` and `.TTF`. We can just make a copy of all `.ttf` and `.TTF` file and copy all the files to `/usr/share/fonts/` directory under Linux. Although it is illegal under Microsoft's TOC, but we can still do it. :)
 
 If you dual boot your computer, mount the Windows and copy the files
 
