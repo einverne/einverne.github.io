@@ -25,8 +25,20 @@ CMD 指令用于指定容器启动时要运行的命令，类似 RUN，但是 RU
 
 docker run 命令可以覆盖 CMD 指令
 
+如果 Dockerfile 有多个 CMD 指令，只有最后一个会生效。
+
+CMD 指令有很多种格式，最常见，也是官方推荐的格式是：
+
+	CMD ["executable", "param1", "param2", ...]
+
 ## ENTRYPOINT
 ENTRYPOINT 指令和 CMD 指令非常类似，之前说过 CMD 指令会被 docker run 命令覆盖，而 ENTRYPOINT 指令提供的命令不容易在启动容器时被覆盖。实际上， docker run 命令行中的指定的任何参数都会被当做参数再次传递给 ENTRYPOINT 指令中指定的命令。
+
+ENTRYPOINT 可以让容器以应用程序或者服务的形式运行。
+
+ENTRYPOINT 也有很多使用方式，比较推荐的是：
+
+	ENTRYPOINT ["executable", "param1", "param2" ]
 
 ## WORKDIR
 WORKDIR 指令用来在从镜像创建一个新的容器时，在容器内部设置一个工作目录，ENTRYPOINT 或 CMD 指定的程序会在该目录下执行。

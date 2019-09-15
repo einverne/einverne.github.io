@@ -22,7 +22,7 @@ last_updated:
 
 对于这个键盘布局，突出的特点就是左右子音和母音的划分。具体的使用可以参考[这篇文档](/assets/hangul-keyboard-layout/Hangeul_keyboard.pdf).
 
-而对于这个键盘布局 Rime 的方案可以参考『这里』()
+而对于这个键盘布局 Rime 的方案可以参考[这里](https://github.com/einverne/rime-hangul)
 
 韩文键盘布局：A=ㅁ，B=ㅠ，C=ㅊ，D=ㅇ，E=ㄷㄸ，F=ㄹ，G=ㅎ，H=ㅗ，I=ㅑ，J=ㅓ，K=ㅏ，L=ㅣ，M=ㅡ，N=ㅜ，O=ㅐㅒ，P=ㅔㅖ，Q=ㅂㅃ，R=ㄱ ㄲ，S=ㄴ，T=ㅅㅆ，U=ㅕ，V=ㅍ，W=ㅈㅉ，X=ㅌ，Y=ㅛ，Z=ㅋ
 要打出紧音只需要按住 shift 在按相应的松音键就可以了，比如按 Q 键显示ㅂ，按住 shift 再按 Q 就会打出ㅃ。
