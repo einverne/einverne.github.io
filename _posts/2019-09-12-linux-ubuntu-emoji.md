@@ -8,20 +8,24 @@ tags: [linux, ubuntu, linux-mint, mint, emoji, ]
 last_updated:
 ---
 
-Ubuntu 或者其他一些 Linux 发行版会内置 [Google Noto Color emoji font](https://www.google.com/get/noto/help/emoji/)
-
-GNOME 3.28 的时候新引入了一个 emoji picker.
+Ubuntu 或者其他一些 Linux 发行版 (Debian/Ubuntu/Linux Mint) 会内置 [Google Noto Color emoji font](https://www.google.com/get/noto/help/emoji/)，如果没有也可以直接通过一个命令直接安装 Noto Color emoji.
 
 
 ## 安装字体 {#fonts}
 首先要安装支持 Emoji 的字体，个人比较喜欢 [Google Noto Color Emoji](https://www.google.com/get/noto/#emoji-zsye)，这是 Google 开源的用于 Android 的字体。并且支持[力度一直都非常大](https://github.com/googlei18n/noto-emoji/commit/91dc393ca4f4a924f4f6b06bf8e4407b30c7bdd9)。
 
 ### Noto color Emoji
-从这里下载字体文件：
+直接安装
+
+	sudo apt install fonts-noto-color-emoji
+
+或者从这里下载字体文件：
 
 - <https://www.google.com/get/noto/#emoji-zsye-color>
 
 将字体文件放到 `~/.fonts` 目录中。
+
+然后运行 `sudo fc-cache -f -v`
 
 ### ttf-ancient-fonts
 Symbola font 可以将绝大部分 emoji 显示为单色的图案。
