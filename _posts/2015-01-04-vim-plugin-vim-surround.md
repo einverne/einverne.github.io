@@ -103,6 +103,12 @@ Change surroundings is `cs`. 接受两个参数，目标，和替换内容
 ### Visual mode
 在选择模式下可以使用 `S` + 需要添加的内容，来看快速对选择的内容增加 surroundings。
 
+比如我想要给下面这一行中的一部分内容，比如说 main title 增加一个 `<h1>` 标记。
+
+	This is the main title  sub title`
+
+那么只需要将 `This is the main title` 选中 `v`，然后按下 `S<h1>Enter` 回车之后前后就加上了 h1 标签。
+
 在单行选择模式下， surroundings 会添加在行中，在 blockwise 选择模式，每一行都会 surround。
 
     a = testa

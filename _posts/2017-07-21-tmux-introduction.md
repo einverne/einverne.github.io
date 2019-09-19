@@ -31,19 +31,24 @@ Ubuntu/Debian 系下
 
 	sudo apt-get install tmux
 
+## 系统选项 {#options}
+Tmux 和其他系统的命令一样拥有很多的启动选项，在 `man tmux` 里面能看到很多。比如 `-2` 就是启动 256 colours 支持。
+
+另外不如想要加载自己的 configuration file 可以使用 `-f file` 来指定。默认情况下，**tmux** 会加载系统配置 `/etc/tmux.conf` 然后是用户配置 `~/.tmux.conf`。如果配置了该选项，tmux 会在启动时加载，如果配置发生错误，那么会在第一个 session 创建时报错，然后继续处理下面的配置文件。
+
 ## 基础概念 {#basic}
 Tmux is a tool that allows running multiple terminal sessions through a single terminal window. It allows you to have terminal sessions running in the background and attach and detach from them as needed, which is very useful.
 
 ### Tmux 的前缀快捷键 {#tmux-prefix}
 
-Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和 screen 默认激活控制台的 Ctrl+a 不同，Tmux 默认的是 Ctrl+b。当想要使用 Tmux 的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的会话（对应的快捷键是 s），那么你只需要做以下几步：
+Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和 screen 默认激活控制台的 <kbd>Ctrl</kbd>+<kbd>a</kbd> 不同，Tmux 默认的是 <kbd>Ctrl</kbd>+<kbd>b</kbd>。当想要使用 Tmux 的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的 session（对应的快捷键是 s），那么你只需要做以下几步：
 
-1. 按下组合键 Ctrl-b (Tmux 快捷键前缀）
-2. 放开组合键 Ctrl-b
-3. 按下 s 键
+1. 按下组合键 `Ctrl-b` (Tmux 快捷键前缀）
+2. 放开组合键 `Ctrl-b`
+3. 按下 `s` 键
 
 
-使用快捷键之后就可以执行一些相应的指令了。当然如果你不习惯使用 Ctrl+b，也可以在~/.Tmux 文件中加入以下内容把快捷键变为 Ctrl+a, 或者其他快捷键：
+使用快捷键之后就可以执行一些相应的指令了。当然如果你不习惯使用 `Ctrl+b`，也可以在 `~/.Tmux` 文件中加入以下内容把快捷键变为 Ctrl+a, 或者其他快捷键：
 
 	# Set prefix key to Ctrl-a
 	unbind-key C-b
@@ -52,9 +57,9 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 在下文中就使用 `<prefix>` 来代替 Tmux 的前缀快捷键了。
 
 ### Tmux 的配置文件 {#tmux-conf}
-每当开启一个新的会话 session 时，Tmux 都会先读取 ~/.tmux.conf 这个文件。该文件中存放的就是对 Tmux 的配置。
+每当开启一个新的会话 session 时，Tmux 都会先读取 `~/.tmux.conf` 这个文件。该文件中存放的就是对 Tmux 的配置。
 
-如果你希望新的配置项能够立即生效，那么你可以将下面这一行配置加入到文件 ~/.tmux.conf 中。
+如果你希望新的配置项能够立即生效，那么你可以将下面这一行配置加入到文件 `~/.tmux.conf` 中。
 
 	bind r source-file ~/.tmux.conf \; display-message "tmux config reloaded" # create new short cut to reload tmux.conf
 
@@ -79,10 +84,10 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 
 如果要查看当前 Tmux 的配置，可以通过 `tmux show -g` 来查看。
 
-## session 相关
+## session 相关 {#session}
 Tmux 的一个 Session 可以包含多个 Windows.
 
-在 Tmux 外：
+在 Tmux 外部 Shell 中可以使用如下方式来管理 Tmux 的 Session：
 
 	tmux 		  						创建 session
 	tmux new -s $session_name  			创建并指定 session 名字
@@ -101,7 +106,7 @@ Tmux 的一个 Session 可以包含多个 Windows.
 	<prefix> $  	重命名 session
 
 
-## 窗口相关 {#window}
+## window 窗口相关 {#window}
 
 window（窗口）在 session 里，一个 session 可以有 N 个 window，并且 window 可以在不同的 session 里移动。 window 可以看成是一个 session 的不同 tab。
 
@@ -115,11 +120,11 @@ window（窗口）在 session 里，一个 session 可以有 N 个 window，并�
 	<prefix> l 	    last window 在相邻的两个 window 里切换
 	<prefix> 0,1,2  在 window 之间切换，如果窗口数超过 10 个，可以使用 `<prefix> 'num` 来切换
 
-## pane 相关
+## pane 相关 {#pane}
 
 pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 window 里移动、合并、拆分
 
-创建 pane
+创建 pane:
 
 	<prefix> " 		横切 split pane horizontal，后面会 remap 这个键
 	<prefix> %      竖切 split pane vertical，后面 remap 这个键
@@ -213,7 +218,7 @@ Tmux 内置命令帮助
 	bind -n M-k select-pane -U
 	bind -n M-j select-pane -D
 
-这里另外推荐一个 Plugin，如果不想自己配置，可以使用这个插件 [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) ，这个插件做到了在 pane 中移动就像在 vim 中一样，并且可以和 vim 无缝衔接。使用 Ctrl + hjkl 来在不同的 Panel 中移动。
+这里另外推荐一个 Plugin，如果不想自己配置，可以使用这个插件 [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) ，这个插件做到了在 pane 中移动就像在 vim 中一样，并且可以和 vim 无缝衔接。使用 <kbd>Ctrl</kbd> + hjkl 来在不同的 Pane 中移动。
 
 ### 设置 Colorscheme
 在设置完 Tmux 在 Tmux 中使用 Vim 的时候会发现，Vim 的 colorscheme 变的有些奇怪，需要在 `.bashrc` 或者 `.zshrc` 中设置：
@@ -228,7 +233,16 @@ Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步�
 - Enter 复制并退出复制模式
 - 在将光标移动到指定位置，按 `<prefix> ]` 进行粘贴
 
-注意这种方式只能在 Tmux 中粘贴，而不会拷贝到系统粘贴板。
+注意这种方式只能在 Tmux 中粘贴，而不会拷贝到系统粘贴板。所以我习惯重新 map 几个快捷键，沿用 Vim 中的方式
+
+	# in version 2.3 and below https://github.com/tmux/tmux/commit/76d6d3641f271be1756e41494960d96714e7ee58
+	setw -g mode-keys vi
+	bind-key -T copy-mode-vi 'v' send -X begin-selection     # Begin selection in copy mode.
+	bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle  # Begin selection in copy mode.
+	bind-key -T copy-mode-vi 'y' send -X copy-selection      # Yank selection in copy mode.
+	# https://superuser.com/a/693990/298782
+
+这样以后我就能够在复制模式中按下 `y` 来将内容拷贝到系统粘贴板。
 
 ## Tmux 和 iTerm，Guake，Terminator 等终端的区别
 X Windows 系统中常用的 Xterm，GNU Screen，SSH， GNome 中的 Terminal，KDE 中的 Konsole，Mac 下常用的 iTerm2 等，这些软件都属于 Terminal Emulator。 iTerm 等只是一个 GUI 软件，它的窗格只是窗格。而 Tmux 是终端复用，在一个命令行窗口中不仅可以显示多个 Shell 的内容，而且可以保持多个会话。 最重要的是：Tmux 和 Vim 一样属于字符终端软件，不需要任何 GUI 的支持，在远程登录时尤其有用。

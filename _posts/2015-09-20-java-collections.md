@@ -119,13 +119,13 @@ Java 8 中的 hash() 方法：
 为了解决哈希碰撞，将 put 到 HashMap 的 key 的 hashCode() 高位和地位综合考虑，在计算时亦或一下高低位（高 16 位异或低 16 位）。
 
 ### Hashtable
-Hashtable 继承 Dictionary，实现 Map, Cloneable, Serializable 接口。Hashtable 函数都是同步的，线程安全，key 和 value 都不能为 null。
+Hashtable 继承 Dictionary，实现 Map, Cloneable, Serializable 接口。Hashtable 函数都是**同步的**，**线程安全的**，key 和 value 都不能为 null。
 
 Hashtable 和 HashMap 一样，也是通过“拉链法”来实现的。
 
 ### TreeMap
 
-TreeMap 是一个有序的 key-value 集合，通过红黑树实现
+TreeMap 是一个有序的 key-value 集合，顺序通过 key 排列，通过红黑树实现
 
     public class TreeMap<K,V>
         extends AbstractMap<K,V>
