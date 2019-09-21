@@ -4,7 +4,7 @@ title: "Bash 学习笔记之基本使用"
 tagline: "Bash 学习笔记"
 description: "Bash 学习笔记"
 category: [ Linux ]
-tags: [ linux , bash, vim,]
+tags: [ linux , bash, vim, shell, zsh, unix, command, cli ]
 last_updated: 2017-01-08
 ---
 
@@ -57,6 +57,8 @@ Ctrl + b  |  光标向前移动一个字符 Backward
 Ctrl + f  |  光标向后移动一个字符 Forward
 Ctrl + xx |  在行首和当前光标的位置来回切换 Toggle between the start of line and current cursor position
 
+`Ctrl-b` 和 `Ctrl-f` 这两个快捷键是我经常容易忘记的两个，但是有的时候又要比左右方向键要方便很多，所以还是要记一下的。
+
 ### 编辑 Editing
 编辑相关的快捷键，对我而言 Ctrl + w 是一个非常常用的快捷键，当输入发生错误时，直接快速删除前一个单词再进行修正。
 
@@ -69,7 +71,7 @@ Ctrl + d   |  Delete character under the cursor
 Ctrl + h   |  Delete character before the cursor (Backspace)
  - | -
 Ctrl + w   |  Cut the Word before the cursor to the clipboard. 一般用来快速删除前一个单词，也可以用 Alt + Backspace
-Ctrl + k   |  Cut the Line after the cursor to the clipboard.
+Ctrl + k   |  Cut the Line after the cursor to the clipboard. 将光标后面的内容剪切
 Ctrl + u   |  Cut/delete the Line before the cursor to the clipboard. 一般用来快速清除当前输入命令
 -----------|----------------------
 Alt + t    |  Swap current word with previous

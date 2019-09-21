@@ -3,7 +3,7 @@ layout: post
 title: "Vim 中 buffer 操作及管理"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ Vim, 学习笔记 ]
 tags: [vim, buffer, vim-buffer, ]
 last_updated:
 ---
@@ -12,6 +12,12 @@ last_updated:
 
 > A buffer is an area of Vim’s memory used to hold text read from a file. In addition, an empty buffer with no associated file can be created to allow the entry of text. –vim.wikia
 
+
+Vim 中的 Buffer 是打开的文件，这意味着 Buffer 可能并不是当前可见的，Buffers 是 Vim 打开，存在于内存某个地方。通常只有一个 Buffer 可见。可以使用 `:ls` 来查看当前打开的 Buffers.
+
+Vim 中的 Windows 是一个 `viewport onto a single buffer`，可以通过 `:spit` 或者 `:vsplit` 来水平或者垂直打开文件。
+
+Vim 中的 Tab 是 `collection of one or more windows`. 可以允许用户来组织 Windows.
 
 ## Buffer 创建
 通常情况下 `vim file1 file2` 便是将两个文件放到了 buffer 中。
@@ -34,8 +40,10 @@ last_updated:
 
     :bd!
 
+删除缓冲区并不会影响缓冲区关联的文件，只是简单地把文件从内存中删除。
+
 ## buffer navigation
-使用 <kbd>Ctrl</kbd> + <kbd>^</kbd> 可以来在最近的缓冲去中切换。
+使用 <kbd>Ctrl</kbd> + <kbd>^</kbd> 可以来在最近的缓冲去中切换。这个快捷键非常有用，得记住。可以使用如下命令来列出所有缓冲区：
 
     :ls, :buffers          " 列出所有缓冲区
 
@@ -45,7 +53,7 @@ last_updated:
 - `a` 光标所在缓冲区
 - `h` 隐藏缓冲区
 - `%` 当前的缓冲区
-- `#` 交换缓冲区， 可以使用 Ctrl + ^
+- `#` 交换缓冲区， 可以使用 `Ctrl + ^`
 - `=` 只读缓冲区
 - `+` 已经更改的缓冲区
 
@@ -60,6 +68,8 @@ last_updated:
 说明：
 
 - `:b <Tab>`    " 循环滚动 buffer 中的文件
+
+假如在后面对 vim 了解更多之后，安装了 fzf-vim 插件，那么也可以直接使用 `:Buffers` 来模糊查找当前打开的 Buffers.
 
 ## buffer 替换
 
