@@ -4,7 +4,7 @@ title: "英语搭配语字典整理"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [english, learning, ]
+tags: [english, learning, dictionary, goldendict, mdx, mdd, oxford, ]
 last_updated:
 ---
 
