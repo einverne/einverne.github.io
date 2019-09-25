@@ -181,10 +181,25 @@ AnnotationExclusionStrategy 类
     }
 
 ## 将 JSON 中小写下划线转成驼峰
+使用 GsonBuilder 来构造 Gson，然后传入 FieldNamingPolicy，这个方法接受很多参数，不仅可以做到将小写下划线转驼峰，还有其他很多功能。
 
     Gson gson = new GsonBuilder()
     .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
     .create();
+
+FieldNamingPolicy 还有这些
+
+	IDENTITY
+	Using this naming policy with Gson will ensure that the field name is unchanged.
+	LOWER_CASE_WITH_DASHES
+	Using this naming policy with Gson will modify the Java Field name from its camel cased form to a lower case field name where each word is separated by a dash (-).
+	LOWER_CASE_WITH_UNDERSCORES
+	Using this naming policy with Gson will modify the Java Field name from its camel cased form to a lower case field name where each word is separated by an underscore (_).
+	UPPER_CAMEL_CASE
+	Using this naming policy with Gson will ensure that the first "letter" of the Java field name is capitalized when serialized to its JSON form.
+	UPPER_CAMEL_CASE_WITH_SPACES
+	Using this naming policy with Gson will ensure that the first "letter" of the Java field name is capitalized when serialized to its JSON form and the words will be separated by a space.
+
 
 ## 反序列化时默认值
 某一些情况下在反序列化 json 到 Object 时，在某些字段 JSON 中缺失时，想要给 Object 提供一个默认值，但是 Gson 在处理原始类型时，比如 int 字段，如果缺失会自动赋值为 0，某些情况下是不符合预期的。Gson 在设定默认值时需要，在 Object 构造函数中初始化该字段，并且实现 `InstanceCreator` 接口。

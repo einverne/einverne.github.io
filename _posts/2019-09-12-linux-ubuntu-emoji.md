@@ -72,6 +72,12 @@ PPA:
 
 	sudo apt install emojione-picker -t xenial
 
+## 在 Chrome 中使用 Emoji
+在安装了 Noto Color Emoji 之后，记得需要在 Chrome 的设置中将 Chrome 的字体设置成 Noto 字体。
+
+- rebuild font cache
+- restart Chrome
+
 ## reference
 
 [^twemoji]: <https://github.com/eosrei/twemoji-color-font#install-on-linux>

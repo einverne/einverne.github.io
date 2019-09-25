@@ -86,6 +86,18 @@ print r.text
 
 说明：这 7 个字段都是必须指定
 
+## Falcon 的接口概念
+在 Falcon 中有这样几个不同的接口
+
+### Meter
+Meter 用来累加，可以输出累加和，变化率。
+
+### Gauge
+Gauge 用来记录瞬时值，支持 int 64, float 64 类型
+
+### Histogram
+Histogram 用来计算统计分布，输出最小值，最大值，平均值，75,95,99 百分比等等。
+
 ## 如何在上报中断时报警
 最近遇到的需求就是如果一段时间内，OpenFalcon 没有收集到数据，也就是 agent 没有采集到数据，程序挂了，或者没有执行，那么就报警。在最开始的时候查看了一下 OpenFalcon 报警函数
 
@@ -114,6 +126,21 @@ Nodata 的配置在 OpenFalcon 的后台，在 Nodata 页面添加 Nodata ，填
 
 当自定义上报中断的时候 Nodata 就会补发，通过补发的值，比如正常的取值是 `>0` 的正数值，那么补发的值可以写上　`-1` ，然后通过最近连续的三个　`-1` 来触发报警。
 
+## Histograms
+在服务端接收到打点数据时，在报表中会有一些内置的指标，比如说 75-percentile, 95-percentile, 99-percentile, 999-percentile，CPS-1-min, CPS-5-min, CPS-15-min 等等指标。
+
+对于 percentile 的指标，含义如下：
+
+- 所有采样数据中，处于 75% 处的数值
+- 所有采样数据中，处于 95% 处的数值
+- 所有采样数据中，处于 99% 处的数值
+
+对于这些指标，还有 min, max, mean 这些指标，这些都比较简单不再赘述。
+
+而另外一种， falcon 中叫做 Meter, 有两种
+
+- sum 是事件发生的总数
+- rate 是 Falcon 上报周期（60s） 内，事件发生的频率，单位 CPS
 
 ## 项目的起源
 最近看了一篇[文章](http://www.cnblogs.com/leoncfor/p/4936713.html) 介绍了 Open Falcon 项目的起由，这里面提到了 Open Falcon 为了解决 zabbix 的一些问题而被提出

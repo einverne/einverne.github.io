@@ -31,6 +31,14 @@ Oracle 提供的免费服务包括两个部分：
 - 500 million ingestion Datapoints and 1 billion Datapoints for Monitoring Service
 - 1 million Notification delivery options per month and 1000 emails per month
 
+这里可以看到提供的主机是 1/8 OCPU，什么是 OCPU ? 官方的解释是：OCPU 定义为等同于启用了超线程的 Intel Xeon 处理器一个物理核心的 CPU 容量或者等同于 Orcale SPARC 的一个物理核心。[^q] 对于 Intel Xeon 处理器，每个 OCPU 对应于两个硬件执行线程 ( vCPU )。[^q1]
+
+[^q]: <https://cloud.oracle.com/compute-classic/faq>
+[^q1]: <https://www.industry-era.com/Cloud-Services-Pricing.php>
+
+AWS, Microsoft 和 Google 提供的云服务都是以 vCPU 作为计算单元，每一个 vCPU 都表示 Intel Xeon 核心的的一个超线程。一个标准的 Intel 核心如果开启了超线程，有两个线程。
+
+
 ## Server Config
 
 Check this [post](/post/2015/12/things-to-do-after-buying-vps.html)
