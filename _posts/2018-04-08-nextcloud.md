@@ -36,7 +36,23 @@ PPA 中安装，也可以直接下载 [AppImage](https://nextcloud.com/install/#
 
 来最后给大家分享一首歌：<https://nc.einverne.info/s/SbN7zYBKiHMeWs5>
 
+## 手动安装
+
+如果要手动安装，那么就需要依赖一些服务：
+
+- nginx
+- PHP 7.0+
+- MySQL 5.7
+
+	sudo apt install php7.2 php7.2-cli php7.2-common php7.2-curl php7.2-fpm php7.2-gd php7.2-zip php7.2-mbstring php7.2-mysql
+
+### 下载合适的版本
+
+- <https://download.nextcloud.com/server/releases/>
+
 ## 总结
 因为所有的数据都需要自己来保管安全，所以一方面要做到服务器的安全，另一方面也要保证 NextCloud 的安全，到目前为止，我还是依然使用 Dropbox 作为主要个人存储同步，NextCloud 作为 backup。如果你从来没有听说过 Dropbox 那么可以使用我的邀请 <https://db.tt/isyvu6ny> 来注册，你我都可以多得 500M 空间。对我而言这 500M 的空间远比某盘 1T 的空间要重要的多。如果你认为 Dropbox 仅仅是一个同步盘的话，请参考下[这篇](/post/2015/07/dropbox-tips.html) 文章，你不仅能够拿 Dropbox 来托管静态文件，甚至可以借用 IFTTT 来完成很多意想不到的事情。
 
+## reference
 
+- <https://docs.nextcloud.com/server/13/admin_manual/installation/source_installation.html#ubuntu-installation-label>
