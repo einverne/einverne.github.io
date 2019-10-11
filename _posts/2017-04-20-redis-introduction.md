@@ -8,24 +8,24 @@ tags: [redis, database, nosql, 学习笔记 ]
 last_updated:
 ---
 
-Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。在 DB Engines Ranking K-V 数据库中排行第一 [^1]。
+Redis (Remote Dictionary Server) 是由 Salvatore Sanfilippo（antirez） 开发的开源数据库，基于内存的 Key-Value 类型的 NoSQL 。目前在 DB Engines Ranking K-V 数据库中排行第一 [^1]。
 
-Redis 是 REmote DIctionary Server 远程字典服务 的缩写，他以字典结构存储数据，并允许其他应用通过 TCP 协议来读写字典中的内容。
+Redis 是 REmote DIctionary Server 远程字典服务的缩写，他以字典结构存储数据，并允许其他应用通过 TCP 协议来读写字典中的内容。
 
 [^1]: <https://db-engines.com/en/ranking/key-value+store>
 
 Redis 支持很多的特性：
 
-- 所有数据都必须放在内存中
+- 所有数据存放在内存中
 - 支持数据持久化：AOF 和 RDB 两种类型
 - 支持异步数据复制
 
-Redis Cluster 常用 5 种数据结构 (String, Lists, Sets, Sorted Set, Hash) 以单进程方式处理请求，数据持久化和网络 Socket IO 等工作是异步进程
+Redis Cluster 常用 5 种数据结构 (String, Lists, Sets, Sorted Set, Hash) 以单进程方式处理请求，数据持久化和网络 Socket IO 等工作是异步进程。
 
 
 ## 安装 {#install}
 
-### 源中安装
+### 源中安装 {#from-source}
 在 Debian/Ubuntu/Linux Mint 下直接安装即可，但是 redis 对内核有要求，如果安装失败的时候， `-uname -a` 看一下自己的内核，如果版本太低就升级一下。
 
 	sudo apt-get install redis-server
