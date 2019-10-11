@@ -57,21 +57,7 @@ LSB-compliant init scripts need to:
 
 ### Actions
 
-一个脚本需要提供 start, stop, restart, force-reload, status 这几个动作。可以使用 case 语句来定义，结构如下：
-
-	case "$1" in
-		start)
-			do_something0
-			;;
-		stop)
-			do_something1
-			;;
-		start)
-			do_something2
-			;;
-		*)
-			;;
-	esac
+一个脚本需要提供 start, stop, restart, force-reload, status 这几个动作。
 
 ## reference
 
