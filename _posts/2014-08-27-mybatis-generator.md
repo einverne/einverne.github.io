@@ -4,7 +4,7 @@ title: "Mybatis Generator 配置详解"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [mybatis, orm, mysql, ]
+tags: [mybatis, orm, mysql, java, ]
 last_updated:
 ---
 
@@ -19,7 +19,6 @@ Generator 的配置文件主要定义了：
 - 哪一张 table 需要用来生成 Objects
 
 下面是一个简单的示例：
-
 
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE generatorConfiguration
@@ -310,7 +309,6 @@ Generator 的配置文件主要定义了：
             <columnRenamingRule searchString="" replaceString=""/>
              -->
 
-
              <!-- 用来修改表中某个列的属性，MBG 会使用修改后的列来生成 domain 的属性；
                 column: 要重新设置的列名；
                 注意，一个 table 元素中可以有多个 columnOverride 元素哈~
@@ -346,11 +344,8 @@ Generator 的配置文件主要定义了：
              <ignoreColumn column="deptId" delimitedColumnName=""/>
              -->
         </table>
-
     </context>
-
     </generatorConfiguration>
 
 ## reference
 
-- 简书
