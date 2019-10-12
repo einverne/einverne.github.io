@@ -6,6 +6,9 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "
 paginate: 10
 description_length: 200
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: plaintext
 encoding: UTF-8
 highlighter: rouge
 
