@@ -3,7 +3,7 @@ layout: post
 title: "再也不见 Google+"
 tagline: ""
 description: ""
-category: 思想感悟
+category: 思考感悟
 tags: [google, google-plus, google-reader, social, ]
 last_updated:
 ---

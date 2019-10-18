@@ -23,6 +23,7 @@ expect 下几个非常重要的指令：
 - expect: 从进程接收字符串，期望获得字符串
 - send: 向进程发送字符串，用于模拟用户的输入，注意一定要加 `\r` 回车
 - interact: 用户交互
+- sleep n: 使脚本暂停给定的秒数
 
 spawn 指令用来开启比如 Shell, FTP, SSH ,SCP 等等的交互指令。
 
