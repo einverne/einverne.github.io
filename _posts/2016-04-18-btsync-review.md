@@ -4,7 +4,7 @@ title: "btsync 体验"
 tagline: "同步好助手"
 description: ""
 category: 产品体验
-tags: [btsync, 产品体验』
+tags: [btsync, 产品体验 ]
 last_updated: 2016-12-25
 ---
 

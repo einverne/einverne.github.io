@@ -43,7 +43,7 @@ last_updated:
 
     https://bookset.me/
 
-2019年9月1日更新，看来是也不存在了。
+2019 年 9 月 1 日更新，看来是也不存在了。
 
 ## epubee
 一个电子书在线转换工具，也提供热门书的下载和推送。
@@ -182,6 +182,11 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 读秀
 
     http://www.duxiu.com
+
+## woyushu
+需邀请码
+
+	http://www.woyushu.com
 
 ## 计算机相关
 
