@@ -8,8 +8,32 @@ tags: [maven, repository, build-tools, java, ]
 last_updated:
 ---
 
-## 多仓库配置
-设置多仓库有两种方法，第一种直接在项目 POM 中定义
+之前看 Maven 书的时候对于 Maven 本地配置没有好好研究。这下闲下来从 GitHub 上拉了一个项目来，发现使用单一的 mirror 仓库无法找到一些 jboss 的依赖，所以想起来研究一下 Maven 多仓库和镜像相关的配置。
+
+都知道在 `$HOME/.m2/settings.xml` 中配置了 Maven 在本地的全局配置，可能对于某些公司内网，已经配置了公司或者内部私有的镜像。但是如果遇到镜像的中央仓库部分依赖不存在的情况，其实就需要依赖外部的仓库。
+
+## 使用单一仓库
+可能对于大部分的公司来说，强制使用了内网提供的单一仓库，force maven 使用单一仓库，mirror 所有请求到单一仓库。这个时候就要求这个单一仓库需要包含所有需要的 artifacts，或者需要设置代理去请求其他仓库，否则 maven 可能找不到某些构建。要做到单一仓库，设置 `mirrorOf` 到 `*`.
+
+maven 2.0.5+ 以上版本支持
+
+    <settings>
+      ...
+      <mirrors>
+        <mirror>
+          <id>internal-repository</id>
+          <name>Maven Repository Manager running on repo.mycompany.com</name>
+          <url>http://repo.mycompany.com/proxy</url>
+          <mirrorOf>*</mirrorOf>
+        </mirror>
+      </mirrors>
+      ...
+    </settings>
+
+记住这里的 `mirrorOf` 中配置的星号 ，表示匹配所有的 artifacts，也就是 everything. 这里的 mirrorOf 如果配置了具体的名字，指的是 repository 的名字，继续往下看。
+
+## multiple repository config
+设置多仓库有两种方法，第一种直接在项目层级 POM 中定义：
 
     <project>
     ...
@@ -28,7 +52,7 @@ last_updated:
     ...
     </project>
 
-这里的 id 就是 mirrorOf 使用的 ID。
+这里的 id 就是 mirrorOf 要使用的 ID。
 
 第二种方法是在 `~/.m2/settings.xml` 文件中全局修改。
 
@@ -59,7 +83,6 @@ last_updated:
 别忘了激活 profile，或者也可以使用 mvn 参数
 
     mvn -Pmyprofile ...
-
 
 这里提供一下 jboss 官方的配置
 
@@ -104,23 +127,6 @@ last_updated:
 
 [官方文档](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
-## 使用单一仓库
-某些情况下可以 force maven 使用单一仓库，mirror 所有请求到单一仓库，公司内部可这么做。这个仓库需要包含所有需要的 artifacts，或者需要设置代理去请求其他仓库，否则 maven 可能找不到某些构建。要做到单一仓库，设置 `mirrorOf` 到 `*`
-
-maven 2.0.5+ 以上版本支持
-
-    <settings>
-      ...
-      <mirrors>
-        <mirror>
-          <id>internal-repository</id>
-          <name>Maven Repository Manager running on repo.mycompany.com</name>
-          <url>http://repo.mycompany.com/proxy</url>
-          <mirrorOf>*</mirrorOf>
-        </mirror>
-      </mirrors>
-      ...
-    </settings>
 
 ## 设置镜像
 
@@ -146,11 +152,121 @@ maven 2.0.5+ 以上版本支持
 - `url` 地址
 
 ## 使用场景
-大部分情况下公司或者自用都会自建 nexus 仓库，那么首先 profile 中会配置需要的远程仓库，比如 id 为 `repo` url 为 `http://nexus.xxx.xxx` 那么可以在 mirror 中配置 mirrorOf
 
-    <mirrorOf>repo</mirrorOf>
-    <url>指向你自己的搭的代理</url>
+Maven 设置中的 mirror 和 repository 概念比较容易混淆，一般来说 repository 用来配置远程仓库的地址，mirror 则是作为站点镜像配置。
 
-这样对 repo 的所有请求都会转发给你自己的 Nexus。
+所以，当我的需求是，比如在内部远程仓库无法找到依赖时，从外部仓库中下载。那么我要做的就是配置多个 repository，那么当 maven 寻找依赖时就会按照配置的 repository 从上往下依次尝试下载。
 
-mirrorOf 也有很多其他的语法，可以参考上面。
+	<settings>
+		<mirrors>
+		</mirrors>
+		<profiles>
+			<profile>
+				<id>aliyun</id>
+				<repositories>
+					<repository>
+						<id>aliyun</id>
+						<url>https://maven.aliyun.com/repository/public</url>
+						<releases><enabled>true</enabled></releases>
+						<snapshots><enabled>true</enabled></snapshots>
+					</repository>
+				</repositories>
+				<pluginRepositories>
+					<pluginRepository>
+						<id>aliyun</id>
+						<url>https://maven.aliyun.com/repository/public</url>
+						<releases><enabled>true</enabled></releases>
+						<snapshots><enabled>true</enabled></snapshots>
+					</pluginRepository>
+				</pluginRepositories>
+			</profile>
+			<profile>
+				<id>nexus-163</id>
+				<repositories>
+					<repository>
+						<id>nexus-163</id>
+						<name>Nexus 163</name>
+						<url>http://mirrors.163.com/maven/repository/maven-public/</url>
+						<layout>default</layout>
+						<snapshots>
+							<enabled>false</enabled>
+						</snapshots>
+						<releases>
+							<enabled>true</enabled>
+						</releases>
+					</repository>
+				</repositories>
+				<pluginRepositories>
+					<pluginRepository>
+						<id>nexus-163</id>
+						<name>Nexus 163</name>
+						<url>http://mirrors.163.com/maven/repository/maven-public/</url>
+						<snapshots>
+							<enabled>false</enabled>
+						</snapshots>
+						<releases>
+							<enabled>true</enabled>
+						</releases>
+					</pluginRepository>
+				</pluginRepositories>
+			</profile>
+			<profile>
+			  <id>jboss</id>
+			  <repositories>
+				<repository>
+				  <id>jboss-public-repository-group</id>
+				  <name>JBoss Public Maven Repository Group</name>
+				  <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+				  <layout>default</layout>
+				  <releases>
+					<enabled>true</enabled>
+					<updatePolicy>never</updatePolicy>
+				  </releases>
+				  <snapshots>
+					<enabled>true</enabled>
+					<updatePolicy>never</updatePolicy>
+				  </snapshots>
+				</repository>
+			  </repositories>
+			  <pluginRepositories>
+				<pluginRepository>
+				  <id>jboss-public-repository-group</id>
+				  <name>JBoss Public Maven Repository Group</name>
+				  <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+				  <layout>default</layout>
+				  <releases>
+					<enabled>true</enabled>
+					<updatePolicy>never</updatePolicy>
+				  </releases>
+				  <snapshots>
+					<enabled>true</enabled>
+					<updatePolicy>never</updatePolicy>
+				  </snapshots>
+				</pluginRepository>
+			  </pluginRepositories>
+			</profile>
+		</profiles>
+		<activeProfiles>
+			<activeProfile>aliyun</activeProfile>
+			<activeProfile>jboss</activeProfile>
+		</activeProfiles>
+
+		<servers>
+			<server>
+				<id>archiva.internal</id>
+				<username>username</username>
+				<password></password>
+			</server>
+			<server>
+				<id>archiva.snapshots</id>
+				<username>username</username>
+				<password></password>
+			</server>
+		</servers>
+	</settings>
+
+mirror 与 repository 不同的是，假如配置同一个 repository 多个 mirror 时，相互之间是备份关系，只有当仓库连不上时才会切换到另一个，而如果能连上但是找不到依赖时是不会尝试下一个 mirror 地址的。
+
+## reference
+
+- <https://maven.apache.org/guides/mini/guide-mirror-settings.html>

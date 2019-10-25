@@ -11,6 +11,8 @@ last_updated:
 最近在使用 Linux 版有道的时候发现非常卡，影响正常使用，所以就发现了这个 GoldenDict。以前在 Win 下用过 [lingoes](http://www.lingoes.cn/) 但是无奈只有 Win 版本。
 GoldenDict 是一个开源词典，使用 WebKit 作为渲染核心，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。基于 GNU GPL 第三版以上协议。
 
+在使用 GoldenDict 配上习惯的词典和脚本之后就再也离不开这个工具了，设置开机启动，设置 <kbd>Ctrl</kbd> + <kbd>c</kbd>两次查当前选中的词，定期的复习和整理查词列表中的词汇，这个工具完美的解决了我查词的需求，并且提供了远超出我想象的功能，中文成语，地名人名，专业术语，韩语，日语完全完全满足了所有查询的需求。
+
 ## 安装
 Ubuntu/Linux Mint 下安装非常简单
 
