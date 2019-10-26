@@ -47,11 +47,11 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
     /home/einverne/.gnupg/pubring.gpg
     ---------------------------
-    sec   rsa4096/F80B65AAAAAAAAAA 2018-01-31 [SC]
+    pub   rsa4096/F80B65AAAAAAAAAA 2018-01-31 [SC]
     uid                 [ultimate] Ein Verne (co) <email@address>
-    ssb   rsa4096/B63A4CAAAAAAAAAA 2018-01-31 [E]
+    sub   rsa4096/B63A4CAAAAAAAAAA 2018-01-31 [E]
 
-将其中的第三行 sec 中 `rsa4096` 以后的 ID 记住，拷贝出来。
+将其中的第三行 sec 中 `rsa4096` 后面的 ID 记住，拷贝出来。
 
 然后使用
 
