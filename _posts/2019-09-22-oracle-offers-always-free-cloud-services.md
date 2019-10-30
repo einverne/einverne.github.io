@@ -4,7 +4,7 @@ title: "Oracle 提供免费的云服务"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [linux, oracle, gcp, cloud, ]
+tags: [linux, oracle, gcp, cloud, vps, server, ]
 last_updated:
 ---
 
@@ -38,6 +38,49 @@ Oracle 提供的免费服务包括两个部分：
 
 AWS, Microsoft 和 Google 提供的云服务都是以 vCPU 作为计算单元，每一个 vCPU 都表示 Intel Xeon 核心的的一个超线程。一个标准的 Intel 核心如果开启了超线程，有两个线程。
 
+### Compute
+计算实例配置：
+
+	Shape: VM.Standard.E2.1.Micro
+	Processor: 1/8th of an OCPU with the ability to use additional CPU resources
+	Memory: 1 GB
+	Networking: Includes one VNIC with one public IP address and up to 480 Mbps network bandwidth
+	Operating System: Your choice of one of the following Always Free-eligible operating systems:
+	Oracle Linux
+	Canonical Ubuntu Linux
+	CentOS Linux
+
+### Block Volume
+存储
+
+	100 GB total of combined boot volume and block volume Always Free Block Volume storage.
+
+	Five total volume backups (boot volume and block volume combined).
+
+### Object Storage
+免费账户：
+
+	20 GiB of combined Object Storage and Archive Storage
+	50,000 Object Storage API requests per month
+
+付费账户：
+
+	10 GiB of Object Storage
+	10 GiB of Archive Storage
+	50,000 Object Storage API requests per month
+
+## Server
+
+
+网站登录地址：
+
+- <https://cloud.oracle.com/sign-in>
+
+韩国区域后台管理地址：
+
+- <https://console.ap-seoul-1.oraclecloud.com>
+
+
 
 ## Server Config
 
@@ -58,4 +101,6 @@ then
 	ssh -p 22 yourname@ip
 
 
+## reference
 
+- <https://docs.cloud.oracle.com/iaas/Content/FreeTier/freetier.htm>
