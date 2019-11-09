@@ -83,6 +83,9 @@ Android 上返回到桌面是比较常见的操作，而在 Boox 回到桌面有
 - 双击 navigation ball
 - 或者在任何应用内返回，退出
 
+### Custom Note Template
+Note2 的笔记应用已经自带很多笔记模板，但是你也可以自定义笔记模板，只要将模板图片放到根目录下 `/noteTemplate` 即可。
+
 ## 一些可用的应用
 
 ### 阅读类
