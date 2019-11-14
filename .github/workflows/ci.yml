@@ -22,5 +22,5 @@ jobs:
         password: ${{ secrets.TC_PASSWORD }}
         port: ${{ secrets.TC_PORT }}
         source: "${{ github.workspace }}/_site/*"
-        target: "~/blog.ooneht.com"
+        target: "$HOME/blog/"
 
