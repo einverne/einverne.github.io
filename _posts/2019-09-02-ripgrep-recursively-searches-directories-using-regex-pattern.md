@@ -4,7 +4,7 @@ title: "使用 ripgrep 通过正则快速查找文件内容"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ripgrep, grep, find, ag, ]
+tags: [ripgrep, grep, find, ag, rg, search, regex, ]
 last_updated:
 ---
 
@@ -27,7 +27,7 @@ ripgrep（简称 rg)，是一个命令行搜索工具，可以通过正则来搜
 		rg [OPTIONS] --type-list
 		command | rg [OPTIONS] PATTERN
 
-最不用记忆的就是直接
+最不用记忆的就是直接：
 
 	rg "keyword"
 
@@ -45,21 +45,19 @@ ripgrep（简称 rg)，是一个命令行搜索工具，可以通过正则来搜
 	rg -e "*sql" -C2
 
 ### 搜索所有内容包括 gitignore 和隐藏文件
-默认 rg 会忽略 gitignore 和隐藏文件
+默认 rg 会忽略 `.gitignore` 和隐藏文件，可以使用 `-uu` 来查询所有内容：
 
 	rg -uu "word" .
 
-查询所有内容。
-
 ### 显示匹配的次数
-使用 `-c` 来显示匹配的次数
+使用 `-c` 来显示匹配的次数：
 
 	rg -c "word" .
 
-结果会在文件名后面增加一个次数
+结果会在文件名后面增加一个次数。
 
 ### 搜索指定的文件类型
-可以使用 `-t type` 来指定文件类型
+可以使用 `-t type` 来指定文件类型：
 
 	rg -t markdown "mysql" .
 

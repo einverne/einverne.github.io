@@ -47,20 +47,20 @@ Bash Keyboard Shortcuts 在绝大多数情况下一下快捷键可以直接使�
 
 Command |  Explain
 --------|------------
-Ctrl + a  |  移动到命令最前 Go to the beginning of the line (Home)
-Ctrl + e  |  移动到行尾 Go to the End of the line (End)
-Ctrl + p  |  上一个命令 Previous command (Up arrow)
-Ctrl + n  |  下一个命令 Next command (Down arrow)
- Alt + b  |  不删除命令的情况下，向前移动一个单词 Back (left) one word
- Alt + f  |  向后一个单词 Forward (right) one word
-Ctrl + b  |  光标向前移动一个字符 Backward
-Ctrl + f  |  光标向后移动一个字符 Forward
-Ctrl + xx |  在行首和当前光标的位置来回切换 Toggle between the start of line and current cursor position
+**Ctrl + a**  |  移动到命令最前 Go to the beginning of the line (Home)
+**Ctrl + e**  |  移动到行尾 Go to the End of the line (End)
+**Ctrl + p**  |  上一个命令 Previous command (Up arrow)
+**Ctrl + n**  |  下一个命令 Next command (Down arrow)
+ **Alt + b**  |  不删除命令的情况下，向前移动一个单词 Back (left) one word
+ **Alt + f**  |  向后一个单词 Forward (right) one word
+**Ctrl + b**  |  光标向前移动一个字符 Backward
+**Ctrl + f**  |  光标向后移动一个字符 Forward
+**Ctrl + xx** |  在行首和当前光标的位置来回切换 Toggle between the start of line and current cursor position
 
 `Ctrl-b` 和 `Ctrl-f` 这两个快捷键是我经常容易忘记的两个，但是有的时候又要比左右方向键要方便很多，所以还是要记一下的。
 
 ### 编辑 Editing
-编辑相关的快捷键，对我而言 Ctrl + w 是一个非常常用的快捷键，当输入发生错误时，直接快速删除前一个单词再进行修正。
+编辑相关的快捷键，对我而言 <kbd>Ctrl</kbd> + <kbd>w</kbd> 是一个非常常用的快捷键，当输入发生错误时，直接快速删除前一个单词再进行修正。
 
 Command   |  Explain
 ----------|------------
@@ -78,14 +78,14 @@ Alt + t    |  Swap current word with previous
 Ctrl + t   |  Swap the last two characters before the cursor (typo).
 Esc  + t   |  Swap the last two words before the cursor.
 -----------|----------------------
- Ctrl + y   |  Paste the last thing to be cut (yank)
-  Alt + u   |  UPPER capitalize every character from the cursor to the end of the current word.
-  Alt + l   |  Lower the case of every character from the cursor to the end of the current word.
-  Alt + c   |  Capitalize the character under the cursor and move to the end of the word.
-  Alt + r   |  Cancel the changes and put back the line as it was in the history (revert).
- Ctrl + _   |  Undo
+Ctrl + y   |  Paste the last thing to be cut (yank)
+Alt + u   |  UPPER capitalize every character from the cursor to the end of the current word.
+Alt + l   |  Lower the case of every character from the cursor to the end of the current word.
+Alt + c   |  Capitalize the character under the cursor and move to the end of the word.
+Alt + r   |  Cancel the changes and put back the line as it was in the history (revert).
+Ctrl + _   |  Undo
 ------------|-------------------------------
- TAB        |  Tab completion for file/directory names
+TAB        |  Tab completion for file/directory names
 
 For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER.
 type just enough characters to uniquely identify the directory you wish to open.
@@ -95,7 +95,7 @@ type just enough characters to uniquely identify the directory you wish to open.
 
 Command |  Explain
 --------|------------|
-Ctrl + r  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history.
+**Ctrl + r**  |  Recall the last command including the specified character(s)      <br/>  searches the command history as you type. <br/>  Equivalent to : vim ~/.bash_history.
 Ctrl + p  |  Previous command in history (i.e. walk back through the command history)
 Ctrl + n  |  Next command in history (i.e. walk forward through the command history)
 ----------|-------------------------

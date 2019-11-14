@@ -4,7 +4,7 @@ title: "HBase 基本使用"
 tagline: "从 0 到 1"
 description: ""
 category: 学习笔记
-tags: [hbase, database, apache, column-database, ]
+tags: [hbase, database, apache, column-database, nosql, ]
 last_updated: 2017-03-01
 ---
 
