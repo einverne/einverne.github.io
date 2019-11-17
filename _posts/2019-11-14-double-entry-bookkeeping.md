@@ -1,0 +1,201 @@
+---
+layout: post
+title: "复式记账"
+tagline: ""
+description: ""
+category: 学习笔记
+tags: [accounting, debits-and-credits, ]
+last_updated:
+---
+
+很早就听闻了复式记账这个名词，一直在我的 TODO 上没来得及消化，记得当时主要是看了 [wzyboy](https://wzyboy.im/post/1063.html) 和 [byvoid](https://www.byvoid.com/zht/blog/beancount-bookkeeping-1) 二位的文章，我相信我关注的不同的人选择同样的方式来做一件事情，肯定是有意义的。所以当时我就将复式计帐和 Beancount 放到了我的 Trello 待办事项里面，这几天终于有时间来了解一下了。
+
+首先什么是复式记账，相对复式来说的记账法是单式记账，我之前一直[在寻觅的记账软件](/post/2014/09/expense-App.html) 其实都是单式记帐，通过消费流水来记账，这种方式比较简单，但却只能够记录消费，其实对于自己整体状况并不是很清楚，并且对于信用卡消费还款，单式记帐软件根本无法记录，而如今资金分散在支付宝，微信，银行卡等等账户中，如果没有很好的管理时间一长就非常难以追溯。就像 byvoid 在文章中所说的那样，为什么要记账？实际上是要通过记录来增加对自我的认知。
+
+## 复式计帐
+在了解复式计帐前有些名字概念需要提前了解，在提到复制记账额时候肯定会提到这一个恒等式：
+
+![debits and credits](/assets/debits-and-credits.jpg)
+
+也就是：
+
+	Assets （资产） = Liabilities （债务） + Equity（权益，或者叫净资产，或者抵押资产）
+
+资产和债务字面意思都比较好理解，Equity 直接翻译叫做净资产，又有翻译叫做权益，这里也有一个公式：
+
+	Equity（权益，资产） = Owner's Equity（资产） - Dividends（应付红利） + Retained Earings（净收入）
+也就是一个人的资产等于固有资产减去分红加上净收入。净收入又有：
+
+	Retained earings（净收益） = Revenue（收入） - Expense （支出）
+
+这个公式比较好理解。
+
+![debits and credits equation](/assets/debits-and-credits-equation.jpg)
+
+所以综上，得到了如上的公式，也就能总结出这几大账户，「其中有些公司记账相关的内容，比如 revenue，dividend，等这里就不提了」, 对于普通人大致可以总结出这几类：
+
+- 资产 Assets —— 现金、银行存款、有价证券等；
+- 负债 Liabilities —— 信用卡、房贷、车贷等；
+- 收入 Income —— 工资、奖金等；
+- 费用 Expenses —— 外出就餐、购物、旅行等；
+- 权益 Equity —— 一般用来记录已有资产；
+
+## 优点
+
+我们记账的目的是为了记录资产的变动，所以一般的流水帐是从资金角度出发，某年某月某日某时某刻买了什么东西，而复式记账则能够记录资产的流动：
+
+- 单式记账不考虑资金的来源，只能记录消费支出
+- 复式记账会考虑资金的去向，和来源。
+- 复式记账可以将投资和消费区分开，甚至可以记录代金券，积分的账户
+- 复式记账适合比较复杂，比如有赊账，债权的情况
+- 复式记账可以提供除去开支记录之外的资产损益表 (income statement)，资产负债表 (balance sheet)，现金流量表，试算平衡表。
+- 复式记账容易检查记录错误
+
+### 借贷记账法
+复式记账又分为了借贷记账法，和正负记账法，这里先介绍一下借贷记账法。
+
+借 (debits) 贷 (credits)
+
+Debits 和 Credits 是经济交易中的双向流动：
+
+- Debits represent the flow of **economic benefit to a destination**
+- Credits represent the flow of **economic benefit from a source**
+
+> 有借必有贷，借贷必相等
+
+例子：
+
+
+假如用现金购买了 100 元文具
+
+
+DEBIT（进）  |  CREDIT（出）
+-------------|----------
+文具         | 100 元
+
+记账时需要分开记账
+
+在文具账簿分类下
+
+DEBIT  |  CREDIT
+------|----------
+2019-11-11 文具  100 |
+
+在现金账簿下：
+
+DEBIT  |  CREDIT
+------|----------
+      | 2019-11-11 文具 100
+
+
+又用信用卡 25000 购买了电脑：
+
+工具分类下
+
+DEBIT  |  CREDIT
+------|----------
+2019-11-11 电脑 信用卡 25000 |
+
+信用卡下：
+
+DEBIT  |  CREDIT
+------|----------
+      | 2019-11-11 电脑 工具 25000
+
+这是常见的 T 字记账法，左边表示 DR 表示增加，右侧是 CR 表示减少。
+
+### 正负记账法
+相较于借贷记账，正负则是用 `+` 和 `-` 来分别代表流入和流出。非常相似。
+
+假如用上面的例子，那就应该是：
+
+	2019-11-11 支出：文具 +100
+	2019-11-11 现金 	-100
+
+## Beancount
+Beancount 是一款开源的复制记账软件，基于纯文本按照特定语法书写的记账规则，可以非常轻松的生成各种资产报表。
+
+> A double-entry bookkeeping computer language that lets you define financial transaction records in a text file, read them in memory, generate a variety of reports from them, and provides a web interface.
+
+源代码：<https://bitbucket.org/blais/beancount/commits/>
+
+因为开源所以 Beancount 有无限的扩展性：
+
+- 支持货币转换
+- 支持编写脚本自动导入银行账单
+- 可以定制自己的 UI 界面
+- 有非常丰富的图表，甚至可以通过 SQL 生成报表
+
+Beancount 用 Python 编写，可以从 Pypi 中拉取，同时可以安装 fava, Web UI:
+
+	pyenv local 3.6.1
+	python -m venv beancount
+	source beancount/bin/active
+	pip install beancount fava
+
+安装完成后可以使用这些命令：
+
+- bean-bake
+- bean-check
+- bean-doctor
+- bean-example
+- bean-extract
+- bean-file
+- bean-format
+- bean-identify
+- bean-price
+- bean-query
+- bean-report
+- bean-sql
+- bean-web
+
+上手体验，使用 `bean-example` 输出样例：
+
+	bean-example > example.bean
+
+然后使用 fava 展示：
+
+	fava example.bean
+
+建议在安装体验完后，仔细阅读作者提供的[文档](https://docs.google.com/document/d/1RaondTJCS_IUPBHFNdT8oqFKJjVJDsfsn6JEjBG04eA/edit).
+
+beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoid.com/zht/blog/beancount-bookkeeping-2) 已经非常清晰，也就不在这里提了。这里只简单记录一下我需要记住的一些语法单词。
+
+账户操作语法，创立账户、备注账户、注销账户：
+
+	[yyyy-MM-dd] open Assets:Cash:CNY "CNY"
+	[yyyy-MM-dd] note Assets:Cash:CNY "现金"
+	[yyyy-MM-dd] close Assets:Cash:CNY
+
+五种账户类型，Assets,Liabilities,Equity,Income,Expenses，分别对应资产、负债、权益、收入、支出。
+
+账单语法：
+
+	[yyyy-MM-dd] [*|?] "payee" "content"
+	  [account1]          +[num] [currency-unit]
+	  [account2]          (-[num] [currency-unit])
+
+
+- 支付宝账单，登录网页版查询
+- 微信账单，APP，通过“我”-“支付”-“钱包”-“账单”- 右上角“···”-“账单下载”
+- 银行账单
+- 其他账单可以使用这个工具 [beancount-import](https://github.com/jbms/beancount-import)
+
+### 微信账单
+微信账单可以通过如下方式导出，APP，通过“我”-“支付”-“钱包”-“账单”- 右上角“···”-“账单下载”。
+
+导出的账单解压得到 csv，观察 csv 文件，前 16 行是账单信息，从第 17 行开始是真实有效的记录。包括了：
+
+	交易时间	交易类型	交易对方	商品	收 / 支	金额（元）	支付方式	当前状态	交易单号	商户单号	备注
+
+
+
+## 我的管理方式
+新建一个目录专门用来记录，该目录使用 git 来做版本管理，敏感内容使用 git-crypt 加密。
+
+
+## reference
+
+- <https://plaintextaccounting.org/>
+- <https://www.youtube.com/watch?v=VhwZ9t2b3Zk>
+- <http://www.mathstat.dal.ca/~selinger/accounting/tutorial.html>
