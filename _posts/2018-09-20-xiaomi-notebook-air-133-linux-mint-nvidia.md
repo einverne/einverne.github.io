@@ -94,6 +94,8 @@ last_updated:
 > Cinnamon is currently running without video hardware acceleration and, as a result, you may observe much higher than normal CPU usage.
 > There could be a problem with your drivers or some other issue. For the best experience, it is recommended that you only use this mode for troubleshooting purposes.
 
+## 默认开启 Fn 功能键
+Linux 下默认 F1-F12 功能键都是不启用的，按下 Fn+ESC(LOCK) 键，开启默认 Fn 功能。
 
 
 ## reference
