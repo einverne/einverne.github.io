@@ -30,3 +30,8 @@ last_updated:
 这些网站多多少少我都有用过，目前 crowdin 做的还不错，有机器翻译自动提示，格式化处理的也比较好，快捷键也很合适。
 
 另外开源版本的 Pootle，也有不少人推荐，用 Python + Django 写的。不过还没有尝试。
+
+另一个开源的本地化工具 Weblate
+
+- <https://github.com/WeblateOrg/weblate/>
+
