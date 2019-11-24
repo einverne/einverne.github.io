@@ -152,6 +152,13 @@ adb 之前保证打开开发者模式，并且设置中确保设置打开，
 
 更多关于 adb 和 fastboot 命令的使用可以参考之前的 [adb 文章](/post/2016/09/useful-adb-command.html) 和 [fastboot 文章](/post/2017/02/fastboot-and-adb-tools.html)
 
+## 从 recovery 中删除导致无限重启的 magisk module
+按住音量下＋电源键进入 Recovery 模式，在 TWRP Recovery 下，Advanced > File Manager，打开文件管理，找到：
+
+	/data/adb/modules
+
+在这个目录里面就能看到安装的 Magisk 模块，删除新增的模块即可。
+
 ## reference
 
 - <https://www.xda-developers.com/unlock-bootloader-root-oneplus-7-pro/>
