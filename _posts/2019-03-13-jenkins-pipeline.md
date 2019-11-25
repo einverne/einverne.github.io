@@ -202,6 +202,13 @@ stage 指令定义在 stages 块中，里面必须至少包含一个 steps 指�
 - environment - 环境变量匹配才执行 when { environment name: 'DEPLOY_TO', value: 'production' }
 - expression - groovy 表达式为真才执行 expression { return params.DEBUG_BUILD } }
 
+### Pipeline global variables
+
+地址：
+
+- http://jenkins.url/pipeline-syntax/globals
+- http://jenkins.url/env-vars.html
+
 ## reference
 
 - <https://jenkins.io/doc/book/pipeline/syntax/>

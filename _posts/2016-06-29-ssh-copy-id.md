@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [ssh, password, linux, ssh-copy-id,]
-last_updated: 
+last_updated:
 ---
 
 ## 背景
@@ -30,12 +30,12 @@ last_updated:
 
 ## 基本使用
 
-把本地的ssh公钥文件安装到远程主机对应的账户下：
+把本地的 ssh 公钥文件安装到远程主机对应的账户下：
 
     ssh-copy-id user@server
     ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 
-    chmod 700 ~/.ssh 
+    chmod 700 ~/.ssh
     chmod 600 ~/.ssh/authorized_keys
 
 ## 高级使用
