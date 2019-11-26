@@ -103,7 +103,7 @@ f0acce91-a416-474c-8a8c-43f3ed3768f9
 sudo tune2fs /dev/sde5 -U f0acce91-a416-474c-8a8c-43f3ed3768f9
 ```
 
-最后，更新 grub 来使用新的 UUID，以免导致系统的混乱。
+最后，更新 grub (`sudo update-grub`) 来使用新的 UUID，以免导致系统的混乱。
 
 ## reference
 

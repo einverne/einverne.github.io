@@ -5,7 +5,7 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [linux, hard-drive, ssd, ]
-last_updated: 
+last_updated:
 ---
 
 本文主要是一些和硬盘相关的命令，包括如何查看硬盘的型号，容量，还有硬盘上的分区情况，来详细了解本机硬盘的状态。
@@ -126,10 +126,10 @@ last_updated:
 能够看到 2 秒内读取了 25572M 缓存，而在 3 秒内从磁盘上物理读 800M 数据。
 
 
-## fdisk 
+## fdisk
 `fdisk` 主要用来查看和修改硬盘分区表，它能够识别 GPT，MBR，BSD 等等分区表。设备可以被划分为一个或者若干逻辑磁盘，这些逻辑磁盘叫做分区。这些分区信息被包含在分区表 (partition table) 中，通常在硬盘的 sector 0 中保存。
 
-设备名通常叫做 `/dev/sda`， `/dev/sdb` 等等，设备的名字通常指整块硬盘，分区名字通常是设备名后面加上分区的序号，比如 `/dev/sda1` 表示的是第一块硬盘上的一个分区。详细的信息可以在 Linux kernel 文档 Documentation/devices.txt 文件中找到。 
+设备名通常叫做 `/dev/sda`， `/dev/sdb` 等等，设备的名字通常指整块硬盘，分区名字通常是设备名后面加上分区的序号，比如 `/dev/sda1` 表示的是第一块硬盘上的一个分区。详细的信息可以在 Linux kernel 文档 Documentation/devices.txt 文件中找到。
 
 ### GPT
 GPT 的全称是 GUID Partition Table，全局唯一标识分区表，指的是一个实体硬盘的分区表结构布局标准。[^gpt] GPT 使用 64 bit 逻辑块地址。
@@ -209,18 +209,18 @@ MBR 全称为 Master Boot Record，主引导扇区， DOS type。Sector 0 是被
 
 `dd` 工具是一个专业的测试工具，对测试结果不苛求可以用来做 IO 读写的简单评估。首先要了解两个特殊设备：
 
-    /dev/null 伪设备，回收站.写该文件不会产生IO
-    /dev/zero 伪设备，会产生空字符流，对它不会产生IO
+    /dev/null 伪设备，回收站. 写该文件不会产生 IO
+    /dev/zero 伪设备，会产生空字符流，对它不会产生 IO
 
 `dd` 命令使用：
 
     dd if=/dev/zero of=/tmp/test bs=1G count=1 oflag=dsync
 
-- `if` 用来设置dd命令读取的输入文件名
+- `if` 用来设置 dd 命令读取的输入文件名
 - `of` dd 输出文件名
-- `bs` 设置dd命令读取的块大小
+- `bs` 设置 dd 命令读取的块大小
 - `count` dd 命令读取的块个数
-- `oflag=dsync` 使用同步I/O 去除 caching 影响
+- `oflag=dsync` 使用同步 I/O 去除 caching 影响
 
 综上
 
@@ -235,3 +235,7 @@ MBR 全称为 Master Boot Record，主引导扇区， DOS type。Sector 0 是被
 
 ## GUI
 同样在 Linux 下也可以使用 GUI 图形化的工具来查看，搜索菜单 Disks，然后就能查看当前电脑安装的硬盘了。
+
+
+## 查看分区
+使用命令 `lsblk` 查看。
