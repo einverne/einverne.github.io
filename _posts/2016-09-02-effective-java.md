@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Effective Java 笔记"
+title: "《Effective Java》读书笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [android, java, ]
+tags: [android, java, design-pattern, ]
 last_updated: 2016-11-08
 ---
 
@@ -66,7 +66,7 @@ sum.add(BigInteger.valueOf(10));    // wrong way, sum is still 0
 sum = sum.add(BigInteger.valueOf(10));   // right way, add() return a BigInteger Object.
 ```
 
-## 创建和销毁对象
+## 创建和销毁对象 {#create-destroy-object}
 
 ### 1. 静态工厂方法代替构造器
 优点：
@@ -78,11 +78,16 @@ sum = sum.add(BigInteger.valueOf(10));   // right way, add() return a BigInteger
 
 ### 2. 遇到多个构造器参数时要考虑使用构造器
 
-Builder 模式，代码易读，模拟了具名的可选参数，build 方法可检验约束条件。 builder 可以自动填充某些域，比如每次创建对象的时自动增加序列号。
+Builder 模式的优势：
 
-类的构造器或者静态工厂中具有多个参数时，设计这种类， Builder 模式可考虑，特别是当大多数参数都是可选的时候。
+- 代码易读，模拟了具名的可选参数
+- build 方法可检验约束条件
+- builder 可以自动填充某些域，比如每次创建对象的时自动增加序列号
 
-当类的参数初始化时有相互关联时使用 Builder 模式。
+何时使用 Builder 模式：
+
+- 类的构造器或者静态工厂方法中具有**多个**参数时，设计这种类构造方式时可以考虑 Builder 模式，尤其是当大多数参数都是可选的时候。
+- 当类的参数初始化时有相互关联时使用 Builder 模式。
 
 ### 3. 用私有构造器或者枚举类型强化 Singleton 属性
 
@@ -138,15 +143,15 @@ Java 内存泄露可能发生在：
 
 
 ### 7. 避免使用终结方法
-提供显式的终止方法，要求类客户端在每个实例不再有用的时候调用这个方法。 Java 中 FileInputStream， FileOutputStream，Timer 和 Connection 都具有终结方法。
+提供显式的终止方法，要求类客户端在每个实例不再有用的时候调用这个方法。Java 中 FileInputStream，FileOutputStream，Timer 和 Connection 都具有终结方法。
 
 
 ## 第 3 章
-所有对象都通用的方法， 非 final 方法（equals、hashCode、toString、clone 和 finalize）都有明确的通用约定，被设计成被覆盖。
+所有对象都通用的方法，非 final 方法（equals、hashCode、toString、clone 和 finalize）都有明确的通用约定，被设计成被覆盖。
 
 ### 8. 覆盖 equals 时请遵守通用约定
 
-类的每个实例都只与它自身相等
+类的每个实例都只与它自身相等：
 
 - 类的每个实例本质都是 **唯一** 的
 - 不关心类是否提供“逻辑相等”的测试功能
@@ -169,10 +174,10 @@ equals 等价关系：自反，对称，传递，一致
 将类的基本信息放入。IDE 中一般可以自动生成该方法。
 
 ### 11. 谨慎地覆盖 clone
+浅拷贝指拷贝对象时仅仅拷贝对象本身（包括对象中的基本变量），而不拷贝对象包含的引用指向的对象。深拷贝不仅拷贝对象本身，而且拷贝对象包含的引用指向的所有对象。
 
 ### 12. 考虑实现 Comparable 接口
 实现对象实例之间的比较。
-
 
 
 ## 第 4 章
