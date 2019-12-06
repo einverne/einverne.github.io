@@ -8,6 +8,11 @@ tags: [spring-boot, spring, java, web,]
 last_updated:
 ---
 
+Spring aims to make developer challenges easy, like creating web applications, working with databases, securing applications, and microservices.
+
+Spring Boot builds on top of Spring to make Spring even easier with simplified dependency management, automatic configuration, and runtime insights.
+
+
 笔记
 
     import org.springframework.boot.SpringApplication;
@@ -25,7 +30,7 @@ last_updated:
         }
     }
 
-@SpringBootApplication 将三个有用的注解组合在了一起
+`@SpringBootApplication` 将三个有用的注解组合在了一起
 
 - Spring 的 @Configuration : 标明该类使用 Spring 基于 Java 的配置。
 - Spring 的 @ComponentScan : 启用组件扫描，这样你写的 Web 控制器类和其他组件才能被自动发现并注册为 Spring 应用程序上下文里的 Bean。
