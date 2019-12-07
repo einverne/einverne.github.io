@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：iftop 流量监控"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, iftop, network, monitor]
 last_updated:
 ---

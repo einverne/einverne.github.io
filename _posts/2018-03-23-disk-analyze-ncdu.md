@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ncdu 磁盘分析工具"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, ubuntu, ncdu, disk]
 last_updated: 
 ---

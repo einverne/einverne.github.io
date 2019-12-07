@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：curl 命令行下载工具"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, curl, command, network]
 last_updated:
 ---

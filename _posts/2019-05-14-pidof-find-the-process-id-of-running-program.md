@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：pidof 查找进程 PID"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [pid, netstat, command, linux, ]
 last_updated:
 ---

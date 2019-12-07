@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：pidstat 查看进程消耗资源"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, commmand, network, pidstat, iotop, ram, cpu]
 last_updated:
 ---

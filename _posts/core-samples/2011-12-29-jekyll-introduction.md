@@ -3,7 +3,7 @@ layout: post
 title: Jekyll Introduction
 tagline: "jekyll"
 description: "jekyll tutorial"
-category : jekyll
+category : Jekyll
 tags : [intro, beginner, jekyll, tutorial]
 last_updated: 2015-09-10
 ---

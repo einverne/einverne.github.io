@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 stream 中的 collect flatmap reduce 使用"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, stream, java8, collector,]
 last_updated:
 ---

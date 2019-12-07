@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：jq 命令行下处理 JSON"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [jq, json, linux, command, ]
 last_updated:
 ---

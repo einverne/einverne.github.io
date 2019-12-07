@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ss socket 数据"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, socket, ]
 last_updated:
 ---

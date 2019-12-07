@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：nslookup 查询调试 DNS"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, nslookup, dns, network, ]
 last_updated:
 ---

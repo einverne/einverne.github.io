@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：gzip 压缩文件"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, gzip, tar, command, ]
 last_updated:
 ---

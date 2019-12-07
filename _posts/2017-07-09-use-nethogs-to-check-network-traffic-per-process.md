@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：使用 nethogs 查看每个进程流量"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, nethogs, network, command]
 last_updated: 
 ---

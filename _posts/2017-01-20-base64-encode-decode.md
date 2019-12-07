@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令: base64 编解码"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [base64, linux, encode, decode,]
 last_updated: 
 ---

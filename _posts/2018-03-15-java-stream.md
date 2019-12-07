@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 stream"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, java-stream, java-collections, guava, java8]
 last_updated:
 ---

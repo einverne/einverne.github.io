@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：使用 split 分割文件"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [split, command, linux, ]
 last_updated:
 ---

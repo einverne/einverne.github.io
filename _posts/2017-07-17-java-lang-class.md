@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 class"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, linux, class, reflection, ]
 last_updated:
 ---

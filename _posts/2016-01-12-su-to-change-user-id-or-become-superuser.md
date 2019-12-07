@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：su 切换身份或者使用 superuser"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, su, superuser,]
 last_updated:
 ---

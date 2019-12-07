@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：du 找出哪个文件夹占用空间"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, du, df, disk-space, disk, ]
 last_updated:
 ---

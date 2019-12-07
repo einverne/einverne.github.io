@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 Class.isAssignableFrom() 和 instanceof 区别"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, linux, object, class]
 last_updated:
 ---

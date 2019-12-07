@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：less 分页查看"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [less, linux, command, ]
 last_updated:
 ---

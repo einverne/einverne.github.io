@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：inxi 显示系统和硬件信息"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, ]
 last_updated:
 ---

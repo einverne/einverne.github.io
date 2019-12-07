@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 BigDecimal"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, double, float, bigdecimal, jdk, ]
 last_updated:
 ---

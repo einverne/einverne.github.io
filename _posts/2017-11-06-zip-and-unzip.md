@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：zip and unzip 压缩及解压缩"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, command, zip, tar, archive, ]
 last_updated:
 ---

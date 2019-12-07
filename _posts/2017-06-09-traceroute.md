@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：traceroute 查看路由信息"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [traceroute, network, linux, command]
 last_updated: 
 ---

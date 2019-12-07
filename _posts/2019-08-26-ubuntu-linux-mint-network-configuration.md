@@ -4,7 +4,7 @@ title: "Ubuntu 系网络配置文件解析及说明"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [linux, ubuntu, mint, cinnamon, network, network-config, configuration, network-connection, eth0]
+tags: [linux, ubuntu, mint, cinnamon, network, eth0]
 last_updated:
 ---
 

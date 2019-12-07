@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：netcat 查看网络信息"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [netcat, nc, linux, tcp, udp, command, netcat, port-scan, security, ]
 last_updated:
 ---

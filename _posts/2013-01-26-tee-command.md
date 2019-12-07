@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：tee 读取标准输入并输出"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, ]
 last_updated:
 ---

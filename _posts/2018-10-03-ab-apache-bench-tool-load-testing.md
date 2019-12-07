@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：用 ab 命令来进行 HTTP 服务压测"
 tagline: ""
 description: ""
-category: [ 学习笔记 , Linux ]
+category: 每天学习一个命令
 tags: [linux, ab, apache, command , ]
 last_updated:
 ---

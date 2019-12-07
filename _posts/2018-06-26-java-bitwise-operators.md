@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之位运算符"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, bit, operator, notes, ]
 last_updated:
 ---

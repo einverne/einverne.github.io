@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "每天学习一个命令：tr command"
+title: "每天学习一个命令：tr 命令行届的翻译"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, tr, command, ]
 last_updated:
 ---

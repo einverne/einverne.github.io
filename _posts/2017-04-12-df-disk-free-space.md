@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：df 查看磁盘剩余空间"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, df, disk, 磁盘空间 , command, ]
 last_updated:
 ---

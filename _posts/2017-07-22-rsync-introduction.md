@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：使用 rsync 增量同步备份文件"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, rsync, scp, sync, command, ]
 last_updated:
 ---

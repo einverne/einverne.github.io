@@ -16,7 +16,7 @@ title: Verne in GitHub
     <br/>
     <div>
       <cite>{{ post.date | date: "%Y-%m-%d" }}</cite> <i class="icon-tag"></i>
-      {% for tag in post.tags %}<a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
+      {% for tag in post.tags %}<a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}">{{ tag }}</a>
       {% if forloop.last %}
       {% else %}, {% endif %}
       {% endfor %}

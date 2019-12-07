@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ed 行编辑器"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, command, unix, ed, line, editor]
 last_updated: 
 ---

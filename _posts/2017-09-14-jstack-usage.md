@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：jstack 打印Java进程堆栈信息"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [jstack, java, debug, linux, thread-dump, ]
 last_updated: 
 ---

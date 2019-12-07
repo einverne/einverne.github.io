@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺一些小问题"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, programming, long, double, ]
 last_updated:
 ---

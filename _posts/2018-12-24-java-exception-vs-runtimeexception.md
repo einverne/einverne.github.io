@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 Exception 和 RuntimeException"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, exception ]
 last_updated:
 ---

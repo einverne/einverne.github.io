@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ln 创建链接"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, ln, link]
 last_updated:
 ---

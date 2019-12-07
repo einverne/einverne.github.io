@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：使用 jpegoptim 和 optipng 优化压缩图片"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [compress, optimize, linux, command, jpeg, png,]
 last_updated:
 ---

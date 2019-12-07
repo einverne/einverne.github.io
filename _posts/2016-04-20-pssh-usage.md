@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：pssh 一条命令在多个主机上执行"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [pssh, ssh, openssh, ]
 last_updated:
 ---

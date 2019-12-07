@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：find 查找文件"
 tagline: ""
 description: ""
-category: [ 学习笔记 , Linux]
+category: 每天学习一个命令
 tags: [linux, find, file, command, search, ]
 last_updated:
 ---

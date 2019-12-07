@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：nl 打印行号"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, nl, command, ]
 last_updated:
 ---

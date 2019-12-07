@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 Thread 类中 interrupt() interrupted() isInterrupted() 区别"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, thread, interrupt, ]
 last_updated:
 ---

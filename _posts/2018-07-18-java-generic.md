@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之泛型"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, generics, programming, linux]
 last_updated:
 ---

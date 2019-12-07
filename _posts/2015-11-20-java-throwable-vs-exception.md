@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之 throwable vs exception 区别"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, jdk, exception, ]
 last_updated:
 ---

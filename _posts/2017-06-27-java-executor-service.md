@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之并发编程"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, thread, runnable, callable, executor, ]
 last_updated:
 ---

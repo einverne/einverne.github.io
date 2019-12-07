@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ps 显示当前运行进程"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [ps, command, linux, process, ]
 last_updated: 
 ---

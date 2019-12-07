@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ip 处理网络管理任务"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [network, linux, command, ip, ifconfig,]
 last_updated: 
 ---

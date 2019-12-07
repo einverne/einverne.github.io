@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：parted 在 Linux 下给硬盘分区"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, parted, gparted, partition, clonezilla,]
 last_updated:
 ---

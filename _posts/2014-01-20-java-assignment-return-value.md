@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺之：赋值语句的返回值"
 tagline: ""
 description: ""
-category: [Java, 学习笔记 ]
+category: Java
 tags: [java, jdk, programming,]
 last_updated:
 ---

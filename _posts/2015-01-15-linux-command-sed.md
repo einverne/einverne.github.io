@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "每天学习一个命令：sed"
+title: "每天学习一个命令：sed 流式字符编辑器"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, command, sed, editor]
 last_updated:
 ---

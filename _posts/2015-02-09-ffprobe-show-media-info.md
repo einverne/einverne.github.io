@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：ffprobe 查看多媒体信息"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [linux, ffmpeg, ffplay, ffprobe, command, ]
 last_updated:
 ---

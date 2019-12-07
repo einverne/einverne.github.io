@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：iotop 查看 Linux 下每个进程 IO 占用"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [io, iotop, top, linux, htop, ]
 last_updated:
 ---

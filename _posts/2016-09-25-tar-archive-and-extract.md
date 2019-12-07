@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：tar 压缩和解压文件"
 tagline: ""
 description: ""
-category: Linux
+category: 每天学习一个命令
 tags: [tar, linux, archive, extract, command]
 last_updated:
 ---

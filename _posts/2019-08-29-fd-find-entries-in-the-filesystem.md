@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：fd find entries in the filesystem"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, command, fd, find, ag, ]
 last_updated:
 ---

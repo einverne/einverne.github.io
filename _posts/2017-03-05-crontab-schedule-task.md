@@ -3,7 +3,7 @@ layout: post
 title: "每天学习一个命令：crontab 定时任务"
 tagline: ""
 description: ""
-category: 学习笔记
+category: 每天学习一个命令
 tags: [linux, command, cron, crontab, scheduler, period]
 last_updated:
 ---

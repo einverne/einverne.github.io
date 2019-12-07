@@ -3,7 +3,7 @@ layout: post
 title: "Java 查漏补缺：线程间通信"
 tagline: ""
 description: ""
-category: 学习笔记
+category: Java
 tags: [java, linux, thread, synchronized, ]
 last_updated:
 ---
