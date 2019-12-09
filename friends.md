@@ -3,6 +3,7 @@ layout: page
 title: "Friends"
 description: "这些是一些友链"
 group: navigation
+permalink: /friends.html
 ---
 
 <h2 id="friends" itemprop="about">友链</h2>
