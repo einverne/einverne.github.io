@@ -54,6 +54,13 @@ Check plugins
 	sudo -u www-data wp theme activate twentyseventeen
 	sudo -u www-data wp theme uninstall twentyfourteen
 
+### Post
+
+	wp post list
+	wp post create --post_type=post --post_title='A sample post'
+	wp post update 123 --post_status=draft
+	wp post delete 123
+
 ## reference
 
 - <https://gtk.pw/lk0Ja>

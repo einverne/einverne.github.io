@@ -4,7 +4,7 @@ title: "每天学习一个命令：sort 排序"
 tagline: ""
 description: "sort 命令可以在命令行中快速排序输出"
 category:
-tags: [linux, sort, ]
+tags: [linux, sort, command, ]
 last_updated:
 ---
 

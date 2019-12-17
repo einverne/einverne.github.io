@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Spring MVC 实战笔记"
+title: "《Spring MVC 实战》笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [spring-mvc, spring, notes, ]
+tags: [spring-mvc, spring, notes, java,  ]
 last_updated:
 ---
 
@@ -184,15 +184,10 @@ method 可选属性，代表请求方式
 
 参数绑定注解
 
-A、处理 requet uri 部分（这里指 uri template 中 variable，不含 queryString 部分）的注解：   @PathVariable;
-
-B、处理 request header 部分的注解：   @RequestHeader, @CookieValue;
-
-C、处理 request body 部分的注解：@RequestParam,  @RequestBody;
-
-D、处理 attribute 类型是注解： @SessionAttributes, @ModelAttribute;
-
-
+- A、处理 requet uri 部分（这里指 uri template 中 variable，不含 queryString 部分）的注解：   @PathVariable;
+- B、处理 request header 部分的注解：   @RequestHeader, @CookieValue;
+- C、处理 request body 部分的注解：@RequestParam,  @RequestBody;
+- D、处理 attribute 类型是注解： @SessionAttributes, @ModelAttribute;
 
 @PathVariable
 
@@ -200,9 +195,18 @@ D、处理 attribute 类型是注解： @SessionAttributes, @ModelAttribute;
 
 示例代码：
 
-[java] view plain copy
 
-@Controller  @RequestMapping("/owners/{ownerId}")  public class RelativePathUriTemplateController {      @RequestMapping("/pets/{petId}")    public void findPet(@PathVariable String ownerId, @PathVariable String petId, Model model) {          // implementation omitted    }  }  上面代码把 URI template 中变量 ownerId 的值和 petId 的值，绑定到方法的参数上。若方法参数名称和需要绑定的 uri template 中变量名称不一致，需要在 @PathVariable("name") 指定 uri template 中的名称。
+	@Controller
+	@RequestMapping("/owners/{ownerId}")
+	public class RelativePathUriTemplateController {
+
+		@RequestMapping("/pets/{petId}")
+		public void findPet(@PathVariable String ownerId, @PathVariable String petId, Model model) {
+		// implementation omitted
+		}
+	}
+
+上面代码把 URI template 中变量 ownerId 的值和 petId 的值，绑定到方法的参数上。若方法参数名称和需要绑定的 uri template 中变量名称不一致，需要在 @PathVariable("name") 指定 uri template 中的名称。
 
 
 
@@ -214,13 +218,21 @@ D、处理 attribute 类型是注解： @SessionAttributes, @ModelAttribute;
 
 这是一个 Request 的 header 部分：
 
-[plain] view plain copy
+	Host
+	localhost:8080
+	Accept                  text/html,application/xhtml+xml,application/xml;q=0.9
+	Accept-Language         fr,en-gb;q=0.7,en;q=0.3
+	Accept-Encoding         gzip,deflate
+	Accept-Charset          ISO-8859-1,utf-8;q=0.7,*;q=0.7
+	Keep-Alive              300
 
-Host                    localhost:8080  Accept                  text/html,application/xhtml+xml,application/xml;q=0.9  Accept-Language         fr,en-gb;q=0.7,en;q=0.3  Accept-Encoding         gzip,deflate  Accept-Charset          ISO-8859-1,utf-8;q=0.7,*;q=0.7  Keep-Alive              300
 
-[java] view plain copy
+	@RequestMapping("/displayHeaderInfo.do")
+	public void displayHeaderInfo(@RequestHeader("Accept-Encoding") String encoding,                                @RequestHeader("Keep-Alive") long keepAlive)  {
+		//...
+	}
 
-@RequestMapping("/displayHeaderInfo.do")  public void displayHeaderInfo(@RequestHeader("Accept-Encoding") String encoding,                                @RequestHeader("Keep-Alive") long keepAlive)  {      //...    }  上面的代码，把 request header 部分的 Accept-Encoding 的值，绑定到参数 encoding 上了， Keep-Alive header 的值绑定到参数 keepAlive 上。
+上面的代码，把 request header 部分的 Accept-Encoding 的值，绑定到参数 encoding 上了， Keep-Alive header 的值绑定到参数 keepAlive 上。
 
 
 
