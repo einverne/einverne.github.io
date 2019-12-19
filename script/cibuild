@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-gem install bundler -v '1.17.3'
+# gem install bundler -v '1.17.3'
 
 bundle exec jekyll build
 bundle exec htmlproofer ./_site --allow-hash-href --assume-extensio --url-ignore "/#.*/" --disable-external

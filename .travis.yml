@@ -1,13 +1,15 @@
 language: ruby
 rvm:
-- 2.5.1
+- 2.6.3
 
 before_install:
   - gem update --system
   - gem install bundler
 
-script: ./script/cibuild 
+script: ./script/cibuild
 
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+cache: bundler
