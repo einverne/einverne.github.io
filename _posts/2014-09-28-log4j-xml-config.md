@@ -4,7 +4,7 @@ title: "log4j XML 配置"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [log4j, log4j12, log4j12-config, ]
+tags: [java, log4j, log4j12, log4j12-config, ]
 last_updated:
 ---
 
