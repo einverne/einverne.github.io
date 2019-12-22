@@ -49,10 +49,9 @@ last_updated:
 倒没有我想象得麻烦，直接在设置中开启，认证之后就能够直接使用了，如果登录失败，重启一次就成功了。
 
 ## Font
-Oreader 路径，本地存储 fonts 文件夹。
+Oreader 路径，本地存储根目录，新建 fonts 文件夹。放入 TTF 文件。
 
-Onyx Neo Reader : 路径 `adobe/resources/fonts` 放入 TTF 文件
-
+Onyx Neo Reader : 路径 `adobe/resources/fonts`
 
 ## Dictionary
 系统自带字典文件，指定目录是：`sdcard\dicts\xxx`，每个字典都以文件夹形式保存。
