@@ -103,7 +103,7 @@ swap 分区大小设置
 
 为了让系统启动时能自动启用这个交换分区，可以编辑 `/etc/fstab`, 加入下面一行
 
-    /dev/sdb2 swap swap defaults 0 0
+    /dev/sdb2 none swap sw 0 0
 
 ### 使用文件作为 swap 分区
 
@@ -121,5 +121,5 @@ swap 分区大小设置
 
 使系统开机时自启用，在文件 /etc/fstab 中添加一行：
 
-    /root/swapfile swap swap defaults 0 0
+    /root/swapfile none swap sw 0 0
 
