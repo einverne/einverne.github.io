@@ -8,7 +8,7 @@ tags: [clonezilla, linux, backup, clone, ssd, system,]
 last_updated:
 ---
 
-之前遇到的一个问题，安装 Linux Mint 的系统分区快要满了，但是我又不想重装系统，于是就提出来这样的一个问题。当时整天得想着如何解决这样的一个问题比较好，于是有了这篇文章。当然也借由这篇文章讲述一个复杂问题的提出到解答的整个过程。其他类似问题的解决过程也是类似的。
+之前遇到的一个问题，安装 Linux Mint 的系统分区快要满了，但是我又不想重装系统，于是就提出来这样的一个问题 ---- 如何在不重装系统的情况下，将系统盘从一块分区中复制到另一块磁盘的分区中，整体备份系统。当时整天得想着如何解决这样的一个问题比较好，于是有了这篇文章。当然也借由这篇文章讲述一个复杂问题的提出到解答的整个过程。其他类似问题的解决过程也是类似的。
 
 ## 一个问题的提出到解决
 
@@ -16,13 +16,13 @@ last_updated:
 
 问题相关：Windows 下有 Ghost 类似的工具可以协助完成 Windows 系统镜像的制作，并且可以完整恢复系统，而 Mac 下有 Time Machine 类似的工具，似乎可以还原整个系统。我想 Linux 下应该也存在类似的工具。
 
-问题解决：经过 Google，Linux 下备份系统的方式可以有很多，我不想使用命令行，如果有现成工具最好，最后锁定关键词   “Clonezilla”，一款非常强大的备份工具，可以用来备份硬盘，分区到镜像，或者直接写入其他硬盘或者分区。
+问题解决：经过 Google，Linux 下备份系统的方式可以有很多，我不想使用命令行，如果有现成工具最好，最后锁定关键词 “Clonezilla”，一款非常强大的备份工具，可以用来备份整块硬盘，从分区到镜像，或者直接写入其他硬盘或者分区。
 
-之后搜索 Clonezilla 相关教程以及使用，借助 YouTube 熟悉使用过程，下载 iso 镜像，安装硬盘，制作启动 U 盘，从 U 盘启动电脑，熟悉电脑硬盘的名称，sda1，sdb1，sdb2，sdc1，类似的名称，基本上 sda 就是一块硬盘，后面接的数字是分区，在使用 Clonezilla 的过程中一定要小心数据，目标一定要指定空分区，或者空磁盘，否则目标磁盘的数据会全部被清除。
+之后搜索 Clonezilla 相关教程以及使用，借助 YouTube 视频熟悉使用过程，下载 ISO 镜像，安装物理硬盘，制作启动 U 盘，从 U 盘启动电脑，熟悉 Linux 下电脑硬盘的名称，sda1，sdb1，sdb2，sdc1，类似的名称，基本上 sda 就表示一块硬盘，后面接的数字是在该硬盘上的分区，在使用 Clonezilla 的过程中一定要**注意备份数据**，目标一定要指定**空分区**，或者**空磁盘**，否则目标磁盘的数据会全部被清除。
 
 在我的真实例子中，我的 Linux Mint 安装在一块硬盘的一个分区中，利用命令或者 GUI，查看该分区的名称，然后我的解决方法是给电脑新安装了一块 SSD，将光驱位换了。然后给该硬盘分区，并查看该分区的名称，然后利用学习到的 Clonezilla 来完成系统从一个分区到另一个分区的克隆。
 
-![clonezilla clone linux partition](https://lh5.googleusercontent.com/-eOO4iMnZMZw/V1blbHZWFzI/AAAAAAAA-xQ/nO2ZKbY9nHIRO7YJoFpYWuYJAgiJg6h7wCL0B/w1212-h900-no/IMG_20160606_224814.jpg)
+![clonezilla clone linux partition](https://img.gtk.pw/file/evimages/clonezilla_linux_IMG_20160606_224814.jpg)
 
 从上图就可以看出，我是将 `/dev/sdb8` 分区拷贝到 `/dev/sda1` 分区。
 

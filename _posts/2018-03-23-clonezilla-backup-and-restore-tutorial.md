@@ -14,6 +14,8 @@ Clonezilla 是一个分区和硬盘镜像和克隆的工具。Clonezilla 能够�
 
 下载地址： <http://clonezilla.org/downloads.php>
 
+之前其实写过一篇克隆系统的[文章](/post/2016/08/clonezilla-clone-system.html) 这里再系统性的总结一下。
+
 ## 制作 U 盘启动
 
 制作一个 bootable Clonezilla 非常简单，在官网现在 iso 镜像之后，使用镜像写入工具就可以制作可以启动的 Clonezilla。在 Windows 下可以使用 Universal usb installer，或者 [unetbootin](https://unetbootin.github.io/)，Linux 下使用 [etcher](https://etcher.io/)。几乎都是加载 iso，选择写入设备，写入的过程比较简单，就不展开具体教程了。
