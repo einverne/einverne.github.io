@@ -8,7 +8,7 @@ tags: [accounting, debits-and-credits, ]
 last_updated:
 ---
 
-很早就听闻了复式记账这个名词，一直在我的 TODO 上没来得及消化，记得当时主要是看了 [wzyboy](https://wzyboy.im/post/1063.html) 和 [byvoid](https://www.byvoid.com/zht/blog/beancount-bookkeeping-1) 二位的文章，我相信我关注的不同的人选择同样的方式来做一件事情，肯定是有意义的。所以当时我就将复式计帐和 Beancount 放到了我的 Trello 待办事项里面，这几天终于有时间来了解一下了。
+很早就听闻了复式记账这个名词，一直在我的 TODO 上没来得及消化，记得当时主要是看了 [wzyboy](https://wzyboy.im/post/1063.html) 和 [byvoid](https://www.byvoid.com/zht/blog/beancount-bookkeeping-1) 二位的文章，我关注的不同的人选择同样的方式来做一件事情，肯定是有意义的。所以当时我就将复式计帐和 Beancount 放到了我的 Trello 待办事项里面，这几天终于有时间来了解一下了。
 
 首先什么是复式记账，相对复式来说的记账法是单式记账，我之前一直[在寻觅的记账软件](/post/2014/09/expense-App.html) 其实都是单式记帐，通过消费流水来记账，这种方式比较简单，但却只能够记录消费，其实对于自己整体状况并不是很清楚，并且对于信用卡消费还款，单式记帐软件根本无法记录，而如今资金分散在支付宝，微信，银行卡等等账户中，如果没有很好的管理时间一长就非常难以追溯。就像 byvoid 在文章中所说的那样，为什么要记账？实际上是要通过记录来增加对自我的认知。
 
