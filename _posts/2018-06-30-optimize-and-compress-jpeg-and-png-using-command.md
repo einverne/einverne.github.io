@@ -48,6 +48,21 @@ last_updated:
 
     find images_folder/ *.png -exec optipng {} \;
 
+## mozjpeg
+优化 jpeg 压缩算法
+
+- <https://github.com/mozilla/mozjpeg>
+
+命令行版本
+
+- <https://github.com/imagemin/mozjpeg-bin>
+
+安装方式：
+
+	npm install -g mozjpeg
+
+	mozjpeg --help
+
 ## reference
 
 - [Tecmint](https://gtk.pw/ayO4t)

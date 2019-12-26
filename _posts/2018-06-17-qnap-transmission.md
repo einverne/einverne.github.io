@@ -170,9 +170,11 @@ last_updated:
 可以从下面两个地址中找到每天更新的 Tracker 服务器地址：
 
 - <https://github.com/ngosang/trackerslist>
-- <https://github.com/XIU2/TrackersListCollection>
+- <https://github.com/XIU2/TrackersListCollection>、<https://trackerslist.com/>
 
 写一个[脚本](https://github.com/oilervoss/transmission/blob/master/addtracker.sh)，使用 transmission-remote 命令添加到 bt 。
+
+- <https://trackerslist.com/all.txt>
 
 ## Other
 如果在 QNAP 上开启了远程控制，那么在桌面版系统上可使用这个 Remote control [GUI](https://github.com/transmission-remote-gui/transgui)，可以有更多的功能。
