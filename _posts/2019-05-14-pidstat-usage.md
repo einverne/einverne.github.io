@@ -8,7 +8,7 @@ tags: [linux, commmand, network, pidstat, iotop, ram, cpu]
 last_updated:
 ---
 
-pidstat 主要用于监控 Linux Kernel 管理的进程资源占用情况，包括 CPU，IO，内存，线程等等。
+pidstat 是 sysstat 工具包含的一个命令，主要用于监控 Linux Kernel 管理的进程资源占用情况，包括 CPU，IO，内存，线程等等。
 
 > The pidstat command is used for monitoring individual tasks currently being managed by the Linux kernel.
 
@@ -22,17 +22,24 @@ pidstat 首次运行会显示系统自开机起各项统计，之后运行将显
 
     pidstat [options] [interval] [times]
 
-Most common use options:
+常用的参数：
 
-- `-r` show memory usage
-- `-d` show io usage per process id
-- `-p PID` specify PID
+- `-u` 默认参数，显示各个进程的 CPU 统计信息
+- `-r` 显示各个进程的内存使用情况
+- `-d` 显示各个进程的 IO 使用
+- `-w` 显示各个进程的上下文切换
+- `-p PID` 指定 PID
+
+比如常见的每一秒查看 IO 统计，统计 10 次
+
+	pidstat -d 1 10
 
 ## Examples
 
-### Show CPU usage of all process
+### 所有进程的 CPU 统计信息 {#cpu-usage}
+直接运行 `pidstat` 默认显示所有进程的 CPU 使用信息，等效于 `pidstat -u -p ALL`
 
-    pidstat -u
+    pidstat -u 1 10
     pidstat
 
 Result fields:
@@ -47,7 +54,7 @@ Result fields:
 - CPU: 处理进程的 CPU 编号
 - Command: 进程名
 
-### Show memory usage
+### 显示内存统计信息 {#memory-usage}
 Following command will display PID memory usage 10 times every 2 seconds:
 
     pidstat -r 2 10
@@ -63,7 +70,7 @@ Result fields:
 - %MEM : 内存使用率
 - Command : 该进程的命令 task name
 
-### show IO usage
+### 显示 IO 统计信息 {#show-IO-usage}
 
     pidstat -d
 
@@ -77,12 +84,23 @@ Result field:
 - iodelay: Block I/O delay, measured in clock ticks
 - Command: 进程名 task name
 
+### T 选项来打印更详细信息
+使用 `-T [TASK|CHILD|ALL]` 来报告打印更详细的信息，默认 pidstat 使用 TASK，表示监控独立的任务信息。
+
+- TASK 报告独立的进程
+- CHILD 报告进程下所有线程的情况
+- ALL 输出进程及线程统计信息
+
 ### Specific PID
 To show CPU, memory, IO:
 
 	pidstat -u -p PID
 	pidstat -r -p PID
 	pidstat -d -p PID
+
+比如要查看 PID 为 12002 的进程的 CPU 使用情况，并且要查看所有子线程，每隔 1 秒输出一次，输出 10 次，则可以
+
+	pidstat -T ALL -u -p 12002 1 10
 
 ## reference
 

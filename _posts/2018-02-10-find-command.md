@@ -8,7 +8,9 @@ tags: [linux, find, file, command, search, ]
 last_updated:
 ---
 
-查找的动作在平时使用的频率也还是很高的，所以知道并用好 `find` 这个命令也很重要。`find` 命令顾名思义，就是搜索特定文件夹内的文件。
+查找的动作在平时使用的频率也还是很高的，所以知道并用好 `find` 这个命令也很重要。`find` 命令顾名思义，就是搜索特定文件夹内的文件。当然后来用了 [fzf](/post/2019/08/fzf-usage.html) 日常使用比 find 要高很多，不过如果要写脚本 find 命令的使用也是不得不了解的。
+
+find 命令提供了非常多的选项，功能很强大。
 
 ## 基本使用
 最基本的使用
@@ -35,8 +37,8 @@ last_updated:
 - `f` 常规文件
 - `d` 目录
 - `l` 连接
-- `c` character devices
-- `b` block devices
+- `c` 字符设备文件 character devices
+- `b` 块设备文件 block devices
 
 比如要查找系统中所有以 `.conf` 结尾的文件
 
