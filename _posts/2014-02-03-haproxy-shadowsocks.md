@@ -37,13 +37,27 @@ HAProxy 的配置文件在 `/etc/haproxy/haproxy.cfg` 下：
         default_backend ss-out
 
     backend ss-out
-        server server1 [VPS]:8888 maxconn 20480
+		balance roundrobin
+        server server1 [VPS-IP]:8888 maxconn 20480
+        server server2 [VPS2-IP]:8888 maxconn 20480
 
 主要的配置就是 `frontend` 和 `backend`，也很好理解，将入站的 8888 端口中的流量转发到 VPS 的 8888 端口。然后重启 HAProxy 即可
 
     sudo /etc/init.d/haproxy restart
 
 启动之后，本地的 SS 客户端直接连国内的 IP 即可，需要注意的是配置用的是 ssserver 的配置。
+
+## 监控页面
+配置监控界面监控转发流量：
+
+	listen stats    #定义监控页面 $
+		bind *:1080                     #绑定端口 1080$
+		mode http                       # http mode$
+		stats refresh 30s               #每 30 秒更新监控数据 $
+		stats uri /stats                #访问监控页面的 uri$
+		stats realm HAProxy\ Stats      #监控页面的认证提示 $
+		stats auth username:password    #监控页面的用户名和密码 $
+
 
 ## reference
 
