@@ -49,7 +49,12 @@ Fail2ban 是一个能够保护 SSH 等常用端口暴力破解的工具
 
     sudo apt install fail2ban
 
-项目的配置地址在 `/etc/fail2ban/` 目录下。其中可以找到一个 `jail.conf` 的配置文件，该文件可能在升级时被覆盖，所以可以拷贝一份 `cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local` 来编辑 local 文件，fail2ban 配置文件优先级：
+项目的配置地址在 `/etc/fail2ban/` 目录下。
+
+- fail2ban.conf 文件是 fail2ban 软件配置，包括日志级别，日志位置，PID 等等
+- jail.conf 则是关于功能配置，包括默认禁止登录时间，允许重复登录次数，白名单，邮件等等
+
+其中可以找到一个 `jail.conf` 的配置文件，该文件可能在升级时被覆盖，所以可以拷贝一份 `cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local` 来编辑 local 文件，fail2ban 配置文件优先级：
 
 - /etc/fail2ban/jail.conf
 - /etc/fail2ban/jail.d/*.conf，按字母顺序排列
