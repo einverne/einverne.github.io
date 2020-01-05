@@ -17,6 +17,17 @@ last_updated:
 
 - <https://github.com/studyzy/imewlconverter/releases>
 
+安装 dotnet
+
+- <https://dotnet.microsoft.com/download/dotnet-core/2.2>
+
+下载 release 对应版本，然后运行
+
+	dotnet ImeWlConverterCmd.dll -?
+
+具体转换命令，比如导入一个搜狗细胞词库成谷歌拼音词库，则命令为：
+
+	dotnet ImeWlConverterCmd.dll -i:scel ./input.scel -o:rime ./rime.txt
 
 ## 繁简转换
 安装 opencc 繁简转换工具
@@ -27,27 +38,41 @@ last_updated:
 
 	opencc -i source.txt -o dest.txt
 
+会将 `source.txt` 文本内容全部转换成 `dest.txt` 繁体的文本。
 
-luna_pinyin.mywords.dict.yaml
+然后将文本内容全部拷贝到 `luna_pinyin.mywords.dict.yaml` 文件中，并添加文件头：
 
 	---
 	name: luna_pinyin.mywords
 	version: "0.0.1"
+	sort: by_weight
 	use_preset_vocabulary: true
+	...
 
 
 然后找到 `luna_pinyin.extended.dict.yaml`，打开文件导入新的词库
 
 	import_tables:
 	  - luna_pinyin.mywords
-	-
-	-
+
+
+
+## 搜狗细胞词库
+下载对应的细胞词库：
+
+- <https://pinyin.sogou.com/dict/>
+
+然后使用上面的方法转换。
+
+## 通讯录姓名
+我所有的通讯录都在 [Google 通讯录](https://contacts.google.com/?hl=zh-CN) 中保存着，页面上可以很方便的导出 csv 文件。有了这个文本文件就可以快速制作通讯录姓名的词库。
+
+简单观察一下通讯录 csv 的结构就知道第一列就是姓名，解析一下文件然后将第一列弄出来。和上面的流程一直，制作一个 `luna_pinyin.contacts.dict.yaml` 文件保存这些通讯录名字，然后将该词库添加到 extended 中。部署即可生效。
+
 ## Rime 导入词库
+通过扩展来导入词库，纯文本管理，
 
-
-
-rime_dict_manager
 
 ## Rime 导出词库
 
-
+同步后在同步的文件夹中能找到纯文本保存的词库。
