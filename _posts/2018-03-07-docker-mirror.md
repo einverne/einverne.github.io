@@ -22,6 +22,35 @@ last_updated:
 
 修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。下面就总结一下国内的 Docker 镜像站点。
 
+修改后使用 `sudo docker info` 来检查配置是否生效。
+
+### Docker cn
+
+	https://registry.docker-cn.com
+
+### Azure
+Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/blob/master/aks/README.md#22-container-registry-proxy) 包括 Docker Hub、GCR、Quay。
+
+	https://dockerhub.azk8s.cn
+
+### 网易
+
+	http://hub-mirror.c.163.com
+
+### 腾讯
+
+	https://mirror.ccs.tencentyun.com
+
+### 科大镜像 ustc
+[科大](https://mirrors.ustc.edu.cn/help/dockerhub.html) 包括 Docker Hub、GCR、Quay。
+
+	https://docker.mirrors.ustc.edu.cn
+
+### 七牛
+[七牛](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
+
+	https://reg-mirror.qiniu.com
+
 ### DaoCloud
 DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc) 的加速地址：
 
