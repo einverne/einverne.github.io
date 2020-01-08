@@ -92,6 +92,11 @@ Wiznote 唯一使用他的理由就是他的跨平台，Linux 支持比 Evernote
 
 剩下的用 Evernote 来共享笔记，和别人协作好了。
 
+## Standardnotes
+主打端到端笔记加密，观望中：
+
+- <https://standardnotes.org/>
+
 ## 两个月之后更新
 
 现在已经稳定使用 WizNote 了， Evernote 中的数据基本导出到 WizNote，而目前 WizNote 使用过程中基本没有产生什么问题。现在就做一个 WizNote Review。官方的宣传中突出了如下特点：
