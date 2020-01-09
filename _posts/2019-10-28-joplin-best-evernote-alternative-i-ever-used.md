@@ -38,7 +38,7 @@ Joplin 是一个开源的笔记应用，曾经在调查 [Evernote 代替品](/po
 更多内容可以查看[我的笔记整理法则](/post/2016/12/note-taking-style.html)
 
 ### Global Search
-在桌面版中，可以按下 Ctrl + G 然后输入笔记的标题来快速跳转到该笔记。或者可以使用 `#` 跟着 Tag 或者使用 `@` 跟着笔记本标题来跳转。
+在桌面版中，可以按下 Ctrl + G 然后输入笔记的标题来快速跳转到该笔记。或者在按下 Ctrl + G 后可以使用 `#` 跟着 Tag 名或者使用 `@` 跟着笔记本标题来跳转。
 
 ### External Editor
 使用快捷键 Ctrl + E 或者直接点击工具栏的 External Editor 可以打开外部编辑器。个人推荐 Haroopad.
