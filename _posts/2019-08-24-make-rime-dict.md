@@ -25,7 +25,7 @@ last_updated:
 
 	dotnet ImeWlConverterCmd.dll -?
 
-具体转换命令，比如导入一个搜狗细胞词库成谷歌拼音词库，则命令为：
+具体转换命令，比如导入一个搜狗细胞词库成 Rime 词库，则命令为：
 
 	dotnet ImeWlConverterCmd.dll -i:scel ./input.scel -o:rime ./rime.txt
 
