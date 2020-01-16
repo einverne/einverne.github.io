@@ -24,6 +24,7 @@ last_updated:
 
 修改后使用 `sudo docker info` 来检查配置是否生效。
 
+如果下方公开的镜像速度不佳的话，尝试阿里云的镜像，需要开发者账号。
 
 ### Docker cn
 Docker 官方提供的镜像：
@@ -45,9 +46,11 @@ Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/
 	https://mirror.ccs.tencentyun.com
 
 ### 科大镜像 ustc
-[科大](https://mirrors.ustc.edu.cn/help/dockerhub.html) 包括 Docker Hub、GCR、Quay。
+[科大](https://mirrors.ustc.edu.cn/help/dockerhub.html) 包括 Docker Hub、GCR、Quay。[^ustc]
 
 	https://docker.mirrors.ustc.edu.cn
+
+[^ustc]: https://lug.ustc.edu.cn/wiki/mirrors/help/docker
 
 ### 七牛
 [七牛](https://kirk-enterprise.github.io/hub-docs/#/user-guide/mirror)
