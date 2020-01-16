@@ -11,7 +11,7 @@ last_updated:
 有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。Docker Hub 为用户提供无限数量的公开镜像托管服务，但是仅提供一个私有镜像托管。Docker Hub 上镜像分为两类，一类为官方镜像，ubuntu，redis 等等由权威三方开发和维护通过 Docker 官方认证，另一类就是普通用户镜像。
 
 ## 使用 registry mirrors
-手动修改 Docker 配置 `/etc/docker/daemon.json` 文件
+手动修改 Docker 配置 `/etc/docker/daemon.json` 文件增加 docker registry 镜像：
 
     {
         "registry-mirrors": [
@@ -24,7 +24,9 @@ last_updated:
 
 修改后使用 `sudo docker info` 来检查配置是否生效。
 
+
 ### Docker cn
+Docker 官方提供的镜像：
 
 	https://registry.docker-cn.com
 
@@ -35,9 +37,10 @@ Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/
 
 ### 网易
 
-	http://hub-mirror.c.163.com
+	https://hub-mirror.c.163.com
 
 ### 腾讯
+腾讯只能在腾讯云上使用：
 
 	https://mirror.ccs.tencentyun.com
 

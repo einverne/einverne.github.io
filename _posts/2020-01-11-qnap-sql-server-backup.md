@@ -25,7 +25,16 @@ last_updated:
 - MYD 文件保存真实数据
 - MYI 是索引文件
 
-通常请款下 linux 是在 `/var/lib/mysql/` 文件夹下，QNAP 的地址是 `/usr/local/mysql/var` 目录下。
+通常情况下 linux 是在 `/var/lib/mysql/` 文件夹下，QNAP 的地址是 `/usr/local/mysql/var` 目录下。
+
+## Backup
+
+使用 `rsync` 将该目录下的数据全部备份到另外的磁盘上
+
+	rsync -azvhP --progress /usr/local/mysql/var/ /share/Backup/mysql_var/
+
+## Restore
+等 QTS 系统安装完成后，再使用 rsync 来将数据恢复回来。
 
 [^data]: <https://forum.qnap.com/viewtopic.php?t=91799>
 
