@@ -4,7 +4,7 @@ title: "优秀开源项目推荐：BookStack 一款高效简单的 Wiki 系统"
 tagline: ""
 description: ""
 category: 优秀开源项目推荐
-tags: [github, bookstack, open-source, self-host, wiki, ]
+tags: [qnap, qnap-tutorial, github, bookstack, open-source, self-host, wiki, ]
 last_updated:
 ---
 
@@ -53,9 +53,9 @@ GitHub 地址：
 		  - DB_PASS=<password>
 		  - DB_DATABASE=bookstack
 		volumes:
-		  - /share/Vol1/bookstack_config:/config
+		  - /share/Container/bookstack_config:/config
 		ports:
-		  - 6875:6875
+		  - 6875:80
 		restart: unless-stopped
 
 然后等待启动即可。
