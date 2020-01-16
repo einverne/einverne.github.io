@@ -17,6 +17,11 @@ NextCloud 就不多介绍了，把他看成一个 Dropbox 的私人托管版本�
 
 然后享受 NextCloud 带来的极速体验吧。
 
+## 关于调试
+NextCloud 的日志可以在这里查看：
+
+	tail nextcloud/data/nextcloud.log
+
 ## 关于插件
 虽然默认 NextCloud 自带的插件已经非常丰富了，但是有些功能还是需要一些插件才能完成，幸好 NextCloud 的插件库已经非常丰富，直接 admin 后台点击安装即可。我在使用过程中，发现视频，文档都可以预览，而 mp3 文件点击之后竟然直接给下载了，所以找到了 audioplayer 这样一个插件，可以让我在线预览歌曲。
 
