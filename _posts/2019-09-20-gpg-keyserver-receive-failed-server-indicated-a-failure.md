@@ -28,4 +28,7 @@ last_updated:
 
 等出现 OK 即可。
 
+## reference
 
+- <https://askubuntu.com/a/13078/407870>
+- <https://unix.stackexchange.com/a/507581/115007>
