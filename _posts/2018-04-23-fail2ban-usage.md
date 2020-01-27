@@ -42,6 +42,23 @@ fail2ban 的功能可以分散在不同的文件中进行管理，配置优先�
 
 	fail2ban-client reload
 
+## N 次尝试后永久禁止 IP
+用上面的方法配置 ssh 后查看 Nginx access 日志还依然有非常多的 IP 再不停的扫描，所以想办法如果能把 fail2ban 的日志过滤出来然后再给 fail2ban 就可以把 fail2ban 中发现的 IP 再 block 掉。
+
+参考该[链接](http://whyscream.net/wiki/index.php/Fail2ban_monitoring_Fail2ban) 中内容新增 filter，然后配置：
+
+	[fail2ban]
+	enabled = true
+	filter = fail2ban
+	action = iptables-allports[name=fail2ban]
+	logpath = /var/log/fail2ban.log
+	# findtime: 1 day
+	findtime = 86400
+	# bantime: 1 year
+	bantime = 31536000
+
+解决方法来自 [stackoverflow](https://serverfault.com/a/415357/288331)
+
 ## fail2ban-client
 查看状态：
 
