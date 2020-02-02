@@ -56,6 +56,10 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 
 ![fira code font](/assets/fira-code-font.png)
 
+## Nerd Fonts
+
+- <https://www.nerdfonts.com/>
+
 ## Hasklig
 
 - <https://github.com/i-tu/Hasklig>
