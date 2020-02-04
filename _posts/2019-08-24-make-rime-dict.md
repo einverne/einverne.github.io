@@ -27,7 +27,9 @@ last_updated:
 
 具体转换命令，比如导入一个搜狗细胞词库成 Rime 词库，则命令为：
 
-	dotnet ImeWlConverterCmd.dll -i:scel ./input.scel -o:rime ./rime.txt
+	dotnet ImeWlConverterCmd.dll -ct:pinyin -os:linux -i:scel ./input.scel -o:rime ./rime.txt
+
+ImeWlConverterCmd.dll 工具的其他重要参数，对于输出为 rime 的 `-ct:pinyin/wubi/zhengma`，也可以通过 `-os:windows/macos/linux` 来指定操作系统。
 
 ## 繁简转换
 安装 opencc 繁简转换工具
