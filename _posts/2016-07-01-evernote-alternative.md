@@ -92,6 +92,25 @@ Wiznote 唯一使用他的理由就是他的跨平台，Linux 支持比 Evernote
 
 剩下的用 Evernote 来共享笔记，和别人协作好了。
 
+## notion
+Notion 诞生也已经很久了，发现越来越多的人开始推荐起来，Notion 作为一款笔记应用是完全 OK 的。
+
+- <https://www.notion.so/>
+
+## Trilium
+开源版本的个人知识库，js 写的。
+
+- <https://github.com/zadam/trilium>
+
+## tiddlywiki
+另一款 wiki 系统，在支持富媒体上较为欠缺。
+
+- <https://tiddlywiki.com/>
+
+## anytype
+一款开源版本的 notion，界面很好看，基于 IPFS，不过目前暂未发布。
+
+- <https://anytype.io/>
 ## Standardnotes
 主打端到端笔记加密，观望中：
 
