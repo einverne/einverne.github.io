@@ -29,6 +29,18 @@ last_updated:
 
 分别在威联通上新建共享目录来挂载这两个目录即可。
 
+    docker run -d \
+        --name aria2-with-webui \
+        -p 6800:6800 \
+        -p 6080:80 \
+        -v /share/aria2-data:/data \
+        -v /share/aria2-conf:/conf \
+        -e PUID=1000 \
+        -e PGID=1000 \
+        -e SECRET=NOBODYKNOWSME \
+        xujinkai/aria2-with-webui
+
+
 ## 配置
 在完成容器创建之后，可以访问 http://[qnap-ip]:6080 来浏览 aria2 webui，在界面中找到“设置”，“连接设置”
 
