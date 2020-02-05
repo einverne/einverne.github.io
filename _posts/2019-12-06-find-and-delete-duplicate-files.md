@@ -8,6 +8,34 @@ tags: [linux, command, files, ]
 last_updated:
 ---
 
+## jdupes
+开源地址：
+
+- <https://github.com/jbruchon/jdupes>
+
+fdupes 的增强版，根据作者自己的描述，jdupes 比 fdupes 1.51 版本要快 7 倍左右。
+
+使用方式：
+
+	Usage: jdupes [options] DIRECTORY...
+
+和 fdupes 类似， jdupes 也有类似的选项：
+
+	 -d --delete            prompt user for files to preserve and delete all
+							others; important: under particular circumstances,
+							data may be lost when using this option together
+							with -s or --symlinks, or when specifying a
+							particular directory more than once; refer to the
+							documentation for additional information
+	 -N --noprompt          together with --delete, preserve the first file in
+							each set of duplicates and delete the rest without
+							prompting the user
+	 -r --recurse           for every directory, process its subdirectories too
+
+所以总结一下：
+
+	jdupes -r path/to/dir
+
 ## rdfind - find duplicate files in linux
 安装使用：
 
@@ -37,6 +65,11 @@ last_updated:
 	fdupes -d path/to/dir
 
 `-d` 选项会弹出选择，用户可以手动选择保留的文件。如果使用 `-I` 选项会在遇到重复文件时直接删除。
+`-N` 选项和 `--delete` 一起使用时，会保留第一个文件，然后删除之后的重复文件，不会弹出让用户确认。
+
+最强悍模式：
+
+	fdupes -rdN path/to/dir
 
 ## reference
 
