@@ -38,6 +38,10 @@ last_updated:
 
     http://vol.moe/
 
+## kindle 漫画
+
+	http://www.kindlecomic.net/
+
 记得以前不叫这个名字的，可推送漫画，漫画比较全，有连载。
 
 ## bookset 我的精品书库
@@ -46,6 +50,13 @@ last_updated:
     https://bookset.me/
 
 2019 年 9 月 1 日更新，看来是也不存在了。
+
+## 书阁
+有品格的数字古籍图书馆
+
+	https://new.shuge.org/
+
+寻找古籍的最佳选择。
 
 ## epubee
 一个电子书在线转换工具，也提供热门书的下载和推送。
@@ -169,6 +180,10 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
 ## SkEbooks
 
     https://skebooks.com
+
+## 苦瓜书盘
+
+	http://kgbook.com/
 
 ## b-ok
 英文书为主，非常大的库
