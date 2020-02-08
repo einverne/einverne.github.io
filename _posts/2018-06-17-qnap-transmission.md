@@ -176,6 +176,23 @@ last_updated:
 
 - <https://trackerslist.com/all.txt>
 
+## 更换 Web Control 页面
+这里有一个更强大的网页界面。
+
+- <https://github.com/ronggang/transmission-web-control>
+
+默认的 Transmission 安装的地点是：`/share/CACHEDEV1_DATA/.qpkg/QTransmission/` 进入该目录，然后进入 /`/share/transmission/` 完整路径如下：
+
+	/share/CACHEDEV1_DATA/.qpkg/QTransmission/share/transmission/
+
+在该目录中有一个 `web` 文件夹，这个文件夹就是要被替换的前端界面。
+
+- 先将原来 web 目录中的 index.html 重命名成 index.original.html `mv web/index.html index.original.html`
+- 备份 web 整个目录，以防万一
+- 用 wget 从 Github 下载整个项目，得到一个 zip 文件
+- `unzip xxx.zip` 解压该文件
+- 然后将 github 项目中的 src 文件夹拷贝到 web 文件夹中（做好备份工作）
+
 ## Other
 如果在 QNAP 上开启了远程控制，那么在桌面版系统上可使用这个 Remote control [GUI](https://github.com/transmission-remote-gui/transgui)，可以有更多的功能。
 
