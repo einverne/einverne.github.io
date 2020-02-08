@@ -41,8 +41,14 @@ last_updated:
 - <https://www.goodreads.com/api>
 
 ## 批量导入 Calibre
-在 Calibre 界面中可以快速的导入一个目录，但是在 Web UI 里面暂时不能做到，所以
+在 Calibre 界面中可以快速的导入一个目录，但是在 Web UI 里面暂时不能做到，所以借用 Bash 命令 [^1]：
 
+	if [ "$(ls -A /[autoaddfolder])" ]; then
+		 calibredb add -r "/[autoaddfolder]" --library-path="/[calibrelibraryfolder]"
+		 rm /[autoaddfolder]/*
+	fi
+
+[^1]: https://github.com/janeczku/calibre-web/issues/412
 
 ## Others
 
