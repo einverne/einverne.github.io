@@ -8,7 +8,7 @@ tags: [mail-server, mail, linux, smtp, ]
 last_updated:
 ---
 
-学习邮件服务器
+学习邮件服务器的一些笔记。
 
 ## 几个概念
 
