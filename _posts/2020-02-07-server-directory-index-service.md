@@ -16,6 +16,21 @@ last_updated:
 
 不过有些简陋而已。
 
+## FileBrowser Enhanced
+
+- <https://hub.docker.com/r/80x86/filebrowser>
+
+## Nginx docker
+Nginx index 套了一层皮肤
+
+- <https://hub.docker.com/r/80x86/nginx-fancyindex>
+
+## olaindex
+OneDrive directory listing application
+
+- <https://hub.docker.com/r/80x86/olaindex>
+
+
 ## h5ai
 h5ai 比较简单，放到目录下就能使用，不过源码已经很久没有更新了。
 
