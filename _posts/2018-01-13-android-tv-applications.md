@@ -25,6 +25,8 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 - 奇珀市场 http://down.7po.com/
 - 沙发管家 http://www.shafa.com/
 - 当贝市场 智能电视应用市场
+- 欢视商店
+- 蜜蜂市场，新起之秀，大有赶超前者的趋势
 
 地址就不都给了，Google 搜一下很快。
 
@@ -40,6 +42,7 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 - 直播狗
 - 小薇直播
 - 电视家 3.0
+- 枫蜜直播
 
 放一张截图
 
@@ -48,17 +51,22 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 ## 网络视频
 网络视频是我用的最多的了，我本人用 哔哩哔哩 最多
 
-- bilibili
+- bilibili，哔哩哔哩 tv 版本有两个，其中一个叫做云视听小电视，这个是无法观看 UP 主上传的视频的，你需要一个超级老的版本才可以，后文自行寻找
+- 人人影视 TV 版
+- 云视听小电视
 - 银河奇异果
 - 云视听极光
 - CIBN 高清影视
 - CIBN 聚精彩
 - VST
 - 泰捷
+- 南瓜电影
+- 蜜蜂视频
 
 ## 本地视频
 盒子带 samba ，能读局域网内 samba 共享的视频，那就需要一个本地播放器，最好支持的解码格式越多越好，在 Android 手机上我买过 MX Player Pro，不过免费的 KMPlayer 也不错。
 
+- Kodi，不得不请出这个大杀器了
 - ES 文件管理器
 - 小白文件管理器 v1.2 版本
 - MX Player Pro
@@ -66,8 +74,15 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 ## 系统工具
 说到乐播投屏这个应用，还是我去实体店，然后有一个店员向我展示一个只有魔方大小的投影仪时，用的应用，将手机的屏幕投影到投影仪上，我就记住了这个投屏应用，回来发现，iOS 投屏还是不错的。
 
-- 乐播投屏
+- 当贝桌面
+- 乐播投屏，老版本无广告，非常清爽
 - 悟空遥控
+
+## 其他
+其他体验还不错的应用：
+
+- Keep TV
+- 小鸡模拟器 TV 版
 
 ## 在 Android TV 上使用 YouTube
 今天突然想到，我平时看的最多的 YouTube ，是有电视版的啊，最近又把路由器更新了一下，局域网使用 YouTube 完全没问题啊，然后就下载了几个 YouTube for TV 的应用，发现只有下面这一个不需要依赖 Play Service，然后，在侧边栏设置中，有一个关联码，和手机关联，然后就可以非常轻松的将手机上的 YouTube 视频投送到电视盒子上，然后再到投影仪上。太舒服了。
@@ -78,6 +93,7 @@ YouTube for TV
 发布时间：2018-01-12
 
 下载地址： <https://apkpure.com/youtube-tv-watch-record-live-tv/com.google.android.apps.youtube.unplugged>
+
 
 ## 网上下载不到的应用备份
 
