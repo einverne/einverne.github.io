@@ -97,6 +97,12 @@ App store 中可以直接安装，但实际上 QNAP 只是帮用户默认用 doc
 
 其他插件安装可以[参考这里](https://ttrss.henry.wang/)，比如全文输出，主题之类，我只想用 ttrss 来订阅几个我日常关注的博主，其他的订阅源还是 [InoReader](/post/2013/11/inoreader-using-feelings.html) 所以也就不折腾全文不全文了，不全文输出的也就没有订阅的必要了。不过如果你想要实现全文输出也还是有办法的。
 
+### Mercury Parser api
+
+	docker run -d --name=mercury-parser-api \
+	--restart=unless-stopped \
+	-p 3000:3000 -d wangqiru/mercury-parser-api
+
 ## FreshRSS
 FreshRSS 也是 PHP 编写，基本依赖也就是 PHP 和数据库，MySQL 5.5.3+ MariaDb, SQLite, PostgreSQL 9.5+. 界面也比较简洁大方。
 
