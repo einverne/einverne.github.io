@@ -34,6 +34,15 @@ last_updated:
 	-p <HTTP PORT>:8083 \
 	technosoft2000/calibre-web
 
+## 批量导入书籍
+
+注意下方命令中的 `--library-path` 需要指定 Calibre 库的位置。
+
+	calibredb add --library-path=/books -r /path/to/your/book_dir_you_want_to_add
+
+使用该方法添加的书籍会在原始位置，而 metainfo 则会添加到 Calibre 库中，也就是上面一行的 `/books` 目录中。
+
+更多关于 calibredb 命令的使用可以参考[官网](https://manual.calibre-ebook.com/generated/en/calibredb.html#calibredb)
 
 ## Goodreads API
 获取 Goodreads API
@@ -53,9 +62,11 @@ last_updated:
 ## Others
 
 ### talebook
-亮点是支持从豆瓣获取数据。
+亮点是支持从豆瓣获取数据，不过我使用的 technosoft2000 的镜像也是支持的。
 
 - <https://github.com/talebook/calibre-webserver>
+
+![talebook-calibre-web](/assets/talebook-calibre-web.png)
 
 ### gshang2017
 
