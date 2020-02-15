@@ -3,8 +3,8 @@ layout: post
 title: "Linux 下找出重复文件"
 tagline: ""
 description: ""
-category: 整理合集
-tags: [linux, command, files, ]
+category: [ 整理合集 , 开源项目 ]
+tags: [linux, command, files, file-manager, ]
 last_updated:
 ---
 
@@ -42,7 +42,7 @@ fdupes 的增强版，根据作者自己的描述，jdupes 比 fdupes 1.51 版�
 
 	jdupes -dr path/to/dir
 
-此时 jdupes 会打印出报告，然后一个一个然用户自己去确认要删除哪一个。
+此时 jdupes 会打印出报告，然后一个一个让用户自己去确认要删除哪一个。
 
 ## rdfind - find duplicate files in linux
 安装使用：
