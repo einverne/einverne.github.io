@@ -45,9 +45,9 @@ Rsync 的命令格式可以为以下六种：
 rsync 有两种方式来连接远程服务器
 
 - 使用 remote shell 程序，比如 ssh 或者 rsh
-- 或者直接通过 TCP 来连接 daemon 
+- 或者直接通过 TCP 来连接 daemon
 
-这两种方式的直接区别体现在路径中的冒号(:) ，当只有一个冒号时使用 remote shell，当有两个冒号时使用 daemon 连接。
+这两种方式的直接区别体现在路径中的冒号 (:) ，当只有一个冒号时使用 remote shell，当有两个冒号时使用 daemon 连接。
 
 rsync 有六种不同的工作模式：
 
@@ -68,6 +68,7 @@ rsync 有六种不同的工作模式：
 	-a 	归档模式，递归方式传输文件，并保持连接，权限，用户和组，时间信息
 	-z  压缩文件传输
 	-h  human-readable, 输出友好
+	-u  跳过已经存在的文件，备份更新
 
 rsync 参数的具体解释如下：
 
@@ -139,11 +140,11 @@ rsync 参数的具体解释如下：
 
 	rsync -avzh /home/src /backups/files/
 
-将 `/home/src` 目录下的文件同步发送到 `/backups/files` 目录下。记住如果目标地址没有 `src` 目录，rsync 会自动创建改文件夹。
+将 `/home/src` 目录下的文件同步发送到 `/backups/files` 目录下。记住如果目标地址没有 `src` 目录，rsync 会自动创建该文件夹。
 
 	rsync -avz /home/src/ /backups/files/
 
-SRC 路径末尾的 `/` 表示不自动创建 DEST 文件夹，在 `man rsync` 中的解释就是末尾的 `/` 表示"拷贝当前目录下的文件" ，而不是”拷贝当前的目录“，
+SRC 路径末尾的 `/` 表示不自动创建 DEST 文件夹，在 `man rsync` 中的解释就是末尾的 `/` 表示"拷贝当前目录下的文件" ，而不是"拷贝当前的目录".
 
 ### 远程 shell 拷贝到远程
 使用一个远程 shell 程序（如 rsh、ssh) 来实现将本地机器的内容拷贝到远程机器。当 DES 路径地址包含单个冒号":"分隔符时启动该模式。
