@@ -11,12 +11,24 @@ last_updated:
 
 
 ## 几个 bt 中经常见到的词汇
+bt 其实是 BitTorrent 的缩写，后文为了描述简单统一简称为 bt.
 
 ### peer
-peer 可以理解成节点，或者 client 客户端，只要你在本地打开了 bt 软件，连接了 tracker，有数据传输，就可以认为是一个 peer. 严格的说，peer 是指的还未下载完成的节点。但更通俗的就认为所有连接到 swarm 的客户端都叫做 peer，这个意义上， peer 和 client 有着相同的含义。并不区分是否完成了整个 torrent 的下载。
+peer 可以理解成节点，或者等同于 client 客户端。只要你在本地打开了 bt 软件，连接了 swarm，有数据传输，就可以认为是一个 peer. 严格的来说，peer 指的是还未下载完成的节点。但通俗的就认为所有连接到 swarm 的客户端都叫做 peer，这个意义上， peer 和 client 有着相同的含义，并不区分是否完成了整个 torrent 的下载。
+
+用英文来解释 peer 是，a person who has the same social status as you，地位同等的人，相互平等的人，同辈。
 
 ### Swarm
-torrent swarm 是一个用来描述当前分享的 torrent 的所有可连接的 peers 的数据，换句话说，一个 swarm 也就是当前正在交换数据的 peers.
+swarm 是一个用来描述当前分享的 torrent 的所有可连接的 peers 的术语，换句话说，一个 swarm 也就是当前对同一个种子文件正在交换数据的 peers. 在 bt 最初的协议中 peers 需要请求 tracker 来获取 swarm，也就是当前可连接的 peers 列表。
+
+### Tracker
+当一个 peer 想要加入某一个特定的 torrent 时，需要有几个初始化的操作。首先需要知道有哪些 peers 正在分享着改 torrent，以便于开始连接和传输数据。根据 BitTorrent 最初的协议，初始化过程由 Tracker 提供。后来演化过的 BT 协议又加入了其他的方法，比如说 DHT.
+
+BitTorrent Tracker 是一个 http/https 服务，通过 BitTorrent 协议间接的和 peers 连接，它可以追踪哪些 seeds 和 peers 在一个 swarm 中。为了初始化下载，客户端首先要和 Tracker 通信，获取一个当前可连接的 peers 列表，这些 peers 都在同一个 torrent 的 swarm。Tracker 实际上并不参与任何数据的传输，并且也没有 torrents 数据的备份。一旦 peers 列表获取成功，peer 通信就可以不依赖 Tracker 进行。但是 clients 会周期性地向 Tracker 发送数据报告，并换取新节点的信息。
+
+基本上，Tracker 就是一台回应 HTTP GET 请求的服务器，请求中包含客户端整体传输的数据。回应信息包括一个 peers 列表，让 peers 参与 torrent 传输。URL 包含在 torrent 文件的 metadata 的 announce URL 中。其他参数被附加到该 URL 后。
+
+Tracker 服务器不能和 BitTorrent Index server 混为一谈。BitTorrent Index 是一个用来存放 torrent 文件的服务器，通常包含了种子文件的基本信息及描述等等。
 
 ### Seeds and Seeding
 A seed is a peer that has a complete copy of the torrent’s contents and keeps uploading it.
@@ -29,16 +41,7 @@ Super-seeding, 或者又被叫做，初始做种 (initial seeding) 是一种为�
 
 当你是种子的发布人，并且没有其他做种者时，开启初始做种就会将自己伪装成下载者并检测其他下载已经完成的部分，仅传输所有人都缺少的部分，一般出种所需流量与资源大小差不多，普通做种可能需要两倍流量。一般在 PT 中不需要开启初始做种，因为，开启后上传速率和上传量和未开启前比较会显著下降，很多人会因为其中一个人带宽不好而无法尽快出种。因此初始做种通常用于公网 BT。
 
-## Tracker
-当一个 peer 想要加入某一个特定的 torrent 时，需要有几个初始化的操作。首先需要知道有哪些 peers 正在分享着改 torrent，以便于开始连接和传输数据。根据 BitTorrent 最初的协议，初始化过程由 Tracker 提供。后来演化过的 BT 协议又加入了其他的方法，比如说 DHT.
-
-BitTorrent Tracker 是一个 http/https 服务，通过 BitTorrent 协议间接的和 peers 连接，它可以追踪哪些 seeds 和 peers 在一个 swarm 中。为了初始化下载，客户端首先要和 Tracker 通信，获取一个当前可连接的 peers 列表，这些 peers 都在同一个 torrent 的 swarm。Tracker 实际上并不参与任何数据的传输，并且也没有 torrents 数据的备份。一旦 peers 列表获取成功，peer 通信就可以不依赖 Tracker 进行。但是 clients 会周期性地向 Tracker 发送数据报告，并换取新节点的信息。
-
-基本上，Tracker 就是一台回应 HTTP GET 请求的服务器，请求中包含客户端整体传输的数据。回应信息包括一个 peers 列表，让 peers 参与 torrent 传输。URL 包含在 torrent 文件的 metadata 的 announce URL 中。其他参数被附加到该 URL 后。
-
-Tracker 服务器不能和 BitTorrent Index server 混为一谈。BitTorrent Index 是一个用来存放 torrent 文件的服务器，通常包含了种子文件的基本信息及描述等等。
-
-## DHT
+### DHT
 DHT(Distributed Hash Table) 网络用来寻找在 swarm 中的 peers 的 IP 地址，用来取代了 Tracker 的功能。DHT 允许通过 info hash 来查询 peers，而不需要通过 Trackers.
 
 DHT 是分布式系统的一种，它通过一个类似 hash table(key,value) 的查询服务。任何参与的节点都能迅速的获取到 key 关联的信息。维护从键到值的映射的责任分布在 DHT 网络的各个节点中，以这样一种方式，这样的更改将导致最小程度的中断。这使 DHT 网络可以扩展到非常多的节点，并处理连续的节点到达，离开和故障。[^hash]
@@ -87,10 +90,40 @@ Magnet Links 实现的第一版需要 BitTorrent hash 值包括一个 Base32 的
 [^bt]: <http://www.bittorrent.org/beps/bep_0009.html#magnet-uri-format>
 
 
-## Peer DL
+### Peer DL
 Peer DL.
 
 Peer Download Rate is an estimated rate at which the peer is downloading based on the peer's reported change in pieces obtained. This estimation is very crude and is most likely inaccurate, so it should only be lightly relied upon.
+
+## 几个 PT 站相关的概念
+
+### 分享率
+分享率是几个概念中比较好理解的一个，顾名思义就是上传量 / 下载量的比率。因为 BitTorrent 鼓励分享，所以这个比率反映着每一个用户的分享比例。
+
+
+## H&R
+
+H&R 是 Hit and Run 的缩写，表示下载完资源后在规定时间内没有完成最少做种时间的行为，简单说就是“下完就跑” 实行 H&R 考核是为了提高资源保种率，使老资源不断种。
+
+	HR 未达标数 >= 10, 将被 BAN.
+
+H&R：0/0 解析为，（要做种的种子数『显示数字为黑色』)/ 未达标（在规定时间内没完成做种时间的种子数『红色数字显示』)
+
+## 魔力值
+按照作种时间和数量计算得到，魔力值的计算有一个非常复杂的公式，在这里研究这个公式也并不显示，要提升魔力值最好的方法就是作种，并且需要一定量地作种，然后经常在论坛中交流就行，没多久就会发现魔力值会平稳增长。
+
+下面是有人总结出来的一些可控的增长魔力值的方法，不同站点可能并不相同，所以参考一下即可，不必太认真。
+
+- 发布新种子 = 30 个魔力值
+- 上传一个字幕 = 15 个魔力值
+- 发布新主题 = 2 个魔力值
+- 回复帖子 = 1 个魔力值
+- 发布种子、候选的评论 = 1 个魔力值
+- 参与一次调查投票 = 1 个魔力值
+- 参与一次候选投票 = 1 个魔力值
+- 参与一次趣味盒投票 = 1 个魔力值
+- 说谢谢 = 1 个魔力值 （有的站是 0.5 个魔力值）
+- 收到感谢 = 1 个魔力值发布的趣味盒内容获得用户较高的评价
 
 
 ## PT 站生存指南
@@ -101,17 +134,19 @@ PT, 也就是 Private BitTorrent, 私有的 Tracker，只有特定人群可以�
 
 首先要大致知道 bt 的基本原理，简单的来说 BitTorrent 是一个 peer-to-peer file sharing，点对点文件共享的协议。知道这个后，就很容易的理解，上传，下载，分享了。
 
-要提高分享率，也就是要增大分子，上传量，在下载量（分母）可控的情况下，如何提高上传呢？
+要提高分享率，也就是要增大分子，上传量，在下载量（分母）可控的情况下，如何提高上传呢？下面就是几个技巧。
 
 ### Free&2x 种子不要错过
-优惠的种子千万不要错过。
+Free 优惠的种子千万不要错过。
 
 ### 主动分享
-因为首次分享的内容，所有人都会从分享者这边获取，也就意味着能够控制上传量。
+制作种子，主动分享的内容，所有人都会从分享者这边获取，也就意味着能够控制上传量。但制作种子对新手来说有一些难度，所以新手可以继续往下看。
 
 
 ### 下载热门新种
 对于没有人下载的种子，那么下载的时候只有一个人，那么你的本地文件也就没人连过来下载，自然也就没有上传量。而对于刚发布的种子，因为作种的人相对较少，而下载的人多，所以只要连上 peers，你本地的部分自然就会有人从你的本地获取，自然就有了上传。
+
+为了攒上传，所以在选择种子时记得找免费的，上传人数少（新种），下载人数多（热门）的。
 
 
 ### 下载冷门好种
@@ -123,6 +158,14 @@ PT, 也就是 Private BitTorrent, 私有的 Tracker，只有特定人群可以�
 ### 保持作种
 提高分子的另外做法就是 24h 保持作种，可能本地的作种目前没有人在下载， 但是无法保证之后没有人来下载，所以为一些冷门的好种作种不时的就可能有人能连过来给增加上传。
 
+## Extend
+一款用來輔助 PT 的 Chrome 插件：
+
+- <https://github.com/ronggang/PT-Plugin-Plus>
+
+一键生成媒体信息：
+
+- <https://api.rhilip.info/ptgen.html>
 
 ## reference
 

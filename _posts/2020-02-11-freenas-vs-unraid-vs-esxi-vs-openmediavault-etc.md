@@ -24,12 +24,19 @@ FreeNAS 对硬件有一定的要求，至少需要 8G 内存，如果要安装�
 
 ### 安装
 
-安装教程： <https://www.youtube.com/watch?v=QgTBUQ6C2ZY>
+安装教程：
+
+- <https://www.youtube.com/watch?v=QgTBUQ6C2ZY>
+- <https://www.youtube.com/watch?v=wk3JTY045s4>
 
 ## OpenMediaVault
 OpenMediaVault 是一款基于 Linux 的 NAS 操作系统，项目领导人是 Volker Theile，具体来说 OpenMediaVault 是基于 Debian 的，并且于 GUN GPLv3 下开源。OpenMediaVault 和 FreeNAS 有个很深的缘源，他们都基于 FreeNAS，不过在 2009 主要的两位项目负责人产生分歧，所以 Volker Theile 基于 Linux 重写了 FreeNAS 于是成就了 OpenMediaVault，而另一位 FreeNAS 的创始人 Olivier Cochard-Labbé 则基于 FreeBSD 重写了 FreeNAS，于是成就了今天的 FreeNAS。[^wiki]
 
 [^wiki]: <https://en.wikipedia.org/wiki/OpenMediaVault>
+
+### 其他参考链接
+
+- <http://www.openmediavault.org/>
 
 ## ESXi
 由 VMware 开发，一听名字就知道，这家以虚拟机著称的公司，开发的一款为企业设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
