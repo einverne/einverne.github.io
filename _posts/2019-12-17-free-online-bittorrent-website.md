@@ -4,7 +4,7 @@ title: "BT 站点收集整理"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [bt, movie, piratebay, copyright]
+tags: [bt, bittorrent, movie, piratebay, copyright]
 last_updated:
 ---
 
