@@ -196,3 +196,19 @@ docker run -d \
 -p 90:80 \
 80x86/lychee:latest
 ```
+
+### flexget
+
+```
+docker run -d \
+    --name=flexget \
+    -p 3539:3539 \
+    -v /share/Container/flexget/data:/data \
+    -v /share/Container/flexget/config:/config \
+    -e FG_WEBUI_PASSWD=password \
+    -e FG_LOG_LEVEL=info \
+    -e PUID=1000 \
+    -e PGID=1000 \
+    -e TZ=Asia/Shanghai \
+    wiserain/flexget
+```
