@@ -241,7 +241,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 
 ### 配置连接超时时间
-用户连接回话连接后， Nginx 服务器可以保持打开一段时间
+用户连接会话连接后， Nginx 服务器可以保持打开一段时间
 
 	keepalive_timeout timeout [header_timeout];
 
@@ -282,7 +282,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 - backlog 设置监听函数 listen() 最多运行多少网络连接同时处于挂起状态
 - rcvbuf 监听 socket 接受缓存区大小
 - sndbuf 监听 socket 发送缓存区大小
-- ssl 回话使用 SSL 模式
+- ssl 会话使用 SSL 模式
 
 ### 配置虚拟主机名称
 
