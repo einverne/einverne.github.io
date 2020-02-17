@@ -62,14 +62,14 @@ worker process 是 Nginx 并发关键所在，理论上 worker process 值越大
 - number, 指定 Nginx 进程最多可产生的 worker process 数
 - auto Nginx 自动
 
-### PID 存放路劲
+### PID 存放路径
 Nginx 进程作为系统守护进程运行，在文件中保存当前运行程序主进程号，支持配置 PID
 
 	pid file_path;
 
-- `file_path` 为存放路劲和文件名
+- `file_path` 为存放路径和文件名
 
-### 错误日志路劲
+### 错误日志路径
 全局块、http 块 和 server 块都可以对 Nginx 日志进行配置
 
 	error_log file | stderr [debug | info | notice | warn | error |crit | alert | emerg];
@@ -85,7 +85,7 @@ Nginx 提供 include 配置来引入其他文件
 
 	include file;
 
-- file 是要引入的配置文件，支持相对路劲和正则匹配
+- file 是要引入的配置文件，支持相对路径和正则匹配
 
 ### 最大连接数
 设置每一个 worker process 同时开启的最大连接数
@@ -210,7 +210,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 	access_log path [format [buffer=size]];
 
-- path, 配置服务日志的文件存放路劲及名称
+- path, 配置服务日志的文件存放路径及名称
 - format 可选，自定义日志格式，也可以通过 `log_format` 配置指定好，直接引用格式名
 - size 临时存放日志的内存缓存区大小
 
@@ -237,7 +237,7 @@ Nginx 服务器支持对服务日志的格式、大小、输出等进行配置�
 
 	47.88.236.38 - [24/Oct/2017:10:25:30 +0800] GET /post/2017/10/things-to-do-after-install-wordpress.html?ajax_load=page HTTP/1.1 200 6961 https://www.einverne.info/ Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
 
-可以查看到上面格式的日志，`IP 本地时间 请求方法 请求路劲 HTTP 状态 发送数据大小 以及 HTTP refer 和 User Agent`.
+可以查看到上面格式的日志，`IP 本地时间 请求方法 请求路径 HTTP 状态 发送数据大小 以及 HTTP refer 和 User Agent`.
 
 
 ### 配置连接超时时间
@@ -341,7 +341,7 @@ Nginx 接受到请求之后，在服务器指定目录中寻求资源
 
 	root path;
 
-path 为 Nginx 接受到请求之后查找资源的根目录路劲。 path 变量可以包含 Nginx 服务器预设的大多数变量，但要注意 `$document_root` 和 `$realpath_root` 不可用。
+path 为 Nginx 接受到请求之后查找资源的根目录路径。 path 变量可以包含 Nginx 服务器预设的大多数变量，但要注意 `$document_root` 和 `$realpath_root` 不可用。
 
 该配置可以再 http 块、 server 块或者 location 块中进行配置。
 
@@ -351,7 +351,7 @@ path 为 Nginx 接受到请求之后查找资源的根目录路劲。 path 变�
 
 	alias path;
 
-path 就是修改后的根路劲。
+path 就是修改后的根路径。
 
 示例
 
@@ -364,7 +364,7 @@ path 就是修改后的根路劲。
 关于 root 和 alias 的[区别](/post/2018/11/nginx-location-root-alias.html) 可以参考这篇[文章](/post/2018/11/nginx-location-root-alias.html)
 
 ### 设置网站默认首页
-在用户发出请求时，请求地址可以不填写首页完整路劲
+在用户发出请求时，请求地址可以不填写首页完整路径
 
 	index file ...;
 
@@ -376,7 +376,7 @@ path 就是修改后的根路劲。
 
 - code 要处理的 HTTP 错误代码
 - response 可选项，将 code 指定的错误转化为新的错误代码 response
-- uri 错误页面的路劲或者网站地址
+- uri 错误页面的路径或者网站地址
 
 示例
 
@@ -415,7 +415,7 @@ Nginx 支持 HTTP Basic Authentication 协议的认证，该协议是一种 HTTP
 
 	auth_basic_user_file file;
 
-其中 file 为密码文件的绝对路劲
+其中 file 为密码文件的绝对路径
 
 使用如下命令创建用户名密码到文件
 

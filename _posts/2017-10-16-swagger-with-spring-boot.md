@@ -86,7 +86,7 @@ Swagger 能根据 Spring Controller 接口自动生成一个文档页面，在�
 - value url
 - description
 - tags 设置该值，value 会被覆盖
-- basePath 基本路劲不可配置
+- basePath 基本路径不可配置
 - position
 - produces "application/json"
 - consumes "application/json"
