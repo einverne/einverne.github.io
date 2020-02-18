@@ -10,6 +10,14 @@ last_updated:
 
 不以引进正版为理由的打击盗版都是文化审查。
 
+## eztv
+
+- http://eztv.ag
+
+rss
+
+- http://eztv.ag/ezrss.xml
+
 ## unblock
 
 - https://unblockit.ca/
