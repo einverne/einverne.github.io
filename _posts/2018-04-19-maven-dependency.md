@@ -71,7 +71,7 @@ maven 区别对待 release 版本构件和 snapshot 版本，snapshot 为开发�
 
     加入我们的项目 A ，依赖 B， C 两个包，而 B ，C 各自依赖了 G1.0 和 G2.0 两个版本的包，那么 Maven 怎么选择？
 
-[Maven](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 的依赖传递会自动寻找到 B，C 两个依赖，并且发现依赖的 C，并自动引入，那么 G 会引入 1.0 还是 2.0 呢？这里就要引入 Maven 的第一个原则，`最短路劲优先`，这条原则是 A - B - C - D1.0 另外 A - E - D2.0 显然 Maven 会选择 D2.0，而显然在这个例子中是不行的；那么就要提到第二条原则，谁先定义则使用谁，所以在路径一致前提下，如果先定义了 A - B - G1.0，会选择 G1.0，而这个时候可能就会产生问题，命名我需要使用 G2.0 中新的方法和类，但是 G1.0 中并没有就会出现错误。
+[Maven](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) 的依赖传递会自动寻找到 B，C 两个依赖，并且发现依赖的 C，并自动引入，那么 G 会引入 1.0 还是 2.0 呢？这里就要引入 Maven 的第一个原则，`最短路径优先`，这条原则是 A - B - C - D1.0 另外 A - E - D2.0 显然 Maven 会选择 D2.0，而显然在这个例子中是不行的；那么就要提到第二条原则，谁先定义则使用谁，所以在路径一致前提下，如果先定义了 A - B - G1.0，会选择 G1.0，而这个时候可能就会产生问题，命名我需要使用 G2.0 中新的方法和类，但是 G1.0 中并没有就会出现错误。
 
 这个时候就需要通过下面的步骤来排查错误。
 
