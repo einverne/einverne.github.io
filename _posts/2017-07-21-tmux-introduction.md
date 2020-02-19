@@ -99,7 +99,7 @@ Tmux 的一个 Session 可以包含多个 Windows.
 在 Tmux 内：
 
 	<prefix> :kill-session  			删除退出当前 session
-	<prefix> d 							临时退出 session，回话在后台运行，可以通过 attach 进入指定的会话
+	<prefix> d 							临时退出 session，会话在后台运行，可以通过 attach 进入指定的会话
 	<prefix> :kill-server  				删除所有活跃 session
     <prefix> :new -s session_name       在 Tmux 中新建 session
 	<prefix> s  	列出所有活跃 session，并可以从列表中选择 session
