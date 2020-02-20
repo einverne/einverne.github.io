@@ -18,6 +18,11 @@ NextCloud 支持 WebDAV 协议，用户可以完全通过 WebDAV 来连接并同
 
 在 Linux 下还能通过命令行访问，具体可参考下面的链接。
 
+## NextCloud 通过 webdav 同步 Joplin
+同步地址，其中 ip, port, username，需要替换：
+
+	http://ip:port/remote.php/dav/files/username/JoplinSync
+
 ## reference
 
 - <https://docs.nextcloud.com/server/13/user_manual/files/access_webdav.html>
