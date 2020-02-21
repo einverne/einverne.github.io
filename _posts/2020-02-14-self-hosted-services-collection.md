@@ -16,6 +16,12 @@ last_updated:
 
 有很多自建成本比较高，比如自建 SMTP 邮件服务，虽然也有比较成熟的方案，MailCow,Mailu 等等，但本文不再展开。
 
+## DNS
+
+Pi-hole, A black hole for Internet advertisements
+
+- <https://pi-hole.net/>
+
 ## 博客类
 具体来说，是 CMS，内容管理平台
 
