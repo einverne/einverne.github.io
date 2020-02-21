@@ -42,6 +42,10 @@ Vim 中的 Tab 是 `collection of one or more windows`. 可以允许用户来组
 
 删除缓冲区并不会影响缓冲区关联的文件，只是简单地把文件从内存中删除。
 
+	:bd2
+
+`:bd2` 会将第二个 Buffer 从内存中移除。
+
 ## buffer navigation
 使用 <kbd>Ctrl</kbd> + <kbd>^</kbd> 可以来在最近的缓冲去中切换。这个快捷键非常有用，得记住。可以使用如下命令来列出所有缓冲区：
 
@@ -69,9 +73,10 @@ Vim 中的 Tab 是 `collection of one or more windows`. 可以允许用户来组
 
 - `:b <Tab>`    " 循环滚动 buffer 中的文件
 
-假如在后面对 vim 了解更多之后，安装了 fzf-vim 插件，那么也可以直接使用 `:Buffers` 来模糊查找当前打开的 Buffers.
+假如在后面对 vim 了解更多之后，安装了 [fzf-vim 插件](/post/2019/09/fzf-vim.html)，那么也可以直接使用 `:Buffers` 来模糊查找当前打开的 Buffers.
 
 ## buffer 替换
+在打开的所有 buffer 中替换操作：
 
     :bufdo %s/pattern/replace/ge | update
 

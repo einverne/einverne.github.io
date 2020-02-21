@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "freenas vs unraid vs esxi vs openmediavault etc"
+title: "几个常见的 NAS 系统整理"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -11,7 +11,7 @@ last_updated:
 看文章老有几个 NAS 系统被翻来覆去的提到，这里就一起看看 Wiki，看看有什么区别吧。
 
 ## FreeNAS
-NAS 系统中最著名也最强大的一个系统，基于 FreeBSD，集成了 Sun 公司的 ZFS 文件系统，ZFS 拥有很多文件管理的特性，非常适合管理大量可扩展的数据系统。[^zfs]
+NAS 系统中最著名也最强大的一个系统，基于安全和稳定著称的 FreeBSD，集成了 Sun 公司的 ZFS 文件系统，ZFS 拥有很多文件管理的特性，非常适合管理大量可扩展的数据系统。[^zfs] 目前由 ixsystems 公司维护。
 
 - <http://www.freenas.org>
 
@@ -29,10 +29,19 @@ FreeNAS 对硬件有一定的要求，至少需要 8G 内存，如果要安装�
 - <https://www.youtube.com/watch?v=QgTBUQ6C2ZY>
 - <https://www.youtube.com/watch?v=wk3JTY045s4>
 
+## NAS4Free
+基于 FreeNAS 0.7 开发的一个分支，由原 FreeNAS 系统开发者发起创建。
+
+官网：
+
+- <http://www.nas4free.org/>
+
 ## OpenMediaVault
 OpenMediaVault 是一款基于 Linux 的 NAS 操作系统，项目领导人是 Volker Theile，具体来说 OpenMediaVault 是基于 Debian 的，并且于 GUN GPLv3 下开源。OpenMediaVault 和 FreeNAS 有个很深的缘源，他们都基于 FreeNAS，不过在 2009 主要的两位项目负责人产生分歧，所以 Volker Theile 基于 Linux 重写了 FreeNAS 于是成就了 OpenMediaVault，而另一位 FreeNAS 的创始人 Olivier Cochard-Labbé 则基于 FreeBSD 重写了 FreeNAS，于是成就了今天的 FreeNAS。[^wiki]
 
 [^wiki]: <https://en.wikipedia.org/wiki/OpenMediaVault>
+
+OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小，并且还有树莓派版本。
 
 ### 其他参考链接
 
