@@ -29,13 +29,157 @@ last_updated:
 
 <a data-flickr-embed="true"  href="https://www.flickr.com/gp/einverne/770No3" title="raspberry_pi_fans_install"><img src="https://farm5.staticflickr.com/4327/36238064065_404b91c58e_z.jpg" width="535" height="472" alt="raspberry_pi_fans_install"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
+## 更改 raspberrypi 网卡名字
+
+	sudo apt-get install raspi-config
+	sudo raspi-config
+
+选择 Network -> interface
+
+或者手工编辑 `vim /lib/udev/rules.d/73-usb-net-by-mac.rules`：
+
+	ACTION=="add", SUBSYSTEM=="net", SUBSYSTEMS=="usb", NAME=="", \
+	ATTR{address}=="?[014589cd]:*", \
+	TEST!="/etc/udev/rules.d/80-net-setup-link.rules", \
+	IMPORT{builtin}="net_id", NAME="eth0"
+
+修改其中的 NAME.
+
+## 网卡 DHCP
+编辑 `/etc/network/interfaces`:
+
+	auto lo
+	iface lo inet loopback
+
+	auto eth0
+	allow-hotplug eth0
+	iface eth0 inet dhcp
+
+## 无线网卡
+查看设备：
+
+	lsusb
+
+扫描可见 SSID：
+
+	sudo iwlist wlan0 scan
+
+
+### wlan0 HDCP 配置
+编辑：
+
+    auto wlan0
+    allow-hotplug wlan0
+    iface wlan0 inet dhcp         # DHCP 自动分配 IP
+    wpa-ssid  yourssid            # 要连接的 wifi 名称
+    wpa-psk   yourpassword        # 要连接的 wifi 密码
+
+### wlan0 static ip
+
+	auto wlan0
+	allow-hotplug wlan0           # 允许热插拔（非必须配置）
+	iface wlan0 inet static       # 采用静态 IP 分配的方式
+	address  192.168.2.249      # 为树莓派设置的 ip
+	netmask  255.255.255.0        # 子网掩码
+	gateway  192.168.2.1        # 网关地址
+	wpa-ssid  yourssid            # 要连接的 wifi 名称
+	wpa-psk   yourpassword        # 要连接的 wifi 密码
+
+### 配置多个 wlan0 配置
+编辑 `/etc/network/interfaces`:
+
+	auto wlan0
+	allow-hotplug wlan0
+	iface wlan0 inet dhcp
+	pre-up wpa_supplicant -B w -D wext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+	post-down killall -q wpa_supplicant
+
+编辑多个配置文件路径 `/etc/wpa_supplicant/wpa_supplicant.conf`，或者可以用命令生成：
+
+	wpa_passphrase SSID password >> /etc/wpa_passphrase/wpa_passphrase.conf
+
+或者手动编辑该文件：
+
+    ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+    update_config=1
+    country=CN
+
+    network={
+        ssid="xxxx"      # wifi 名称
+        psk="xxxx"       # wifi 密码
+        key_mgmt=WPA-PSK # 加密方式
+    }
+
+    network={
+        ssid="xxxx"
+        psk="xxxx"
+        key_mgmt=WPA-PSK
+    }
+
+	network={
+		ssid="xxx"
+		key_mgmt=NONE  # 加密方式，不加密
+	}
+
+	network={
+		ssid="xxxx"
+		key_mgmt=NONE
+		wep_key0="xxxx"  # wep 密码
+	}
+
+	network={
+		ssid="xxxx"
+		psk="xxxx"
+		key_mgmt=WPA-PSK
+		scan_ssid=1  # 如果你的无线接入点是隐藏的，该配置就是必须的
+	}
+
+	network={
+		ssid="xxxx"
+		psk="xxxx"
+		key_mgmt=WPA-PSK
+		priority=999  # priority 指连接优先级，数字越大优先级越高（不可以是负数）
+	}
+
+启动网卡：
+
+	sudo ifup wlan0
+	sudo /etc/init.d/networking restart
+
+查看详情：
+
+	sudo ifconfig -a
+	sudo iwconfig
+
+### 使用命令行配置无线网卡
+
+运行：
+
+	sudo wpa_cli
+
+在交互模式下可以使用这些命令：
+
+- status  查看当前无线网卡状态
+- help
+- quit
+- scan_results 扫描
+- list_networks 列出网络
+
+再该命令下需要先创建 network, 设置 network SSID, 密码，加密方式，最后再 enable。具体可以 help 查看。
 
 ## 更新系统
 
 在安装完成之后可以使用国内的 sources.list 源，比如说 [清华大学的](https://mirror.tuna.tsinghua.edu.cn/help/raspbian/)
 
-    deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib
-    deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ jessie main non-free contrib
+编辑 `/etc/apt/sources.list`:
+
+	deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main non-free contrib
+	deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ stretch main non-free contrib
+
+编辑 `/etc/apt/sources.list.d/raspi.list`:
+
+	deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ stretch main ui
+
 
 然后更新软件包，一般 update 用来同步本地 package 和 源的 package 索引， update 一定要在 upgrade 或者 dist-upgrade 之前。update 只是用来同步 package 的状态，只是相当于检查更新，而需要手动触发更新。
 
@@ -150,3 +294,4 @@ mount 命令默认会调用 /sbin/mount.ntfs ，它在安装了 ntfs-3g 之后�
 ## reference
 
 - Raspberry Pi 官方源 <http://www.raspbian.org/RaspbianMirrors>
+- <https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md>
