@@ -4,7 +4,7 @@ title: "树莓派系统安装及设置"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Raspberrypi, linux,]
+tags: [raspberrypi, linux,]
 last_updated: 
 ---
 

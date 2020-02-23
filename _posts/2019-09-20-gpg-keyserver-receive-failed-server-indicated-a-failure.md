@@ -26,7 +26,7 @@ last_updated:
 
 	curl -sL https://keyserver.ubuntu.com/pks/lookup\?op\=get\&search\=0xada83edc62d7edf8  | sudo apt-key add -
 
-等出现 OK 即可。
+等出现 OK 即可。注意这个 URL 中的 key 需要在前面加上 `0x`，否则会找不到该 key.
 
 ## reference
 

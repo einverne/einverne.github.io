@@ -50,6 +50,10 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 ## ESXi
 由 VMware 开发，一听名字就知道，这家以虚拟机著称的公司，开发的一款为企业设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
 
+更详细的介绍可以参考这个[视频](https://www.youtube.com/watch?v=-Hltydu9PXk)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Unraid
 Unraid 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，Unraid 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，Unraid 另外比较亮眼的就是虚拟化技术，可以在此基础上虚拟化安装各个操作系统。
 

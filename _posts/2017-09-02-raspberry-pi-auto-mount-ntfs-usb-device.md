@@ -4,7 +4,7 @@ title: "Raspberry pi 自动挂载 NTFS USB 设备"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [linux, raspberrypi, mount, ]
+tags: [linux, raspberrypi, mount, ntfs, usb, ]
 last_updated:
 ---
 
