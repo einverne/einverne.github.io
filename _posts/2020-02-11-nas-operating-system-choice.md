@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "几个常见的 NAS 系统整理"
+title: "几个常见的 NAS 系统整理及选择"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -58,6 +58,7 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 Unraid 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，Unraid 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，Unraid 另外比较亮眼的就是虚拟化技术，可以在此基础上虚拟化安装各个操作系统。
 
 [^unraid]: <https://unraid.net/product>
+
 
 ## reference
 
