@@ -134,3 +134,8 @@ Deluge 比较优秀的一点是支持 Plugin，官网上有非常丰富的插件
 支持平台：Windows, macOS, Android。
 
 不支持 Linux, 不开源，就不说了。
+
+## VUZE
+看到有推荐，支持三大主流桌面平台。
+
+- <http://www.vuze.com/>
