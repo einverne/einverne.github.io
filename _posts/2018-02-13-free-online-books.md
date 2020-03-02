@@ -146,6 +146,11 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
     http://libgen.io
     http://libgen.pw
 
+## English e-Reader
+英语电子书及有声书
+
+- https://english-e-reader.net/level/pre-intermediate
+
 ## SaltTiger
 个人维护的，基本和计算机相关，大部分都是英文图书
 

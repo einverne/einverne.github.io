@@ -25,6 +25,15 @@ Pi-hole, A black hole for Internet advertisements
 ## 博客类
 具体来说，是 CMS，内容管理平台
 
+### Lektor
+Python 编写的静态网站生成器。
+
+- <https://www.getlektor.com/>
+
+#### Lektor Atom Plugin
+
+- <https://github.com/nixjdm/lektor-atom>
+
 ### WordPress
 WordPress 自然不用多说，PHP 编写。
 
