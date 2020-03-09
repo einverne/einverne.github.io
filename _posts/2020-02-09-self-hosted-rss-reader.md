@@ -186,6 +186,11 @@ Php/MySQL
 
 更多自建的 RSS 可以参考[这里](https://github.com/awesome-selfhosted/awesome-selfhosted#feed-readers) 大概还有几十种，不同语言，不同实现。
 
+## Feedbin
+Ruby & Postgres & Redis & Memcached & Elasticsearch
+
+- <https://github.com/feedbin/feedbin>
+
 ## reference
 
 - <https://www.reddit.com/r/selfhosted/comments/6yqmdo/rss_freshrss_vs_tiny_tiny_rss_vs_selfoss/>
