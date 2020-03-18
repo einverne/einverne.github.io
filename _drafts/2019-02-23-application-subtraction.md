@@ -17,3 +17,30 @@ last_updated:
 - 如果是内容型应用则会考虑是否提供导出数据服务
 
 基于这样的基本要求几乎每个分类下都能找到相类似的很多应用，有些能相互替代而有些则是无法代替的。下面就按照分类来一个个列举一下吧。
+
+## Social
+
+
+## Browser
+
+
+## RSS Reader
+
+
+## IM
+
+## Email
+
+## Dictionary
+
+
+## Music
+
+
+
+## Reader
+
+Moon+ Reader
+
+
+## Entertainment
