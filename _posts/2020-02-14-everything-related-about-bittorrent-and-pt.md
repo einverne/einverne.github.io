@@ -197,5 +197,6 @@ Free 优惠的种子千万不要错过。
 
 ## reference
 
+- <https://wiki.theory.org/index.php/Main_Page#Metainfo_File_Structure>
 - <http://wiki.bitcomet.com/peers_seeds_torrent_tracker_dht_peer_exchange_pex_magnet_links>
 

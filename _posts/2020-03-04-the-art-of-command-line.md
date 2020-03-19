@@ -30,3 +30,14 @@ last_updated:
 - 像 tmux, sed, awk 这些命令几乎可以用一本书来学习，可能会有一些常用的笔记
 - 命令行合集，比如要实现某个功能有哪些实现方式，比如[查找重复的文件](/post/2019/12/find-and-delete-duplicate-files.html)，比如查看网速等等
 
+## tldr
+就像上文所说，简单命令的文章就不再写了，下面就记录下提交到 tldr 的 Pull Request：
+
+- [pidstat](https://github.com/tldr-pages/tldr/pull/3529)
+- [stress](https://github.com/tldr-pages/tldr/pull/3694)
+- [pwdx](https://github.com/tldr-pages/tldr/pull/3743)
+- [jdupes](https://github.com/tldr-pages/tldr/pull/3857)
+- [vmstat](https://github.com/tldr-pages/tldr/pull/3890)
+- [transmission-create](https://github.com/tldr-pages/tldr/pull/3916)
+
+更多可以在[这里](https://github.com/tldr-pages/tldr/pulls?q=is%3Apr+author%3Aeinverne) 看到。
