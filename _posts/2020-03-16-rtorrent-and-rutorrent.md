@@ -37,9 +37,9 @@ MaterialDesign
 
 - <https://github.com/themightykitten/ruTorrent-MaterialDesign>
 
-![ruTorrent Web UI Material Design](/assets/rutorrent-material-desigin-web-ui.png)
+![ruTorrent Web UI Material Design](/assets/rutorrent-material-design-web-ui.png)
 
-![ruTorrent Web UI Material Design Settings](/assets/rutorrent-material-desigin-web-ui-settings.png)
+![ruTorrent Web UI Material Design Settings](/assets/rutorrent-material-design-web-ui-settings.png)
 如果还选择其他的主题可以看看这个[合集](https://github.com/artyuum/3rd-party-ruTorrent-Themes)
 
 ## Plugins
