@@ -54,17 +54,22 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Unraid
-Unraid 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，Unraid 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，Unraid 另外比较亮眼的就是虚拟化技术以及硬件直通，可以在此基础上虚拟化安装各个操作系统以及充分利用硬件接口。
+## unRAID
+unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，unRAID 另外比较亮眼的就是虚拟化技术以及硬件直通，可以在此基础上虚拟化安装各个操作系统以及充分利用硬件接口。
 
-> Unraid Server OS is a Network Attached Storage server operating system that boots from a USB Flash device, and is specifically designed for digital media storage.
+> unRAID Server OS is a Network Attached Storage server operating system that boots from a USB Flash device, and is specifically designed for digital media storage.
 
-Unraid 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么会使用 BTRFS 文件系统。
+unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么会使用 BTRFS 文件系统。
 
 [^unraid]: <https://unraid.net/product>
+
+## My Choice
+
+OpenMediaVault, Docker, snapraid, mergerfs.
+
 
 
 ## reference
 
-- FreeNAS vs Unraid <https://www.youtube.com/watch?v=aXsRIrC5bjg>
+- FreeNAS vs unRAID <https://www.youtube.com/watch?v=aXsRIrC5bjg>
 https://www.openmediavault.org
