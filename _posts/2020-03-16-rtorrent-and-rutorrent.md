@@ -23,7 +23,7 @@ linuxserver 提供的 [ruTorrent](https://hub.docker.com/r/linuxserver/rutorrent
 	sudo docker exec -it rutorrent /bin/sh
 	cd /app/rutorrent/plugins/theme/themes/
 	git clone git://github.com/phlooo/ruTorrent-MaterialDesign.git MaterialDesign
-	chown -R xxx:xxx MaterialDesign
+	chown -R abc:users MaterialDesign
 
 最近有时间的话给 [linuxserver](https://github.com/linuxserver/docker-rutorrent/issues/152) 提一个 PR，先把 issue [提了](https://github.com/linuxserver/docker-rutorrent/issues/152)
 
