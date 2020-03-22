@@ -12,6 +12,10 @@ last_updated:
 
 > Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI. Proxmox VE code is licensed under the GNU Affero General Public License, version 3.
 
+Proxmox VE，是一个开源的服务器虚拟化环境 Linux 发行版。Proxmox VE 基于 Debian，使用基于 Ubuntu 的定制内核，包含安装程序、网页控制台和命令行工具，并且向第三方工具提供了 REST API，在 Affero 通用公共许可证第三版下发行。
+
+Proxmox VE 支持两类虚拟化技术：基于容器的 LXC（自 4.0 版开始，3.4 版及以前使用 OpenVZ 技术） 和硬件抽象层全虚拟化 KVM。
+
 Proxmox 支持的虚拟化：
 
 - 基于内核的 KVM (Kernel-based Virtual Machine)
@@ -237,12 +241,30 @@ LVM 是 Logical Volume Manager（逻辑卷管理）的简写，是 Linux 环境�
 
 > create storage failed: error with cfs lock 'file-storage_cfg': storage 'Network-Proxmox' is not online (500)
 
+## 虚拟化技术
+简单总结。
+
+### OpenVZ
+OpenVZ 基于 Linux 内核的操作系统级虚拟化技术。OpenVZ 允许物理服务器同时运行多个操作系统。
+
+### KVM
+KVM 全称是 Kernel-based Virtual Machine，基于内核的虚拟机，
+
+### Xen
+Xen 是开放源代码虚拟机监视器，由 XenProject 开发，经过十几年时间的发展，目前正逐渐被 KVM 代替。
+
+
+### LXC
+LXC 名字来自于 Linux Containers 缩写，是操作系统级的虚拟化，LXC 是 Linux 内核容器功能的一个用户空间接口。
+
 ## Further
 
 - Proxmox 提供的官方[文档](https://pve.proxmox.com/pve-docs/)
 - Proxmox 官方 [Wiki](https://pve.proxmox.com/wiki/Main_Page)
 
 
+## reference
 
+- <https://en.wikipedia.org/wiki/Proxmox_Virtual_Environment>
 
 
