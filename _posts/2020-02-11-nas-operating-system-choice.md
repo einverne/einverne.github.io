@@ -63,9 +63,9 @@ unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么�
 
 [^unraid]: <https://unraid.net/product>
 
-## My Choice
+## Conclusion
 
-OpenMediaVault, Docker, snapraid, mergerfs.
+总结来讲，FreeNAS 有最好的文件系统 -- ZFS，但是对 Docker 支持需要借助虚拟机有一定性能损耗，OpenMediaVault 最轻量，但是对虚拟机不支持硬件直通，unRAID 可以非常方便的扩展硬盘池大小，对虚拟机支持也比较完善。
 
 
 
