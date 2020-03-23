@@ -29,7 +29,13 @@ Proxmox 支持的虚拟化：
 - 主机 (64 位 CPU，至少 1G 内存，支持 KVM 的主板），键盘和显示器（安装过程中需要，安装后就不用了）
 
 ## 安装 {#installation}
-和安装其他 Linux 系统一样，先用 Etcher 将 Proxmox ISO 写入 U 盘。将 U 盘插入主机，启动，在 BIOS 中选择 U 盘启动，或者使用 F12 或者 F2，或者 DELETE 等等按键选择 U 盘启动。然后在 Proxmox 安装程序中下一步下一步既可，注意安装时输入的局域网 IP 地址，后面需要用该 IP 或者 (hostname) 来访问 Proxmox 的 Web 管理界面。
+和安装其他 Linux 系统一样，先用 Etcher 将 Proxmox ISO 写入 U 盘。或者使用 `dd` 命令：
+
+	# dd bs=1M conv=fdatasync if=./proxmox-ve_*.iso of=/dev/XYZ
+
+一定要注意 `of` 后别写错设备。如果不知道 dd 命令如何使用千万别复制粘贴上面命令。
+
+将 U 盘插入主机，启动，在 BIOS 中选择 U 盘启动，或者使用 F12 或者 F2，或者 DELETE 等等按键选择 U 盘启动。然后在 Proxmox 安装程序中下一步下一步既可，注意安装时输入的局域网 IP 地址，后面需要用该 IP 或者 (hostname) 来访问 Proxmox 的 Web 管理界面。
 
 ## 使用 {#usage}
 
@@ -146,6 +152,9 @@ Proxmox 支持两类文件存储类型：
 
 ### 设置虚拟机的目录 Volume Group
 和 ISO 目录一样，ISO 目录用来存放 ISO 镜像，虚拟机目录则是真正划分给虚拟机用的分区。在 Disks 中选中 LVM，创建 Volume Group。
+
+## Benchmark
+在安装成功的 Proxmox 系统中可以执行 `pveperf` 来检查一下 CPU 和其他硬件的性能。
 
 ## 创建 VM
 右上角创建 Virtual Machine，这里以安装 OpenMediaVault 来举例子。在 OpenMediaVault 下载好镜像 ISO，并上传到 Proxmox 中 local(pve) 中。
