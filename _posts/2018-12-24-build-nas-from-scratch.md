@@ -130,7 +130,7 @@ J3455 自带 4 个 SATA 接口，J3455B 只有 2 个 SATA 口
 我对于网卡要求不高，毕竟家里千兆差不多了，也不是不够用。不过看到有人提到一块拆机万兆网卡 Mellanox 淘宝只要¥190，听起来还不错。
 
 ### 如何选择操作系统
-之前整理过 [几个 NAS 系统](/post/2020/02/freenas-vs-unraid-vs-esxi-vs-openmediavault-etc.html)，FreeNas 需要硬件，unRAID, ESxi 都是闭源产品，且需要授权，先不论其强大的功能，对我而言 OpenMediaVault 比较合适，基于 Debian，我一直用 Mint 所以也比较熟悉。
+之前整理过 [几个 NAS 系统](/post/2020/02/nas-operating-system-choice.html)，FreeNas 需要硬件，unRAID, ESxi 都是闭源产品，且需要授权，先不论其强大的功能，对我而言 OpenMediaVault 比较合适，基于 Debian，我一直用 Mint 所以也比较熟悉。
 
 ## 实践阶段
 
