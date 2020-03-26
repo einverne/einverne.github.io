@@ -26,7 +26,7 @@ Proxmox 支持的虚拟化：
 
 - Proxmox ISO，Etcher 安装程序
 - 一个空 U 盘，容量不用太大，也不能小到 Proxmox ISO 文件都放不下
-- 主机 (64 位 CPU，至少 1G 内存，支持 KVM 的主板），键盘和显示器（安装过程中需要，安装后就不用了）
+- 主机 (64 位 CPU，至少 1G 内存，支持 KVM 的主板`egrep '(vmx|svm)' /proc/cpuinfo`），键盘和显示器（安装过程中需要，安装后就不用了）
 
 ## 安装 {#installation}
 和安装其他 Linux 系统一样，先用 Etcher 将 Proxmox ISO 写入 U 盘。或者使用 `dd` 命令：
@@ -254,7 +254,7 @@ LVM 是 Logical Volume Manager（逻辑卷管理）的简写，是 Linux 环境�
 简单总结。
 
 ### OpenVZ
-OpenVZ 基于 Linux 内核的操作系统级虚拟化技术。OpenVZ 允许物理服务器同时运行多个操作系统。
+OpenVZ 基于 Linux 内核的操作系统级虚拟化技术。OpenVZ 允许物理服务器同时运行多个操作系统。目前正逐渐被 KVM 代替。
 
 ### KVM
 KVM 全称是 Kernel-based Virtual Machine，基于内核的虚拟机，
@@ -262,9 +262,16 @@ KVM 全称是 Kernel-based Virtual Machine，基于内核的虚拟机，
 ### Xen
 Xen 是开放源代码虚拟机监视器，由 XenProject 开发，经过十几年时间的发展，目前正逐渐被 KVM 代替。
 
-
 ### LXC
 LXC 名字来自于 Linux Containers 缩写，是操作系统级的虚拟化，LXC 是 Linux 内核容器功能的一个用户空间接口。
+
+## 其他虚拟化系统
+
+### VMware ESXi
+VMware ESXi 可以直接存取控制底层资源，有效的利用硬件。ESXi 是 VMware 退出的虚拟化系统，对个人的授权是免费的。
+
+### Hyper-V
+Hyper-V 是以 Hypervisor 为基础的虚拟化技术。适用于 x64 位的 Windows 系统。
 
 ## Further
 
