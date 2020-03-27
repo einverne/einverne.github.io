@@ -59,10 +59,33 @@ rtorrent 用到的端口：
 
 可以自定义 Rtorrent 存储的路径，创建共享文件夹名为 `Rdownload`，指定一块硬盘，当创建共享文件夹时，记得关闭 Rtorrent-Pro，创建成功后再启动。这样 rtorrent-Pro 就会使用新的路径。
 
-### Watch
+### Watch 监控目录
 Transmission [之前的文章](/post/2018/06/qnap-transmission.html) 也提到过监控某个文件夹，一旦有文件新加进去自动下载。
 
 rtorrent 同样可以实现，默认的配置已经有配置，如果想要更加详细的了解，可以参考[这里](https://github.com/rakshasa/rtorrent/wiki/TORRENT-Watch-directories)
+
+Schedule 的语法：
+
+	# Schedule syntax: id,start,interval,command call cmd every interval seconds
+
+比如：
+
+	schedule = watch_directory_1,20,10,"load.start=/downloads/watched/*.torrent"
+
+说明：
+
+用简短的一句话来总结上面的配置含义就是，定义了一个定时器，名叫 watch_directory_1, rTorrent 启动后 20 秒开始，每隔 10 秒执行一次命令，这个命令是从给定的目录中加载 torrent 文件。
+
+- schedule 的语法用逗号分隔四段，分别是 ID，启动，间隔时间，执行的命令
+- id 可以自行定义
+- start，rTorrent 启动后多久开始执行
+- interval ，间隔多长时间执行，如果是 0 则表示执行一次
+- load.start 表示从给定的目录（该目录必须要存在）加载 torrent 文件，这个地方除了 load.start 还可以用
+	- load.start_verbose = file
+	- load.verbose = file, verbose 会在终端将任何错误打印出来
+	- load.normal
+
+
 
 ## rtorrent 配置说明
 
