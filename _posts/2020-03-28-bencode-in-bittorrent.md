@@ -8,7 +8,7 @@ tags: [bittorrent, bencode, encode, encoding, ]
 last_updated:
 ---
 
-在了解 BitTorrent 协议的时候，想着 `.torrent` 文件是如何生成的，所以就找了几个 CLI，比如 `transmission-cli` 和 `mktorrent`这两个开源的制作 torrent 文件的开源项目，发现他们就是按照一种约定的格式来生成文件。而这个约定的结构中就少不了现在要谈的 BenCode 编码。
+在了解 [BitTorrent](/post/2020/02/everything-related-about-bittorrent-and-pt.html) 协议的时候，想着 `.torrent` 文件是如何生成的，所以就找了几个 CLI，比如 `transmission-cli` 和 `mktorrent`这两个开源的制作 torrent 文件的开源项目，发现他们就是按照一种约定的格式来生成文件。而这个约定的结构中就少不了现在要谈的 BenCode 编码。
 
 ## What is BenCode
 BenCode 是用于编码 torrent 文件的一种编码格式。BenCode 支持四种数据类型：
@@ -78,7 +78,7 @@ torrent 文件中的所有字符串必须是 UTF-8 编码的。
 
 然后查看 test.torrent 内容：
 
-	d8:announce19:http://announce.url7:comment16:This is comments10:created by13:mktorrent 1.013:creation datei1585360743e4:infod6:lengthi5e4:name9:README.md12:piece lengthi262144e6:pieces20:h7@ÀoÊ÷òlº¯]7:privatei1eee
+	d8:announce19:http://announce.url7:comment16:This is comments10:created by13:mktorrent 1.013:creation datei1585360743e4:infod6:lengthi5e4:name9:README.md12:piece lengthi262144e6:pieces20:h7@xxxxxlxx]7:privatei1eee
 
 拆解这个编码，先分段开。
 
@@ -93,7 +93,7 @@ torrent 文件中的所有字符串必须是 UTF-8 编码的。
 	   6:length -> i5e
 	   4:name -> 9:README.md
 	   12:piece length -> i262144e
-	   6:pieces -> 20:h7@ÀoÊ÷òlº¯]
+	   6:pieces -> 20:h7@xxxxxxxxx
 	   7:private -> i1e
 	  e
 	e
@@ -107,6 +107,8 @@ torrent 文件中的所有字符串必须是 UTF-8 编码的。
 - private 整数，标记 torrent 是否私有
 
 
+注：pieces 中有些特殊字符，在文章中用其他字符替换了。
+
 ### 多文件 {#multiple-files}
 多文件时 info 字典中会有一个 files 列表，这个列表由字典组成，每一个字典中是文件的内容，包括文件名和文件长度。
 
@@ -116,7 +118,7 @@ torrent 文件中的所有字符串必须是 UTF-8 编码的。
 
 得到的 torrent 文件：
 
-	d8:announce19:http://announce.url7:comment16:This is comments10:created by13:mktorrent 1.013:creation datei1585361538e4:infod5:filesld6:lengthi5e4:pathl9:README.mdeed6:lengthi0e4:pathl10:README1.mdeee4:name1:.12:piece lengthi262144e6:pieces20:h�7@�o���l�����]�7:privatei1eee
+	d8:announce19:http://announce.url7:comment16:This is comments10:created by13:mktorrent 1.013:creation datei1585361538e4:infod5:filesld6:lengthi5e4:pathl9:README.mdeed6:lengthi0e4:pathl10:README1.mdeee4:name1:.12:piece lengthi262144e6:pieces20:rhr7r@rorrrlrrrrrrrr7:privatei1eee
 
 拆解一下：
 
@@ -139,7 +141,7 @@ torrent 文件中的所有字符串必须是 UTF-8 编码的。
 				  e
 	   4:name -> 1:.
 	   12:piece length -> i262144e
-	   6:pieces -> 20:hê7@ÀoÊ÷òlº¯]ê
+	   6:pieces -> 20:rhrxxxxxxxxrrrrrr
 	   7:private -> i1e
 	  e
 	e
