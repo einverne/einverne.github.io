@@ -38,7 +38,20 @@ rss
 
 ## PT
 
+### btschool
+这是我再开始关注 PT 时，注册的第一个账号。
+
 ### BeiTai
 
 <a href="https://www.beitai.pt/promotionlink.php?key=ea663651ba561d528615a13a0434ebe8"><img src="https://www.beitai.pt/pic/prolink.png" alt="备胎" title="备胎 - The Ultimate File Sharing Experience"></a>
+
+### Scenetime
+
+
+### AvistaZ
+重在亚洲的影视资源。可我还没有账号，求邀请。
+
+### TTG
+无账号，求邀请。
+
 
