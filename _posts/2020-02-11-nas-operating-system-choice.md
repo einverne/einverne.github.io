@@ -55,11 +55,30 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## unRAID
-unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，unRAID 另外比较亮眼的就是虚拟化技术以及硬件直通，可以在此基础上虚拟化安装各个操作系统以及充分利用硬件接口。
+unRAID 是基于 [Slackware](https://zh.wikipedia.org/wiki/Slackware) 这个 Linux 发行版的 NAS 系统 (6.2RC2 基于 14.2)。unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，简单来说 unRAID 就是带有检验盘的磁盘簇 (JBOD)。
+
+unRAID 另外比较亮眼的就是虚拟化技术以及硬件直通，可以在此基础上虚拟化安装各个操作系统以及充分利用硬件接口。
 
 > unRAID Server OS is a Network Attached Storage server operating system that boots from a USB Flash device, and is specifically designed for digital media storage.
 
+
 unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么会使用 BTRFS 文件系统。
+
+### unRAID 优点
+
+- 系统从 U 盘启动，启动后系统在内存中
+- 集成插件支持，集成 Docker 支持，支持虚拟机
+- 支持硬盘无访问自动休眠
+- 只需要一个校验盘（需大于阵列中最大的盘的容量），整个磁盘阵列允许一个磁盘挂掉，只需要用同等大小的磁盘替换即可
+- 扩容方便，只需要往阵列中继续添加磁盘即可，唯一的限制就是新添加的硬盘容量不能大于校验盘大小。如果新加入的盘容量大于校验盘则需要先将校验盘替换成该硬盘，然后将原来的校验盘作为新盘加入
+-
+
+### unRAID 缺点
+
+- unRAID 是需要授权的，但相反这个对于非技术人员反而可能是优势，毕竟可以有一个技术支持。unRAID 的授权价格从最低 $59(6 块硬盘）， $89(12 快硬盘），到 Pro $129 （无限硬盘）[^price]
+
+
+[^price]: <https://unraid.net/pricing>
 
 [^unraid]: <https://unraid.net/product>
 
