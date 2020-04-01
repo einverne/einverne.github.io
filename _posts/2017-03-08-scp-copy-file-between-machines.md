@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "scp 命令行下远程主机之间拷贝文件"
+title: "每天学习一个命令：scp 命令行下远程主机之间拷贝文件"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [linux, scp, file, vps, ]
+tags: [linux, scp, file, vps, command ]
 last_updated:
 ---
 
@@ -14,7 +14,7 @@ last_updated:
 
 ## 命令格式
 
-    scp 『参数』 『原路径』 『目标路径』
+    scp 参数 原路径 目标路径
 
 ## 命令功能
 
@@ -92,7 +92,9 @@ scp 命令的实际应用
 
     scp -r root@<remote_ip>:/path/folder/ /local/folder
 
+## 外延
 
+- [rsync](/post/2017/07/rsync-introduction.html) 使用。
 
 ## reference
 
