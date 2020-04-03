@@ -86,7 +86,7 @@ FD 的取值
     默认 : 没有选项，lsof 列出活跃进程的所有打开文件
     -i : 列出网络连接
 
-使用 `lsof -i` 来显示所有的链接，可以用来代替 netstat
+使用 `lsof -i` 来显示所有的链接，可以用来代替 netstat:
 
     sudo lsof -i
     COMMAND     PID     USER   FD   TYPE   DEVICE SIZE/OFF NODE NAME
@@ -95,20 +95,36 @@ FD 的取值
     docker-pr 14852     root    4u  IPv6 38693034      0t0  TCP *:https (LISTEN)
     docker-pr 14863     root    4u  IPv6 38693061      0t0  TCP *:http (LISTEN)
 
-输出结果有缩略，也能看出来 22 的 SSH 端口，然后 http 默认的 80 端口，和 https 使用的 443 端口。如果要查看 IPv6 的流量可以使用 `lsof -i 6` 。
+这里输出结果有缩略，但也能看出来 22 的 SSH 端口，然后 http 默认的 80 端口，和 https 使用的 443 端口。如果要查看 IPv6 的流量可以使用 `lsof -i 6` 。
 
-同样如果要查看 TCP UDP 连接信息，`lsof -iTCP` 和 `lsof -iUDP`。再比如查看和本地 22 端口的连接 `lsof -i:22`
+同样如果要查看 TCP UDP 连接信息，`lsof -iTCP` 和 `lsof -iUDP`。
+
+假如已经知道了端口号，想要查看该端口哪一个进程在使用可以使用：
+
+	lsof -i:80
+
+再比如查看和本地 22 端口的连接 `lsof -i:22`
 
 显示来自特定主机的连接，`lsof -i@1.2.3.4` ，指定主机和端口 `lsof -i@1.2.3.4:22`
 
+### 根据状态过滤
+lsof 还可以使用过滤器来过滤连接状态，比如只查看正在监听 TCP 端口的进程：
+
+	lsof -iTCP -sTCP:LISTEN
+
 ### -p 选项查看指定进程
-使用 -p 查看指定进程 ID 已打开的内容
+如果已经知道进程的 PID，可以使用 `-p` 查看指定进程 ID 已打开的内容
 
     lsof -p 10075
 
 ### 列出用户打开的文件
 
     lsof -u einverne
+
+### 查看 Unix 域套接字
+使用 `-U` 选项来列出系统中正在使用的 Unix 域套接字：
+
+	lsof -U
 
 ### 查看 java 项目依赖的 jar
 比如说如果系统中依赖的一个 jar 被发现有漏洞，比如说可以查看 fastjson 在系统中有没有使用。
