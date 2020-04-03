@@ -218,6 +218,31 @@ FieldNamingPolicy 还有这些
         .registerTypeAdapter(RawData.class, new RawDataInstanceCreator())
         .create();
 
+## Gson 反序列化时类型不匹配
+举一个比较通俗的例子就是，当一条 JSON 数据返回时，字段值是一个 Double，但是返回的时候是放在字符串中返回的。这个时候就需要用到 TypeAdapter。
+
+
+	class DoubleTypeAdapter extends TypeAdapter<Number> {
+		@Override
+		public void write(JsonWriter jsonWriter, Number number) throws IOException {
+		  jsonWriter.value(number);
+		}
+
+		@Override
+		public Number read(JsonReader jsonReader) throws IOException {
+		  if (jsonReader.peek() == JsonToken.NULL) {
+			jsonReader.nextNull();
+			return 0D;
+		  }
+		  String result = jsonReader.nextString();
+		  if ("".equals(result)) {
+			return 0D;
+		  }
+		  return Double.parseDouble(result);
+		}
+	}
+
+
 ## reference
 
 - <https://stackoverflow.com/q/4802887/1820217>
