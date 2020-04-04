@@ -133,4 +133,4 @@ Openwrt morning 配置只有上述图片的 LAN 口，下面的 WAN 口通过如
 - http://unix.stackexchange.com/questions/57309/how-can-i-tell-whether-a-network-interface-is-physical-device-or-virtual-alia
 - Linux 网络接口 https://wiki.openwrt.org/zh-cn/doc/networking/network.interfaces
 - https://wiki.openwrt.org/zh-cn/doc/uci/network/switch
-
+- <https://openwrt.org/docs/guide-user/network/wifi/relay_configuration>
