@@ -21,7 +21,7 @@ last_updated:
 
 Go 数值类型包括整型，浮点数和复数。对于整型
 
-- 有符号 int8、int16、int32 和 int64
+- 有符号 int8(8 位，1 个字节）、int16、int32 和 int64
 - 无符号 uint8、uint16、uint32 和 uint64
 - 还有对应特定 CPU 的 int 和 uint，在不同平台上可能为 32bit 或者 64 bit。
 - `rune` 等同于 int32 用来表示 Unicode
@@ -38,7 +38,7 @@ Go 提供了两种精度的浮点数 `float32` 和 `float64` ，常量 `math.Max
 float32 类型的浮点数可以提供大约 6 个十进制数的精度，而 float64 则可以提供约 15 个十进制数的精度；通常应该优先使用 float64 类型。
 
 ## Complex Numbers 复数
-Go 语言提供了两种精度的复数类型：complex64 和 complex128，分别对应 float32 和 float64 两种浮点数精度。内置的 complex 函数用于构建复数，`real` 和 `imag` 函数用来返回实部和虚部：
+Go 语言提供了两种精度的复数类型：complex64(8 字节） 和 complex128(16 个字节），分别对应 float32 和 float64 两种浮点数精度。内置的 complex 函数用于构建复数，`real` 和 `imag` 函数用来返回实部和虚部：
 
     var x complex128 = complex(1, 2) // 1+2i
     var y complex128 = complex(3, 4) // 3+4i
