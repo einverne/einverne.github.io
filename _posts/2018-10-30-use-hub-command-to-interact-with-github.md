@@ -76,6 +76,23 @@ Mac 或者 Go 安装可以参考[这里](https://hub.github.com/)
 
     hub create [-poc] [-d DESC] [-h HOMEPAGE] [[ORGANIZATION/]NAME]
 
+## alias
+编辑：
+
+	git config --global --edit
+
+添加：
+
+	[alias]
+		pr="!f() { \
+			BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD); \
+			git push -u origin $BRANCH_NAME; \
+			hub pull-request; \
+		};f "
+
+这样以后使用 `git pr`，就可以实现，`push` 当前分支，并创建 PR 了。
+
 ## reference
 
 - <https://github.com/github/hub/tree/master/etc>
+- <https://andrewlock.net/creating-github-pull-requests-from-the-command-line-with-hub/t>
