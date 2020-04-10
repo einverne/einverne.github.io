@@ -15,7 +15,7 @@ last_updated:
 ## 使用单一仓库
 可能对于大部分的公司来说，强制使用了内网提供的单一仓库，force maven 使用单一仓库，mirror 所有请求到单一仓库。这个时候就要求这个单一仓库需要包含所有需要的 artifacts，或者需要设置代理去请求其他仓库，否则 maven 可能找不到某些构建。要做到单一仓库，设置 `mirrorOf` 到 `*`.
 
-maven 2.0.5+ 以上版本支持
+maven 2.0.5+ 以上版本支持：
 
     <settings>
       ...
@@ -30,10 +30,10 @@ maven 2.0.5+ 以上版本支持
       ...
     </settings>
 
-记住这里的 `mirrorOf` 中配置的星号 ，表示匹配所有的 artifacts，也就是 everything. 这里的 mirrorOf 如果配置了具体的名字，指的是 repository 的名字，继续往下看。
+记住这里的 `mirrorOf` 中配置的星号 ，表示匹配所有的 artifacts，也就是 everything 使用这里的代理地址。这里的 mirrorOf 如果配置了具体的名字，指的是 repository 的名字，继续往下看。
 
 ## multiple repository config
-设置多仓库有两种方法，第一种直接在项目层级 POM 中定义：
+设置多仓库有两种方法，第一种直接在**项目**层级 POM 中定义：
 
     <project>
     ...
@@ -41,12 +41,12 @@ maven 2.0.5+ 以上版本支持
         <repository>
           <id>my-repo1</id>
           <name>your custom repo</name>
-          <url>http://jarsm2.dyndns.dk</url>
+          <url>https://maven.aliyun.com/repository/public</url>
         </repository>
         <repository>
           <id>my-repo2</id>
           <name>your custom repo</name>
-          <url>http://jarsm2.dyndns.dk</url>
+          <url>https://maven.aliyun.com/repository/public</url>
         </repository>
       </repositories>
     ...
@@ -66,7 +66,7 @@ maven 2.0.5+ 以上版本支持
            <repository>
              <id>my-repo2</id>
              <name>your custom repo</name>
-             <url>http://jarsm2.dyndns.dk</url>
+             <url>https://maven.aliyun.com/repository/public</url>
            </repository>
            ...
          </repositories>
@@ -80,7 +80,7 @@ maven 2.0.5+ 以上版本支持
      ...
     </settings>
 
-别忘了激活 profile，或者也可以使用 mvn 参数
+别忘了激活 profile，或者也可以使用 mvn 参数来指定：
 
     mvn -Pmyprofile ...
 
@@ -128,32 +128,34 @@ maven 2.0.5+ 以上版本支持
 [官方文档](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
 
-## 设置镜像
+## 设置镜像 {$mirror}
 
-设置镜像的作用是为了加快下载速度，理论上来说任何一个仓库 B 可以提供仓库 A 所有的内容，那么可以认为 B 是 A 的一个镜像，比如说 [阿里提供了很多仓库的镜像](https://help.aliyun.com/document_detail/102512.html) 使用这些镜像可以提高下载速度。
+设置镜像的作用是为了加快依赖包的下载速度，理论上来说如果一个仓库 B 可以提供仓库 A 所有的内容，那么可以认为 B 是 A 的一个镜像，比如说 [阿里提供了很多仓库的镜像](https://help.aliyun.com/document_detail/102512.html) 使用这些镜像可以提高下载速度。
 
     <mirror>
+	      <!-- 唯一标识一个 mirror -->
           <id>mirror</id>
+		  <!-- 代表一个镜像的替代位置，例如 central 就表示代替官方的中央库 -->
           <mirrorOf>external:*,!repo</mirrorOf>
           <name>nexus repository</name>
-          <url>http://nexus.xxx/repository/maven-proxy</url>
+          <url>https://maven.aliyun.com/repository/public</url>
     </mirror>
 
-说明：
+配置说明：
 
-- `id` 唯一标识
-- `mirrorOf` 指定镜像规则，什么情况下从镜像仓库拉取，[官方文档](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
-    - `*` 匹配所有
-    - `external:*` 除了本地缓存的所有仓库
-    - `repo,repo1` repo 或者 repo1 ，这里的 repo 指的仓库 ID
-    - `*,!repo1` 除了 repo1 的所有仓库
+- `id`: 镜像的唯一标识
+- `mirrorOf`: 指定镜像规则，什么情况下从镜像仓库拉取，[官方文档](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
+    - `*`: 匹配所有，所有内容都从镜像拉取
+    - `external:*`: 除了本地缓存的所有从镜像仓库拉取
+    - `repo,repo1`: repo 或者 repo1 ，这里的 repo 指的仓库 ID
+    - `*,!repo1`: 除了 repo1 的所有仓库
 
-- `name` 名称描述
-- `url` 地址
+- `name`: 名称描述
+- `url`: 地址
 
 ## 使用场景
 
-Maven 设置中的 mirror 和 repository 概念比较容易混淆，一般来说 repository 用来配置远程仓库的地址，mirror 则是作为站点镜像配置。
+Maven 设置中的 `mirror` 和 `repository` 概念比较容易混淆，一般来说 repository 用来配置远程仓库的地址，mirror 则是作为中央仓库的镜像配置。
 
 所以，当我的需求是，比如在内部远程仓库无法找到依赖时，从外部仓库中下载。那么我要做的就是配置多个 repository，那么当 maven 寻找依赖时就会按照配置的 repository 从上往下依次尝试下载。
 

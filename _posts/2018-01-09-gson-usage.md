@@ -10,12 +10,26 @@ last_updated:
 
 Gson 是 Google 发布的一个用于序列化和反序列化 json 的工具库，可以非常轻松的实现 json 到 java Object 的转变，也同样非常简单的可以将一个 Java 实例序列化为 json。
 
+Gson 包中主要的类有 Gson, GsonBuilder, JsonParser 等等。
+
+## 基本类介绍
+
+### JsonParser
+JsonParser 是将 json 串解析成 JsonElement 的工具类。JsonParser 有三个 `parse()` 方法，分别接受不同类型的参数：
+
+- String
+- Reader
+- JsonReader
+
+内部实现时使用 JsonReader 类进行解析。
+
+
 ## 基本使用
 
 Gson 最基本的使用方法，无非就是 `toJson()` 和 `fromJson()` 两个函数，对于简单类，可以使用如下方式：
 
-String json = gson.toJson(target); // serializes target to Json
-MyType target2 = gson.fromJson(json, MyType.class); // deserializes json into target2
+	String json = gson.toJson(target); // serializes target to Json
+	MyType target2 = gson.fromJson(json, MyType.class); // deserializes json into target2
 
 如果类中含有数组，会需要用到 `toJson(Object, Type)` 和 `fromJson(String, Type)` 这两个方法：
 

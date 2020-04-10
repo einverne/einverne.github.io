@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Spring mvc 的注解"
+title: "Spring MVC 中常用的注解"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Spring, Java, Web, 注解 , 拦截器 , 反射 ]
+tags: [spring, spring-mvc, spring-boot, java, web, 注解 , 拦截器 , 反射 ]
 last_updated:
 ---
 

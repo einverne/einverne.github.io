@@ -8,7 +8,7 @@ tags: [java, annotation, interface, ]
 last_updated:
 ---
 
-注解，也称为元数据，注解是一系列元数据，它提供数据用来解释程序代码，但是注解并非是所解释的代码本身的一部分。注解对于代码的运行效果没有直接影响。
+注解，也被称为元数据，注解是一系列元数据，它提供数据用来解释程序代码，但是注解并非是所解释的代码本身的一部分。注解对于代码的运行效果没有直接影响。
 
 注解有许多用处，主要如下：
 
@@ -76,10 +76,10 @@ last_updated:
 注解的属性也叫做 annotation type element declarations，看起来像方法，但是不是。注解**只有 annotation type element declarations**，没有方法。注解的 annotation type element declarations 在注解的定义中以“无形参的方法”形式来声明，其方法名定义了该 annotation type element declarations 的名字，其返回值定义了该 annotation type element declarations 的类型。
 
 ## 元注解
-有如下元注解 (meta-annotation)，可以理解成定义注解的注解。
+Java 中有如下元注解 (meta-annotation)，可以理解成定义注解的注解。
 
 注解名字 | 解释
------|--------
+---------|--------
 @Target  | 定义的注解可以用于什么地方，详见 ElementType 枚举
 @Retention | 在什么级别保存该注解信息，详见 RetentionPolicy 枚举
 @Document | 将注解包含在 Javadoc 中

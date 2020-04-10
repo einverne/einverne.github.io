@@ -28,13 +28,13 @@ StatelessKnowledgeSession 的作用与 StatefulKnowledgeSession 相仿，它们�
 ## FACT 对象
 Fact 是指在 Drools 规则应用当中，将一个普通的 JavaBean 插入到规则的 WorkingMemory 当中后的对象。
 
-规则可以对 Fact 对象进行任意的读写操作，当一个 JavaBean 插入到 WorkingMemory 当中变成 Fact 之后，Fact 对象不是对原来的 JavaBean 对象进行 Clon，而是原来 JavaBean 对象的引用。
+规则可以对 Fact 对象进行任意的读写操作，当一个 JavaBean 插入到 WorkingMemory 当中变成 Fact 之后，Fact 对象不是对原来的 JavaBean 对象进行 Clone，而是原来 JavaBean 对象的引用。
 
 
 ## 规则文件
-一个标准的规则文件就是一个以“.drl”结尾的文本文件
+一个标准的 Drools 规则文件就是一个以“.drl”结尾的文本文件。
 
-Drools 规则文件大致可以包含这些部分
+Drools 规则文件大致可以包含这些部分：
 
     package package-name
     imports
@@ -44,6 +44,85 @@ Drools 规则文件大致可以包含这些部分
     rules
 
 package 是必须的，除 package 之外，其它对象在规则文件中的顺序是任意的，也就是说在规则文件当中必须要有一个 package 声明，同时 package 声明必须要放在规则文件的第一行。
+
+### package
+
+`package` 是一系列 rule 的一个命名空间，这个空间中所有的`rule` 名字都是唯一的。`package-name` 必须遵守 Java 命名规范。
+
+### import
+Drools 文件中的 import 语句和 Java 的 `import` 语句类似，引入指定对象的路径及全称。
+
+### global
+`global` 用于定义全局变量。
+
+- 全局变量不会插入到 `Working Memory`
+- 全局变量的改变不会通知规则引擎，规则引擎不会追踪全局变量的变化
+- 多个包中同时定义相同标识符的全局变量，全局变量必须是相同类型，并引用一个相同的全局值
+
+### function
+`function` 提供了一种在规则源文件中插入语义代码的方式。在规则中使用函数的优点是可以把逻辑放在一个地方。
+
+```
+function String hello(String name) {
+  return "hello " + name + "!";
+}
+```
+
+注意这里的，function 并不是 java 语法的一部分。Drools 支持函数的导入：
+
+	import function my.package.Foo.hello
+
+### Type declaration
+规则引擎中，可以：
+
+- 允许新的类型声明
+- 允许元数据类型的声明
+
+类型声明
+
+	declare Address
+	   number : int
+	   streetName : String
+	   city : String
+	end
+
+定义一个新的类型 Address, 有三个属性，每个属性的类型都是 Java 中有效的数据类型。
+
+定义 Persion
+
+import java.util.Date
+
+	declare Person
+		name : String
+		dateOfBirth : Date
+		address : Address
+	end
+
+定义该新类型后，Drools 会在编译期间生成对应的 Java 类字节码。
+
+声明枚举类型
+
+	declare enum DaysOfWeek
+	   SUN("Sunday"),MON("Monday"),TUE("Tuesday"),WED("Wednesday"),THU("Thursday"),FRI("Friday"),SAT("Saturday");
+
+	   fullName : String
+	end
+
+声明后可以直接应用于规则中：
+
+	rule "Test Enum Rule"
+	when
+	  $p: Employee( dayOff == DaysOfWeek.MONDAY )
+	then
+	  ...
+	end
+
+声明云数据 (metadata)
+
+	@metadata_key( metadata_value )
+
+
+### Rule
 
 一条规则的大致框架：
 
@@ -55,12 +134,26 @@ package 是必须的，除 package 之外，其它对象在规则文件中的顺
             RHS
     end
 
-一个规则通常包括三个部分：属性部分（attribute）、条件部分（LHS）和结果部分（RHS）。对于一个完整的规则来说，这三个部分都是可选的，也就是说如下所示的规则是合法的：
+一个规则通常包括三个部分：
+
+- 属性部分（attribute），非必须，最好写在一行，关于规则属性部分，后文有更详细的介绍
+- 条件部分（LHS）
+- 结果部分（RHS）
+
+对于一个完整的规则来说，这三个部分都是可选的，也就是说如下所示的规则是合法的：
 
     rule "name"
     when
     then
     end
+
+
+
+### 注释
+drl 文件中对规则进行注释，和 Java 一样可以使用
+
+- 单行注释 `//`
+- 多行注释 `/* xxx */`
 
 Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不能够在规则中自定义随意使用
 
@@ -233,11 +326,20 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 对 Fact 对象多个属性修改，修改完成后自动更新到当前 Working Memory 中
 
 ## 属性部分
-规则属性是用来控制规则执行的重要工具，规则的属性有 13 个，activation-group、agenda-group、
+**规则属性**是用来控制规则执行的重要工具，显示地声明了对规则行为的影响。
+
+
+规则的属性有 13 个，activation-group、agenda-group、
 auto-focus、date-effective、date-expires、dialect、duration、enabled、lock-on-active、no-loop、ruleflow-group、salience、when，
 
 ### salience
-用来设置规则执行的优先级，salience 属性值是一个数字，数字越大优先级越高，可以是负值，默认情况下，规则的 salience 是 0，所以不手动设置规则的 salience 属性情况下，执行的顺序是随机的。
+
+用来设置规则执行的优先级，salience 属性值是一个数字，数字越大优先级越高，可以是负值。`salience` 表示规则的优先级，值越大在激活队列中优先级越高。
+
+- 默认情况下，规则的 salience 是 0
+- type: Integer
+
+所以不手动设置规则的 salience 属性情况下，执行的顺序是随机的。
 
     rule "rule1"
     salience 1
@@ -251,8 +353,11 @@ auto-focus、date-effective、date-expires、dialect、duration、enabled、lock
 
 no-loop 属性的作用是用来控制已经执行过的规则在条件再次满足时是否再次执行。默认情况下规则的 no-loop 属性的值为 false，如果 no-loop 属性值为 true，那么就表示该规则只会被引擎检查一次，
 
+- 默认值：false
+- type: Boolean
+
 ### date-effective
-控制规则只有在到达后才会触发。只有当系统时间》=date-effective 设置的时间值时，规则才会触发执行，否则执行将不执行。在没有设置该属性的情况下，规则随时可以触发，没有这种限制。
+控制规则只有在到达指定时间后才会触发。只有当系统时间 `>=date-effective` 设置的时间值时，规则才会触发执行，否则执行将不执行。在没有设置该属性的情况下，规则随时可以触发，没有这种限制。
 
 date-effective 可接受的日期格式为“dd-MMM-yyyy”
 
@@ -273,25 +378,36 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 ### dialect
 该属性用来定义规则当中要使用的语言类型，目前 Drools 版本当中支持两种类型的语言：mvel 和 java，默认情况下，如果没有手工设置规则的 dialect，那么使用的 java 语言。
 
+- type: String
+
+
 ### duration
 如果设置了该属性，那么规则将在该属性指定的值之后在另外一个线程里触发。该属性对应的值为一个长整型，单位是毫秒。
 
     rule "rule1"
     duration 3000
     when
-    eval(true)
+	  eval(true)
     then
-    System.out.println("rule thread
-    id:"+Thread.currentThread().getId());
+      System.out.println("rule thread
+      id:"+Thread.currentThread().getId());
     end
 
+
 ### lock-on-active
-确认规则只执行一次。 将 lock-on-action 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。lock-on-active 属性默认值为 false。
+确认规则只执行一次。 将 lock-on-action 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
+
+- lock-on-active 属性默认值为 false
+- type: Boolean
+
+不管何时 `ruleflow-group` 和 `agenda-group`被激活，只要其中的所有规则将 `lock-on-active` 设置为 true，那么这些规则都不会再被激活。
 
 ### activation-group
 该属性的作用是将若干个规则划分成一个组，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
 
-在一组具有相同 activation-group 属性的规则当中，只有一个规则会被执行，其它规则都将不会被执行。当然对于具有相同 activation-group 属性的规则当中究竟哪一个会先执行，则可以用类似 salience 之类属性来实现。
+- type: String
+
+在一组具有相同 activation-group 属性的规则当中，**只有一个规则会被执行**，其它规则都将不会被执行。当然对于具有相同 activation-group 属性的规则当中究竟哪一个会先执行，则可以用类似 salience 之类属性来实现。
 
     rule "rule1"
     activation-group "test"
@@ -313,6 +429,9 @@ rule1 和 rule2 这两个规则因为具体相同名称的 activation-group 属�
 
 ### agenda-group
 Agenda Group 是用来在 Agenda 的基础之上，对现在的规则进行再次分组，具体的分组方法可以采用为规则添加 agenda-group 属性来实现。
+
+- 默认值： MAIN
+- type: String
 
 agenda-group 属性的值也是一个字符串，通过这个字符串，可以将规则分为若干个 Agenda Group，默认情况下，引擎在调用这些设置了 agenda-group 属性的规则的时候需要显示的指定某个 Agenda Group 得到 Focus（焦点），这样位于该 Agenda Group 当中的规则才会触发执行，否则将不执行。
 
@@ -341,6 +460,9 @@ java 代码
 
 ### auto-focus
 在已设置了 agenda-group 的规则上设置该规则是否可以自动独取 Focus，如果该属性设置为 true，那么在引擎执行时，就不需要显示的为某个 Agenda Group 设置 Focus，否则需要。
+
+- 默认：false
+- type: Boolean
 
 对于规则的执行的控制，还可以使用 Agenda Filter 来实现。在 Drools 当中，提供了一个名为 org.drools.runtime.rule.AgendaFilter 的 Agenda Filter 接口，用户可以实现该接口，通过规则当中的某些属性来控制规则要不要执行。org.drools.runtime.rule.AgendaFilter 接口只有一个方法需要实现，方法体如下：
 
@@ -376,6 +498,10 @@ java:
 
 ### ruleflow-group
 在使用规则流的时候要用到 ruleflow-group 属性，该属性的值为一个字符串，作用是用来将规则划分为一个个的组，然后在规则流当中通过使用 ruleflow-group 属性的值，从而使用对应的规则。
+
+- type: String
+
+简单的来说，只有当被 `ruleflow-group` 圈定的组被激活时，ruleflow-group 中的规则才能被命中。
 
 ## 函数
 代码块，封装多个规则中可能共享的相同规则代码
