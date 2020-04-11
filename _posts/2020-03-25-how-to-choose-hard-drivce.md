@@ -181,7 +181,6 @@ NAS 盘和普通盘的本质区别在于 Time Limited Error Recovery，TLER 技�
 
 NAS 盘只有在 RAID 阵列中才能体现其价值。
 
-[^tech] :http://products.wdc.com/library/other/2579-001098.pdf
 
 
 ## 总结
@@ -198,3 +197,4 @@ NAS 盘只有在 RAID 阵列中才能体现其价值。
 [^origin]: <https://en.wikipedia.org/wiki/Hard_disk_drive>
 
 [^company]: <https://en.wikipedia.org/wiki/List_of_defunct_hard_disk_manufacturers>
+[^tech]: <http://products.wdc.com/library/other/2579-001098.pdf>
