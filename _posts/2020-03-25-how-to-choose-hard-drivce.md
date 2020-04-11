@@ -34,7 +34,7 @@ last_updated:
 - Actuator Arm: 磁头臂
 - Actuator Axis: 磁头轴
 
-![hard drive magnetic head](/assets/head-drive-magnetic-head.svg)
+![hard drive magnetic head](/assets/hard-drive-magnetic-head.svg)
 
 上面也提到盘片是真正用来存储数据的地方，那么盘片是如何做到的呢？盘面和磁带的原理比较相似，在磁盘的表面有一层磁性材料，而磁头通常是线圈缠绕在磁芯上
 
