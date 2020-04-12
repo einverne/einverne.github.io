@@ -6,6 +6,7 @@ description: ""
 category: 产品体验
 tags: [android, web, android-app, app, ios,]
 last_updated: 2018-06-01
+redirect_from: "/post/2014/09/expense-App.html"
 ---
 
 很久之前产生记账的需求，所以当时试用了市场上很大一批的记账软件和 App，我的需求无非有几样：

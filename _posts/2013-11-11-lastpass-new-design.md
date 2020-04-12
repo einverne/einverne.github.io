@@ -4,6 +4,7 @@ layout: post
 category : 产品体验
 tagline: ""
 tags : [lastpass, password, design,  ]
+redirect_from: "/post/2013/11/LastPass-New-Design.html"
 ---
 
 From:[LastPass 官方博客](http://blog.lastpass.com/2013/11/lastpass-30-is-here-new-design-new.html)

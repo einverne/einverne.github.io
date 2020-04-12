@@ -4,8 +4,9 @@ title: "JDK 和 Tomcat 配置"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Java, JDK, Tomcat , Knowledge]
+tags: [java, jdk, tomcat , knowledge]
 last_updated: 2016-10-03
+redirect_from: "/post/2013/10/JDK-tomcat-config.html"
 ---
 
 

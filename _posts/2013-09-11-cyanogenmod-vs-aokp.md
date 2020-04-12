@@ -3,10 +3,12 @@ title: AOKP vs. CyanogenMod 10.1
 layout: post
 category: 产品体验
 tagline: ""
-tags: [AOKP, CyanogenMod]
+tags: [aokp, cyanogenmod]
+redirect_from:
+  - /post/2013/09/CyanogenMod-vs-AOKP.html
 ---
 
-##Similarities between both the ROMs
+## Similarities between both the ROMs
 
 - Both are based on the latest version of Android
 - The ability to customize Quick Settings
@@ -20,7 +22,7 @@ tags: [AOKP, CyanogenMod]
 - Volume Rocker Music Control
 - Ability to disable IME switcher
 - Battery % in the status bar 在状态栏显示电量百分比
-- Advanced Sound panel 
+- Advanced Sound panel
 - Advanced Power Menu
 - Expanded Desktop mode
 - Improved Camera app with features like voice control
@@ -32,7 +34,7 @@ tags: [AOKP, CyanogenMod]
 - The ability to always keep lock screen widgets in maximized states
 - Vibration when a call is picked/on call waiting/call is disconnected
 
-##CyanogenMod 10.1 Pros
+## CyanogenMod 10.1 Pros
 
 - Inbuilt OTA updater (Not Delta though)
 - Stock Android with just the right amount of customizable options to attract new users
@@ -48,7 +50,7 @@ The customization options in AOKP ROM are just insane. Please take a deep breath
 - AOKP Ribbon – An Ubuntu Mobile like sidebar that you can swipe from the corner of the screen to get quick access to your favorite apps. You can even directly access all the apps installed on your phone via this, thus providing the ability to use your phone without a launcher.
 - While even CM10.1 has lock screen shortcuts, AOKP ROM allows for more shortcuts (5 vs. 7). The same is true for Quick launch shortcuts (3 vs. 5).
 - Navigator bar customization – You can add a shortcut on the navigation bar like on CM10.1, but AOKP ROM allows for far more control over what you want to do. It also allows you to set shortcuts on long pressing of a key on the navigation bar 导航栏自定义化
-- The ability to re-size the navigation bar 
+- The ability to re-size the navigation bar
 - The ability to auto-hide the navigation bar after a certain period of inactivity
 - Ability to change the navigation bar icons
 - Navigation bar widgets
@@ -58,7 +60,7 @@ The customization options in AOKP ROM are just insane. Please take a deep breath
 - Notification bar ribbon and widgets
 - Ability to display the battery status as a small bar on the navigation bar
 - Custom notification background
-- Custom boot animation 
+- Custom boot animation
 - Custom vibrations for each app or contact
 - The ability to make the Status bar and navigation bar transparent 状态栏和导航栏透明
 - Ability to set custom toggles in Quick Settings
@@ -75,7 +77,7 @@ Nightly builds can be a bit unstable, but then they are nightly builds. However,
 - Limited device support
 - No central download center for nightly and milestone releases
 
-##Conclusion
+## Conclusion
 
 If after reading the above post, you are still confused, I would suggest you to simply try out both the ROMs. Also, keep in mind that the pros of one ROM automatically becomes the cons of another, and vice-versa. There is no difference in battery life between both the ROMs, since both the ROMs are generally based on a slightly modified stock kernel.
 

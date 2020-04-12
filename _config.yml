@@ -149,3 +149,4 @@ plugins:
 #- jekyll-mentions
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
