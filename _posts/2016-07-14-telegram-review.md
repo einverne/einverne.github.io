@@ -1,15 +1,23 @@
 ---
 layout: post
-title: "Telegram 技巧"
+title: "Telegram 使用技巧"
 tagline: ""
 description: ""
 category: 产品体验
-tags: [telegram, im, ]
+tags: [telegram, im, group, channel, sticker]
 last_updated:
 ---
 
+## 2020 年 4 月更新
 
-感觉是时候写一篇 Telegram 的安利文了。Telegram 简单介绍就是一款 IM， 及时聊天工具。当然其实他远远的超越了一个 IM，却依然保持了作为一个 IM 应有的速度和快捷。
+写完这篇文章已经过去 3 年半，Telegram 还是那个 Telegram，界面没有太大的变化，但是实际上内部已经有很多变化，关注 Telegram 的官方[博客](https://telegram.org/blog) 可以看到 Telegram 以非常积极的更新频率再更新，从很早以前的增加群组人数，到最近增加的 Folder 来分类自己的聊天，Telegram 正变得越来越好用。
+
+然而也正是因为 Telegram 的工具属性，当它被用来当作犯罪工具的时候也是极具效率的，最近被揭露的「[N 号房事件](https://zh.wikipedia.org/wiki/N%E5%8F%B7%E6%88%BF%E4%BA%8B%E4%BB%B6)」把 Telegram 带到了更多人的眼前。这个时候很多人就会疑惑，Telegram 作为重要的犯罪工具有过错吗？我一直的观点便是工具是无罪的。Telegram 不去审查用户的聊天记录本身是没有任何问题，Telegram 要做的只是把这个聊天工具做到极致。一个工具的发明本身并不会带来罪恶，而是用使用这个工具的人需要承担法律和道德责任。更进一步说这一切都建立在互联网的基础上，我们会因为这一件事情而禁止互联网的使用吗？答案当然是不会。
+
+
+
+
+感觉是时候写一篇 Telegram 的安利文了。Telegram 简单介绍就是一款 IM，即时聊天工具。当然其实他远远的超越了一个 IM，却依然保持了作为一个 IM 应有的速度和快捷。
 
 对于基本功能，[電腦玩物 Telegram 10 技](http://www.playpcesor.com/2015/12/telegram-10.html) 已经将 Telegram 的主要功能及使用技巧说得非常明白了，就不再多说了。其中我最喜欢的几点：
 
@@ -17,7 +25,7 @@ last_updated:
 - Bot ，聊天机器人，很久之前的 Gtalk 也是支持机器人的，对那个自动翻译的机器人还是略有记忆，只是后来就没有后来了。而 Telegram 正是将聊天机器人这个命题重新书写了。开放的 Bot 系统，让 Telegram 成为了一个全能的平台，他是一个 IM ，他也可以是一个翻译工具，只需要一个翻译 bot，他也可以是一个 RSS 阅读器，只需要一个 RSS 订阅 bot，他也可以是一个 Tinder，只需要一个约会 bot...... Telegram 可以变成想要的任何工具，更不说官方集成的 @gif， @bold，@sticker [等等 bot](https://core.telegram.org/bots)  。
 - 开放，作为一个 IM，应该能够包容万千也能够开放的分享，这就提到了 Telegram 支持的媒体内容，文字，链接，音频，视频，gif，表情贴图，能够想到的几乎所有内容都可以兼容，甚至有人直接 Telegram 来当音乐播放器。并且 Telegram 在图片以及 Gif 分享的时候做了很多的优化处理，我在日常使用中几乎没有感受到任何卡顿，甚至流量的消耗也在我可接受的范围。
 
-以下就是几个非常吸引人的 Point：
+以下就是几个非常吸引人的 Point
 
 ## Sticker
 
@@ -65,12 +73,12 @@ inline bot，可以利用这个 bot 将普通的 emoji 转成其他表情贴图�
 - @Instasave\_bot 用来下载 instagram 的 bot
 
 ### 如何寻找有趣的 bot
-网站
+网站：
 
 - https://thereisabotforthat.com/
 - https://storebot.me/
 
-或者通过 bot
+或者通过 bot:
 
 - https://telegram.me/storebot
 
@@ -82,10 +90,7 @@ inline bot，可以利用这个 bot 将普通的 emoji 转成其他表情贴图�
 最后来记录一些有爱的群组：
 
 - Google Fans <https://telegram.me/googlecn>
-- Kindle 中文圈 <https://telegram.me/kindlezh>
-- 线上狼人 <https://telegram.me/cnwolf>
 - Appinn Talk <https://telegram.me/appinn>
-- Openwrt <https://telegram.me/wirelessrouter>
 - /r/oneplus <https://telegram.me/joinchat/B9zpUzyx2bFy-Mgq25YFkg>
 
 ## Channel
@@ -97,10 +102,18 @@ inline bot，可以利用这个 bot 将普通的 emoji 转成其他表情贴图�
 - 好书分享 <https://telegram.me/haoshufenxiang>
 - Btsync Keys <https://telegram.me/btsync>
 - 我自己的阅读分享 <https://telegram.me/inoreader>
-- Pokemon Channel <https://telegram.me/PokemonChannel>
 
 ## Client
 最后推荐一个第三方 Android Client : Plus Messenger [Link](https://play.google.com/store/apps/details?id=org.telegram.plus&hl=en)。 虽然官方的客户端已经足够完美了，但是因为加入的群比较多，经常无法找到对应的目的地，这个第三方客户端完美的解决了这个问题。
+
+## Me
+如果你看到了这里，欢迎加入我博客的私有群组。
+
+- <https://t.me/joinchat/BWVDQRwh7FPygFipJeoXVw>
+
+或者如果你想讨论任何关于 Private Tracker 的信息可以加入这里：
+
+- <https://t.me/joinchat/BWVDQRhRAjvGgG99elnpSg>
 
 ## Links
 
