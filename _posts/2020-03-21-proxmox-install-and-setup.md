@@ -113,6 +113,7 @@ Proxmox 基于 Debian 的软件源都可以替换成国内的镜像：[^tuna]
 
 
 ### Storage
+
 Proxmox 支持两类文件存储类型：
 
 - 本地 (ZFS, LVM, Linux 支持的任何文件系统）
@@ -134,10 +135,10 @@ Proxmox 支持两类文件存储类型：
 		4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
 		102400000, 214990848, 512000000, 550731776, 644972544
 
-	Allocating group tables:     0/29809           done
-	Writing inode tables:     0/29809           done
+	Allocating group tables:     0/29809 done
+	Writing inode tables:     0/29809 done
 	Creating journal (262144 blocks): done
-	Writing superblocks and filesystem accounting information:     0/29809           done
+	Writing superblocks and filesystem accounting information:     0/29809 done
 
 	# /sbin/blkid /dev/sda1 -o export
 	Created symlink /etc/systemd/system/multi-user.target.wants/mnt-pve-sda.mount -> /etc/systemd/system/mnt-pve-sda.mount.
