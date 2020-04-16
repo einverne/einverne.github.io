@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "我使用的Chrome Extension"
-description: "我使用的Chrome Extension扩展"
+title: "我使用的 Chrome Extension"
+description: "我使用的 Chrome Extension 扩展"
 category: 整理合集
-tags: [Chrome, Google]
+tags: [chrome, google]
 ---
 
 日常使用备份，另外会单独拿出一列写写[我用的 Userscript](/post/2015/08/userscripts.html)，类似微博去广告，豆瓣页面显示下载链接之类并不会存在这个列表里面。使用这一套扩展的好处有以下几点：
@@ -17,19 +17,19 @@ tags: [Chrome, Google]
 
 ## Tampermonkey
 当然他是[神器](http://www.einverne.tk/2013/01/Tampermonkey.html)
-Chrome下，扩展是能够同步的，而脚本我找到了方法也能够同步～～文中有
+Chrome 下，扩展是能够同步的，而脚本我找到了方法也能够同步～～文中有
 
 [Tampermonkey The most popular userscript manager for Blink-based browsers](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 ## 广告屏蔽
-曾经一度不能区别Adblock(AB)与Adblock Plus(ABP),后来大概了解了一下，可参阅我博客：[http://www.einverne.tk/2013/08/ababp.html](http://www.einverne.tk/2013/08/ababp.html)
-至于后来，我只用Adblock了，为啥？我觉得Adblock更好～～文中有解释
+曾经一度不能区别 Adblock(AB) 与 Adblock Plus(ABP), 后来大概了解了一下，可参阅我博客：[http://www.einverne.tk/2013/08/ababp.html](http://www.einverne.tk/2013/08/ababp.html)
+至于后来，我只用 Adblock 了，为啥？我觉得 Adblock 更好～～文中有解释
 
 [AdBlock. The #1 ad blocker with over 200 million downloads. Blocks YouTube, Facebook and ALL ads by default (unlike Adblock Plus).](https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom)
 
 ## LastPass
 [密码管理](http://www.einverne.tk/2013/04/manage-password.html)
-LastPass甚至可以用来共享密码～～
+LastPass 甚至可以用来共享密码～～
 
 [LastPass: Free Password Manager LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
 
@@ -37,9 +37,23 @@ LastPass甚至可以用来共享密码～～
 不解释
 [Proxy SwitchySharp Manage and switch between multiple proxies quickly & easily. Based on "Proxy Switchy!" & "SwitchyPlus"](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)
 
-目前已经替换成[Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+目前已经替换成 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+
+## PT Plugin Plus
+需要手工加载
+
+- <https://github.com/ronggang/PT-Plugin-Plus>
+
+## bypass paywalls
+用来绕过付费墙。
+
+- <https://github.com/iamadamdev/bypass-paywalls-chrome>
 
 ## 印象笔记·剪藏
+2020 年更新
+
+目前我已经不再使用 Evernote，所以也放弃了使用 Evernote 的剪藏。现在推荐 WizNote 或者 Joplin 的剪藏。
+
 Evernote，千万记住用国际版
 
 [Evernote Web Clipper Use the Evernote extension to save things you see on the web into your Evernote account.](https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc)
@@ -55,8 +69,11 @@ Evernote，千万记住用国际版
 [User-Agent Switcher User-Agent Switcher is a quick and easy way to switch between user-agents.](https://chrome.google.com/webstore/detail/user-agent-switcher/ffhkkpnppgnfaobgihpdblnhmmbodake)
 
 ## 扇贝网查词助手 已弃用
+目前转用 GoldenDict，是操作系统级别的查词，所以也放弃了这个插件。
+
 查词，wiki
-[扇贝网查词助手 扇贝网查词Chrome扩展，查词更方便。](https://chrome.google.com/webstore/detail/%E6%89%87%E8%B4%9D%E7%BD%91%E6%9F%A5%E8%AF%8D%E5%8A%A9%E6%89%8B/mifikcalbnghhhlngmdfpfnlihcbhmnp)
+
+[扇贝网查词助手 扇贝网查词 Chrome 扩展，查词更方便。](https://chrome.google.com/webstore/detail/%E6%89%87%E8%B4%9D%E7%BD%91%E6%9F%A5%E8%AF%8D%E5%8A%A9%E6%89%8B/mifikcalbnghhhlngmdfpfnlihcbhmnp)
 
 ## Image Downloader
 批量下载图片
@@ -84,13 +101,13 @@ InoReader 不解释
 
 [Dream Afar New Tab An unexpected trip everyday by simply opening a new tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn)
 
-# 以下Chrome App
+# 以下 Chrome App
 
 ## Hangouts
 Hangouts 推荐使用 App 版本，看样子 Google 应该会重点发展 App 版的 Hangouts
 [Always stay connected with the new desktop app for Hangouts on ChromeOS and Windows.](https://chrome.google.com/webstore/detail/hangouts/knipolnnllmklapflnccelgolnpehhpl)
 
-## Google Keep 已经弃用，使用Evernote完全代替
+## Google Keep 已经弃用，使用 Evernote 完全代替
 Google Keep - notes and lists
 Quickly capture what's on your mind and share those thoughts with friends and family.
 
