@@ -34,10 +34,10 @@ last_updated:
 
 所以综上，得到了如上的公式，也就能总结出这几大账户，「其中有些公司记账相关的内容，比如 revenue，dividend，等这里就不提了」, 对于普通人大致可以总结出这几类：
 
-- 资产 Assets —— 现金、银行存款、有价证券等；
-- 负债 Liabilities —— 信用卡、房贷、车贷等；
-- 收入 Income —— 工资、奖金等；
-- 费用 Expenses —— 外出就餐、购物、旅行等；
+- 资产 Assets —— 现金 (Cash)、银行存款、有价证券、Investment, Loans credits 等；
+- 收入 Income —— 工资 (Paycheck)、奖金 (bonus)、Gift receives, Dividends, Interest 等；
+- 费用或者支出 Expenses —— 税金 (Taxes)、外出就餐、购物、旅行、Gift given、捐款 (Donations) 等；
+- 负债 Liabilities —— 抵押 (Mortgage)、信用卡 (Credit Cards)、房贷 (house loans)、车贷 (car loans) 等；
 - 权益 Equity —— 一般用来记录已有资产；
 
 ## 优点
@@ -112,6 +112,14 @@ DEBIT  |  CREDIT
 	2019-11-11 支出：文具 +100
 	2019-11-11 现金 	-100
 
+## Why accounting?
+更好的了解自己，这包括
+
+- 整理自己的账户 (Account)，现金，股票账户，甚至虚拟货币账户
+- 整理自己过去所有
+- 别人欠的，和欠别人的，比如信用卡账单，贷款等
+- 了解自己能够支出的现金
+
 ## Beancount
 Beancount 是一款开源的复制记账软件，基于纯文本按照特定语法书写的记账规则，可以非常轻松的生成各种资产报表。
 
@@ -175,6 +183,8 @@ beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoi
 	  [account1]          +[num] [currency-unit]
 	  [account2]          (-[num] [currency-unit])
 
+
+### 支付宝账单
 
 - 支付宝账单，登录网页版查询
 - 微信账单，APP，通过“我”-“支付”-“钱包”-“账单”- 右上角“···”-“账单下载”
