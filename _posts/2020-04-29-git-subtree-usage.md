@@ -4,7 +4,7 @@ title: "git subtree 简单使用记录"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [git, git-subtree, version-control, ]
+tags: [git, git-subtree, version-control, git-submodule,]
 last_updated:
 ---
 
@@ -146,6 +146,10 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 [^merge]: <https://mirrors.edge.kernel.org/pub/software/scm/git/docs/howto/using-merge-subtree.html>
 [^m2]: <https://help.github.com/en/github/using-git/about-git-subtree-merges>
 [^m3]: <https://stackoverflow.com/a/25311871/1820217>
+
+## 使用建议
+就和上文所说那样，因为对 subtree 目录的修改和主项目是混合在一起的。所以为了让 commit messages 清晰，可以对主项目和子项目的修改分开进行。当然如果不在意子项目的 commit messages，那么一起提交，然后在对 subtree push 的时候再统一对 commit message 进行修改也可以。
+
 
 ## reference
 
