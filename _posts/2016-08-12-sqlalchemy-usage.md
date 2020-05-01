@@ -267,6 +267,15 @@ From: [StackOverflow](https://stackoverflow.com/a/9036128/1820217)
 
 也是醉了。
 
+## 数据库表没有主键
+SQLAlchemy 在映射数据库时会寻找数据的 Primary Key，如果没有会报错。[^from]
+
+	sqlalchemy.exc.ArgumentError: Mapper mapped class PicSearchword->pic_searchword could not assemble any primary key columns for mapped table 'pic_searchword'
+
+SQLAlchemy ORM 会必须要求表拥有 Primary Key，而如果代码是建立在 Alchemy Core 之上，使用 Table 和 select() 则没有这个要求。
+
+[^from]: <https://docs.sqlalchemy.org/en/13/faq/ormconfiguration.html#how-do-i-map-a-table-that-has-no-primary-key>
+
 ## reference
 
 - 《Essential SQLAlchemy 2nd Edition 2015》
