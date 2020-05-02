@@ -16,7 +16,6 @@ Prometheus 以固定的频率从配置的目标采集监控指标信息，经过
 
 Prometheus 区别于其他监控系统的地方在于：
 
-```
 - 一个**多维**的数据模型（Dimensional data model 通过指标名字定义的时序以及键值的组合）
 
 	- 时序数据通过 metric 和 key-value 区分
