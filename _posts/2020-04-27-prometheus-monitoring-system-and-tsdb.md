@@ -315,7 +315,7 @@ scrape_configs:
   scrape_interval: 5s
   static_configs:
    - targets: ['web:5000']
-
+```
 
 
 ## PromQL
