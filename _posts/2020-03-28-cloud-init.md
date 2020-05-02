@@ -8,11 +8,13 @@ tags: [proxmox, virtual, virtual-machine, cloud-init, ubuntu, linux, openstack,]
 last_updated:
 ---
 
-在安装 [Proxmox](/post/2020/03/proxmox-install-and-setup.html) 后在它的文档中了解到了 cloud-init。所以就来梳理一下。
+在安装 [Proxmox](/post/2020/03/proxmox-install-and-setup.html) 后在它的文档中了解到了 cloud-init。所以就来梳理一下，什么是 cloud-init，它解决了什么实际问题，以及最重要的它该怎么用。
 
 
 ## cloud-init 是什么
-cloud-init 运行在 Guest machine 中，并在初始化时将一些自定义的配置应用到 Guest machine 中的应用程序。 cloud-init 最早由 Ubuntu 的开发商 Canonical 开发，现在已经支持绝大多数 Linux 发行版和 FreeBSD 系统。而目前大部分的公有云都在用 cloud-init 初始化系统配置，cloud-init 也支持部分私有云 (KVM, OpenStack, LXD 等等） [^cloud]，已经成为了事实上的标准。
+**cloud-init** 是运行在 Guest machine 中，并在初始化时将一些自定义的配置应用到 Guest machine 中的应用程序。想象一下，假如你是一个云主机提供商，每天都需要为客户初始化成千上万台虚拟主机，这些机器可能使用不用的操作系统，可能根据客户需求设定不同的 IP 地址，不同的 SSH key，以及设置不同的 hostname 等等，这个时候需要怎么办，cloud-init 就是为了解决这个问题而诞生的。
+
+cloud-init 最早由 Ubuntu 的开发商 Canonical 开发，现在已经支持绝大多数 Linux 发行版和 FreeBSD 系统。而目前大部分的公有云都在用 cloud-init 初始化系统配置，cloud-init 也支持部分私有云 (KVM, OpenStack, LXD 等等） [^cloud]，已经成为了事实上的标准。而这里就回到了 Proxmox，因为 Proxmox 是用来部署和管理虚拟机的平台，所以天然的适合 cloud-init 的使用场景，甚至可以说是不可或缺的一部分。
 
 当我们在 AWS，或者 Google Cloud 这些公有云中申请计算资源的时候，云服务的提供商总是会叫我们选择一个系统镜像，然后做一些基础设置 (Hostname, SSH key 等等），然后在此基础上进行系统创建。cloud-init 正是在这个背景下诞生，自动化将用户数据初始化到系统实例中。
 
@@ -20,7 +22,7 @@ cloud-init 的主旨是定义一些独立于操作系统的配置，比如 hostn
 
 [^cloud]: <https://cloudinit.readthedocs.io/en/latest/topics/availability.html>
 
-特性：
+cloud-init 特性：
 
 - 设置默认的 locale
 - 设置 hostname
@@ -28,7 +30,7 @@ cloud-init 的主旨是定义一些独立于操作系统的配置，比如 hostn
 - 设置临时的挂载点
 
 ## Boot Stages
-cloud-init 对系统的初始化分为这几个阶段
+cloud-init 对系统的初始化分为这几个阶段：
 
 - Generator
 - Local
@@ -99,7 +101,56 @@ cloud-init 然后再继续启动系统，将网络配置应用后启动。
 - 配置管理的插件 (puppet, chef, salt-minion)
 - 用户脚本（包括 `runcmd`)
 
-## 配置文件地址
+## Install and use cloud-init under Proxmox
+cloud-init 一般是安装在虚拟机中的，Ubuntu 系的系统直接安装即可：
+
+	apt install cloud-init
+
+绝大部分的发行版会提供开箱即用 (ready-to-use) 的 Cloud-Init 镜像（一般以 `.qcow2` 文件发布），所以你可以下载这些文件，然后直接导入。比如说 Ubuntu 提供的镜像：<https://cloud-images.ubuntu.com/>
+
+虽然大部分发行版都提供了开箱即用的 Cloud-Init 镜像，但还是推荐如果要更高的定制化需求可以自己来制作符合自己需求的镜像。
+
+在 Proxmox 下，一旦制作好了 Cloud-Init 镜像，推荐将该镜像转换成 VM template, 通过 template 可以快速创建虚拟机。
+
+	# download
+	wget https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
+	# create a new vm
+	qm create 9000 --memory 2048 --net0 virtio,bridge=vmbr0
+	# import the downloaded disk to local-lvm storage
+	qm importdisk 9000 bionic-server-cloudimg-amd64.img local-lvm
+	# finally attach the new disk to the VM as scsi drive
+	qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-1
+
+Add cloud-init CDROM drive
+
+	qm set 9000 --ide2 local-lvm:cloudinit
+
+为了从 Cloud-Init 镜像直接启动需要设置 bootdisk 参数到 `scsi0`，然后设置 BIOS 从 disk 启动
+
+	qm set 9000 --boot c --bootdisk scsi0
+
+然后配置 serial console 将其作为显示输出，这是 OpenStack 镜像必须设置的内容
+
+	qm set 9000 --serial0 socket --vga serial0
+
+### Prepare template
+最后就可以将 VM 转换成 template，然后通过该模板就可以快速创建 clones，从 VM templates 部署系统要远远快于一个完整的 clone:
+
+	qm template 9000
+
+### Deploying Cloud-Init Templates
+可以使用如下命令从 template 中克隆系统：
+
+	qm clone 9000 123 --name ubuntu2
+
+设置 SSH，及网络（这里的 IP 地址需要改成自己的网络环境的地址）：
+
+	qm set 123 --sshkey ~/.ssh/id_rsa.pub
+	qm set 123 --ipconfig0 ip=10.0.10.123/24,gw=10.0.10.1
+
+
+## 配置文件地址 {#config}
+
 cloud-init 配置文件在：
 
 	/etc/cloud/cloud.cfg
