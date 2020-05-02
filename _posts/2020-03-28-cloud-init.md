@@ -169,6 +169,30 @@ cloud-init 的日志在：
 
 	/var/lib/cloud
 
+## 在 Ubuntu Server 18.04 中设置静态 IP 地址
+在安装 ubuntu server 18.04 的时候没有选择用静态地址，所以路由器 DHCP 随机分配了一个，然后进系统才想起来配置一下静态地址。传统的做法是修改 `/etc/network/interfaces` 文件，配置接口的静态地址即可。不过网上搜索一番学习之后发现了一个新方法，使用 netplan 来做修改。[^netplan]
+
+[^netplan]: <https://www.techrepublic.com/article/how-to-configure-a-static-ip-address-in-ubuntu-server-18-04/>
+
+修改 `/etc/netplan/50-cloud-init.yaml` 文件，原来的 DHCP 配置可以看到 `dhcp4: yes` 这一行配置的是 `yes`，现在修改成这样：
+
+	network:
+		ethernets:
+			ens18:
+				dhcp4: no
+				addresses: [192.168.2.10/24]
+				gateway4: 192.168.2.1
+				nameservers:
+						addresses: [114.114.114.114, 8.8.8.8]
+		version: 2
+
+然后应用到接口：
+
+	sudo netplan --debug apply
+	sudo netplan apply
+
+这里千万要小心配置，如果配错可能导致无法连上系统的！
+
 ## reference
 
 - <https://cloud-init.io/>
