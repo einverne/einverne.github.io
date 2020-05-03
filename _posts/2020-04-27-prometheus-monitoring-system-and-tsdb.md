@@ -275,6 +275,7 @@ ALERT InstanceDown   # alert 名字
 
 
 ## 使用 Prometheus 监控 Flask 应用
+
 我在最初寻找监控系统的时候就是为了给 Flask 应用使用。而 Prometheus 在各个方面都超出了我的预期，不过再回到原始的初衷。
 
 Flask 中使用 Prometheus 需要引入 prometheus_client , Prometheus 的 Python 客户端。
