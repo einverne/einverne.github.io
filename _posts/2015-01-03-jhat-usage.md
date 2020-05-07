@@ -14,6 +14,8 @@ jhat 是 Java 的堆分析工具（Java heap Analyzes Tool），在 JDK 6u7 之�
 
     jhat [options] heap-dump-file
 
+说明：
+
 - options 参数
 - heap-dump-file 二进制 Java 堆文件，可以使用 [jmap 导出](/post/2015/01/jmap-dump-heap.html)
 
@@ -50,11 +52,11 @@ jhat 是 Java 的堆分析工具（Java heap Analyzes Tool），在 JDK 6u7 之�
 ## 实例
 使用如下命令获取二进制堆转储文件
 
-    jmap -dump:format=b,file=heap-dump.phrof pid
+    jmap -dump:format=b,file=heap-dump.hprof pid
 
 然后使用
 
-    jhat -J-Xmx1024m heap-dump.phrof
+    jhat -J-Xmx1024m heap-dump.hprof
 
 来查看和分析堆信息，然后访问本地 7000 端口即可。
 

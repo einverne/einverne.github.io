@@ -8,13 +8,12 @@ tags: [monitor, log, open-falcon, warning]
 last_updated:
 ---
 
-OpenFalcon 是一款企业级、高可用、可扩展的开源监控解决方案，提供实时报警、数据监控等功能。可以非常容易的监控整个服务器的状态，比如磁盘空间，端口存活，网络流量等等。
+OpenFalcon 是一款企业级、高可用、可扩展的开源监控解决方案，提供实时报警、数据监控等功能，由小米公司开源。使用 Falcon 可以非常容易的监控整个服务器的状态，比如磁盘空间，端口存活，网络流量等等。
 
 最近有些监控需求所以看了一下其中涉及到概念。
 
-
-## 一些基础概念
-Open-Falcon，采用和 OpenTSDB 相似的数据格式：metric、endpoint 加多组 key value tags，举两个例子：
+## 一些基础概念 {#concept}
+Open-Falcon，采用和 OpenTSDB 相似的数据格式：metric、endpoint 加多组 key value 的 tags，举两个例子：
 
     {
         metric: load.1min,
@@ -72,12 +71,14 @@ r = requests.post("http://127.0.0.1:1988/v1/push", data=json.dumps(payload))
 print r.text
 ```
 
+说明：
+
 - metric: 最核心的字段，监控指标名称，代表这个采集项具体度量的是什么，比如是 cpu_idle 呢，还是 memory_free, 还是 qps
-- endpoint: 标明 Metric 的主体（属主），比如 metric 是 cpu_idle，那么 Endpoint 就表示这是哪台机器的 cpu_idle，一般使用机器的 hostname
+- endpoint: 标明 metric 的主体（属主），比如 metric 是 cpu_idle，那么 endpoint 就表示这是哪台机器的 cpu_idle，一般使用机器的 hostname
 - timestamp: 表示上报该数据时的 unix 时间戳，注意是整数，代表的是秒
 - value: 代表该 metric 在当前时间点的值，float64
 - step: 表示该数据采集项的上报周期，这对于后续的配置监控策略很重要，必须明确指定。
-- counterType: 是 Open Falcon 定义的数据类型，取值只能是`COUNTER`或者`GAUGE`二选一，前者表示该数据采集项为计时器类型，后者表示其为原值 （注意大小写）
+- counterType: 是 Open Falcon 定义的数据类型，取值只能是`COUNTER`或者`GAUGE`二选一，前者表示该数据采集项为计时器类型（累加值），后者表示其为原值 （注意大小写，这个值是一个波动的值）
 
         - GAUGE：即用户上传什么样的值，就原封不动的存储
         - COUNTER：指标在存储和展现的时候，会被计算为 speed，即（当前值 - 上次值）/ 时间间隔
