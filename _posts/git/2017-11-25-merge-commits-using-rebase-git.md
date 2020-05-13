@@ -4,7 +4,7 @@ title: "使用 rebase 来合并多个 commits"
 tagline: ""
 description: ""
 category: Git
-tags: [git, linux, ]
+tags: [git, linux, verson-control, rebase, ]
 last_updated:
 ---
 
