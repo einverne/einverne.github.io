@@ -8,27 +8,52 @@ tags: [drools, kie, rule-engine, ]
 last_updated:
 ---
 
-在 Drools 当中，规则的编译与运行要通过 Drools 提供的各种 API 来实现，这些 API 总体来讲可以分为三类：规则编译、规则收集和规则的执行。
+## What is drools?
+
+DescriptionDrools is a business rule management system with a forward and backward chaining inference based rules engine, more correctly known as a production rule system, using an enhanced implementation of the Rete algorithm.[^wiki]
+
+[^wiki]: <https://en.wikipedia.org/wiki/Drools>
+
 
 ## 基础 API
+在 Drools 当中，规则的编译与运行要通过 Drools 提供的各种 API 来实现，这些 API 总体来讲可以分为三类：规则编译、规则收集和规则的执行。
+
 在 drools 6.x 以后这些 API 都整合到 kie API 中了
 
+KIE 定义的接口可以在 GitHub droolsjbpm-knowledge 这个项目中查看。
+
 ### KnowledgeBuilder
-KnowledgeBuilder 在业务代码当中收集已经编写好的规则， 然后对这些规则文件进行编译， 最终产生一批编译好的规则包（KnowledgePackage）给其它的应用程序使用。
+KnowledgeBuilder 在业务代码当中整理已经编写好的规则，对这些规则文件进行编译，最终产生编译好的规则包（KnowledgePackage）给其它的应用程序使用。
 
 ### KnowledgeBase
 KnowledgeBase 是 Drools 提供的用来收集应用当中知识（knowledge）定义的知识库对象，在一个 KnowledgeBase 当中可以包含普通的规则（rule）、规则流 (rule flow)、函数定义 (function)、用户自定义对象（type model）等。KnowledgeBase 本身不包含任何业务数据对象，业务对象都是插入到由 KnowledgeBase 产生的两种类型的 session 对象当中，通过 session 对象可以触发规则执行或开始一个规则流执行。
 
 ### StatefulKnowledgeSessions
-StatefulKnowledgeSession 对象是一种最常用的与规则引擎进行交互的方式，它可以与规则引擎建立一个持续的交互通道，在推理计算的过程当中可能会多次触发同一数据集。在用户的代码当中，最后使用完 StatefulKnowledgeSession 对象之后，一定要调用其 dispose() 方法以释放相关内存资源。
+StatefulKnowledgeSession 对象是一种最常用的与规则引擎进行交互的方式，它可以与规则引擎建立一个持续的交互通道，在推理计算的过程当中可能会多次触发同一数据集。在用户的代码当中，最后使用完 StatefulKnowledgeSession 对象之后，**一定**要调用其 dispose() 方法以释放相关内存资源。
+
+	public interface StatefulKnowledgeSession
+		extends
+		KieSession, KieRuntime {
+
+		KieBase getKieBase();
+	}
 
 ### StateLessKnowledgeSession
 StatelessKnowledgeSession 的作用与 StatefulKnowledgeSession 相仿，它们都是用来接收业务数据、执行规则的。事实上，StatelessKnowledgeSession 对 StatefulKnowledgeSession 做了包装，使得在使用 StatelessKnowledgeSession 对象时不需要再调用 dispose() 方法释放内存资源了
 
+调用 `execute(...)` 方法会在内部实例化 StatefulKnowledgeSession 对象，添加用户数据，执行命令，调用 fireAllRules，最后自动调用 dispose().
+
+
+	public interface StatelessKnowledgeSession
+		extends
+			StatelessKieSession {
+
+	}
+
 ## FACT 对象
 Fact 是指在 Drools 规则应用当中，将一个普通的 JavaBean 插入到规则的 WorkingMemory 当中后的对象。
 
-规则可以对 Fact 对象进行任意的读写操作，当一个 JavaBean 插入到 WorkingMemory 当中变成 Fact 之后，Fact 对象不是对原来的 JavaBean 对象进行 Clone，而是原来 JavaBean 对象的引用。
+Drools 规则可以对 Fact 对象进行任意的读写操作，当一个 JavaBean 插入到 WorkingMemory 当中变成 Fact 之后，Fact 对象不是原来的 JavaBean 对象的 Clone，而是原来 JavaBean 对象的引用。
 
 
 ## 规则文件
@@ -140,14 +165,12 @@ import java.util.Date
 - 条件部分（LHS）
 - 结果部分（RHS）
 
-对于一个完整的规则来说，这三个部分都是可选的，也就是说如下所示的规则是合法的：
+对于一个完整的规则来说，这三个部分都是可选的（可以为空），也就是说如下所示的规则是合法的：
 
     rule "name"
     when
     then
     end
-
-
 
 ### 注释
 drl 文件中对规则进行注释，和 Java 一样可以使用
@@ -213,7 +236,7 @@ Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不
 
 
 ### 操作符
-操作符有很多种类：
+Drools 中的操作符有很多种类：
 
 - Arithmetic operators (`+, -, *, /, %`) 算数操作符
 - Relational operators (`>, >=, ==, !=`) 关系操作符
@@ -233,7 +256,7 @@ Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不
 `,` 与 `&&` `||` 不能混用，在 `&&` 和 `||` 出现的语句中不能出现 `,`
 
 ### 比较操作符
-Drools 中一共提供了 12 种类型的比较操作符，`>, >=, <, <=, ==, != ,contains, not contains, memberof, not memberof, matches, not matches` 。前六个比较常用，不介绍了。
+Drools 中一共提供了 12 种类型的比较操作符，`>, >=, <, <=, ==, != ,contains, not contains, memberof, not memberof, matches, not matches` 。前六个比较常用，不介绍了，现在结束一下后几个。
 
 contains 举例
 
@@ -303,7 +326,7 @@ matches 操作符匹配是否匹配 java 正则表达式。
 
 Drools 还支持一些高级语法规则，更多可以参考[这里](https://training-course-material.com/training/Drools_Expert_-_mvel_-_LHS_-_advanced)
 
-## 结果部分
+## 结果部分 {$rhs}
 Right Hand Side，又被称为结果部分，RHS，规则中 then 后面部分就是 RHS，只有在 LHS 所有条件都满足时 RHS 部分才会执行。
 
 RHS 部分是规则真正要做的事情，将条件满足而触发的动作写在该部分中，RHS 中可以使用 LHS 中定义的绑定变量名、设置的全局变量，或者直接编写 Java 代码（需要 import 相应的类）
@@ -317,7 +340,7 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 一旦调用 insert 函数， Drools 会**重新**与所有规则再重新匹配一次，对于没有设置 no-loop 属性为 true 的规则，如果条件满足，不管之前是否执行过都会再执行一次，这个特性不仅存在于 insert 函数，update，retract 宏函数都有该特性，所以某些情况下考虑不周可能造成死循环。
 
 ### update
-对 Fact 进行更新
+对 Fact 进行更新，比如更新 Fact 中的某个字段。
 
 ### retract
 用来将 Working Memory 中某个 Fact 对象删除。
@@ -329,12 +352,25 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 **规则属性**是用来控制规则执行的重要工具，显示地声明了对规则行为的影响。
 
 
-规则的属性有 13 个，activation-group、agenda-group、
-auto-focus、date-effective、date-expires、dialect、duration、enabled、lock-on-active、no-loop、ruleflow-group、salience、when，
+规则的属性有 13 个
+
+- activation-group
+- agenda-group
+- auto-focus
+- date-effective
+- date-expires
+- dialect
+- duration
+- enabled
+- lock-on-active
+- no-loop
+- ruleflow-group
+- salience
+- when
 
 ### salience
 
-用来设置规则执行的优先级，salience 属性值是一个数字，数字越大优先级越高，可以是负值。`salience` 表示规则的优先级，值越大在激活队列中优先级越高。
+salience 用来设置规则执行的优先级，salience 属性值是一个数字，数字越大优先级越高，可以是负值。`salience` 表示规则的优先级，值越大在激活队列中优先级越高。
 
 - 默认情况下，规则的 salience 是 0
 - type: Integer
@@ -351,10 +387,12 @@ auto-focus、date-effective、date-expires、dialect、duration、enabled、lock
 
 ### no-loop
 
-no-loop 属性的作用是用来控制已经执行过的规则在条件再次满足时是否再次执行。默认情况下规则的 no-loop 属性的值为 false，如果 no-loop 属性值为 true，那么就表示该规则只会被引擎检查一次，
+no-loop 属性的作用是用来控制已经执行过的规则在条件再次满足时是否再次执行。默认情况下规则的 no-loop 属性的值为 false，如果 no-loop 属性值为 true，那么就表示该规则只会被引擎检查一次
 
 - 默认值：false
 - type: Boolean
+
+在上面提到的 insert 后，如果没有设置 no-loop 的规则会再检查一次。
 
 ### date-effective
 控制规则只有在到达指定时间后才会触发。只有当系统时间 `>=date-effective` 设置的时间值时，规则才会触发执行，否则执行将不执行。在没有设置该属性的情况下，规则随时可以触发，没有这种限制。
