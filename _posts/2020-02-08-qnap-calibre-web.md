@@ -54,7 +54,6 @@ last_updated:
 
 	if [ "$(ls -A /[autoaddfolder])" ]; then
 		 calibredb add -r "/[autoaddfolder]" --library-path="/[calibrelibraryfolder]"
-		 rm /[autoaddfolder]/*
 	fi
 
 [^1]: https://github.com/janeczku/calibre-web/issues/412
