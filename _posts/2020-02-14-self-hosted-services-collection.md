@@ -135,4 +135,15 @@ anyi 导航、聚合搜索、webstack
 雅黑探针、云探针、[netdata](https://github.com/netdata/netdata)
 
 
+## Other
+
+### Instagram scraper
+
+	touch ig_args.txt ig_users.txt
+	docker run -d \
+		-v $(pwd)/download:/download \
+		-v $(pwd)/ig_args.txt:ig_args.txt \
+		-v $(pwd)/ig_users.txt:ig_users.txt \
+		shyd/instagram-scraper
+
 

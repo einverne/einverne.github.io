@@ -19,6 +19,11 @@ last_updated:
 - Syncthing 依赖于一个全局发现服务器，用来通过 Device ID 来发现设备 IP 和 端口，任何人都可以自己架设全局 Discovery 服务器，然后将自己的节点指向该服务器，这样就不必共享全局的服务器了，更甚至不需要依赖与因特网就能够实现局域网内文件同步
 - 关于安全性的[说明](https://docs.syncthing.net/users/security.html) 已经列举的非常详细了，所有内容通过 TLS 加密传输
 
+## 下载安装
+下载及安装过程不再赘述，官网已经非常详细了。
+
+- <https://syncthing.net/>
+
 ## 端口
 Syncthing 有个端口需要注意一下
 
@@ -42,7 +47,7 @@ Syncthing 有个端口需要注意一下
 
 记得把 yourname 替换成用户名。
 
-服务端口是 8384.
+Syncthing 服务启动后端口是 8384.
 
 ## 推荐理由
 推荐的理由：

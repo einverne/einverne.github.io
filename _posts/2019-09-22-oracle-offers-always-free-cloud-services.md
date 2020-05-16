@@ -100,6 +100,18 @@ then
 
 	ssh -p 22 yourname@ip
 
+另外我个人建议可以登陆后修改一下默认的 SSH 端口。
+
+## 防火墙设置
+实例管理页面，Virtual Cloud Network Details，Security Lists, 在防火墙安全策略里面将需要的端口配上。
+
+另外需要特别注意需要登录机器配置实例上的防火墙。
+
+	sudo iptables -P INPUT ACCEPT
+	sudo iptables -P FORWARD ACCEPT
+	sudo iptables -P OUTPUT ACCEPT
+	sudo iptables -F
+
 
 ## reference
 
