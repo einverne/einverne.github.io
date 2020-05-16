@@ -88,6 +88,11 @@ Obsidian 不期望有一个插件可以解决所有的问题，但 Obsidian 提�
 卡片标签式笔记法，Obsidian 也可以兼容。
 
 
+## Links
+Obsidian 的开发 Roadmap
+
+- <https://trello.com/b/Psqfqp7I/obsidian-roadmap>
+
 ## reference
 
 - <https://github.com/joekroese/tiddlyroam>

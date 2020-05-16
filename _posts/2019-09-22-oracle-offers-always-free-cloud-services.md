@@ -112,6 +112,12 @@ then
 	sudo iptables -P OUTPUT ACCEPT
 	sudo iptables -F
 
+## QA
+新开的实例，我一般都会直接修改其 ssh 登录端口，而这台机器白天开了之后设置了 sshd 端口，并且 reload 了 sshd 设置，晚上回到家后发现
+
+	connect to host port xxx:xxx No route to host
+
+这个时候我想着要不就是端口没有生效，要不就是防火墙问题，所以通过 Oracle 后台远程登录的方式进入到机器上，先关了防火墙，然后去控制后台配置了端口，然后再连接即可。
 
 ## reference
 
