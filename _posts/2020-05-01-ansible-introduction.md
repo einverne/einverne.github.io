@@ -99,15 +99,41 @@ hostfile 文件指定了当前文件夹下的 hosts 文件。hosts 文件夹中�
 配置 SSH 免密登录的文章可以参考之前的[文章](/post/2016/06/ssh-copy-id.html).
 
 ### inventory
-可以配置 `/etc/ansible/hosts` 创建基本的 inventory.
+inventory 可以对远程服务器 HOST 进行管理。可以配置 Ansible 默认的 `/etc/ansible/hosts` 创建基本的 inventory.
 
 这里的 inventory 可以看成需要管理的节点的配置，可以直接配置到全局，然后使用 `all` 来引用，也可以用分组的形式来引用。
+
+比如，未分组形式：
+
+```
+gtk.pw
+einverne.info
+12.12.12.12
+192.168.2.1
+```
+
+或者采用分组形式，用方括号表示下面的 HOST 都属于 webserver 这个组：
+
 
 ```
 [webserver]
 127.0.0.1
 foo.example.com
+```
 
+如果有多个 HOST 可以用如下语法添加多个：
+
+```
+[webservers]
+www[001:006].example.com
+
+[dbservers]
+db-[99:101]-node.example.com
+```
+
+或者配置别名：
+
+```
 dbserver1 ansible_ssh_host=127.0.0.1 ansible_ssh_port=22 color=red
 dbserver2 ansible_ssh_host=127.0.0.2 ansible_ssh_port=220
 
@@ -119,10 +145,27 @@ dbserver2
 [forum:children] #groups of groups
 webserver
 dbserver
-
-[webservers]
-www[01:50].example.com
 ```
+
+inventory 中可以配置使用别名，但是推荐在 ssh config 中进行配置管理，编辑 `vi ~/.ssh/config`:
+
+	Host ds
+		HostName einverne.info
+		Port 22
+		User username
+
+	Host aws1
+		HostName aws.einverne.info
+		Post 22
+		User demo-username
+
+	Host oracle1
+		HostName 140.1.1.1
+		Port 22
+		User some-username
+
+然后就可以在 Ansible 的 inventory 中配置使用 `ds`, `aws1` 或者 `oracle1`.
+
 
 更多 inventory 的配置可以参考[官方文档](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
 
@@ -242,12 +285,43 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 
 说明：
 
+- hosts: 指定哪些服务器执行命令
 - tasks: 一系列任务
 - handlers: 由通知者进行通知，只有 nofity 后 handler 才会执行，等到 tasks 执行完后才会执行，最多执行一次
 
 执行 playbook
 
 	ansible-playbook playbook.yml -f 10
+
+### role
+再来看一个例子：
+
+	- hosts:webservers
+	  roles:
+		-tmux
+
+这里 role 定义了 tmux(tmux 编译安装），则表示用 tmux 执行了一系列的命令。role 由其他一些组件组成：
+
+	roles/
+	   tmux/
+		 tasks/
+		 handlers/
+		 files/
+		 templates/
+		 vars/
+		 defaults/
+		 meta/
+
+在 tasks 目录下新建 `mail.yml`:
+
+	- name: install tmux package
+	  package:
+		name:
+		  - libevent
+		  - ncurses
+		  - tmux
+		state: latest
+
 
 如果想了解更多拆分 playbook 的方法，可以到官网查看更多 include, role 相关的内容。
 
