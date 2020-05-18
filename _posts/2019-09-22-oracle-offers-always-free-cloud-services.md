@@ -90,7 +90,7 @@ Check this [post](/post/2015/12/things-to-do-after-buying-vps.html)
 	root@instance: # passwd # set password of root user
 	adduser yourname
 	apt install vim
-	update-alternatives --editor   # choose vim
+	update-alternatives --config editor   # choose vim
 	visudo # add  yourname ALL=(ALL:ALL) NOPASSWD:ALL
 	vi /etc/ssh/sshd_config # AllowUsers yourname
 	/etc/init.d/ssh reload

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "购买VPS之后需要做的事情"
+title: "购买 VPS 之后需要做的事情"
 tagline: ""
 description: ""
 category: 经验总结
@@ -9,6 +9,7 @@ last_updated: 2016-04-09
 ---
 
 ## Security
+Security is the most important thing we should take care at first.
 
 ### Change password
 
@@ -113,7 +114,7 @@ Then we can use `ssh ds` to connect to server. If you have multi config just add
 		HostName server
 		Port 22
 		User einverne
-	
+
 	Host github
 		HostName github.com
 		Port 22
@@ -181,14 +182,14 @@ Usage:
                          speedtest.net operated servers
       --version          Show the version number and exit
 
-一些机房100M测速下载文件地址，用于测速之用
+一些机房 100M 测速下载文件地址，用于测速之用
 
 description:
-VPS的网络性能，主要分出口和入口二个指标，入口可以用wget文件得到。
-看下载速度，如果是11M/s，大概就是百兆口，70M/S，大概就是G口。
-您的VPS搭建好网站环境后，可以用其它的VPS去拽这个文件，得到出口的带宽。
+VPS 的网络性能，主要分出口和入口二个指标，入口可以用 wget 文件得到。
+看下载速度，如果是 11M/s，大概就是百兆口，70M/S，大概就是 G 口。
+您的 VPS 搭建好网站环境后，可以用其它的 VPS 去拽这个文件，得到出口的带宽。
 
-Directspace机房/10M.100M测试包 Portland
+Directspace 机房 /10M.100M 测试包 Portland
 
     wget http://bandwidth.directspace.net/10MBtest.zip
     wget http://bandwidth.directspace.net/100MBtest.zip
@@ -199,6 +200,23 @@ The speed of read and write of your hard drive.
 
     dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
     dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync
+
+## docker
+Docker become much powerful these days, I can build and sever all my self-host services by using Docker.
+
+	sudo apt update
+	sudo apt install apt-transport-https ca-certificates curl software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+	sudo apt update
+	apt-cache policy docker-ce
+	sudo apt install docker-ce
+	sudo systemctl status docker
+
+Executing the docker command without sudo
+
+	sudo usermod -aG docker USER
+
 
 ## shadowsocks
 sock5 proxy.
@@ -230,7 +248,7 @@ sock5 proxy.
 			"timeout":600,
 			"method":"AES-256-CFB"
 		}
-	
+
 	Explanation of each field:
 
 		- server: your hostname or server IP (IPv4/IPv6).
