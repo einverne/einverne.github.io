@@ -325,6 +325,70 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 
 如果想了解更多拆分 playbook 的方法，可以到官网查看更多 include, role 相关的内容。
 
+### Check Mode (dry-run)
+
+当使用 check mode 运行 ansible-playbook 时，Ansible 不会在远程服务器上执行任何命令。
+
+	ansible-playbook foo.yml --check
+
+## ansible-galaxy
+
+### 创建 role
+`ansible-galaxy` 命令和 Ansible 命令绑定到了一起，可以通过 `ansible-galaxy` 来初始化 role.
+
+	ansible-galaxy init pyenv
+
+得到：
+
+	➜ tree pyenv
+	pyenv
+	├── defaults
+	│   └── main.yml
+	├── files
+	├── handlers
+	│   └── main.yml
+	├── meta
+	│   └── main.yml
+	├── README.md
+	├── tasks
+	│   └── main.yml
+	├── templates
+	├── tests
+	│   ├── inventory
+	│   └── test.yml
+	└── vars
+		└── main.yml
+
+在使用时，每一个目录都需要包含一个 `mail.yml` 文件：
+
+- `tasks`: 包含 role 需要执行的任务清单
+- `handlers`: 包含 handlers, 可能被 role 用到
+- `defaults`: 默认变量，[Using Variables](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#playbooks-variables)
+- `vars`: 其他被 role 用到的变量 [Variable](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#playbooks-variables)
+- `files`: 包含可能被 role 用到的文件
+- `templates`: 包含可能被 role 用到的 templates
+- `meta`: 定义 role 的 meta data
+
+YAML 文件可以被引入，比如不同的系统版本：
+
+	# roles/example/tasks/main.yml
+	- name: added in 2.4, previously you used 'include'
+	  import_tasks: redhat.yml
+	  when: ansible_facts['os_family']|lower == 'redhat'
+	- import_tasks: debian.yml
+	  when: ansible_facts['os_family']|lower == 'debian'
+
+	# roles/example/tasks/redhat.yml
+	- yum:
+		name: "httpd"
+		state: present
+
+    # roles/example/tasks/debian.yml
+	- apt:
+		name: "apache2"
+		state: present
+
+
 ## 延伸
 其他的运维管理工具 puppet、cfengine、chef、func、fabric.
 
