@@ -1,17 +1,18 @@
 ---
 layout: post
-title: "OpenMediaVault 设置"
+title: "OpenMediaVault 初始化设置"
 tagline: ""
 description: ""
-category:
-tags: []
+category: 学习笔记
+tags: [openmediavault, nas, operating-system, os, system, linux, open-source,]
 last_updated:
 ---
 
 OpenMediaVault，是一个开源的基于 Debian Linux 的下一代网络附加存储 (NAS) 解决方案。
 
-## 镜像源
+关于 NAS 系统的选择可以参考[这篇文章](/post/2020/02/nas-operating-system-choice.html).
 
+## 镜像源
 
 	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
 	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
@@ -55,7 +56,7 @@ OpenMediaVault，是一个开源的基于 Debian Linux 的下一代网络附加�
     'omv-salt stage run prepare' to apply the modified default values
     and 'omv-salt deploy run systemd' to create the unit files.
 
-但是我尝试一下之后发现创建共享文件后，sharedfolder 中依然没有，那我就只能手动 `ln` 了。
+但是我尝试一下之后发现创建共享文件后，sharedfolder 中依然没有，那我就只能手动 `ln` 了。（注意这里的地址需要换成你自己系统的地址）
 
 	ln -s /srv/dev-disk-by-label-storage/appdata /sharedfolders/appdata
 	ln -s /srv/dev-disk-by-label-storage/ruTorrent/ /sharedfolders/ruTorrent

@@ -71,10 +71,11 @@ unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么�
 - 支持硬盘无访问自动休眠
 - 只需要一个校验盘（需大于阵列中最大的盘的容量），整个磁盘阵列允许一个磁盘挂掉，只需要用同等大小的磁盘替换即可
 - 扩容方便，只需要往阵列中继续添加磁盘即可，唯一的限制就是新添加的硬盘容量不能大于校验盘大小。如果新加入的盘容量大于校验盘则需要先将校验盘替换成该硬盘，然后将原来的校验盘作为新盘加入
--
+
 
 ### unRAID 缺点
 
+- 系统配置在重启后可能丢失，并且基于一个非主流的 Linux 发行版，排查问题可能遇到瓶颈
 - unRAID 是需要授权的，但相反这个对于非技术人员反而可能是优势，毕竟可以有一个技术支持。unRAID 的授权价格从最低 $59(6 块硬盘）， $89(12 快硬盘），到 Pro $129 （无限硬盘）[^price]
 
 
@@ -86,9 +87,16 @@ unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么�
 
 总结来讲，FreeNAS 有最好的文件系统 -- ZFS，但是对 Docker 支持需要借助虚拟机有一定性能损耗，OpenMediaVault 最轻量，但是对虚拟机不支持硬件直通，unRAID 可以非常方便的扩展硬盘池大小，对虚拟机支持也比较完善。
 
+对于我个人而言，目前我并没有支持 ECC 的内存，也没有备用多余的内存条，我目前的数据也不需要做到实时备份，所以目前我不需要 FreeNAS，而 UnRaid 又有一些我无法容忍的问题（比如配置丢失的问题，作为个人家用虽然可以 24 小时开机，但我不想每次开机后需要重新配置），综合下来 OpenMediaVault 最符合我的需求：
 
+- 一个稳定的系统，Debian 上的扩展也非常多
+- Docker 也支持
+- 配合 [mergerfs](https://github.com/trapexit/mergerfs) 可以实现多物理盘组合，实现 UnRaid 中随时添加磁盘的特性
+- 配合 [SnapRAID](https://www.snapraid.it/) 可以实现冗余备份
+- 配合 Prometheus 和 Grafana 可以对 NAS 进行全面的监控，弥补起管理后台监控的不足
+- 最重要的就是 OpenMediaVault 是[开放源代码的](https://sourceforge.net/projects/openmediavault/)
 
 ## reference
 
 - FreeNAS vs unRAID <https://www.youtube.com/watch?v=aXsRIrC5bjg>
-https://www.openmediavault.org
+- <https://www.openmediavault.org>
