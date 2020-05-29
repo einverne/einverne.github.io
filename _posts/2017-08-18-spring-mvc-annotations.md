@@ -294,7 +294,7 @@ Spring 中注解的处理基本都是通过实现接口 BeanPostProcessor 来进
 
 相关的处理类有： AutowiredAnnotationBeanPostProcessor，CommonAnnotationBeanPostProcessor，PersistenceAnnotationBeanPostProcessor，  RequiredAnnotationBeanPostProcessor
 
-这些处理类，可以通过 <context:annotation-config/> 配置隐式的配置进 Spring 容器。这些都是依赖注入的处理，还有生产 bean 的注解 (@Component， @Controller, @Service, @Repository) 的处理：
+这些处理类，可以通过 `<context:annotation-config/>` 配置隐式的配置进 Spring 容器。这些都是依赖注入的处理，还有生产 bean 的注解 (@Component， @Controller, @Service, @Repository) 的处理：
 
 	<context:component-scan base-package="net.aazj.service,net.aazj.aop" />
 
