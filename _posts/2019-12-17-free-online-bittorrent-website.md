@@ -39,16 +39,19 @@ rss
 ## PT
 
 ### btschool
-这是我再开始关注 PT 时，注册的第一个网站。
+这是我再次开始关注 PT 时，注册的第一个网站。
 
 ### BeiTai
 迄今为止用过的最舒服的 PT 站。
 
 <a href="https://www.beitai.pt/promotionlink.php?key=ea663651ba561d528615a13a0434ebe8"><img src="https://www.beitai.pt/pic/prolink.png" alt="备胎" title="备胎 - The Ultimate File Sharing Experience"></a>
 
+没有考核，速度最快，所以完成后我也会挂很长时间。
+
 ### Scenetime
 
 ### HD Dolby
+作种人数一般
 
 ### HDArea
 

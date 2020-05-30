@@ -12,7 +12,23 @@ OpenMediaVault，是一个开源的基于 Debian Linux 的下一代网络附加�
 
 关于 NAS 系统的选择可以参考[这篇文章](/post/2020/02/nas-operating-system-choice.html).
 
+## 默认用户名和密码
+OpenMediaVault 安装后的 Web UI，默认的用户名和密码是：
+
+	admin
+	openmediavault
+
+登陆后进行修改。
+
+## ssh 登录
+Web UI 的用户名是 admin，但是 SSH 的用户名是 root
+
 ## 镜像源
+如果安装的时候没有选择国内的镜像源，可以手动进行修改：
+
+	vi /etc/apt/sources.list
+
+然后使用如下配置：
 
 	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
 	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
@@ -27,6 +43,8 @@ OpenMediaVault，是一个开源的基于 Debian Linux 的下一代网络附加�
 安装：
 
     wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash
+
+来自：
 
 - <http://omv-extras.org/>
 
