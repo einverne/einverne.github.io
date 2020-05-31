@@ -50,6 +50,8 @@ Web UI 的用户名是 admin，但是 SSH 的用户名是 root
 
 
 ## docker mirror
+Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Extras 后可以直接启用。国内网络环境不好的情况下，一定先替换上面的源再安装。
+
 编辑 `vi /etc/docker/daemon.json`:
 
 	{
