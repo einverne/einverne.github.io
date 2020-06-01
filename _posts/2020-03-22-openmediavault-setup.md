@@ -54,10 +54,16 @@ Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Ex
 
 编辑 `vi /etc/docker/daemon.json`:
 
+注意这里微软提供的 Docker 镜像已经限制只能 Azure 的机器使用了，如果使用 azk8s 会返回 403 错误：
+
+	Error response from daemon: error parsing HTTP 403 response body: invalid character '<' looking for beginning of value: "<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>403 Forbidden</h1></center>\r\n<hr><center>nginx/1.14.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n"
+
+自行替换成 aliyun 或者其他国内厂提供的 registry-mirrors 吧！
+
 	{
 		"registry-mirrors": [
-			"https://registry.azk8s.cn"
-			"https://reg-mirror.qiniu.com",
+			"https://registry.azk8s.cn",
+			"https://reg-mirror.qiniu.com"
 		],
 	  "data-root": "/var/lib/docker"
 	}
@@ -84,7 +90,7 @@ Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Ex
 ## ruTorrent
 Pull 镜像：
 
-	docker pull dockerhub.azk8s.cn/linuxserver/ruTorrent
+	docker pull linuxserver/rutorrent
 
 创建：
 
@@ -100,7 +106,7 @@ docker run -d \
   -v /sharedfolders/appdata/ruTorrent:/config \
   -v /sharedfolders/ruTorrent:/downloads \
   --restart unless-stopped \
-  dockerhub.azk8s.cn/linuxserver/rutorrent
+  linuxserver/rutorrent
 ```
 
 然后根据 [这里](/post/2020/03/rtorrent-and-rutorrent.html) 的说明改一下主题。

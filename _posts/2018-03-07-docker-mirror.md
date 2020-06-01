@@ -36,6 +36,11 @@ Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/
 
 	https://dockerhub.azk8s.cn
 
+2020 年 5 月更新，Azure 提供的镜像已经限制只能够 Azure 的机器使用了。
+
+	Error response from daemon: error parsing HTTP 403 response body: invalid character '<' looking for beginning of value: "<html>\r\n<head><title>403 Forbidden</title></head>\r\n<body bgcolor=\"white\">\r\n<center><h1>403 Forbidden</h1></center>\r\n<hr><center>nginx/1.14.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n"
+
+
 ### 网易
 
 	https://hub-mirror.c.163.com
