@@ -40,6 +40,111 @@ last_updated:
 ## 单例 {#singleton}
 至始至终只有一个实例。
 
+### Eager initialization
+The instance of Singleton is created at the time of class loading.
+```java
+public class EagerSingletion {
+	private static final EagerSingletion instance = new EagerSingletion();
+	private EagerSingletion() {}
+	public static EagerSingletion getInstance() {
+		return instance;
+	}
+}
+```
+
+在 Singleton 不占用太多资源时可以使用 `static` 在类加载时使用这个方法。但是对于大对象这个方法就不是很好。
+
+### Static block initialization
+Use static block to create instance
+
+```java
+public class StaticBlockSingleton {
+	private static StaticBlockSingleton instance = null;
+	private StaticBlockSingleton() {}
+	static {
+		try {
+			instance = new StaticBlockSingleton();
+		} catch(Exception e) {
+			throw new RunTimeException("Exception creating singleton");
+		}
+	}
+
+	public static StaticBlockSingleton getInstance() {
+		return instance;
+	}
+}
+```
+
+使用 `static` 字段和 `static` block 定义的实例都是在实例对象被使用之前就已经创建。
+
+### Lazy Initialization
+在第一次使用时创建。
+
+```
+public class LazyInitialSingleton {
+	public static LazyInitialSingleton instance = null;
+	private LazyInitialSingleton() {}
+	public static LazyInitialSingleton getInstance() {
+		if (instance == null) {
+			instance = new LazyInitialSingleton();
+		}
+		return instance;
+	}
+}
+```
+
+但是这个方法在单线程中是没有问题的，如果是多线程同时调用 `getInstance` 方法，就可能创建多个实例。
+
+### Thread Safe Singleton
+
+```
+public class ThreadSafeSingleton {
+	public static ThreadSafeSingleton instance = null;
+	private ThreadSafeSingleton() {}
+	public static synchronized ThreadSafeSingleton getInstance() {
+		if (instance == null) {
+			instance = new ThreadSafeSingleton();
+		}
+		return instance;
+	}
+}
+```
+
+`synchronized` 作用于静态方法等同于对类加锁。
+
+### Double checked Singleton
+
+```
+public static ThreadSafeSingleton getInstance () {
+	if (instance == null) {
+		synchronized (ThreadSafeSingleton.class) {
+			if (instance == null) {
+				instance = new ThreadSafeSingleton();
+			}
+		}
+	}
+	return instance;
+}
+```
+
+### Bill Pugh Singleton
+使用内部静态类
+
+```
+public class Singleton() {
+	private Singleton() {}
+	private static class Helper {
+		private static final Singleton INSTANCE = new Singleton();
+	}
+
+	public static Singleton getInstance() {
+		return Helper.INSTANCE;
+	}
+}
+```
+
+这里涉及到类加载机制，在类加载 Singleton 时，内部静态类是不会被加载的。只有当有调用 `getInstance()` 方法，实例才会初始化。
+
 ## 多例
 一个类存在多个自身的实例，并且多例类需要自己创建，管理自己的实例，并向外提供自己的实例。
 
@@ -92,3 +197,4 @@ last_updated:
 - <http://wangkuiwu.github.io/2012/10/17/design_pattern/>
 - <https://www.tutorialspoint.com/design_pattern/prototype_pattern.htm>
 - 《Head First Design Patterns》
+- <https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples>
