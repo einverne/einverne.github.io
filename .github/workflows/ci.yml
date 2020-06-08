@@ -16,7 +16,7 @@ jobs:
       uses: actions/checkout@master
     - name: Build the site in the jekyll/builder container
       run: |
-        docker run --rm\
+        docker run --rm \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         -it jekyll/builder:latest jekyll build
     - name: copy file via ssh password
