@@ -18,7 +18,7 @@ jobs:
       run: |
         docker run --rm \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+        jekyll/builder:3.8 /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
