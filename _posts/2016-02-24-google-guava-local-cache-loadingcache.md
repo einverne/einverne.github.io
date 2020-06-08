@@ -13,8 +13,25 @@ last_updated:
 通常情况下，Guava caching 适用于以下场景：
 
 - 花费一些内存来换取速度
-- 期望一些 key 会被不止一次被调用
-- 缓存内容不会缓存超过内存空间的值，Guava caches 不会存储内容到文件，或者到服务器外部，如果有此类需求考虑使用 Memcached 类似工具
+- 一些 key 会被不止一次被调用
+- 缓存内容有限，不会超过内存空间的值，Guava caches 不会存储内容到文件或者到服务器外部，如果有此类需求考虑使用 Memcached, Redis 等类似工具
+
+先来看一下 Guava 中 Cache 接口的定义：
+
+	com.google.common.cache.Cache
+	com.google.common.cache.Cache#asMap
+	com.google.common.cache.Cache#cleanUp
+	com.google.common.cache.Cache#get
+	com.google.common.cache.Cache#getAllPresent
+	com.google.common.cache.Cache#getIfPresent
+	com.google.common.cache.Cache#invalidate
+	com.google.common.cache.Cache#invalidateAll()
+	com.google.common.cache.Cache#invalidateAll(java.lang.Iterable<?>)
+	com.google.common.cache.Cache#put
+	com.google.common.cache.Cache#putAll
+	com.google.common.cache.Cache#size
+	com.google.common.cache.Cache#stats
+
 
 `Cache` 通过 `CacheBuilder` 类的 Builder 模式获取：
 

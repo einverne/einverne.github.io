@@ -8,7 +8,7 @@ tags: [java, thread,]
 last_updated:
 ---
 
-ThreadLocal 线程本地变量，每个线程保存变量的副本，对副本的改动，对其他的线程而言是透明的。
+ThreadLocal 线程本地变量，变量为线程独有，每个线程保存变量的副本，对副本的改动，对其他的线程而言是透明的。
 
 ## 特性
 
@@ -19,8 +19,19 @@ ThreadLocal 线程本地变量，每个线程保存变量的副本，对副本�
 
 - 每个线程都需要自己的数据存储对象
 - 实例被多个方法共享，但是不希望多线程共享
+- 空间换时间的场景
 
 一个典型的例子就是用 ThreadLocal 来保存一次请求的 Session 数据，程序的不同地方可能需要读取 Session 的内容，也要往 Session 中写入数据。
+
+## construct an instance
+Create instance with new:
+
+	ThreadLocal<Integer> threadLocalValue = new ThreadLocal<>();
+
+Or using the `withInitial()` static method:
+
+	ThreadLocal<Integer> threadLocal = Threadlocal.withInitial(() -> 1);
+
 
 ## 常用方法
 
@@ -56,7 +67,7 @@ ThreadLocal 类允许我们创建只能被同一个线程读写的变量，通�
 ThreadLocal 对象是给定线程中对象的引用，因此在服务端使用线程池时极有可能造成 classloading leaks 内存泄露 ，在使用时需要特别注意清理。ThreadLocal 持有的任何对象空间在 Java 永久堆上，即使重新部署 webapp 也不回收这部分内存，可能造成 java.lang.OutOfMemoryError 异常。
 
 ## 原理
-利用 HashMap，在 map 中保存了 Thread -> 线程变量的关系，因此在多线程之间是隔离的，但同时也耗费了内存空间。
+利用 HashMap，在 map 中保存了 Thread 名 -> 线程变量的关系，因此在多线程之间是隔离的，但同时也耗费了内存空间。
 
 ## reference
 

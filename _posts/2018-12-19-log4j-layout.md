@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "log4j PatternLayout"
+title: "log4j PatternLayout 输出模板"
 tagline: ""
 description: ""
-category:
+category: 学习笔记
 tags: [log4j, java, log, ]
 last_updated:
 ---
@@ -36,7 +36,7 @@ conversion pattern 和 C 语言下面的 printf 方法非常类似。conversion 
 
 ConversionPattern 参数的格式含义
 
-格式名 含义
+格式名的含义：
 
     %c 输出日志信息所属的类的全名
     %C 调用 logger 的类的全名（包含包路径）
@@ -47,7 +47,7 @@ ConversionPattern 参数的格式含义
     %m 输出代码中指定的信息，如 log(message) 中的 message
     %M 调用 logger 的方法名
     %n 输出当前平台的换行符，Windows 平台为“\r\n”，Unix 平台为“\n”
-    %p 输出优先级，即 DEBUG，INFO，WARN，ERROR，FATAL。如果是调用 debug() 输出的，则为 DEBUG，依此类推
+    %p 输出日志的优先级，即 DEBUG，INFO，WARN，ERROR，FATAL。如果是调用 debug() 输出的，则为 DEBUG，依此类推
     %r 输出自应用启动到输出该日志信息所耗费的毫秒数
     %t 输出产生该日志事件的线程名
 
