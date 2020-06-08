@@ -67,7 +67,7 @@ Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Ex
 		],
 	  "data-root": "/var/lib/docker"
 	}
-~
+
 重启：
 
 	/etc/init.d/docker restart
@@ -98,12 +98,12 @@ Pull 镜像：
 docker run -d \
   --name=rutorrent \
   -e PUID=1000 \
-  -e PGID=1000 \
+  -e PGID=100 \
   -p 8080:80 \
   -p 5000:5000 \
   -p 51415:51413 \
   -p 6881:6881/udp \
-  -v /sharedfolders/appdata/ruTorrent:/config \
+  -v /sharedfolders/ruTorrent-config:/config \
   -v /sharedfolders/ruTorrent:/downloads \
   --restart unless-stopped \
   linuxserver/rutorrent
@@ -111,4 +111,25 @@ docker run -d \
 
 然后根据 [这里](/post/2020/03/rtorrent-and-rutorrent.html) 的说明改一下主题。
 
+## syncthing
 
+```
+docker run -d \
+  --name=syncthing \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -e UMASK_SET=<022> \
+  -p 8384:8384 \
+  -p 22000:22000 \
+  -p 21027:21027/udp \
+  -v </path/to/appdata/config>:/config \
+  -v </path/to/data1>:/data1 \
+  -v </path/to/data2>:/data2 \
+  --restart unless-stopped \
+  linuxserver/syncthing
+```
+
+## Plex
+
+	docker pull linuxserver/plex
