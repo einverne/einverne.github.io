@@ -87,6 +87,9 @@ Obsidian 不期望有一个插件可以解决所有的问题，但 Obsidian 提�
 ## Zettelkasten method
 卡片标签式笔记法，Obsidian 也可以兼容。
 
+## 延伸阅读
+
+- Trilium
 
 ## Links
 Obsidian 的开发 Roadmap
