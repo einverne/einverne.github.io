@@ -16,6 +16,16 @@ Under Ubuntu
 
     sudo apt-get install mysql-server
 
+如果安装过程中没有弹出设置密码的对话，那么可以在安装完成后执行：
+
+	sudo mysql_secure_installation
+
+来设置密码，及一些安全的设置。之后就可以用
+
+	sudo mysql -u root -p
+
+来登录。
+
 ## 启动停止 mysql 服务
 可以使用如下命令启动，停止，重启 MySQL 服务
 
@@ -221,7 +231,7 @@ Order 可以使用 `DESC`, `ASC`
 
 删除用户
 
-	DROP USER ‘user1’@‘localhost';
+	DROP USER 'user1'@'localhost';
 
 如果在创建新用户时提醒密码 weak，则可以使用如下命令来禁用密码校验
 
@@ -246,6 +256,25 @@ Order 可以使用 `DESC`, `ASC`
 	mysql>use mysql;
 	mysql>update user set host = '%' where user = 'root';
 	mysql>select host, user from user;
+
+
+## ERROR 1819 HY000 Your password does not satisfy the current policy requirements
+
+可以通过如下语句查看 MySQL 密码规则：
+
+	SHOW VARIABLES LIKE 'validate_password%';
+
+## Host 'xxx.xx.xxx.xxx' is not allowed to connect to this MySQL server
+通过如下方式创建用户并赋予权限。
+
+	mysql> CREATE USER 'einverne'@'localhost' IDENTIFIED BY 'some_pass';
+	mysql> GRANT ALL PRIVILEGES ON *.* TO 'einverne'@'localhost'
+		->     WITH GRANT OPTION;
+	mysql> CREATE USER 'einverne'@'%' IDENTIFIED BY 'some_pass';
+	mysql> GRANT ALL PRIVILEGES ON *.* TO 'einverne'@'%'
+		->     WITH GRANT OPTION;
+
+	FLUSH PRIVILEGES;
 
 ## sql 命令中的 \G
 在使用 mysql 命令行的时候如果查询结果比较大的时候，可以在语句后面加上 `\G;` 来将结果垂直方式展现，可以更好的查看结果。那么 \G 到底是什么意思呢。
