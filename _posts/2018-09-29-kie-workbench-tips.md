@@ -17,7 +17,7 @@ KIE 的使用和踩坑记录。
 
 更多关于决策表 Hit Policy 的内容可以参考这篇 ---- [决策表规则执行顺序](/post/2018/10/assets-in-drools-kie.html)
 
-- None 默认，多行可以同时被执行，verification 会将冲突 warning 出来
+- None 默认，**多行可以同时被执行**，verification 会将冲突 warning 出来
 - Resolved Hit，根据优先级，每一次只有一行可以被执行，不管在列表中的顺序。可以维持界面中的顺序，转而定义每一行的优先级
 - Unique Hit, 一次只能执行一行，每一行必须 Unique，条件不能有重叠，如果多于一行被执行，会有 warning
 - First Hit，依据表中的顺序，从上到下，每一次执行一行

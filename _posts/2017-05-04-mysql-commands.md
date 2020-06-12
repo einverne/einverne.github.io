@@ -8,13 +8,15 @@ tags: [mysql, database, linux]
 last_updated:
 ---
 
-mysql 命令行操作相关内容，防止遗忘。mysql 常用命令记录，总结。
+MySQL 命令行操作相关内容，防止遗忘。MySQL 常用命令记录，总结。
 
-## install
+## 安装 {#install}
 
 Under Ubuntu
 
+	sudo apt update
     sudo apt-get install mysql-server
+	sudo mysql_secure_installation
 
 如果安装过程中没有弹出设置密码的对话，那么可以在安装完成后执行：
 
@@ -26,7 +28,7 @@ Under Ubuntu
 
 来登录。
 
-## 启动停止 mysql 服务
+## 启动停止 MySQL 服务
 可以使用如下命令启动，停止，重启 MySQL 服务
 
 	sudo /etc/init.d/mysql {start | stop | status | restart}
@@ -205,9 +207,11 @@ Order 可以使用 `DESC`, `ASC`
 
 	SELECT User,Host FROM mysql.user;
 
-创建新用户
+创建新用户：
 
 	CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
+记住这里的 localhost，可以替换成客户端的 IP，或者任何要需要授权访问的 IP 地址。
 
 创建新用户时，如果密码选择太简单可能会导致密码安全检查无法过去，这时可以设置 MySQL 的 `validate_password_policy` 来使用简单密码：
 
@@ -224,6 +228,11 @@ Order 可以使用 `DESC`, `ASC`
 授予用户某个数据库全部权限
 
 	GRANT ALL ON [database].* TO 'user'@'localhost';
+
+授予某个用户全部的权限：
+
+	GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
+
 
 修改密码
 
