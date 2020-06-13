@@ -70,13 +70,15 @@ Volume 可以叫做 `数据卷`，可供一个或者多个容器使用：
 
 看清楚其中的临时 DATA 目录和 临时备份目录，执行该命令之后，在当前文件夹下就会产生 `BACKUP_FILENAME.tar` 这样的文件，里面包含数据卷中的内容。
 
+这一行语句包含两个 volume，
+
 举例使用说明：
 
 	docker run --rm \
 	  --volume chevereto_chevereto_data:/tmp \
-	  --volume $(pwd):/tmp \
+	  --volume $(pwd):/path_to_store_backup \
 	  alpine \
-	  tar cvf /tmp/chevereto_chevereto_data.tar /tmp
+	  tar cvf /path_to_store_backup/chevereto_chevereto_data.tar /tmp
 
 那么就能够使用该命令来恢复数据卷数据
 
@@ -90,9 +92,9 @@ Volume 可以叫做 `数据卷`，可供一个或者多个容器使用：
 
 	docker run --rm \
 	  --volume chevereto_chevereto_data:/tmp \
-	  --volume $(pwd):/tmp \
+	  --volume $(pwd):/path_to_store_backup \
 	  alpine \
-	  tar xvf /tmp/chevereto_chevereto_data.tar -C /tmp --strip 1
+	  tar xvf /path_to_store_backup/chevereto_chevereto_data.tar -C /tmp --strip 1
 
 如果是数据库容器，比如 mysql 容器，备份数据可以使用如下方式
 
