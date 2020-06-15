@@ -17,7 +17,7 @@ vim-surrounding 插件可以轻松的一次性修改成对出现的，比如 `()
 包围内容的方法。
 
 
-首先放上链接
+首先放上链接：
 
 - <https://github.com/tpope/vim-repeat>
 
@@ -81,7 +81,7 @@ Change surroundings is `cs`. 接受两个参数，目标，和替换内容
     w, W, s 分别是 word, WORD, sentence
     p 表示 paragraph
 
-### ys
+### ys 给 surrounding 增加标记
 给 hello 增加 `<h2>`
 
     hello
@@ -101,13 +101,13 @@ Change surroundings is `cs`. 接受两个参数，目标，和替换内容
     ySS"
 
 ### Visual mode
-在选择模式下可以使用 `S` + 需要添加的内容，来看快速对选择的内容增加 surroundings。
+在选择模式下可以使用 `S` + **需要添加的内容**，来看快速对选择的内容增加 surroundings。
 
 比如我想要给下面这一行中的一部分内容，比如说 main title 增加一个 `<h1>` 标记。
 
 	This is the main title  sub title`
 
-那么只需要将 `This is the main title` 选中 `v`，然后按下 `S<h1>Enter` 回车之后前后就加上了 h1 标签。
+那么只需要将 `This is the main title` 使用 `v` 选中，然后按下 `S<h1>Enter` 回车之后前后就加上了 h1 标签。
 
 在单行选择模式下， surroundings 会添加在行中，在 blockwise 选择模式，每一行都会 surround。
 
