@@ -60,3 +60,25 @@ sort 命令用来对文件行进行排序，常用的一些参数
 一个典型的 sort 应用场景
 
     sort file1 file2 | uniq
+
+### 排序日志中耗时最大的行
+
+假设有日志
+
+	2020-02-02 11:20:20 requestId method=someGet param=param cost=100
+	2020-02-02 11:20:21 requestId1 method=someGet param=param cost=101
+	2020-02-02 11:20:22 requestId2 method=someGet param=param cost=103
+
+现在要过滤出其中耗时最大的行，可以使用
+
+	sort -r -nk4 -t= log.txt
+
+解释：
+
+- `-t=` split lines by `=`，so the string to sort is column 4
+- `-k4` sort column 4
+- `-n` numberic order
+- `-r` reverse order
+
+From: <https://stackoverflow.com/q/62493937/1820217>
+
