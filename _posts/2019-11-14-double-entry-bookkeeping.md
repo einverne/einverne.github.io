@@ -12,6 +12,13 @@ last_updated:
 
 首先什么是**复式记账**，相对复式来说的记账法是**单式记账**，我之前一直[在寻觅的记账软件](/post/2014/09/expense-app.html) 其实都是单式记帐，通过消费流水来记账，这种方式比较简单，但却只能够记录消费，其实对于自己财务的整体状况并不是很清楚，并且对于信用卡消费还款，单式记帐软件根本无法满足需求，而如今个人的资金分散在支付宝，微信，银行卡，证券股票账户等等各种账户中，如果没有很好的管理，时间一长就非常难以追溯。就像 byvoid 在文章中所说的那样 ----"为什么要记账？实际上是要通过记录来增加对自我的认知。"
 
+## prerequisite
+
+- assets, what you own(cash, money in bank)
+- Liabilities, what you owe(credit card account, money you owe your friends)
+
+
+
 ## 复式计帐
 在了解复式计帐前有些名字概念需要提前了解，在提到复制记账额时候肯定会提到这一个恒等式：
 
@@ -19,11 +26,19 @@ last_updated:
 
 也就是：
 
-	Assets （资产） = Liabilities （债务） + Equity（权益，或者叫净资产，或者抵押资产）
+	Assets （资产） = Liabilities （债务） + Equity（权益，或者叫净资产 net worth，或者抵押资产）
 
-资产和债务字面意思都比较好理解，Equity 直接翻译叫做净资产，又有翻译叫做权益，这里也有一个公式：
+转换一下就更好理解，一个人的净资产等于资产减去负债。理解净资产后，在记账软件中我们可能会记入
+
+- 获得一笔收入，比如工资等等，这会增加净资产，这个被叫做 income
+- 买食物，买图书等等支出，这会减少净资产，则这个被称为 expense
+- 但是从银行取钱，或者存入定期则并不会增加净资产，也不会减少净资产
+
+
+资产和债务字面意思都比较好理解，Equity 直接翻译叫做净资产，又有翻译叫做权益，也有一个更细节的公式：
 
 	Equity（权益，资产） = Owner's Equity（资产） - Dividends（应付红利） + Retained Earings（净收入）
+
 也就是一个人的资产等于固有资产减去分红加上净收入。净收入又有：
 
 	Retained earings（净收益） = Revenue（收入） - Expense （支出）
@@ -34,11 +49,11 @@ last_updated:
 
 所以综上，得到了如上的公式，也就能总结出这几大账户，「其中有些公司记账相关的内容，比如 revenue，dividend，等这里就不提了」, 对于普通人大致可以总结出这几类：
 
-- 资产 Assets —— 现金 (Cash)、银行存款、有价证券、Investment, Loans credits 等；
-- 收入 Income —— 工资 (Paycheck)、奖金 (bonus)、Gift receives, Dividends, Interest 等；
-- 费用或者支出 Expenses —— 税金 (Taxes)、外出就餐、购物、旅行、Gift given、捐款 (Donations) 等；
-- 负债 Liabilities —— 抵押 (Mortgage)、信用卡 (Credit Cards)、房贷 (house loans)、车贷 (car loans) 等；
-- 权益 Equity —— 一般用来记录已有资产；
+- 资产 `Assets` —— 现金 (Cash)、银行存款、有价证券、Investment, Loans credits 等；
+- 收入 `Income` —— 工资 (Paycheck)、奖金 (bonus)、Gift receives, Dividends, Interest 等；
+- 费用或者支出 `Expenses` —— 税金 (Taxes)、外出就餐、购物、旅行、Gift given、捐款 (Donations) 等；
+- 负债 `Liabilities` —— 抵押 (Mortgage)、信用卡 (Credit Cards)、房贷 (house loans)、车贷 (car loans) 等；
+- 权益 `Equity` —— 一般用来记录已有资产；
 
 ## 优点
 
