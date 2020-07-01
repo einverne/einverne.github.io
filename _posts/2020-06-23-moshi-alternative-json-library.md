@@ -20,6 +20,14 @@ last_updated:
 	String epochJson = new Gson().toJson(epoch);
 	// "Dec 31, 1969 7:00:00 PM"
 
+[RFC 3339 标准](https://www.ietf.org/rfc/rfc3339.txt) 里面规定的日期表示法：
+
+	2020-06-12T07:20:50.52Z
+
+其中 `T` 用来分割前面的日期和后面的时间，而最后的 `Z` 表示这个时间是 `UTC+0`，其他人看到这个时间就可以根据自己的时区进行转换。[^rfc]
+
+[^rfc]: <https://medium.com/easyread/understanding-about-rfc-3339-for-datetime-formatting-in-software-engineering-940aa5d5f68a>
+
 Gson 在序列化 HTML 标签时，会进行 HTML escaping 成：
 
 	private String e = "12 & 5";
