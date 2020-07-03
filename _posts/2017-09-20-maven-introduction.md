@@ -71,7 +71,7 @@ Maven 有以下几种依赖范围：
 
 - **compile** 编译依赖，在编译、测试、运行时都有效
 - **test** 测试依赖，只对于测试 classpath 有效， JUnit 典型
-- **provided** 已提供依赖，只在编译和测试有效，运行时无效， servlet-api 编译和测试项目时需要该依赖，但是在运行项目时，由于容器已经提供，不需要 Maven 重复引入
+- **provided** 已提供依赖，只在编译和测试有效，运行时无效，servlet-api 编译和测试项目时需要该依赖，但是在运行项目时，由于容器已经提供，不需要 Maven 重复引入
 - **runtime** 运行时依赖，对于测试和运行有效，编译主代码无效， JDBC 驱动实现，项目主代码编译只需要 JDK 提供的 JDBC 接口，只有执行测试或者运行项目才需要实现上述接口的具体 JDBC 驱动
 - **system** 系统依赖范围，和 provided 范围依赖一致，但是使用 system 范围的依赖时必须通过 systemPath 元素显示地指定依赖文件的路径。
 - **import** 导入依赖，一般不用
@@ -186,7 +186,10 @@ Maven 的生命周期是抽象的，实际行为都有插件完成。
 ## 简单例子
 创建一个 Maven 项目
 
-    mvn
+    mvn -B archetype:generate
+		-DarchetypeGroupId=org.apache.maven.archetypes
+		-DgroupId=com.log4j.maven
+	    -DartifactId=dependency-example
 
 ## reference
 
