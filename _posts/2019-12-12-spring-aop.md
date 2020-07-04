@@ -8,7 +8,7 @@ tags: [spring, aop, spring-mvc, ]
 last_updated:
 ---
 
-Spring AOP
+Spring AOP 的几个常用的使用场景：
 
 - transaction management
 - logging
@@ -22,20 +22,29 @@ Spring 中有两种方式来使用 AOP
 - @Aspect annotation approach, 基于注解
 
 ## Terms
+一些关键性的术语：
 
-- advice, actions taken by aspect at a particular **join-point**
-- join-point a point during the execution of a program, in spring AOP always represents a method execution
-- pointcut is a predicate or expression that matches join-point
-- Advice is associated with a pointcut expression and runs at any join point matched by the pointcut
-- weaving linking aspects with other application types or objects to create an advised object.
+- `advice`, actions taken by aspect at a particular **join-point**
+- `join-point` a point during the execution of a program, in spring AOP always represents a method execution
+- `pointcut` is a predicate or expression that matches join-point
+- `Advice` is associated with a pointcut expression and runs at any join point matched by the pointcut
+- `weaving` linking aspects with other application types or objects to create an advised object.
 
 基于上面的认知，知道 join-point 可以认为是方法调用的时刻，所以 Spring 中有 5 种类型的 Advice 时机：
 
-- Before advice, 方法执行前（无法阻止方法执行，除非抛出异常）
-- After returning advice, 正常方法（无异常）返回后执行
-- After throwing advice, 抛出异常时执行
-- After advice, 不管方法正常或者抛出异常后执行
-- Around advice, 方法调用前后
+- `Before advice`, 方法执行前（无法阻止方法执行，除非抛出异常）
+- `After returning advice`, 正常方法（无异常）返回后执行
+- `After throwing advice`, 抛出异常时执行
+- `After advice`, 不管方法正常或者抛出异常后执行
+- `Around advice`, 方法调用前后
+
+## Spring 中 AOP 实现原理
+Spring 中 AOP 的实现主要是通过 JDK 动态代理和 cglib 动态代理完成。[^a]
+
+[^a]: <https://juejin.im/post/5af3bd6f518825673954bf22>
+
+- JDK 动态代理通过反射来代理类，要求被代理的类实现一个接口，JDK 动态代理的核心是 `InvocationHandler` 和 `Proxy` 类
+- 如果目标类没有实现接口，Spring 会采用 cglib 来动态代理目标类，cglib 是一个代码生成的类库，可以在运行时动态生成类的子类，cblig 通过继承方式代理，所以如果一个类被标记为 final，是无法通过 cglib 来做动态代理的
 
 ## Maven
 具体的版本可以自行搜索使用。
