@@ -1,0 +1,185 @@
+---
+layout: post
+title: "利用 AdGuard Home 过滤广告"
+tagline: ""
+description: ""
+category: 学习笔记
+tags: [adguard, adguard-home, adblock, browser, dns,]
+last_updated:
+---
+
+过滤广告的方式有非常多的方式，比如加本地 Host，比如浏览器中的 Adblock 插件，或者之前在 OpenWrt 或者其他固件上添加的广告过滤插件，甚至在 Android 上也用过通过在本地设定一个代理，所有的流量走代理，然后在代理中将广告过滤掉的应用，那么这个 AdGuard Home 有什么优势呢？在我看来，吸引我使用它的几个优势是：
+
+- 只需要架设一次，所有局域网中的设备都可以享用，而不需要各个设备单独配置
+- 可视化，最早是在 Twitter 上看到有人分享 AdGuard 后台，大部分情况下，广告过滤插件或者应用都是默默在后台工作，AdGuard 让一切变得可见，那这样就可以看到哪些网站在后面偷偷的做坏事
+- 占用资源小，一个树莓派即可，并且[源代码是开放的](https://github.com/AdguardTeam/AdGuardHome)
+
+AdGuard 官方的文章也总结了 AdGuard Home 的几大优势：[^home]
+
+- Ad Blocking, 最基础的服务，可以减少网页的体积，加快速度
+- Browsing Security
+- Parent Control
+- Safe Search，可以过滤成人内容
+- Custom upstream servers, 可以自定义上游的 DNS 服务器
+- Filter lists, 可以自定义过滤列表
+- Query Log，也就是我提到的可视化的访问日志
+
+
+## AdGuard vs AdGuard Home
+开始之前要先声明一下，这篇文章后面提到的 AdGuard Home 都会是 AdGuard 这个公司提供的一个产品 ---- AdGuard Home.[^home]
+
+[^home]: <https://adguard.com/en/blog/introducing-adguard-home.html>
+
+
+## AdGuard Home 的原理
+上面提到过很多不同的广告过滤方式，但是 AdGuard Home 采用完全不同的方式。首先来介绍一下什么是 AdGuard Home，AdGuard Home 是一个过滤全网范围的广告和追踪代码的 DNS Server，它的设计目的是让用户来全权掌握整个网络环境，它不依赖于任何客户端。所以从本质上来讲 AdGuard Home 是一个 DNS 服务器，
+
+## 在 Raspberry Pi 中安装使用 AdGuard Home
+在树莓派上安装 AdGuard Home 非常简单，安装 [wiki](https://github.com/AdguardTeam/AdGuardHome/wiki/Raspberry-Pi) 上执行即可。
+
+### 给 Raspberry Pi 设定静态 IP 地址
+
+Raspberry Pi 的网络配置 `/etc/dhcpcd.conf`，在下方添加
+
+	interface eth0
+	static ip_address=192.168.2.3/24
+	static routers=192.168.2.1
+	static domain_name_servers=192.168.2.1
+
+注意我这里是使用的 `eth0` 接口，也就是网线连接的，如果使用 WiFi，那么需要设定 `wlan0`。
+
+然后 `sudo reboot` 重启树莓派。
+
+之后我的树莓派静态 IP 地址就是 `192.168.2.3`
+
+### 验证安装
+上面提到过保证树莓派静态地址，然后执行安装向导，设定后台管理页面的端口（一般为 80，可以自行修改），以及 DNS 服务端口（一般为 53)。这样 53 端口就对外提供了 DNS 服务，可以通过
+
+	nslookup douban.com 192.168.2.3
+
+来验证 DNS 服务器正常工作，如果正常工作返回
+
+	Server:         192.168.2.3
+	Address:        192.168.2.3#53
+
+	Non-authoritative answer:
+	Name:   douban.com
+	Address: 154.8.131.171
+	Name:   douban.com
+	Address: 154.8.131.172
+	Name:   douban.com
+	Address: 154.8.131.165
+
+验证拦截
+
+	nslookup doubleclick.net 192.168.2.3
+	Server:         192.168.2.3
+	Address:        192.168.2.3#53
+
+	** server can't find doubleclick.net: NXDOMAIN
+
+### 设置路由器和其他设备
+如果能够设置路由器，直接去路由器管理后台，将网络的 DNS，改为树莓派的地址，比如我的 192.168.2.3 即可。其他设备直接就生效了。如果改不了路由器就只能每一个设备改了。
+
+### 其他管理命令
+AdGuardHome 安装的命令：
+
+	sudo ./AdGuardHome -s install
+
+其他管理命令：
+
+- AdGuardHome -s uninstall - uninstalls the AdGuard Home service.
+- AdGuardHome -s start - starts the service.
+- AdGuardHome -s stop - stops the service.
+- AdGuardHome -s restart - restarts the service.
+- AdGuardHome -s status - shows the current service status.
+
+
+## Docker 安装
+因为 AdGuardHome 是使用 Go 所写，所以跨平台天然支持，Docker 安装自然也非常容易。
+
+	docker pull adguard/adguardhome
+
+参数可以参数官方网站：
+
+- <https://hub.docker.com/r/adguard/adguardhome>
+
+
+## 设置
+
+所有安装完成之后就可以进入后台进行一番初始化设置，AdGuardHome 默认的设置就已经足够使用了，但假如想更加精细化地设置，比如说上游 DNS，DNS-over-HTTPS，DNS-over-TLS 等等，都可以在后台看到。
+
+AdGuard Home 所有的配置参数都保存在一个名为 AdGuardHome.yaml 的配置文件中。这个配置文件默认路径通常为 AdGuard Home 二进制文件 AdGuardHome 所在的目录。
+
+### 已知的 DNS 提供商
+
+AdGuard 提供了一份非常详细的 DNS 服务提供商的列表：
+
+- <https://kb.adguard.com/en/general/dns-providers>
+
+进入后台可以看到 AdGuard 默认使用的是
+
+	https://dns10.quad9.net/dns-query
+
+不过在国内可能在测试上游 DNS 服务器的时候
+
+> 服务器 "https://dns10.quad9.net/dns-query"：无法使用，请检查你输入的是否正确
+
+不过问题也不大，勾选“并行请求”，同时用下方的 DNS 提供商的
+
+```
+tls://8.8.8.8
+tls://8.8.4.4
+tls://dns.google
+tls://dns.adguard.com
+119.29.29.29
+1.2.4.8
+tls://1.1.1.1
+tls://1.0.0.1
+https://dns10.quad9.net/dns-query
+8.8.8.8
+114.114.114.114
+119.29.29.29
+223.5.5.5
+```
+
+其他一些
+
+- [114 DNS](http://www.114dns.com/), `114.114.114.114`,`114.114.115.115`
+- [腾讯](https://www.dnspod.cn/Products/Public.DNS) `119.29.29.29`
+- [阿里](https://alidns.com/) `223.5.5.5`, `223.6.6.6`
+- [百度](https://dudns.baidu.com/intro/publicdns/) `180.76.76.76`
+
+不过这些国内公共 DNS 暂时不支持 DNS over TLS。
+
+Bootstrap DNS 服务器
+
+```
+1.1.1.1:53
+1.0.0.1:53
+9.9.9.10
+149.112.112.10
+114.114.114.114:53
+2620:fe::10
+2620:fe::fe:10
+```
+
+
+### 过滤器
+
+AdGuard Home 自身已经内置了一些过滤规则，并且 AdGuard Home 兼容 Adblock 的过滤规则。
+
+- [EasyList China](https://easylist.to/pages/other-supplementary-filter-lists-and-easylist-variants.html) 国内网站广告过滤的主规则 `https://easylist-downloads.adblockplus.org/easylistchina.txt`
+- [Anti Ad](https://github.com/privacy-protection-tools/anti-AD) 国内过滤规则 `https://gitee.com/privacy-protection-tools/anti-ad/raw/master/easylist.txt`
+- neohosts `https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt`
+- EasyPrivacy `https://easylist-downloads.adblockplus.org/easyprivacy.txt`
+- AdGuard Simplified Domain Names filt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+- AdAway https://adaway.org/hosts.txt
+- CJX's Annoyance List https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+
+
+
+## reference
+
+- <https://github.com/AdguardTeam/AdguardHome>
+- <https://github.com/Mosney/anti-anti-AD>
