@@ -177,7 +177,29 @@ AdGuard Home 自身已经内置了一些过滤规则，并且 AdGuard Home 兼�
 - AdAway https://adaway.org/hosts.txt
 - CJX's Annoyance List https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
 
+## 外延
 
+### .in-addr.arpa
+
+在运行 AdGuard Home 一天后，观察请求域名排行榜，有一些奇怪的域名请求频率异常高，显示着一个 IP 地址，后面接着 `.in-addr.arpa`. 这就引起了我的好奇，查询之后发现这一类的地址叫做 [Reverse DNS lookup](https://en.wikipedia.org/wiki/Reverse_DNS_lookup)，反向 DNS 查询。都知道 DNS 是将域名转换成 IP 地址，那么反过来查询 IP 地址关联的域名就是反向 DNS 查询。
+
+如果想要反解析一个给定的 IP 地址，需要反转 IP 地址，然后在后面添加一个特殊的域名，比如 `in-addr.arpa`，比如想要反解析 8.8.4.4 对应的域名，需要构造这样的地址：
+
+	4.4.8.8.in-addr.arpa
+
+然后可以使用 `dig -x 4.4.8.8.in-addr.arpa @8.8.8.8` 来进行反向解析查看结果。
+
+### SERVFAIL
+观察查询日志，在我的内网里面能看到不少的 `SERVFAIL`，这里就顺带复习一下 DNS RCODE[^rcode]，DNS 请求的返回码：
+
+- NOERROR(0)，成功响应，解析成功
+- SERVFAIL(2), 服务器失败，域名的权威服务器拒绝响应或者响应 REFUSE，递归服务器返回 Rcode 值为 2 给 CLIENT
+- NXDOMAIN(3), 不存在的记录，域名在权威服务器不存在
+- REFUSE(5)，请求的 IP 不在该 DNS 服务器服务的范围
+
+其他更多的码可以参考[这里](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6).
+
+[^rcode]: <https://en.wikipedia.org/wiki/Domain_Name_System>
 
 ## reference
 
