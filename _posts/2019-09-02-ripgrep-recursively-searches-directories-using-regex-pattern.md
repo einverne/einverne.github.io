@@ -2,7 +2,7 @@
 layout: post
 title: "使用 ripgrep 通过正则快速查找文件内容"
 tagline: ""
-description: ""
+description: "Linux 下文本搜索神器"
 category: 学习笔记
 tags: [ripgrep, grep, find, ag, rg, search, regex, ]
 last_updated:
@@ -12,8 +12,17 @@ ripgrep（简称 rg)，是一个命令行搜索工具，可以通过正则来搜
 
 - <https://github.com/BurntSushi/ripgrep>
 
+## rg 的优势
+
+目前 Linux 下可用的搜索工具非常多，GNU 中的 [grep](/post/2017/09/grep.html)， [ack-grep](/post/2017/10/ack-grep.html)，[The Silver Searcher](/post/2019/04/the-silver-searcher.html) 等等，rg 的优势在于**快**。
+
+- ripgrep 是真正的快，我在一个有 26G 代码的目录中查找一个方法也可以在几乎秒级的速度找到，所以我经常用来搜索不确定调用关系，但代码又分布在不同项目中时使用
+- ripgrep 遵循 `.gitignore`，在默认情况下会跳过二进制文件，隐藏的文件目录，不会追踪软链接，更进一步加快了速度
+- ripgrep 支持 Unicode, 可以搜索压缩文件，还可以自己选择正则表达式匹配引擎，比如 [PCRE2](https://www.pcre.org/current/doc/html/pcre2syntax.html)
+
+
 ## Installation
-安装的内容直接参考官方页面即可。
+安装的内容直接参考[官方页面](https://github.com/BurntSushi/ripgrep) 即可。
 
 
 ## Usage
@@ -31,7 +40,7 @@ ripgrep（简称 rg)，是一个命令行搜索工具，可以通过正则来搜
 
 	rg "keyword"
 
-会显示当前目录下的搜索内容，会打印出文件名及关键字出现的行数。
+会显示当前目录下的搜索内容，会打印出**文件名**及**关键字出现的行数**。
 
 和 grep 命令类似，也有三个打印出上下行的选项
 
@@ -67,7 +76,7 @@ ripgrep（简称 rg)，是一个命令行搜索工具，可以通过正则来搜
 
 来查看。
 
-看到这里有些读者可能要问假如我要在两个文件类型中查找呢，这个时候 `-t` 参数就无法满足了，需要引入新的 `-g` 参数，`man rg` 看一下 `-g` 就知道该选项后面跟着一个 GLOB，正则表达式，包括或者去除一些文件或者目录。比如要在 `md` 文件或者 `html` 文件中查找 "mysql" 关键字
+看到这里，有些读者可能要问假如我要在两个文件类型中查找呢，这个时候 `-t` 参数就无法满足了，需要引入新的 `-g` 参数，`man rg` 看一下 `-g` 就知道该选项后面跟着一个 GLOB，正则表达式，包括或者去除一些文件或者目录。比如要在 `md` 文件或者 `html` 文件中查找 "mysql" 关键字
 
 	rg -g "*.{md,html}" "mysql"
 
