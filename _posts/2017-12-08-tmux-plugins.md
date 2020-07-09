@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tmux 的插件们"
+title: "配置 Tmux 的插件提高效率"
 tagline: ""
 description: "介绍目前我在使用的 Tmux 插件们"
 category: 学习笔记
@@ -12,6 +12,7 @@ Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管
 
 
 ## Tmux Plugin Manager
+
 安装的方法，在 GitHub 的页面非常清楚，`git clone` 项目，在 `.tmux.conf` 文件中加入配置，重新加载配置即可。
 
     # List of plugins
@@ -34,8 +35,9 @@ Vim 有插件管理，zsh 也有插件管理，那当然 Tmux 肯定有插件管
 
 卸载插件时，配置文件中移除一行，并使用 `<prefix>` + <kbd>alt</kbd> + <kbd>u</kbd> (uninstall) 来卸载。
 
-更新快捷键是 `<prefix>` + <kbd>u</kbd>
+更新所有插件的快捷键是 `<prefix>` + <kbd>U</kbd>，记住是大写的 `U`.
 
+然后还有一个移除列表中不存在的所有插件 `<prefix> + Alt + u`
 
 ## tmux-yank
 
@@ -65,3 +67,18 @@ Linux 平台下需要安装依赖 xsel 或者 xclip
 
 ## tmux-open
 从 Tmux copy mode 直接打开选中内容
+
+## tmux-resurrect
+Tmux 的 session 在机器关机再启动后就丢失了，使用 `tmux-resurrect` 可以将 session 保存到磁盘，再次启动机器的时候可以立即恢复。
+
+- <https://github.com/tmux-plugins/tmux-resurrect>
+
+安装：
+
+	set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+然后按下 `prefix+I` 安装。`tmux-resurrect` 只有两个简单的 key-binding，分别是保存和恢复：
+
+	prefix + Ctrl-s      save
+	prefix + Ctrl-r      restore
+
