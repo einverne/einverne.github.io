@@ -22,3 +22,18 @@ permalink: /friends.html
   </li>
 {% endfor %}
 </ul>
+
+下面是一些我经常看，觉得值得推荐的站点：<br/>
+
+<ul>
+{% for site in site.data.sites %}
+  <li>
+    <a href="{{ site.url }}">
+      {{ site.name }}
+    </a>
+    {% if site.reason != '' %}
+	  <small>{{ site.reason }}</small>
+	{% endif %}
+  </li>
+{% endfor %}
+</ul>
