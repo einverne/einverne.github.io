@@ -93,6 +93,10 @@ Funkwhale 用 Python，Django 编写，遇到 bug 倒时候也能看懂代码了
 [^1]: [FileRun](/post/2018/06/filerun.html)
 [^2]: [NextCloud](/post/2018/04/nextcloud.html)
 
+## airsonic
+
+- <https://github.com/airsonic/airsonic>
+
 ## reference
 
 - <https://github.com/tarkusdev/docker-funkwhale>
