@@ -201,6 +201,155 @@ AdGuard Home 自身已经内置了一些过滤规则，并且 AdGuard Home 兼�
 
 [^rcode]: <https://en.wikipedia.org/wiki/Domain_Name_System>
 
+## AdGuard Home 相较于 Pi-Hole 的优势
+
+AdGuard Home 和 Pi-Hole 利用相似的原理可以达到基本一致的效果，但是 AdGuard Home 相较于 Pi-Hole 有如下几方面的优势：
+
+- AdGuard Home 支持加密的 DNS 上游服务器 Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt)
+- 更加完整的过滤系统，和家长控制
+- 安全搜索结果
+- 访问控制，可以实现精确的谁能访问 DNS 服务器
+
+## Configuration
+AdGuard Home 的配置文件是 yaml 格式，格式非常易读。
+
+### DNS TTL
+在设置里面有一个 DNS TTL 的设置，这里 TTL 是 `Time to Live` 缩写，指的是 DNS 需要缓存多久然后才去刷新新的解析结果。
+
+当改变 DNS 配置的时候，需要花费一些时间来通知互联网这个修改，比如修改一个域名对应的 IP 地址，修改 MX 记录等等，TTL 配置就是告诉互联网需要缓存这一次的结果多久才需要再来请求信息。
+
+那么在家用环境里面可以根据自己的情况设置一个合理的值，我个人觉得大部分网站设置一个 10 分钟的缓存就可以了。
+
+
+```
+bind_host: 0.0.0.0
+bind_port: 80
+users:
+- name: admin
+  password: b2a
+http_proxy: ""
+language: ""
+rlimit_nofile: 0
+debug_pprof: false
+web_session_ttl: 720
+dns:
+  bind_host: 0.0.0.0
+  port: 53
+  statistics_interval: 1
+  querylog_enabled: true
+  querylog_interval: 90
+  querylog_size_memory: 1000
+  anonymize_client_ip: false
+  protection_enabled: true
+  blocking_mode: default
+  blocking_ipv4: ""
+  blocking_ipv6: ""
+  blocked_response_ttl: 10
+  parental_block_host: family-block.dns.adguard.com
+  safebrowsing_block_host: standard-block.dns.adguard.com
+  ratelimit: 100
+  ratelimit_whitelist: []
+  refuse_any: true
+  upstream_dns:
+  - tls://8.8.8.8
+  - tls://8.8.4.4
+  - 119.29.29.29
+  - 1.2.4.8
+  - 114.114.114.114
+  - 223.5.5.5
+  bootstrap_dns:
+  - 9.9.9.10
+  - 149.112.112.10
+  - 2620:fe::10
+  - 2620:fe::fe:10
+  all_servers: true
+  fastest_addr: false
+  allowed_clients: []
+  disallowed_clients: []
+  blocked_hosts: []
+  cache_size: 4194304
+  cache_ttl_min: 600
+  cache_ttl_max: 0
+  bogus_nxdomain: []
+  aaaa_disabled: false
+  enable_dnssec: false
+  edns_client_subnet: false
+  filtering_enabled: true
+  filters_update_interval: 24
+  parental_enabled: false
+  safesearch_enabled: false
+  safebrowsing_enabled: false
+  safebrowsing_cache_size: 1048576
+  safesearch_cache_size: 1048576
+  parental_cache_size: 1048576
+  cache_time: 30
+  rewrites: []
+  blocked_services: []
+tls:
+  enabled: false
+  server_name: ""
+  force_https: false
+  port_https: 443
+  port_dns_over_tls: 853
+  allow_unencrypted_doh: false
+  strict_sni_check: false
+  certificate_chain: ""
+  private_key: ""
+  certificate_path: ""
+  private_key_path: ""
+filters:
+- enabled: true
+  url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+  name: AdGuard DNS filter
+  id: 1
+- enabled: true
+  url: https://adaway.org/hosts.txt
+  name: AdAway
+  id: 2
+- enabled: false
+  url: https://www.malwaredomainlist.com/hostslist/hosts.txt
+  name: MalwareDomainList.com Hosts List
+  id: 4
+- enabled: true
+  url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+  name: EasyList China
+  id: 1593851523
+- enabled: true
+  url: https://www.i-dont-care-about-cookies.eu/abp/
+  name: I don't care about cookies
+  id: 1593851524
+- enabled: false
+  url: https://gitee.com/privacy-protection-tools/anti-ad/raw/master/easylist.txt
+  name: anti ads
+  id: 1593851525
+- enabled: true
+  url: https://filters.adtidy.org/extension/chromium/filters/224.txt
+  name: AdGuard Chinese filter
+  id: 1594425715
+whitelist_filters: []
+user_rules:
+- '||open.trackerlist.xyz^$important'
+- ""
+dhcp:
+  enabled: false
+  interface_name: ""
+  gateway_ip: ""
+  subnet_mask: ""
+  range_start: ""
+  range_end: ""
+  lease_duration: 86400
+  icmp_timeout_msec: 1000
+clients: []
+log_file: ""
+verbose: false
+schema_version: 6
+```
+
+
+更加具体的配置选项可以参考：
+
+- <https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration>
+
 ## reference
 
 - <https://github.com/AdguardTeam/AdguardHome>

@@ -100,7 +100,7 @@ Flood 是 [rTorrent](https://github.com/rakshasa/rtorrent) 的一个 UI 界面�
 	  --name=qbittorrent \
 	  -e PUID=1000 \
 	  -e PGID=1000 \
-	  -e TZ=Europe/London \
+	  -e TZ=Asia/Shanghai \
 	  -e UMASK_SET=022 \
 	  -e WEBUI_PORT=8080 \
 	  -p 6881:6881 \

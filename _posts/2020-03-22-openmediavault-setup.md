@@ -23,6 +23,10 @@ OpenMediaVault 安装后的 Web UI，默认的用户名和密码是：
 ## ssh 登录
 Web UI 的用户名是 admin，但是 SSH 的用户名是 root
 
+安装必要的 package
+
+	apt install dnsutils htop
+
 ## 镜像源
 如果安装的时候没有选择国内的镜像源，可以手动进行修改：
 
@@ -37,9 +41,11 @@ Web UI 的用户名是 admin，但是 SSH 的用户名是 root
 	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
 	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
 	deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
-	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-fre
 
 ## omv-extras
+OMV Extras 是一系列的扩展插件，开启后有不少的功能增强。
+
 安装：
 
     wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/master/install | bash
@@ -48,6 +54,17 @@ Web UI 的用户名是 admin，但是 SSH 的用户名是 root
 
 - <http://omv-extras.org/>
 
+## 修改终端 locale
+
+	sudo locale-gen "en_US.UTF-8"
+	sudo dpkg-reconfigure locales
+
+然后选择
+
+- `en_US.UTF-8 UTF-8`
+- `zh_CN.UTF-8 UTF-8`
+
+这样以后终端就可以显示中文了，同样的道理如果是其他语言找对应的选上即可。
 
 ## docker mirror
 Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Extras 后可以直接启用。国内网络环境不好的情况下，一定先替换上面的源再安装。
@@ -133,3 +150,22 @@ docker run -d \
 ## Plex
 
 	docker pull linuxserver/plex
+
+
+## AdGuard Home
+
+在 OpenMediaVault 上安装 AdGuard Home 的时候需要注意，OpenMediaVault 自身的 systemd-resolved 进程监听了 53 端口，和 AdGuard Home 产生了冲突。这个时候需要禁用系统 resolved 的 53 端口监听。
+
+可以使用如下命令修改，也可以手动修改这两行：
+
+	sudo sed -i "s/^#Cache=yes/Cache=no/g" /etc/systemd/resolved.conf
+	sudo sed -i "s/^#DNSStubListener=yes/DNSStubListener=no/g" /etc/systemd/resolved.conf
+
+然后重启进程 `systemctl restart systemd-resolved`
+
+用 netstat 来查看 53 端口的占用情况。这个时候再用 Docker 起 AdGuard Home:
+
+	docker run --name adguardhome -v /my/own/workdir:/opt/adguardhome/work -v /my/own/confdir:/opt/adguardhome/conf -p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 68:68/tcp -p 68:68/udp -p 80:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome
+
+
+

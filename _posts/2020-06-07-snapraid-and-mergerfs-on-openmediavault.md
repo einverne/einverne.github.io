@@ -9,6 +9,9 @@ last_updated:
 ---
 
 
+首先来介绍一下这两个软件，SnapRAID 和 MergerFS，不同于其他现有的 NAS 系统，可以把 OpenMediaVault 看成一个简单的带有 Web UI 的 Linux 系统，他使用最基本的文件系统，没有 ZFS 的实时文件冗余，所以需要 SnapRAID 提供的冗余来保护硬盘数据安全。SnapRAID 需要一块单独的硬盘来存放校验数据，这个盘的容量必须大于等于其他任何一个数据盘。SnapRAID 采用快照的方式来做数据冗余，这种设计避免了所有硬盘在没有数据操作情况下也要运转来实时数据备份的消耗。
+
+MergerFS 则是一个联合文件系统，可以将多块硬盘挂载到一个挂载点，通过 MergerFS 来自动决定数据该存储在哪块硬盘上。
 
 ## Prerequisite
 先决条件：
@@ -17,6 +20,26 @@ last_updated:
 - 一个安装好的 OpenMediaVault 以及安装好 [OMV-Extras](/post/2020/03/openmediavault-setup.html) 相关的插件
 - System - Plugin 下安装 `openmediavault-snapraid` 和 `openmediavault-unionfilesystem` 插件
 
+## MergerFS
+[MergerFS](https://github.com/trapexit/mergerfs) 是一个联合文件系统 (union file system)，MergerFS 会将多块硬盘，或者多个文件夹合并到 MergerFS pool 中，这样一个系统就会有一个统一的文件入口，方便管理。
+
+选用 MergerFS 另外一个理由就是，通过 MergerFS 合并的目录并不会对数据进行条带化的处理，每块硬盘上还是保存原来的文件目录和文件，任意一块硬盘单独拿出来放到其他系统上，不需要额外的逻辑卷的配置，就可以直接挂载读取这个硬盘的数据。
+
+### 创建 MergerFS pool
+
+- Storage > Union Filesystems
+- Add
+- Give the pool a name
+- In the **Branches** 选项中，选择所有要合并的磁盘，这里不要选 parity 的磁盘
+- 在 **Create policy** 中选择 **Most free space**
+- **Minimum free space** 中选择一个合适的大小，默认也可以
+- **Option** 中，默认
+- **Save**
+- **Apply**
+
+这样以后在文件系统中就会看到新创建的联合目录。在创建共享文件夹的时候就可以在合并的联合文件系统上进行。
+
+在创建了 MergerFS Pool 后，在 OpenMediaVault 的文件目录 `/srv` 目录下会多出一个文件夹，这个文件夹就会存放 MergerFS Pool 中的数据。
 
 ## SnapRAID
 [SnapRAID](https://www.snapraid.it/) 是一个磁盘阵列的冗余备份工具，它可以存储额外的奇偶校验信息用来恢复数据。
@@ -90,26 +113,6 @@ scrub 命令会验证磁盘阵列中的数据和 `sync` 命令产生的 hash.
     # Run this command for status
     snapraid status
 
-## MergerFS
-[MergerFS](https://github.com/trapexit/mergerfs) 是一个联合文件系统，
-
-MergerFS 会将多块硬盘，或者多个文件夹合并到 MergerFS pool 中，这样一个系统就会有一个统一的文件入口，方便管理。
-
-### 创建 MergerFS pool
-
-- Storage > Union Filesystems
-- Add
-- Give the pool a name
-- In the **Branches** 选项中，选择所有要合并的磁盘，这里不要选 parity 的磁盘
-- 在 **Create policy** 中选择 **Most free space**
-- **Minimum free space** 中选择一个合适的大小，默认也可以
-- **Option** 中，默认
-- **Save**
-- **Apply**
-
-这样以后在文件系统中就会看到新创建的联合目录。在创建共享文件夹的时候就可以在合并的联合文件系统上进行。
-
-在创建了 MergerFS Pool 后，在 OpenMediaVault 的文件目录 `/srv` 目录下会多出一个文件夹，这个文件夹就会存放 MergerFS Pool 中的数据。
 
 ## mergerfsfolders vs unionfilesystems
 在安装完 OMV-Extras 后会在插件中看到两个相似的插件：
