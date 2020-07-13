@@ -36,6 +36,22 @@ try-with-resources 表达式就是在 try 语句中定义了一个或者多个�
 
 当然在 try 语句中多个语句也是可以的。
 
+## Try-with-resources 原理
+如果要实现 `try-with-resources` 需要资源实现 `AutoCloseable` 接口，重写 `close` 方法。
+
+然后 Java 程序在编译的时候，编译器就会根据实现的 close 方法来自动生成 try-finally 方法块。
+
+
+## Closeable & AutoCloseable 区别
+Closeable 继承了 AutoCloseable:
+
+	public interface Closeable extends AutoCloseable {
+	  void close() throws IOException;
+	}
+
+Closeable 的 close 方法抛出的是 `IOException`.
+
+
 ## reference
 
 - <https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html>
