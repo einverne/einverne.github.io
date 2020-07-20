@@ -331,6 +331,11 @@ lsof 可以看到具体某个端口关联的 PID。
 
 ### 安装 Python 环境
 
+## 迁移 Lightroom 图片库
+我的很大一部分照片库在 Windows 的 Lightroom 中，幸亏 Lightroom 的迁移并不麻烦，在 Windows 上使用 WinSCP，然后局域网连上 Mac，直接将 Lightroom 所在的 Pictures 图片库复制到 Mac 上面的图片库中，然后将 Lightroom 的 `.lrcat` catalog 文件夹也拷贝到 Mac 上，这个目录可以在 Windows 的“编辑”-“目录设置”中找到。
+
+拷贝完成后在 Mac 上打开 lrcat 文件，然后在 Lightroom 中右击文件夹，Find missing folder，重新导入就 OK 了。
+
 ## reference
 
 - <https://github.com/macdao/ocds-guide-to-setting-up-mac>
