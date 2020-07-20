@@ -44,7 +44,7 @@ setup file often used to describe your project, you can have a template like thi
 		packages=['douban',],
 		url="https://github.com/einverne/douban-dl",
 		author="einverne",
-		author_email="einverne@gmail.com",
+		author_email="your@email.com",
 		entry_points={
 			'console_scripts': [
 				'douban-dl = douban.__main__:main',

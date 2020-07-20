@@ -14,6 +14,9 @@ Ubuntu 下，GnuPG 2.0 的支持都在 `gnupg2` 这个 [packages](http://package
 
 GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
+在 Mac 下需要安装：
+
+	brew install gnupg gnupg2
 
 ## 生成 GPG 签名
 使用如下命令生成签名：

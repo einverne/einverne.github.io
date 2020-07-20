@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "保持SSH连接"
+title: "保持 SSH 连接"
 tagline: ""
 description: ""
 category: 经验总结
 tags: [ssh, linux, git, github, gitlab, ]
-last_updated: 
+last_updated:
 ---
 
 记录一些 SSH 相关的内容，经常使用。
 
-SSH是Secure Shell的缩写, 是一个应用层的加密网络协议, 它不只可以用于远程登录, 远程命令执行,还可用于数据传输.
-当然它由ssh Client和ssh Server端组成, 有很多实现, Ubuntu上就默认安装的OpenSSH, Client端叫做ssh, Server端叫做sshd.   OpenSSH只用来做远程登录和命令执行.
+SSH 是 Secure Shell 的缩写，是一个应用层的加密网络协议，它不只可以用于远程登录，远程命令执行，还可用于数据传输。
+当然它由 ssh Client 和 ssh Server 端组成，有很多实现，Ubuntu 上就默认安装的 OpenSSH, Client 端叫做 ssh, Server 端叫做 sshd.   OpenSSH 只用来做远程登录和命令执行。
 
 ## 免密登录
 查看本地 `~/.ssh/` 目录是否有 `id_rsa.pub`，如果没有，在本地创建公钥
@@ -28,12 +28,12 @@ SSH是Secure Shell的缩写, 是一个应用层的加密网络协议, 它不只�
 
 如果远程主机配置了多台机器免密登录，最好将 `id_ras.pub` 追加而不是覆盖到 `authorized_keys`
 
-	cat id_rsa.pub >> .ssh/authorized_keys 
+	cat id_rsa.pub >> .ssh/authorized_keys
 
 ## 保持连接
 
 ### 配置服务端
-SSH总是被强行中断，导致效率低下，可以在服务端配置，让 server 每隔30秒向 client 发送一个 keep-alive 包来保持连接:
+SSH 总是被强行中断，导致效率低下，可以在服务端配置，让 server 每隔 30 秒向 client 发送一个 keep-alive 包来保持连接：
 
 	vim /etc/ssh/sshd_config
 
@@ -63,7 +63,7 @@ SSH总是被强行中断，导致效率低下，可以在服务端配置，让 s
 	ServerAliveInterval 30
 	ServerAliveCountMax 60
 
-本地 ssh 每隔30s向 server 端 sshd 发送 keep-alive 包，如果发送 60 次，server 无回应断开连接。
+本地 ssh 每隔 30s 向 server 端 sshd 发送 keep-alive 包，如果发送 60 次，server 无回应断开连接。
 
 下面是 `man ssh_config` 的内容
 
@@ -75,7 +75,7 @@ The default value is 3. If, for example, ServerAliveInterval (see below) is set 
 ServerAliveInterval
 Sets a timeout interval in seconds after which if no data has been received from the server, ssh(1) will send a message through the encrypted channel to request a response from the server. The default is 0, indicating that these messages will not be sent to the server, or 300 if the BatchMode option is set. This option applies to protocol version 2 only. ProtocolKeepAlives and SetupTimeOut are Debian-specific compatibility aliases for this option.
 
-## 共享SSH连接
+## 共享 SSH 连接
 如果需要在多个窗口中打开同一个服务器连接，可以尝试添加 `~/.ssh/config`，添加两行
 
     ControlMaster auto
@@ -87,7 +87,7 @@ Sets a timeout interval in seconds after which if no data has been received from
 
 	ControlPersist 4h
 
-每次SSH连接建立之后，此条连接会被保持 4 小时，退出服务器之后依然可以重用。
+每次 SSH 连接建立之后，此条连接会被保持 4 小时，退出服务器之后依然可以重用。
 
 配置连接中转
 
@@ -95,7 +95,7 @@ Sets a timeout interval in seconds after which if no data has been received from
 
 当需要从一台服务器连接另外一个服务器，而在两台服务器中传输数据时，可以不用通过本地电脑中转，直接配置以上 ForwardAgent 即可。
 
-最终， `~/.ssh/config` 下的配置:
+最终， `~/.ssh/config` 下的配置：
 
 	Host *
 		ForwardAgent yes
@@ -107,8 +107,8 @@ Sets a timeout interval in seconds after which if no data has been received from
 		ControlPersist 4h
 		Compression yes
 
-## 同一台机器配置多个key
+## 同一台机器配置多个 key
 
-之前写过一篇文章总结，在同一台机器上同时使用 GitHub，和 GitLab 的key，可以具体参考[这里](/post/2015/08/git-with-multi-ssh-key.html)
+之前写过一篇文章总结，在同一台机器上同时使用 GitHub，和 GitLab 的 key，可以具体参考[这里](/post/2015/08/git-with-multi-ssh-key.html)
 
 

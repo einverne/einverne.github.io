@@ -139,6 +139,26 @@ df 命令输出：
 
 查看磁盘占用 [du](/post/2018/03/du-find-out-which-fold-take-space.html)
 
+## 外延
+假如你的 250G 的系统盘即将存满，下面的方式可以缓解一下硬盘压力。
+
+移除不再使用的 package
+
+	sudo apt autoremove
+	sudo apt-get autoclean
+
+查看系统日志占用：
+
+	journalctl --disk-usage
+	sudo journalctl --vacuum-time=3d
+
+
+查看 SNAP 占用
+
+	du -h /var/lib/snapd/snaps
+	snap list --all
+	snap remove some-package
+
 ## reference
 
 - man df
