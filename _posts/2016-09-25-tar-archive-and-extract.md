@@ -64,6 +64,19 @@ tar 命令常用参数
 
 经过上面的解释，可以习惯上可以记忆成 压缩格式 (z/j/J) + 压缩 / 解压 / 查看 (c/x/t) + v + f 文件名
 
+### 压缩时排除绝对路径
+有的时候在打包文件的时候会跟随着很长的路径，如果不想要这个很长的路径可以使用 `-C` 参数来将目录 `change to directory`
+
+比如想要备份 Docker volume 目录 `/var/lib/docker/volumes/chevereto_chevereto_content/`，如果：
+
+	tar -zcvf backup_content.tar.gz /var/lib/docker/volumes/chevereto_chevereto_content/
+
+这样打包，最后的压缩包内容会将整个相对目录也打包进去，可以使用
+
+	tar -zcvf backup_content.tar.gz -C /var/lib/docker/volumes/chevereto_chevereto_content/ .
+
+然后打包的结果 tar 中就只有 `chevereto_chevereto_content` 目录下的内容。
+
 ### 列出压缩包内的文件
 
     tar -ztvf filename.tar.gz     # 列出 tar.gz 下文件

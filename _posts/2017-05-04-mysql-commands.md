@@ -273,6 +273,26 @@ Order 可以使用 `DESC`, `ASC`
 
 	SHOW VARIABLES LIKE 'validate_password%';
 
+	mysql> SHOW VARIABLES LIKE 'validate_password%';
+	+--------------------------------------+--------+
+	| Variable_name                        | Value  |
+	+--------------------------------------+--------+
+	| validate_password_check_user_name    | OFF    |
+	| validate_password_dictionary_file    |        |
+	| validate_password_length             | 8      |
+	| validate_password_mixed_case_count   | 1      |
+	| validate_password_number_count       | 1      |
+	| validate_password_policy             | MEDIUM |
+	| validate_password_special_char_count | 1      |
+	+--------------------------------------+--------+
+	7 rows in set (0.01 sec)
+
+改变密码策略：
+
+	SET GLOBAL validate_password_policy=MEDIUM;        // LOW  MEDIUM HIGH
+	SET GLOBAL validate_password_policy=1;        // Low=0 Medium=1 High=2
+
+
 ## Host 'xxx.xx.xxx.xxx' is not allowed to connect to this MySQL server
 通过如下方式创建用户并赋予权限。
 
@@ -284,6 +304,10 @@ Order 可以使用 `DESC`, `ASC`
 		->     WITH GRANT OPTION;
 
 	FLUSH PRIVILEGES;
+
+## ERROR 2003 (HY000): Can't connect to MySQL server on 'some host' (113)
+解决问题的思路，看看防火墙是不是开着，检查 MySQL 用户的权限设置是否正确。
+
 
 ## sql 命令中的 \G
 在使用 mysql 命令行的时候如果查询结果比较大的时候，可以在语句后面加上 `\G;` 来将结果垂直方式展现，可以更好的查看结果。那么 \G 到底是什么意思呢。
