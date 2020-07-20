@@ -14,29 +14,30 @@ last_updated:
 
 下面是 Chrome 自身的一些常用默认快捷键
 
-快捷键       | 作用
-----------|--------------
-Alt + Left    | back current page
-Alt + Right  | Forward current page
-Ctrl + h | 在新标签页打开历史记录
-Ctrl + j | 在新标签页打开下载记录
-Ctrl + k | 将光标定位到 Omnibox ，也就是 Chrome 自定搜索
-**Ctrl + l** | 将光标快速定位到地址栏
-**Ctrl + t** | 新标签页
-Ctrl + d | 收藏当前页面
-**Ctrl + Shift + t** | 重新打开关闭的标签页
-**Ctrl + w** | 快速关闭当前标签页
-Ctrl + p | 打印 或者 保存为 PDF
-Ctrl + n | 新开浏览器窗口
-**Ctrl + Shift + n** | 新开隐身窗口
-Ctrl + r 或者 F5  | 刷新
-Ctrl + u | 查看源码
-**Ctrl + Shift + i** | 审查元素
-Ctrl + Shift + j | 开发者工具
-Ctrl + Tab | 切换到下一个打开的标签页
-Ctrl + Shift + Tab | 切换到上一个打开的标签页
-Ctrl + 单击 | 在新标签页打开
-Alt + 1/2/3/4 | 快速切换标签页
+MacOS 快捷键 |    Linux 快捷键       | 作用
+-------------|-----------------------|--------------
+Cmd + `[`  |  Alt + Left    | back current page
+Cmd + `]`  |  Alt + Right  | Forward current page
+Cmd + y  |  Ctrl + h | 在新标签页打开历史记录
+Cmd + Shift + j  |  Ctrl + j | 在新标签页打开下载记录
+  |  Ctrl + k | 将光标定位到 Omnibox ，也就是 Chrome 自定搜索
+Cmd + l  |  **Ctrl + l** | 将光标快速定位到地址栏，可以输入地址，或者直接进行 Google 搜索
+Cmd + t  |  **Ctrl + t** | 新标签页
+Cmd + d  |  Ctrl + d | 收藏当前页面
+Cmd + Shift + t  |  **Ctrl + Shift + t** | 重新打开关闭的标签页
+Cmd + w  |  **Ctrl + w** | 快速关闭当前标签页
+Cmd + p  |  Ctrl + p | 打印 或者 保存为 PDF
+Cmd + n  |  Ctrl + n | 新开浏览器窗口
+Cmd + Shift + n  |  **Ctrl + Shift + n** | 新开隐身窗口
+Cmd + r  |  Ctrl + r 或者 F5  | 刷新
+Cmd + Option + u  |  Ctrl + u | 查看源码
+  |  **Ctrl + Shift + i** | 审查元素
+  |  Ctrl + Shift + j | 开发者工具
+  |  Ctrl + Tab | 切换到下一个打开的标签页
+  |  Ctrl + Shift + Tab | 切换到上一个打开的标签页
+  |  Ctrl + 单击 | 在新标签页打开
+Cmd + 1/2/3/4  |  Ctrl/Alt + 1/2/3/4 | 快速切换标签页
+Cmd + f | Ctrl + f | 页面内搜索
 
 以上就是最最常用的到的一些快捷键，容易忽略的我使用加粗显示了。
 
