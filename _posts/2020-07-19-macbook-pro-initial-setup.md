@@ -336,6 +336,12 @@ lsof 可以看到具体某个端口关联的 PID。
 
 拷贝完成后在 Mac 上打开 lrcat 文件，然后在 Lightroom 中右击文件夹，Find missing folder，重新导入就 OK 了。
 
+## 神奇操作
+
+### Mac 上 Chrome 遇到 NET::ERR_CERT_INVALID
+我使用的 Resilio Sync 的后台管理界面使用了 BitTorrent 自己签发的证书，所以 Chrome 中打开的时候会报错“NET::ERR_CERT_INVALID”，普通情况下我知道该风险，在其他操作系统中会提供一个选项，点击高级可以继续访问链接，但是在 Mac 上并没有这个按钮，我搜索了一下，想要尝试信任证书，无果，后来发现一个神奇的方法，在页面中点击空白处，然后输入：**thisisunsafe**，即可。略神奇。
+
+
 ## reference
 
 - <https://github.com/macdao/ocds-guide-to-setting-up-mac>
