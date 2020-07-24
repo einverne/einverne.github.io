@@ -3,7 +3,7 @@ layout: post
 title: "我使用的 Chrome Extension"
 description: "我使用的 Chrome Extension 扩展"
 category: 整理合集
-tags: [chrome, google]
+tags: [chrome, google, google-extension, ]
 ---
 
 日常使用备份，另外会单独拿出一列写写[我用的 Userscript](/post/2015/08/userscripts.html)，类似微博去广告，豆瓣页面显示下载链接之类并不会存在这个列表里面。使用这一套扩展的好处有以下几点：
@@ -13,7 +13,32 @@ tags: [chrome, google]
 
 ![Chrome Extension](https://lh3.googleusercontent.com/-RRQpdKvdFqU/VcC4gutTGRI/AAAAAAAAykw/Ylj6joaSNis/s780-Ic42/78afd21e6cfc0692ea542a5fc1d848d7.jpg)
 
-# 列表：
+## 效率类
+
+## Checker Plus for Gmail
+这是一款检查 Gmail 新邮件的扩展，推送及时，并且可以不离开当前页面查看邮箱内容。
+
+![checker plus for gmail](/assets/checker-plus-for-gmail-in-chrome.png)
+
+官方地址：<https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj>
+
+## Checker Plus for Google Calendar
+一款用来检查 Google Calendar 的插件，可以快速的预览 Google Calendar 中的事项，也可以直接创建 Event。
+
+官方地址：<https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha>
+
+上面两个扩展都是一位叫做 [Jason Savard](https://jasonsavard.com/about) 的自由开发者开发的。因为我日常使用这两个网页应用比较多，自然的就找到了这两个扩展，免费版本的功能就已经可以满足 80% 需求，不过我还是小小的支持了一下作者，这可能是我付费的第一，二款 Chrome 扩展。
+
+## LastPass
+[密码管理](http://www.einverne.tk/2013/04/manage-password.html)
+LastPass 甚至可以用来共享密码～～
+
+[LastPass: Free Password Manager LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
+
+## Trello
+Trello 官方的扩展，可以很轻松添加卡片。
+
+官方地址：<https://chrome.google.com/webstore/detail/trello/dmdidbedhnbabookbkpkgomahnocimke>
 
 ## Tampermonkey
 当然他是[神器](http://www.einverne.tk/2013/01/Tampermonkey.html)
@@ -21,17 +46,17 @@ Chrome 下，扩展是能够同步的，而脚本我找到了方法也能够同�
 
 [Tampermonkey The most popular userscript manager for Blink-based browsers](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
+## Vimium
+在浏览页面的时候使用 Vim 的快捷键。
+
+官方地址：<https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb>
+
 ## 广告屏蔽
 曾经一度不能区别 Adblock(AB) 与 Adblock Plus(ABP), 后来大概了解了一下，可参阅我博客：[http://www.einverne.tk/2013/08/ababp.html](http://www.einverne.tk/2013/08/ababp.html)
 至于后来，我只用 Adblock 了，为啥？我觉得 Adblock 更好～～文中有解释
 
 [AdBlock. The #1 ad blocker with over 200 million downloads. Blocks YouTube, Facebook and ALL ads by default (unlike Adblock Plus).](https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom)
 
-## LastPass
-[密码管理](http://www.einverne.tk/2013/04/manage-password.html)
-LastPass 甚至可以用来共享密码～～
-
-[LastPass: Free Password Manager LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
 
 ## Proxy Switchysharp 已经替换成 Proxy SwitchyOmega
 不解释
@@ -40,9 +65,14 @@ LastPass 甚至可以用来共享密码～～
 目前已经替换成 [Proxy SwitchyOmega](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
 
 ## PT Plugin Plus
-需要手工加载
+一个 PT 站点的管理工具，因为没有上架 Web Store 所以只能自己编译，加载安装。
 
 - <https://github.com/ronggang/PT-Plugin-Plus>
+
+## Plus for Trello
+Trello 的扩展，可以对每一个卡片进行计时。
+
+官方地址：<https://chrome.google.com/webstore/detail/plus-for-trello-time-trac/gjjpophepkbhejnglcmkdnncmaanojkf>
 
 ## bypass paywalls
 用来绕过付费墙。
@@ -101,9 +131,10 @@ InoReader 不解释
 
 [Dream Afar New Tab An unexpected trip everyday by simply opening a new tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn)
 
-# 以下 Chrome App
 
-## Hangouts
+## 以下 Chrome App
+
+### Hangouts
 Hangouts 推荐使用 App 版本，看样子 Google 应该会重点发展 App 版的 Hangouts
 [Always stay connected with the new desktop app for Hangouts on ChromeOS and Windows.](https://chrome.google.com/webstore/detail/hangouts/knipolnnllmklapflnccelgolnpehhpl)
 
