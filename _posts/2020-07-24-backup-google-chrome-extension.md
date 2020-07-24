@@ -17,7 +17,7 @@ Chrome 的扩展安装后以文件的形式在如下的目录中：
 
 - Windows: `%UserProfile%\AppData\Local\Google\Chrome\User Data\Default\Extensions`
 - Linux: `~/.config/google-chrome/Default/Extensions/`
-- Mac: `~/Library/Application Support/Google/Chrome/`
+- Mac: `~/Library/Application Support/Google/Chrome/Default/Extensions/`
 
 然后在 `chrome://extensions/` 扩展管理中点击 Details 获取扩展的详细信息可以知道扩展的唯一 ID，这个 ID 一般也是 Chrome Web Store 的唯一索引 ID，比如 Dream Afar 是 `henmfoppjjkcencpbjaigfahdjlgpegn`。然后在上面的目录中找到对应的目录，将该目录备份，然后在另外的系统中对应的位置恢复该目录即可。
 

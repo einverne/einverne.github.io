@@ -153,7 +153,6 @@ brew 的备份和恢复，如果要在两台 Mac 间备份和恢复 brew 安装�
 
 [官网](https://www.iterm2.com/) 下载安装即可。
 
-配置和 Guake 类似的下拉显示。
 
 zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 项目管理。
 
@@ -165,6 +164,11 @@ zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 
 	# 然后进入 Vim，执行 `:PlugInstall`
 	ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 	ln -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
+
+配置和 Guake 类似的下拉显示。
+
+- 在 iterm2 的设置菜单中 Keys -> Create a Dedicated HotKey Window...
+- 创建新的 Profile，在菜单中设置呼出快捷键，但是在 Mac 上因为 Touchbar 的诡异存在，使得我无法方便的按下 F12，所以只能选用其他的按键
 
 ### JetBrains Toolbox
 下载 JetBrains Toolbox，然后一个个选择想用的 IDE。
@@ -184,21 +188,71 @@ zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 
 
 ## 默认软件的熟悉
 
-
 ### Finder 中显示 Home 目录
-
 
 使用快捷键 Command+Shift+H
 
+### 鼠标滚轮的方向
+虽然大部分的情况下触摸板和快捷键已经能满足一定的需求，但有些时候还是会接上鼠标，尤其是当连接显示器将 Mac 作为主机使用的时候，这个时候我就发现一个问题，那就是鼠标滚轮的方向和我在 Linux 下养成的习惯相反了，看网上的材料说设置里面可以设置更改鼠标 nature 的方向，但是修改过后发现触摸板的双指滚动方向也跟着变了，然后继续搜索发现很多人推荐 [Scroll Reverse](https://pilotmoon.com/scrollreverser/) 但是这个小工具在 OSX10.15 及以上有兼容性问题，继续搜索就发现了 [Mos](https://mos.caldis.me/)，这个软件可以更改鼠标滚动的方向，也可以让滚动更加平滑。
+
 
 ## 常用快捷键
+Mac 的快捷键设计有一个非常容易的记忆方法，和 UI 相关的快捷键基本上和 Cmd 相关，和 Ctrl 相关的大多数是终端内的操作。所以 Cmd 组合 `Q/A/Z/C/V/X/T/H/M` 等等都是和界面窗口标签页相关的，而 Ctrl 和 `a/e/n/p/b/f` 都和终端中光标移动或者终端中字符处理相关的。
+
+### Cmd 快捷键
+
+快捷键    | 说明
+----------------|------------------
+Cmd + Q | 退出应用
+**Cmd + W** | 关闭当前窗口
+Cmd + X/C/V | 和其他系统类似，剪切，复制，粘贴
+Cmd + Tab | 切换打开的应用
+Cmd + , | 打开大部分应用的偏好设置
+**Cmd + [** | 后退
+**Cmd + ]** | 前进
+**Cmd + Space** | Spotlight search
+**Cmd + L** | 定位到地址栏，非全局快捷键，在 Chrome 中非常好用
+Cmd + A | 全选
+Cmd + Z | 撤销上一次操作，Cmd + Shift + Z 重做
+Cmd + F | 页内搜索
+Cmd + G | 搜索下一个， Cmd +Shift+G 上一个
+Cmd + H | 隐藏最前面的窗口，这个操作不可逆，我应该不会用到
+Cmd + M | 最小化前面的窗口到 Dock，也不可逆，所以我也不用
+Cmd + N | 新建窗口
+Cmd + O | 打开文件
+Cmd + P | 打印当前文档
+Cmd + S | 保存
+
+截屏的快捷键
 
 快捷键      | 解释
 ----------|-----------
 command + 1 左边的按键 | 在同一个应用不同窗口间切换
 Shift+command+3 | 截取全屏
 Shift+command+4 | 截取部分，通过光标选择
-Shift+command+5 | 截取部分，有更多选项
+Shift+command+5 | 打开截取工具，有更多选项
+
+在大部分的文档类应用中了解这些快捷键也可以提升不少效率
+
+快捷键    | 说明
+----------------|------------------
+Cmd + B  | 加粗
+Cmd + I | 斜体
+Cmd + K | 插入链接
+
+
+### Ctrl 快捷键
+上面提到的 Mac 下的 Ctrl 快捷键大部分是和终端或者输入框中的文字相关的，Ctrl 的组合在 Linux 的终端，Emacs 中也有不少的应用。
+
+快捷键    | 说明
+----------------|------------------
+Ctrl + a/e | 光标跳转到行首，行尾
+Ctrl + b/f | 光标向前 (backward), 向后 (forward) 移动一个字符
+Ctrl + n/p | 下一个 / 上一个
+Ctrl + h/d | 向前删除一个字符，向后删除一个字符
+Ctrl + k | 删除光标都末尾所有内容，这个快捷键在我的配置中设置了切换到上一个 Panel，所以我不怎么用
+Ctrl + w | 删除前面一个单词 (WORD)
+Ctrl + u | 删除直到行首
 
 Mac 全部快捷键
 
@@ -325,11 +379,46 @@ Mac 上使用 netstat 显示监听的端口：
 
 lsof 可以看到具体某个端口关联的 PID。
 
+## 开发环境安装
+上面提到基础的编程环境安装，这里在针对具体细节补充说明。
+
+### 安装 asdf 多版本管理
+asdf 是一个命令行下的多语言，多版本管理工具，我之前的文章提到过 [pyenv](/post/2017/04/pyenv.html) 安装管理多个版本的 Python, 同样的我在外延部分提到了 Java 的多版本管理 jenv, 还有 Ruby 的多版本管理 rbenv，甚至还有 node.js 等等语言，等等编译工具的多版本管理工具，而 asdf 将这些多版本管理工具都整合到一起，通过简单的 asdf 一行命令就可以搞定很多二进制工具，或语言的版本管理，asdf 通过扩展的方式支持了非常多的常用工具。在 Mac 下的安装也非常简单，直接参考[官方网站](https://asdf-vm.com/) 即可。
+
 ### 安装 Java 开发环境
 
+	asdf plugin add java
+	asdf install java adoptopenjdk-8.0.262+10.openj9-0.21.0
+	asdf global java adoptopenjdk-8.0.262+10.openj9-0.21.0
+	java -version
 
+### 安装 maven
+
+	asdf plugin add maven
+	asfd install maven 3.5.4
+	asdf global maven 3.5.4
+	mvn --version
 
 ### 安装 Python 环境
+
+	asdf plugin add python
+	asdf install python 3.6.1
+	asdf global python 3.6.1
+	python -V
+
+### Nodejs
+
+	asdf plugin add nodejs
+	bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+	asdf install nodejs 14.5.0
+	asdf global nodejs 14.5.0
+	node -v
+	yarn -v
+
+
+### 安装 MySQL 管理工具
+我使用 MySQL 官方的管理工具 MySQL Workbench.
+
 
 ## 迁移 Lightroom 图片库
 我的很大一部分照片库在 Windows 的 Lightroom 中，幸亏 Lightroom 的迁移并不麻烦，在 Windows 上使用 WinSCP，然后局域网连上 Mac，直接将 Lightroom 所在的 Pictures 图片库复制到 Mac 上面的图片库中，然后将 Lightroom 的 `.lrcat` catalog 文件夹也拷贝到 Mac 上，这个目录可以在 Windows 的“编辑”-“目录设置”中找到。
@@ -340,6 +429,13 @@ lsof 可以看到具体某个端口关联的 PID。
 
 ### Mac 上 Chrome 遇到 NET::ERR_CERT_INVALID
 我使用的 Resilio Sync 的后台管理界面使用了 BitTorrent 自己签发的证书，所以 Chrome 中打开的时候会报错“NET::ERR_CERT_INVALID”，普通情况下我知道该风险，在其他操作系统中会提供一个选项，点击高级可以继续访问链接，但是在 Mac 上并没有这个按钮，我搜索了一下，想要尝试信任证书，无果，后来发现一个神奇的方法，在页面中点击空白处，然后输入：**thisisunsafe**，即可。略神奇。
+
+## 几点吐槽
+
+- 念念不忘的 Touchbar，真的很鸡肋
+- 右上角的日期竟然连日历都没有
+- 分屏功能竟然需要第三方扩展来支持，虽然可以用 Option 来左右分屏，还是很鸡肋，连 Linux Mint 自带的桌面都赶不上
+- 自带的 Finder，是我没有使用习惯吗？我觉得 [Nemo](/post/2018/08/nemo-file-manager.html) 还是要远远好过 Finder
 
 
 ## reference
