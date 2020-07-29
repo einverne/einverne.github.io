@@ -45,6 +45,7 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 
 ## 安装使用
 
+### Linux 安装
 从[这里](https://golang.org/dl/) 下载，然后解压并添加环境变量
 
     tar -C /usr/local -xzf go1.11.1.linux-amd64.tar.gz
@@ -55,6 +56,12 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 安装 C 相关工具
 
     sudo apt-get install bison ed gawk gcc libc6-dev make
+
+### Mac 安装
+
+	brew install go
+
+可以使用 `go version` 来验证是否安装成功。
 
 ### 安装目录
 在安装好的 Go 目录下，有几个重要的目录
@@ -69,10 +76,10 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 
 ### 几个重要的环境变量
 
-- $GOROOT 表示该 org 在你的电脑上的安装位置，它的值一般都是     $HOME/GOROOT , 当然，你也可以安装在别的地方
-- $GOARCH 表示目标机器的处理器架构，它的值可以是 386、amd64 或 arm
-- $GOOS 表示目标机器的操作系统，它的值可以是 arwin、freebsd、linux 或 windows
-- $GOPATH 认采用和   $GOROOT     一样的值，但从 Go1.11 本开始，你必须修改为其它路径。它可以包含多个包含 Go 语言源码文件、包文件和可执行文件的路径，而这些路径下又必须分别包含三个规定的目录：src 、pkg     和 bin , 这三个目录分别用于存放源码文件、包文件和可执行文件
+- `$GOROOT` 表示该 go 的安装目录，值一般都是 `/usr/local/`, 当然，也可以安装在别的地方
+- `$GOARCH` 表示目标机器的处理器架构，它的值可以是 386、amd64 或 arm
+- `$GOOS` 表示目标机器的操作系统，它的值可以是 arwin、freebsd、linux 或 windows
+- `$GOPATH` 采用和 $GOROOT 一样的值，但从 Go1.11 本开始，你必须修改为其它路径。它可以包含多个包含 Go 语言源码文件、包文件和可执行文件的路径，而这些路径下又必须分别包含三个规定的目录：`src` 、`pkg` 和 `bin` , 这三个目录分别用于存放源码文件、包文件和可执行文件
 
 
 ### Hello World
@@ -121,7 +128,7 @@ header 中包含一个指针，通过复制来传递一个引用类型的值的�
 
 ## reference
 
-- Go 语言编程
-- Go 语言实战
+- 《Go 语言编程》
+- 《Go 语言实战》
 - <https://tour.golang.org/basics/1>
 - https://blog.opskumu.com/go-programming-language.html
