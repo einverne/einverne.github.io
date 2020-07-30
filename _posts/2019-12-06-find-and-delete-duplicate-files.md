@@ -79,6 +79,11 @@ fdupes 的增强版，根据作者自己的描述，jdupes 比 fdupes 1.51 版�
 
 	fdupes -rdN path/to/dir
 
+## duperemove
+在 review tldr 的 PR 时又看到了一个 C 语言实现的 duperemove，作者没有提供 benchmark，有机会可以尝试一下。
+
+- <https://github.com/markfasheh/duperemove>
+
 ## reference
 
 - <https://www.tecmint.com/find-and-delete-duplicate-files-in-linux/>
