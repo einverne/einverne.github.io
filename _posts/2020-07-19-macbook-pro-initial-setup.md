@@ -13,6 +13,21 @@ last_updated:
 - 被很多人追捧的触摸板，当然这个是硬件软件的结合其他系统可以追赶但体验确实不如 Mac 完整
 - 一些无法在 Linux 上跑起来的应用，一些基本工具应用，Adobe 系列的软件主要是 Lightroom
 
+## 选购考虑
+
+### i7 2.6 vs i9 2.3
+Macbook Pro have two different CPU specification, which is 2.6 GHz 6-core i7 and 2.3 GHz 8-core i9 processor.
+
+The i9 9980H (2.3ghz) is 4% faster per core, and ~25% faster under full load than the i7 9750H (2.6ghz). $100 is ~4% of the price difference at that spec.[^cpu]
+
+The i9 9980HK (2.4ghz) is 5% faster in every situation than the i9 9980H.
+
+Whether that will make a difference for you at all is highly dependent on what you are doing with it. If you are not compiling software, rendering, doing video compositing/encoding, or other parallelized high CPU tasks, it probably won't.
+
+[^cpu]: <https://www.reddit.com/r/mac/comments/dxd8q9/16_inch_macbook_pro_i7_vs_i9/>
+
+### 16G vs 32G
+内存是必需品，如果需要大量使用 Chrome，或者依赖于 IDE，或者需要同时开多个应用，大一些的内存还是必要的。
 
 ## 基础设置
 首先是一些必要设置的设置，后面的一切都依赖这些设置。
@@ -389,14 +404,15 @@ asdf 是一个命令行下的多语言，多版本管理工具，我之前的文
 
 	asdf plugin add java
 	asdf install java adoptopenjdk-8.0.262+10.openj9-0.21.0
+	asdf install java adoptopenjdk-11.0.8+10.openj9-0.21.0
 	asdf global java adoptopenjdk-8.0.262+10.openj9-0.21.0
 	java -version
 
 ### 安装 maven
 
 	asdf plugin add maven
-	asfd install maven 3.5.4
-	asdf global maven 3.5.4
+	asfd install maven 3.6.2
+	asdf global maven 3.6.2
 	mvn --version
 
 ### 安装 Python 环境
