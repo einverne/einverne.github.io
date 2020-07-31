@@ -24,7 +24,7 @@ jobs:
       with:
         host: ${{ secrets.TC_HOST }}
         username: ${{ secrets.TC_USER }}
-        password: ${{ secrets.TC_PASSWORD }}
+        key: ${{ secrets.KEY }}
         port: ${{ secrets.TC_PORT }}
         source: "${{ github.workspace }}/_site/*"
         target: "$HOME/blog/"
