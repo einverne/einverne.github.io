@@ -112,6 +112,16 @@ then
 	sudo iptables -P OUTPUT ACCEPT
 	sudo iptables -F
 
+## 卸载停止不需要的服务
+
+	sudo systemctl stop rpcbind.socket
+	sudo systemctl disable rpcbind.socket
+
+卸载 Oracle 后台监控
+
+	sudo systemctl stop snap.oracle-cloud-agent.oracle-cloud-agent.service
+	sudo systemctl disable snap.oracle-cloud-agent.oracle-cloud-agent.service
+
 ## QA
 新开的实例，我一般都会直接修改其 ssh 登录端口，而这台机器白天开了之后设置了 sshd 端口，并且 reload 了 sshd 设置，晚上回到家后发现
 

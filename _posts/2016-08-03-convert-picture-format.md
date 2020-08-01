@@ -29,7 +29,17 @@ last_updated:
 
     mogrify -format png /tmp/*.jpg
 
-将目录下所有的 png 图片转换成 png 格式，并保存在同目录
+给图片添加边框
+
+	convert path/to/demo.jpg -border 30x30 -bordercolor white bordered.png
+
+更改图片的分辨率
+
+	convert path/to/demo.jpg -resize 1920x1080 after-resize.tiff
+
+将目录下所有的 jpg 图片转换成 png 格式，并保存在同目录
+
+	for file in *.jpg; do convert $file -resize 50% small-$file.png; done
 
 ## webp 格式转换
 Google 已经将 webp 的解码工具放到了 `libwebp` 包中

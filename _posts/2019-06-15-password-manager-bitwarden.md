@@ -20,3 +20,10 @@ last_updated:
 Bitwarden 解决了 LastPass 潜在的一些问题，但依然也引入了一些问题。LastPass 带来的问题一个就是安全问题，如何保证用户的密码在服务器同步时的安全性，虽然 LastPass 曾正面出来声明过所有的密码都是由客户端加密再进行传输，服务端是不进行解密的，但是这个不确定性就在于 LastPass 是否可信。另外一个问题就是 LastPass 集中了用户大量的密码，肯定是黑客等等专注需要攻破的系统，一旦发生 LastPass 主密码泄露事件，那么造成的影响就不是一家网站，而是附带的很多网站，那就是互联网的大事情了。而这一点也正是幸运的地方，那么 LastPass 肯定会雇佣一批安全专家对他们的系统进行维护，这远比维护一套自己的 Bitwarden 服务端的安全系数要高。
 
 另外如果自行假设 Bitwarden 服务端，那么一定开启防火墙，保证只有自己才能访问。先写这么多之后再补充。
+
+## 安装 Bitwarden 服务端
+Bitwarden 的[官方网站](https://help.bitwarden.com/article/install-on-premise/) 提供了各个系统的安装方式。
+
+Bitwarden 自己的[服务端](https://github.com/bitwarden/server) 依赖比较重，还需要 MySQL，所以我选择了 [Rust 实现的版本](https://github.com/dani-garcia/bitwarden_rs)
+
+官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)
