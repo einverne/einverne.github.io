@@ -25,6 +25,16 @@ Podcast 作为一种特殊的借助声音传播的媒体，有着特定的适用
 - 时长：1h 以上
 - 更新周期：每周，但时间不固定
 
+### Self-Hosted
+
+Self-Hosted 是一个关于如何自建各种服务，将自己的数字生活以及产生的数据自我管理的播客。
+
+- <https://selfhosted.show/>
+
+- 主题内容：自建各种网络服务
+- 时长：1h
+- 更新周期：一个月 2-3 期
+
 ### Talk Python to me (by Michael Kennedy)
 这是一个和 Python 相关的播客，但是又不止于 Python，还包括 Data Science，AI，Web development 等等话题。
 
