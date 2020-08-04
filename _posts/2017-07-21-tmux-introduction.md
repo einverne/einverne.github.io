@@ -21,9 +21,9 @@ Tmux 是一个很棒的终端复用工具，和 screen 命令类似，但是 Tmu
 
 Tmux 主要包括以下几个模块：
 
-- session    会话：一个服务器连接可以包含多个会话
-- window    窗口：一个会话可以包含多个窗口
-- pane    面板：一个窗口可以包含多个面板，如果桌面足够大可以充分利用面板达到非常强大的分屏
+- session 会话：一个服务器连接可以包含多个会话
+- window 窗口：一个会话可以包含多个窗口
+- pane 面板：一个窗口可以包含多个面板，如果桌面足够大可以充分利用面板达到非常强大的分屏
 
 ## 安装 {#install}
 
@@ -129,7 +129,7 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> " 		横切 split pane horizontal，后面会 remap 这个键
 	<prefix> %      竖切 split pane vertical，后面 remap 这个键
 	<prefix> o 		按顺序在 pane 之间移动
-	<prefix> x      关闭 pane
+	<prefix> x      **关闭 pane**
 	<prefix> z      最大化 pane 和恢复原状 toggle pane zoom
 	<prefix> !      移动 pane 至 window
 	<prefix> "空格" 更换 pane 排版
@@ -271,3 +271,4 @@ X Windows 系统中常用的 Xterm，GNU Screen，SSH， GNome 中的 Terminal�
 - 一本很翔实的书 <https://leanpub.com/the-tao-of-tmux/read>
 - <http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/>
 - <http://files.floriancrouzat.net/dotfiles/.tmux.conf>
+- <https://github.com/einverne/dotfiles>
