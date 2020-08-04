@@ -10,9 +10,9 @@ last_updated:
 
 Spring AOP 的几个常用的使用场景：
 
-- transaction management
-- logging
-- security
+- 事务，transaction management
+- 日志，logging
+- 安全，security
 
 AOP 提供了不同于 OOP 的另一种全新的软件架构思考方式。
 
@@ -24,11 +24,10 @@ Spring 中有两种方式来使用 AOP
 ## Terms
 一些关键性的术语：
 
-- `advice`, actions taken by aspect at a particular **join-point**
-- `join-point` a point during the execution of a program, in spring AOP always represents a method execution
-- `pointcut` is a predicate or expression that matches join-point
-- `Advice` is associated with a pointcut expression and runs at any join point matched by the pointcut
-- `weaving` linking aspects with other application types or objects to create an advised object.
+- `join-point`: **a point** during the execution of a program, in spring AOP always represents a method execution
+- `pointcut`:is **a predicate or expression** that matches join-point
+- `advice`: **actions** taken by aspect at a particular **join-point**, is associated with a pointcut expression and runs at any join point matched by the pointcut
+- `weaving`: linking aspects with other application types or objects to create an advised object.
 
 基于上面的认知，知道 join-point 可以认为是方法调用的时刻，所以 Spring 中有 5 种类型的 Advice 时机：
 
@@ -111,7 +110,6 @@ limits matching to join points within certain types
 - target - limits matching to join points (the execution of methods when using Spring AOP) where the target object (application object being proxied) is an instance of the given type
 
 
-
 `this` 匹配 bean reference 是给定类型的实例，`target` 匹配 target Object 是给定类型的实例。`this` 适用于 Spring AOP 创建 CGLIB-based proxy, `target` 适用于 JDK-based proxy.
 
 	@Pointcut("target(info.einverne.springboot.demo.dao.BaseDao)")
@@ -162,7 +160,21 @@ limits matching to join points within types that have the given annotation (the 
 - @target() is matched at runtime, requiring the same to have the **RUNTIME** retention
 
 ### @annotation
+`@annotation` 可以用来表示被注解引用的时机。
+
 limits matching to join points where the subject of the join point (method being executed in Spring AOP) has the given annotation
+
+比如自定义注解：
+
+	@Retention(RetentionPolicy.RUNTIME)
+	@Target(ElementType.METHOD)
+	public @interface LogExecutionTime {
+	}
+
+那在定义 Pointcut 时可以使用：
+
+	@Around("@annotation(com.package.LogExecutionTime)")
+	public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {}
 
 ## Order
 可以使用 `@Order` 来指定先后执行顺序。
