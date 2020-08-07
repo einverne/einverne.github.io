@@ -58,6 +58,36 @@ assh 这个工具就将登录一台机器跳转 SSH 再登录另外一台机器�
 - `ServerAliveInterval`: 设置没有数据后多少时间间隔超时
 - `ServerAliveCountMax`: 设置服务活跃信息的数量，如果阈值达到，同时服务器活跃信息 ，服务器活跃消息 (server alive messages) 通过加密通道传输，因此不能被欺骗。The TCP keepalive 选项通过 TCPKeepAlive 是可以伪造的。服务器活跃机制在判断客户端或者服务器在不活跃时何时断开是非常有用的。默认值是 3，举一个例子，ServerAliveInterval 设置成 15，ServerAliveCountMax 保持默认，如果服务器没有回应，ssh 会在大约 45 秒后断开连接。这个选项只在 protocol 2 下有效
 
+看一个最基本的 `assh.yml` 配置：
+
+```
+hosts:
+  hosta:
+    Hostname: 1.2.3.4
+
+  hostb:
+    Hostname: 5.6.7.8
+    Gateways: hosta
+
+  hostc:
+    Hostname: 9.10.11.12
+    Gateways: hostb
+
+  hostd:
+    Hostname: 13.14.15.16
+    GatewayConnectTimeout: 2
+    Gateways:
+    - direct
+    - hosta
+```
+
+说明：
+
+- 配置了 hosta 直连
+- hostb 则是通过 hosta 连接，ssh hostb 时会转换成 `ssh -o ProxyCommand="ssh hostb nc %h %p" hosta`
+- hostc 通过 hostb 连接
+- hostd 会首先尝试直连，如果失败了则回退到使用 hosta 连接
+
 ## 加速 SSH 会话
 
 OpenSSH 可以复用存在的 TCP 连接，比如在创建了多个 SSH sessions 的时候，可以避免 TCP 创建连接带来的过度开销，修改 `vi ~/.ssh/config`:
