@@ -214,6 +214,13 @@ zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 
 ## 常用快捷键
 Mac 的快捷键设计有一个非常容易的记忆方法，和 UI 相关的快捷键基本上和 Cmd 相关，和 Ctrl 相关的大多数是终端内的操作。所以 Cmd 组合 `Q/A/Z/C/V/X/T/H/M` 等等都是和界面窗口标签页相关的，而 Ctrl 和 `a/e/n/p/b/f` 都和终端中光标移动或者终端中字符处理相关的。
 
+在打开的窗口中显示隐藏的文件：Cmd+Shift+`.`
+
+默认在 Finder 中显示所有文件，包括隐藏文件。
+
+	defaults write com.apple.finder AppleShowAllFiles TRUE
+	killall Finder
+
 ### Cmd 快捷键
 
 快捷键    | 说明
@@ -289,9 +296,11 @@ Mac 全部快捷键
 有些人推荐 squash 这款软件，简单的看了一下官网，似乎就我这个需求并不需要 Squash 这款软件。
 
 ### 多重粘贴板
-在 Linux 上我使用 fcitx 自带的粘贴板 <kbd>Shift</kbd>+<kbd>;</kbd> 就可以呼出，因为就是输入法的功能，所以非常方便。在 Windows 下用 Ditto 这样一款软件。那么切换到 MacOS 就想要一个代替品。
+在 Linux 上我使用 fcitx 自带的粘贴板 <kbd>Ctrl</kbd>+<kbd>;</kbd> 就可以呼出，因为就是输入法的功能，所以非常方便。在 Windows 下用 Ditto 这样一款软件。那么切换到 MacOS 就想要一个代替品。
 
-    brew cask install copyq
+    brew cask install maccy
+
+默认是 Shift+Cmd+C 弹出粘贴历史，我习惯了 Ctrl+`;` 所以直接改成这个快捷键。
 
 ### 在文件管理器 Finder 中快速打开终端
 借助 [OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal) 这个 Finder 的插件可以实现在 Finder 目录中，立即打开终端。
@@ -382,14 +391,51 @@ LICEcap
 
 ### 压缩解压缩
 
-- https://www.keka.io/en/
+- <https://www.keka.io/en/>
 
+### 状态栏显示 CPU 内存网速
+虽然 iStat Menus 很强大，但看看 CPU 和内存占用，网速，用开源的 iGlance 足矣。
+
+- <https://github.com/iglance/iGlance>
+
+### 电子书管理
+Linux 和 NAS 上一直用的 Calibre
+
+	brew cask install calibre
+
+### HTTP 接口调试
+因为历史上保存了一些请求，所以还是用了 Postman，不过新出的 Postwomen 也可以试试。
+
+### 抓包工具
+大名鼎鼎的 Charles，以及命令行 mitmproxy, 以及网络协议的 Wireshark 都来一套。
+
+### FTP 文件传输分享
+
+- Cyberducker
+- Transmit
+
+### 下载工具
+
+aria2, you-get 和 youtube-dl 日常使用，Transmision 作为 BitTorrent 备用。
+
+### 密码管理
+
+自己搭建的 Bitwarden，虽然常年使用 LastPass，但最近自己搭建 Bitwarden 后发现 Bitwarden 跨平台做的非常不错，还可以利用起 Mac 的 Touch ID。
+
+### 状态栏隐藏
+开了很多应用，导致状态栏非常乱，很多人推荐收费的 Bartender 3，不过试了一下发现开源的 [Dozer](https://github.com/Mortennn/Dozer) 也非常不错。
+
+### Finder 增强
+在 Finder 中点击直接打开终端到当前文件夹。
+
+	brew cask install go2shell
 
 ### Tiling Windows Manager
 
 yabai
 
 - <https://github.com/koekeishiya/yabai>
+
 
 ### 查看监听的端口
 Mac 上使用 netstat 显示监听的端口：
@@ -465,7 +511,7 @@ asdf 是一个命令行下的多语言，多版本管理工具，我之前的文
 ## 几点吐槽
 
 - 念念不忘的 Touchbar，真的很鸡肋
-- 右上角的日期竟然连日历都没有
+- 右上角的日期竟然连日历都没有，幸好有 day-o 和 Itsycal 这样的扩展，勉强可以用
 - 分屏功能竟然需要第三方扩展来支持，虽然可以用 Option 来左右分屏，还是很鸡肋，连 Linux Mint 自带的桌面都赶不上
 - 自带的 Finder，是我没有使用习惯吗？我觉得 [Nemo](/post/2018/08/nemo-file-manager.html) 还是要远远好过 Finder
 
