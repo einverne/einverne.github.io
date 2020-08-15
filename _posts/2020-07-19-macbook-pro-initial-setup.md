@@ -226,9 +226,10 @@ Mac 的快捷键设计有一个非常容易的记忆方法，和 UI 相关的快
 快捷键    | 说明
 ----------------|------------------
 Cmd + Q | 退出应用
-**Cmd + W** | 关闭当前窗口
+**Cmd + W** | 关闭当前窗口，关闭Tab
 Cmd + X/C/V | 和其他系统类似，剪切，复制，粘贴
 Cmd + Tab | 切换打开的应用
+**Cmd + `** | 切换同一个应用的多个窗口，当然结合触摸板的四指下滑也可以
 Cmd + , | 打开大部分应用的偏好设置
 **Cmd + [** | 后退
 **Cmd + ]** | 前进
@@ -279,6 +280,17 @@ Ctrl + u | 删除直到行首
 Mac 全部快捷键
 
 - <https://support.apple.com/en-us/HT201236>
+
+Mac 有个Wired的快捷键组合，在Linux终端下，向前向后跳转一个Word是 Alt+b/f, 但是Mac下默认是 Esc+b/f，这个默认的快捷键太奇怪了，想象一下在键盘上按住Esc在按 b/f 的姿态，一个手几乎是做不到的。所以把Esc按键remap到 Caps Lock 也算是一种勉强的解决方法吧。不过更好的方法，以及延续我的习惯，我在 iTerm2 中可以设置一下 Option+b/f。
+
+- Open iTerm.
+- Go to iTerm > Preferences... > Profiles > Keys
+- Under Profile Shortcut Keys, click the + sign.
+- Type your key shortcut (option-b, option-f, option-d, option-left, etc.)
+- For Action, choose Send Escape Sequence.
+- Write b, d or f in the input field.
+
+From: <https://apple.stackexchange.com/a/154296/149497>
 
 ## 其他需求
 

@@ -19,6 +19,8 @@ IntelliJ IDEA 运行在 JVM 上，JVM 有很多的选项和开关配置可以用
 
 ![memory indicator settings](/assets/intellij-idea-memory-indicator-settings.png)
 
+或者新版本中，只需要右击右下角状态栏然后选择 memory indicator 即可。
+
 可以看到普通使用 IntelliJ IDEA 大概就使用了 800M 左右的内存。
 
 ## Edit VM Options
