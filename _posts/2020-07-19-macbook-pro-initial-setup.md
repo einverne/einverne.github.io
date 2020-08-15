@@ -333,6 +333,7 @@ Karabiner-Elements
 
 - <https://github.com/pqrs-org/Karabiner-Elements>
 
+在使用 Karabiner 的时候发现组合键Cmd+F12 等等Fn键，表现的就像是没有按下Cmd按键一样，最后发现需要在Karabiner中设置[Devices](https://github.com/pqrs-org/Karabiner-Elements/issues/535#issuecomment-350522019) 才可以生效。
 
 ### Telegram 即时聊天工具
 去 Telegram 官网看，发现 MacOS 下有两个客户端，一个叫做 Telegram Desktop，这个和 Windows 和 Linux 放在一起；另一个叫做 Telegram for MacOS，简单了解一下后，发现这个客户端是单独用 Mac 的原生语言实现。这两个的区别在于 Telegram Desktop 使用跨平台的实现，所以体验上和其他两个平台相似，原生实现的 Telegram for MacOS 则提供了加密等额外的功能。
@@ -441,6 +442,14 @@ aria2, you-get 和 youtube-dl 日常使用，Transmision 作为 BitTorrent 备�
 在 Finder 中点击直接打开终端到当前文件夹。
 
 	brew cask install go2shell
+	
+### 在屏幕上显示输入
+在Linux下我使用一个叫 [screenkey](/post/2018/05/screencast.html) 的工具，在Mac上也找到一个类似的开源项目 [keycastr](https://github.com/keycastr/keycastr).
+
+    brew cask install keycastr
+    
+### 记录和管理外接显示器
+如果经常使用Mac外接显示器使用，就会发现如果断开连接之后再连接，系统对外接显示器的记忆就丢失了，这个时候还需要到设置中进行一番设置。
 
 ### Tiling Windows Manager
 
@@ -448,6 +457,18 @@ yabai
 
 - <https://github.com/koekeishiya/yabai>
 
+### 使用 Touch Id 授权 sudo
+如果经常修改系统配置，常用 sudo 命令就需要输入一串密码，在Mac下可以使用 Touch Id 来验证密码。
+
+    sudo sed -i ".bak" '2s/^/auth       sufficient     pam_tid.so\'$'\n/g' /etc/pam.d/sudo
+
+这一行命令的作用是把 `/etc/pam.d/sudo` 备份为 `/etc/pam.d/sudo.bak`，然后在 `/etc/pam.d/sudo` 的第二行前面加入 `auth sufficient pam_tid.so` 。
+
+要恢复就使用：
+
+    sudo mv /etc/pam.d/sudo.bak /etc/pam.d/sudo
+
+Touch Id 的妙用还可以参考: [pam-touchID](https://github.com/Reflejo/pam-touchID) 和 [pam_touchid](https://github.com/hamzasood/pam_touchid).
 
 ### 查看监听的端口
 Mac 上使用 netstat 显示监听的端口：

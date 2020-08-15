@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GitHub 使用 gpg 签名"
+title: "Git commit 中使用 gpg 签名提交"
 tagline: ""
 description: ""
 category: 经验总结
@@ -14,9 +14,30 @@ Ubuntu 下，GnuPG 2.0 的支持都在 `gnupg2` 这个 [packages](http://package
 
 GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
+## Mac 下安装使用
 在 Mac 下需要安装：
 
-	brew install gnupg gnupg2
+	brew install gnupg
+	brew link --overwrite gnupg
+	brew install pinentry-mac # 密码输入管理器
+
+然后在 shell 配置 (`.bashrc` 或 `~/.zshrc`) 中添加 `export GPG_TTY=$(tty)`.
+
+添加配置
+
+	echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+	killall gpg-agent
+
+然后可以通过 `echo "test" | gpg --clearsign` 来验证一下。
+
+Mac 下应该会弹出 GUI 窗口进行密码验证。
+
+然后不要忘记配置 git config:
+
+	git config --global gpg.program gpg        # 配置全局的 gpg
+	git config --global commit.gpgsign true    # 配置每一个 commit 都需要 gpg
+
+这里需要注意的一点是 Mac 下命令还叫做 gpg，但是在 Linux 下是 gpg2.
 
 ## 生成 GPG 签名
 使用如下命令生成签名：
@@ -71,8 +92,12 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
 添加配置，这里记得使用公钥
 
+	# 设置 gitconfig 配置签名的公钥 key
     git config --global user.signingkey F80B65AAAAAAAAAA
+	# 设置签名使用的 gpg 软件
     git config --global gpg.program gpg2
+	# 默认全部签名
+	git config --global commit.gpgsign true
 
 将 GPG 添加到 bashrc
 
@@ -94,8 +119,12 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
     git tag -v mytag
 
-## 其他 gpg 命令
-列出公钥
+## 其他常用的 gpg 命令
+生成 gpg key
+
+	gpg2 --full-generate-key
+
+列出本地所有公钥
 
     gpg2 --list-keys
 
@@ -142,10 +171,11 @@ GitHub 要求使用 GnuPG 2.1 及以后的版本。
 
 如果在第二台机器中已经有了公钥，私钥，那么需要分别删除 `gpg2 --delete-keys` 和 `gpg2 --delete-secret-keys`
 
-如果熟悉 scp 可以
+如果熟悉 scp 可以直接将 `~/.gnupg` 目录复制到新机器中：
 
     scp -rp ~/.gnupg name@server_ip:~/
 
 ## reference
 
+- <https://stackoverflow.com/a/40066889/1820217>
 - <https://help.github.com/articles/signing-commits-with-gpg/>
