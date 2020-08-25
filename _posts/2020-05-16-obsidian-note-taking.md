@@ -83,6 +83,44 @@ Obsidian 在官方的 Demo 中引述了 John Locke 在 1690 年发表的 《An E
 
 Obsidian 不期望有一个插件可以解决所有的问题，但 Obsidian 提供了足够的自由度，在能够实现不同需求的时候，也不会搞乱界面。
 
+## 我的常用快捷键和 remapping
+
+最常用的快捷键整理，下面有一些是我已经 remapping 过的，可以根据自己的习惯重新设置快捷键的。
+
+新建笔记相关：
+
+Shortcut | description
+---------|------------
+Cmd+n    | New note
+Cmd+Shift+n | New Zettelkasten note
+Cmd+p    | Filter the command
+
+编辑相关的：
+
+Shortcut | description
+---------|------------
+Cmd+b    | bold
+Cmd+i    | italic selection
+
+笔记间跳转：
+
+Shortcut | description
+---------|------------
+Cmd+o    | Open quick switcher, jump to different notes by fuzze search
+Option+Enter | follow the link under cursor
+Cmd+Option+Enter | Open link under cursor in new pane
+Cmd+`[` | Back
+Cmd+`]` | Forward
+Cmd+hjkl | Navigete to left/below/above/right pane
+Cmd+w  | Close active pane
+Cmd+`\` | Split vertically
+Cmd+`-` | Split horizontally
+
+浏览模式：
+
+Shortcut | description
+---------|------------
+Cmd+e    | Toggle edit/preview mode
 
 ## Zettelkasten method
 卡片标签式笔记法，Obsidian 也可以兼容，启用插件后侧边栏点击就能够快速建立时间戳开头的笔记迅速进入编写。
