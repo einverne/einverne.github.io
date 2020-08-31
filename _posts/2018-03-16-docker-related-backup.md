@@ -3,7 +3,7 @@ layout: post
 title: "备份 Docker 镜像容器和数据"
 tagline: ""
 description: ""
-category: 『学习笔记，Docker]
+category: [ 学习笔记 , Docker]
 tags: [linux, docker, container, image, volume]
 last_updated:
 ---

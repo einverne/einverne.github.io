@@ -226,7 +226,7 @@ Mac 的快捷键设计有一个非常容易的记忆方法，和 UI 相关的快
 快捷键    | 说明
 ----------------|------------------
 Cmd + Q | 退出应用
-**Cmd + W** | 关闭当前窗口，关闭Tab
+**Cmd + W** | 关闭当前窗口，关闭 Tab
 Cmd + X/C/V | 和其他系统类似，剪切，复制，粘贴
 Cmd + Tab | 切换打开的应用
 **Cmd + `** | 切换同一个应用的多个窗口，当然结合触摸板的四指下滑也可以
@@ -281,7 +281,7 @@ Mac 全部快捷键
 
 - <https://support.apple.com/en-us/HT201236>
 
-Mac 有个Wired的快捷键组合，在Linux终端下，向前向后跳转一个Word是 Alt+b/f, 但是Mac下默认是 Esc+b/f，这个默认的快捷键太奇怪了，想象一下在键盘上按住Esc在按 b/f 的姿态，一个手几乎是做不到的。所以把Esc按键remap到 Caps Lock 也算是一种勉强的解决方法吧。不过更好的方法，以及延续我的习惯，我在 iTerm2 中可以设置一下 Option+b/f。
+Mac 有个 Wired 的快捷键组合，在 Linux 终端下，向前向后跳转一个 Word 是 Alt+b/f, 但是 Mac 下默认是 Esc+b/f，这个默认的快捷键太奇怪了，想象一下在键盘上按住 Esc 在按 b/f 的姿态，一个手几乎是做不到的。所以把 Esc 按键 remap 到 Caps Lock 也算是一种勉强的解决方法吧。不过更好的方法，以及延续我的习惯，我在 iTerm2 中可以设置一下 Option+b/f。
 
 - Open iTerm.
 - Go to iTerm > Preferences... > Profiles > Keys
@@ -333,7 +333,11 @@ Karabiner-Elements
 
 - <https://github.com/pqrs-org/Karabiner-Elements>
 
-在使用 Karabiner 的时候发现组合键Cmd+F12 等等Fn键，表现的就像是没有按下Cmd按键一样，最后发现需要在Karabiner中设置[Devices](https://github.com/pqrs-org/Karabiner-Elements/issues/535#issuecomment-350522019) 才可以生效。
+在使用 Karabiner 的时候发现组合键 Cmd+F12 等等 Fn 键，表现的就像是没有按下 Cmd 按键一样，最后发现需要在 Karabiner 中设置 [Devices](https://github.com/pqrs-org/Karabiner-Elements/issues/535#issuecomment-350522019) 才可以生效。
+
+另外我将 Caps Lock 作为一个 Hyper Key，按下 Caps Lock 相当于同时按下 Cmd+Ctrl+Shift+Option, 这样 Caps Lock 就可以结合其他按键作为一个新的组合按键，在利用 Hammerspoon 可以实现一套自己的快捷键工作习惯，比如我个人将 Hyper Key + HJKL 作为调整窗口的快捷键，Hyper Key+NP 作为调整窗口在哪一个显示器的快捷键。
+
+Karabiner 之后也会用一个篇幅来介绍一下。
 
 ### Telegram 即时聊天工具
 去 Telegram 官网看，发现 MacOS 下有两个客户端，一个叫做 Telegram Desktop，这个和 Windows 和 Linux 放在一起；另一个叫做 Telegram for MacOS，简单了解一下后，发现这个客户端是单独用 Mac 的原生语言实现。这两个的区别在于 Telegram Desktop 使用跨平台的实现，所以体验上和其他两个平台相似，原生实现的 Telegram for MacOS 则提供了加密等额外的功能。
@@ -442,14 +446,17 @@ aria2, you-get 和 youtube-dl 日常使用，Transmision 作为 BitTorrent 备�
 在 Finder 中点击直接打开终端到当前文件夹。
 
 	brew cask install go2shell
-	
+
 ### 在屏幕上显示输入
-在Linux下我使用一个叫 [screenkey](/post/2018/05/screencast.html) 的工具，在Mac上也找到一个类似的开源项目 [keycastr](https://github.com/keycastr/keycastr).
+在 Linux 下我使用一个叫 [screenkey](/post/2018/05/screencast.html) 的工具，在 Mac 上也找到一个类似的开源项目 [keycastr](https://github.com/keycastr/keycastr).
 
     brew cask install keycastr
-    
+
 ### 记录和管理外接显示器
-如果经常使用Mac外接显示器使用，就会发现如果断开连接之后再连接，系统对外接显示器的记忆就丢失了，这个时候还需要到设置中进行一番设置。
+如果经常使用 Mac 外接显示器使用，就会发现如果断开连接之后再连接，系统对外接显示器的记忆就丢失了，这个时候还需要到设置中进行一番设置。
+
+### 自动化工具
+最开始只是想做到在不同的 WiFi 环境下使用不同的 DNS 配置，所以发现了 Hammerspoon 这个开源的自动化工具，不过发现 Hammerspoon 太强大了，可以代替上面提到的很多个工具，以后会再加一篇文章单独介绍一下 Hammerspoon。
 
 ### Tiling Windows Manager
 
@@ -458,7 +465,7 @@ yabai
 - <https://github.com/koekeishiya/yabai>
 
 ### 使用 Touch Id 授权 sudo
-如果经常修改系统配置，常用 sudo 命令就需要输入一串密码，在Mac下可以使用 Touch Id 来验证密码。
+如果经常修改系统配置，常用 sudo 命令就需要输入一串密码，在 Mac 下可以使用 Touch Id 来验证密码。
 
     sudo sed -i ".bak" '2s/^/auth       sufficient     pam_tid.so\'$'\n/g' /etc/pam.d/sudo
 
@@ -468,7 +475,7 @@ yabai
 
     sudo mv /etc/pam.d/sudo.bak /etc/pam.d/sudo
 
-Touch Id 的妙用还可以参考: [pam-touchID](https://github.com/Reflejo/pam-touchID) 和 [pam_touchid](https://github.com/hamzasood/pam_touchid).
+Touch Id 的妙用还可以参考：[pam-touchID](https://github.com/Reflejo/pam-touchID) 和 [pam_touchid](https://github.com/hamzasood/pam_touchid).
 
 ### 查看监听的端口
 Mac 上使用 netstat 显示监听的端口：
@@ -534,6 +541,11 @@ asdf 是一个命令行下的多语言，多版本管理工具，我之前的文
 选择拓展坞的时候看了京东上面的大部分牌子，也参考了一些帖子，无疑如果不差钱直接上贝尔金，CalDigit TS3 Plus，雷电 3 的拓展坞一步到位即可。但我自己并不需要 4K60Hz，也用不上那么大的带宽，我目前的需求只需要一个可以用的 HDMI 扩展，一个 USB 外接鼠标，最好再带一个 SD 卡槽，剩下的 VGA，RJ45 网口我并不是必须，所以开始的时候直接买了贝尔金的 Tpye-C 的拓展坞，京东下单叠加了一个优惠大概 500，但是拿回来之后试用了两天就发现了问题，我只接一个 USB 的时发热也有些大，另外一个致命的问题就是 SD 卡的读取速度真的和测评里面看到的一样 20M 就上不去了。所以果断退货换了一个飞利浦的 7 合 1(HDMI，SD/microSD，Tpye-C，三个 USB)，回来立即试了一下 SD 读取，以及发热问题，在只用 USB 接口的时候几乎感受不到温度，SD 卡也可以轻松地到 70M，就他吧。（另外要提一下为什么不买绿联的拓展坞，在京东上销量几乎被绿联拿走了一大半，但是我已经不止一次的看到过因为绿联的拓展坞从而导致接口损毁，甚至影响主板，导致重启的问题，所以直接排除在选择范围了）
 
 ## 疑难杂症
+
+### 解决 rsync 乱码问题
+Mac 自带的 rsync 会遇到乱码问题，使用 brew 重新安装
+
+	brew install rsync
 
 ### .app cannot be opened because the developer cannot be verified
 在安装应用时，有些应用没有上架到 App Store，比如 GoldenDict，Mac 在安装的时候就会提示上面的错误，并且没有办法打开，这个时候就需要到设置中 Security&Pravicy 中，将 **Allow apps downloaded from** 选项中的 All 打开。
