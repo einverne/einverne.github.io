@@ -21,13 +21,16 @@ last_updated:
 
 ## 备份方法
 
-### git
-对于纯文本的内容，适合 git 来备份，commit && push 就能够至少在两地有备份了。适合 git 来备份的有：
+### 代码等文本使用 git 备份
+对于纯文本的内容，适合 git 来备份，commit && push 就能够至少在两地有备份了。Git 的分布式特性天然的适合文本的存档和备份管理。
+
+适合 git 来备份的有：
 
 - code
 - dotfiles
 - rime config
 - idea config
+- software config
 
 ### Dropbox NextCloud
 对于云同步工具，适合同步二进制文件，比如文档或者图片
