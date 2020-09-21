@@ -390,6 +390,7 @@ From wiki
     sort a[k+1,n]
 
 ### Properties
+
 - Not stable
 - O(lg(n)) extra space (see discussion)
 - O(n^2^) time, but typically O(n·lg(n)) time

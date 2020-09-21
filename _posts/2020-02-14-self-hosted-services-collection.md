@@ -77,6 +77,11 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，miniflux 比较新是 Go 写�
 ### YouTube 视频下载
 youtube-dl
 
+## Self host IFTTT
+
+n8n.io
+
+- <https://n8n.io/>
 
 ## 稍后阅读
 开源版本的稍后阅读，wallabag .

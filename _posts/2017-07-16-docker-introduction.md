@@ -282,6 +282,12 @@ Linux Mint 下安装的时候使用 Ubuntu 下那种方式的时候没有安装�
 删除所有容器，可以使用 `docker rm $(docker ps -a -q)` ， `-q` 参数表示只列出容器 ID。
 
 
+### 在容器和宿主机之间传递文件
+可以使用 `docker cp` 命令来在容器和宿主机之间拷贝文件。
+
+	docker cp foo.txt mycontainer:/foo.txt
+	docker cp mycontainer:/foo.txt foo.txt
+
 ## 其他参考链接
 
 - <https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn>
