@@ -24,6 +24,24 @@ PostgreSQL 发展历程可以追溯到 1986 年，加州伯克利分校开发了
 
 	sudo apt install postgresql postgresql-contrib
 
+### Mac
+
+	brew install postgresql
+
+	To migrate existing data from a previous major version of PostgreSQL run:
+	  brew postgresql-upgrade-database
+
+	This formula has created a default database cluster with:
+	  initdb --locale=C -E UTF-8 /usr/local/var/postgres
+	For more details, read:
+	  https://www.postgresql.org/docs/12/app-initdb.html
+
+	To have launchd start postgresql now and restart at login:
+	  brew services start postgresql
+	Or, if you don't want/need a background service you can just run:
+	  pg_ctl -D /usr/local/var/postgres start
+
+
 PostgreSQL 安装之后会在系统上新增一个 postgres 用户，通过该用户来运行服务。
 
 检查版本
