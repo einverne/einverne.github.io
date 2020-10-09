@@ -23,6 +23,11 @@ last_updated:
 
 可以根据[这个页面](https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md) 上的方式配置和开启这个扩展功能。
 
+## 为什么要用 IdeaVim
+
+- 既充分利用了 IntelliJ 提供的代码补全，重构，代码浏览等等功能，又可以充分利用 Vim 的[多模式](http://einverne.github.io/post/2015/05/vim-mode.html)，以及 Vim 在编辑器中的高效
+- 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，以及充分利用 Idea 提供的 Action
+
 
 ## vim-easymotion
 
@@ -30,6 +35,7 @@ Idea 中的 vim-easymotion 插件支持的配置，可以参考[这里](https://
 
 ### AceJump
 在了解 easymotion 时意外收获了 AceJump，IntelliJ IDEA 中的 easymotion 实际上是通过 AceJump 插件来实现的。
+:q
 
 默认情况下，使用 <kbd>Ctrl</kbd> + <kbd>;</kbd> 来开启 AceJump 模式，不过我的 `Ctrl + ;` 已经作为输入法的多粘贴板来使用了，所以就改成 <kbd>Alt</kbd> + <kbd>k</kbd> 。
 

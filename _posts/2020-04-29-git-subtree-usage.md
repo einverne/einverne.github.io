@@ -10,6 +10,17 @@ last_updated:
 
 昨天在讨论两个项目双向同步，两个从同一分支拉出来的两个独立项目各自发展，但又要求定时双向同步的时候，虽然提到了用 remote 可以临时解决一下。不过后来又和朋友讨论起 git subtree 来，在此之前，我如果有需要在项目内部依赖外部独立的项目时，我一般都使用 `git submodule` 来解决。不过昨天搜索了一下之后发现 `git subtree` 似乎更加强大，并且已经成为替代 `git submodule` 的事实方案。所以这里来学习一下。
 
+在使用 `git subtree` 之前如果你没有用过 `git submodule`，这里先进行一些说明。对于 `git submodule` 而言，在本地的代码库中可能存在多个 `git` 代码仓库，而 `git subtree` 就只有一个代码库。
+
+## Sub module vs Sub tree
+
+- 对父项目的占用：对于父项目而言，如果使用 submodule 会在父项目中新增一个 `.gitmodule` 的文件来记录父项目添加的子 module，而使用 subtree 则会将子项目完整的克隆到父项目的一个文件夹中。
+- clone 子项目步骤：使用 submodule 需要执行多个步骤，使用 subtree 则需要使用对应的命令
+- push 子项目：submodule 因为将子项目视为独立的项目，可以直接 push；使用 subtree 则需要手动进行对比
+- pull 子项目：submodule pull 子项目后需要，在父项目再进行提交 `git submodule update --recursive --remote`；而使用 subtree 则直接 pull 即可
+
+
+
 ## 为什么要使用 git subtree?
 `git subtree` 可以让一个 repository 嵌入到另一个项目的子目录中。
 
@@ -17,6 +28,11 @@ last_updated:
 - 一行 clone 命令可以立即获得包括子项目在内的所有的项目文件，而不是像 git submodule 一样还需要额外的 update 命令
 - git subtree 不会像 gitmodule 一样引入 metadata 文件来管理，git subtree 的使用对于项目中其他成员可以透明
 - 子项目中的内容可以无缝的被修改，并且可以选择性同步到 upstream 中
+
+## 什么时候使用 git subtree?
+
+- 多个项目共同使用一整块代码库，并且这个依赖的代码库再快速迭代的时候
+- 将一部分的代码从一个仓库独立出去，并且保留这个部分提交历史的时候
 
 ## git subtree 相关命令
 
@@ -37,15 +53,21 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 解释：
 
 - `--squash` 是将 subtree 的改动合并到一个 commit，不用拉取子项目完整的历史纪录
-- 这里 `--prefix` 后面的 `=` 也可以使用空格
+- 这里 `--prefix` 后面的 `=` 也可以使用空格，注意这里的 `foo` 就是项目克隆后的目录名
+- 命令中的 `master` 指的是 subtree 项目的分支名
 - 可以使用 `git status` 和 `git log` 查看提交
 
-使用 `git subtree` 添加项目后，subtree 就将原来的项目作为这个主项目的一个普通文件夹来看待了，对于父级项目而已完全无缝透明。
+使用 `git subtree` 添加项目后，subtree 就将原来的项目作为这个主项目的一个普通文件夹来看待了，对于父级项目而言完全无缝透明。上面的命令就是将 foo 这个项目添加到主项目中 foo 文件夹下。
+
+日常更新的时候，正常的提交代码，如果更改了 foo 目录中的内容也正常的提交即可。
 
 ### 从子项目仓库更新
 如果依赖的子项目更新了，可以通过如下命令更新：
 
 	git subtree pull --prefix=foo https://github.com/einverne/foo.git master --squash
+
+上面命令执行后，就可以将 foo 仓库中 master 上的更新更新到本地，`--squash` 表示只会生成一个 commit 提交。
+
 
 ### 将更改推送到子项目仓库
 假如在修改代码时修改了依赖的 foo 中的代码，那么可以将这部分代码推送到远端仓库
@@ -58,9 +80,9 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 
 然后
 
-	git subtree add --prefix=foo somelib master --squash
-	git subtree pull --prefix=foo somelib master --squash
-	git subtree push --prefix=foo somelib master
+	git subtree add --prefix=foo foo master --squash
+	git subtree pull --prefix=foo foo master --squash
+	git subtree push --prefix=foo foo master
 
 到这里其实我们就可以发现，利用 subtree 或者 submodule 也好，都可以很方便的同步子项目，尤其是很多项目都依赖的那个项目。比如 A，B 都依赖与 Z，项目，那么使用这种方式可以很方便的在不同 A，B 项目间共享对 Z 的修改。比如 A，B 都依赖与 Z，项目，那么使用这种方式可以很方便的在不同 A，B 项目间共享对 Z 的修改。
 
@@ -146,6 +168,13 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 [^merge]: <https://mirrors.edge.kernel.org/pub/software/scm/git/docs/howto/using-merge-subtree.html>
 [^m2]: <https://help.github.com/en/github/using-git/about-git-subtree-merges>
 [^m3]: <https://stackoverflow.com/a/25311871/1820217>
+
+## subtree 如何切换分支
+使用 `git subtree` 加入到父项目的仓库，如果要切换分支，可以直接将 subtree 删掉，然后新加入子项目的分支即可。
+
+	git rm <subtree>
+	git commit
+	git subtree add --prefix=<subtree> <repository_url> <subtree_branch>
 
 ## 使用建议
 就和上文所说那样，因为对 subtree 目录的修改和主项目是混合在一起的。所以为了让 commit messages 清晰，可以对主项目和子项目的修改分开进行。当然如果不在意子项目的 commit messages，那么一起提交，然后在对 subtree push 的时候再统一对 commit message 进行修改也可以。
