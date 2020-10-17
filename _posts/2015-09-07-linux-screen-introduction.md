@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux screen 使用介绍"
+title: "每天学习一个命令：Linux screen 使用介绍"
 tagline: ""
 description: ""
 category: 学习笔记
