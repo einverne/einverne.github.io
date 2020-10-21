@@ -64,6 +64,10 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 
 - <https://github.com/i-tu/Hasklig>
 
+## Fantasque Sans Mono
+
+- <https://github.com/belluzj/fantasque-sans>
+
 ## reference
 
 
