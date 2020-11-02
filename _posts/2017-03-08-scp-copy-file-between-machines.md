@@ -92,6 +92,11 @@ scp 命令的实际应用
 
     scp -r root@<remote_ip>:/path/folder/ /local/folder
 
+### 远程服务器使用非标准端口
+如果远程服务器使用非标准端口，那么可以用 `-P port` 选项指定端口。
+
+	scp -P some_port root@ip:/path/to/file /local/
+
 ## 外延
 
 - [rsync](/post/2017/07/rsync-introduction.html) 使用。

@@ -129,6 +129,15 @@ Cmd+e    | Toggle edit/preview mode
 
 - Trilium
 
+## 个人使用技巧
+
+### 使用 GitHub 作为同步后端
+都知道 Obisidian 其实是一个本地的离线客户端，官方截止 11 月份还没有推出同步的功能，但是优先推出了 Publish 服务，可以将笔记一键发布到 Obisidian 提供的网站上。但是对于我而言，我习惯将笔记在本地整理，然后将相关的内容整理成文章发布在这个博客中，所以剩下的问题就是我的本地笔记同步的问题了。
+
+我个人是将 Obsidian 的本地仓库放到一个 Git 仓库中管理，并且每隔一定时间自动提交到 Git 中，这样即使我不在电脑边，也可以第一时间访问到我的内容。我使用 Hammerspoon 提供的 task api，写了一个[简单的脚本](https://github.com/einverne/dotfiles/blob/master/hammerspoon/autoscript.lua) 自动提交仓库。
+
+
+
 ## Links
 Obsidian 的开发 Roadmap
 
