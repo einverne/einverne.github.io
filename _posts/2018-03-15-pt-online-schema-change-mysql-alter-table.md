@@ -200,6 +200,7 @@ OPTIONS 参数说明：
 注：上面的执行可能会出现异常：
 
     Error setting innodb_lock_wait_timeout: DBD::mysql::db do failed: Variable ‘innodb_lock_wait_timeout’ is a read only variable [for Statement “SET SESSION innodb_lock_wait_timeout=1”]. The current value for innodb_lock_wait_timeout is 50. If the variable is read only (not dynamic), specify –set-vars innodb_lock_wait_timeout=50 to avoid this warning, else manually set the variable and restart MySQL.
+
 根据提示（innodb_lock_wait_timeout 是静态参数），加上–set-vars innodb_lock_wait_timeout=50 即可：
 
 
