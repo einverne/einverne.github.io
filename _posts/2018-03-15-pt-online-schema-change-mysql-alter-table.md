@@ -47,6 +47,9 @@ percona-toolkit 源自 Maatkit 和 Aspersa 工具，这两个工具是管理 MyS
 
 - <https://www.percona.com/downloads/percona-toolkit/LATEST/>
 
+Mac 下使用 brew 安装：
+
+	brew install percona-toolkit
 
 ## 使用
 pt-online-schema-change 使用
@@ -55,6 +58,7 @@ pt-online-schema-change 使用
 
 OPTIONS 参数说明：
 
+```
     --user:
     -u，连接的用户名
     --password：
@@ -163,6 +167,7 @@ OPTIONS 参数说明：
     复制数据的时候打印进度报告，二部分组成：第一部分是百分比，第二部分是时间。
     --quiet
     -q，不把信息标准输出。
+```
 
 ## 举例
 
@@ -180,7 +185,7 @@ OPTIONS 参数说明：
 
     pt-online-schema-change --user=root --password=123456 --host=127.0.0.1  --alter "ADD COLUMN content text" D=test,t=online_table --print --dry-run
 
-`–-execute` 真实执行：
+使用 `–-execute` 真实执行：
 
     pt-online-schema-change --user=root --password=123456 --host=127.0.0.1  --alter "ADD COLUMN content text" D=test,t=online_table --print --execute
 
