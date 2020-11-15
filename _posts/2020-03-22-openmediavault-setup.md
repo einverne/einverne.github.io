@@ -104,6 +104,32 @@ Docker 的安装可以在 OpenMediaVault 的 Web UI 上完成，在安装 OMV Ex
 	ln -s /srv/dev-disk-by-label-storage/appdata /sharedfolders/appdata
 	ln -s /srv/dev-disk-by-label-storage/ruTorrent/ /sharedfolders/ruTorrent
 
+## Transmission
+拉取镜像：
+
+	docker pull linuxserver/transmission
+
+创建：
+
+```
+docker run -d \
+  --name=transmission \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Shanghai \
+  -e USER=user \
+  -e PASS=password \
+  -e TRANSMISSION_WEB_HOME=/transmission-web-control/ \
+  -p 9091:9091 \
+  -p 51413:51413 \
+  -p 51413:51413/udp \
+  -v <path to data>:/config \
+  -v <path to downloads>:/downloads \
+  -v <path to watch folder>:/watch \
+  --restart unless-stopped \
+  linuxserver/transmission
+```
+
 ## ruTorrent
 Pull 镜像：
 
