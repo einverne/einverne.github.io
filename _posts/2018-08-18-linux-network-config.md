@@ -42,4 +42,33 @@ DNS 相关的配置在 `/etc/resolv.conf` 文件中。如果希望永久生效�
 
 然后使用 `sudo /etc/init.d/resolvconf restart` 来使得 DNS 生效。
 
+### resolv.conf 配置
+
+`/etc/resolv.conf` 配置文件是客户端 DNS 配置，一般在该文件中配置了 DNS 服务器的 IP 地址和域名。
+配置的参数格式非常简单，由关键字开头，后面接着是空格分隔的几个参数。`resolv.conf` 配置中主要的关键字有四个：
+
+- domain
+- nameserver
+- search
+
+一个基本的配置：
+
+```
+domain some-example.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+search exmaple.com example1.com
+```
+
+解释：
+
+- domain: 指的是本地网络的名称，如果查询域名时没有包含点号，那么会自动加上网域的名称为结尾，再发送给 DNS 服务器
+- nameserver: 指定客户端进行域名解析的时候要用到的**域名服务器 IP 地址**，因此可以指定多个地址，客户端会按照次序进行查询请求
+- search: 非必填，举个例子来说明这个选项，当 search 设定为 `example.com` 时，在 DNS 解析的时候，无法对输入解析的时候，比如查询 blog，DNS 客户端会使用 search 指定的值加上需要查询的名称，即 blog.example.com 来进行解析，解析失败的时候会依次往后 blog.example1.com 查询
+
+当设定了 domain 时，配置的地址会自动成为 `search` 的第一个搜索域名。
+
+## reference
+
+- <https://man7.org/linux/man-pages/man5/resolv.conf.5.html>
 
