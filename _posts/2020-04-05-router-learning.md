@@ -29,7 +29,7 @@ last_updated:
 - NOR Flash
 - NAND Flash
 
-### WiFi 芯片
+### WiFi 芯片接口
 
 - USB（速度相对较慢）
 - PCI-e

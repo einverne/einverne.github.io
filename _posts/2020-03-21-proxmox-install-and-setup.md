@@ -161,7 +161,7 @@ Proxmox 支持两类文件存储类型：
 右上角创建 Virtual Machine，这里以安装 OpenMediaVault 来举例子。在 OpenMediaVault 下载好镜像 ISO，并上传到 Proxmox 中 local(pve) 中。
 
 ### General
-PVE 使用数字来标识虚拟机，Name 字段起一个标志性的名字。
+创建虚拟机的第一步就是给虚拟机起一个名字。PVE 使用数字来标识虚拟机，Name 字段起一个标志性的名字。
 
 ### OS
 在操作系统页面中，在 Storage 中选择刚刚建立的 ISO storage 目录，然后选择刚刚上传的 OpenMediaVault ISO 文件。
@@ -173,7 +173,7 @@ PVE 使用数字来标识虚拟机，Name 字段起一个标志性的名字。
 
 ### Hard Disk
 
-设置硬盘大小， OpenMediaVault 安装后占用体积也非常小，划分 16G 磁盘空间就已经足够。
+设置硬盘大小，这一块硬盘会划分给 OpenMediaVault 系统，因为 OpenMediaVault 安装后占用体积也非常小，划分 16G 磁盘空间就已经足够。
 
 ### CPU
 设置虚拟机可以使用的 CPU 核心数。
@@ -241,7 +241,7 @@ Directory 可以存储任何的类型。
 ### LVM 和 LVM-Thin
 LVM 是 Logical Volume Manager（逻辑卷管理）的简写，是 Linux 环境下对磁盘分区进行管理的一种机制
 
-在 Proxmox 中 LVM 可以有 Snapshot 快照功能，而 LVM-Thin 是没有的。相反如果建立了 LVM 分区，那么整个分区只能给虚拟机或者容器使用，其他文档是无法放进去的，LVM-Thin 则没有这个限制。[^lvm]
+在 Proxmox 中 只有 LVM 有 Snapshot 快照功能，而 LVM-Thin 是没有的。相反如果建立了 LVM 分区，那么整个分区只能给虚拟机或者容器使用，其他文档是无法放进去的，LVM-Thin 则没有这个限制。[^lvm]
 
 [^lvm]: <https://pve.proxmox.com/wiki/Storage:_LVM>
 
@@ -269,7 +269,7 @@ LXC 名字来自于 Linux Containers 缩写，是操作系统级的虚拟化，L
 ## 其他虚拟化系统
 
 ### VMware ESXi
-VMware ESXi 可以直接存取控制底层资源，有效的利用硬件。ESXi 是 VMware 退出的虚拟化系统，对个人的授权是免费的。
+VMware ESXi 可以直接存取控制底层资源，有效的利用硬件。ESXi 是 VMware 推出的虚拟化系统，对个人的授权是免费的。
 
 ### Hyper-V
 Hyper-V 是以 Hypervisor 为基础的虚拟化技术。适用于 x64 位的 Windows 系统。
@@ -283,5 +283,4 @@ Hyper-V 是以 Hypervisor 为基础的虚拟化技术。适用于 x64 位的 Win
 ## reference
 
 - <https://en.wikipedia.org/wiki/Proxmox_Virtual_Environment>
-
 

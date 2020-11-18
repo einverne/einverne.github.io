@@ -20,7 +20,7 @@ Karabiner Elements 使用 [JSON](https://pqrs.org/osx/karabiner/json.html) 作�
 Sticky Keys 叫做粘滞键，是方便无法同时按下 Ctrl C 这样组合按键的用户，启用粘滞键后按下任何 modifier 按键后，这个 modifier 按键会持续激活直到按下一个非 modifier 按键。
 
 ### Modifier key
-常见的 modifer 按键有 Ctr, Command, Shift, Alt, Option，Fn, Caps Lock 等等。
+常见的 modifier 按键有 Ctr, Command, Shift, Alt, Option，Fn, Caps Lock 等等。
 
 > A keyboard feature that enables you to press a modifier key (CTRL, ALT, or SHIFT), or the Windows logo key, and have it remain active until a non-modifier key is pressed. This is useful for people who have difficulty pressing two keys simultaneously.
 
@@ -64,11 +64,11 @@ Karabiner 是一个 MacOS 上的键盘自定义工具。
 Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以执行 goku 来生成 JSON 配置。
 
 ## 基本使用
-整个 EDN 配置可以分成几个部分
+整个 EDN 配置大体可以分成几个部分：
 
 - 定义主要的 profile 及基本信息
 - 预置的条件
-- main 主要的键映射配置
+- main 部分为主要的键映射配置
 
 接下来就一步步看一下最简单的配置。
 
@@ -81,19 +81,19 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 ```
 
 - 花括号内整个内容表示一个规则
-- `:des` 用来注释
+- `:des` 部分用来注释
 - `:rules` 中是真正的规则
-- 规则又分成 `from`, `to`, `condition`，其中  `condition` 部分是可选的。
+- 规则又分成 `from`, `to`, `condition`，其中 `condition` 部分是可选的。
 
 ### 预置条件
 
 #### 定义应用
-比如定义应用程序，可以使用 bundle ID
+比如定义应用程序，可以使用 bundle ID，如何查找这个 Bundle ID，可以利用 Karabiner 自带一个 EventViewer 工具，可以很方便地查看应用的 Bundle ID，或者右键『应用.app』-> 显示包内容 Contents/Info.plist -> BundleIdentifier 也可以查看到。
 
 	:applications {:chrome ["^com\\.google\\.Chrome$"]}
 
 #### 定义设备
-定义设备：
+定义设备，同样设备的 ID 也可以在 EventViewer 中查看：
 
 	:devices {:quickfire [{:vendor_id 1234 :product_id 17}]}
 
@@ -109,17 +109,16 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 
 变量条件定义：
 
-
 ```
     [:escape [:escape ["in-alfred" 0]] ["in-alfred" 1]]
 ;;   |<from>||_________<to>__________| |<conditions> |
 ```
 
-这个规则表示的含义是，当变量 `in-alfred` 等于 1 时，tap Escape 按键映射到 Escape 并将 `in-alfred` 变量设置为 0 。
+这一条规则表示的含义是，当变量 `in-alfred` 等于 1 时，tap Escape 按键映射到 Escape 并将 `in-alfred` 变量设置为 0 。
 
 在使用条件的时候可以组合使用，或者使用非语句。
 
-比如
+比如，先定义了应用，然后将预先定义的应用到规则中。
 
 ```
 {:applications {:chrome ["^com\\.google\\.Chrome$"]
@@ -129,14 +128,20 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
         {:des "a to 1 only outside chrome, safari" :rules [[:a :1 [:!chrome :!safari]]]}]}
 ```
 
-或者组合使用
+上面的这三条规则就是表示
+
+- 在 Chrome 中 a 映射到 1
+- 在 Chrome，safari 中 a 映射到 1
+- 除了在 Chrome 或 safari 中其他应用中 a 映射到 1
+
+或者组合使用：
 
 ```
 :main [{:des "a to 1 multiple conditions"
         :rules [[:a :1 [:chromes :quickfire :us]]]}]}
 ```
 
-这条规则就表示在 Google Chrome 中，使用外置的 quickfire 键盘，并且输入法是 us 时，将 a 键映射到 1。
+这条规则就表示在 Chrome 中，使用外置的 quickfire 键盘，并且输入法是 us 时，将 a 键映射到 1。
 
 #### 组合规则
 简单规则，一个键映射到另一个按键，一个键映射到多个按键
@@ -147,7 +152,7 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
         {:des "c to insert 123" :rules [[:c [:1 :2 :3]]]}]}
 ```
 
-多个按键映射到其他按键
+多个按键映射到其他按键，比如同时按下 j,l 映射到 F20
 
 ```
 :rules [[:j :l] :f20]
@@ -164,7 +169,7 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 
 ```
     ;; !  | means mandatory -   modifier(s) alone when pressend change behavior
-    ;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+    ;; #  | means optional  -   modifiers are optional (but at least one necessary)
 
     ;; :!Ca is keycode :a and prefix a with !C
 

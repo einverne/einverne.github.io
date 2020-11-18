@@ -118,6 +118,14 @@ Openwrt morning 配置只有上述图片的 LAN 口，下面的 WAN 口通过如
 - 无线中继通过接受信号，再发送信号的方式，可以自己设定是否提供 DHCP NAT
 - 而无线桥接模式不参与
 
+	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+	deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
 中继模式 (Repeater) 下，路由器会通过**无线** 方式与一台可以上网的无线路由器建立连接，用来放大可以上网的无线路由器上的无线信号（放大后的无线信号和原来的无线路由器名称一致）。适用于扩大一台可以上网的无线路由器的信号覆盖范围。中继**一边接受信号**，一边发射**自己的无线信号**。这种模式下无线路由器以 Client 方式接入主路由，另外新增虚拟接口提供无线接入。
 
 而桥接模式 (Bridge) 下，路由器通过无线方式与可以上网的无线路由器连接，而放大后的无线信号名称可以和原来的不一样。桥接模式下路由器可以设定自己的 DHCP，提供一个自己的局域网。

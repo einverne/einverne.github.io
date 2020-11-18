@@ -45,8 +45,8 @@ last_updated:
 ## SCSI vs VIRTIO
 上面 qm 命令中用了 `-scsi2` 这里指的是磁盘总线类型 (scsi) 和编号 (2)，目前磁盘总线类型大致上有这么几种：
 
-- IDE - Slow Write in the Guest System
-- SCSI - Faster Write(as IDE) in Guest System
+- IDE (Integrated Drive Electronics, 电子集成驱动器） - Slow Write in the Guest System
+- SCSI (Small Computer System Interface, 小型计算机系统接口，用于计算机和设备比如硬盘，光驱，打印机等等的系统级接口和独立处理器标准） - Faster Write(as IDE) in Guest System
 - VIRTIO - Fastest Write (more that SCSI and IDE) in the Guest System, but only with extra Drivers (In Guest)
 
 

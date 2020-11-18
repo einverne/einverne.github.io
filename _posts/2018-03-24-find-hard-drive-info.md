@@ -132,7 +132,7 @@ last_updated:
 设备名通常叫做 `/dev/sda`， `/dev/sdb` 等等，设备的名字通常指整块硬盘，分区名字通常是设备名后面加上分区的序号，比如 `/dev/sda1` 表示的是第一块硬盘上的一个分区。详细的信息可以在 Linux kernel 文档 Documentation/devices.txt 文件中找到。
 
 ### GPT
-GPT 的全称是 GUID Partition Table，全局唯一标识分区表，指的是一个实体硬盘的分区表结构布局标准。[^gpt] GPT 使用 64 bit 逻辑块地址。
+GPT 的全称是 GUID Partition Table，全局唯一标识分区表，指的是一个实体硬盘的**分区表结构布局标准**。[^gpt] GPT 使用 64 bit 逻辑块地址。
 
 [^gpt]: https://en.wikipedia.org/wiki/GUID_Partition_Table
 
@@ -209,7 +209,7 @@ MBR 全称为 Master Boot Record，主引导扇区， DOS type。Sector 0 是被
 
 `dd` 工具是一个专业的测试工具，对测试结果不苛求可以用来做 IO 读写的简单评估。首先要了解两个特殊设备：
 
-    /dev/null 伪设备，回收站. 写该文件不会产生 IO
+    /dev/null 伪设备，回收站。写该文件不会产生 IO
     /dev/zero 伪设备，会产生空字符流，对它不会产生 IO
 
 `dd` 命令使用：

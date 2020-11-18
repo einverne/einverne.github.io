@@ -8,7 +8,7 @@ tags: [proxmox, linux, debian, qm, vm]
 last_updated:
 ---
 
-`qm` 是 Proxmox VE 系统上用来管理 Qemu/Kvm 虚拟机的命令。可以用这个命令来创建，销毁虚拟机，也可以用它来控制虚拟机的启动，暂停，继续和停止。另外也可以用 qm 命令来设定虚拟机的配置。`qm` 命令也可以用来创建和删除虚拟磁盘 (virtual disks).
+`qm` 是 Proxmox VE 系统上用来管理 Qemu/Kvm 虚拟机的命令。可以用这个命令来**创建**，**销毁**虚拟机，也可以用它来控制虚拟机的启动，暂停，继续和停止。另外也可以用 qm 命令来设定虚拟机的配置。`qm` 命令也可以用来创建和删除虚拟磁盘 (virtual disks).
 
 
 ## Usage
