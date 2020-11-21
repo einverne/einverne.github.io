@@ -4,7 +4,7 @@ title: "Linux 交换分区"
 tagline: ""
 description: "Linux 交换分区相关知识"
 category: Linux
-tags: [linux, swap, partition, ]
+tags: [linux, swap, partition, lvm, ]
 last_updated:
 ---
 
@@ -107,7 +107,7 @@ swap 分区大小设置
 
 ### 使用文件作为 swap 分区
 
-创建要作为 swap 分区的文件：增加 1GB 大小的交换分区，则命令写法如下，其中的 count 等于想要的块的数量（bs*count= 文件大小）。
+创建要作为 swap 分区的文件：增加 1GB 大小的交换分区，则命令写法如下，其中的 count 等于想要的块的数量（bs*count= 文件大小）。注意这里的 `of` 后面的路径可以根据自己的环境变化。
 
     dd if=/dev/zero of=/root/swapfile bs=1M count=1024
 
