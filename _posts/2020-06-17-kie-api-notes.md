@@ -48,6 +48,29 @@ KieSession 是和工作流引擎交互的最常用的方式，KieSession 允许�
 
 KieBuilder is a builder for the resources contained in a KieModule
 
+
+```
+KieServices ks = KieServices.Factory.get();
+KieRepository kr = ks.getRepository();
+InputStream is = new ByteArrayInputStream(bytes);
+KieModule kModule = kr.addKieModule(ks.getResources().newInputStreamResource(is));
+KieContainer kContainer = ks.newKieContainer(kModule.getReleaseId());
+```
+
+## KieResources
+
+KieResources 可以从很多来源构造，字节流 (InputStream)，文件系统 (File)，ClassPath 等等。
+
+	KieModuleModel
+	KieRepository
+	KieContainerImpl
+	KieBase
+	KieSession
+
+真正用来启动 Process 的类
+
+	ksession.startProcess()
+
 ## reference
 
 - <https://stackoverflow.com/a/46350243/1820217>
