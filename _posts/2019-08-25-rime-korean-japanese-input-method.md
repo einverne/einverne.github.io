@@ -113,7 +113,7 @@ GongjinCheong 和下方的 HNC 有些许的差异。
 ### Rime hangyl
 Rime 的韩语转写方案非以上提交的任何标准，不过最像后面两种罗马化方案，有一些微小的差别，但是却非常的好用。
 
-和 HNC 的主要差别在于 w 和 y 的差异，在 HNC 键盘中 w 是 `ㅡ` 而 Rime 方案中则是 `ㅜ` ，而另外一个 y ，HNC 是 `ㅣ` ， Rime 的方案则是 `ㅡ`，实际使用上来看 ，而者这两天区别几乎可以忽略不计。
+和 HNC 的主要差别在于 w 和 y 的差异，在 HNC 键盘中 w 是 `ㅡ` 而 Rime 方案中则是 `ㅜ` ，而另外一个 y ，HNC 是 `ㅣ` ， Rime 的方案则是 `ㅡ`，实际使用上来看 ，而二者区别几乎可以忽略不计。
 
 ![rime hangyl](/assets/hangul-keyboard-layout/rime-hangyl.png)
 
