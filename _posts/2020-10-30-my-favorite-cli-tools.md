@@ -228,6 +228,8 @@ virtualenv 解决了 Python 包管理的问题，但还剩下一个问题。如�
 
 SQLite 和 PostgreSQL 的首选 CLI 工具，它提供了自动补全以及语法高亮，他们比默认的 `sqlite3` 和 `psql` 好用多了。
 
+另外感谢 laixintao 在留言中推荐的 [dbcli](https://www.dbcli.com/) 一整套数据库 CLI 工具链，包括了 PostgreSQL, MySQL, SQLite, MS SQL Server, Redis, AWS Athena, VerticaDB 等等数据库的 CLI 客户端连接工具。
+
 ### mas
 
 地址：<https://github.com/mas-cli/mas>
