@@ -8,7 +8,7 @@ tags: [note-taking, zettelkasten, obsidian, ]
 last_updated:
 ---
 
-在接触到 Obsidian 这款笔记的时候听说了 Zettelkasten 这个笔记方法，这些天陆陆续续在阅读了相关的材料，说起来 Zettelkasten 是一个非常简单的方法，但要真正理解其背后的思维方式，以及真正贯彻到现实中来也需要好好的思考一下。
+在接触到 [Obsidian](/post/2020/05/obsidian-note-taking.html) 这款笔记的时候听说了 Zettelkasten 这个笔记方法，这些天陆陆续续在阅读了相关的材料，说起来 Zettelkasten 是一个非常简单的方法，但要真正理解其背后的思维方式，以及真正贯彻到现实中来也需要好好的思考一下。
 
 ## 什么是 Zettelkasten?
 `Zettelkasten` 是一个德语词，这个词语可以拆分成两个部分，"Zettel"，表示的是笔记或者纸条 (slip of paper)，而 "Kasten" 表示的是盒子 (box)，两者合起来表示的意思是 `box of notes`，指通过不同盒子来管理的笔记的方法。[^wik] 这个笔记法使用的集大成者是德国的社会学教授 [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann)，这位教授除了在学术上的影响力之外，就是他在 40 年的学术生涯里著有超过 70 本书，400 多篇学术论文，并且涉及法律，经济，政治，艺术，宗教，生态等等各行各业。
