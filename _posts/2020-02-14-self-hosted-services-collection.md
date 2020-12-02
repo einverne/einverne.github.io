@@ -17,10 +17,20 @@ last_updated:
 有很多自建成本比较高，比如自建 SMTP 邮件服务，虽然也有比较成熟的方案，MailCow,Mailu 等等，但本文不再展开。
 
 ## DNS
+自建家用的 DNS 服务，有两个不错的开源选择：
+
+- Pi-hole
+- AdGuard Home
+
+Pi-hole 相较于普通用户使用稍微复杂一些，但是功能强大。
 
 Pi-hole, A black hole for Internet advertisements
 
 - <https://pi-hole.net/>
+
+而 AdGuard Home 是 AdGuard 推出的开源的 DNS 去广告系统。
+
+- <https://github.com/AdguardTeam/AdGuardHome>
 
 ## 博客类
 具体来说，是 CMS，内容管理平台
@@ -58,7 +68,7 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，miniflux 比较新是 Go 写�
 
 和 NextCloud(ownCloud) 类似的也还有 FileRun, seaFile 等
 
-和 NextCloud 中心化不同的另一个文件同步 SyncThing 也要强烈推荐，自己架设都比较简单。
+和 NextCloud 中心化不同的另一个文件同步 [SyncThing](/post/2019/10/syncthing.html) 也要强烈推荐，自己架设都比较简单。
 
 ### 下载类
 下面这些工具都因为可以下载种子而被人所知，不过也可以用来分享文件的。
@@ -98,7 +108,7 @@ Calibre-web
 - <https://lazylibrarian.gitlab.io/rss/>
 
 ## 图片管理类
-主要是对图片的管理，比较著名的是 Chevereto。
+主要是对图片的管理，比较著名的是 [Chevereto](/post/2018/01/chevereto-self-hosted-photo-sharing.html)。
 
 其他图床
 
