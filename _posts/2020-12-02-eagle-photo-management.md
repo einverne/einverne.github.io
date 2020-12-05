@@ -21,7 +21,7 @@ last_updated:
 安装后 Eagle 会引导[安装浏览器扩展](https://en.eagle.cool/extensions)，这个扩展可以用来收藏图片，包括拖拽，Alt+ 右击，右键上下文菜单，甚至可以直接批量一键导入网页图片，或者将整个网页保存为图片，或者剪切部分网页。这部分内容[扩展的页面](https://en.eagle.cool/extensions) 已经给出了非常详细的说明，这里就略过了。
 
 
-![picasa screenshot](/asssts/picasa-screenshot.jpg)
+![picasa screenshot](/assets/picasa-screenshot.jpg)
 
 
 我个人的习惯是每次旅行或外出回来时，会新建一个以日期开头加上地点的文件夹，并导入当前拍摄的照片，然后保证无误后格式化 SD 卡。然后使用 Lightroom 对这个新导入的文件进行一轮的筛选，使用 1~5 快捷键给照片打分，然后对打分的照片进行简单的快速处理。如果有 4 或 5 分的照片，会更进一步微调。然后对有打分的照片进行导出分享。
