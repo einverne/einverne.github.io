@@ -116,7 +116,7 @@
 //            });
 //        }
 
-        $.getJSON('/quotes.json', function (data) {
+        $.getJSON('https://my-worker.einverne.workers.dev/', function (data) {
             var rand = Math.floor(Math.random() * data.quotes.length);
             var entry = data.quotes[rand].quote + "    --" + data.quotes[rand].name;
             $('.quote').text(entry);
