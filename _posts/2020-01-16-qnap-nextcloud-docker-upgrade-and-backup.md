@@ -30,3 +30,23 @@ last_updated:
 	'maintenance' => true
 
 将 true 改成 false, 然后重启容器，即可进入 NextCloud 应用。
+
+## 从 17 升级到 18 版本
+
+使用同样的方式，将 NextCloud 从 17 版本升级到 18 版本。
+
+访问 ip/status.php 会看到：
+
+	{"installed":true,"maintenance":true,"needsDbUpgrade":true,"version":"18.0.11.2","versionstring":"18.0.11","edition":"","productname":"Nextcloud","extendedSupport":false}
+
+### 升级过程中发现数据库表字段问题
+
+报错内容：
+
+> InvalidArgumentException: Column name "oc_flow_operations"."entity" is NotNull, but has empty string or null as default.
+
+解决方法，见 [issue](https://github.com/nextcloud/server/issues/23174)，因为我使用的是 MariaDB  所以：
+
+	alter table oc_flow_operations add column entity character varying(256) not null;
+
+如果是其他数据库可能需要对应的 SQL 语句。
