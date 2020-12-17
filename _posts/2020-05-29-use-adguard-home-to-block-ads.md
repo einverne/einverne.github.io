@@ -101,6 +101,14 @@ AdGuardHome 安装的命令：
 
 	docker pull adguard/adguardhome
 
+```
+docker run --name adguardhome \
+-v ~/adguardhome/workdir:/opt/adguardhome/work \
+-v ~/adguardhome/confdir:/opt/adguardhome/conf \
+-p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 68:68/tcp -p 68:68/udp -p 8080:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome
+```
+
+
 参数可以参数官方网站：
 
 - <https://hub.docker.com/r/adguard/adguardhome>

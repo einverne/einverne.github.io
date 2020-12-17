@@ -34,7 +34,7 @@ Spring Boot builds on top of Spring to make Spring even easier with simplified d
 
 - Spring 的 @Configuration : 标明该类使用 Spring 基于 Java 的配置。
 - Spring 的 @ComponentScan : 启用组件扫描，这样你写的 Web 控制器类和其他组件才能被自动发现并注册为 Spring 应用程序上下文里的 Bean。
-- Spring Boot 的 @EnableAutoConfiguration  开启了 Spring Boot 自动配置
+- Spring Boot 的 `@EnableAutoConfiguration`  开启了 Spring Boot 自动配置
 
 ## 配置
 
