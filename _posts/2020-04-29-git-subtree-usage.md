@@ -12,9 +12,9 @@ last_updated:
 
 在使用 `git subtree` 之前如果你没有用过 `git submodule`，这里先进行一些说明。对于 `git submodule` 而言，在本地的代码库中可能存在多个 `git` 代码仓库，而 `git subtree` 就只有一个代码库。
 
-## Sub module vs Sub tree
+## Sub module vs Sub tree 对比
 
-- 对父项目的占用：对于父项目而言，如果使用 submodule 会在父项目中新增一个 `.gitmodule` 的文件来记录父项目添加的子 module，而使用 subtree 则会将子项目完整的克隆到父项目的一个文件夹中。
+- 对父项目的占用区别：对于父项目而言，如果使用 submodule 会在父项目中新增一个 `.gitmodule` 的文件来记录父项目添加的子 module，而使用 subtree 则会将子项目完整的克隆到父项目的一个文件夹中。
 - clone 子项目步骤：使用 submodule 需要执行多个步骤，使用 subtree 则需要使用对应的命令
 - push 子项目：submodule 因为将子项目视为独立的项目，可以直接 push；使用 subtree 则需要手动进行对比
 - pull 子项目：submodule pull 子项目后需要，在父项目再进行提交 `git submodule update --recursive --remote`；而使用 subtree 则直接 pull 即可
