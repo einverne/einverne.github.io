@@ -25,7 +25,7 @@ last_updated:
 `git subtree` 可以让一个 repository 嵌入到另一个项目的子目录中。
 
 - 管理方便，对于项目中的成员无需关心额外的 git 工作流，使用最基本的 git 工作流即可
-- 一行 clone 命令可以立即获得包括子项目在内的所有的项目文件，而不是像 git submodule 一样还需要额外的 update 命令
+- 在拉取代码的时候，一行 clone 命令可以立即获得包括子项目在内的所有的项目文件，而不是像 git submodule 一样还需要额外的 update 命令
 - git subtree 不会像 gitmodule 一样引入 metadata 文件来管理，git subtree 的使用对于项目中其他成员可以透明
 - 子项目中的内容可以无缝的被修改，并且可以选择性同步到 upstream 中
 
