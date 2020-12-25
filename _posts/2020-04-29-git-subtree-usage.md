@@ -8,7 +8,7 @@ tags: [git, git-subtree, version-control, git-submodule,]
 last_updated:
 ---
 
-昨天在讨论两个项目双向同步，两个从同一分支拉出来的两个独立项目各自发展，但又要求定时双向同步的时候，虽然提到了用 remote 可以临时解决一下。不过后来又和朋友讨论起 git subtree 来，在此之前，我如果有需要在项目内部依赖外部独立的项目时，我一般都使用 `git submodule` 来解决。不过昨天搜索了一下之后发现 `git subtree` 似乎更加强大，并且已经成为替代 `git submodule` 的事实方案。所以这里来学习一下。
+昨天在和朋友讨论两个项目双向同步，两个从同一分支拉出来的两个独立项目各自发展，但又要求定时双向同步的时候，虽然提到了用 remote 可以临时解决一下。不过后来又和朋友讨论起 git subtree 来，在此之前，我如果有需要在项目内部依赖外部独立的项目时，我一般都使用 `git submodule` 来解决。不过昨天搜索了一下之后发现 `git subtree` 似乎更加强大，并且已经成为替代 `git submodule` 的事实方案。所以这里来学习一下。
 
 在使用 `git subtree` 之前如果你没有用过 `git submodule`，这里先进行一些说明。对于 `git submodule` 而言，在本地的代码库中可能存在多个 `git` 代码仓库，而 `git subtree` 就只有一个代码库。
 
