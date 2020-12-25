@@ -131,7 +131,7 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 ### 子项目将修改提交到 upstream 的过程变得复杂
 在 submodule 时，子项目是一个单独的项目，和所有的 git 管理的项目一样，可以在子项目中提交，提交再 `push` 到 upstream ，并且每一个 submodule 都有自己完整的提交历史。
 
-而在 `subtree` 中因为对子项目的所有修改已经和主项目混合到了一起所以需要单独对子项目提交，命令：
+而在 `subtree` 中因为对子项目的所有修改已经和主项目混合到了一起，所以需要单独对子项目提交，命令：
 
 	git subtree push --prefix=foo foo master
 
