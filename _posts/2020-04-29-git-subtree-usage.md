@@ -15,7 +15,7 @@ last_updated:
 ## Sub module vs Sub tree 对比
 
 - 对父项目的占用区别：对于父项目而言，如果使用 submodule 会在父项目中新增一个 `.gitmodule` 的文件来记录父项目添加的子 module，而使用 subtree 则会将子项目完整的克隆到父项目的一个文件夹中。
-- clone 子项目步骤：使用 submodule 需要执行多个步骤，使用 subtree 则需要使用对应的命令
+- 在 clone 子项目步骤上：使用 submodule 需要执行多个步骤，在拉取主项目后需要使用 submodule 命令单独更新 submodule；而使用 subtree 则只需要使用 clone 命令
 - push 子项目：submodule 因为将子项目视为独立的项目，可以直接 push；使用 subtree 则需要手动进行对比
 - pull 子项目：submodule pull 子项目后需要，在父项目再进行提交 `git submodule update --recursive --remote`；而使用 subtree 则直接 pull 即可
 
@@ -53,7 +53,7 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 解释：
 
 - `--squash` 是将 subtree 的改动合并到一个 commit，不用拉取子项目完整的历史纪录
-- 这里 `--prefix` 后面的 `=` 也可以使用空格，注意这里的 `foo` 就是项目克隆后的目录名
+- 这里 `--prefix` 后面的 `=` 也可以使用空格，注意这里的 `foo` 就是项目克隆后在本地的目录名
 - 命令中的 `master` 指的是 subtree 项目的分支名
 - 可以使用 `git status` 和 `git log` 查看提交
 
@@ -61,12 +61,12 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 
 日常更新的时候，正常的提交代码，如果更改了 foo 目录中的内容也正常的提交即可。
 
-### 从子项目仓库更新
+### 更新子项目仓库
 如果依赖的子项目更新了，可以通过如下命令更新：
 
 	git subtree pull --prefix=foo https://github.com/einverne/foo.git master --squash
 
-上面命令执行后，就可以将 foo 仓库中 master 上的更新更新到本地，`--squash` 表示只会生成一个 commit 提交。
+上面命令执行后，就可以将 foo 仓库中 master 上的更新更新到本地，`--squash` 表示只会在父项目生成一个 commit 提交。
 
 
 ### 将更改推送到子项目仓库

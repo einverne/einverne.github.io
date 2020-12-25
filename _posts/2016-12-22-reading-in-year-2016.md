@@ -4,7 +4,7 @@ title: "2016 年读书笔记"
 tagline: "读书记录，年末总结"
 description: ""
 category: 思考感悟
-tags: [book, reading, ]
+tags: [book, reading, douban]
 last_updated:
 ---
 
@@ -108,7 +108,7 @@ last_updated:
 - 人在欧洲，真的是讲人在欧洲的一些见闻和思考感悟
 - 民主的细节，五星强烈推荐
 - One Billion Customers ，五星强烈推荐
-- 黑客与画家，其实早读过，今年又翻出来推荐给一些人
+- 黑客与画家，其实早读过，今年又翻出来推荐给一些人，和画家一样做创造性的工作才有价值
 - 乖，摸摸头，小故事，有人说的”鸡汤“
 - 秦始皇的秘密，也是听人推荐一口气读完的，当故事看吧
 - 断舍离，整理啊
