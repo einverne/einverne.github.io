@@ -86,6 +86,22 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 
 到这里其实我们就可以发现，利用 subtree 或者 submodule 也好，都可以很方便的同步子项目，尤其是很多项目都依赖的那个项目。比如 A，B 都依赖与 Z，项目，那么使用这种方式可以很方便的在不同 A，B 项目间共享对 Z 的修改。比如 A，B 都依赖与 Z，项目，那么使用这种方式可以很方便的在不同 A，B 项目间共享对 Z 的修改。
 
+#### 将推送的修改合并成一次提交
+`git subtree push` 会将父项目中的提交每一次都进行提交，这会导致对于子项目来说无意义的提交信息，但是 `git subtree` 并没有提供类似 squash 的方式可以将多次提交合并成一次提交，但是 `git subtree` 提供了分支的特性，可以在父项目中将修改推送到某一个分支，然后在子项目中使用 squash merge 将修改合并到主干分支。
+
+    git subtree push --prefix=foo foo feature
+   
+这会在 foo 的仓库中创建一个叫做 feature 的分支。然后可以从 feature 分支合并回 master 分支。
+
+一旦最新的提交都合并到 master 分支，可以通过 `pull` 来更新
+
+    git subtree pull --prefix=foo foo master --squash
+    
+这会在主项目中创建另外一个提交，包括了子项目中所有的修改。
+
+这样的方式有一个缺点就是会在父项目中产生一些多余的提交信息。
+  
+
 ## 常见的使用场景
 典型的使用场景就是当 A，B 项目同时依赖 Z 项目，需要对 Z 项目进行管理的时候。
 
