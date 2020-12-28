@@ -200,3 +200,6 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 
 - <https://github.com/apenwarr/git-subtree/>
 - <https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree>
+- <https://lostechies.com/johnteague/2014/04/04/using-git-subtrees-to-split-a-repository/>
+
+
