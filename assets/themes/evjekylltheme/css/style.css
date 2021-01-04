@@ -3,6 +3,7 @@ body {
     padding-top: 60px;
     height: auto;
     min-height: 100%;
+		line-height: 1.8em;
     scroll-behavior: smooth;
 }
 
