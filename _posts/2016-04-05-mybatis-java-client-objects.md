@@ -102,3 +102,6 @@ generatorConfiguration 配置，文档地址[这里](http://www.mybatis.org/gene
 这个标签用来配置 MySQL 数据类型到 Java 类型转换过程的精度，比如使用 `forceBigDecimals` 那么就是默认尝试使用 `java.math.BigDecial` 来处理 Decimal 和 Numberic 字段。
 
 
+## reference
+
+- [[MyBatis 知识点]]
