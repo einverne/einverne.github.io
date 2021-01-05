@@ -402,9 +402,9 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
     rule "rule1"
     date-effective "25-Sep-2019"
     when
-    eval(true);
+        eval(true);
     then
-    System.out.println("rule1 is execution!");
+        System.out.println("rule1 is execution!");
     End
 
 ### date-expires
@@ -414,7 +414,7 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 设置是否可用
 
 ### dialect
-该属性用来定义规则当中要使用的语言类型，目前 Drools 版本当中支持两种类型的语言：mvel 和 java，默认情况下，如果没有手工设置规则的 dialect，那么使用的 java 语言。
+该属性用来定义规则当中要使用的语言类型，目前 Drools 版本当中支持两种类型的语言：`mvel` 和 `java`，默认情况下，如果没有手工设置规则的 dialect，那么使用的 java 语言。
 
 - type: String
 
@@ -433,7 +433,7 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 
 
 ### lock-on-active
-确认规则只执行一次。 将 lock-on-action 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
+确认规则只执行一次。 将 `lock-on-action` 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
 
 - lock-on-active 属性默认值为 false
 - type: Boolean
@@ -441,26 +441,26 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 不管何时 `ruleflow-group` 和 `agenda-group`被激活，只要其中的所有规则将 `lock-on-active` 设置为 true，那么这些规则都不会再被激活。
 
 ### activation-group
-该属性的作用是将若干个规则划分成一个组，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
+该属性的作用是**将若干个规则划分成一个组**，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
 
 - type: String
 
-在一组具有相同 activation-group 属性的规则当中，**只有一个规则会被执行**，其它规则都将不会被执行。当然对于具有相同 activation-group 属性的规则当中究竟哪一个会先执行，则可以用类似 salience 之类属性来实现。
+在一组具有相同 `activation-group` 属性的规则当中，**只有一个规则会被执行**，其它规则都将不会被执行。当然对于具有相同 `activation-group` 属性的规则当中究竟哪一个会先执行，则可以用类似 `salience` 之类属性来实现。
 
     rule "rule1"
     activation-group "test"
     when
-    eval(true)
+        eval(true)
     then
-    System.out.println("rule1 execute");
+        System.out.println("rule1 execute");
     end
 
     rule "rule 2"
     activation-group "test"
     when
-    eval(true)
+        eval(true)
     then
-    System.out.println("rule2 execute");
+        System.out.println("rule2 execute");
     End
 
 rule1 和 rule2 这两个规则因为具体相同名称的 activation-group 属性，所以它们只有一个会被执行。
