@@ -8,7 +8,7 @@ tags: [java, template-engine, freemarker, email-template, html, ]
 last_updated:
 ---
 
-FreeMarker is a free Java-based template engine, originally focusing on dynamic web page generation with MVC software architecture. However, it is a general purpose template engine, with no dependency on servlets or HTTP or HTML, and is thus often used for generating source code, configuration files or e-mails. [by wikiPedia](https://en.wikipedia.org/wiki/Apache_FreeMarker)
+FreeMarker is a free Java-based template engine, originally focusing on dynamic web page generation with MVC software architecture. However, it is a general purpose template engine, with no dependency on servlets or HTTP or HTML, and is thus often used for generating source code, configuration files or e-mails. [by Wikipedia](https://en.wikipedia.org/wiki/Apache_FreeMarker)
 
 Official site:
 
