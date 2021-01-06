@@ -252,6 +252,11 @@ Order 可以使用 `DESC`, `ASC`
 
     alter table old_db.table_name rename new_db.table_name
 
+
+### mysql in Batch Mode
+
+    mysql -h host -u user -p < batch-file
+
 ## 远程连接
 如果想要远程通过 root 连接 MySQL，先查看一下 MySQL 配置 `/etc/mysql.my.cnf`，需要注释其中
 
@@ -523,3 +528,4 @@ Options:
 - <http://mysql-python.sourceforge.net/MySQLdb.html>
 - <http://mysql-python.sourceforge.net/>
 - <http://mycli.net/>
+- [[MySQL 知识点]]
