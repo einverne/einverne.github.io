@@ -11,14 +11,14 @@ last_updated:
 看文章老有几个 NAS 系统被翻来覆去的提到，这里就一起看看 Wiki，看看有什么区别吧。
 
 ## FreeNAS
-NAS 系统中最著名也最强大的一个系统，基于安全和稳定著称的 FreeBSD，集成了 Sun 公司的 ZFS 文件系统，ZFS 拥有很多文件管理的特性，非常适合管理大量可扩展的数据系统。[^zfs] 目前由 ixsystems 公司维护。
+开源 NAS 系统中最著名也最强大的一个系统，基于安全和稳定著称的 FreeBSD，集成了 Sun 公司的 ZFS 文件系统，ZFS 拥有很多文件管理的特性，非常适合管理大量可扩展的数据系统。[^zfs] 目前由 ixsystems 公司维护。
 
 - <http://www.freenas.org>
 
 [^zfs]: <https://en.wikipedia.org/wiki/ZFS>
 
 ### 硬件依赖
-FreeNAS 对硬件有一定的要求，至少需要 8G 内存，如果要安装插件或者启用虚拟机可能需要更多。FreeNAS 的 ZFS 需要一个基本的内存量来维持基本的运行。[^1]
+FreeNAS 对硬件有一定的要求（ECC 内存），达到日常可用需要较大内存，如果要安装插件或者启用虚拟机可能需要更多。FreeNAS 的 ZFS 需要一个基本的内存量来维持基本的运行。[^1]
 
 [^1]: <https://www.getnas.com/freenas-hardware-guide-goal/>
 
@@ -37,18 +37,28 @@ FreeNAS 对硬件有一定的要求，至少需要 8G 内存，如果要安装�
 - <http://www.nas4free.org/>
 
 ## OpenMediaVault
-OpenMediaVault 是一款基于 Linux 的 NAS 操作系统，项目领导人是 Volker Theile，具体来说 OpenMediaVault 是基于 Debian 的，并且于 GUN GPLv3 下开源。OpenMediaVault 和 FreeNAS 有个很深的缘源，他们都基于 FreeNAS，不过在 2009 主要的两位项目负责人产生分歧，所以 Volker Theile 基于 Linux 重写了 FreeNAS 于是成就了 OpenMediaVault，而另一位 FreeNAS 的创始人 Olivier Cochard-Labbé 则基于 FreeBSD 重写了 FreeNAS，于是成就了今天的 FreeNAS。[^wiki]
+OpenMediaVault 是一款基于 Debian 的 NAS 操作系统，项目领导人是 Volker Theile，于 GUN GPLv3 下开源。OpenMediaVault 和 FreeNAS 有个很深的缘源，他们都基于 FreeNAS，不过在 2009 主要的两位项目负责人产生分歧，所以 Volker Theile 基于 Linux 重写了 FreeNAS 于是成就了 OpenMediaVault，而另一位 FreeNAS 的创始人 Olivier Cochard-Labbé 则基于 FreeBSD 重写了 FreeNAS，于是成就了今天的 FreeNAS。[^wiki]
 
 [^wiki]: <https://en.wikipedia.org/wiki/OpenMediaVault>
 
 OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小，并且还有树莓派版本。
+
+个人在对比了开源操作系统之后选择了 OpenMediaVault，日常使用起来基本无问题。
+
+
+### 优点
+
+- 内存占用小
+- 可以充分利用 Debian 的软件生态
+- 支持 Docker
+- 可以借助第三方软件组存储池，磁盘冗余备份
 
 ### 其他参考链接
 
 - <http://www.openmediavault.org/>
 
 ## ESXi
-由 VMware 开发，一听名字就知道，这家以虚拟机著称的公司，开发的一款为企业设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
+由 VMware 开发，ESXi 是这家以虚拟机著称的公司开发的一款为企业而设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
 
 更详细的介绍可以参考这个[视频](https://www.youtube.com/watch?v=-Hltydu9PXk)
 
@@ -83,6 +93,36 @@ unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么�
 
 [^unraid]: <https://unraid.net/product>
 
+
+## 其他
+
+### Openfiler
+这是一款基于文件的存储系统。
+
+官网： <https://www.openfiler.com/>
+
+- CIFS，NFS，HTTP
+- SAN feature，iSCSI，FC
+- High Availability / Failover
+- Block Replication （LAN & WAN）
+- Web-based Management
+- Cost-free Storage Capacity Expansion
+
+### NexentaStor
+NexentaStor is an OpenSolaris or more recently Illumos distribution optimized for virtualization, storage area networks, network-attached storage, and iSCSI or Fibre Channel applications employing the ZFS file system. Like OpenSolaris, NexentaStor is a Unix-like operating system.
+
+- <https://nexenta.com/products/nexentastor>
+
+### RockStor
+基于 Linux，采用企业级文件系统 BTRFS，提供 SMB/CIFS、NFS 以及 SFTP 常见的共享方式
+
+- <http://rockstor.com/>
+
+### EasyNAS
+
+- <https://www.easynas.org/>
+
+
 ## Conclusion
 
 总结来讲，FreeNAS 有最好的文件系统 -- ZFS，但是对 Docker 支持需要借助虚拟机有一定性能损耗，OpenMediaVault 最轻量，但是对虚拟机不支持硬件直通，unRAID 可以非常方便的扩展硬盘池大小，对虚拟机支持也比较完善。
@@ -93,8 +133,8 @@ unRAID 6 默认使用 XFS 文件系统，但如果定义了 Cache poll，那么�
 - Docker 也支持
 - 配合 [mergerfs](https://github.com/trapexit/mergerfs) 可以实现多物理盘组合，实现 UnRaid 中随时添加磁盘的特性
 - 配合 [SnapRAID](https://www.snapraid.it/) 可以实现冗余备份
-- 配合 Prometheus 和 Grafana 可以对 NAS 进行全面的监控，弥补起管理后台监控的不足
-- 最重要的就是 OpenMediaVault 是[开放源代码的](https://sourceforge.net/projects/openmediavault/)
+- 配合 Prometheus 和 [Grafana](/post/2018/02/grafana.html) 可以对 NAS 进行全面的监控，弥补起管理后台监控的不足
+- 最重要的就是 [OpenMediaVault](/post/2020/04/prometheus-monitoring-system-and-tsdb.html) 是[开放源代码的](https://sourceforge.net/projects/openmediavault/)
 
 ## reference
 
