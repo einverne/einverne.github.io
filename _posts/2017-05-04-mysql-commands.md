@@ -314,6 +314,24 @@ Order 可以使用 `DESC`, `ASC`
 解决问题的思路，看看防火墙是不是开着，检查 MySQL 用户的权限设置是否正确。
 
 
+## ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+一般在新安装之后首次登录的时候会出现这个错误。
+在 Ubuntu 下，MySQL 服务器默认使用了 [UNIX auth socket plugin](https://dev.mysql.com/doc/mysql-security-excerpt/5.5/en/socket-pluggable-authentication.html)，这个时候必须要使用 `sudo mysql -u root -p`
+
+通过如下 SQL 可以看到 root 使用了 `unix_socket`
+
+```
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+MariaDB [(none)]> SELECT User, Host, plugin FROM mysql.user;
++------+-----------+-------------+
+| User | Host      | plugin      |
++------+-----------+-------------+
+| root | localhost | unix_socket |
++------+-----------+-------------+
+1 row in set (0.00 sec)
+```
+
+
 ## sql 命令中的 \G
 在使用 mysql 命令行的时候如果查询结果比较大的时候，可以在语句后面加上 `\G;` 来将结果垂直方式展现，可以更好的查看结果。那么 \G 到底是什么意思呢。
 
