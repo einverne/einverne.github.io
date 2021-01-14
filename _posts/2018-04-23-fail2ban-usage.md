@@ -74,3 +74,15 @@ fail2ban 的功能可以分散在不同的文件中进行管理，配置优先�
 
 	sudo iptables -L -v -n
 
+
+## 其他配置
+
+### MySQL
+
+```
+[mysqld]
+port = 3306
+logpath = /var/log/mysql/error.log
+log_warnings = 2
+maxretry = 5
+```
