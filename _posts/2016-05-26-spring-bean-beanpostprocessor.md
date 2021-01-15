@@ -11,7 +11,7 @@ last_updated:
 `BeanPostProcessor` 接口允许在 Spring Bean Factory 返回 Bean instance 时修改 Bean 的创建过程。
 
 ## Bean life cycle
-要了解 BeanPostProcessor 接口就不得不提及 Bean 的生命周期。
+要了解 `BeanPostProcessor` 接口就不得不提及 Bean 的生命周期。
 
 ### Life cycle callbacks
 Two groups:
@@ -30,7 +30,7 @@ Life cycle:
 - Call custom init-method
 - Post-initialization BeanPostProcessors
 - Bean is ready to use
-
+![[202101151422-how to become smarter]]
 Container is shutdown:
 
 - DisposableBean's destroy()
