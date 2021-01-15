@@ -4,7 +4,7 @@ title: "电视机投影仪显示器接口知识整理"
 tagline:
 description: "电视机投影仪接口知识"
 category: 经验总结
-tags: [ 投影仪 ， 接口 , monitor, 显示器 , ]
+tags: [ projector，interface， monitor， display ]
 ---
 
 之前东拼西凑写了一篇《[投影仪选购指南](http://www.einverne.tk/2013/12/projector-shopping.html)》，今天再凑一篇配套接口知识。纯为自己了解，当然如果帮到其他人，那就更好了。先来随便看看一款投影仪的最简单的接口。
