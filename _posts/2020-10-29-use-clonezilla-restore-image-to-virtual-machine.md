@@ -24,7 +24,7 @@ last_updated:
 通过 Clonezilla 将整块硬盘备份成为 Images，然后在 Fusion 中新建虚拟机 Ubuntu 64 bit 类型。
 
 - 在新建的虚拟机设置中，CD/DVD (SATA) 中装载 Clonezilla 的 ISO 镜像。
-- 在 USB & Bluttooth 中，Advnaced USB options，将 USB Compatibilty 选为 USB 3.1
+- 在 USB & Bluetooth 中，Advanced USB options，将 USB Compatibility 选为 USB 3.1
 - 在 Startup Disk 中选择 CD/DVD 作为启动设备
 - 启动虚拟机
 - 这个时候会进入 Clonezilla 的界面，之后的步骤就和在 Clonezilla 中恢复一个 Image 一样了。等待恢复一段时间即可完成。
