@@ -13,7 +13,7 @@ last_updated:
 Android 盒子安装应用的方法，大概可以分为这几个：
 
 - 局域网拷贝 APK
-- 用 U 盘
+- 用 U 盘连接电视
 - 沙发管家，或者当贝市场中安装
 - 局域网 adb 安装
 
@@ -26,7 +26,7 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 - 沙发管家 http://www.shafa.com/
 - 当贝市场 智能电视应用市场
 - 欢视商店
-- 蜜蜂市场，新起之秀，大有赶超前者的趋势
+- 蜜蜂市场
 
 地址就不都给了，Google 搜一下很快。
 
@@ -66,7 +66,7 @@ Apple 有 App Store， Google 有 Play Store，电视盒子直到现在依然还
 ## 本地视频
 盒子带 samba ，能读局域网内 samba 共享的视频，那就需要一个本地播放器，最好支持的解码格式越多越好，在 Android 手机上我买过 MX Player Pro，不过免费的 KMPlayer 也不错。
 
-- Kodi，不得不请出这个大杀器了
+- Kodi，不得不请出这个大杀器了，All in one 既能作为本地播放器，也能使用 Samba，NFS 等等协议播放局域网中的视频，同样能够作为 DLNA 服务端作为投屏工具
 - ES 文件管理器
 - 小白文件管理器 v1.2 版本
 - MX Player Pro
