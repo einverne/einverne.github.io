@@ -73,3 +73,6 @@ rss
 
 ### CHD Bits
 听说是挺大的站，求邀请吧
+
+
+最后如果有很多 PT 站，推荐 PT Plugin Plus 这个浏览器扩展来管理。
