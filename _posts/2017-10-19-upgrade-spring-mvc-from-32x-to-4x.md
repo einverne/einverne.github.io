@@ -24,7 +24,7 @@ Groovy DSL
 ## 注意事项
 
 ### 添加依赖
-加入spring-context-support，以前3的版本不用加，但是4要加上，否则就会报ClassNotFoundException,
+加入spring-context-support，以前3的版本不用加，但是4要加上，否则就会报 ClassNotFoundException,
 
     <dependency>
         <groupId>org.springframework</groupId>
