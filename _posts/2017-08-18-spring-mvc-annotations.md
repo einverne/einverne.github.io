@@ -25,11 +25,11 @@ last_updated:
 Spring 中的注解大概可以分为两大类：
 
 - Spring 的 bean 容器相关的注解，或者说 bean 工厂相关的注解
-- Springmvc 相关的注解
+- Spring mvc 相关的注解
 
-Spring 的 bean 容器相关的注解，先后有：@Required， @Autowired, @PostConstruct, @PreDestory，还有 Spring3.0 开始支持的 JSR-330 标准 javax.inject.*中的注解 (@Inject, @Named, @Qualifier, @Provider, @Scope, @Singleton).
+Spring 的 bean 容器相关的注解，先后有：`@Required`，` @Autowired`, `@PostConstruct`， `@PreDestory`，还有 Spring3.0 开始支持的 JSR-330 标准 `javax.inject.*` 中的注解 (`@Inject`, `@Named`, `@Qualifier`, `@Provider`, `@Scope`, `@Singleton`).
 
-Spring mvc 相关的注解有：@Controller, @RequestMapping, @RequestParam， @ResponseBody 等等。
+Spring MVC 相关的注解有：`@Controller`, `@RequestMapping`, `@RequestParam`， `@ResponseBody` 等等。
 
 要理解 Spring 中的注解，先要理解 Java 中的注解。
 
