@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Drools kie 中的 Assets"
+title: "Drools Kie 中的 Assets"
+aliases: "Drools Kie 中的 Assets"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -34,7 +35,7 @@ Applicant       | age               | [20, 25, 30]
 Guided rules 规则相对比较简单适合用于单一简单的规则建立。
 
 ## Guided decision tables
-向导型决策表是一种以表格形式表现规则的工具，非常适合描述条件判断很多，条件又可以相互组合，有很多决策方案的情况。决策表可以将这些复杂的逻辑以一种精确而简单的表格形式整理出来，通过 Workbench 中直观的表格形式非常清晰。
+**向导型决策表**是一种以表格形式表现规则的工具，非常适合描述条件判断很多，条件又可以相互组合，有很多决策方案的情况。决策表可以将这些复杂的逻辑以一种精确而简单的表格形式整理出来，通过 Workbench 中直观的表格形式非常清晰。
 
 Drools 中的决策表可以非常轻松的引导用户制作一个基于 UI 的规则，可以定义规则 attributes, metadata, conditions 和 actions。一旦通过 UI 形式定义好规则，那么所有的规则都会编译为 Drools Rule Language(DRL) 规则。
 

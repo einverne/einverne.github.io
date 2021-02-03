@@ -10,7 +10,7 @@ last_updated:
 
 ## What is drools?
 
-DescriptionDrools is a business rule management system with a forward and backward chaining inference based rules engine, more correctly known as a production rule system, using an enhanced implementation of the Rete algorithm.[^wiki]
+Drools is a business rule management system with a forward and backward chaining inference based rules engine, more correctly known as a production rule system, using an enhanced implementation of the Rete algorithm.[^wiki]
 
 [^wiki]: <https://en.wikipedia.org/wiki/Drools>
 

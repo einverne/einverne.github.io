@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Drools Kie 简单使用"
+aliases: "Drools Kie 简单使用"
 tagline: ""
 description: ""
 category: 学习笔记
