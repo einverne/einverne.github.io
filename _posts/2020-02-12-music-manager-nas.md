@@ -8,7 +8,7 @@ tags: [nas, qnap, music, file-manager, docker, ]
 last_updated:
 ---
 
-NAS 上的文件已经有足够多的[管理系统](/post/2018/06/qnap-file-sync.html) 了 [^1][^2]，而电影也有 Kodi, Emby, Plex 等等工具，图片同样 Chevereto，Lychee，电子书有 [Calibre-web](/post/2020/02/qnap-calibre-web.html)，但就是音乐管理工具没有找到一个比较合适的。
+NAS 上的文件已经有足够多的[管理系统](/post/2018/06/qnap-file-sync.html) 了 [^1][^2]，而电影也有 [[Kodi]], [[Emby]], [[Plex]] 等等工具，图片同样 Chevereto，Lychee，电子书有 [Calibre-web](/post/2020/02/qnap-calibre-web.html)，但就是音乐管理工具没有找到一个比较合适的。
 
 ## 构想
 我想的应该这个管理系统可以直接通过 Docker 安装，提供一个比较美观的 Web 页面。
