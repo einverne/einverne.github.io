@@ -355,13 +355,21 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 一旦调用 insert 函数， Drools 会**重新**与所有规则再重新匹配一次，对于没有设置 no-loop 属性为 true 的规则，如果条件满足，不管之前是否执行过都会再执行一次，这个特性不仅存在于 insert 函数，update，retract 宏函数都有该特性，所以某些情况下考虑不周可能造成死循环。
 
 ### update
-对 Fact 进行更新，比如更新 Fact 中的某个字段。
+对 Fact 进行更新，比如更新 Fact 中的某个字段，对应的相关的 Fact 都会更新，然后会通知 Drools 引擎该修改。
 
 ### retract
 用来将 Working Memory 中某个 Fact 对象删除。
 
 ### modify
 对 Fact 对象多个属性修改，修改完成后自动更新到当前 Working Memory 中。
+
+```
+modify ( <fact-expression> ) {
+    <expression>,
+    <expression>,
+    ...
+}
+```
 
 ## 属性部分 {#attributes}
 **规则属性**是用来控制规则执行的重要工具，显示地声明了对规则行为的影响。
