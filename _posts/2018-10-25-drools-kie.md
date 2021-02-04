@@ -11,7 +11,7 @@ last_updated:
 
 Drools 是一个 Java 的商业过程实现，这是 Bob McWhirter 所编写的一个开源项目，由 JBoss 和 Red Hat Inc 支持。 Drools 提供一个核心的 Business Rules Engine(BRE) 和一个网页编写规则的管理系统（Drools Workbench）和 一个 Eclipse IDE 的插件，一同构成完整的 Drools 生态。
 
-Drools 是一个 Java 实现的开源规则引擎 (Rule Engine)，或者又被称为 Business Rules Management System(BRMS) 。Drools workbench 被叫做 Drools-WB，KIE-WB（或者也叫 KIE Drools workbench) 组合了 Guvnor, Drools 和 jBPM 插件。[^1]
+Drools 是一个 Java 实现的开源[[规则引擎]] (Rule Engine)，或者又被称为 Business Rules Management System(BRMS) 。Drools workbench 被叫做 Drools-WB，KIE-WB（或者也叫 KIE Drools workbench) 组合了 Guvnor, Drools 和 jBPM 插件。[^1]
 
 简单地来说，Drools 是一系列的工具集合允许用户将业务逻辑和数据分离。
 
