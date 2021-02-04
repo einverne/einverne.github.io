@@ -341,7 +341,7 @@ matches 操作符匹配是否匹配 Java 正则表达式。
 
 Drools 还支持一些高级语法规则，更多可以参考[这里](https://training-course-material.com/training/Drools_Expert_-_mvel_-_LHS_-_advanced)
 
-## 结果部分 {$rhs}
+## 结果部分 {#rhs}
 Right Hand Side，又被称为结果部分，RHS，规则中 then 后面部分就是 RHS，只有在 LHS 所有条件都满足时 RHS 部分才会执行。
 
 RHS 部分是规则真正要做的事情，将条件满足而触发的动作写在该部分中，RHS 中可以使用 LHS 中定义的绑定变量名、设置的全局变量，或者直接编写 Java 代码（需要 import 相应的类）

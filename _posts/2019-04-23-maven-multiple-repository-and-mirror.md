@@ -128,7 +128,7 @@ maven 2.0.5+ 以上版本支持：
 [官方文档](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
 
-## 设置镜像 {$mirror}
+## 设置镜像 {#mirror}
 
 设置镜像的作用是为了加快依赖包的下载速度，理论上来说如果一个仓库 B 可以提供仓库 A 所有的内容，那么可以认为 B 是 A 的一个镜像，比如说 [阿里提供了很多仓库的镜像](https://help.aliyun.com/document_detail/102512.html) 使用这些镜像可以提高下载速度。
 
