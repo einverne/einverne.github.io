@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Google Guava 中本地缓存 LoadingCache 使用"
+aliases: "Google Guava 中本地缓存 LoadingCache 使用"
 tagline: ""
 description: ""
 category: 学习笔记
