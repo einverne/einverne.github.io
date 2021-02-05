@@ -33,6 +33,7 @@ last_updated:
 	com.google.common.cache.Cache#size
 	com.google.common.cache.Cache#stats
 
+Cache 接口定义的方法大都一目了然，值得一说的就是 `stats()` 方法，这个方法会返回一个 `CacheStats` 对象，这个对象包括了该 Cache 的一些统计信息，包括 `hitCount`， `missCount`，`loadSuccessCount`，`loadExceptionCount`，`totalLoadTime` 和 `evictionCount`。
 
 `Cache` 通过 `CacheBuilder` 类的 Builder 模式获取：
 
@@ -69,6 +70,9 @@ CacheBuilder 在构建 Cache 时提供了两种定时回收的方法
 
 - expireAfterAccess(long, TimeUnit) : 缓存项在给定时间内没有被读或写访问，则回收
 - expireAfterWrite(long, TimeUnit)：缓存项在给定时间内没有被写访问（创建或覆盖），则回收
+
+## 失效
+调用 LoadingCache 的 `invalidate` 方法可以使得 key 失效
 
 ## reference
 

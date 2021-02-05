@@ -546,4 +546,4 @@ Options:
 - <http://mysql-python.sourceforge.net/MySQLdb.html>
 - <http://mysql-python.sourceforge.net/>
 - <http://mycli.net/>
-- [[MySQL 知识点]]
+- [[MySQL]]
