@@ -60,6 +60,9 @@ Syncthing 服务启动后端口是 8384.
 ## Syncthing 配置本地 Discovery 服务器
 有一种情况是，加入只想要在本地局域网中传输数据，那么可以关闭全局 Discovery 服务器，然后在设置中手动指定某一态服务器的 IP 和 端口，而不是使用默认的 dynamic。这样所有的数据就会在本地传输。
 
+## Syncthing File Versioning
+Syncthing 支持文件的版本控制，当从 cluster 同步，删除或者同步一个新版本之后备份之前的老版本。
+
 ## reference
 
 - <https://docs.syncthing.net/intro/getting-started.html>

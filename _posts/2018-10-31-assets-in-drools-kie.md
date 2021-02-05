@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Drools kie 中的 Assets"
+title: "Drools Kie 中的 Assets"
+aliases: "Drools Kie 中的 Assets"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -34,7 +35,7 @@ Applicant       | age               | [20, 25, 30]
 Guided rules 规则相对比较简单适合用于单一简单的规则建立。
 
 ## Guided decision tables
-向导型决策表是一种以表格形式表现规则的工具，非常适合描述条件判断很多，条件又可以相互组合，有很多决策方案的情况。决策表可以将这些复杂的逻辑以一种精确而简单的表格形式整理出来，通过 Workbench 中直观的表格形式非常清晰。
+**向导型决策表**是一种以表格形式表现规则的工具，非常适合描述条件判断很多，条件又可以相互组合，有很多决策方案的情况。决策表可以将这些复杂的逻辑以一种精确而简单的表格形式整理出来，通过 Workbench 中直观的表格形式非常清晰。
 
 Drools 中的决策表可以非常轻松的引导用户制作一个基于 UI 的规则，可以定义规则 attributes, metadata, conditions 和 actions。一旦通过 UI 形式定义好规则，那么所有的规则都会编译为 Drools Rule Language(DRL) 规则。
 
@@ -53,9 +54,9 @@ Drools 中的决策表可以非常轻松的引导用户制作一个基于 UI 的
 Hit policy 决定了决策表中的每一个规则（每一行）按照什么样的顺序执行，从上往下，或者按照优先级等等
 
 - None 默认，多行可以同时被执行，verification 会将冲突 warning 出来
-- Resolved Hit，根据优先级，每一次只有一行可以被执行，不管在列表中的顺序。可以维持界面中的顺序，转而定义每一行的优先级
+- Resolved Hit，和 First Hit 类似，每一次只有一行可以被执行，但是可以根据优先级，定义在列表中的执行顺序。可以给不同行设置不同的优先级，从而维持界面中的顺序，但是可以根据需要定义执行顺序
 - Unique Hit, 一次只能执行一行，每一行必须 Unique，条件不能有重叠，如果多于一行被执行，会有 warning
-- First Hit，依据表中的顺序，从上到下，每一次执行一行
+- First Hit，依据表中的顺序，从上到下，每一次执行一行，一旦有命中则返回
 - Rule Order，多行可以同时执行，verification 不会将冲突警告
 
 ### Guided decision tables 的类型

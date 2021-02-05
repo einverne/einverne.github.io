@@ -145,7 +145,7 @@ http {
 }
 ```
 
-最后需要 ln 启用新的虚拟主机
+最后需要 `ln` 启用新的虚拟主机
 
 	sudo ln -s /etc/nginx/sites-available/www.einverne.info /etc/nginx/sites-enabled/
 

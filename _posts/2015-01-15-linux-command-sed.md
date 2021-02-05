@@ -8,15 +8,23 @@ tags: [linux, command, sed, editor]
 last_updated:
 ---
 
-sed 全名叫 stream editor，是字符流编辑器，一次处理一行内容，能够完美地配合正则表达式使用。
-处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用 sed 命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有改变，除非使用重定向存储输出。sed 主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
-Sed 主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
+`sed` 全名叫 stream editor，是面向字符流的编辑器，能够完美地配合正则表达式使用。sed 提供的功能是交互式文本编辑器的延伸，提供的查找替换程序可以被全局应用于单个文件或多个文件。
 
-awk 的典型示例是将数据转化为格式化报表。
+面向字符流，是因为输入流通过程序并将输出直接输出到标准输出。
+
+sed 处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用 sed 命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有改变，除非使用重定向存储输出。sed 主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
+
+sed 功能：
+
+- 主要用来自动编辑一个或多个文件；
+- 简化对文件的反复操作；
+- 编写转换程序等。
+
+`awk` 的典型示例是将数据转化为格式化报表。
 
 ## 行编辑器 ed
 
-awk 的起源追溯到 sed 和 grep，再往前追溯就到了 ed，最初的 unix 行编辑器。关于 ed 编辑器可以参考之前的『文章』
+awk 的起源追溯到 sed 和 grep，再往前追溯就到了 ed，最初的 UNIX 行编辑器。关于 ed 编辑器可以参考之前的『[文章](/post/2018/02/ed-line-editor.html)』
 
 ## sed 使用参数
 
@@ -50,7 +58,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 ### 行删除及增加
 以行为单位的新增 / 删除
 
-将 /etc/passwd 的内容列出并且列印行号，同时，请将第 2~5 行删除，这里的删除是指在输出结果中删除，并不是真正去删除文件中的内容，如果要直接对文件进行修改，可以参考后文中的 `-i` 参数。
+将 `/etc/passwd` 的内容列出并且列印行号，同时，请将第 2~5 行删除，这里的删除是指在输出结果中删除，并不是真正去删除文件中的内容，如果要直接对文件进行修改，可以参考后文中的 `-i` 参数。
 
     nl /etc/passwd | sed '2,5d'
     1 root:x:0:0:root:/root:/bin/bash
@@ -59,8 +67,8 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 
 说明：
 
-- sed 的命令为 '2,5d' ，d 就是删除
-- sed 后面接的命令，请务必以 '' 两个单引号括住
+- sed 的命令为 '2,5d' ，`d` 就是删除
+- sed 后面接的命令，请务必以 `''` 两个单引号括住
 
 只要删除第 2 行
 
@@ -108,7 +116,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
     6 sync:x:5:0:sync:/sbin:/bin/sync
 
 ### 显示特定行
-仅列出 /etc/passwd 文件内的第 5-7 行
+仅列出 `/etc/passwd` 文件内的第 5-7 行
 
     nl /etc/passwd | sed -n '5,7p'
     5 lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
@@ -119,7 +127,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 
 ### 数据的搜寻并显示
 
-搜索 /etc/passwd 有 root 关键字的行
+搜索 `/etc/passwd` 有 root 关键字的行
 
     nl /etc/passwd | sed '/root/p'
     1  root:x:0:0:root:/root:/bin/bash
@@ -142,7 +150,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 
 ### 数据搜寻删除
 
-删除 /etc/passwd 所有包含 root 的行，其他行输出
+删除 `/etc/passwd` 所有包含 root 的行，其他行输出
 
     nl /etc/passwd | sed  '/root/d'
     2  daemon:x:1:1:daemon:/usr/sbin:/bin/sh
@@ -150,7 +158,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 
 ### 搜索执行命令
 
-搜索 /etc/passwd, 找到 root 对应的行，执行后面花括号中的一组命令，每个命令之间用分号分隔，这里把 bash 替换为 blueshell，再输出这行：
+搜索 `/etc/passwd`, 找到 root 对应的行，执行后面花括号中的一组命令，每个命令之间用分号分隔，这里把 bash 替换为 blueshell，再输出这行：
 
     nl /etc/passwd | sed -n '/root/{s/bash/blueshell/;p}'
     1  root:x:0:0:root:/root:/bin/blueshell
@@ -175,7 +183,7 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 
 
 ### 多点编辑
-一条 sed 命令，删除 /etc/passwd 第三行到末尾的数据，并把 bash 替换为 blueshell
+一条 sed 命令，删除 `/etc/passwd` 第三行到末尾的数据，并把 bash 替换为 blueshell
 
     nl /etc/passwd | sed -e '3,$d' -e 's/bash/blueshell/'
     1  root:x:0:0:root:/root:/bin/blueshell

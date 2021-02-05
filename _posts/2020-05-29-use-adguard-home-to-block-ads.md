@@ -33,7 +33,7 @@ AdGuard 官方的文章也总结了 AdGuard Home 的几大优势：[^home]
 
 
 ## AdGuard Home 的原理
-上面提到过很多不同的广告过滤方式，但是 AdGuard Home 采用完全不同的方式。首先来介绍一下什么是 AdGuard Home，AdGuard Home 是一个过滤全网范围的广告和追踪代码的 DNS Server，它的设计目的是让用户来全权掌握整个网络环境，它不依赖于任何客户端。所以从本质上来讲 AdGuard Home 是一个 DNS 服务器，
+上面提到过很多不同的广告过滤方式，但是 AdGuard Home 采用完全不同的方式。首先来介绍一下什么是 AdGuard Home，AdGuard Home 是一个过滤全网范围的广告和追踪代码的 DNS Server，它的设计目的是让用户来全权掌握整个网络环境，它不依赖于任何客户端。所以从本质上来讲 AdGuard Home 是一个 DNS 服务器，通过屏蔽掉黑名单的域名来达到过滤广告的目的。
 
 ## 在 Raspberry Pi 中安装使用 AdGuard Home
 在树莓派上安装 AdGuard Home 非常简单，安装 [wiki](https://github.com/AdguardTeam/AdGuardHome/wiki/Raspberry-Pi) 上执行即可。
@@ -105,8 +105,20 @@ AdGuardHome 安装的命令：
 docker run --name adguardhome \
 -v ~/adguardhome/workdir:/opt/adguardhome/work \
 -v ~/adguardhome/confdir:/opt/adguardhome/conf \
--p 53:53/tcp -p 53:53/udp -p 67:67/udp -p 68:68/tcp -p 68:68/udp -p 8080:80/tcp -p 443:443/tcp -p 853:853/tcp -p 3000:3000/tcp -d adguard/adguardhome
+-p 53:53/tcp -p 53:53/udp \
+-p 67:67/udp -p 68:68/tcp -p 68:68/udp \
+-p 8080:80/tcp -p 443:443/tcp \
+-p 853:853/tcp -p 3000:3000/tcp \
+--restart=always -d adguard/adguardhome
 ```
+
+说明：
+
+- `-p 67:67/udp -p 68:68/tcp -p 68:68/udp` 用来将 AdGuard Home 作为 DHCP 服务，可不映射
+- `-p 443:443/tcp` 如果要使用 AdGuard Home 作为 HTTPS/DNS-over-HTTPS 服务器
+- `-p 853:853/tcp` 作为 DNS-over-TLS 服务器
+- `-p 784:784/udp` 作为 DNS-over-QUIC 服务器
+- `-p 5443:5443/tcp -p 5443:5443/udp` 作为 DNSCrypt 服务器
 
 
 参数可以参数官方网站：

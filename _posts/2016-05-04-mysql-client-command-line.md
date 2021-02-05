@@ -48,6 +48,6 @@ MyISAM 历史的存储引擎，MySQL 和 MariaDB 在 5.5 版本以下的默认�
 ## reference
 
 - 《Mastering MariaDB》
-
+- [[MySQL 知识点]]
 
 

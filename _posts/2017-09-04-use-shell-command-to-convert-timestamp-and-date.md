@@ -19,7 +19,7 @@ Linux 用来修正系统的时区
 
 ## date 常用命令
 
-### 获取当前的 unix timestamp
+### 获取当前的 Unix timestamp
 
 	date +%s    # 返回 10 位时间戳，%s 表示从 1970-01-01 0 点 (epoch 开始的秒数）
 	date +%s%3N # 返回 13 位时间戳，毫秒

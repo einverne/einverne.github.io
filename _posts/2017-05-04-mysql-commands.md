@@ -252,6 +252,11 @@ Order 可以使用 `DESC`, `ASC`
 
     alter table old_db.table_name rename new_db.table_name
 
+
+### mysql in Batch Mode
+
+    mysql -h host -u user -p < batch-file
+
 ## 远程连接
 如果想要远程通过 root 连接 MySQL，先查看一下 MySQL 配置 `/etc/mysql.my.cnf`，需要注释其中
 
@@ -307,6 +312,24 @@ Order 可以使用 `DESC`, `ASC`
 
 ## ERROR 2003 (HY000): Can't connect to MySQL server on 'some host' (113)
 解决问题的思路，看看防火墙是不是开着，检查 MySQL 用户的权限设置是否正确。
+
+
+## ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+一般在新安装之后首次登录的时候会出现这个错误。
+在 Ubuntu 下，MySQL 服务器默认使用了 [UNIX auth socket plugin](https://dev.mysql.com/doc/mysql-security-excerpt/5.5/en/socket-pluggable-authentication.html)，这个时候必须要使用 `sudo mysql -u root -p`
+
+通过如下 SQL 可以看到 root 使用了 `unix_socket`
+
+```
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+MariaDB [(none)]> SELECT User, Host, plugin FROM mysql.user;
++------+-----------+-------------+
+| User | Host      | plugin      |
++------+-----------+-------------+
+| root | localhost | unix_socket |
++------+-----------+-------------+
+1 row in set (0.00 sec)
+```
 
 
 ## sql 命令中的 \G
@@ -523,3 +546,4 @@ Options:
 - <http://mysql-python.sourceforge.net/MySQLdb.html>
 - <http://mysql-python.sourceforge.net/>
 - <http://mycli.net/>
+- [[MySQL 知识点]]

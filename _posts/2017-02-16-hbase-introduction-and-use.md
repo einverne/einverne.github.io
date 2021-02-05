@@ -9,7 +9,7 @@ last_updated: 2017-03-01
 ---
 
 
-Hbase – Hadoop Database，是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的 Google 论文《Bigtable：一个结构化数据的分布式存储系统》。HBase 是 Google Bigtable 的开源实现，就像 Bigtable 利用了 Google 文件系统（File System）所提供的分布式数据存储一样，HBase 在 Hadoop 之上提供了类似于 Bigtable 的能力，利用 Hadoop HDFS 作为文件系统，利用 Hadoop MapReduce 来处理 HBase 中海量数据，利用 Zookeeper 作为协同服务，HBase 是 Apache 的 Hadoop 项目的子项目，
+Hbase – Hadoop Database，是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的 Google 论文《Bigtable：一个结构化数据的分布式存储系统》。HBase 是 Google Bigtable 的开源实现，就像 Bigtable 利用了 Google 文件系统（File System）所提供的分布式数据存储一样，HBase 在 Hadoop 之上提供了类似于 Bigtable 的能力，利用 Hadoop HDFS 作为文件系统，利用 Hadoop MapReduce 来处理 HBase 中海量数据，利用 [[Zookeeper]] 作为协同服务，HBase 是 Apache 的 Hadoop 项目的子项目，
 
 HBase 不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。另一个不同的是 HBase 基于列的而不是基于行的模式。
 

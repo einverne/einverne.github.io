@@ -8,7 +8,7 @@ tags: [zookeeper, apache, hadoop, ]
 last_updated:
 ---
 
-Apache ZooKeeper 是 Apache 软件基金会的一个软件项目，为大型分布式计算提供开源的分布式协调系统，提供的功能包括配置服务、同步服务和命名注册等。Zookeeper 项目的初衷就是为了降低分布式应用从头开发协同服务的负担。
+Apache [[ZooKeeper]] 是 Apache 软件基金会的一个软件项目，为大型分布式计算提供开源的分布式协调系统，提供的功能包括配置服务、同步服务和命名注册等。Zookeeper 项目的初衷就是为了降低分布式应用从头开发协同服务的负担。
 
 ## ZooKeeper
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Drools 语法规则"
+aliases: "Drools 语法规则"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -10,7 +11,7 @@ last_updated:
 
 ## What is drools?
 
-DescriptionDrools is a business rule management system with a forward and backward chaining inference based rules engine, more correctly known as a production rule system, using an enhanced implementation of the Rete algorithm.[^wiki]
+Drools is a business rule management system with a forward and backward chaining inference based rules engine, more correctly known as a production rule system, using an enhanced implementation of the Rete algorithm.[^wiki]
 
 [^wiki]: <https://en.wikipedia.org/wiki/Drools>
 
@@ -29,7 +30,7 @@ KnowledgeBuilder 在业务代码当中整理已经编写好的规则，对这些
 KnowledgeBase 是 Drools 提供的用来收集应用当中知识（knowledge）定义的知识库对象，在一个 KnowledgeBase 当中可以包含普通的规则（rule）、规则流 (rule flow)、函数定义 (function)、用户自定义对象（type model）等。KnowledgeBase 本身不包含任何业务数据对象，业务对象都是插入到由 KnowledgeBase 产生的两种类型的 session 对象当中，通过 session 对象可以触发规则执行或开始一个规则流执行。
 
 ### StatefulKnowledgeSessions
-StatefulKnowledgeSession 对象是一种最常用的与规则引擎进行交互的方式，它可以与规则引擎建立一个持续的交互通道，在推理计算的过程当中可能会多次触发同一数据集。在用户的代码当中，最后使用完 StatefulKnowledgeSession 对象之后，**一定**要调用其 dispose() 方法以释放相关内存资源。
+StatefulKnowledgeSession 对象是一种最常用的与[[规则引擎]]进行交互的方式，它可以与规则引擎建立一个持续的交互通道，在推理计算的过程当中可能会多次触发同一数据集。在用户的代码当中，最后使用完 StatefulKnowledgeSession 对象之后，**一定**要调用其 dispose() 方法以释放相关内存资源。
 
 	public interface StatefulKnowledgeSession
 		extends
@@ -58,6 +59,8 @@ Drools 规则可以对 Fact 对象进行任意的读写操作，当一个 JavaBe
 
 ## 规则文件
 一个标准的 Drools 规则文件就是一个以“.drl”结尾的文本文件。
+
+Drools 规则文件包含一个或多个 rule 声明，每一个 rule 由一个或多个条件以及要执行的动作（Action）组成。一个规则文件还可以有 0 个或多个 import 声明，global 声明和 function 声明。
 
 Drools 规则文件大致可以包含这些部分：
 
@@ -113,7 +116,7 @@ function String hello(String name) {
 
 定义一个新的类型 Address, 有三个属性，每个属性的类型都是 Java 中有效的数据类型。
 
-定义 Persion
+定义 Person
 
 import java.util.Date
 
@@ -149,7 +152,7 @@ import java.util.Date
 
 ### Rule
 
-一条规则的大致框架：
+一条规则的大致框架包括如下几部分：
 
     rule "name"
         attributes
@@ -161,7 +164,7 @@ import java.util.Date
 
 一个规则通常包括三个部分：
 
-- 属性部分（attribute），非必须，最好写在一行，关于规则属性部分，后文有更详细的介绍
+- 属性部分（attribute），非必须，最好写在一行，关于**规则属性**部分，后文有更详细的介绍
 - 条件部分（LHS）
 - 结果部分（RHS）
 
@@ -225,13 +228,25 @@ Drools 5 中定义了 hard 和 soft 关键字，Hard 关键字是保留字，不
 
     rule "rule1"
     when
-        $customer:Customer(age>20,gender==’male’)
-        Order(customer==$customer,price>1000)
+        $customer:Customer(age>20, gender=="male")
+        Order(customer==$customer, price>1000)
     then
-    <action>…
+    <action>
     End
 
-规则含义：包含两个 pattern，第一个 pattern 有三个约束，分别是：对象类型必须是 Cutomer；同时 Cutomer 的 age 要大于 20 且 gender 要是 male；第二个 pattern 也有三个约束，分别是：对象类型必须是 Order，同时 Order 对应的 Cutomer 必须是前面的那个 Customer 且当前这个 Order 的 price 要大于 1000。在这两个 pattern 没有符号连接，在 Drools 当中在 pattern 中没有连接符号，那么就用 and 来作为默认连接，所以在该规则的 LHS 部分中两个 pattern 只有都满足了才会返回 true。默认情况下，每行可以用“;”来作为结束符（和 Java 的结束一样），当然行尾也可以不加“;”结尾。
+规则含义：包含两个 pattern，第一个 pattern 有三个约束，分别是：
+
+- 对象类型必须是 Customer；
+- 同时 Customer 的 age 要大于 20 
+- 且 gender 要是 male；
+
+第二个 pattern 也有三个约束，分别是：
+
+- 对象类型必须是 Order，
+- 同时 Order 对应的 Customer 必须是前面的那个 Customer 
+- 且当前这个 Order 的 price 要大于 1000。
+
+在这两个 pattern 没有符号连接，在 Drools 当中在 pattern 中没有连接符号，那么就用 `and` 来作为默认连接，所以在该规则的 LHS 部分中两个 pattern 只有都满足了才会返回 true。默认情况下，每行可以用“;”来作为结束符（和 Java 的结束一样），当然行尾也可以不加“;”结尾。
 
 
 
@@ -258,13 +273,13 @@ Drools 中的操作符有很多种类：
 ### 比较操作符
 Drools 中一共提供了 12 种类型的比较操作符，`>, >=, <, <=, ==, != ,contains, not contains, memberof, not memberof, matches, not matches` 。前六个比较常用，不介绍了，现在结束一下后几个。
 
-contains 举例
+contains 举例：
 
     when
-    $order:Order();
-    $customer:Customer(age >20, orders contains $order);
+        $order:Order();
+        $customer:Customer(age >20, orders contains $order);
     then
-    System.out.println($customer.getName());
+        System.out.println($customer.getName());
     End
 
 ### in 操作符
@@ -272,7 +287,7 @@ contains 举例
 - in 操作符是表示值在一个集合内部，集合中的数据需要单独列出
 
     when
-      e : Emp(deptno in (10,20))
+      e : Emp (deptno in (10,20))
 
 等效于
 
@@ -289,7 +304,7 @@ matches 是某个字段和 Java 正则匹配
         System.out.println($customer.getName());
     end
 
-matches 操作符匹配是否匹配 java 正则表达式。
+matches 操作符匹配是否匹配 Java 正则表达式。
 
     .   匹配单一字符
     .*  匹配任何字符，包括空字符串
@@ -326,7 +341,7 @@ matches 操作符匹配是否匹配 java 正则表达式。
 
 Drools 还支持一些高级语法规则，更多可以参考[这里](https://training-course-material.com/training/Drools_Expert_-_mvel_-_LHS_-_advanced)
 
-## 结果部分 {$rhs}
+## 结果部分 {#rhs}
 Right Hand Side，又被称为结果部分，RHS，规则中 then 后面部分就是 RHS，只有在 LHS 所有条件都满足时 RHS 部分才会执行。
 
 RHS 部分是规则真正要做的事情，将条件满足而触发的动作写在该部分中，RHS 中可以使用 LHS 中定义的绑定变量名、设置的全局变量，或者直接编写 Java 代码（需要 import 相应的类）
@@ -340,15 +355,23 @@ RHS 中，提供了对当前 Working Memory 实现快速操作的宏函数和宏
 一旦调用 insert 函数， Drools 会**重新**与所有规则再重新匹配一次，对于没有设置 no-loop 属性为 true 的规则，如果条件满足，不管之前是否执行过都会再执行一次，这个特性不仅存在于 insert 函数，update，retract 宏函数都有该特性，所以某些情况下考虑不周可能造成死循环。
 
 ### update
-对 Fact 进行更新，比如更新 Fact 中的某个字段。
+对 Fact 进行更新，比如更新 Fact 中的某个字段，对应的相关的 Fact 都会更新，然后会通知 Drools 引擎该修改。
 
 ### retract
 用来将 Working Memory 中某个 Fact 对象删除。
 
 ### modify
-对 Fact 对象多个属性修改，修改完成后自动更新到当前 Working Memory 中
+对 Fact 对象多个属性修改，修改完成后自动更新到当前 Working Memory 中。
 
-## 属性部分
+```
+modify ( <fact-expression> ) {
+    <expression>,
+    <expression>,
+    ...
+}
+```
+
+## 属性部分 {#attributes}
 **规则属性**是用来控制规则执行的重要工具，显示地声明了对规则行为的影响。
 
 
@@ -380,9 +403,9 @@ salience 用来设置规则执行的优先级，salience 属性值是一个数�
     rule "rule1"
     salience 1
     when
-    eval(true)
+        eval(true)
     then
-    System.out.println("rule1");
+        System.out.println("rule1");
     End
 
 ### no-loop
@@ -402,9 +425,9 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
     rule "rule1"
     date-effective "25-Sep-2019"
     when
-    eval(true);
+        eval(true);
     then
-    System.out.println("rule1 is execution!");
+        System.out.println("rule1 is execution!");
     End
 
 ### date-expires
@@ -414,10 +437,11 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 设置是否可用
 
 ### dialect
-该属性用来定义规则当中要使用的语言类型，目前 Drools 版本当中支持两种类型的语言：mvel 和 java，默认情况下，如果没有手工设置规则的 dialect，那么使用的 java 语言。
+该属性用来定义规则当中要使用的语言类型，目前 Drools 版本当中支持两种类型的语言：`mvel` 和 `java`，默认情况下，如果没有手工设置规则的 dialect，那么使用的 java 语言。
 
 - type: String
 
+想要了解 `mvel` 和 `java` 这两个方言的区别可以参考：[[Drools 规则中 mvel 和 java 的差别]]
 
 ### duration
 如果设置了该属性，那么规则将在该属性指定的值之后在另外一个线程里触发。该属性对应的值为一个长整型，单位是毫秒。
@@ -433,7 +457,7 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 
 
 ### lock-on-active
-确认规则只执行一次。 将 lock-on-action 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
+确认规则只执行一次。 将 `lock-on-action` 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
 
 - lock-on-active 属性默认值为 false
 - type: Boolean
@@ -441,26 +465,26 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 不管何时 `ruleflow-group` 和 `agenda-group`被激活，只要其中的所有规则将 `lock-on-active` 设置为 true，那么这些规则都不会再被激活。
 
 ### activation-group
-该属性的作用是将若干个规则划分成一个组，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
+该属性的作用是**将若干个规则划分成一个组**，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
 
 - type: String
 
-在一组具有相同 activation-group 属性的规则当中，**只有一个规则会被执行**，其它规则都将不会被执行。当然对于具有相同 activation-group 属性的规则当中究竟哪一个会先执行，则可以用类似 salience 之类属性来实现。
+在一组具有相同 `activation-group` 属性的规则当中，**只有一个规则会被执行**，其它规则都将不会被执行。当然对于具有相同 `activation-group` 属性的规则当中究竟哪一个会先执行，则可以用类似 `salience` 之类属性来实现。
 
     rule "rule1"
     activation-group "test"
     when
-    eval(true)
+        eval(true)
     then
-    System.out.println("rule1 execute");
+        System.out.println("rule1 execute");
     end
 
     rule "rule 2"
     activation-group "test"
     when
-    eval(true)
+        eval(true)
     then
-    System.out.println("rule2 execute");
+        System.out.println("rule2 execute");
     End
 
 rule1 和 rule2 这两个规则因为具体相同名称的 activation-group 属性，所以它们只有一个会被执行。
@@ -560,6 +584,7 @@ java:
 
 - <https://training-course-material.com/training/Category:Drools>
 - <https://docs.jboss.org/drools/release/5.2.0.CR1/drools-expert-docs/html/ch05.html>
+- <https://docs.jboss.org/drools/release/7.35.0.Final/drools-docs/html_single/#_droolslanguagereferencechapter>
 - <http://support.streamx.co/intro/basic-drools-rule-language-syntax-cont>
 - <https://shift8.iteye.com/blog/1915351>
 - <http://holbrook.github.io/2012/12/06/rule_language.html>

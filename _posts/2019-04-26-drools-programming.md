@@ -15,7 +15,7 @@ last_updated:
 
 
 ## ERROR
-如果遇到这样的错误，大部分情况下是 drl 规则文件所在的文件夹，没有被项目识别为 `resources` 文件夹，在 Intellij IDE 中可以使用`设置为资源文件夹`来解决。
+如果遇到这样的错误，大部分情况下是 drl 规则文件所在的文件夹，没有被项目识别为 `resources` 文件夹，在 IntelliJ IDE 中可以使用`设置为资源文件夹`来解决。
 
     Exception in thread "main" java.lang.RuntimeException: Unable to get LastModified for ClasspathResource
         at org.drools.core.io.impl.ClassPathResource.getLastModified(ClassPathResource.java:212)

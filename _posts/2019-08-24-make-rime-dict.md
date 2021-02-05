@@ -29,7 +29,7 @@ last_updated:
 
 	dotnet ImeWlConverterCmd.dll -ct:pinyin -os:linux -i:scel ./input.scel -o:rime ./rime.txt
 
-ImeWlConverterCmd.dll 工具的其他重要参数，对于输出为 rime 的 `-ct:pinyin/wubi/zhengma`，也可以通过 `-os:windows/macos/linux` 来指定操作系统。
+`ImeWlConverterCmd.dll` 工具的其他重要参数，对于输出为 rime 的 `-ct:pinyin/wubi/zhengma`，也可以通过 `-os:windows/macos/linux` 来指定操作系统。
 
 ## 繁简转换
 安装 opencc 繁简转换工具

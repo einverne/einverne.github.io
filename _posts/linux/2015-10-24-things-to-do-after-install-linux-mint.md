@@ -4,7 +4,7 @@ title: "Things to do after install Linux Mint"
 tagline: ""
 description: ""
 category: Linux
-tags: [linux, linux mint, applications, ]
+tags: [linux, linux-mint, applications, ]
 last_updated: 2016-04-04
 ---
 

@@ -9,7 +9,7 @@ last_updated:
 ---
 
 
-在了解复式计帐开源软件 beancounter 的时候偶然的知道了 git-crypt, 因为 beancounter 使用纯文本来记账，非常适合使用 git 来做管理，而个人帐务资产信息又是非常敏感的内容，所以就有了 git-crypt 的使用场景。而在日常的项目管理中，如果遇到代码需要公开，而某些敏感配置，比如数据库连接配置等等，使用相同的原理 git-crypt 也能够有使用场景。
+在了解复式计帐开源软件 Beancounter 的时候偶然的知道了 git-crypt, 因为 beancounter 使用纯文本来记账，非常适合使用 git 来做管理，而个人帐务资产信息又是非常敏感的内容，所以就有了 git-crypt 的使用场景。而在日常的项目管理中，如果遇到代码需要公开，而某些敏感配置，比如数据库连接配置等等，使用相同的原理 git-crypt 也能够有使用场景。
 
 ## installation
 git-crypt 使用 C++ 编写，安装的过程可以自行编译安装：
@@ -20,7 +20,7 @@ git-crypt 使用 C++ 编写，安装的过程可以自行编译安装：
 
 详细参考[官网](https://github.com/AGWA/git-crypt/blob/master/INSTALL.md)，安装后会在 `/usr/local/bin` 目录中，可以使用 `man git-crypt` 来查看说明。
 
-而对于 MacOS, 只需要安装 git-crypt ，gpg 即可：
+而对于 MacOS, 只需要安装 `git-crypt` ，`gpg` 即可：
 
 	brew install gpg
 	brew install git-crypt
@@ -31,8 +31,8 @@ git-crypt 使用 C++ 编写，安装的过程可以自行编译安装：
 
 2. 配置加密工具 gpg
 
-# gpg --gen-key // 生成密钥（公钥和私钥），按照流程提示进行
-# gpg --list-keys // 会列出当前所有的密钥，检查刚才的密钥是否生成成功
+        # gpg --gen-key // 生成密钥（公钥和私钥），按照流程提示进行
+        # gpg --list-keys // 会列出当前所有的密钥，检查刚才的密钥是否生成成功
 
        /Users/jarvin/.gnupg/pubring.kbx
        --------------------------------
@@ -42,22 +42,29 @@ git-crypt 使用 C++ 编写，安装的过程可以自行编译安装：
        sub   rsa2048 2017-11-29 [E] 『有效至：2019-11-29]
 
 3. 配置 git-crypt
-# cd path/to/project
-# git-crypt init   // 类似于 git init，安装 git-crypt 到项目中
-# git-crypt add-gpg-user kelvv    // 添加密钥用户，这里以我的用户 kelvv 为例
-4. 添加配置文件.gitattributes
-# vi .gitattributes
+
+        # cd path/to/project
+        # git-crypt init   // 类似于 git init，安装 git-crypt 到项目中
+        # git-crypt add-gpg-user kelvv    // 添加密钥用户，这里以我的用户 kelvv 为例
+
+1. 添加配置文件.gitattributes
+        
+        # vi .gitattributes
+
 格式为： * filter=git-crypt diff=git-crypt ， 例如我要加密 config 文件夹的三个配置文件 , 则在.gitattributes 文件内加入：
 
 config/production.json filter=git-crypt diff=git-crypt
 config/development.json filter=git-crypt diff=git-crypt
 config/default.json filter=git-crypt diff=git-crypt
+
 5. 上传到 git
-# git rm -r --cached config/     // 清理 config 的 git 缓存
-# git add .
-# git commit -m 'git-crypt'
-# git push
-6. 导出密钥
+
+        # git rm -r --cached config/     // 清理 config 的 git 缓存
+        # git add .
+        # git commit -m 'git-crypt'
+        # git push
+
+1. 导出密钥
 # git-crypt export-key ~/Desktop/git-crypt-key
 导出了密钥以后，就可以分发给有需要的团队内部人员。
 

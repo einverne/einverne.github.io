@@ -44,7 +44,7 @@ Self-Hosted 是一个关于如何自建各种服务，将自己的数字生活�
 - 更新周期：大致为一周
 
 ### This American Life
-DescriptionThis American Life is an American weekly hour-long radio program produced in collaboration with Chicago Public Media and hosted by Ira Glass. It is broadcast on numerous public radio stations in the United States and internationally, and is also available as a free weekly podcast.
+This American Life is an American weekly hour-long radio program produced in collaboration with Chicago Public Media and hosted by Ira Glass. It is broadcast on numerous public radio stations in the United States and internationally, and is also available as a free weekly podcast.
 
 - 主题内容：This American Life
 - 时长： over 1 hour

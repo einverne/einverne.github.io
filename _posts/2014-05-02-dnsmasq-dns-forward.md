@@ -8,7 +8,7 @@ tags: [dns, dnsmasq, domain, network, ]
 last_updated:
 ---
 
-首先，什么是 dnsmasq，从官方页面，或者 WikiPedia 上能知道，dnsmasq 可以提供 DNS Forward, 可以作为 DHCP, 它被设计在低功耗，小内存的路由器，防火墙等小型设备上使用。现在的大部分 Linux 发行版都内置了 dnsmasq . dnsmasq 也常常被用来缓存 DNS 请求，用来加速访问过的地址速度。
+首先，什么是 `dnsmasq`，从官方页面，或者 Wikipedia 上能知道，dnsmasq 可以提供 DNS Forward, 可以作为 DHCP, 它被设计在低功耗，小内存的路由器，防火墙等小型设备上使用。现在的大部分 Linux 发行版都内置了 dnsmasq . dnsmasq 也常常被用来缓存 DNS 请求，用来加速访问过的地址速度。
 
 
 ## DNS

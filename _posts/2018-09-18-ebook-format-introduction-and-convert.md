@@ -4,7 +4,7 @@ title: "电子书常见格式及格式转换"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ebook, epub, mobi, pdf, convert, kindlegen, calibre, python, python-lib, ]
+tags: [ebook, epub, mobi, pdf, convert, kindlegen, calibre, python, python-lib, azw, azw3, ]
 last_updated:
 ---
 
