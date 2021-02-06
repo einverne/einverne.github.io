@@ -36,6 +36,13 @@ rss
 
 - http://www.zimuzu.tv/
 
+
+## 字幕
+
+- <http://www.zimuku.la>
+- <https://subhd.tv>
+
+
 ## PT
 
 ### btschool
