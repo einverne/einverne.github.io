@@ -8,7 +8,7 @@ tags: [github, google, short-url, url, ]
 last_updated:
 ---
 
-逛博客看到别人在[讨论](https://www.zhihu.com/question/29270034) 短 URL 的设计实现，然后偶然间发现了 GitHub 曾经推出 [^1] 过的短域名服务 [Git.io](https://git.io)
+逛博客看到别人在[讨论](https://www.zhihu.com/question/29270034) [[短 URL 的设计实现]]，然后偶然间发现了 GitHub 曾经推出 [^1] 过的短域名服务 [Git.io](https://git.io)
 
 创建短域名
 
@@ -101,7 +101,6 @@ PHP 版本 <https://github.com/takashiki/Ourls>
         timestamp,
         ip,
         redirectMethod
-    )
-    ;
+    );
 
 

@@ -63,6 +63,40 @@ Syncthing 服务启动后端口是 8384.
 ## Syncthing File Versioning
 Syncthing 支持文件的版本控制，当从 cluster 同步，删除或者同步一个新版本之后备份之前的老版本。
 
+## Syncthing 使用过程中的一些问题
+
+### 发送和接收模式
+Syncthing 支持三种工作模式：
+
+- 仅发送
+- 仅接收
+- 发送和接收
+
+比较容易理解，但是假如 A 设备设置仅发送，B 设备设置发送和接收，A 是不会同步 B 的更改的！
+
+### .stignore
+忽略列表，和 `gitignore` 类似。每一台设备上的 `.stignore` 都是分别设置的，不会进行同步。
+
+如果A的.stignore忽略了test这个模式，而B没有这样做，实际上会发生这样的事情：
+
+- A不会扫描和通知B（广播）关于test的变动；
+- B对关于test的变动持开放的姿态，但不会收到任何关于A上面test的变动信息（可能接收到其它同步设备的）；
+- B会扫描test以及推送其关于test变动的信息，但会被A忽略，A也会忽略其它同步设备关于test的信息；
+- B会接收来自其它同步设备推送的关于test的信息；
+
+### 同步状态
+web页显示的最后更改或者Last Change是指根据【他方的变动】【对自己做修改】的情况和时间。
+
+web页显示的最后扫描或者Last Scan是指对【己方的目录】最后扫描的时间。
+
+web页显示的Out Of Sync或者未同步是指尚未接他方推送的变动，如果已收到对方关于变动的通知，但因为下载问题或者.stignore的设定而未能下载这些变动，就会出现这个情况。
+
+Override Changes
+Override Changes或者撤销变动，中文译法有些不准确。出现这个提示的原因通常是设为仅发送的一方（A，master）认为自己的资料是最新的，认为对方（B）推送的变动是应该被撤销的，即使B关于特定资料的修订时间要晚于本地；点这个按钮会强迫B对方撤销自己的变动，以其收到的A的版本为准更改资料。
+
+
+
+
 ## reference
 
 - <https://docs.syncthing.net/intro/getting-started.html>
