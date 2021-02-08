@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Redis 常用命令"
+aliases: "Redis 常用命令"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -32,6 +33,40 @@ Redis 是典型的 KV 数据库，通常所说的 Redis 数据结构指的是 Va
 如果本地没有安装 Redis，可以通过在线模拟尝试 [Try Redis](https://try.redis.io/)。
 
 ## 基础命令
+
+### 连接操作命令
+
+关闭连接
+
+    quit
+    
+简单密码认证
+
+    auth
+    
+帮助
+
+    help
+    
+### 持久化
+
+将数据同步到磁盘
+
+    save
+    
+将数据异步保存到磁盘
+
+    bgsave
+    
+返回上次成功将数据保存到磁盘的 Unix 时间戳
+
+    lastsave
+    
+将数据同步保存到磁盘，然后关闭服务
+
+    shutdown
+    
+
 
 获取符合规则的键名列表
 
