@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "HBase 命令行工具"
+aliases: "HBase 命令行工具"
 tagline: ""
 description: "HBase 命令行工具"
 category: 学习笔记
