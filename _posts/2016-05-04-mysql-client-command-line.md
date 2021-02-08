@@ -8,7 +8,7 @@ tags: [mysql, cli, mysql-cli, linux, ]
 last_updated:
 ---
 
-本文会列举一些 MySQL 常用的客户端命令，已经一些使用经验。mysql 客户端命令会知道 SQL 语句以分号 `;`，或者 `\g` 或者 `\G` 结尾。
+本文会列举一些 MySQL 常用的客户端命令，已经一些使用经验。MySQL 客户端命令会知道 SQL 语句以分号 `;`，或者 `\g` 或者 `\G` 结尾。
 
 ## 使用 \G
 通常 mysql client 都是以表格的形式显示结果，通常情况排版会有一些问题，这时可以使用 `\G`，比如说

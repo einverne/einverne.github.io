@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "如何根据自身情况选购硬盘"
+aliases: "如何根据自身情况选购硬盘"
 tagline: ""
 description: ""
 category: 经验总结
