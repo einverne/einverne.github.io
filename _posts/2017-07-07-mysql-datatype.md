@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MySQL 数据类型"
+aliases: "MySQL 数据类型"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,7 +9,7 @@ tags: [linux, mysql, sql,]
 last_updated:
 ---
 
-了解并熟悉 MySQL 中的数据类型，对建表和数据库优化都非常重要。 MySQL 实现了 SQL 定义的类型，也响应的增加乐意 tiny, small, big 的类型。 MySQL 的数据类型主要分成三个部分：
+了解并熟悉 MySQL 中的数据类型，对建表和数据库优化都非常重要。 MySQL 实现了 SQL 定义的类型，也相应的增加了 tiny, small, big 的类型。 MySQL 的数据类型主要分成三个部分：
 
 - Numeric Type 数值型
 - Date and Time Type 日期和时间
@@ -18,15 +19,13 @@ last_updated:
 
 ## 整型
 
-
-
-**MySQL 数据类型**|**大小**|**范围（有符号）**
-----------|------|------
-TINYINT(m) |1 字节|范围 (-128~127)
-SMALLINT(m)|2 个字节 |范围 (-32768~32767)
-MEDIUMINT(m)|3 个字节|范围 (-8388608~8388607)
-INT(m)|4 个字节|范围 2^31-1(-2147483648~2147483647)
-BIGINT(m)|8 个字节 |范围 2^63-1(+-9.22*10 的 18 次方）
+| **MySQL 数据类型** | **大小** | **范围（有符号）**                  |
+| ------------------ | -------- | ----------------------------------- |
+| TINYINT(m)         | 1 字节   | 范围 (-128~127)                     |
+| SMALLINT(m)        | 2 个字节 | 范围 (-32768~32767)                 |
+| MEDIUMINT(m)       | 3 个字节 | 范围 (-8388608~8388607)             |
+| INT(m)             | 4 个字节 | 范围 2^31-1(-2147483648~2147483647) |
+| BIGINT(m)          | 8 个字节 | 范围 2^63-1(+-9.22*10 的 18 次方）  |
 
 取值范围如果加了 unsigned （无符号），则最大值翻倍，如 TINYINT unsigned 的取值范围为 (0~256)。
 INT(m) 里的 m 是表示 SELECT 查询结果集中的显示宽度，并不影响实际的取值范围，没有影响到显示的宽度，不知道这个 m 有什么用。
@@ -57,40 +56,45 @@ text          | 0-65535 字节	|可变长度，最多 65535 个字符
 mediumtext    | 0-16777 215 字节	|可变长度，最多 2 的 24 次方 -1 个字符
 longtext      | 0-4294967295 字节|可变长度，最多 2 的 32 次方 -1 个字符
 
-char 和 varchar：
+char 和 varchar 比较：
 
 1. char(n) 若存入字符数小于 n，则以**空格补于其后**，查询之时再将空格去掉。所以 char 类型存储的字符串末尾不能有空格，varchar 不限于此。
-2. char(n) 固定长度，char(4) 不管是存入几个字符，都将占用 4 个字节，varchar 是存入的实际字符数 +1 个字节（`n<=255`）或 2 个字节 (`n>255`)，所以 varchar(4), 存入 3 个字符将占用 4 个字节。
+2. char(n) **固定长度**，char(4) 不管是存入几个字符，都将占用 4 个字节，varchar 是存入的实际字符数 +1 个字节（`n<=255`）或 2 个字节 (`n>255`)，所以 varchar(4), 存入 3 个字符将占用 4 个字节。
 3. char 类型的字符串检索速度要比 varchar 类型的快。
 
-varchar 和 text：
+varchar 和 text 比较：
 
 1. varchar 可指定 n，text 不能指定，内部存储 varchar 是存入的实际字符数 +1 个字节（`n<=255`）或 2 个字节 (`n>255`)，text 是实际字符数 +2 个字节。
 2. text 类型不能有默认值。
 3. varchar 可直接创建索引，text 创建索引要指定前多少个字符。varchar 查询速度快于 text, 在都创建索引的情况下，text 的索引似乎不起作用。
 
 
-char（n）和 varchar（n）中括号中 n 代表字符的个数，并不代表字节个数，所以当使用了中文的时候 (UTF8) 意味着可以插入 m 个中文，但是实际会占用 `m*3 `个字节。同时 char 和 varchar 最大的区别就在于 char 不管实际 value 都会占用 n 个字符的空间，而 varchar 只会占用实际字符应该占用的空间 +1，并且实际空间 `+1<=n`
+char(n) 和 varchar (n)中括号中 n 代表**字符的个数**，并不代表字节个数，所以当使用中文的时候 (UTF8) 意味着可以插入 m 个中文，但是实际会占用 `m*3`个字节。
+
+同时 char 和 varchar 最大的区别就在于 char 不管实际 value 都会占用 n 个字符的空间，而 varchar 只会占用实际字符应该占用的空间 +1，并且实际空间 `+1<=n`
 
 - 超过 char 和 varchar 的 n 设置后，字符串会被截断
 - char 的上限为 255 字节，varchar 的上限 65535 字节，text 的上限为 65535
 - char 在存储的时候会截断尾部的空格，varchar 和 text 不会
 - varchar 会使用 1-3 个字节来存储长度，text 不会
 
-Value     | CHAR(4)     | Storage Required | VARCHAR(4)    | Storage Required
-----------|-------------|------------------|---------------|---------------------
-''          | '    '    | 4 bytes           | ''            | 1 byte
-'ab'        | 'ab  '    | 4 bytes           | 'ab'          | 3 bytes
-'abcd'      | 'abcd'    | 4 bytes           | 'abcd'        | 5 bytes
-'abcdefg'   | 'abcd'    | 4 bytes           | 'abcd'        | 5 bytes
+| Value     | CHAR(4) | Storage Required | VARCHAR(4) | Storage Required |
+| --------- | ------- | ---------------- | ---------- | ---------------- |
+| ''        | '    '  | 4 bytes          | ''         | 1 byte           |
+| 'ab'      | 'ab  '  | 4 bytes          | 'ab'       | 3 bytes          |
+| 'abcd'    | 'abcd'  | 4 bytes          | 'abcd'     | 5 bytes          |
+| 'abcdefg' | 'abcd'  | 4 bytes          | 'abcd'     | 5 bytes          |
 
 在使用 MySQL 存储字符串时经常会疑惑选择哪一种数据类型。
 
-首先从空间方面，当 varchar 大于某些值时，会自动转换我 text，大概为
 
-- 大于 varchar（255）变为 tinytext
-- 大于 varchar（500）变为 text
-- 大于 varchar（20000）变为 mediumtext
+### 大字符串的选择逻辑
+
+首先从空间方面，当 varchar 大于某些值时，会自动转换成 text，大概为
+
+- 大于 varchar（255）变为 `tinytext`
+- 大于 varchar（500）变为 `text`
+- 大于 varchar（20000）变为 `mediumtext`
 
 所以对于大内容 varchar 和 text 并没有太多区别。
 
