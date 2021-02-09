@@ -393,7 +393,7 @@ modify ( <fact-expression> ) {
 
 ### salience
 
-salience 用来设置规则执行的优先级，salience 属性值是一个数字，数字越大优先级越高，可以是负值。`salience` 表示规则的优先级，值越大在激活队列中优先级越高。
+salience 用来设置规则执行的**优先级**，salience 属性值是一个数字，数字越大优先级越高，可以是负值。`salience` 表示规则的优先级，值越大在激活队列中优先级越高。
 
 - 默认情况下，规则的 salience 是 0
 - type: Integer
@@ -410,7 +410,9 @@ salience 用来设置规则执行的优先级，salience 属性值是一个数�
 
 ### no-loop
 
-no-loop 属性的作用是用来控制已经执行过的规则在条件再次满足时是否再次执行。默认情况下规则的 no-loop 属性的值为 false，如果 no-loop 属性值为 true，那么就表示该规则只会被引擎检查一次
+no-loop 属性的作用是用来控制已经执行过的规则在条件再次满足时是否再次执行。默认情况下规则的 no-loop 属性的值为 false，如果 no-loop 属性值为 true，那么就表示该规则只会被引擎检查一次。
+
+当规则的 RHS 改变了 LHS 条件会导致该规则重新匹配执行，可以合理地使用来避免 Drools 规则进入死循环。
 
 - 默认值：false
 - type: Boolean
@@ -459,10 +461,14 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 ### lock-on-active
 确认规则只执行一次。 将 `lock-on-action` 属性的值设置为 true，可能避免因某些 Fact 对象被修改而使已经执行过的规则再次被激活执行。lock-on-active 是 no-loop 的增强版属性。
 
+一个组里面的多条规则都可以设置这个标志，当使用了这个标志的规则中的一条被成功触发后，会阻止其他规则的触发。
+
 - lock-on-active 属性默认值为 false
 - type: Boolean
 
 不管何时 `ruleflow-group` 和 `agenda-group`被激活，只要其中的所有规则将 `lock-on-active` 设置为 true，那么这些规则都不会再被激活。
+
+宏函数 `insert`, `update`, `retract` 都可以对 fact 进行操作，这些动作都可以导致 rule 重新匹配。
 
 ### activation-group
 该属性的作用是**将若干个规则划分成一个组**，用一个字符串来给这个组命名，这样在执行的时候，具有相同 activation-group 属性的规则中只要有一个会被执行，其它的规则都将不再执行。
@@ -519,6 +525,15 @@ java 代码
     KieSession ks = getSession();
     // 设置 agenda-group 的 auto-focus 使其执行
     ks.getAgenda().getAgendaGroup("group1").setFocus();
+
+当这个 group 被 `setFocus` 的时候，会将整个组压入栈中，执行的时候再取出来。
+
+在 Drool 的规则 RHS 中还可以
+
+```
+kcontext.getKieRuntime().getAgenda().getAgendaGroup("Route-AgeRange").setFocus();
+```
+
 
 ### auto-focus
 在已设置了 agenda-group 的规则上设置该规则是否可以自动独取 Focus，如果该属性设置为 true，那么在引擎执行时，就不需要显示的为某个 Agenda Group 设置 Focus，否则需要。

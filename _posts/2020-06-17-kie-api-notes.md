@@ -44,6 +44,46 @@ KieSession 是和工作流引擎交互的最常用的方式，KieSession 允许�
 
 每一个 KieBase 都可以有一个或者多个 KieSessions.
 
+## 有状态 Session 和无状态 Session 区别
+Drools 的 Session 分为有状态和无状态。
+
+### StatefulKnowledgeSession
+
+- 与[[规则引擎]]持久交互
+- 推理过程多次触发同一个数据集
+- 使用完后，要调用 dispose() 方法
+- 有状态会话可以随时添加 Fact
+
+Stateful 可以通过 `insert` 方法插入 Fact，并取得 FactHandle，通过这个 Handle 可以多次更新 Fact 从而触发规则
+
+```
+        FactHandle handle = statefulKieSession.insert(factObject);
+        factObject.setBalance(100.0);
+        statefulKieSession.update(handle,factObject);
+```
+
+### StatelessKnowledgeSession
+
+- 对 StatefulKnowledgeSession 做了包装
+- 不能重复插入 Fact
+- 执行规则使用 execute() 方法
+- insert, fireAllRules 和 dispose 方法
+
+Stateless 类似一次函数调用，通过 `execute` 方法传入 `Fact`，匹配规则
+
+```
+session.execute(Arrays.asList(new Object[]{routeResult,featureManager.getFreeFeatures(),accessManager,this}));
+// 又或者，执行完获得结果：
+List<Command> cmds = new ArrayList<>();
+cmds.add(CommandFactory.newInsert(routeResult,"routeResult"));        cmds.add(CommandFactory.newInsert(featureManager.getFreeFeatures(),"freeFeature"));
+cmds.add(CommandFactory.newInsert(accessManager,"accessManager"));
+cmds.add(CommandFactory.newInsert(this,"router"));
+ExecutionResults results = statelessKieSession.execute( CommandFactory.newBatchExecution( cmds ) );
+```
+  
+
+
+
 ## KieBuilder
 
 KieBuilder is a builder for the resources contained in a KieModule
