@@ -101,9 +101,9 @@ Python 3
     <class 'bytes'>
     # this is a byte string
 
-总而言之，Python 2 中字面 str 以 bytes 存储，前缀 u'hello' 表示 unicode 对象，以 unicode 存储。
+总而言之，Python 2 中字面 str 以 bytes 存储，前缀 u'hello' 表示 `unicode` 对象，以 `unicode` 存储。
 
-而 Python 3，字面 str 以 Unicode 存储，前缀 b'hello' 表示获取 bytes 对象，或者 str.encode() 来获取 bytes 对象。
+而 Python 3，字面 str 以 Unicode 存储，前缀 b'hello' 表示获取 bytes 对象，或者 `str.encode()` 来获取 bytes 对象。
 
 Python 3.x 中有三种 string 对象类型，一种是文本类型，另外两种是二进制数据
 
