@@ -20,6 +20,10 @@ rss
 
 - http://eztv.ag/ezrss.xml
 
+### btbtt
+
+- https://www.btbtt.us/
+
 ### unblock
 
 - https://unblockit.ca/
