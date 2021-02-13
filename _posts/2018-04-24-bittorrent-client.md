@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "BitTorrent 客户端简单比较"
+aliases: "BitTorrent 客户端简单比较"
 tagline: ""
 description: ""
 category: 经验总结
@@ -18,13 +19,13 @@ last_updated:
 特性：
 
 - 占用资源少
-- 跨平台支持
+- 跨平台支持，三大桌面端（Windows/Linux/Mac）、GTK+、QT版本，还有 Daemon 版本等等
 - Daemon 守护进程方便在服务器，嵌入式系统，Headless（无 GUI) 运行
 - 可以通过 Web 或者终端来进行控制
 - Local peer discovery
 - Full encryption, DHT, µTP, PEX and Magnet Link support [^1]
 
-Tranmission 在日常中使用完全没有问题，不过唯一的不足就是 Transmission 是无法制作 torrent 的。
+Transmission 在日常中使用完全没有问题，不过唯一的不足就是 Transmission 是无法制作 torrent 的。
 
 [^1]: <https://transmissionbt.com/>
 
