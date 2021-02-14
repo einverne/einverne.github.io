@@ -80,7 +80,7 @@ rTorrent 是一个用 C++ 编写的纯文本 BitTorrent 客户端。rTorrent 适
 [ruTorrent](https://github.com/Novik/ruTorrent) 是一款 PHP 写的 rTorrent 的 Web UI
 
 ### Flood
-Flood 是 [rTorrent](https://github.com/rakshasa/rtorrent) 的一个 UI 界面，用 Node.js 实现。
+Flood 是 [rTorrent](https://github.com/rakshasa/rtorrent) 的一个 UI 界面，用 [[Node.js]] 实现。
 
 - <https://github.com/Flood-UI/flood>
 

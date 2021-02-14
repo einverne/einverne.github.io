@@ -8,7 +8,7 @@ tags: [docker, google, cloud, images]
 last_updated:
 ---
 
-有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。Docker Hub 为用户提供无限数量的公开镜像托管服务，但是仅提供一个私有镜像托管。Docker Hub 上镜像分为两类，一类为官方镜像，ubuntu，redis 等等由权威三方开发和维护通过 Docker 官方认证，另一类就是普通用户镜像。
+有很多网站可以托管 Docker 镜像， Docker 官方站点 hub.docker.com 速度在国内访问不是很快，不过幸好国内有公司做了 hub.docker.com 的镜像，通过 CDN 优化了下载。Docker Hub 为用户提供无限数量的公开镜像托管服务，但是仅提供一个私有镜像托管。Docker Hub 上镜像分为两类，一类为官方镜像，Ubuntu，redis 等等由权威三方开发和维护通过 Docker 官方认证，另一类就是普通用户镜像。
 
 ## 使用 registry mirrors
 手动修改 Docker 配置 `/etc/docker/daemon.json` 文件增加 docker registry 镜像：

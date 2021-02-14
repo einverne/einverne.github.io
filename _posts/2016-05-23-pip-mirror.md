@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pypi 镜像记录"
+title: "Pypi 国内镜像记录"
 tagline: ""
 description: ""
 category: 经验总结
