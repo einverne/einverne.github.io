@@ -4,7 +4,7 @@ title: "后知后觉之 iOS 内置字典"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ios, apple, dictionary, goldendict, ]
+tags: [ios, apple, dictionary, goldendict, english, english-dictionary ]
 last_updated:
 ---
 

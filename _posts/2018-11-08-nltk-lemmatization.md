@@ -4,7 +4,7 @@ title: "使用 nltk 词形还原"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [nltk, lemmatization, stemming, nlp, goldendict, dictionary, ]
+tags: [nltk, lemmatization, stemming, nlp, goldendict, dictionary, mdx-server, mdx, english-dictionary, morphology, english ]
 last_updated:
 ---
 
