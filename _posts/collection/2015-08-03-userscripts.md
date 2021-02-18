@@ -3,11 +3,11 @@ layout: post
 title: "我使用的Userscript"
 description: "我使用的Userscript"
 category: 整理合集
-tags: [userscript, tampermonkey]
+tags: [userscript, tampermonkey, greasemonkey, script, greasyfork, ]
 ---
 
 
-在使用 Userscript 之前针对使用的浏览器安装如下的插件
+在使用 [[Userscript]] 之前针对使用的浏览器安装如下的插件
 
 ![Userscripts](https://lh3.googleusercontent.com/-X8VcfS3BJ_A/VcC4uFGFI9I/AAAAAAAAyk8/ui5CcL9eU2g/s640-Ic42/chrome%252520firefox%252520userscripts.png)
 

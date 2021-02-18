@@ -12,7 +12,7 @@ last_updated:
 
 然而时间到了 2019 年，网络安全问题和个人隐私的问题日渐严重，在这样一个时间节点，我发现了 Bitwarden 这样一款软件，更让我惊讶的是从服务端到客户端全开源，并且全平台支持，甚至还支持命令行登录，这一点连 LastPass 都不曾做过。但这个应用服务如今还依然不流行，大多数的潜在用户都被 1Password 或者 LastPass 这样的服务提供方吸收了。基于这样的理由，虽然目前可能自动填充的功能还不及 LastPass, 但 Bitwarden 还是非常值得一试。
 
--<https://bitwarden.com/>
+- <https://bitwarden.com/>
 - <https://github.com/bitwarden>
 
 简单的看了一下客户端基本用 C# 和 TypeScript 写成，暂时还无法看代码了。感兴趣可以自行到 GitHub 审查代码。

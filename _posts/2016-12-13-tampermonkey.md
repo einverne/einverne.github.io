@@ -9,9 +9,9 @@ last_updated:
 ---
 
 
-根据 Tampermonkey 在<a href="https://code.google.com/p/tampermonkey/" target="_blank">Google Code</a>页面的介绍，Tampermonkey 是一款在 Google Chrome 和 Chromuim 浏览器中提供“<a href="http://zh.wikipedia.org/wiki/Greasemonkey" target="_blank">油猴子脚本</a>”支持的工具。Tampermonkey 是 Google Chrome 中<a href="http://tampermonkey.googlecode.com/svn/trunk/README" target="_blank">最流行</a>的一款脚本管理插件。它的 API 完全兼容“油猴子脚本”，它还加入更多的 Chrome 本身不支持的用户脚本功能，比如 GM_registerMenuCommand 和 GM_xmlhttpRequest 这两个函数。<br />
+根据 Tampermonkey 在<a href="https://code.google.com/p/tampermonkey/" target="_blank">Google Code</a>页面的介绍，Tampermonkey 是一款在 Google Chrome 和 Chromuim 浏览器中提供“<a href="http://zh.wikipedia.org/wiki/Greasemonkey" target="_blank">油猴子脚本</a>”支持的工具。Tampermonkey 是 Google Chrome 中<a href="http://tampermonkey.googlecode.com/svn/trunk/README" target="_blank">最流行</a>的一款脚本管理插件。它的 API 完全兼容“油猴子脚本”，它还加入更多的 Chrome 本身不支持的用户脚本功能，比如 `GM_registerMenuCommand` 和 `GM_xmlhttpRequest` 这两个函数。
 
-安装地址： [Chrome Web Store](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)<br />
+安装地址： [Chrome Web Store](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 <blockquote class="tr_bq">
 Tampermonkey is a tool that provides Greasemonkey script support for Google Chrome and Chromium Browser. It's API is fully compatible to Greasemonkey, including GM_registerMenuCommand, GM_xmlhttpRequest with cross domain support and access to the unsafeWindow object.</blockquote>
