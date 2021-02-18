@@ -104,4 +104,4 @@ generatorConfiguration 配置，文档地址[这里](http://www.mybatis.org/gene
 
 ## reference
 
-- [[MyBatis 知识点]]
+- [[MyBatis]]
