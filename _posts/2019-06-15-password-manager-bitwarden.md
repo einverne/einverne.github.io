@@ -27,3 +27,20 @@ Bitwarden 的[官方网站](https://help.bitwarden.com/article/install-on-premis
 Bitwarden 自己的[服务端](https://github.com/bitwarden/server) 依赖比较重，还需要 MySQL，所以我选择了 [Rust 实现的版本](https://github.com/dani-garcia/bitwarden_rs)
 
 官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)
+
+
+## Bitwarden 结合 Alfred
+[[Alfred]] 是 macOS 上一个启动器，Bitwarden 自身支持 [cli](https://bitwarden.com/help/article/cli/)，两者结合起来就非常方便使用了。
+
+推荐使用：
+
+- <https://github.com/blacs30/bitwarden-alfred-workflow>
+
+主要的几个命令：
+
+- `.bwauth` 授权
+- `.bwconfig` 配置
+- `.bwf` 搜索文件夹
+- `.bw search_keyword` 搜索关键字
+
+
