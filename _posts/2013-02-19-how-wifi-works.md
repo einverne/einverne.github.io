@@ -13,9 +13,9 @@ last_updated:
 - WiFi 的全称是 Wireless Fidelity，目前我们见到的 Wifi 其实是隶属于 Wifi 联盟的商标，表示的是建立于 IEEE 802.11 标准的无线局域网技术
 - 而 WLAN 是无线局域网络 (Wireless Local Area Networks) 的缩写， Wifi 是 WLAN 的一种实现
 
-## Wifi 的技术优势
+## WiFi 的技术优势
 
-- 无线电波相较于蓝牙覆盖面积广，Wifi 的理论半径可以达到 100 米
+- 无线电波相较于蓝牙覆盖面积广，WiFi 的理论半径可以达到 100 米
 - 商家接入成本低
 
 ## 无线组网的节点

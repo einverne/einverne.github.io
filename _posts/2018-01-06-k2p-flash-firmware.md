@@ -4,7 +4,7 @@ title: "斐讯 k2p 刷机"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [k2p, 路由器, router, openwrt, linux, phicomm]
+tags: [k2p, 路由器 , router, openwrt, linux, phicomm]
 last_updated: 
 ---
 
@@ -15,7 +15,7 @@ last_updated:
 
 因为新版本固件 V22.7.8.2版本及之后 需要使用 [特殊工具](http://www.right.com.cn/forum/thread-261028-1-3.html) 才能开启 telnet ，所以先要使用这个工具来开启 telnet。然后再使用 [a大](http://www.right.com.cn/forum/thread-221578-1-1.html) 的脚本安装 breed。
 
-Opboot及Breed进入方法：
+Opboot 及 Breed进入方法：
 
 如果你当前是官改或其他第三方固件，请在opboot或breed输入：
 

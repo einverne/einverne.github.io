@@ -4,7 +4,7 @@ title: "小米路由器 3G 开启 SSH 安装 MT 工具箱"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [router, xiaomi, ssh, ]
+tags: [router, xiaomi, ssh, frp, shadowsocks, ]
 last_updated:
 ---
 
@@ -14,7 +14,7 @@ last_updated:
 [下载](http://www1.miwifi.com/miwifi_download.html) 开发版，在后台点击上传安装开发版的 bin，然后等待重启，完成开发版安装。
 
 ## 小米路由器开始 SSH
-小米帐号绑定小米路由器，设置路由器可正常上网，并使用手机版小米 wifi 绑定路由器，然后在绑定小米账号的前提下，进入 <https://d.miwifi.com/rom/ssh> 这个网站，然后找到 SSH 登录的 root 密码，之后会用到。
+小米帐号绑定小米路由器，设置路由器可正常上网，并使用手机版小米 WiFi 绑定路由器，然后在绑定小米账号的前提下，进入 <https://d.miwifi.com/rom/ssh> 这个网站，然后找到 SSH 登录的 root 密码，之后会用到。
 
 > 工具包使用方法：小米路由器需升级到开发版 0.5.28 及以上，小米路由器 mini 需升级到开发版 0.3.84 及以上，小米路由器 3 即将支持。注意：稳定版不支持。
 > 请将下载的工具包 bin 文件复制到 U 盘（FAT/FAT32 格式）的根目录下，保证文件名为 miwifi_ssh.bin；
