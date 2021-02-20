@@ -8,7 +8,7 @@ tags: [maven, java, build, management, build-tool]
 last_updated:
 ---
 
-Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，而是将所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 src/main/java/ 目录下的主源码，testCompile 目标用来编译位于 src/test/java/ 目录下的测试源码。
+Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，而是将所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 `src/main/java/` 目录下的主源码，`testCompile` 目标用来编译位于 `src/test/java`/ 目录下的测试源码。
 
 ## maven-source-plugin
 maven-source-plugin 打包插件，会根据当前的源码文件创建 jar 包。默认情况下 jar 文件会在项目 target 目录下。
@@ -33,7 +33,7 @@ maven-source-plugin 打包插件，会根据当前的源码文件创建 jar 包�
         │   └── test-annotations
         └── test-classes
 
-`src/main/java` 和 `src/test/java` 中的所有 `*.java`  文件都会在 compile 和 test-compile 阶段被编译，结果会分别放到 `target/classes` 和 `target/test-classes` 目录中。
+`src/main/java` 和 `src/test/java` 中的所有 `*.java` 文件都会在 Maven 的 compile 和 test-compile 阶段被编译，结果会分别放到 `target/classes` 和 `target/test-classes` 目录中。
 
 `src/main/resources` 和 `src/test/resources` 这两个目录的文件也会被复制到 `target/classes` 和 `target/test-classes` 目录中。打包插件默认会将 `target/classes` 中的所有内容打包到 jar 包或者 war 包中。
 
@@ -73,7 +73,7 @@ pom 文件定义，默认的 source 和 target 都是 1.5。
     </project>
 
 ## maven-dependency-plugin
-maven-dependency-plugin 是处理依赖相关的插件，该插件有很多 goal，常用的比如 `mvn dependency:tree`， `mvn dependency:analyze` 等等。
+maven-dependency-plugin 是处理依赖相关的插件，该插件有很多 goal，常用的比如 `mvn dependency:tree`， `mvn dependency:analyze` 等等。该插件方便用来排查依赖相关的问题。
 
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -128,7 +128,7 @@ pom 文件中定义，需要 Maven 2.2.1 or 3.x, and JDK 1.6 or higher
     mvn -Dtest=TestCircle test   # test 表示当前测试方法所在的测试类，不需要扩展名
 
 ## maven-enforcer-plugin
-在一个稍大一点的组织或团队中，你无法保证所有成员都熟悉 Maven，那他们做一些比较愚蠢的事情就会变得很正常，例如给项目引入了外部的 SNAPSHOT 依赖而导致构建不稳定，使用了一个与大家不一致的 Maven 版本而经常抱怨构建出现诡异问题。maven-enforcer-plugin 能够帮助你避免之类问题，它允许你创建一系列规则强制大家遵守，包括设定 Java 版本、设定 Maven 版本、禁止某些依赖、禁止 SNAPSHOT 依赖。只要在一个父 POM 配置规则，然后让大家继承，当规则遭到破坏的时候，Maven 就会报错。除了标准的规则之外，你还可以扩展该插件，编写自己的规则。maven-enforcer-plugin 的 enforce 目标负责检查规则，它默认绑定到生命周期的 validate 阶段。
+在一个稍大一点的组织或团队中，你无法保证所有成员都熟悉 Maven，那他们做一些比较愚蠢的事情就会变得很正常，例如给项目引入了外部的 SNAPSHOT 依赖而导致构建不稳定，使用了一个与大家不一致的 Maven 版本而经常抱怨构建出现诡异问题。maven-enforcer-plugin 能够帮助你避免之类问题，它允许你创建一系列规则强制所有使用者遵守，包括设定 Java 版本、设定 Maven 版本、禁止某些有漏洞的依赖、禁止 SNAPSHOT 依赖等等。只需要在一个父 POM 配置规则，然后各项目继承，当规则遭到破坏的时候，Maven 就会无法编译并抛出相应的错误。除了标准的规则之外，你还可以扩展该插件，编写自己的规则。`maven-enforcer-plugin` 的 enforce 目标负责检查规则，它默认绑定到[[Maven 生命周期]]的 validate 阶段。
 
 使用如下定义
 
@@ -266,12 +266,12 @@ enforcer 插件自带了很多[规则](http://maven.apache.org/enforcer/enforcer
 一般来说引入 maven release plugin 需要如下几步：
 
 - 在项目的 pom 文件中增加，无需添加 mvn-release-plugin 的依赖，因为它默认被包含于 maven 的 effective pom 中；
-- 检查自己的 maven 的 settings.xml 是否包含了私服的用户名密码；
+- 检查自己的 maven 的 `settings.xml` 是否包含了私服的用户名密码；
 - 确保自己本地代码是在主分支，并且是最新的副本；
 - 执行 `mvn release:prepare`, 这时插件会扫描项目依赖查看是否有 SNAPSHOT, 是否存在未提交的文件，确定当前 release 的版本号和下一个迭代的版本号，插件会运行单元测试，并向 git 中提交两次 commit, 一次是 release 版本，一次是下一个迭代的版本。并将当前 release 版本打一个 tag 并提交到 git 上面去；
 - 执行 `mvn release:perform`, 插件会执行 `mvn deploy` 操作，并 clean 掉生成的缓存文件。
 
-pom 设置
+pom 设置：
 
     <distributionManagement>
         <repository>

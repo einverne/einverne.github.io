@@ -23,6 +23,12 @@ last_updated:
 
 所以一一解决这些问题即可。
 
+## How do bots works?
+Telegram Bots 是一些特殊的账号，不需要设定电话号码。用户可以通过如下方式和 bot 交互：
+
+- 通过直接或将 bot 添加到群组并[发送信息或命令给 bot](https://core.telegram.org/bots#commands)
+- 直接在输入框中 `@botname` 并在后面输入请求，这样可以从 [inline bots](https://core.telegram.org/bots/inline) 直接发送内容到任何聊天，群组或频道
+
 ## Telegram Bot API
 这一部分其实也没有什么要多说的，botFather 会创建好 bot，然后我用 Python 的 python-telegram-api。基本上也都是非常成熟的文档。
 

@@ -9,7 +9,7 @@ last_updated:
 ---
 
 
-maven shade plugin 插件允许把工程使用到的依赖打包到一个 uber-jar（单一 jar 包） 中并隐藏（重命名）起来。
+maven shade plugin 插件允许把工程使用到的依赖打包到一个 `uber-jar`（单一 jar 包） 中并隐藏（重命名）起来。
 
 Shade Plugin 绑定到 `package` 生命周期。
 
