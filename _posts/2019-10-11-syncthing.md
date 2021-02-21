@@ -68,7 +68,7 @@ Syncthing 支持文件的版本控制，当从 cluster 同步，删除或者同�
 ### 发送和接收模式 {#folder-types}
 Syncthing 支持三种工作模式：[^folder]
 
-[^folder]
+[^folder]: <https://docs.syncthing.net/users/foldertypes.html>
 
 - 发送和接收，Send & Receive Folder，这是文件夹的默认模式，对文件夹的修改会发送，其他设备的修改也会同步回来
 - 仅发送 Send Only，这种模式表示仅仅将当前设备上的文件夹的改动发送到其他设备，用来隐式地表示其他同步设备上的文件不会被修改，或者其他设备上的修改可以被忽略。这种模式非常适合，将当前设备设定为工作设备，然后设定一台设备作为此设备的备份。
