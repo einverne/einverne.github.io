@@ -443,7 +443,7 @@ date-effective 可接受的日期格式为“dd-MMM-yyyy”
 
 - type: String
 
-想要了解 `mvel` 和 `java` 这两个方言的区别可以参考：[[Drools 规则中 mvel 和 java 的差别]]
+想要了解 `mvel` 和 `java` 这两个方言的区别可以参考：[[Drools 规则中 mvel 和 java 的差别]]，一句话总结一下就是 MVEL 是 Java 实现的一套表达式解析语言。
 
 ### duration
 如果设置了该属性，那么规则将在该属性指定的值之后在另外一个线程里触发。该属性对应的值为一个长整型，单位是毫秒。
