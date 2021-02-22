@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "设计模式之创建模式"
+aliases: "设计模式之创建模式"
 tagline: ""
 description: ""
 category: 学习笔记
