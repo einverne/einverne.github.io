@@ -8,6 +8,8 @@ tags: [python, linux, object, type, object-type, ]
 last_updated:
 ---
 
+这篇文章总结一下 Python 的内置类型。
+
 类型
 
 Object type                     | Example literals/creation
