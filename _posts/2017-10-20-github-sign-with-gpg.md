@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Git commit 中使用 gpg 签名提交"
+aliases: "Git commit 中使用 gpg 签名提交"
 tagline: ""
 description: ""
 category: 经验总结
@@ -75,7 +76,7 @@ Mac 下应该会弹出 GUI 窗口进行密码验证。
     uid                 [ultimate] Ein Verne (co) <email@address>
     sub   rsa4096/B63A4CAAAAAAAAAA 2018-01-31 [E]
 
-将其中的第三行 sec 中 `rsa4096` 后面的 ID 记住，拷贝出来。
+将其中的第三行 sec 中 `rsa4096` 后面的 ID 记住（F80B65AAAAAAAAAA），拷贝出来。
 
 然后使用
 
@@ -99,18 +100,16 @@ Mac 下应该会弹出 GUI 窗口进行密码验证。
 	# 默认全部签名
 	git config --global commit.gpgsign true
 
-将 GPG 添加到 bashrc
+将 GPG 添加到 `.bashrc` 或 `~/.zshrc`
 
     echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 
 ## 签名 commit
 
-在提交时使用 `-S` 选项
+在提交时使用 `-S` 选项，来本地签名提交
 
     git commit -S -m your commit message
-
-来本地签名提交
-
+ 
 提交标签同理
 
     git tag -s mytag
