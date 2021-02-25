@@ -12,15 +12,35 @@ last_updated:
 Kie have these concepts which every user need to know.
 
 ## KieService
-KieService 允许创建 KieContainer
+通过如下方式产生 KieServices：
+
+    KieServices ks = KieServices.Factory.get();
+    
+KieService 可以用来创建 KieContainer。
+
+KieContainer 定义了规则的范围。
 
 ## KieContainer
 KieContainer 是所有给定 KieModule 的 KieBases 的集合。
 
-KieContainer 可以加载 KieModule 和其依赖，KieContainer 可以拥有一个或者多个 KieBases.
+KieContainer 承载了 KieModule 和其依赖，一个层级的 KieModules 结构可以被加载到一个 KieContainer 实例中。
+
+KieContainer 可以拥有一个或者多个 KieBases.
+
+![kie container hierarchical structure](/assets/kie-container-hierarchical-structure-20210225105827.png)
+
+KieContainer 可以通过 KieService 产生：
+
+    KieContainer kContainer = ks.newKieClasspathContainer();
 
 ## KieModule
+每一个 KieModule 包含了 business assets(包括了流程，规则，决策表等等)。
+
+一个 KieModule 是一个标准的 Java-Maven 项目。
+
 KieModule 在 `org.kie.api.builder` 包下，KieModule 是一个存放所有定义好的 KieBases 资源的容器，和 `pom.xml` 文件相似，定义了其 ReleaseId, `kmodule.xml` 文件定义了 `KieBase` 的名字，配置，以及其他用来创建 KieSession 的资源，以及其他用来 build KIEBases 的资源。
+
+指定的文件 `kmodule.xml` 定义在 `META-TNF/` 目录下，一定了内部的资源如何分组如何配置等等信息。
 
 KieModule 用来定义多个 KieBases 和 KieSessions。KieModule 可以包含其他 KieModules.
 
@@ -46,6 +66,9 @@ KieSession 是和工作流引擎交互的最常用的方式，KieSession 允许�
 
 ## 有状态 Session 和无状态 Session 区别
 Drools 的 Session 分为有状态和无状态。
+
+stateful KieSession 可以在多次和 Rule Engine 交互的过程中保持状态。
+而无状态的 KieSession 只允许我们交互一次，并直接获取结果。
 
 ### StatefulKnowledgeSession
 
