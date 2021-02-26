@@ -138,7 +138,7 @@ Beancount 是一款开源的复制记账软件，基于纯文本按照特定语�
 
 > A double-entry bookkeeping computer language that lets you define financial transaction records in a text file, read them in memory, generate a variety of reports from them, and provides a web interface.
 
-源代码：<https://bitbucket.org/blais/beancount/commits/>
+源代码：<http://furius.ca/beancount/>
 
 因为开源所以 Beancount 有无限的扩展性：
 
