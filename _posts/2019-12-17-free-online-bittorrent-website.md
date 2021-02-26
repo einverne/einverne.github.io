@@ -21,6 +21,7 @@ rss
 - http://eztv.ag/ezrss.xml
 
 ### btbtt
+广告很多，记得开启浏览器的广告屏蔽插件，AdBlock， uBlock。
 
 - https://www.btbtt.us/
 

@@ -168,7 +168,7 @@ Beancount 用 Python 编写，可以从 Pypi 中拉取，同时可以安装 fava
 - bean-query
 - bean-report
 - bean-sql
-- bean-web
+- bean-web, Web server for Beancount ledgers. This uses the Bottle single-file micro web framework (with no plugins).
 
 上手体验，使用 `bean-example` 输出样例：
 
