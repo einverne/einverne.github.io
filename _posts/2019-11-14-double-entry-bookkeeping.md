@@ -212,6 +212,45 @@ beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoi
 	交易时间	交易类型	交易对方	商品	收 / 支	金额（元）	支付方式	当前状态	交易单号	商户单号	备注
 
 
+## 实例
+
+### 收入
+
+    2020-02-01 * "北京某有限公司" "工资"
+      Income:Salary           -5000 CNY
+      Expenses:Endowment      +1000 CNY; 养老保险
+      Expenses:Unemployment     +30 CNY; 失业保险
+      Expenses:Medical         +300 CNY; 医疗保险
+      Expenses:Taxes           +100 CNY; 个人所得税
+      Income:HousingFund       -500 CNY; 公司额外支付的住房公积金
+      Assets:HousingFund      +1000 CNY; 住房公积金
+      Assets:DebitCard:CMB    +3070 CNY; 招商银行工资卡
+
+### 消费
+
+
+    2020-02-29 * "超市" "食材 牛奶"
+      Liabilities:CreditCard:BOC     -90 CNY; 交通银行信用卡
+      Expenses:Food:Ingredients      +40 CNY; 食材
+      Expenses:Food:Drinks           +50 CNY; 饮品
+
+
+### 信用卡还款
+
+    2021-01-05 * "信用卡还款"
+      Assets:DebitCard:CMB           -100 CNY
+      Liabilities:CreditCard:BOCOM   +100 CNY
+
+
+### 垫付
+
+    2019-10-12 * "合租交燃气费用"
+      Expenses:House:Gas         +200 CNY
+      Liabilities:CreditCard:BOC -200 CNY
+      Assets:WeChatPay         +150 CNY; 发回来的红包
+
+## fava 配置
+
 
 ## 我的管理方式
 新建一个目录专门用来记录，该目录使用 git 来做版本管理，敏感内容使用 git-crypt 加密。
