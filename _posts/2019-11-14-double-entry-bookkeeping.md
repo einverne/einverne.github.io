@@ -200,7 +200,6 @@ beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoi
 ### 支付宝账单
 
 - 支付宝账单，登录网页版查询
-- 微信账单，APP，通过“我”-“支付”-“钱包”-“账单”- 右上角“···”-“账单下载”
 - 银行账单
 - 其他账单可以使用这个工具 [beancount-import](https://github.com/jbms/beancount-import)
 
