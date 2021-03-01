@@ -8,6 +8,9 @@ tags: [python, logging, logger, ]
 last_updated:
 ---
 
+日志是每一个编程语言必备的模块，借助日志不仅可以监控在线服务的状态，也可以在出问题之后迅速的定位问题。
+ 
+
 ## 基本使用
 
     # -*- coding: utf-8 -*-
@@ -94,6 +97,21 @@ except:
 
     logger = logging.getLogger("App.UI")
     logger = logging.getLogger("App.Service")
+    
+    import logging
+    import time
+
+    logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s",
+                            datefmt="%Y %b %d %H:%M:%S",
+                            filename="./log.log",
+                            filemode="w",               # default is "a"
+                            level=logging.INFO)
+
+    while True:
+        for i in range(6):
+            logging.log(i*10, "a log")                  # logging.log(level, msg)
+            time.sleep(1)
+
 
 fmt 中允许使用的变量可以参考下表
 
@@ -115,7 +133,22 @@ fmt 中允许使用的变量可以参考下表
 
 ## Handler 日志处理器
 
-最常用的是 StreamHandler 和 FileHandler, Handler 用于向不同的输出端打 log。
+最常用的是 StreamHandler 和 FileHandler, Handler 用于向不同的输出端打 log，比如可以将一份日志分别输出到文件和终端。
+
+    console = logging.StreamHandler(stream=sys.stdout)                    # 默认流为sys.stderr
+    console.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+    console.setFormatter(formatter)
+    logging.getLogger().addHandler(console)
+
+    files = logging.FileHandler("log2.log", mode="a", encoding="utf-8")   # 设置文件流
+    files.setLevel(logging.WARNING)
+    formatter = logging.Formatter("%(levelname)s %(message)s")
+    files.setFormatter(formatter)
+    logging.getLogger().addHandler(files)
+
+
+说明：
 
 - StreamHandler instances send error messages to streams (file-like objects).
 - FileHandler instances send error messages to disk files.
