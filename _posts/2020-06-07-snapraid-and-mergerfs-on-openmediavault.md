@@ -57,7 +57,7 @@ SnapRAID 适用于家庭媒体服务器，适合于存储多数不经常变动�
 - 不会占用数据，可以在任何时候停用 SnapRAID 而不用重新格式化
 - 访问数据时，只有一块磁盘会转动，节省电源以及减少噪声
 
-SnapRAID 作为一个备份工具非常强大，强烈推荐阅读官网上关于 SnapRAID 和 Unraid, ZFS 等系统或文件系统提供的备份的对比 [^s]
+SnapRAID 作为一个备份工具非常强大，强烈推荐阅读官网上关于 SnapRAID 和 [[unRAID]], ZFS 等系统或文件系统提供的备份的对比 [^s]
 
 [^s]: <https://www.snapraid.it/compare>
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "现金流桌游"
+aliases: "现金流桌游"
 tagline: ""
 description: ""
 category: 经验总结
@@ -47,7 +48,7 @@ last_updated:
 
 图片来自于 [richdad](https://www.richdad.com/MediaLibrary/RichDad/images/blogs/income-statement-131003.png)，这张图片早在 1998 年就申请了专利。
 
-这张表格上半部分是叫做 Income Statement，中文又称为资产损益表。下部分叫做 Balance Sheet , 中文一般翻译成资产负债表。
+这张表格上半部分是叫做 Income Statement，中文又称为[[资产损益表]]。下部分叫做 Balance Sheet , 中文一般翻译成资产负债表。
 
 个人觉得在完这个桌游之前一定要先了解 Accounting 相关的概念，当然这只是个人的看法，这个游戏其实并没有要求这个，但我觉得如果能提前知道一些记账的概念会对整个游戏有更加深刻的理解。
 
