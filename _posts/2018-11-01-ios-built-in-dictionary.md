@@ -20,7 +20,7 @@ last_updated:
 
 第二中就是在 HOME 下拉然后在搜索框中输入想要查找的单词，在下面的结果中会有字典的结果。
 
-当然如果想要有自定义更好的字典那就要使用之前提到的 [Goldendit](/post/2018/08/goldendict.html) 了。
+当然如果想要有自定义更好的字典那就要使用之前提到的 [Goldendict](/post/2018/08/goldendict.html) 了。
 
 ## 附录字典列表
 

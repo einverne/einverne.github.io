@@ -8,7 +8,7 @@ tags: [Linux, crontab, Openwrt, Router]
 last_updated:
 ---
 
-最近了解了一下 Cron，也在 WinNote [上](http://note.wiz.cn/pages/manage/biz/payRead.html?kb=8b40bf53-6ce7-4f5e-bbfc-99b2628340f3) 记录了一些笔记。学习一个新命令最好的方法就是将其用于实践。于是正好在 Openwrt 路由器上跑一下。
+最近了解了一下 Cron，也在 WizNote [上](http://note.wiz.cn/pages/manage/biz/payRead.html?kb=8b40bf53-6ce7-4f5e-bbfc-99b2628340f3) 记录了一些笔记。学习一个新命令最好的方法就是将其用于实践。于是正好在 Openwrt 路由器上跑一下。
 
 ## 定时任务
 
