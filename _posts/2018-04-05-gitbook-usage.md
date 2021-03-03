@@ -8,7 +8,7 @@ tags: [gitbook, git, github, book, publish, ]
 last_updated: 
 ---
 
-Git 本来是一个版本控制工具，多人协作工具，但却爆发出无限的潜能，于是有人开始使用[Gitbook](https://github.com/GitbookIO/gitbook)来写书，设计师们用Git来[管理](https://www.webdesignerdepot.com/2009/03/intro-to-git-for-web-designers/)版本。这篇文章主要就是想要介绍一下 Gitbook 的简单使用。
+Git 本来是一个版本控制工具，多人协作工具，但却爆发出无限的潜能，于是有人开始使用[Gitbook](https://github.com/GitbookIO/gitbook)来写书，设计师们用Git来[管理](https://www.webdesignerdepot.com/2009/03/intro-to-git-for-web-designers/)版本。这篇文章主要就是想要介绍一下 [[GitBook]] 的简单使用。
 
 Gitbook 使用 Markdown 作为书写格式，Git 来做版本控制，结合两者来编排书籍。Gitbook 的安装非常方便，在本地有 Node.js 和 npm 的环境下
 
