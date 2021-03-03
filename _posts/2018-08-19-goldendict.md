@@ -59,6 +59,8 @@ Ubuntu/Linux Mint 下安装非常简单
 ## GoldenDict 长句翻译问题
 GoldenDict 在查词方面非常完美，但唯独在长句翻译上落后一些，但是问题不大，利用 Python[脚本](https://github.com/einverne/translator) 添加到 GoldenDict 后整段的翻译问题也解决了。
 
+[[202008262304-GoldenDict查长句]]
+
 ## 词典分组
 
 可以在菜单栏中群组，添加群组，然后为群组增加几部字典，然后添加快捷键对字典进行分组，方便快速查阅。
@@ -432,7 +434,7 @@ Dicto       | http://dicto.org.ru/ | XDXF dictionaries | windows only | 只面�
 
 - <https://bitbucket.org/xwang/mdict-analysis>
 
-wikipedia 的离线包，很大，好几十个 G
+Wikipedia 的离线包，很大，好几十个 G
 
 - <http://wiki.kiwix.org/wiki/Main_Page>
 
