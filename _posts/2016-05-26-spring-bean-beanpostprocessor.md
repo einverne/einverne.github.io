@@ -4,11 +4,11 @@ title: "Spring BeanPostProcessor 使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [spring, java, ]
+tags: [spring, java, bean, spring-bean, spring-bean-lifecycle, ]
 last_updated:
 ---
 
-`BeanPostProcessor` 接口允许在 Spring Bean Factory 返回 Bean instance 时修改 Bean 的创建过程。
+`BeanPostProcessor` 接口允许在 Spring Bean Factory 返回 Bean instance 时修改 Bean 的创建过程。这是影响 Bean 生命周期的一部分。
 
 ## Bean life cycle
 要了解 `BeanPostProcessor` 接口就不得不提及 Bean 的生命周期。
