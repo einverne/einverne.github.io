@@ -92,11 +92,11 @@ speedtest 的测速的时候会根据位置选择不同的节点，不同的节�
 
 - [无界](https://www.wujievpn.xyz/user/index.html#/register?code=pyHxQdJr)
 
-当然拿两者对比速度是没有意义的，服务器不同，协议也不同，只是提供一个方法让大家的选择服务商的时候能够对自己所用的服务有一个基本的了解。对于我的情况新的 [wujievpn](https://www.wujievpn.xyz/user/index.html#/register?code=pyHxQdJr) 几乎提供了我翻了一倍的下行速度。Download 从 18.65 Mbit/s 提高到了 34.5 Mbit/s。所以还是值得一提的。
+当然拿两者对比速度是没有意义的，服务器不同，协议也不同，只是提供一个方法让大家的选择服务商的时候能够对自己所用的服务有一个基本的了解。对于我的情况新的 [wujievpn](https://portal.wallless.xyz/#/register?code=pyHxQdJr) 几乎提供了我翻了一倍的下行速度。Download 从 18.65 Mbit/s 提高到了 34.5 Mbit/s。所以还是值得一提的。
 
 如果有人想要尝试，欢迎使用我的邀请链接：
 
-- <https://www.wujievpn.xyz/user/index.html#/register?code=pyHxQdJr>
+- <https://portal.wallless.xyz/#/register?code=pyHxQdJr>
 
 ## reference
 
