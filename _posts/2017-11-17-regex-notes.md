@@ -115,7 +115,7 @@ Sun 也会把正则表达式整合到 Java 的其他部分，比如 String 类�
 
 String 中的方法不适合在对时间要求很高的循环中使用。
 
-Python 中的处理， Python 也使用面向对象的方法
+Python 中的处理，Python 也使用面向对象的方法
 
     import re
 
@@ -171,6 +171,7 @@ NFA 匹配的过程中，目标文本中的某个字符串可能会被正则表�
 - POSIX NFA
 
 部分程序及其所使用的正则引擎
+
 引擎          | 程序
 --------------|-------------
 DFA  | 大多数版本的 awk, egrep， flex, lex, MySQL
@@ -220,8 +221,8 @@ DFA/NFA 混合 | GNU awk, GNU grep/egrep, Tcl
 ## 优化 Java 正则表达式
 Java 的正则对性能影响非常大，如果在程序中大量使用正则，一定要对正则进行一定优化。
 
-- 多次使用同一个正则，Pattern.compile() 预先编译正则表达式
-- 选择 （X|Y|Z） 会显著降低正则的匹配速度，优先考虑 ac(cd|ef) 而不是 (abcd|abef)
+- 多次使用同一个正则，`Pattern.compile()` 预先编译正则表达式
+- 选择 `(X|Y|Z)` 会显著降低正则的匹配速度，优先考虑 `ac(cd|ef)` 而不是 `(abcd|abef)`
 - 如果不需要分组内文本，尽量使用非捕获分组
 
 ## reference
