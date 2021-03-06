@@ -1,6 +1,7 @@
-    ---
+---
 layout: post
 title: "复式记账"
+aliases: "复式记账"
 tagline: ""
 description: ""
 category: 学习笔记
