@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Asus RT-AC86U 设置"
+title: "Asus RT-AC86U 初始设置"
 tagline: ""
 description: ""
 category:
@@ -17,6 +17,10 @@ last_updated:
 - U 盘格式成 ext4 插到路由器
 - 一个已经刷成 [Merlin 固件](https://www.asuswrt-merlin.net/) 的路由器
 
+## 固件选择
+
+- [原版 Merlin 固件](https://www.asuswrt-merlin.net/download)
+- [官改固件](https://koolshare.cn/thread-139965-1-1.html)
 
 ## 在 Merlin firmware 下安装 Entware
 Entware 是一个嵌入式设备的包管理工具，之前在 [QNAP NAS](/post/2019/05/entware-ng-usage.html) 上也有安装过。
