@@ -5,7 +5,7 @@ aliases: "设计模式之创建模式"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [design-pattern, factory, singleton, builder, ]
+tags: [design-pattern, factory, singleton, builder, creational-pattern, ]
 last_updated:
 ---
 
