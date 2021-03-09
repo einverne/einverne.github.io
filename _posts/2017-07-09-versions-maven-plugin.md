@@ -9,6 +9,7 @@ last_updated:
 ---
 
 Versions Plugin 该插件用于需要管理项目
+
 用来设置版本号
 
     mvn versions:set -DnewVersion=1.0.1
