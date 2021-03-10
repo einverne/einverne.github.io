@@ -28,6 +28,8 @@ Bitwarden 自己的[服务端](https://github.com/bitwarden/server) 依赖比较
 
 官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)
 
+## 使用 Bitwarden 客户端
+Bitwarden 提供了非常丰富的客户端支持，从桌面端，到浏览器扩展，非常好用，并且 macOS 上还支持指纹。
 
 ## Bitwarden 结合 Alfred
 [[Alfred]] 是 macOS 上一个启动器，Bitwarden 自身支持 [cli](https://bitwarden.com/help/article/cli/)，两者结合起来就非常方便使用了。
