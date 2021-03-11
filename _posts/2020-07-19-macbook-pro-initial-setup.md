@@ -370,16 +370,15 @@ WizNote 打开的时候显示不被认证的开发者，需要执行
 
 开启信任任何来源的安装，当然这个操作会降低系统的安全性，谨慎！
 
-另外今年起，我渐渐的将笔记迁移到了 Obsidian.
+另外今年起，我渐渐的将笔记迁移到了 [Obsidian](/post/2020/05/obsidian-note-taking.html).
 
 - [官网](https://obsidian.md/) 下载。
 
-我在 GitHub 上新建了一个 Private 的项目来同步 Obsidian 的笔记。
+我在 GitHub 上新建了一个 Private 的项目来同步 Obsidian 的笔记。详情可以参考[我的 Obsidian 跨设备同步方案](/post/2020/11/obsidian-sync-acrose-devices-solution.html)。
 
 
 ### 听音乐的需求
-唯一的选择，网易云音乐，我之前也写过文章，在体验过市面上所有的音乐软件后，选择了网易，然后已经很多很多年了。
-
+唯一的选择，网易云音乐，我之前也写过文章，在[体验过市面上所有的音乐软件后](/post/2014/07/music-website-thinking.html)，选择了网易，然后已经很多年了。
 
 
 ### Dash 文档查看
@@ -418,13 +417,15 @@ LICEcap
 ### 电子书管理
 Linux 和 NAS 上一直用的 Calibre
 
-	brew cask install calibre
+	brew install --cask calibre
 
 ### HTTP 接口调试
 因为历史上保存了一些请求，所以还是用了 Postman，不过新出的 Postwomen 也可以试试。
 
+    brew install --cask postman
+
 ### 抓包工具
-大名鼎鼎的 Charles，以及命令行 mitmproxy, 以及网络协议的 Wireshark 都来一套。
+大名鼎鼎的 Charles，以及命令行 [mitmproxy](/post/2017/02/mitmproxy.html), 以及网络协议的 Wireshark 都来一套。
 
 ### FTP 文件传输分享
 
@@ -433,11 +434,13 @@ Linux 和 NAS 上一直用的 Calibre
 
 ### 下载工具
 
-aria2, you-get 和 youtube-dl 日常使用，Transmision 作为 BitTorrent 备用。
+aria2, you-get 和 `youtube-dl` 日常使用，Transmission 作为 BitTorrent 备用。
 
 ### 密码管理
 
 自己搭建的 Bitwarden，虽然常年使用 LastPass，但最近自己搭建 Bitwarden 后发现 Bitwarden 跨平台做的非常不错，还可以利用起 Mac 的 Touch ID。
+
+2021 年 3 月开始完全放弃了 LastPass，全面切换到 Bitwarden。同时把 Android，macOS，Chrome 浏览器上的应用和扩展全部切换了
 
 ### 状态栏隐藏
 开了很多应用，导致状态栏非常乱，很多人推荐收费的 Bartender 3，不过试了一下发现开源的 [Dozer](https://github.com/Mortennn/Dozer) 也非常不错。
