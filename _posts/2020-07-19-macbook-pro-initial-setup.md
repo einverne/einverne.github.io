@@ -398,6 +398,8 @@ WizNote 打开的时候显示不被认证的开发者，需要执行
 
 但这些都需要大量的定制，所以先放着了。
 
+经过一段时间的使用之后，最后还是用 [Hammerspoon](https://github.com/einverne/dotfiles/tree/master/hammerspoon) 用自定义脚本实现了 macOS 上的窗口管理，绑定快捷键之后的体验比上面提到的软件都要好很多。
+
 ### 图片预览及管理
 [Pixea](https://apps.apple.com/cn/app/pixea/id1507782672)
 一款优秀的看图软件。
