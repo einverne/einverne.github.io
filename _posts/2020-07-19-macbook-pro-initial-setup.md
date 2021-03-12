@@ -404,6 +404,8 @@ WizNote 打开的时候显示不被认证的开发者，需要执行
 [Pixea](https://apps.apple.com/cn/app/pixea/id1507782672)
 一款优秀的看图软件。
 
+![[Pasted image 20210312091941.png]]
+
 ### 录制 GIF
 LICEcap
 
