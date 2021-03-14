@@ -60,8 +60,18 @@ Php 站的又一个选择，比较轻量小巧，但是功能强大。
 
 Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，miniflux 比较新是 Go 写的，NewsBlur 则是 Python.
 
+更多自建的方案可以参考[这篇文章](/post/2020/02/self-hosted-rss-reader.html)。
+
 ## 代码托管
-代码托管除了非常著名的 GitLab，其实还有很多选择，比如 Go 编写的 Gogs，以及它的 fork, Gitea。个人在 NAS 上用的 Gogs，不过要我现在再选，我可能会用 Gitea.
+代码托管除了非常著名的 GitLab，其实还有很多选择，比如 Go 编写的 Gogs，以及它的 fork, [Gitea](https://gitea.io/)。个人在 NAS 上用的 Gogs，不过要我现在再选，我可能会用 Gitea.
+
+## CI
+
+- [drone](https://drone.io/)
+
+## 容器管理
+
+- [portainer](https://www.portainer.io/)
 
 ## 文件管理
 文件管理及同步，我使用 NextCloud，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
@@ -94,7 +104,15 @@ n8n.io
 - <https://n8n.io/>
 
 ## 稍后阅读
-开源版本的稍后阅读，wallabag .
+开源版本的稍后阅读，[wallabag](https://wallabag.org/en) 。
+
+## 网站收藏
+
+- [shaarli](https://github.com/shaarli/Shaarli)
+
+## Anki 同步服务器
+
+- [anki-sync](https://github.com/matbb/docker-anki-sync-server)
 
 ## 电子书管理
 
@@ -102,6 +120,7 @@ n8n.io
 Calibre-web
 
 - <https://github.com/janeczku/calibre-web>
+- <https://github.com/Technosoft2000/docker-calibre-web>
 
 ### LazyLibrarian
 
@@ -128,6 +147,9 @@ Calibre-web
 通过 FTP, SSH, WebDAV 协议备份，或者将文件备份到云端 Backblaze B2, Microsoft OneDrive, Amazon S3, Google Drive, box.com, Mega, hubiC 等。
 
 - <https://www.duplicati.com/>
+
+### Syncthing
+
 
 ## Translate tool
 

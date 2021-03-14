@@ -10,11 +10,11 @@ last_updated:
 
 最近在使用 Linux 版有道的时候发现非常卡，影响正常使用，所以就发现了这个 GoldenDict。以前在 Win 下用过 [lingoes](http://www.lingoes.cn/) 但是无奈只有 Win 版本。有的时候也真的挺有意思，闭源的软件用着不舒服，切换到开源软件之后就像打开了新天地，从搜狗切换到 Rime 也是，开源软件不仅在功能上优于这些闭源软件，自己稍微调整一下之后就会发现体验也远超有道，搜狗之类。
 
-GoldenDict 是一个开源词典，使用 WebKit 作为渲染核心，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。基于 GNU GPL 第三版以上协议。
+GoldenDict 是一个开源词典，用 QT 编写，使用 WebKit 作为渲染核心，它像 Eudict、Mdict、Lingoes 以及 BlueDict 等词典一样可以加载外挂词典文件。基于 GNU GPL 第三版以上协议。
 
 使用 GoldenDict 配上习惯的词典和脚本之后就再也离不开这个工具了，设置开机启动，设置 <kbd>Ctrl</kbd> + <kbd>c</kbd>两次查当前选中的词，定期的复习和整理查词列表中的词汇，这个工具完美的解决了我查词的需求，并且提供了远超出我想象的功能，中文成语，地名人名，专业术语，韩语，日语完全完全满足了所有查询的需求。
 
-2020 年 8 月更新，让我异常惊喜的时，当我更换到 MacOS 时，GoldenDict 的 Mac 版虽然很久没有更新，但依然可以非常完美的工作，Syncthing 同步字典文件和[脚本](https://github.com/einverne/translator) 后立马就工作，不用改变习惯，并且我也没有习惯 Mac 上自带的词典。
+2020 年 8 月更新，让我异常惊喜的时，当我更换到 MacOS 时，GoldenDict 的 Mac 版虽然很久没有更新，但依然可以非常完美的工作，[Syncthing](/post/2019/10/syncthing.html) 同步字典文件和[脚本](https://github.com/einverne/translator) 后立马就工作，不用改变习惯，并且我也没有习惯使用 Mac 上自带的词典（虽然和系统集成得比较好，重按触摸板选中单词即可）。
 
 ## 安装
 Ubuntu/Linux Mint 下安装非常简单
@@ -58,6 +58,8 @@ Ubuntu/Linux Mint 下安装非常简单
 
 ## GoldenDict 长句翻译问题
 GoldenDict 在查词方面非常完美，但唯独在长句翻译上落后一些，但是问题不大，利用 Python[脚本](https://github.com/einverne/translator) 添加到 GoldenDict 后整段的翻译问题也解决了。
+
+[[202008262304-GoldenDict查长句]]
 
 ## 词典分组
 
@@ -432,7 +434,7 @@ Dicto       | http://dicto.org.ru/ | XDXF dictionaries | windows only | 只面�
 
 - <https://bitbucket.org/xwang/mdict-analysis>
 
-wikipedia 的离线包，很大，好几十个 G
+Wikipedia 的离线包，很大，好几十个 G
 
 - <http://wiki.kiwix.org/wiki/Main_Page>
 

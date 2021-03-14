@@ -70,6 +70,8 @@ last_updated:
 
     du -h -S -d 2 /path/to/Parent
 
+## 外延
 
+熟悉了 `du` 命令之后，还有一个可视化更好的工具叫做 [ncdu](/post/2018/03/disk-analyze-ncdu.html)，在终端中使用比较友好的展示来显示磁盘空间占用。
 
 更多的命令使用方法可以参考 [tecmint](https://www.tecmint.com/check-linux-disk-usage-of-files-and-directories/)

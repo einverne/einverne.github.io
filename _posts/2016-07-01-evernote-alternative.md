@@ -103,7 +103,7 @@ Notion 诞生也已经很久了，发现越来越多的人开始推荐起来，N
 - <https://github.com/zadam/trilium>
 
 ## tiddlywiki
-另一款 wiki 系统，在支持富媒体上较为欠缺。
+[[TiddlyWiki]] 是另一款 wiki 系统，在支持富媒体上较为欠缺。
 
 - <https://tiddlywiki.com/>
 

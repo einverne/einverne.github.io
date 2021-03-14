@@ -241,7 +241,7 @@ mas 可以让我自动安装命令，而不需要在 App Store 中点点点。�
 
 ### ncdu
 
-官网地址：<https://dev.yorhel.nl/ncdu>
+官网地址：<https://dev.yorhel.nl/ncdu>，也可以参考之前的[文章](/post/2018/03/disk-analyze-ncdu.html)。
 
 ![my cli ncdu](/assets/my-cli-ncdu.jpg)
 

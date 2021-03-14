@@ -142,15 +142,15 @@ Datetime 和 timestamp 的区别
 
 ## 数据类型的属性
 
-MySQL 关键字|含义
------|-----
-NULL|数据列可包含 NULL 值
-NOT NULL|数据列不允许包含 NULL 值
-DEFAULT|默认值
-PRIMARY KEY|主键
-AUTO\_INCREMENT|自动递增，适用于整数类型
-UNSIGNED|无符号
-CHARACTER SET name|指定一个字符集
+| MySQL 关键字       | 含义                     |
+| ------------------ | ------------------------ |
+| NULL               | 数据列可包含 NULL 值     |
+| NOT NULL           | 数据列不允许包含 NULL 值 |
+| DEFAULT            | 默认值                   |
+| PRIMARY KEY        | 主键                     |
+| AUTO\_INCREMENT    | 自动递增，适用于整数类型 |
+| UNSIGNED           | 无符号                   |
+| CHARACTER SET name | 指定一个字符集           |
 
 
 

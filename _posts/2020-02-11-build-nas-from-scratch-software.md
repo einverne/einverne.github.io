@@ -11,7 +11,7 @@ last_updated:
 之前总结过一篇 [NAS 硬件](/post/2018/12/build-nas-from-scratch.html) 介绍了自组 NAS 可能遇到的一些名词和概念，这里再总结一下相关的软件。
 
 ## Operating System
-首先就是操作系统的选择，[这里](/post/2020/02/nas-operating-system-choice.html) 也简单总结过 FreeNAS，OpenMediaVault 和 unRAID 的优缺。
+首先就是操作系统的选择，[这里](/post/2020/02/nas-operating-system-choice.html) 也简单总结过 FreeNAS，OpenMediaVault 和 [[unRAID]] 的优缺。
 
 ## 软件的选择
 

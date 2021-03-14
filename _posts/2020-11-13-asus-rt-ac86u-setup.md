@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Asus RT-AC86U 设置"
+title: "Asus RT-AC86U 初始设置"
 tagline: ""
 description: ""
 category:
@@ -12,11 +12,29 @@ last_updated:
 
 ## 提前工作
 
-- 管理后台启用 SSH （系统管理 - 系统设置 - 服务 - 启用 SSH)
+- 登录管理后台（<http://router.asus.com/Main_Login.asp>)启用 SSH （系统管理 - 系统设置 - 服务 - 启用 SSH)
 - 开启 JFFS 分区，系统管理 - 系统设置 - Persistent JFFS2 partition - Enable JFFS custom scripts and configs
 - U 盘格式成 ext4 插到路由器
 - 一个已经刷成 [Merlin 固件](https://www.asuswrt-merlin.net/) 的路由器
 
+## 固件选择
+
+- [原版 Merlin 固件](https://www.asuswrt-merlin.net/download)
+- [Merlin 改版](http://koolshare.cn/thread-127878-1-1.html)
+- [官改固件](https://koolshare.cn/thread-139965-1-1.html)
+
+## 刷机步骤
+AC86U 的刷机步骤非常简单，通过网页「升级页面」，直接上传 `.w` 后缀的固件，然后等待刷机完成自动重启即可。
+
+## 启用 Clash 代理插件
+
+禁用检测：
+
+    sed -i 's/\\tdetect\_package/\\t# detect\_package/g' /koolshare/scripts/ks\_tar\_install.sh
+    
+[这里](https://github.com/hq450/fancyss) 是 shadowsocks 插件地址。
+
+[这里](https://t.me/s/merlinclashcat) 是 Merlin Clash 插件。在这个 Telegram 频道中下载 merlinclash_hnd 开头的插件按照包。
 
 ## 在 Merlin firmware 下安装 Entware
 Entware 是一个嵌入式设备的包管理工具，之前在 [QNAP NAS](/post/2019/05/entware-ng-usage.html) 上也有安装过。

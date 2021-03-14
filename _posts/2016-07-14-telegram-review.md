@@ -43,6 +43,16 @@ last_updated:
 ## Bots
 几个神奇的内置 bot。在使用过程中竟然遇到了“向聊天群中添加 bot 这样的问题”，不过答案也很简单，拥有群管理权限时，直接添加成员，输入 `@ + bot` 的名字即可。
 
+Bots 能做什么：
+
+- 发送通知，新闻等等。bot 可以作为新闻推送工具，一旦相关的内容发布之后，向用户推送消息
+- 和其他服务集成，bot 可以和其他服务集成，比如 [**Gmail Bot**](https://t.me/gmailbot), [**GIF bot**](https://t.me/gif), [**IMDB bot**](https://t.me/imdb), [**Wiki bot**](https://t.me/wiki), [**Music bot**](https://t.me/music), [**Youtube bot**](https://t.me/youtube), [**GitHubBot**](https://t.me/githubbot)
+- 接受 Telegram 用户的支付，使用 Telegram 提供的虚拟[在线门店](https://core.telegram.org/bots/payments)
+- 作为工具，提供报警，天气预报，翻译，转换格式等等，[**Markdown bot**](https://t.me/Bold), [**Sticker bot**](https://t.me/sticker), [**Vote bot**](https://t.me/vote), [**Like bot**](https://t.me/like)
+- 构建单个或多人游戏
+- 构建社交服务
+- 更多虚拟的服务
+
 ### @gif
 寻找 gif bot，使用最简单了，聊天时直接输入 `@gif whatever I like` ， Telegram 会帮你搜索 `whatever I like` 字段的内容，点击分享即可。
 

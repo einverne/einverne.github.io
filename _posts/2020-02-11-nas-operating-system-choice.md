@@ -65,7 +65,7 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## unRAID
-unRAID 是基于 [Slackware](https://zh.wikipedia.org/wiki/Slackware) 这个 Linux 发行版的 NAS 系统 (6.2RC2 基于 14.2)。unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，简单来说 unRAID 就是带有检验盘的磁盘簇 (JBOD)。
+[[unRAID]] 是基于 [Slackware](https://zh.wikipedia.org/wiki/Slackware) 这个 Linux 发行版的 NAS 系统 (6.2RC2 基于 14.2)。unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，简单来说 unRAID 就是带有检验盘的磁盘簇 (JBOD)。
 
 unRAID 另外比较亮眼的就是虚拟化技术以及硬件直通，可以在此基础上虚拟化安装各个操作系统以及充分利用硬件接口。
 

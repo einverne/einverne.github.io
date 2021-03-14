@@ -12,7 +12,7 @@ last_updated:
 
 然而时间到了 2019 年，网络安全问题和个人隐私的问题日渐严重，在这样一个时间节点，我发现了 Bitwarden 这样一款软件，更让我惊讶的是从服务端到客户端全开源，并且全平台支持，甚至还支持命令行登录，这一点连 LastPass 都不曾做过。但这个应用服务如今还依然不流行，大多数的潜在用户都被 1Password 或者 LastPass 这样的服务提供方吸收了。基于这样的理由，虽然目前可能自动填充的功能还不及 LastPass, 但 Bitwarden 还是非常值得一试。
 
--<https://bitwarden.com/>
+- <https://bitwarden.com/>
 - <https://github.com/bitwarden>
 
 简单的看了一下客户端基本用 C# 和 TypeScript 写成，暂时还无法看代码了。感兴趣可以自行到 GitHub 审查代码。
@@ -27,3 +27,22 @@ Bitwarden 的[官方网站](https://help.bitwarden.com/article/install-on-premis
 Bitwarden 自己的[服务端](https://github.com/bitwarden/server) 依赖比较重，还需要 MySQL，所以我选择了 [Rust 实现的版本](https://github.com/dani-garcia/bitwarden_rs)
 
 官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)
+
+## 使用 Bitwarden 客户端
+Bitwarden 提供了非常丰富的客户端支持，从桌面端，到浏览器扩展，非常好用，并且 macOS 上还支持指纹。
+
+## Bitwarden 结合 Alfred
+[[Alfred]] 是 macOS 上一个启动器，Bitwarden 自身支持 [cli](https://bitwarden.com/help/article/cli/)，两者结合起来就非常方便使用了。
+
+推荐使用：
+
+- <https://github.com/blacs30/bitwarden-alfred-workflow>
+
+主要的几个命令：
+
+- `.bwauth` 授权
+- `.bwconfig` 配置
+- `.bwf` 搜索文件夹
+- `.bw search_keyword` 搜索关键字
+
+

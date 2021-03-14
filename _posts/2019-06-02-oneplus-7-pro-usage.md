@@ -83,7 +83,7 @@ From: [xda](https://forum.xda-developers.com/oneplus-7-pro/how-to/root-oneplus-7
 
 如果想要在 OTA 之后保留 ROOT：
 
-- 使用全量包更新，然后在 System , System, 设置中使用本地更新，**切记更新完成不要立即重启**
+- 使用全量包更新，然后在 System 设置中使用本地更新，**切记更新完成不要立即重启**
 - 打开 Magisk ，点击 Magisk 一行的安装，在弹出的对话框中点击安装
 - 然后在弹出的对话框 (select Method) 中选择 `Install to Inactive Slot (After OTA)` 选项 （中文应该是，安装到未使用的槽位，安装完 OTA 后）
 - 最后安装重启

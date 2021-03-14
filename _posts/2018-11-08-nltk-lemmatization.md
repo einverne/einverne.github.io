@@ -4,11 +4,11 @@ title: "使用 nltk 词形还原"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [nltk, lemmatization, stemming, nlp, goldendict, dictionary, ]
+tags: [nltk, lemmatization, stemming, nlp, goldendict, dictionary, mdx-server, mdx, english-dictionary, morphology, english ]
 last_updated:
 ---
 
-今天在用 mdx-server 将 mdx 文件导出 HTTP 接口时发现 mdx-server 项目并不支持类似与 GoldenDict Morphology 构词法一样的规则，所以只能够在 mdx-server 外自行处理英语单词的词形变化，搜索一圈之后发现了 NLTK。
+今天在用 mdx-server 将 mdx 文件导出 HTTP 接口时发现 mdx-server 项目并不支持类似于 GoldenDict Morphology 构词法一样的规则，所以只能够在 mdx-server 外自行处理英语单词的词形变化，搜索一圈之后发现了 NLTK。
 
 英语中词形还原叫做 lemmatization，是将一个任何形式的单词还原为一般形式的意思。另外一个相关的概念是 stemming 也就是词干提取，抽取单词的词干或者词根。这两种方法在自然语言处理中都有大量的使用。这两种方式既有联系也有很大差异。
 

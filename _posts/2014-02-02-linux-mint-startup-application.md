@@ -20,7 +20,7 @@ last_updated:
 
 同样在 gnome 的桌面环境下也有一个相似的 `gnome-session-properties` 但是这个应用没有 Cinnamon 提供的方便友好，一个很大的差别就是 Cinnamon 提供的 startup 工具允许用户直接选择已经安装的应用，而 gnome 提供的只允许用户自己选择执行脚本（命令），自己选择图标，标题等等。Cinnamon 帮我们做了很多友好的工作。
 
-实际上所有开机自启动的配置都在 `~/.config/autostart` 目录中，每一个启动项都以自己名字开头，叫做 `goldendict.desktop` 这样的名字，包含如下内容。
+实际上所有开机自启动的配置都在 `~/.config/autostart` 目录中，每一个启动项都以自己名字开头，比如 GoldenDict `goldendict.desktop` 这样的名字，包含如下内容。
 
     [Desktop Entry]
     Type=Application

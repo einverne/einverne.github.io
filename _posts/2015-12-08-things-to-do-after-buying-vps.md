@@ -131,13 +131,14 @@ After all this, you can type following command to have a try:
     hostnamectl set-hostname example_hostname
 
 ### setup timezone
+设置时区：
 
-    dpkg-reconfigure tzdata
+    sudo dpkg-reconfigure tzdata
 
 ## Test VPS
 
 ### Processor test
-There are a serveral things need to check. The first thing is to test CPU, menory and hard drive.
+There are a several things need to check. The first thing is to test CPU, menory and hard drive.
 
     cat /proc/cpuinfo
     cat /proc/meminfo

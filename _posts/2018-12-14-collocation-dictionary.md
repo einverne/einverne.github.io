@@ -1,14 +1,15 @@
 ---
 layout: post
 title: "英语搭配语字典整理"
+aliases: "英语搭配语字典整理"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [english, learning, dictionary, goldendict, mdx, mdd, oxford, ]
+tags: [english, learning, dictionary, goldendict, mdx, mdd, oxford, collocation, longman, oxford ]
 last_updated:
 ---
 
-最近用 GoldenDict 查词非常频繁且非常有效的提高了阅读的效率，但是在日常有的时候听一些英语口语的广播节目的时候，经常会有一些短语搭配，而我们平时如果写作的话，其实短语较于单词更为重要，口语亦然。所以产生了一个念头，如果有一本英语搭配语字典就能够提高不少效率，没想到都不用去刻意搜索，就出来了好几个推荐。
+最近用 [[GoldenDict]] 查词非常频繁且非常有效的提高了阅读的效率，但是在日常有的时候听一些英语口语的广播节目的时候，经常会有一些短语搭配，而我们平时如果写作的话，其实短语较于单词更为重要，口语亦然。所以产生了一个念头，如果有一本英语搭配语字典就能够提高不少效率，没想到都不用去刻意搜索，就出来了好几个推荐。
 
 - Oxford Collocation Dictionary 牛津英语搭配语词典
 - The BBI dictionary of English word combinations BBI 英语搭配词典
@@ -41,7 +42,16 @@ last_updated:
 ![longman collocations](/assets/longman-collocations-dictionary-2018-12-15-101838.png)
 
 ## Longman Language Activator
-朗文英语写作活用词典
+朗文英语写作活用词典，这是一本如何活用英语的词典，不仅会告诉你单词的意思，还会告诉你这个单词的使用情景。比如查询 future，它会告诉你 future 有这么多含义：
+
+- the time after now
+    - 在表示现在之后的时间时，有 `the car of the future may run on solar-powered batteries.` 等等这样的搭配
+    - 也会告诉你，future 相同含义的表达也可以是 `lie ahead`, `ahead of`
+- at some time in the future
+    - 同样你也可以看到词典里面会有 `in the future`, `some time`, `one day` 等等的组合
+- likely to happen in the future
+    - 表达相似的意思可以使用 `be on the horizon`, `be in store` 等等
+
 
 ## Oxford Learner's Thesaurus
 更加准确来说这是一本 Thesaurus 词典，也就是同义词词典，会给出查阅单词的相近含义的单词，以便于联想学习。
