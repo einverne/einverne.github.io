@@ -8,13 +8,13 @@ tags: [linux, command, iftop, network, monitor]
 last_updated:
 ---
 
-在类 Unix 系统中可以使用 top/htop 查看系统资源、进程、内存占用等信息。查看网络状态可以使用 netstat、nmap 等工具。若要查看实时的网络流量，监控 TCP/IP 连接等，则可以使用 iftop。
+在类 Unix 系统中可以使用 top/htop 查看系统资源、进程、内存占用等信息。查看网络状态可以使用 `netstat`、`nmap` 等工具。若要查看实时的网络流量，监控 TCP/IP 连接等，则可以使用 iftop。
 
-iftop 是类似于 top 的实时流量监控工具。
+`iftop` 是类似于 top 的实时流量监控工具。
 
-官方网站：http://www.ex-parrot.com/~pdw/iftop/
+官方网站：<http://www.ex-parrot.com/~pdw/iftop/>
 
-iftop 可以用来监控网卡的实时流量（可以指定网段）、反向解析 IP、显示端口信息等。
+`iftop` 可以用来监控网卡的实时流量（可以指定网段）、反向解析 IP、显示端口信息等。
 
 ## 安装
 
@@ -26,7 +26,7 @@ Debian 上安装所需依赖包：
 
     apt-get install flex byacc  libpcap0.8 libncurses5
 
-下载 iftop
+下载 `iftop`
 
     wget http://www.ex-parrot.com/pdw/iftop/download/iftop-0.17.tar.gz
 
@@ -49,7 +49,7 @@ Debian 上安装所需依赖包：
     -P      使 host 信息及端口信息默认就都显示；
     -m      设置界面最上边的刻度的最大值，刻度分五个大段显示，例：# iftop -m 100M
 
-交互快捷键，进入 iftop 画面后的一些操作命令（注意大小写）
+交互快捷键，进入 `iftop` 画面后的一些操作命令（注意大小写）
 
     按 h 切换是否显示帮助；
     按 n 切换显示本机的 IP 或主机名；
@@ -88,7 +88,7 @@ Debian 上安装所需依赖包：
 - TX：发送流量
 - RX：接收流量
 - TOTAL：总流量
-- Cumm：运行 iftop 到目前时间的总流量
+- Cum：运行 `iftop` 到目前时间的总流量
 - peak：流量峰值
 - rates：分别表示过去 2s 10s 40s 的平均流量
 

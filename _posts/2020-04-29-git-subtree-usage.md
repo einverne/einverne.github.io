@@ -8,33 +8,34 @@ tags: [git, git-subtree, version-control, git-submodule,]
 last_updated:
 ---
 
-昨天在和朋友讨论两个项目双向同步，两个从同一分支拉出来的两个独立项目各自发展，但又要求定时双向同步的时候，虽然提到了用 remote 可以临时解决一下。不过后来又和朋友讨论起 git subtree 来，在此之前，我如果有需要在项目内部依赖外部独立的项目时，我一般都使用 `git submodule` 来解决。不过昨天搜索了一下之后发现 `git subtree` 似乎更加强大，并且已经成为替代 `git submodule` 的事实方案。所以这里来学习一下。
+昨天在和朋友讨论两个项目双向同步的问题，比如，两个从同一分支拉出来的两个独立项目各自发展，但又要求定时双向同步的时候，虽然提出了用 remote 可以临时解决一下。不过后来又和朋友讨论起 `git subtree` 来，在此之前，我如果有需要在项目内部依赖外部独立的项目时，我一般都使用 `git submodule` 来解决。不过昨天搜索了一下之后发现 `git subtree` 似乎更加强大，并且已经成为替代 `git submodule` 的事实方案。所以这里来学习一下。
 
 在使用 `git subtree` 之前如果你没有用过 `git submodule`，这里先进行一些说明。对于 `git submodule` 而言，在本地的代码库中可能存在多个 `git` 代码仓库，而 `git subtree` 就只有一个代码库。
 
 ## Sub module vs Sub tree 对比
+这两者都可以将另外一个项目作为主项目的一个子目录而作为依赖添加进来，但是实现的方式大有区别。
 
 - 对父项目的占用区别：对于父项目而言，如果使用 submodule 会在父项目中新增一个 `.gitmodule` 的文件来记录父项目添加的子 module，而使用 subtree 则会将子项目完整的克隆到父项目的一个文件夹中。
-- 在 clone 子项目步骤上：使用 submodule 需要执行多个步骤，在拉取主项目后需要使用 submodule 命令单独更新 submodule；而使用 subtree 则只需要使用 clone 命令
-- push 子项目：submodule 因为将子项目视为独立的项目，可以直接 push；使用 subtree 则需要手动进行对比
+- 在 clone 子项目步骤上：使用 submodule 需要执行多个步骤，首先拉取主项目，然后需要使用 submodule 命令单独更新 submodule；而使用 subtree 则只需要使用 clone 来获取主项目的代码，子项目代码会一并被拉取
+- push 子项目：submodule 因为将子项目视为独立的项目，可以直接在子项目中进行 push；而使用 subtree 则需要手动进行对比
 - pull 子项目：submodule pull 子项目后需要，在父项目再进行提交 `git submodule update --recursive --remote`；而使用 subtree 则直接 pull 即可
-
 
 
 ## 为什么要使用 git subtree?
 `git subtree` 可以让一个 repository 嵌入到另一个项目的子目录中。
 
-- 管理方便，对于项目中的成员无需关心额外的 git 工作流，使用最基本的 git 工作流即可
+- 管理方便，对于主项目中的成员无需关心额外的 git 工作流，使用最基本的 git 工作流即可
 - 在拉取代码的时候，一行 clone 命令可以立即获得包括子项目在内的所有的项目文件，而不是像 git submodule 一样还需要额外的 update 命令
-- git subtree 不会像 gitmodule 一样引入 metadata 文件来管理，git subtree 的使用对于项目中其他成员可以透明
+- git subtree 不会像 gitmodule 一样引入 metadata 文件来管理，没有 `.gitmodule` 这样的文件，git subtree 的使用对于项目中其他成员可以透明
 - 子项目中的内容可以无缝的被修改，并且可以选择性同步到 upstream 中
 
 ## 什么时候使用 git subtree?
 
-- 多个项目共同使用一整块代码库，并且这个依赖的代码库再快速迭代的时候
+- 多个项目共同使用一整块代码库，并且这个依赖的代码库在快速迭代的时候
 - 将一部分的代码从一个仓库独立出去，并且保留这个部分提交历史的时候
 
 ## git subtree 相关命令
+常用的 `git subtree` 命令：
 
 ```
 git subtree add   --prefix=<prefix> <commit>
@@ -90,7 +91,7 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 `git subtree push` 会将父项目中的提交每一次都进行提交，这会导致对于子项目来说无意义的提交信息，但是 `git subtree` 并没有提供类似 squash 的方式可以将多次提交合并成一次提交，但是 `git subtree` 提供了分支的特性，可以在父项目中将修改推送到某一个分支，然后在子项目中使用 squash merge 将修改合并到主干分支。
 
     git subtree push --prefix=foo foo feature
-   
+
 这会在 foo 的仓库中创建一个叫做 feature 的分支。然后可以从 feature 分支合并回 master 分支。
 
 一旦最新的提交都合并到 master 分支，可以通过 `pull` 来更新
@@ -99,7 +100,7 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
     
 这会在主项目中创建另外一个提交，包括了子项目中所有的修改。
 
-这样的方式有一个缺点就是会在父项目中产生一些多余的提交信息。
+这样的方式唯一的缺点就是会在父项目中产生一些多余的提交信息。
   
 
 ## 常见的使用场景
