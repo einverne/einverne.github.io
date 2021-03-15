@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Analyse Java Heap"
+title: "分析 Java 内存"
+aliases: "分析 Java 内存"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [java, heap,]
+tags: [java, heap, java-memory, ]
 last_updated:
 ---
+
 
 
 ## What Is Heap
@@ -22,9 +24,9 @@ First, you have to identify the Java process Id:
 
 	ps aux |grep "java"
 
-the normal way to capture the heap dump is using jmap:
+the normal way to capture the heap dump is using `jmap`:
 
-	jmap -dump:live,file=/tmp/heapdump.hprof PID
+	jmap -dump:live,format=b,file=/tmp/heapdump.hprof PID
 
 Try the following. It comes with JDK >= 7:
 
@@ -37,18 +39,24 @@ Example:
 This dumping process is much faster than dumping with `jmap`! Dumpfiles are much smaller, but it's enough to give your the idea, where the leaks are.
 
 
-
-
-
 [From]: <https://stackoverflow.com/a/40692594/1820217>
-
 
 
 ## Analyse heap file
 
-### Memory Analyzer (MAT)
+### Memory Analyzer Tool (MAT)
 
 The Eclipse Memory Analyzer is a fast and feature-rich Java heap analyzer that helps you find memory leaks and reduce memory consumption.
 
 Use the Memory Analyzer to analyze productive heap dumps with hundreds of millions of objects, quickly calculate the retained sizes of objects, see who is preventing the Garbage Collector from collecting objects, run a report to automatically extract leak suspects.
+
+Eclipse Memory Analyzer Tool 是一个基于 Eclipse 的分析工具。
+
+
+### Shallow Heap 和 Retained Heap 区别
+
+
+
+## reference
+
 - <https://www.eclipse.org/mat/>
