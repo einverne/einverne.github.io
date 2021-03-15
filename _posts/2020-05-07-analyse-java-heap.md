@@ -56,6 +56,17 @@ Eclipse Memory Analyzer Tool 是一个基于 Eclipse 的分析工具。
 ### Shallow Heap 和 Retained Heap 区别
 
 
+### Out of memory 问题
+
+I recently installed Eclipse MAT (Eclipse Memory Analyzer Version 1.9.1) on Mac OS Catalina (10.15.3). I needed to review a 4g heap dump. The default JVM heap size for MAT is 1024m.
+
+I think the easiest way to increase the JVM's heap size is to use a shell window - go to the /Applications/mat.app/Contents/Eclipse/ folder. Then vi MemoryAnalyzer.ini and change -Xmx1024m to your required value, in my case I went with -Xmx10g.
+
+To review the change, restart MAT and go to the help -> About Eclipse Memory Analyzer then click installation details, and look for the entry: eclipse.vmargs=-Xmx10g about 50 lines down.
+
+
+
+
 
 ## reference
 
