@@ -106,12 +106,12 @@ Cmd+i    | italic selection
 
 Shortcut | description
 ---------|------------
-Cmd+o    | Open quick switcher, jump to different notes by fuzze search
+Cmd+o    | Open quick switcher, jump to different notes by fuzz search
 Option+Enter | follow the link under cursor
 Cmd+Option+Enter | Open link under cursor in new pane
 Cmd+`[` | Back
 Cmd+`]` | Forward
-Cmd+hjkl | Navigete to left/below/above/right pane
+Cmd+hjkl | Navigate to left/below/above/right pane
 Cmd+w  | Close active pane
 Cmd+`\` | Split vertically
 Cmd+`-` | Split horizontally
@@ -122,12 +122,15 @@ Shortcut | description
 ---------|------------
 Cmd+e    | Toggle edit/preview mode
 
+Obsidian 的模板功能非常强大，我自定义了一个快捷键 ⌘ + ⇧ + i 来从模板中快速插入到当前的文档中。
+
+
 ## Zettelkasten method
 卡片标签式笔记法，Obsidian 也可以兼容，启用插件后侧边栏点击就能够快速建立时间戳开头的笔记迅速进入编写。
 
 ## 延伸阅读
 
-- Trilium
+- [[Trilium Notes]]
 
 ## 个人使用技巧
 
