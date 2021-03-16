@@ -9,10 +9,9 @@ tags: [ beancount, accounting, bookkeeping, double-entry, ]
 last_updated:
 ---
 
-在之前整理[复式记账](/post/2019/11/double-entry-bookkeeping.html) 的文章中曾短暂的提及过 Beancount，现在经过一段时间的使用，也正好回顾总结一下自己的使用经历和经验。
+在之前整理[复式记账](/post/2019/11/double-entry-bookkeeping.html) 的文章中曾短暂的提及过 Beancount，上一篇文章简单介绍了一下 [Beancount](/post/2020/02/beancount-introduction.html)，现在经过一段时间的使用，也正好回顾总结一下自己的使用经历和经验。
 
 要入门 Beancount 的使用，其中最重要的第一步便是充分的认识 Beancount 中的账户概念，在复式记账中资金都是在账户与账户之间流转，因此账户就非常重要。但是因为 Beancount 的入门难度要远远超过其他的记账软件，所以迈出第一步就变得至关重要，迈出了这第一步后面就会发现 Beancount 能带来远超预期的收益。
-
 
 在 Beancount 中内置类几类账户，这几类账户会用来生成最后的 [[资产损益表]]、[[资产负债表]] 等等报表。这几类账户在之前的[文章](/post/2019/11/double-entry-bookkeeping.html)中也提及过：
 
