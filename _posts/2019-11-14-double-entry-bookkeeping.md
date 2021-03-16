@@ -217,7 +217,7 @@ beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoi
 ### 处理交通银行信用卡
 一种比较直观的方式就是从每个月发送的账单中，将网页的表格下载成 CSV 文件，然后使用自定的脚本批量的添加到 Beancount 中。
 
-[[2021-02-12-beancount-introduction]]
+[[2021-02-02-beancount-introduction]]
 
 ## 我的管理方式
 新建一个目录专门用来记录，该目录使用 git 来做版本管理，敏感内容使用 git-crypt 加密。
