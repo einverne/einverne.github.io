@@ -4,7 +4,7 @@ title: "解决 Linux Mint 18.1 安装 NVIDIA 驱动后黑屏"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Linux, Nvidia, Linux Mint,]
+tags: [linux, nvidia, linux-mint,]
 last_updated: 
 ---
 
