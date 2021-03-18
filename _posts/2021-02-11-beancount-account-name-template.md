@@ -23,6 +23,61 @@ last_updated:
 
 在 fava 展示损益表的时候会使用到 Income 和 Expense，而在展示负债表的时候会用到 Assets, Liabilities 和 Equity。
 
+## 文件组织
+在构建了一个完整的命名体系之前，可以先对 Beancount 帐本进行提前的规划。比如我以如下的方式管理：
+
+```
+├── account
+│   ├── assets.bean
+│   ├── equity.bean
+│   ├── expenses.bean
+│   ├── income.bean
+│   ├── liabilities.bean
+├── beans
+│   ├── 2020.bean
+│   ├── 2021
+│   │   ├── 01.bean
+│   │   ├── 02.bean
+│   │   ├── 03.bean
+│   │   └── 04.bean
+│   ├── 微信\224\230账\215\225(20200701-20200930).bean
+│   └── 微信\224\230账\215\225(20201001-20201231).bean
+├── config.py
+├── datas
+│   ├── 微信\224\230账\215\225(20200701-20200930).csv
+│   └── 微信\224\230账\215\225(20201001-20201231).csv
+├── importers
+│   └── beanmaker.py
+├── main.bean
+├── processing.sh
+├── requirements.txt
+```
+
+说明：
+
+- account 账户中只定义 `open` 和 `close` 账户的语句，不同的名字命名的账户分开管理
+- beans 目录中是真正记录交易的地方
+- datas 目录则是账单的原始数据
+- `main.bean` 主帐本的定义
+
+
+在 `main.bean` 中通过 `include` 语法将其他 bean 引入，同时还定义了一些可选项。
+
+
+    option "title" "ledger" ; "我的账本" ledger
+    option "operating_currency" "CNY" ; 帐本货币
+    option "operating_currency" "USD"
+
+    ; fava
+    2016-04-14 custom "fava-option" "auto-reload" "true"
+
+    include "account/*.bean"
+    include "beans/*.bean"
+
+剩下的其他几个文件一个是配置从原始账单自动生成对应 `bean`，以及提前预处理账单的脚本 `processing.sh`，这部分内容会在后续介绍多个类型账单导入的文章中介绍。
+
+当然你并不需要按照这样的方式来管理，Beancount 完全支持在一个文件中记录所有的内容，就像[这个演示](https://fava.pythonanywhere.com/example-with-budgets/editor/) 那样。
+
 ## 给 Assets 账户命名
 对于个人而言，如果用最通俗的语言来解释 Assets 的话，「那就是你所拥有的资产」，这个资产包括现金，银行的存款，证券市场上的股票等等能够产生购买力的，或者能够用来清还债务的东西。
 
@@ -238,7 +293,6 @@ Beancount 这样的纯文本记账工具，对于账户开通和关闭处理几�
 - 帐户名有大到小整理，在 fava 界面中，多级账户会进行归类求和，可以清晰地看到上一级账户的总额
 - 在初始开通账户的时候尽量采用详细的多级账户，在未来合并账户的操作可以通过替换完成，但是拆分账户的操作则需要一一核对
 - 降低记账的认知负担，在确定好帐户名之后尽量可以通过直觉直接确定应该归属到哪一类账户。
-
 
 ## 附录
 
