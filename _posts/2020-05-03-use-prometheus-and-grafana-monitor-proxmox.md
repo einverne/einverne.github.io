@@ -227,7 +227,7 @@ pve_exporter 所能提供的打点 Metrics 大致有如下一些：
 	  - targets: ['10.0.0.5:9100']
 ```
 
-## Install grafana
+## Install Grafana
 直接参考 [官网](https://grafana.com/grafana/download?platform=linux)
 
 添加 source
