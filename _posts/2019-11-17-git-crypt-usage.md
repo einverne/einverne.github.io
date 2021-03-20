@@ -9,7 +9,7 @@ last_updated:
 ---
 
 
-在了解复式计帐开源软件 [Beancounter](/post/2019/11/double-entry-bookkeeping.html) 的时候偶然的知道了 git-crypt, 因为 beancounter 使用纯文本来记账，非常适合使用 git 来做管理，而个人帐务资产信息又是非常敏感的内容，所以就有了 git-crypt 的使用场景。而在日常的项目管理中，如果遇到代码需要公开，而某些敏感配置，比如数据库连接配置等等，使用相同的原理 git-crypt 也能够有使用场景。
+在了解复式计帐开源软件 [Beancount](/post/2019/11/double-entry-bookkeeping.html) 的时候偶然的知道了 git-crypt, 因为 beancount 使用纯文本来记账，非常适合使用 git 来做管理，而个人帐务资产信息又是非常敏感的内容，所以就有了 git-crypt 的使用场景。而在日常的项目管理中，如果遇到代码需要公开，而某些敏感配置，比如数据库连接配置等等，使用相同的原理 git-crypt 也能够有使用场景。
 
 ## installation
 git-crypt 使用 C++ 编写，安装的过程可以自行编译安装：
@@ -68,6 +68,7 @@ secretdir/** filter=git-crypt diff=git-crypt
 当团队其他成员获取了代码以后，需要修改配置文件，需要先解密，解密动作只需要做一次，往后就不需要再进行解密了。
 
 解密
+
     # git-crypt unlock /path/to/git-crypt-key
 
 ## 总结
