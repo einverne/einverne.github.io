@@ -232,9 +232,9 @@ Library Genesis 是科学论文和书籍搜索引擎，是一款非常好用的�
     http://www.duxiu.com
 
 ## woyushu
-需邀请码
+~~需邀请码http://www.woyushu.com~~
 
-	http://www.woyushu.com
+已经关闭。
 
 ## 我自己的站
 这是我自己建的站，我一直有在整理我硬盘上的电子书，但是无奈并没有那么多的 VPS 来存放这些书，抓了十几万条豆瓣的条目，有些已经从豆瓣完全消失了，希望这里有个地方存留一些记忆。
