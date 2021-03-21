@@ -51,11 +51,15 @@ PostgreSQL 支持布尔，true/false/null，1 字节长，
 
 
 ## 日期和时间
-表示日期和时间，用 date 来表示日期，用 time 来表示一日内时间。
+表示日期和时间，用 date 来表示日期，用 time 来表示一日内时间。date 占用 4 字节。精度为 天。
 
 如果要表示日期加上时间，则需要使用到 timestamp。
 
+PostgreSQL 中有两个 `timestamp`, 带时区和不带时区的，都是占用 8 个字节。精确到毫秒，14 位。
+
 PostgreSQL 还支持时间间隔 interval，可以表示的时间间隔可以从 -178000000 年到 178000000 年。
+
+`inerval` 占用 12 字节，精度为毫秒。
 
 ## 几何类型
 从下面开始就是发挥 PostgreSQL 巨大潜能的地方了。
