@@ -168,6 +168,10 @@ anyi 导航、聚合搜索、webstack
 
 - <https://github.com/geekape/geek-navigation>
 
+### onenav
+
+- <https://github.com/helloxz/onenav>
+
 ## 服务器监控
 雅黑探针、云探针、[netdata](https://github.com/netdata/netdata)
 
