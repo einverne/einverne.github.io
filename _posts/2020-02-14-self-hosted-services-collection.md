@@ -179,6 +179,7 @@ anyi 导航、聚合搜索、webstack
 ## Other
 
 ### Instagram scraper
+批量下载 Instagram
 
 	touch ig_args.txt ig_users.txt
 	docker run -d \
@@ -188,3 +189,6 @@ anyi 导航、聚合搜索、webstack
 		shyd/instagram-scraper
 
 
+### youtube-dl
+
+- <https://hub.docker.com/r/kmb32123/youtube-dl-server>
