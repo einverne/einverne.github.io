@@ -11,7 +11,9 @@ last_updated:
 
 
 ## 几个 bt 中经常见到的词汇
-bt 其实是 BitTorrent 的缩写，后文为了描述简单统一简称为 bt.
+bt 其实是 BitTorrent 的缩写，后文为了描述简单统一简称为 bt。
+
+BitTorrent 协议由美国程序员布莱姆·科亨在 2001 年发布。
 
 ### peer
 peer 可以理解成节点，或者等同于 client 客户端。只要你在本地打开了 bt 软件，连接了 swarm，有数据传输，就可以认为是一个 peer. 严格的来说，peer 指的是还未下载完成的节点。但通俗的就认为所有连接到 swarm 的客户端都叫做 peer，这个意义上， peer 和 client 有着相同的含义，并不区分是否完成了整个 torrent 的下载。
