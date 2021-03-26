@@ -4,7 +4,7 @@ title: "IntelliJ IDEA vmoptions 设置"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [intellij, idea, jvm, java, ]
+tags: [intellij, idea, jvm, java, jetbrain,  ]
 last_updated:
 ---
 
