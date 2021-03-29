@@ -31,7 +31,7 @@ POST 不是 HTTP 请求方法的 POST，而是 Power On Self Test，开机自检
 ![mbr](/assets/boot-mbr.png)
 
 ### GRUB
-[[GRUB]] 是 Linux 下最流行的启动管理器，全称是 GRand Unified Bootloader。计算机在读取 MBR 前 446 字节机器码之后，将运行事先安装的启动管理器 boot loader 也就是 GRUB。
+[[GRUB]] 是 Linux 下最流行的启动管理器（Boot Loader），全称是 GRand Unified Bootloader。计算机在读取 MBR 前 446 字节机器码之后，将运行事先安装的启动管理器 boot loader 也就是 GRUB。
 
 GRUB 设计兼容 [multiboot specification](https://en.wikipedia.org/wiki/Multiboot_Specification)，为了使得 GRUB 能够引导启动各种版本的 Linux。GRUB 也能够让用户选择从不同的 kernels 启动。Grub 的配置文件地址在 `/boot/grub/grub.conf`.
 
