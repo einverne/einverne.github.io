@@ -38,7 +38,7 @@ Mac 下应该会弹出 GUI 窗口进行密码验证。
 	git config --global gpg.program gpg        # 配置全局的 gpg
 	git config --global commit.gpgsign true    # 配置每一个 commit 都需要 gpg
 
-这里需要注意的一点是 Mac 下命令还叫做 gpg，但是在 Linux 下是 gpg2.
+这里需要注意的一点是 Mac 下命令还叫做 gpg，但是在 Linux 下是 `gpg2`.
 
 ## 生成 GPG 签名
 使用如下命令生成签名：
@@ -84,7 +84,7 @@ Mac 下应该会弹出 GUI 窗口进行密码验证。
 
 来获取 GPG KEY，拷贝 `-----BEGIN PGP PUBLIC KEY BLOCK-----` 和 `-----END PGP PUBLIC KEY BLOCK-----` 之前，包括这两行的内容到 GitHub。
 
-使用 `| xclip -sel c` 可以直接将命令输出结果拷贝到系统粘贴板。
+配合管道命令和 `xclip` ，使用 `| xclip -sel c` 可以直接将命令输出结果拷贝到系统粘贴板。
 
 ## 配置 GPG
 产生 GPG，并且已经添加到 [GitHub 后台](https://github.com/settings/gpg/new)，那么需要本地配置，告诉 git 本地签名。查看本地 gpg

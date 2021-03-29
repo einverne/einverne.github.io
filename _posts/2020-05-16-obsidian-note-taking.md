@@ -53,7 +53,7 @@ Obsidian 管理的所有数据都在本地，那也就意味着用户可以选�
 
 如果上手使用 Obsidian，那么第一感受就是可以在笔记的任何地方非常快速的创建内链，通过内链的方式，系统里面的笔记就形成了网状的结构，这也是 bi-directional linking 双向内链的精髓之处。
 
-Obsidian 在官方的 Demo 中引述了 John Locke 在 1690 年发表的 《An Essay Concerning Human Understanding》来解释人类思想形成的方式：
+Obsidian 在官方的 Demo 中引述了 [[洛克|约翰 洛克]] 在 1690 年发表的 《An Essay Concerning Human Understanding》来解释人类思想形成的方式：
 
 > The acts of the mind, wherein it exerts its power over simple ideas, are chiefly these three:
 > > 1. Combining several simple ideas into one compound one, and thus all complex ideas are made.
@@ -62,7 +62,7 @@ Obsidian 在官方的 Demo 中引述了 John Locke 在 1690 年发表的 《An E
 
 简单的翻译：
 
-- 首先将几个简单的想法组合成一个复杂的想法，从而完成所有复杂的想法：
+- 首先将几个简单的想法组合成一个复杂的想法，从而完成所有复杂的想法;
 - 第二，是将简单或复杂的两个想法放到一起，相互设置关联，方便查看它们，而同时又不将它们融合到一起，从而可以一眼查看所有想法之间的关联。
 - 第三，是将这些想法与实际存在的所有其他思想分开：这称为抽象，所有一般的思想都如此形成。
 
@@ -106,12 +106,12 @@ Cmd+i    | italic selection
 
 Shortcut | description
 ---------|------------
-Cmd+o    | Open quick switcher, jump to different notes by fuzze search
+Cmd+o    | Open quick switcher, jump to different notes by fuzz search
 Option+Enter | follow the link under cursor
 Cmd+Option+Enter | Open link under cursor in new pane
 Cmd+`[` | Back
 Cmd+`]` | Forward
-Cmd+hjkl | Navigete to left/below/above/right pane
+Cmd+hjkl | Navigate to left/below/above/right pane
 Cmd+w  | Close active pane
 Cmd+`\` | Split vertically
 Cmd+`-` | Split horizontally
@@ -122,12 +122,15 @@ Shortcut | description
 ---------|------------
 Cmd+e    | Toggle edit/preview mode
 
+Obsidian 的模板功能非常强大，我自定义了一个快捷键 ⌘ + ⇧ + i 来从模板中快速插入到当前的文档中。
+
+
 ## Zettelkasten method
 卡片标签式笔记法，Obsidian 也可以兼容，启用插件后侧边栏点击就能够快速建立时间戳开头的笔记迅速进入编写。
 
 ## 延伸阅读
 
-- Trilium
+- [[Trilium Notes]]
 
 ## 个人使用技巧
 

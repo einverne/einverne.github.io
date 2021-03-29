@@ -88,6 +88,16 @@ SnapRAID 作为一个备份工具非常强大，强烈推荐阅读官网上关�
 
 然后点击保存。
 
+## SnapRAID 操作
+
+在添加完硬盘之后，可以进行同步操作：
+
+- Sync, 同步数据，并更新校验，默认进行差量同步
+- Scrub，检查潜在的错误
+- Diff，列出和上一次存在的差别
+- Fix，尽可能恢复到上一次同步状态
+- Fix silent，修复潜在的错误
+
 ### SnapRAID Scrub
 最后设置 SnapRAID Scrub，scrubbing 的目的是检查数据盘和校验信息盘的错误。可以在 SnapRAID 的 settings 界面中启用 Scheduled diff，启用后会自动创建一个周期性 Crontab 任务。
 

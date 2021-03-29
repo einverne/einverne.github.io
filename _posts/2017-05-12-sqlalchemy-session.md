@@ -108,8 +108,7 @@ Session 不是为了线程安全而设计的，因此确保只在同一个线程
 > the scoped_session() function is provided which produces a thread-managed registry of Session objects. It is commonly used in web applications so that a single global variable can be used to safely represent transactional sessions with sets of objects, localized to a single thread.
 
 
-using transactional=False is one solution, but a better one is to simply rollback(), commit(), or close() the Session when operations are complete - transactional mode (which is called "autocommit=False"  in 0.5) has the advantage that a series of select operations will all
-share the same isolated transactional context..this can be more or less important depending on the isolation mode in effect and the kind of application.
+using `transactional=False` is one solution, but a better one is to simply rollback(), commit(), or close() the Session when operations are complete - transactional mode (which is called "autocommit=False"  in 0.5) has the advantage that a series of select operations will all share the same isolated transactional context..this can be more or less important depending on the isolation mode in effect and the kind of application.
 
 DBAPI has no implicit "autocommit" mode so there is always a transaction implicitly in progress when queries are made.
 

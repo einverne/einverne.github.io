@@ -8,7 +8,7 @@ tags: [compress, optimize, linux, command, jpeg, png,]
 last_updated:
 ---
 
-今天突然遇到一个问题，使用手机拍摄的照片 5+M 体积巨大，但是网易要求的图片大小需要小于 1M，所以就有了压缩图片的需求。记得很久以前使用过 [TinyPNG](https://tinypng.com/) 这个服务，但是唯一一点不好的就是无法脱离他在线的服务，需要把照片上传到他的网站上才能进行压缩。虽然有 [tinypng-cli](https://www.npmjs.com/package/tinypng-cli) 这个命令行的工具，但其实也是依赖在线服务的。所以就找了一下，然后发现了 jpegoptim 和 optipng 这两个工具。
+今天突然遇到一个问题，使用手机拍摄的照片 5+M 体积巨大，但是网易要求的图片大小需要小于 1M，所以就有了压缩图片的需求。记得很久以前使用过 [TinyPNG](https://tinypng.com/) 这个服务，但是唯一一点不好的就是无法脱离他在线的服务，需要把照片上传到他的网站上才能进行压缩。虽然有 [tinypng-cli](https://www.npmjs.com/package/tinypng-cli) 这个命令行的工具，但其实也是依赖在线服务的。所以就找了一下，然后发现了 `jpegoptim` 和 `optipng` 这两个工具。
 
 ## jpegoptim
 
@@ -62,6 +62,21 @@ last_updated:
 	npm install -g mozjpeg
 
 	mozjpeg --help
+
+## 在 macOS 下优化压缩图片
+macOS 下有一个不错的工具叫做 `imageOptim`
+
+安装：
+
+    brew install imageoptim-cli
+
+优化当前目录中的 PNG：
+
+    imageoptim --imagealpha '**/*.png'
+    
+优化 JPG：
+ 
+    imageoptim --jpegmini '**/*.jpg' '**/*.jpeg'
 
 ## reference
 

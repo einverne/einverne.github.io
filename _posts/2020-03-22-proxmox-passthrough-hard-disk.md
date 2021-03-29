@@ -33,6 +33,11 @@ last_updated:
 
 这里 100 是我的 OpenMediaVault 虚拟机的 ID，后面是硬盘的位置。这里的参数 `-scsi2` 表示的是使用 SCSI 的第二块硬盘，如果你要加多块硬盘，数字 2 需要往后加 `-scsi3` 这样。
 
+如果要检查虚拟机 100 中已经添加的硬盘，可以在 Proxmox 后台，点击虚拟机 ID，然后在 Hardware 中看 Hard Disk。
+
+[pve-hard-disk-pass-through.png](/assets/pve-hard-disk-pass-through.png)
+
+
 ## 检查是否配置成功
 在上面添加到虚拟机之后，可以在 Proxmox 界面中查看，或者用命令：
 
@@ -40,7 +45,7 @@ last_updated:
 
 理论上应该输出 scsi2 然后后面是硬盘的位置及编号。
 
-然后就能在 OpenMediaVault 中识别出该硬盘了。
+然后就能在 OpenMediaVault 中识别出该硬盘了。在 OpenMediaVault 中识别出硬盘之后就可以把这个硬盘加到联合硬盘池里面，扩展存储空间。
 
 ## SCSI vs VIRTIO
 上面 qm 命令中用了 `-scsi2` 这里指的是磁盘总线类型 (scsi) 和编号 (2)，目前磁盘总线类型大致上有这么几种：

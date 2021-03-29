@@ -50,4 +50,11 @@ XFS 是一个高性能 64 bit 日志文件系统， 1993 年由 Silicon Graphics
 
 [^xfs]: <https://en.wikipedia.org/wiki/XFS>
 
+## JFS 文件系统
+JFS是一款由IBM开发的64位日志文件系统。支持AIX，eComStation，OS/2和Linux等操作系统。
 
+
+## f2fs
+F2FS 是一种闪存文件系统，由金载极在三星集团研发，适合Linux内核使用。此文件系统起初是为了NAND闪存的存储设备设计，这些设备广泛存在于自移动设备至服务器领域。 三星应用了日志结构文件系统的概念，使它更适合用于存储设备。[^f2fs]
+
+[^f2fs]: <https://zh.wikipedia.org/zh-hans/F2FS>

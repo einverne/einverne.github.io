@@ -20,14 +20,18 @@ last_updated:
 POST 不是 HTTP 请求方法的 POST，而是 Power On Self Test，开机自检，在通电之后 BIOS 加载后会自动执行。
 
 ### MBR
-MBR 是主引导分区，全称是 Master Boot Record，该分区决定该设备是否能够启动。如果设备能够启动，那么该设备第一个扇区，512 字节就需要表明该设备能够启动。
+[[MBR]] 是主引导分区，全称是 Master Boot Record，该分区决定该设备是否能够启动。如果设备能够启动，那么该设备第一个扇区，512 字节就需要表明该设备能够启动。
 
-主引导记录告诉计算机去哪一块硬盘寻找操作系统，主引导记录由三部分组成，1-446 字节，调用系统机器码，447-510 字节，分区表，511-512 字节，主引导记录签名 （0x55,0xAA）。
+主引导记录告诉计算机去哪一块硬盘寻找操作系统，主引导记录由三部分组成
+
+- 1-446 字节，调用系统机器码
+- 447-510 字节，分区表
+- 511-512 字节，主引导记录签名 （0x55,0xAA）。
 
 ![mbr](/assets/boot-mbr.png)
 
 ### GRUB
-GRUB 是 Linux 下最流行的启动管理器，全称是 GRand Unified Bootloader。计算机在读取 MBR 前 446 字节机器码之后，将运行事先安装的启动管理器 boot loader 也就是 GRUB。
+[[GRUB]] 是 Linux 下最流行的启动管理器（Boot Loader），全称是 GRand Unified Bootloader。计算机在读取 MBR 前 446 字节机器码之后，将运行事先安装的启动管理器 boot loader 也就是 GRUB。
 
 GRUB 设计兼容 [multiboot specification](https://en.wikipedia.org/wiki/Multiboot_Specification)，为了使得 GRUB 能够引导启动各种版本的 Linux。GRUB 也能够让用户选择从不同的 kernels 启动。Grub 的配置文件地址在 `/boot/grub/grub.conf`.
 
