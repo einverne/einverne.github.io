@@ -130,6 +130,26 @@ zinit light b4b4r07/httpstat
 - 然后 `git pull` 执行，fast-forward 拉取最新的提交
 - 然后 `mv` 执行
 
+### wait
+`wait` 用于插件延迟加载。
+
+用法一，`wait'<number>'`, 表示在终端启动 number 毫秒之后，加载插件
+
+```bash
+zinit ice wait'1' 
+zinit light wfxr/forgit
+```
+
+用法二，有条件加载 `wait’[[ ... ]]‘`/`wait'(( ... ))'`，当满足条件时，加载插件。
+
+```bash
+zinit ice wait'[[ $PWD = */github || $PWD = */github/*  ]]'
+zinit load unixorn/git-extra-commands '
+```
+
+用法三，`wait'!...'`, `!` 表示在加载完成后重置控制台，用于主题加载
+
+
 
 ### Snippets completions
 使用 `as` 关键字和 `completion` 可以将 `snippet` 的内容加入到 `completion` 。
