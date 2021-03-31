@@ -14,7 +14,22 @@ last_updated:
 
 Debian/Ubuntu:
 
-    sudo apt-get install screenkey slop
+首先安装依赖：
+
+```
+sudo apt-get install python3-gi gir1.2-gtk-3.0
+sudo apt-get install python3-gi-cairo python3-cairo
+sudo apt-get install python3-setuptools python3-babel
+sudo apt-get install fonts-font-awesome slop
+```
+
+如果使用 GNOME：
+
+    sudo apt-get install gir1.2-appindicator3-0.1
+
+安装：
+
+    sudo apt-get install screenkey
 
 
 手动通过源码安装
