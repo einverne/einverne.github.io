@@ -73,19 +73,32 @@ print r.text
 
 说明：
 
-- metric: 最核心的字段，监控指标名称，代表这个采集项具体度量的是什么，比如是 cpu_idle 呢，还是 memory_free, 还是 qps
-- endpoint: 标明 metric 的主体（属主），比如 metric 是 cpu_idle，那么 endpoint 就表示这是哪台机器的 cpu_idle，一般使用机器的 hostname
-- timestamp: 表示上报该数据时的 unix 时间戳，注意是整数，代表的是秒
-- value: 代表该 metric 在当前时间点的值，float64
-- step: 表示该数据采集项的上报周期，这对于后续的配置监控策略很重要，必须明确指定。
-- counterType: 是 Open Falcon 定义的数据类型，取值只能是`COUNTER`或者`GAUGE`二选一，前者表示该数据采集项为计时器类型（累加值），后者表示其为原值 （注意大小写，这个值是一个波动的值）
+- `metric`: 最核心的字段，监控指标名称（监控项），代表这个采集项具体度量的是什么，比如是 `cpu_idle` 呢，还是 `memory_free`, 还是 `qps`
+- `endpoint`: 标明 metric 的主体（属主），比如 metric 是 cpu_idle，那么 endpoint 就表示这是哪台机器的 cpu_idle，一般使用机器的 hostname
+- `timestamp`: 表示上报该数据时的 unix 时间戳，注意是整数，代表的是秒
+- `value`: 代表该 metric 在当前时间点的值，float64
+- `step`: 表示该数据采集项的上报周期，这对于后续的配置监控策略很重要，必须明确指定。
+- `counterType`: 是 Open Falcon 定义的数据类型，取值只能是`COUNTER`或者`GAUGE`二选一，前者表示该数据采集项为计时器类型（累加值），后者表示其为原值 （注意大小写，这个值是一个波动的值）
 
         - GAUGE：即用户上传什么样的值，就原封不动的存储
         - COUNTER：指标在存储和展现的时候，会被计算为 speed，即（当前值 - 上次值）/ 时间间隔
 
-- tags: 监控数据的属性标签，一组逗号分割的键值对，对 metric 进一步描述和细化，可以是空字符串。比如 idc=lg，比如 service=xbox 等，多个 tag 之间用逗号分割
+- `tags`: 监控数据的属性标签，一组逗号分割的键值对，对 metric 进一步描述和细化，可以是空字符串。比如 idc=lg，比如 service=xbox 等，多个 tag 之间用逗号分割
 
 说明：这 7 个字段都是必须指定
+
+
+### Metric
+Metric 监控指标，时序数据。
+
+包括不同类型：
+
+- counter 数值单调递增
+- guage 数值每次更新
+
+### endpoint
+endpoint 通常来指服务器节点。
+
 
 ## Falcon 的接口概念
 在 Falcon 中有这样几个不同的接口
