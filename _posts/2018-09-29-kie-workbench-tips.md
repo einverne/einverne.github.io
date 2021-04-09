@@ -12,7 +12,7 @@ KIE 的使用和踩坑记录。
 
 ## Guided Decision Table 的顺序
 
-决策表默认使用的是为 None 的 hit policy，这里涉及到一个问题也就是规则执行的顺序，默认的 None 其实是并发所有规则一同执行的，那么也就隐藏了一问题，如果传入的参数满足多条规则，那么极有可能造成结果不符预期的情况。
+决策表默认使用的是 None 的 hit policy，这里涉及到一个问题也就是规则执行的顺序，默认的 None 其实是并发所有规则一同执行的，那么也就隐藏了一问题，如果传入的参数满足多条规则，那么极有可能造成结果不符预期的情况。
 
 
 更多关于决策表 Hit Policy 的内容可以参考这篇 ---- [决策表规则执行顺序](/post/2018/10/assets-in-drools-kie.html)
@@ -34,7 +34,7 @@ KIE 的使用和踩坑记录。
             data.setResult( "168" );
     end
 
-在创建决策表 Asset 的时候，如果选择了 FIRST_HIT 的决策表在每条规则会有条这样的规则：
+在创建决策表 Asset 的时候，如果选择了 `FIRST_HIT` 的决策表在每条规则会有条这样的规则：
 
     activation-group "first-hit-policy-group testTable"
 
