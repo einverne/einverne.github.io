@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kindle 使用小技巧及常见问题"
-tagline: "Kindle is not just a e-reader, it is center of knowlodge"
+tagline: "Kindle is not just a e-reader, it is center of knowledge"
 description: "some tips I concluded during my use"
 category: 经验总结
 tags: [kindle, book, 阅读 ,  amazon, ebook, ]
