@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Git worktree 作用及使用"
+title: "使用 Git worktree 将同一个项目分裂成多个本地目录"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,7 +8,7 @@ tags: [git, git-worktree, scm, version-control, ]
 last_updated:
 ---
 
-在偶然逛 Stackoverflow 的时候看到一个提问，能不能在同一个 repo 中同时有两份代码，并且可以保持两份相似但不是完全相同的代码并行开发？虽然对其需求有些[好奇和疑惑](https://stackoverflow.com/q/55258459/1820217) ，但也关注了一下下方的回答。
+在偶然逛 StackOverflow 的时候看到一个提问，能不能在同一个 repo 中同时有两份代码，并且可以保持两份相似但不是完全相同的代码并行开发？虽然对其需求有些[好奇和疑惑](https://stackoverflow.com/q/55258459/1820217) ，但也关注了一下下方的回答。
 
 这个时候我知道了 git 原来还有一个命令叫做 `git worktree` 这是 Git 2.15 版本引入的新概念。我们都知道一个正常的 git workflow 可能就是从 master 拉出新分支 feature 进行功能开发，如果遇到有紧急 bug，那么从 master 拉出 hotfix 分支紧急修复在合并。这是一个比较常规的工作流，那么 git worktree 为何要被引用进来。从官方的文档 [^1] 上能看到 git worktree 的作用是将多个 working trees 附加到同一个 repository 中，允许用户一次 check out 多个分支。但是问题是为了解决相同的问题，为何要引入一个更加复杂的 git worktree ？
 
