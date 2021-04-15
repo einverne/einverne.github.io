@@ -10,11 +10,24 @@ last_updated:
 
 简而言之，泛型使类型（类和接口）在定义类，接口和方法时成为参数。类型参数提供了一种简便的方法，使得不同的输入类型可以使用相同的代码。
 
+
+## 为什么需要泛型
+在强类型语言中，如果定义一个具有具体类型的类，那么这个类就只能被该类型使用。
+
+Generics 给类，接口和方法提供了一个参数化的实现方式，使得同一个类定义，方法定义可以处理不同的类型。Oracle 官方的文档有一句话说得特别好：
+
+> Much like the more familiar _formal parameters_ used in method declarations, type parameters provide a way for you to re-use the same code with different inputs.
+
+在方法定义的时候使用的是 `formal parameters` （形式参数），在调用方法的时候会将实际参数传递给形式参数，传递的是值，而泛型（Generics）则是传递的类型（Types）。
+
+Java 编译期会在编译阶段检查类型。
+
 使用泛型的代码比非泛型代码有如下好处：
 
-- 在编译时进行更强大的类型检查
+- 在编译时进行类型检查，减少错误
 - 消除了强制类型装换
 - 可以让编程人员更加容易实现通用算法
+
 
 ## 定义
 通常情况下，泛型类 (generic class) 可以如下定义
@@ -40,15 +53,15 @@ last_updated:
 
     List<String> list;
 
-> Type Parameter 和 Type Argument 术语：大部分情况下这两个术语是可以互换的，但他们的使用场景是不一样的。因此 `Foo<T>` 中的 T 是 type Parameter，而 Foo<String> 中的 String 是 type argument.
+> Type Parameter 和 Type Argument 术语：大部分情况下这两个术语是可以互换的，但他们的使用场景是不一样的。因此 `Foo<T>` 中的 T 是 type Parameter，而 `Foo<String>` 中的 String 是 type argument.
 
 ## 泛型方法
 
-对于静态泛型方法（static generic method)， type parameter 定于的区域需要出现在返回值的前面
+对于静态泛型方法（static generic method)， type parameter 定义的区域需要出现在返回值的前面
 
     public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {...}
 
-调用该方法的完整的方式
+调用该方法的完整的方式：
 
     boolean same = Util.<Integer, String>compare(p1, p2);
     // or
@@ -57,13 +70,13 @@ last_updated:
 ## 有界类型参数 {#bounded-type-parameters}
 总有一种情况，编程人员想要限制泛型的类型，比如一个操作数字的类或者方法，可能希望泛型只接受 Number 或者其子类的实例。
 
-定义上界，比如`<E extends Comparable>` 在这个例子中，表示定义的泛型需要实现 Comparable 接口，这里的 `extends` 只是通用表示 `extends (Class)` 或者 `implements (interfaces)`
+定义上界，比如 `<E extends Comparable>` 在这个例子中，表示定义的泛型需要实现 Comparable 接口，这里的 `extends` 只是通用表示 `extends (Class)` 或者 `implements (interfaces)`
 
 如果要定义多个界
 
     <T extends B1 & B2 & B3>
 
-在定义多个届时，需要将 Class 类型放到 interface 之前，比如说上面的例子中假如有 Class B2， interface B1 & B3 ，那么 B2 必须是第一个。
+在定义多个界时，需要将 Class 类型放到 interface 之前，比如说上面的例子中假如有 Class B2， interface B1 & B3 ，那么 B2 必须是第一个。
 
 ## 通配符 #{wildcards}
 在代码中也经常能看到 `?` 问号，通常叫做通配符（wildcard），表示是类型未知。通配符可以用在非常多的场景，作为参数，field，或者本地变量，有时候也作为返回值（当然不推荐这么做）。
@@ -75,7 +88,7 @@ last_updated:
 upper bounded wildcard，`List<? extends Foo>` 其中 Foo 是类型，表示 Foo 和任何子类。
 
 ### Unbounded Wildcards
-无界通配符类型（upper bounded wildcard），通常表示的单纯的使用 `？` ，比如 `List<?>`，表示的是一个不知道类型的 list。有两种常用的使用场景
+无界通配符类型（upper bounded wildcard），通常表示的单纯的使用 `?` ，比如 `List<?>`，表示的是一个不知道类型的 list。有两种常用的使用场景
 
 - 当写方法只需要 `Object` 类中的方法时
 - 在泛型类中定义的方法不依赖于 type parameter 时，比如 List.size() 或者 List.clear ，并不依赖于定义的泛型类型
@@ -99,7 +112,7 @@ upper bounded wildcard，`List<? extends Foo>` 其中 Foo 是类型，表示 Foo
 这个时候 `List<Integer>` 才是 `List<?>` 的子类型。
 
 ### Lower Bounded Wildcards
-类型的上界使用 `extends`，相同的，如果要表示类型的下界，则使用 `super`，比如 `<? super A>` 。需要注意的是，对于通配符 `?` 可以单独指定上界，也可以指定下界，但是两者不能同时指定。
+和类型的上界使用 `extends`，相同的是，如果要表示类型的下界，则使用 `super`，比如 `<? super A>` 。需要注意的是，对于通配符 `?` 可以单独指定上界，也可以指定下界，但是两者不能同时指定。
 
     public static void addNumbers(List<? super Integer> list) {
         for (int i = 1; i <= 10; i++) {
