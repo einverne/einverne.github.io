@@ -101,6 +101,19 @@ Override Changes
 Override Changes 或者撤销变动，中文译法有些不准确。出现这个提示的原因通常是设为仅发送的一方（A，master）认为自己的资料是最新的，认为对方（B）推送的变动是应该被撤销的，即使B关于特定资料的修订时间要晚于本地；点这个按钮会强迫B对方撤销自己的变动，以其收到的A的版本为准更改资料。
 
 
+### 228/SECCOMP
+当我在一台比较老的机器上安装 Syncthing， systemd status 发现无法启动 Syncthing，查看日志说是：`228/SECCOMP` 错误。
+
+这个时候需要修改 `sudo vi /lib/systemd/system/syncthing@.service`，并将其中两行注释。
+
+```
+# SystemCallArchitectures=native
+# MemoryDenyWriteExecute=true
+```
+
+然后重新 `sudo systemctl daemon-reload`，并重新启动 Syncthing：
+
+    sudo systemctl start syncthing@einverne.service
 
 
 ## reference
