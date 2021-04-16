@@ -39,7 +39,7 @@ Syncthing 有个端口需要注意一下
 
 然后修改本地监听地址从 127.0.0.1 到 0.0.0.0.
 
-## 开机启动
+## 设置 Syncthing 开机启动
 如果熟悉 supervisord 可以使用官方提供的文档配置，如果在 Linux 下可以尝试使用 Systemd
 
 	sudo systemctl enable syncthing@yourname.service
