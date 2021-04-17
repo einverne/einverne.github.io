@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "制作 Rime 词库"
+title: "利用 imewlconverter 制作 Rime 词库"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [rime, Rime, 词库 , 小狼毫 , 中州韵 ,]
+tags: [rime, Rime, 词库 , 小狼毫 , 中州韵 , trime, input-method, ]
 last_updated:
 ---
 
@@ -17,13 +17,17 @@ last_updated:
 
 - <https://github.com/studyzy/imewlconverter/releases>
 
-安装 dotnet
+安装 dotnet：
 
 - <https://dotnet.microsoft.com/download/dotnet-core/2.2>
 
-下载 release 对应版本，然后运行
+macOS 下直接 `brew install dotnet-sdk`
+
+下载 release 对应版本，然后运行：
 
 	dotnet ImeWlConverterCmd.dll -?
+    
+在 macOS 下使用 `dotnet ImeWlConverterCmd.dll "-?"`.
 
 具体转换命令，比如导入一个搜狗细胞词库成 Rime 词库，则命令为：
 
@@ -32,7 +36,7 @@ last_updated:
 `ImeWlConverterCmd.dll` 工具的其他重要参数，对于输出为 rime 的 `-ct:pinyin/wubi/zhengma`，也可以通过 `-os:windows/macos/linux` 来指定操作系统。
 
 ## 繁简转换
-安装 opencc 繁简转换工具
+安装 `opencc` 繁简转换工具
 
 	sudo apt install opencc
 
@@ -66,6 +70,11 @@ last_updated:
 
 然后使用上面的方法转换。
 
+### 搜狗拼音备份词库 bin
+
+    dotnet ImeWlConverterCmd.dll -ct:pinyin -os:linux -i:sgpybin ./input.bin -o:rime ./rime.txt
+
+
 ## 清华大学开放中文词库
 包含了 IT, 财经，成语，地名，历史名人，诗词，医学，饮食，法律，汽车，动物，等几大类词库。
 
@@ -75,6 +84,9 @@ last_updated:
 我所有的通讯录都在 [Google 通讯录](https://contacts.google.com/?hl=zh-CN) 中保存着，页面上可以很方便的导出 csv 文件。有了这个文本文件就可以快速制作通讯录姓名的词库。
 
 简单观察一下通讯录 csv 的结构就知道第一列就是姓名，解析一下文件然后将第一列弄出来。和上面的流程一直，制作一个 `luna_pinyin.contacts.dict.yaml` 文件保存这些通讯录名字，然后将该词库添加到 extended 中。部署即可生效。
+
+## 
+
 
 ## Rime 导入词库
 通过扩展来导入词库，纯文本管理，
