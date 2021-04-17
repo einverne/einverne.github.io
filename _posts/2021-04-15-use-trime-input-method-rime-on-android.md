@@ -4,7 +4,7 @@ title: "Android 上的 RIME 输入法 trime 同文输入法使用"
 aliases: "Android 上的 RIME 输入法 trime 同文输入法使用"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [rime, input-method, android, google-gboard, ]
 last_updated:
 ---
