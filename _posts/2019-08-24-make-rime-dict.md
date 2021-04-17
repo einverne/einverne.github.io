@@ -55,6 +55,11 @@ macOS 下直接 `brew install dotnet-sdk`
 	use_preset_vocabulary: true
 	...
 
+说明：
+
+- `sort: by_weight`，词条的排序方式，可选填 `by_weight` 按照词频高到低，`original` 保持原码表中的顺序
+- `use_preset_vocabulary: true` 表示是否导入预设的词汇表，当词库中没有定义拼音和词频的时候开启
+
 
 然后找到 `luna_pinyin.extended.dict.yaml`，打开文件导入新的词库
 
@@ -85,7 +90,9 @@ macOS 下直接 `brew install dotnet-sdk`
 
 简单观察一下通讯录 csv 的结构就知道第一列就是姓名，解析一下文件然后将第一列弄出来。和上面的流程一直，制作一个 `luna_pinyin.contacts.dict.yaml` 文件保存这些通讯录名字，然后将该词库添加到 extended 中。部署即可生效。
 
-## 
+## 纯文本词库
+
+    dotnet ImeWlConverterCmd.dll -ct:pinyin -os:linux -i:word ~/Downloads/entry.csv -o:rime ./rime-.txt
 
 
 ## Rime 导入词库
