@@ -121,3 +121,5 @@ Clash 提供了默认的 9090 端口作为远端管理端口，在配置中可�
 
 - [在终端下使用 socks 代理](/post/2017/02/terminal-sock5-proxy.html)
 - 你还可以在终端下对代理进行[测速](/post/2020/04/how-to-speed-test-a-proxy-socks-or-http-proxy.html)
+
+感谢 BobMaster 在评论里面提供其他解决方式，有兴趣可以尝试 [v2rayA](https://github.com/v2rayA/v2rayA)， 或 [Qv2ray](https://github.com/Qv2ray/Qv2ray)
