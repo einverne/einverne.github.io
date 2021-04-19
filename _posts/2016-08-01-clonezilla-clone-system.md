@@ -39,7 +39,7 @@ last_updated:
 /dev/sdc2: UUID="8A0005F80005EBCF" TYPE="ntfs"
 ```
 
-在完成从分区到分区的克隆之后，修复系统磁盘 UUID 以及启动引导 grub。这里花费了一些时间去了解 grub 的启动过程。学习了一些命令。
+在完成从分区到分区的克隆之后，修复系统磁盘 UUID 以及启动引导 grub。这里花费了一些时间去了解 [[GRUB]] 的启动过程。学习了一些命令。
 
 ```
 sudo blkid   #查看磁盘 UUID
