@@ -41,7 +41,7 @@ Device       Start       End   Sectors   Size Type
 
 说明：
 
-- BIOS boot 分区是 GNU GRUB 来引导基于 Legacy BIOS 但是启动设备上有 GPT 格式分区表的操作系统时使用的分区。
+- BIOS boot 分区是 GNU [[GRUB]] 来引导基于 Legacy BIOS 但是启动设备上有 GPT 格式分区表的操作系统时使用的分区。
 - EFI System 分区是一块 FAT32 格式的分区，存储 EFI 引导程序以及启动时固件使用的应用程序。
 - Linux LVM 分区则是系统真正可以使用的分区。LVM 是逻辑卷管理器，可以用来创建和管理逻辑卷，而不是直接管理磁盘，这就使得我们之后对分区大小进行调整变得可能。对 LVM 逻辑卷的扩大缩小并不会影响其中的已存储的数据。
 

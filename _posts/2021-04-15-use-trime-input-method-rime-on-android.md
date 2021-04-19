@@ -22,7 +22,7 @@ last_updated:
 这应该是一个被无数次提起，又被无数人遗忘的事情，就像我之前[提到](/post/2019/12/rime-input-method.html) 的那样，很多人已经忘记了这些「云」输入法后台明文上传用户的输入，也很多人不知道其实搜狗输入法的云同步记录是无法让用户删除的。虽然我承认从 PC 切换到移动端的那几年个人的同步词库确实会有很多帮助，但实际上 RIME 也能轻松的做到。
 
 ## 惊喜
-不过每一次从闭源到开源的切换，都让我有意外的收获，感慨开源社区的伟大，[从 Dropbox 切换到 Syncthing](/post/2019/10/syncthing.html)，让我体会到了同步文件原来还可以这样迅速，再不用考虑 Dropbox 中心服务器的同步速度问题；[从 Evernote 切换到 Joplin](/post/2019/10/joplin-best-evernote-alternative-i-ever-used.html)，[[Joplin]]不仅网页剪切速度快，并且还可以调用本地编辑器，比如 vim 对笔记内容进行编辑。
+不过每一次从闭源到开源的切换，都让我有意外的收获，感慨开源社区的伟大，[从 Dropbox 切换到 Syncthing](/post/2019/10/syncthing.html)，让我体会到了同步文件原来还可以这样迅速，再不用考虑 Dropbox 中心服务器的同步速度问题；[从 Evernote 切换到 Joplin](/post/2019/10/joplin-best-evernote-alternative-i-ever-used.html)，[[Joplin]]不仅网页剪切速度快，并且还可以调用本地编辑器，比如 vim 对笔记内容进行编辑；从 LastPass 切换到 Bitwarden，发现原来 Linux 客户端可以这么好用，macOS 也可以充分利用 Touch ID。
 
 尝试 Trime 同文输入法也是一样，在 Play Store 上安装之后用 Syncthing 把我桌面端的 rime-config 配置同步到了手机上，然后拷贝了配置到 sdcard 下面的 rime 文件夹，Deploy 一下直接就能用了。
 
