@@ -1,0 +1,145 @@
+---
+layout: post
+title: "我的 IntelliJ IDEA Vimrc 配置"
+aliases: "我的 IntelliJ IDEA Vimrc 配置"
+tagline: ""
+description: ""
+category: 学习笔记
+tags: [idea, vim, vimrc, config, vim-config, jetbrain, intellij-idea, ide ]
+last_updated:
+---
+
+
+IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 快捷键的开源插件。
+
+## 为什么要用 IdeaVim
+
+- 既充分利用了 IntelliJ 提供的代码补全，重构，代码浏览等等功能，又可以充分利用 Vim 的[多模式](http://einverne.github.io/post/2015/05/vim-mode.html)，以及 Vim 在编辑器中的高效操作
+- 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，以及充分利用 Idea 提供的 Action
+
+
+## 利用 .ideavimrc 配置 IdeaVim
+
+### 重新加载 .ideavimrc
+如果安装了插件之后，IntelliJ IDEA 在启动时会自动加载 `~/.ideavimrc` 这个配置文件，改动该文件后可以使用如下方式手动重新加载：
+
+	:source ~/.ideavimrc
+
+
+
+## 使用案例
+
+### 打开最近使用的项目
+
+首先创建一个 `keymap`:
+
+```
+let mapleader = ","
+nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
+```
+
+然后使用配置的 leader 快捷键 <kbd>,</kdb> + <kbd>o</kbd> 就可以快速弹出最近打开项目，使用模糊搜索就可以快速打开新的项目。
+
+在不知道这个方法以前，我都是在 [[Alfred]] 中配置了一个 Workflow 来打开新的项目的。在发现上面这个方法后，发现在 IDE 内通过这个方式打开别的项目，远比 Alfred 中要快。
+
+
+### Go to Declaration
+IDEA 自身就提供了非常多的快捷来在代码之间跳转，比如：
+
+- 跳转到变量，方法，类的定义
+- 跳转到 Super 类
+- 跳转到方法被调用的地方
+- 跳转到实现的地方
+- 跳转到文件
+
+等等，我统一使用 `g` 作为简记符。
+
+在 `.ideavimrc` 文件中，定义 `map xxx :action yyy` 表示自定义一个 keymap 调用 IntelliJ 的 action。
+
+	nnoremap gd :action GotoDeclaration
+
+这里的 `GotoDeclaration` 是 IntelliJ 的一个 action，一个 IntelliJ 的 Action 对应着 IntelliJ 的一个功能。上面的定义就表示在 Normal 模式下定义新的 keymap gd，表示的是在 Normal 模式下，按下 `gd` 就会执行 GotoDeclaration。
+
+IntelliJ 提供了一系列的 Action 可以使用。
+
+比如我定义了如下的跳转：
+
+```
+" go to somewhere (g in normal mode for goto somewhere)
+nnoremap ga :<C-u>action GotoAction<CR>
+nnoremap gc :<C-u>action GotoClass<CR>
+nnoremap gd :<C-u>action GotoDeclaration<CR>
+nnoremap gs :<C-u>action GotoSuperMethod<CR>
+nnoremap gi :<C-u>action GotoImplementation<CR>
+nnoremap gf :<C-u>action GotoFile<CR>
+nnoremap gm :<C-u>action GotoSymbol<CR>
+nnoremap gl :<C-u>action JumpToLastChange<CR>
+nnoremap gu :<C-u>action ShowUsages<CR>
+nnoremap gt :<C-u>action GotoTest<CR>
+nnoremap gp :<C-u>action FindInPath<CR>
+nnoremap gr :<C-u>action RecentFiles<CR>
+```
+
+### 查看 IDEA 支持的 Action
+
+在安装 IdeaVim 之后，可以在 `normal` 模式下使用如下命令查看 IDE 支持的 action:
+
+	:actionlist [pattern]
+
+如果要搜索对应的 action 可以直接加上模糊词来搜索，比如 `:actionlist declaration` 来搜索相关的内容。
+
+执行 action
+
+	:action {name}
+
+比如执行 `:action Debug`
+
+### 重新命名 Action
+
+在 `~/.ideavimrc` 文件中可以给 Action 其名字，比如
+
+	command! Reformat action ReformatCode
+
+在 action 后面的 `ReformatCode` 是一个合法的 ActionName，通过上面的语句就重新起了一个新的名字叫做 `Reformat`。这样就可以通过 `:Reformat` 来调用。
+
+### 切换标签页
+
+使用空格加 hl 来切换标签页
+
+	nnoremap <space>h gT
+	nnoremap <space>l gt
+
+更多的配置可以参考我的 [dotfile](https://github.com/einverne/dotfiles/blob/master/idea/.ideavimrc) 配置。
+
+## 两个比较有用的快捷键
+
+- ⌘+F12 ActivateTerminalToolWindow
+- ⌘+⇧+F12 HideAllWindows
+
+
+### Cmd 组合
+
+- Cmd+a/c/v/x/z
+- Cmd+w 关闭当前的文件
+- Cmd+e 最近的文件
+- Cmd+t Refactor this 重构
+- Cmd+n Generate 快速生成模板代码
+- Cmd+o File Structure 当前文件的文件结构
+- Cmd+b 跳转到定义
+- Cmd+[/]
+
+## surround
+启用 surround 插件来模拟 [surround](http://einverne.github.io/post/2015/01/vim-plugin-vim-surround.html)
+
+	set surround
+
+
+
+## reference
+
+- <https://ikenox.info/blog/getting-started-ideavim/>
+
+
+[[常用的 IDEA 插件]]
+
+category: [[IntelliJ IDEA]] [[编程工具]] [[学习笔记]]
