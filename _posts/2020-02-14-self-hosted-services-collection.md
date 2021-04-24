@@ -103,8 +103,15 @@ n8n.io
 
 - <https://n8n.io/>
 
+Huginn 也是一个不错的 IFTTT 开源代替品。
+[[2019-01-11-huginn]]
+
+
 ## 稍后阅读
 开源版本的稍后阅读，[wallabag](https://wallabag.org/en) 。
+
+可以用来代替 Pocket 和 Instapaper。
+
 
 ## 网站收藏
 

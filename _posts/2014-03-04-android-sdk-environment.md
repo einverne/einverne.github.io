@@ -3,12 +3,21 @@ title: Android SDK环境变量配置
 layout: post
 category : 经验总结
 tagline: ""
-tags : [Android, JDK,]
+tags : [android, jdk, android-sdk, android-develop, ]
 ---
 
-Android SDK就是Google提供的Android开发工具包,之前请先[配置好JDK][1]
+Android SDK就是 Google 提供的Android开发工具包,之前请先[配置好JDK][1]
+## Install Android SDK under Linux
+    
+    sudo apt update && sudo apt install android-sdk
 
-###Android SDK下载地址
+安装之后 Android SDK 的地址可能在：
+
+- `/home/account/Android/Sdk`
+- `/usr/lib/android-sdk`
+
+
+### Android SDK下载地址
 - Google搜索Android SDK
 - 或者https://developer.android.com/sdk/index.html
 
@@ -27,7 +36,7 @@ Android SDK就是Google提供的Android开发工具包,之前请先[配置好JDK
 
 7. 点击运行——输入cmd——回车——输入adb——回车，如果出现一堆英文，即表示配置成功，输入Android，启动Android SDK Manager。
 
-###目录tools和platform-tools的区别
+### 目录tools和platform-tools的区别
 
 Android sdk目录里，有一些文件夹：
 
@@ -40,7 +49,7 @@ Android sdk目录里，有一些文件夹：
 - docs：该文件夹存放了Android SDK开发文件和API文档等
 - samples：该文件夹存放不同的Android平台和示例程序。
 
-参考:http://blog.csdn.net/rflyee/article/details/8973529
+参考: http://blog.csdn.net/rflyee/article/details/8973529
 
 
   [1]: http://www.einverne.tk/2014/02/jdk.html

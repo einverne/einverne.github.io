@@ -36,6 +36,16 @@ asdf 通过插件的形式可以添加不同语言的支持。支持的所用插
 	asdf shell python 3.6.1
 	asdf local python 3.6.1
 
+## 在 sudo 中使用 asdf
+使用 asdf 安装的环境都在用户目录下， 如果要在 `sudo` 中使用，则会报错 `sudo: xxx command not found`，因为 sudo 默认不会将用户的环境变量传递过去。如果要在 sudo 中使用，则需要手动指定 PATH：
+
+    sudo -E env "PATH=$PATH" [command] [options]
+
+可以设置一个 alias:
+
+    $ alias mysudo='sudo -E env "PATH=$PATH"'
+
 ## reference
 
 - <https://asdf-vm.com/>
+- <https://github.com/asdf-vm/asdf/issues/98>

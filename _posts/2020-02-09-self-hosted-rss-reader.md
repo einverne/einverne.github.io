@@ -168,7 +168,7 @@ Selfoss 相对比较简单，定时抓取也要手工 crontab 来触发，但功
 [^q]: https://selfoss.aditu.de/forum/index.php?mode=thread&id=895
 
 ## miniflux
-Go 编写，依赖 Postgresql。
+Go 编写，依赖 PostgreSQL。
 
 - <https://github.com/miniflux/miniflux>
 

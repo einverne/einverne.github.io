@@ -52,8 +52,8 @@ top 命令能够实时显示系统中各个进程资源占用情况。可以用�
 - PR 进程优先级
 - NI 负值表示高优先级
 - VIRT 进程使用的虚拟内存总量，单位 kb。VIRT=SWAP+RES
-- RES 进程使用的、未被换出的物理内存大小，单位 kb。RES=CODE+DATA
-- SHR 共享内存大小，单位 kb
+- RES (**resident memory usage**)常驻内存，进程使用的、未被换出的物理内存大小，单位 kb。RES=CODE+DATA
+- SHR (**shared memory**) 共享内存大小，单位 kb
 - S  进程状态，D= 不可中断的睡眠状态；R= 运行；S= 睡眠；T= 跟踪 / 停止；Z= 僵尸进程
 - %CPU 上次更新到现在的 CPU 时间占用百分比
 - %MEM 进程使用的物理内存百分比

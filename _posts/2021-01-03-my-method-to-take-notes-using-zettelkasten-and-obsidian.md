@@ -87,7 +87,7 @@ Zettelkasten 卡片的第一个准则，就是一条笔记只记录一个想法�
 而目前我使用最顺手的就是 Obsidian。
 
 ### 借助模板之力
-Obsidian 的 core plugin 就支持 Zettelkasten prefixer，然后我绑定了快捷键，⌘+Shift+N，就是创建一则 Zettel 笔记，而普通的 ⌘+N 就是普通的笔记。
+Obsidian 的 core plugin 就支持 Zettelkasten prefixer，然后我绑定了快捷键，`⌘+Shift+N`，就是创建一则 Zettel 笔记，而普通的 ⌘+N 就是普通的笔记。
 
 我的模板现在比较简单：
 

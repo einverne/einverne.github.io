@@ -4,7 +4,7 @@ title: "使用 docker compose 管理多个容器"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [docker, dockercompose, linux,]
+tags: [docker, docker-compose, linux,]
 last_updated: 
 ---
 
