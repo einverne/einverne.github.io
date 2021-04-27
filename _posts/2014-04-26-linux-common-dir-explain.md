@@ -33,19 +33,19 @@ Linux 有四种基本文件系统类型：
 
 `/` 是 Linux 文件系统的入口，目录树的根节点。
 
-- `/bin` 系统所需的二进制命令，比如 ls、cp、mkdir 等命令，该目录中包含单用户模式下所有可执行的文件，功能和 `/usr/bin` 类似，这个目录中的文件都是可执行的、普通用户都可以使用的命令。作为基础系统所需要的最基础的命令就是放在这里
+- `/bin` （essential binaries)系统所需的二进制命令，比如 ls、cp、mkdir 等命令，该目录中包含单用户模式下所有可执行的文件，功能和 `/usr/bin` 类似，这个目录中的文件都是可执行的、普通用户都可以使用的命令。作为基础系统所需要的最基础的命令就是放在这里
 - `/dev` 设备文件存储目录，比如磁盘，光驱...
-- `/boot` Linux 的内核及引导系统程序所需要的文件目录，比如 vmlinuz initrd.img 文件都位于这个目录中。在一般情况下，[[GNU GRUB]] 或 LILO 系统引导管理器也位于这个目录
-- `/etc`  系统配置文件所在地
+- `/boot` (static files of boot loader) Linux 的内核及引导系统程序所需要的文件目录，比如 vmlinuz initrd.img 文件都位于这个目录中。在一般情况下，[[GNU GRUB]] 或 LILO 系统引导管理器也位于这个目录
+- `/etc`  (Host specific system config) 系统配置文件所在
 - `/home` 普通用户目录默认存放目录，不同用户会在该目录下有对应用户名的子目录，保存用户个人文件以及个人配置
 - `/lib`  库文件存放目录，一般用来存放给 `/bin` 或者 `/sbin` 目录下可执行文件的依赖库
 - `/mnt`  临时挂载点，这个目录一般是用于存放挂载储存设备的挂载目录的，比如有 cdrom 等目录。可以参看 /etc/fstab 的定义。有时我们可以把让系统开机自动挂载文件系统，把挂载点放在这里也是可以的。主要看 /etc/fstab 中怎么定义了；比如光驱可以挂载到 /mnt/cdrom 。
-- `/opt`  表示的是可选择的意思，有些软件包也会被安装在这里，也就是自定义软件包，比如在 Fedora Core 5.0 中，OpenOffice 就是安装在这里。有些我们自己编译的软件包，就可以安装在这个目录中；通过源码包安装的软件，可以通过 ./configure --prefix=/opt/ 目录
+- `/opt` 表示的是可选择的意思，有些软件包也会被安装在这里，也就是自定义软件包，比如在 Fedora Core 5.0 中，OpenOffice 就是安装在这里。有些我们自己编译的软件包，就可以安装在这个目录中；通过源码包安装的软件，可以通过 ./configure --prefix=/opt/ 目录
 - `/proc`  操作系统运行时，进程信息及内核信息（比如 cpu、硬盘分区、内存信息等）存放在这里。/proc 目录伪装的文件系统 proc 的挂载目录，proc 并不是真正的文件系统，它的定义可以参见 /etc/fstab
-- `/root` 超级权限用户 root 的家目录
-- `/sbin` 大多是系统管理的命令的存放位置，是超级权限用户 root 的可执行命令存放地，普通用户无权限执行这个目录下的命令，这个目录和 /usr/sbin; /usr/X11R6/sbin 或 /usr/local/sbin 目录是相似的；我们记住凡是目录 sbin 中包含的都是 root 权限才能执行的。
-- `/usr` 是系统存放程序的目录，比如命令、帮助文件等。这个目录下有很多的文件和目录。当我们安装一个 Linux 发行版官方提供的软件包时，大多安装在这里。如果有涉及服务器配置文件的，会把配置文件安装在 /etc 目录中。/usr 目录下包括涉及字体目录 /usr/share/fonts ，帮助目录 /usr/share/man 或 /usr/share/doc，普通用户可执行文件目录 /usr/bin 或 /usr/local/bin 或 /usr/X11R6/bin ，超级权限用户 root 的可执行命令存放目录，比如 /usr/sbin 或 /usr/X11R6/sbin 或 /usr/local/sbin 等；还有程序的头文件存放目录 /usr/include。
-- `/var` 目录存放经常变化的内容
+- `/root` 超级权限用户 root 的 HOME 目录
+- `/sbin` (system binary)大多是系统管理的命令的存放位置，是超级权限用户 root 的可执行命令存放地，普通用户无权限执行这个目录下的命令，这个目录和 /usr/sbin; /usr/X11R6/sbin 或 /usr/local/sbin 目录是相似的；我们记住凡是目录 sbin 中包含的都是 root 权限才能执行的。
+- `/usr` (shareable and read-only data)是系统存放程序的目录，比如命令、帮助文件等。这个目录下有很多的文件和目录。当我们安装一个 Linux 发行版官方提供的软件包时，大多安装在这里。如果有涉及服务器配置文件的，会把配置文件安装在 /etc 目录中。/usr 目录下包括涉及字体目录 /usr/share/fonts ，帮助目录 /usr/share/man 或 /usr/share/doc，普通用户可执行文件目录 /usr/bin 或 /usr/local/bin 或 /usr/X11R6/bin ，超级权限用户 root 的可执行命令存放目录，比如 /usr/sbin 或 /usr/X11R6/sbin 或 /usr/local/sbin 等；还有程序的头文件存放目录 /usr/include。
+- `/var` (variable data files)目录存放经常变化的内容
 - `/lost+found` 在 ext2 或 ext3 文件系统中，当系统意外崩溃或机器意外关机，而产生一些文件碎片放在这里。当系统启动的过程中 fsck 工具会检查这里，并修复已经损坏的文件系统。有时系统发生问题，有很多的文件被移到这个目录中，可能会用手工的方式来修复，或移到文件到原来的位置上
 - `/tmp` 临时文件目录，有时用户运行程序的时候，会产生临时文件。/tmp 就用来存放临时文件的。/var/tmp 目录和这个目录相似
 
