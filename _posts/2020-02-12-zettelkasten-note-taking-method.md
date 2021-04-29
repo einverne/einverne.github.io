@@ -13,6 +13,11 @@ last_updated:
 ## 什么是 Zettelkasten?
 `Zettelkasten` 是一个德语词，这个词语可以拆分成两个部分，"Zettel"，表示的是笔记或者纸条 (slip of paper)，而 "Kasten" 表示的是盒子 (box)，两者合起来表示的意思是 `box of notes`，指通过不同盒子来管理的笔记的方法。[^wik] 这个笔记法使用的集大成者是德国的社会学教授 [Niklas Luhmann](https://en.wikipedia.org/wiki/Niklas_Luhmann)，这位教授除了在学术上的影响力之外，就是他在 40 年的学术生涯里著有超过 70 本书，400 多篇学术论文，并且涉及法律，经济，政治，艺术，宗教，生态等等各行各业。
 
+如果要用简单的话来描述这个方法大致可以分成这样几个步骤：
+
+- 卡片是用来存储思考、笔记的，并且卡片是原子的
+- 卡片和卡片之间可以形成联系
+
 Zettelkasten 说到底就是利用一组盒子来管理笔记，在现实中 Luhmann 教授使用 6 乘 4 的木质家居抽屉来管理他所有的笔记。
 
 [^wiki]: <https://en.wikipedia.org/wiki/Zettelkasten>
