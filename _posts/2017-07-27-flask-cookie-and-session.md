@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Flask cookie and session"
+aliases: "Flask cookie and session"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -9,7 +10,11 @@ last_updated:
 ---
 
 
-因为 HTTP 协议是无状态的，即服务器不知道用户上一次做了什么，这严重阻碍了交互式 Web 应用程序的实现，所以引入了 Cookie 和 Session。
+因为 HTTP 协议是无状态的，服务器不知道用户上一次做了什么，这阻碍了交互式 Web 应用程序的实现，所以引入了 Cookie 和 Session，用来记录用户的状态。
+
+要记住的一点是 Session 是服务端记录状态，而 Cookie 是客户端记录状态。
+
+对于一个分布式应用来说服务端记录状态会涉及到大量的成本。
 
 ## session
 
