@@ -67,7 +67,7 @@ Spring 提供了这些方法可以在生命周期过程中回调。
 		}
 	}
 
-### *Aware interfaces
+### Aware interfaces
 
 - ApplicationContextAware 任何 bean 想要 ApplicationContext 启动时被通知可以实现该接口
 - ApplicationEventPublisherAware
