@@ -45,7 +45,7 @@ Spring 中 AOP 的实现主要是通过 JDK [[动态代理]]和 [[CGLIB]] 动态
 
 - JDK 动态代理通过**反射**来代理类，要求被代理的类**实现一个接口**，JDK 动态代理的核心是 `InvocationHandler` 和 `Proxy` 类
 - 如果目标类没有实现接口，Spring 会采用 CGLIB 来动态代理目标类，CGLIB 是一个代码生成的类库，可以在运行时动态生成类的子类，CGLIB 通过**继承**方式代理，所以如果一个类被标记为 final，是无法通过 CGLIB 来做动态代理的
-
+ 
 ## Spring Boot 中使用 AOP
 
 引入依赖：
@@ -62,7 +62,9 @@ Spring Boot 中指定 CGLIB 实现 AOP。
 
 在注解中指定：
 
+    @Configuration
     @EnableAspectJAutoProxy(proxyTargetClass = true)
+    public class AppConfig {}
 
 或者配置属性：
 
@@ -104,6 +106,8 @@ Spring Boot 中指定 CGLIB 实现 AOP。
 在不同的位置切入，可以使用 `@Before`, `@After`, `@AfterReturning`, `@Around`, `@AfterThrowing` 等等。
 
 ## Pointcut Designators
+如何定义切点，以及切点表达式的编写是学习 AOP 的一个重点。
+
 Pointcut expression 由一个 **pointcut designator**(PCD) 开头，来告诉 Spring 什么时候匹配。Spring 支持很多个 pointcut designators ，最常见的就是 execution 了。
 
 ### execution
