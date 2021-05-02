@@ -127,10 +127,11 @@ InoReader 不解释
 
 
 ## 远方 New Tab
-美化新建页面
+在新建的标签页上显示随机的美景。
 
 [Dream Afar New Tab An unexpected trip everyday by simply opening a new tab](https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn)
 
+这个扩展看上去从 WebStore 下线了，永久的停留在了 0.3.12_0 版本。
 
 ## 以下 Chrome App
 

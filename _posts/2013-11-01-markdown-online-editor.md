@@ -2,7 +2,7 @@
 layout: post
 title: Markdown online Editor
 category: 产品体验
-tags: [marddown ,blogger]
+tags: [markdown , blogger]
 redirect_from: "/post/2013/11/Markdown-online-Editor.html"
 ---
 

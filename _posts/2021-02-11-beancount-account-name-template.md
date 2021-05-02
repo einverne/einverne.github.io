@@ -59,7 +59,7 @@ last_updated:
 - beans 目录中是真正记录交易的地方
 - datas 目录则是账单的原始数据
 - `main.bean` 主帐本的定义
-
+- `processing.sh` 以及 `importers` 是处理原始账单数据的脚本
 
 在 `main.bean` 中通过 `include` 语法将其他 bean 引入，同时还定义了一些可选项。
 

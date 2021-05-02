@@ -49,7 +49,7 @@ last_updated:
 
 在调查的过程中，还发现了日本的一个云存储服务，[TeraCLOUD](https://teracloud.jp)，提供 10G 空间，还支持 WebDAV ，果断注册一个。如果你也想注册可以注册完之后，用我的 [CODE](https://teracloud.jp/en/modules/mypage/usage/) ：`NDMSQ`
 
-支持 WebDAV ，那么我就可以直接在我的 [nemo 文件管理器](/post/2018/08/nemo-file-manager.html) 中 connect 到这个服务，在 File -> Connect to Server 中选择 Secure WebDAV（HTTPS），然后输入 TeraCLOUD 提供的 WebDAV 地址，以及用户名和密码来登录该服务，既不用多安装一个客户端，也可以非常方便的映射到本地文件管理器中。简单的测试了一下，发现上传速度，在我这里竟然达到了惊人的 800 kB/s
+支持 [[WebDAV]] ，那么我就可以直接在我的 [nemo 文件管理器](/post/2018/08/nemo-file-manager.html) 中 connect 到这个服务，在 File -> Connect to Server 中选择 Secure WebDAV（HTTPS），然后输入 TeraCLOUD 提供的 WebDAV 地址，以及用户名和密码来登录该服务，既不用多安装一个客户端，也可以非常方便的映射到本地文件管理器中。简单的测试了一下，发现上传速度，在我这里竟然达到了惊人的 800 kB/s
 
 ![tera cloud speed](/assets/screenshot-teracloud-webdav-2019-09-27-123117.png)
 

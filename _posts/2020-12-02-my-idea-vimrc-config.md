@@ -16,6 +16,7 @@ IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 快捷键的开源插件�
 
 - 既充分利用了 IntelliJ 提供的代码补全，重构，代码浏览等等功能，又可以充分利用 Vim 的[多模式](http://einverne.github.io/post/2015/05/vim-mode.html)，以及 Vim 在编辑器中的高效操作
 - 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，以及充分利用 Idea 提供的 Action
+- 多平台下沿用一套工作流程，不需要解决因为操作系统不同而产生的快捷键冲突
 
 
 ## 利用 .ideavimrc 配置 IdeaVim
@@ -25,22 +26,23 @@ IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 快捷键的开源插件�
 
 	:source ~/.ideavimrc
 
-
+或者直接在编辑器中 `:e ~/.ideavimrc` 然后在右上角的地方会出现重新 Load 的图表，点击即可。
 
 ## 使用案例
 
 ### 打开最近使用的项目
+我映射了 `leader` + `o` 打开最近项目列表，用来快速的打开项目。
 
-首先创建一个 `keymap`:
+首先创建一个 `keymap`(用过 Vim 的都知道，可以自定义一个 modifier key，通过这个修饰键可以形成一套新的快捷键组合):
 
 ```
 let mapleader = ","
 nnoremap <Leader>o :<C-u>action RecentProjectListGroup<CR>
 ```
 
-然后使用配置的 leader 快捷键 <kbd>,</kdb> + <kbd>o</kbd> 就可以快速弹出最近打开项目，使用模糊搜索就可以快速打开新的项目。
+然后使用配置的 leader 快捷键 <kbd>,</kbd> + <kbd>o</kbd> 就可以快速弹出最近打开项目，使用模糊搜索就可以快速打开新的项目。
 
-在不知道这个方法以前，我都是在 [[Alfred]] 中配置了一个 Workflow 来打开新的项目的。在发现上面这个方法后，发现在 IDE 内通过这个方式打开别的项目，远比 Alfred 中要快。
+在不知道这个方法以前，我都是在 [[Alfred]] 中配置了一个 Workflow 来打开新的项目的。在发现上面这个方法后，发现在 IDE 内通过这个方式打开别的项目，远比 Alfred 中要快。熟悉一段时间之后，甚至可以不用看搜索结果，直接使用逗号加 `o` 然后快速输入项目的模糊查询的关键字，然后回车。
 
 
 ### Go to Declaration
@@ -51,14 +53,15 @@ IDEA 自身就提供了非常多的快捷来在代码之间跳转，比如：
 - 跳转到方法被调用的地方
 - 跳转到实现的地方
 - 跳转到文件
+- 跳转到测试类
 
-等等，我统一使用 `g` 作为简记符。
+等等，在我的工作流里面，为了方便记忆，统一使用 `g` 作为简记符。比如 `gd` 表示 `go to definition`。
 
-在 `.ideavimrc` 文件中，定义 `map xxx :action yyy` 表示自定义一个 keymap 调用 IntelliJ 的 action。
+在 `.ideavimrc` 文件中，定义 `map xxx :action yyy` 表示自定义一个 `keymap` 调用 IntelliJ 的 action。
 
 	nnoremap gd :action GotoDeclaration
 
-这里的 `GotoDeclaration` 是 IntelliJ 的一个 action，一个 IntelliJ 的 Action 对应着 IntelliJ 的一个功能。上面的定义就表示在 Normal 模式下定义新的 keymap gd，表示的是在 Normal 模式下，按下 `gd` 就会执行 GotoDeclaration。
+这里的 `GotoDeclaration` 是 IntelliJ 的一个 action，一个 IntelliJ 的 Action 对应着 IntelliJ 的一个功能。上面的定义就表示在 Normal 模式下定义新的 `keymap gd`，表示的是在 Normal 模式下，按下 `gd` 就会执行 IDEA 的 action `GotoDeclaration`。
 
 IntelliJ 提供了一系列的 Action 可以使用。
 
@@ -67,17 +70,19 @@ IntelliJ 提供了一系列的 Action 可以使用。
 ```
 " go to somewhere (g in normal mode for goto somewhere)
 nnoremap ga :<C-u>action GotoAction<CR>
+nnoremap gb :<C-u>action JumpToLastChange<CR>
 nnoremap gc :<C-u>action GotoClass<CR>
 nnoremap gd :<C-u>action GotoDeclaration<CR>
 nnoremap gs :<C-u>action GotoSuperMethod<CR>
 nnoremap gi :<C-u>action GotoImplementation<CR>
 nnoremap gf :<C-u>action GotoFile<CR>
 nnoremap gm :<C-u>action GotoSymbol<CR>
-nnoremap gl :<C-u>action JumpToLastChange<CR>
 nnoremap gu :<C-u>action ShowUsages<CR>
 nnoremap gt :<C-u>action GotoTest<CR>
 nnoremap gp :<C-u>action FindInPath<CR>
 nnoremap gr :<C-u>action RecentFiles<CR>
+nnoremap gh :<C-u>action Back<CR>
+nnoremap gl :<C-u>action Forward<CR>
 ```
 
 ### 查看 IDEA 支持的 Action

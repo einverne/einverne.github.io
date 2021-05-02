@@ -422,7 +422,7 @@ no-loop 属性的作用是用来控制已经执行过的规则在条件再次满
 ### date-effective
 控制规则只有在到达指定时间后才会触发。只有当系统时间 `>=date-effective` 设置的时间值时，规则才会触发执行，否则执行将不执行。在没有设置该属性的情况下，规则随时可以触发，没有这种限制。
 
-date-effective 可接受的日期格式为“dd-MMM-yyyy”
+date-effective 可接受的日期格式为 “dd-MMM-yyyy”
 
     rule "rule1"
     date-effective "25-Sep-2019"
