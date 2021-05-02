@@ -21,7 +21,7 @@ last_updated:
 
 最近自动更新之后又发现了一个问题，`/usr/libexec/secd` 占用非常高的 CPU，然后导致风扇狂转。
 
-![[Screen Shot 2021-04-22 at 8.52.18 PM.png]]
+![Screen Shot 2021-04-22 at 8.52.18 PM.png](/assets/Screen-Shot-2021-04-22-secd-high-cpu.png)
 
 幸而这个问题，我简单的搜索了一下之后就找到了解决方法，删除 `~/Library/Keychains` 目录并重启电脑。这个目录中保存了本地的 Keychain 一些密码，网上的说法大概率和 Keychain 的更新机制有关系。
 
