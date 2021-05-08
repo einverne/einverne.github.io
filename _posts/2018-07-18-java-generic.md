@@ -78,7 +78,7 @@ Java 编译期会在编译阶段检查类型。
 
 在定义多个界时，需要将 Class 类型放到 interface 之前，比如说上面的例子中假如有 Class B2， interface B1 & B3 ，那么 B2 必须是第一个。
 
-## 通配符 #{wildcards}
+## 通配符 {#wildcards}
 在代码中也经常能看到 `?` 问号，通常叫做通配符（wildcard），表示是类型未知。通配符可以用在非常多的场景，作为参数，field，或者本地变量，有时候也作为返回值（当然不推荐这么做）。
 
 ### Upper Bounded Wildcards
