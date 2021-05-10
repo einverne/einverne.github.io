@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Nginx 配置详解"
+aliases: "Nginx 配置详解"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [nginx, web, server, linux, proxy,]
+tags: [nginx, web, server, linux, proxy, web-server, apache,]
 last_updated:
 ---
 
@@ -84,6 +85,7 @@ Nginx 日志支持输出到文件 file, 或者标准错误输出 stderr.
 Nginx 提供 include 配置来引入其他文件
 
 	include file;
+    include server/*
 
 - file 是要引入的配置文件，支持相对路径和正则匹配
 
