@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ruby 国内镜像"
+title: "Ruby 国内镜像"
 tagline: ""
 description: ""
 category: 经验总结

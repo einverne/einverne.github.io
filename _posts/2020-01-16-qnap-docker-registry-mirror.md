@@ -14,7 +14,7 @@ last_updated:
 
 或者我们可以 SSH 登录到后台，然后手动编辑配置文件，docker 的路径是 `/share/CACHEDEV1_DATA/.qpkg/container-station/`
 
-然后在改目录下有 `etc/docker.json` 文件，手动修改该文件：
+然后在该目录下有 `etc/docker.json` 文件，手动修改该文件：
 
 	{
 	  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
