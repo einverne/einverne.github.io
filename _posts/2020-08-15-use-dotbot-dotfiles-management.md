@@ -26,9 +26,17 @@ touch install.conf.yaml
 
 将其加入为作为 submodule 然后添加一个配置 `install.conf.yaml` 即可。
 
+### 更新
+更新子 module:
+
+```
+git submodule update --remote 
+```
+
+
 ## Configuration
 
-配置文件是 `yaml` 格式，非常易读。这是官网给的一个例子：
+dotbot 的配置文件是 `yaml` 格式，非常易读。这是官网给的一个例子：
 
 ```
 - defaults:
