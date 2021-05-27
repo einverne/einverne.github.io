@@ -47,3 +47,5 @@ Clipped from [{title}]({url}) at {datetime}.
 
 
 
+## 总结
+在使用一段时间之后，最终选定了 MarkDownload ，因为转换的 Markdown 文件格式最好，并且可以批量下载文章中的图片。
