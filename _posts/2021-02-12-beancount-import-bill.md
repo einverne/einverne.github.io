@@ -10,7 +10,7 @@ last_updated:
 ---
 
 
-在上一篇[如何给 Beancount 账户命名](/post/beancount-account-name-template.html) 的文章中，我们已经迈出了 Beancount 使用的第一步，建立一套属于自己的账户系统，之后所有的资金就会在这些账户之间流转。复式记账讲求账户的流入与流出。
+在上一篇[如何给 Beancount 账户命名](/post/2021/02/beancount-account-name-template.html) 的文章中，我们已经迈出了 Beancount 使用的第一步，建立一套属于自己的账户系统，之后所有的资金就会在这些账户之间流转。复式记账讲求账户的流入与流出。
 
 那接下来就是 Beancount 真正关键的地方，熟悉并导入以前的帐本。使用 Beancount 就会想着如何将之前的账单导入到 Beancount。
 
