@@ -23,7 +23,9 @@ nodejs 安装其实非常简单，大部分情况下 Debian/Ubuntu 下只要使�
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 	sudo apt-get install -y nodejs
 
-也是网络环境无法安装
+也是网络环境无法安装。
+
+更加详细的可以参考[官网](https://nodejs.org/en/download/package-manager/)
 
 ## 二进制安装
 所以使用 二进制 安装

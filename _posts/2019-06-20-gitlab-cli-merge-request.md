@@ -40,3 +40,7 @@ gitlab-cli 是一个用 Javascript 所写的工具，可以用来在命令行中
 运行结束后会返回 Merge Request 的地址。
 
 - <https://github.com/vishwanatharondekar/gitlab-cli>
+
+## 相关
+
+- <https://github.com/profclems/glab>

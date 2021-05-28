@@ -33,7 +33,7 @@ Spring MVC 处理文件上传
 		<input type="submit" value="Upload"> Press here to upload the file! 
 	</form>
 
-form 的enctype 应该是 multipart/form-data 
+form 的 enctype 应该是 `multipart/form-data`
 
 在 WEB-INF 目录下 servlet-context.xml 中添加配置
 

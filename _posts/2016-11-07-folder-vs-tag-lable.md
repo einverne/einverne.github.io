@@ -4,7 +4,7 @@ title: "文件夹和标签的区别使用"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Folder, tag, lable, Gmail, WizNote, Evernote, GooglePlus, Google]
+tags: [Folder, tag, lable, gmail, WizNote, Evernote, google-plus, google]
 last_updated: 
 ---
 

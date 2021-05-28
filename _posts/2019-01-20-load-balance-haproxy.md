@@ -45,8 +45,6 @@ HAProxy 的负载均衡算法：
 - rdp-cookie(cookie), 根据 cookie(name) 哈希请求
 
 
-##
-
 ## HAProxy 关键配置 {#haproxy-config}
 HAProxy 的配置文件共有 5 个域
 

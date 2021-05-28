@@ -46,7 +46,7 @@ Annotation     |  Package         | Source
 @Resource     | javax.annotation.Resource | Java
 @Inject       | javax.inject.Inject | Java  需额外依赖
 
-`@Autowired`: Spring 特有的注解，@Autowired 通过**类型**来注入，比如通过类的类型，或者类的接口来注解 field 或者 constractor。为了防止在项目中实现同一个接口，或者一系列子类，可以使用 @Qualifier 注解来避免歧义。默认情况下 bean 的名字就是 qualifier 的值。 尽管你可以按照约定通过名字来使用 @Autowired 注解，@Autowired 根本上还是类型驱动的注入，并且附带可选的语义上的 qualifiers.
+`@Autowired`: Spring 特有的注解，@Autowired 通过**类型**来注入，比如通过类的类型，或者类的接口来注解 field 或者 constructor。为了防止在项目中实现同一个接口，或者一系列子类，可以使用 @Qualifier 注解来避免歧义。默认情况下 bean 的名字就是 qualifier 的值。 尽管你可以按照约定通过名字来使用 @Autowired 注解，@Autowired 根本上还是类型驱动的注入，并且附带可选的语义上的 qualifiers.
 
 @Inject: 该注解基于 [JSR-330](https://jcp.org/en/jsr/detail?id=330), @Inject 注解是 Spring @Autowired 注解的代替品。所以使用 Spring 独有的 @Autowired 注解时，可以考虑选择使用 @Inject. @Autowired 和 @Inject 的不同之处在于是否有 required 属性，@Inject 没有 required 属性，因此在找不到合适的依赖对象时 inject 会失败，而 @Autowired 可以使用 required=false 来允许 null 注入。
 
