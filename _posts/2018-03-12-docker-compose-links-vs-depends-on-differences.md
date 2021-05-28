@@ -30,7 +30,7 @@ last_updated:
       links:
        - db
 
-则表示当启动 db 容器时会随机分配一个本地端口比如32777来连接容器3306端口，每一次修改或者重启容器都会改变该端口，使用 links 来保证每一次都能够连接数据库，而不需要知道具体端口是什么。比如说启动了一个 mysql 容器
+则表示当启动 db 容器时会随机分配一个本地端口比如32777来连接容器3306端口，每一次修改或者重启容器都会改变该端口，使用 links 来保证每一次都能够连接数据库，而不需要知道具体端口是什么。比如说启动了一个 MySQL 容器
 
     docker run -d --name=my-mysql --env="MYSQL_ROOT_PASSWORD=mypassword" -P mysql
     docker inspect <container-id> | grep HostPort
@@ -41,7 +41,7 @@ last_updated:
 
 当使用 `depends_on` 来定义服务之间的依赖关系时会造成下面的影响[^dependson]
 
-- `docker-compose up` 会依据依赖顺序启动服务
+- `docker-compose up` 会依据**依赖顺序**启动服务
 - `docker-compose up` 启动时 SERVICE 会自动包括 SERVICE 的依赖
 
 看这个例子：

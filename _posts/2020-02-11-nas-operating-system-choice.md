@@ -58,7 +58,12 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 - <http://www.openmediavault.org/>
 
 ## ESXi
-由 VMware 开发，ESXi 是这家以虚拟机著称的公司开发的一款为企业而设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
+由 VMware 开发，ESXi 是这家以虚拟机著称的公司开发的一款为企业而设计的虚拟机，是VMWare vSphere Hypervisor套件之下重要组件。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
+
+前身是 ESX，依赖 Linux，后来抛弃 Linux 变成了 ESXi。
+
+界面比较友好，但是硬件兼容性差。
+
 
 更详细的介绍可以参考这个[视频](https://www.youtube.com/watch?v=-Hltydu9PXk)
 

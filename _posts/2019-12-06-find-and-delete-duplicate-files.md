@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux 下找出重复文件"
+title: "文件整理之重复文件删除"
 tagline: ""
 description: ""
 category: [ 整理合集 , 开源项目 ]
@@ -10,12 +10,14 @@ last_updated:
 
 整理文件的时候总想快速的删掉重复的文件，这里就总结下个人使用感觉良好的几个命令工具，包括 jdupes, rdfind, fdupes 这些。
 
+依据推荐指数从高到低。
+
 ## jdupes
 开源地址：
 
 - <https://github.com/jbruchon/jdupes>
 
-fdupes 的增强版，根据作者自己的描述，jdupes 比 fdupes 1.51 版本要快 7 倍左右。
+jdupes 是 fdupes 的增强版，根据作者自己的描述，jdupes 比 fdupes 1.51 版本要快 7 倍左右。
 
 使用方式：
 

@@ -65,6 +65,17 @@ Compose 依赖于 Docker Engine，所以确保安装 Compose 之前 Docker 已�
 
 在该文件夹下使用 `docker-compose up` 启动服务。使用 `docker-compose down` 关闭。如果想要在后台执行添加 `-d` 选项 `docker-compose up -d`。
 
+## 以非root方式运行docker
+
+如果 docker 用户不存在，创建docker 用户组
+
+    sudo groupadd docker
+    
+将当前用户添加到docker 用户组：
+
+    sudo usermod -aG docker [non-root user]
+
+
 ## 命令使用
 Compose 命令的对象是项目本身，也可以为项目中的服务或者容器，默认为项目。
 服务容器一旦构建后，将会带上一个标记名，例如对于 web 项目中的一个 db 容器，可能是 web_db。

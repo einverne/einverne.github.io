@@ -16,14 +16,27 @@ IPFS 的全称是 「InterPlanetary File System」，直译过来叫做「星际
 
 [^wiki]: <https://en.wikipedia.org/wiki/InterPlanetary_File_System>
 
+IPFS 白皮书由[Juan Benet](https://github.com/jbenet) 发表于 2014 年。
+
 IPFS 允许用户不仅接受文件，并且可以托管文件内容，类似 BitTorrent 协议的方式。和中心化的系统不一样的地方在于，IPFS 构建了一个去中心化的系统，任何用户都可以存储所有数据的部分，创建了一个可以快速恢复的文件存储和分享系统。
 
 任何用户都可以通过内容地址来分享文件，网络中的任何对等节点都可以通过分布式散列表 (Distributed Hash Table DHT) 来查找和请求文件内容。
 
 源码：<https://github.com/ipfs>
 
+
+## IPFS 设计前提
+
+在白皮书中，作者概括了 IPFS 的设计：
+
+- peer-to-peer; no nodes are privileged
+- IPFS nodes store IPFS objects in local storage
+- Nodes connect to each other and transfer objects
+- objects represent files and other data structures
+
+
 ## IPFS 网络和传统网络的区别
-首先，让我们来看一下目前的互联网，现在互联网上的大部分内容都依赖于一些大型或小型的服务器托管商。如果你要架设一个网站，你需要花钱购买一个服务器，或者能够托管内容的提供商，然后将产生的内容放置到服务中。而对于 IPFS ，任何人都可以注册一个节点，开始托管自己的内容，不管是在 Respberry Pi 上，还是跑在世界上最大的服务器中，你的节点都可以成为一个非常高效的节点。
+首先，让我们来看一下目前的互联网，现在互联网上的大部分内容都依赖于一些大型或小型的服务器托管商。如果你要架设一个网站，你需要花钱购买一个服务器，或者找能够托管内容的提供商，然后将产生的内容放置到服务中。而对于 IPFS ，任何人都可以注册一个节点，开始托管自己的内容，不管是在 Raspberry Pi 上，还是跑在世界上最大的服务器集群中，你自己的节点都可以成为一个非常高效的节点。
 
 第二点区别在于，IPFS 的数据是内容寻址 (content-addressed)，而不是地址寻址 (location-addressed). 这是一个微妙的区别，但是结果却是巨大的。
 
@@ -59,7 +72,7 @@ IPFS multihashes 有三个不同的部分：
 虽然 SHA-256 算法是当今的标准，但是这个 multihash 格式允许 IPFS 协议自由的更改 Hash 算法。这就使得 如果在未来发现了 SHA-256 算法的缺陷，IPFS 网络可以迁移到另外的算法。如果有人使用其他的 Hash 算法，那么最后的地址可能就不是以 `Qm` 开头了。
 
 ## IPFS 可以做什么？
-经过上面这么多解释可以知道，IPFS 本质上是一个分布式的文件共享系统，所以互联网能用来做什么，IPFS 也能做到。并且 IPFS 可以做的更好。
+经过上面这么多解释可以知道，IPFS 本质上是一个**分布式**的**文件共享系统**，所以互联网能用来做什么，IPFS 也能做到。并且 IPFS 可以做的更好。
 
 适合下面的场景：
 

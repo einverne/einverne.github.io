@@ -34,7 +34,7 @@ last_updated:
 Idea 中的 vim-easymotion 插件支持的配置，可以参考[这里](https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands)
 
 ### AceJump
-在了解 easymotion 时意外收获了 AceJump，IntelliJ IDEA 中的 easymotion 实际上是通过 AceJump 插件来实现的。
+在了解 easymotion 时意外收获了 AceJump 插件，IntelliJ IDEA 中的 easymotion 实际上是通过 AceJump 插件来实现的。
 :q
 
 默认情况下，使用 <kbd>Ctrl</kbd> + <kbd>;</kbd> 来开启 AceJump 模式，不过我的 `Ctrl + ;` 已经作为输入法的多粘贴板来使用了，所以就改成 <kbd>Alt</kbd> + <kbd>k</kbd> 。

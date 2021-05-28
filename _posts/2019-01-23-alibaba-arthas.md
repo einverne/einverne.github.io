@@ -52,7 +52,7 @@ Main features:
 
     thread -b
 
-目前只支持找出 synchronized 关键字阻塞住的线程， 如果是 java.util.concurrent.Lock， 目前还不支持。
+目前只支持找出 synchronized 关键字阻塞住的线程， 如果是 `java.util.concurrent.Lock`， 目前还不支持。
 
 ### 查看类从哪一个 jar 加载
 当知道类的路径时可以直接使用 `sc -d package.Class` 这样的方式来查看当前类的详细信息
