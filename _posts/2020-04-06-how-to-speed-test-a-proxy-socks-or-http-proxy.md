@@ -8,7 +8,7 @@ tags: [speedtest, socks, http_proxy, proxy, vps, v2ray]
 last_updated:
 ---
 
-在国内不可避免的要用到代理，这些年陆陆续续从 GAE 上的代理，到自己购买 VPS 搭建，从 Shadowsocks 到 V2ray，自己花费了不少的时间，而现在虽然手上也有两台 VPS，但是已经不拿他们作为主要的代理了，我一台 Directspace 的 VPS，线路没有优化过，到国内的延迟略高，而另一台 AWS 的 EC2，虽然地理位置在韩国，也只勉强到能用的阶段。所以这两年陆陆续续不再自己维护代理服务，之前有购买过因为 Ingress 结缘的 Shadowsocks 服务，一直用到现在，虽然有些情况下会发生断流，倒也一直没有放在心上。直到尝试了一周的 [V2ray 服务提供商](https://www.wujievpn.xyz/user/index.html#/register?code=pyHxQdJr)，我想是回不去 SS 了。
+在国内不可避免的要用到代理，这些年陆陆续续从 GAE 上的代理，到自己购买 VPS 搭建，从 Shadowsocks 到 V2ray，自己花费了不少的时间，而现在虽然手上也有两台 VPS，但是已经不拿他们作为主要的代理了，我一台 Directspace 的 VPS，线路没有优化过，到国内的延迟略高，而另一台 AWS 的 EC2，虽然地理位置在韩国，也只勉强到能用的阶段。所以这两年陆陆续续不再自己维护代理服务，之前有购买过因为 Ingress 结缘的 Shadowsocks 服务，一直用到现在，虽然有些情况下会发生断流，倒也一直没有放在心上。直到尝试了一周的 [V2ray 服务提供商](https://portal.wallless.xyz/#/register?code=pyHxQdJr)，我想是回不去 SS 了。
 
 那么有什么方法来对一个代理服务的提供商的速度进行测试呢？这就是这篇文章的最主要的内容。
 
@@ -90,7 +90,7 @@ speedtest 的测速的时候会根据位置选择不同的节点，不同的节�
 
 这里提供我测试用的一个是我以前用的 SSR 服务，一个便是新的 V2ray 的服务：
 
-- [无界](https://www.wujievpn.xyz/user/index.html#/register?code=pyHxQdJr)
+- [无界](https://portal.wallless.xyz/#/register?code=pyHxQdJr)
 
 当然拿两者对比速度是没有意义的，服务器不同，协议也不同，只是提供一个方法让大家的选择服务商的时候能够对自己所用的服务有一个基本的了解。对于我的情况新的 [wujievpn](https://portal.wallless.xyz/#/register?code=pyHxQdJr) 几乎提供了我翻了一倍的下行速度。Download 从 18.65 Mbit/s 提高到了 34.5 Mbit/s。所以还是值得一提的。
 
