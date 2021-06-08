@@ -8,7 +8,7 @@ tags: [linux, linux-mint, fonts, font, truetype, ]
 last_updated:
 ---
 
-Most of computer fonts people using are TrueTpye fonts. TrueType fonts end with `.ttf`, which stand for [TrueType Font](/post/2015/05/font.html). This tutorial shows how to install [TrueType fonts](/post/2015/05/font.html) in Linux (Debian, Ubuntu, Linux Mint, etc).
+Most of computer fonts people using are TrueType fonts. TrueType fonts end with `.ttf`, which stand for [TrueType Font](/post/2015/05/font.html). This tutorial shows how to install [TrueType fonts](/post/2015/05/font.html) in Linux (Debian, Ubuntu, Linux Mint, etc).
 
 ## Linux 字体文件夹 {#font-folders}
 
