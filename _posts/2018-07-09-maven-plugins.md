@@ -11,7 +11,7 @@ last_updated:
 Maven 本质上是一个插件框架，它的核心并不执行任何具体的构建任务，而是将所有任务都交给插件来完成，例如编译源代码是由 `maven-compiler-plugin` 完成的。进一步说，每个任务对应了一个插件目标（goal），每个插件会有一个或者多个目标，例如 `maven-compiler-plugin` 的 compile 目标用来编译位于 `src/main/java/` 目录下的主源码，`testCompile` 目标用来编译位于 `src/test/java`/ 目录下的测试源码。
 
 ## maven-source-plugin
-maven-source-plugin 打包插件，会根据当前的源码文件创建 jar 包。默认情况下 jar 文件会在项目 target 目录下。
+[[maven-source-plugin]] 打包插件，会根据当前的源码文件创建 jar 包。默认情况下 jar 文件会在项目 target 目录下。
 
 如果没有进行特殊配置，maven 会按照标准接口查找和处理各种类型文件。一个标准的 maven 项目
 
@@ -33,9 +33,33 @@ maven-source-plugin 打包插件，会根据当前的源码文件创建 jar 包�
         │   └── test-annotations
         └── test-classes
 
+
 `src/main/java` 和 `src/test/java` 中的所有 `*.java` 文件都会在 Maven 的 compile 和 test-compile 阶段被编译，结果会分别放到 `target/classes` 和 `target/test-classes` 目录中。
 
 `src/main/resources` 和 `src/test/resources` 这两个目录的文件也会被复制到 `target/classes` 和 `target/test-classes` 目录中。打包插件默认会将 `target/classes` 中的所有内容打包到 jar 包或者 war 包中。
+
+如果想要 deploy 阶段跳过 sources.jar ，可以在命令中使用：[^skip-source]
+
+    -Dmaven.source.skip
+
+如果可以修改 POM，可以使用如下配置不生成 sources.jar 文件：
+
+```
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-source-plugin</artifactId>
+    <version>2.2.1</version>
+    <configuration>
+      <skipSource>true</skipSource>
+    </configuration>
+  </plugin>
+```
+
+
+
+[^skip-source]: <https://maven.apache.org/plugins/maven-source-plugin/jar-mojo.html>
+
+
 
 ## maven-archetype-plugin
 Archetype 插件允许用户从模板中创建 Maven 项目，该插件需要 Java 6 及以上版本。[^1]
