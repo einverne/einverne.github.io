@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "log4j appender"
+aliases: "log4j appender"
 tagline: ""
 description: ""
 category: 学习笔记
