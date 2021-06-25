@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "正则学习指导"
+title: "正则表达式学习笔记"
+aliases: "正则表达式学习笔记"
 tagline: ""
 description: ""
 category: 学习笔记
