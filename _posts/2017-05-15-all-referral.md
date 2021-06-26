@@ -10,6 +10,10 @@ last_updated:
 
 这里全部是推广链接，如果你觉得我的文章有用，帮忙点击一下可好？
 
+## 腾讯云
+
+- <https://cloud.tencent.com/act/cps/redirect?redirect=10488&cps_key=60232db1ed2e2eb902049749db75573a&from=activity>
+
 ## 工具应用
 
 ### Trello
