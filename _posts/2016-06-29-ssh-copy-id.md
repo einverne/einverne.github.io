@@ -10,7 +10,7 @@ last_updated:
 
 ## 背景
 
-`ssh-copy-id` 命令可以把本地主机的公钥复制到远程主机的 authorized_keys 文件上。`authorized_keys` 文件用来验证 client 。使用 `ssh-copy-id` 命令将本地公钥复制到远程主机之后可以实现免密登录远程主机。
+`ssh-copy-id` 命令可以把本地主机的公钥复制到远程主机的 `authorized_keys` 文件上。`authorized_keys` 文件用来验证 client 。使用 `ssh-copy-id` 命令将本地公钥复制到远程主机之后可以实现免密登录远程主机。
 
 ## 简介
 
