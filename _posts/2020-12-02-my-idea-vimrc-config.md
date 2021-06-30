@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "我的 IntelliJ IDEA Vimrc 配置"
-aliases: "我的 IntelliJ IDEA Vimrc 配置"
+title: "我的 IntelliJ IDEA Vim 插件配置"
+aliases: "我的 IntelliJ IDEA Vim 插件配置"
 tagline: ""
 description: ""
 category: 学习笔记
