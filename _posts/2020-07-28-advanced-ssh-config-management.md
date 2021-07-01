@@ -22,7 +22,7 @@ assh 这个工具就将登录一台机器跳转 SSH 再登录另外一台机器�
 
     ssh -p 222 someone@Jumphost
 
-然后在 Jumphost 上连接 RealServer：
+然后在 Jumphost 上连接真正的服务器，一方面是为了安全考虑，另一方面是可以非常方便的进行权限管理和审计：
 
 	ssh someone@RealServer
 

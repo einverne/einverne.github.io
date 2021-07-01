@@ -52,11 +52,11 @@ Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
 
 属性字段说明：
 
-- corePoolSize：核心线程数，线程池维护的最少线程数，不管创建后空闲与否，除非设置了 allowCoreThreadTimeOut
-- keepAliveSeconds：存活时间，允许的空闲时间，如果经过 keepAliveTime 时间后，超过核心线程数的线程还没有接受到新的任务，那就回收
-- maxPoolSize：线程池维护线程的最大数量
-- queueCapacity：缓存队列
-- rejectedExecutionHandler：对拒绝 task 的处理策略
+- `corePoolSize`：核心线程数，线程池维护的最少线程数，不管创建后空闲与否，除非设置了 `allowCoreThreadTimeOut`
+- `keepAliveSeconds`：存活时间，允许的空闲时间，如果经过 `keepAliveTime` 时间后，超过核心线程数的线程还没有接受到新的任务，那就回收
+- `maxPoolSize`：线程池维护线程的最大数量
+- `queueCapacity`：缓存队列
+- `rejectedExecutionHandler`：对拒绝 task 的处理策略
 
 	AbortPolicy，用于被拒绝任务的处理程序，它将抛出 RejectedExecutionException。
 	CallerRunsPolicy，用于被拒绝任务的处理程序，它直接在 execute 方法的调用线程中运行被拒绝的任务。
@@ -65,11 +65,11 @@ Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
 
 将任务添加到线程池时：
 
-- 如果线程池中的线程数量小于 corePoolSize，即使线程池中的线程都处于空闲状态，也要创建新的线程来处理被添加的任务。
-- 如果线程池中的线程数量等于 corePoolSize，但是缓冲队列 workQueue 未满，那么任务被放入缓冲队列。
-- 如果线程池中的线程数量大于 corePoolSize，缓冲队列 workQueue 满，并且线程池中的数量小于 maxPoolSize，建新的线程来处理被添加的任务。
-- 如果线程池中的数量大于 corePoolSize，缓冲队列 workQueue 满，并且线程池中的数量等于 maxPoolSize，那么通过 handler 所指定的策略来处理此任务。也就是：处理任务的优先级为：核心线程 corePoolSize、任务队列 workQueue、最大线程 maximumPoolSize，如果三者都满了，使用 handler 处理被拒绝的任务。
-- 当线程池中的线程数量大于 corePoolSize 时，如果某线程空闲时间超过 keepAliveTime，线程将被终止。这样，线程池可以动态的调整池中的线程数。
+- 如果线程池中的线程数量小于 `corePoolSize`，即使线程池中的线程都处于空闲状态，也要创建新的线程来处理被添加的任务。
+- 如果线程池中的线程数量等于 `corePoolSize`，但是缓冲队列 `workQueue` 未满，那么任务被放入缓冲队列。
+- 如果线程池中的线程数量大于 `corePoolSize`，缓冲队列 `workQueue` 满，并且线程池中的数量小于 `maxPoolSize`，建新的线程来处理被添加的任务。
+- 如果线程池中的数量大于 `corePoolSize`，缓冲队列 `workQueue` 满，并且线程池中的数量等于 `maxPoolSize`，那么通过 handler 所指定的策略来处理此任务。也就是：处理任务的优先级为：核心线程 `corePoolSize`、任务队列 `workQueue`、最大线程 `maxPoolSize`，如果三者都满了，使用 handler 处理被拒绝的任务。
+- 当线程池中的线程数量大于 `corePoolSize` 时，如果某线程空闲时间超过 `keepAliveTime`，线程将被终止。这样，线程池可以动态的调整池中的线程数。
 
 ### SimpleAsyncTaskExecutor
 SimpleAsyncTaskExecutor 每次都会 newThread()

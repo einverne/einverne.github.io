@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NAS 上的音乐管理"
+title: "NAS 上的音乐管理应用 Funkwhale"
 tagline: ""
 description: ""
 category: 经验总结

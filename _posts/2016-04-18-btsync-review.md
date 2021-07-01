@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "btsync 体验"
+title: "Resilio Sync（原 btsync）使用体验"
 tagline: "同步好助手"
 description: ""
 category: 产品体验
