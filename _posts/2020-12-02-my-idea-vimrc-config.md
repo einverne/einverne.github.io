@@ -85,6 +85,21 @@ nnoremap gh :<C-u>action Back<CR>
 nnoremap gl :<C-u>action Forward<CR>
 ```
 
+### Toggle Actions
+我使用 `t` 加上一个字母作为 Toggle 动作的开始方便记忆。
+
+比如下面的第一条的 `ta`，表示的就是 `Toggle Annotate`，在 IDEA 主编辑区域经常看这行代码是谁提交的，那么会使用右击序号空白处，然后选择 Annotate，这个操作可以简化成直接在 Vim 模式的阅读模式下按下 `ta`。
+
+一些其他的定义可以参考：
+
+```
+nnoremap ta :action Annotate<cr>  
+nnoremap tb :action ToggleLineBreakpoint<cr>  
+nnoremap tm :action ToggleBookmark<cr>  
+nnoremap tp :action ActivateProjectToolWindow<CR>
+```
+
+
 ### 查看 IDEA 支持的 Action
 
 在安装 IdeaVim 之后，可以在 `normal` 模式下使用如下命令查看 IDE 支持的 action:

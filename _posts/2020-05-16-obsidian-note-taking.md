@@ -45,7 +45,7 @@ Obsidian 这些功能是吸引我让我尝试的理由。
 ### 本地化数据
 所有数据都以本地文本形式保存。其他一些软件使用私有的格式保存用户数据是让我避而远之的原因之一。
 
-Obsidian 管理的所有数据都在本地，那也就意味着用户可以选用自己喜欢的任何同步工具进行数据加密，同步等等。现成的同步方案 Dropbox 等等，或者 Git ，而我选择使用另一款 [分布式同步工具 Syncthing](/post/2019/10/syncthing.html)
+Obsidian 管理的所有数据都在本地，那也就意味着用户可以选用自己喜欢的任何同步工具进行数据加密，同步等等。比如现成的同步方案 Dropbox 等等，而我选择使用另一款 [分布式同步工具 Syncthing](/post/2019/10/syncthing.html)
 
 ![obsidian note taking create notes](/assets/obsidian-note-taking-create-notes.png)
 

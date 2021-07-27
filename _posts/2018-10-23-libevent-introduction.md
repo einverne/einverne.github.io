@@ -4,13 +4,13 @@ title: "由 libevent 库开始学习 Linux IO 模型"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [libevent, c, nio, non-blocking, ]
+tags: [libevent, c, nio, non-blocking, epoll,]
 last_updated:
 ---
 
 在看 Java 的 Netty 的时候，了解到了 NIO，从 NIO 了解到了 C 语言实现的 libevent 。我们为什么需要这样一个库，他的出现是为了解决什么问题。对于熟悉网络编程，或者多线程的人来说，都会知道一个普遍存在的问题，CPU 要远远快过 IO。所以如果我们要同时处理多个任务，而当前的任务阻塞了 IO，那么理想的状态应该是让 CPU 执行其他任务，而让阻塞 IO 的任务放到后台执行。
 
-libevent 库提供了一种事件响应机制，当事件发生在用户关心的文件描述符上时通知用户，并且隐藏了真正后台使用的方法（select,epoll,kqueue) ，这避免了让用户为各个平台书写不同代码的问题。
+libevent 库提供了一种事件响应机制，当事件发生在用户关心的文件描述符上时，通知用户，并且隐藏后台真正使用的方法（select,epoll,kqueue) ，这避免了让用户为各个平台书写不同代码的问题。
 
 ## Linux 网络 IO 模型
 Linux 内核将所有外部设备看做一个文件来操作，对一个文件的读写操作会调用内核提供的命令，返回 file descriptor。对一个 socket 的读写也有相应的描述符，socketfd，描述符是一个数字，指向内核中一个结构体。

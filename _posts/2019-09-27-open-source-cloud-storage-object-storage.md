@@ -32,7 +32,7 @@ last_updated:
 
 ## PyOne
 
-基于 Python 的 onedrive 文件本地化浏览系统，使用 MongoDB 缓存文件
+基于 Python 的 onedrive 文件本地化浏览系统，使用 [[MongoDB]] 缓存文件
 
 - <https://github.com/abbeyokgo/PyOne>
 

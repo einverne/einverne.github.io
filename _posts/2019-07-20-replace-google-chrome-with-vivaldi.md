@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "我可能要抛弃用了很多年的 Chrome 换用 Vivaldi "
+title: "我可能要抛弃用了很多年的 Chrome 换用 Vivaldi"
+aliases: "我可能要抛弃用了很多年的 Chrome 换用 Vivaldi"
 tagline: ""
 description: ""
 category: 经验总结
@@ -8,7 +9,7 @@ tags: [chrome, vivaldi, google-chrome, opera, web-browser, firefox, ]
 last_updated:
 ---
 
-大概一两年前就听说了 Vivaldi 这样一款浏览器，它使用 Chromium 做内核，创始人是从 Opera 浏览器出来的，不满 Chrome 横扫浏览器市场，没有给 Opera 一点喘息的机会，很多 Opera 的特性在 Chrome 上都被摘掉了。所以他们就开始搞了这一个 Vivaldi 浏览器，我记得当时听到的第一个宣传语是，快，想来 Chrome 最初打开市场时的宣传语也是快，但是多少年过去了 Chrome 虽然自身保持非常干净，但是加上自定义的扩展，也变得越来越臃肿了，但倒是也在一个可以接受的范围内。两年前 Vivaldi 依靠这一条宣传没有吸引到我，但是我也下载尝试，并且这[两年来一直存在我的电脑中](/post/2019/05/cross-platform-softwares-i-use.html)。我记得之前在我看来最大的缺点便是不能同步数据，而这个功能也在之前的更新中被加上了。所以今天就非常值得拿出来讲一讲。
+大概一两年前就听说了 Vivaldi 这样一款浏览器，它使用 Chromium 做内核，创始人是从 Opera 浏览器出来的，不满 Chrome 横扫浏览器市场，没有给 Opera 一点喘息的机会，很多 Opera 的特性在 Chrome 上都被摘掉了。所以他们就开始搞了这一个 Vivaldi 浏览器，我记得当时听到的第一个宣传语是，快。想来 Chrome 最初打开市场时的宣传语也是快，但是多少年过去了 Chrome 虽然自身保持非常干净，但是加上自定义的扩展，也变得越来越臃肿了，但倒是也在一个可以接受的范围内。两年前 Vivaldi 依靠这一条宣传没有吸引到我，但是我也下载尝试，并且这[两年来一直存在我的电脑中](/post/2019/05/cross-platform-softwares-i-use.html)。我记得之前在我看来最大的缺点便是不能同步数据，而这个功能也在之前的更新中被加上了。所以今天就非常值得拿出来讲一讲。
 
 ## 无法让我抛弃 Chrome 的原因
 电脑中一直装着 Chrome 和 Vivaldi，但绝大多数情况下我只会打开 Chrome，毕竟这里累积了我多年的书签，扩展，同步的所有标签。

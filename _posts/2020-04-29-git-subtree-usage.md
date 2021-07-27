@@ -193,6 +193,20 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 	git commit
 	git subtree add --prefix=<subtree> <repository_url> <subtree_branch>
 
+## 移除 subtree
+如果有一天引入的 subtree 不再有用，那么整个 subtree 可以从项目中删除。
+
+    git rm -r subtree_folder
+    git commit -m "Remove subtree"
+
+这种方式是删除整个 subtree，然后提交，但是问题在于 git log 中还会留有 subtree 的提交历史。
+
+还可以使用 filter-branch 来重写提交历史：
+
+    git filter-branch -f --index-filter "git rm -r -f -q --cached --ignore-unmatch subtree_folder" --prune-empty HEAD
+
+这种方式可以将 subtree 的提交历史也删除。
+
 ## 使用建议
 就和上文所说那样，因为对 subtree 目录的修改和主项目是混合在一起的。所以为了让 commit messages 清晰，可以对主项目和子项目的修改分开进行。当然如果不在意子项目的 commit messages，那么一起提交，然后在对 subtree push 的时候再统一对 commit message 进行修改也可以。
 
