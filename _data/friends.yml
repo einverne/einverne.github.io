@@ -1,9 +1,6 @@
 - url: https://blog.loikein.one/
   name: 此生未命名 loikein 的博客
 
-- url: https://maxiee.github.io/
-  name: Maxiee Blog
-
 - url: https://beyondstars.xyz/
   name: 探索子
   desc: 越过星空，探索未知
@@ -14,23 +11,4 @@
 
 - url: https://blog.alevel.tech/
   name: Alevel blog
-
-- url: https://alignof.com/
-  name: alignof
-
-- url: http://samray.me/
-  name: Samray Leung
-  desc:
-
-- url: https://wsgzao.github.io
-  name: wsgzao
-  desc:
-
-- url: http://gaopenghigh.github.io
-  name: 做美好的人，做酷的事
-  desc:
-
-- url: https://crispgm.com
-  name: DAVID ZHANG
-  desc:
 
