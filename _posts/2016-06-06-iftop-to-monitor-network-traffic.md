@@ -85,8 +85,8 @@ Debian 上安装所需依赖包：
 
 中间的`<= =>`这两个左右箭头，表示的是流量的方向。
 
-- TX：发送流量
-- RX：接收流量
+- TX：发送流量 Transmit
+- RX：接收流量 Receive
 - TOTAL：总流量
 - Cum：运行 `iftop` 到目前时间的总流量
 - peak：流量峰值

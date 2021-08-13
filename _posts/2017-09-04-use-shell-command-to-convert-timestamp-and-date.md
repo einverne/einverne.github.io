@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 Shell 命令来对 Unix 时间戳和日期进行转换 date 命令"
+aliases: "使用 Shell 命令来对 Unix 时间戳和日期进行转换 date 命令"
 tagline: ""
 description: "熟悉 Shell 命令来对日期进行转换"
 category: 学习笔记

@@ -64,7 +64,7 @@ Swagger 能根据 Spring Controller 接口自动生成一个文档页面，在�
 
 ## 添加接口注释
 
-@ApiOperation 注解来给 API 增加说明、通过 @ApiImplicitParams、@ApiImplicitParam 注解来给参数增加说明。
+`@ApiOperation` 注解来给 API 增加说明、通过 `@ApiImplicitParams`、`@ApiImplicitParam` 注解来给参数增加说明。
 
 一个简单的注释
 

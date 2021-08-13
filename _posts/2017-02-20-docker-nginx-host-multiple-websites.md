@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Docker 使用 nginx-proxy 来假设多个网站"
+title: "Docker 使用 nginx-proxy 来架设多个网站"
+aliases: "Docker 使用 nginx-proxy 来架设多个网站"
 tagline: ""
 description: ""
 category: 学习笔记

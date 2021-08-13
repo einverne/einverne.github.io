@@ -10,7 +10,9 @@ last_updated:
 
 dd 命令可以复制文件并对原文件内容进行转换和格式处理。dd 命令经常被用来备份设备。
 
-	dd if=/dev/zero of=sun.txt bs=1M count=1
+比如创建一个空文件：
+
+	dd if=/dev/zero of=test.txt bs=1M count=1
 
 解释：
 

@@ -15,6 +15,11 @@ last_updated:
 
 - <https://github.com/cloudreve/Cloudreve>
 
+## ZFile
+[[ZFile]] 是一款 Java 编写的在线文档分享工具。
+
+- <https://github.com/zhaojun1998/zfile>
+
 ## lsky-pro
 又一款用 PHP 所写图片管理系统。
 

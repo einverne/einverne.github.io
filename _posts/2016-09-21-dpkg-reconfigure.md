@@ -25,4 +25,6 @@ last_updated:
     sudo dpkg-reconfigure lightdm
     sudo dpkg-reconfigure mdm
 
+配置时区
 
+    sudo dpkg-reconfigure tzdata

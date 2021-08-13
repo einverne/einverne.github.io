@@ -24,6 +24,14 @@ last_updated:
 
 - <https://syncthing.net/>
 
+### 在 Ubuntu 下安装
+
+- <https://apt.syncthing.net/>
+
+### Docker 安装
+
+使用 Linuxserver 的镜像。
+
 ## 端口
 Syncthing 有个端口需要注意一下
 
