@@ -78,7 +78,7 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，miniflux 比较新是 Go 写�
 
 和 NextCloud(ownCloud) 类似的也还有 FileRun, seaFile 等
 
-和 NextCloud 中心化不同的另一个文件同步 [SyncThing](/post/2019/10/syncthing.html) 也要强烈推荐，自己架设都比较简单。
+和 NextCloud 中心化不同的另一个文件同步 [Syncthing](/post/2019/10/syncthing.html) 也要强烈推荐，自己架设都比较简单。
 
 ### 下载类
 下面这些工具都因为可以下载种子而被人所知，不过也可以用来分享文件的。
