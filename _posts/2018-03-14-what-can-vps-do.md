@@ -48,6 +48,9 @@ last_updated:
 ### 自建DNS
 无污染 DNS 服务器
 
+- AdGuard Home
+- pi-hole
+
 ### jumpserver
 作为跳板机 ssh 连接其他电脑用
 

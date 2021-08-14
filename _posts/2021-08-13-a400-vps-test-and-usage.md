@@ -85,10 +85,13 @@ IO 性能良好，网络带宽除了一次广州的下载有点奇怪，还行�
 
 
 ## 使用
+
+- [在购买 VPS 之后首先要做的事情](/post/2015/12/things-to-do-after-buying-vps.html)
+
 所有的应用都使用 Docker 安装
 
 - [之前整理的常用的 Docker 镜像和使用方法](https://github.com/einverne/dockerfile)
-
+- [可以自行架设的服务整理](/post/2020/02/self-hosted-services-collection.html)
 
 如果看到这里，你也想购买可以在下单的时候使用优惠码 [0811](https://portal.a400.net/aff/JTNBOUMX)，会立即使用半价。
 
