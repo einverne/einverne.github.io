@@ -4,7 +4,7 @@ title: "使用 Beancount 记账篇二：各类账单导入"
 aliases: "使用 Beancount 记账篇二：各类账单导入"
 tagline: ""
 description: ""
-category: 
+category: [ Beancount, 经验总结 ]
 tags: [ beancount, accounting, bookkeeping, double-entry, bill-import, linux, wechat, alipay ]
 last_updated:
 ---

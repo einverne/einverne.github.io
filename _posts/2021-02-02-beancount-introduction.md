@@ -4,7 +4,7 @@ title: "使用 Beancount 记账篇零：Beancount 入门使用"
 aliases: "使用 Beancount 记账篇零：Beancount 入门使用"
 tagline: ""
 description: ""
-category: 
+category: Beancount
 tags: [beancount, accounting, double-entry, bookkeeping, ledger ]
 last_updated:
 ---

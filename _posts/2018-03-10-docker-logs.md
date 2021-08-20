@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "查看 Docker 容器的日志"
+title: "Docker 容器日志相关命令"
+aliases: "Docker 容器日志相关命令"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -12,7 +13,7 @@ last_updated:
 
 在之前的[文章](/post/2017/07/docker-introduction.html) 中，学会了如何创建，查看，移除等等管理容器的方法，其实查看日志也和这些方法类似。
 
-比如要查看容器所有运行的日志可以使用
+比如要查看容器所有运行的日志可以使用，下面的 containerId 都可以被替换为容器的名字：
 
     docker logs [containerId]
 
@@ -20,7 +21,7 @@ last_updated:
 
     docker logs -f [containerId]
 
-但是这个命令时灵时不灵，在不同系统上，有的时候会打印出全部的日志，就和没加 `-f` 参数一样，所以有的时候要查看日志最末尾几行可以使用 `--tail`
+但是这个命令在不同系统上，有的时候会打印出全部的日志，就和没加 `-f` 参数一样，所以有的时候要查看日志最末尾几行可以使用 `--tail`
 
     docker logs --tail 100 [containerId]
 

@@ -4,7 +4,7 @@ title: "使用了半年 macOS 之后 我又回到了 Linux 的怀抱"
 aliases: "使用了半年 macOS 之后 我又回到了 Linux 的怀抱"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [linux, macos, operating-system,  ]
 last_updated:
 ---

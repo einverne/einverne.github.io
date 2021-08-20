@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "PostgreSQL 初识"
+aliases: "PostgreSQL 初识"
 tagline: ""
 description: ""
 category: 学习笔记

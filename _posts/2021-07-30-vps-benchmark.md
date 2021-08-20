@@ -5,7 +5,7 @@ aliases:
 - VPS 性能测试
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [ vps, benchmark, bench, cpu, io, net-speed, cli, vps-benchmark, vps-test ]
 last_updated:
 ---

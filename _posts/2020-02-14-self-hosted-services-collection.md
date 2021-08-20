@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "自架的服务整理"
+aliases: "自架的服务整理"
 tagline: ""
 description: ""
 category: 整理合集
@@ -58,7 +59,7 @@ Php 站的又一个选择，比较轻量小巧，但是功能强大。
 ## RSS 阅读器
 自从 Google Reader 关闭后，就一直用的 InoReader，完全没有任何问题，不过因为买了 NAS，就索性把 RSS 也自建了一个。数据在自己的数据库里面还是很安心的。我选用的是时间最久，功能比较稳定的 Tiny Tiny RSS. 当然也还有 FreshRSS，miniflux，NewsBlur 等可以选择。
 
-Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，miniflux 比较新是 Go 写的，NewsBlur 则是 Python.
+Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go 写的，NewsBlur 则是 Python.
 
 更多自建的方案可以参考[这篇文章](/post/2020/02/self-hosted-rss-reader.html)。
 
@@ -156,7 +157,7 @@ Calibre-web
 - <https://www.duplicati.com/>
 
 ### Syncthing
-
+Syncthing 是我对比了一系列的同步工具之后选择的，基本上已经满足了我日常所有的需求。
 
 ## Translate tool
 
@@ -187,7 +188,7 @@ anyi 导航、聚合搜索、webstack
 
 ### Instagram scraper
 批量下载 Instagram
-
+ 
 	touch ig_args.txt ig_users.txt
 	docker run -d \
 		-v $(pwd)/download:/download \

@@ -12,7 +12,22 @@ last_updated:
 
 Swagger 能根据 Spring Controller 接口自动生成一个文档页面，在代码中使用注解将接口文档注释，非常方便。 Swagger 整合到 Spring boot 项目中也非常方便。
 
+
 ## 添加依赖
+
+io.springfox >= 3.0
+
+```
+<dependency>
+ <groupId>io.springfox</groupId>
+ <artifactId>springfox-boot-starter</artifactId>
+ <version>3.0.0</version>
+</dependency>
+```
+
+访问地址是：<http://localhost:8080/swagger-ui/#/>
+
+
 在 `pom.xml` 中添加
 
     <dependency>

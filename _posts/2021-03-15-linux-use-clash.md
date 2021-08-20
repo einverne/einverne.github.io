@@ -4,7 +4,7 @@ title: "在 Linux 上使用 Clash 作代理"
 aliases: "在 Linux 上使用 Clash 作代理"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [ linux, clash, clashx, macos, proxy, socks, v2ray, ]
 last_updated:
 ---

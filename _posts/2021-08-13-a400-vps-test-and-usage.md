@@ -5,7 +5,7 @@ aliases:
 - A400互联VPS简单测评及使用
 tagline: ""
 description: ""
-category: 经验分享
+category: 经验总结
 tags: [ vps, linux, docker, network, cn2, miniflux ]
 last_updated:
 ---
@@ -94,6 +94,67 @@ IO 性能良好，网络带宽除了一次广州的下载有点奇怪，还行�
 - [可以自行架设的服务整理](/post/2020/02/self-hosted-services-collection.html)
 
 如果看到这里，你也想购买可以在下单的时候使用优惠码 [0811](https://portal.a400.net/aff/JTNBOUMX)，会立即使用半价。
+
+### nginx-proxy
+在执行下的 `docker-compose` 之前需要先创建 `nginx-proxy` 名字的网络。可以参考[这里](https://github.com/einverne/dockerfile/tree/master/nginx-proxy)
+
+    docker network create nginx-proxy
+
+### miniflux
+[[miniflux]] 是一款用 Go 写的开源 RSS 阅读器，比较轻量，但是功能都有。
+
+```
+version: '3'
+services:
+  miniflux:
+    container_name: miniflux
+    image: miniflux/miniflux:latest
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgres://YOUR_USERNAME:YOUR_PASSWORD@db/miniflux?sslmode=disable
+      - RUN_MIGRATIONS=1
+      - CREATE_ADMIN=1
+      - ADMIN_USERNAME=MINIFLUX_USERNAME
+      - ADMIN_PASSWORD=MINIFLUX_PASSWORD
+      - VIRTUAL_HOST=YOUR_DOMAIN
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=YOUR_DOMAIN
+      - LETSENCRYPT_EMAIL=YOUR_EMAIL
+  db:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=YOUR_USERNAME
+      - POSTGRES_PASSWORD=YOUR_PASSWORD
+    volumes:
+      - miniflux-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+volumes:
+  miniflux-db:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+```
+
+说明：
+
+- MINIFLUX_USERNAME: miniflux 后台登录域名
+- MINIFLUX_PASSWORD: miniflux 后台登录密码
+- YOUR_USERNAME: PostgreSQL 数据库用户名
+- YOUR_PASSWORD: PostgreSQL 数据库密码
+- YOUR_DOMAIN: 子域名/域名
+- YOUR_EMAIL: 申请 SSL 证书的邮箱
+
+
 
 ## reference
 

@@ -6,7 +6,7 @@ aliases:
 - JSON Web Token 认证
 tagline: ""
 description: ""
-category: 
+category: 学习笔记
 tags: [ jwt, authentication, session, cookie, python, java ]
 last_updated:
 ---
