@@ -12,6 +12,8 @@ last_updated:
 
 今天回到家突然发现[刚买](/post/2021/08/a400-vps-test-and-usage.html)的一台 VPS 根目录空间 100% 被占用了，使用 [du](/post/2018/03/du-find-out-which-fold-take-space.html) 一层层查看占用最后发现是 `/var/lib/docker/containers` 下有一个 json 日志文件占用了 20G 大小。
 
+![](/assets/linux-vps-disk-space-usage-20210820180339.png)
+
 简单的查了一下发现 Docker 容器的日志都会被记录在宿主机的 `/var/lib/docker/containers/` 路径下。而我有一个容器因为不停地输出日志，没多久就占了很大空间。
 
 ## Docker 容器日志
