@@ -23,6 +23,8 @@ last_updated:
 - [Merlin 改版](http://koolshare.cn/thread-127878-1-1.html)
 - [官改固件](https://koolshare.cn/thread-139965-1-1.html)
 
+
+
 ## 刷机步骤
 AC86U 的刷机步骤非常简单，通过网页「升级页面」，直接上传 `.w` 后缀的固件，然后等待刷机完成自动重启即可。
 
@@ -96,6 +98,7 @@ fi
 
 这样系统每一次重启就会自动的使用该 swap 分区。
 - <https://www.asuswrt-merlin.net/>
+
 
 ## 其他工具
 可以通过 amtm 安装其他工具，比如：

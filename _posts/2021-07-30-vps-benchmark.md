@@ -73,6 +73,10 @@ unixbench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 [LemonBench](https://github.com/LemonBench/LemonBench)，是一款针对 Linux 服务器设计的服务器性能测试工具。通过综合测试，可以快速评估服务器的综合性能，为使用者提供服务器硬件配置信息。
 
+### Speedtest
+
+- <https://bench.monster/>
+
 
 ## 网速 Net speed
 

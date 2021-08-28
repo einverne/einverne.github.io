@@ -74,6 +74,10 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 
 - [portainer](https://www.portainer.io/)
 
+## 在线粘贴板
+
+- [hastebin](https://github.com/toptal/haste-server)，这是一个 Node.js 实现的开源版本的 pastebin。
+
 ## 文件管理
 文件管理及同步，我使用 NextCloud，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
 
@@ -171,6 +175,25 @@ Docker composte 安装
 
 ## 搜索导航类
 anyi 导航、聚合搜索、webstack
+
+
+### Homer
+[[another-simple-static-homepage-homer]]一个非常简单的静态页面，可以通过 yaml 配置。
+
+![[Pasted image 20210826211247.png]]
+
+- <https://github.com/bastienwirtz/homer>
+
+
+
+
+### heimdall
+一个非常漂亮的导航站
+
+![[Pasted image 20210826210930.png]]
+
+- <https://hub.docker.com/r/linuxserver/heimdall>
+
 
 ### geek-navigation
 

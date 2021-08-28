@@ -38,6 +38,7 @@ last_updated:
 
 然后批量将金额中的 RMB 去掉。`%s/RMB //g`，然后保存到 `datas/comm-2021.01.csv` 文件中。随后执行：
 
+    export PYTHONPATH=.
     bean-extract config.py datas/comm-2021.01.csv > beans/comm-2021.01.bean
 
 只要 `config.py` 中设置的账户分类能够覆盖账单中的关键字，基本上就完工了。如果有些账单分入了错误的账户，那么手动的调整一下 `config.py` 再执行一次。

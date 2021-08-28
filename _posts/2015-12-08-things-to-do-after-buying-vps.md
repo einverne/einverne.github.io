@@ -37,6 +37,13 @@ Run `visudo` command to enter sudo config file. Find a section called user privi
     # new add
     einverne	ALL=(ALL)	ALL
 
+### update default editor
+
+    apt install vim -y
+    update-alternatives --config editor
+
+choose: vim
+
 ### ssh configuration
 Now it's time to make the server more secure. You can set the ssh configuration to permit root login. But before doing this config, please make sure to have a new account have the root privileges.
 
@@ -214,10 +221,14 @@ Docker become much powerful these days, I can build and sever all my self-host s
 	sudo apt install docker-ce
 	sudo systemctl status docker
 
+或者通过一键脚本：
+
+    curl -fsSL https://get.docker.com/ | sh
+
 Executing the docker command without sudo
 
 	sudo usermod -aG docker USER
-
+    newgrp docker
 
 ## shadowsocks
 sock5 proxy.

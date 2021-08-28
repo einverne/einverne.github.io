@@ -11,8 +11,15 @@ last_updated:
 
 Ansible 是使用 Python 开发的自动化运维工具，如果这么说比较抽象的话，那么可以说 Ansible 可以让服务器管理人员使用文本来管理服务器，编写一段配置文件，在不同的机器上执行。
 
+Ansible 解决的问题正是在运维过程中多机器管理的问题。当有一台机器时运维比较简单，当如果要去管理 100 台机器，复杂度就上升了。使用 Ansible 可以让运维人员通过简单直观的文本配置来对所有纳入管理的机器统一进行管理。如果再用简单的话来概述 Ansible 的话，就是定义一次，无数次执行。
 
-## 特性 {#feature}
+Ansible 是如何做到这件事情的呢？主要是划分了下面几个部分，具体的内容后文详解：
+
+- 定义目标机器列表，也就是需要管理的机器
+- 定义配置，使用 [YAML](/post/2015/08/yaml.html) 文件配置任务
+- 执行任务
+
+## Ansible 的特性 {#feature}
 
 - 低学习成本
 - 无需在服务器中安装客户端，基于 SSH 工作，可并行执行
@@ -20,16 +27,17 @@ Ansible 是使用 Python 开发的自动化运维工具，如果这么说比较�
 - 管理的对象可以包括物理机，虚拟机，容器等等
 - 使用 yaml 格式文件编排 playbook
 
-## 组成
+## Ansible 的组成元素
+Ansible 中的一些概念。
 
 - control node: 控制节点，可以在任何安装了 Python 环境的机器中使用 ansible，两个重要的可执行文件在 `/usr/bin/ansible` 和 `/usr/bin/ansible-playbook`
 - managed node: 被控制的节点
-- inventory: 需要管理的节点，通常配置成 `hostfile` 文件 [^inventory]
+- **inventory**: 需要管理的节点，通常配置成 `hostfile` 文件 [^inventory]
 - modules: ansible 进行自动化任务时调用的模块，社区提供了非常多 [modules](https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html)
-- Task: Ansible 的执行单元
-- playbook: 编排多个任务
-- roles: roles 是将 playbook 划分多个部分的机制
-- plugins: ansible 插件
+- **Task**: Ansible 的执行单元
+- **playbook**: 编排多个任务
+- **roles**: roles 是将 playbook 划分多个部分的机制
+- **plugins**: ansible 插件
 
 [^inventory]: <https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#intro-inventory>
 
@@ -70,12 +78,17 @@ Ansible 的安装方法非常多，PPA，源码安装都可以。[^install]
 
 	source ./hacking/env-setup
 
+### 通过 Python pip 安装
+
+    sudo pip install --trusted-host mirrors.aliyun.com 
+    --index-url=http://mirrors.aliyun.com/pypi/simple/  ansible==2.7.1
+
 ## 配置 {#config}
 
 ### ansible.cfg
 `ansible.cfg` 文件是 Ansible 的主要配置文件，ansible 寻找的路径优先级是：
 
-- File specified by the ANSIBLE_CONFIG environment variable
+- 由环境变量 `ANSIBLE_CONFIG` 指定的文件
 - ./ansible.cfg (ansible.cfg in the current directory)
 - ~/.ansible.cfg (.ansible.cfg in your home directory)
 - /etc/ansible/ansible.cfg
@@ -106,7 +119,7 @@ inventory 可以对远程服务器 HOST 进行管理。可以配置 Ansible 默�
 比如，未分组形式：
 
 ```
-gtk.pw
+xxx.einverne.info
 einverne.info
 12.12.12.12
 192.168.2.1
@@ -147,7 +160,7 @@ webserver
 dbserver
 ```
 
-inventory 中可以配置使用别名，但是推荐在 ssh config 中进行配置管理，编辑 `vi ~/.ssh/config`:
+inventory 中可以配置使用别名，但是推荐在 `ssh config` 中进行配置管理，编辑 `vi ~/.ssh/config`:
 
 	Host ds
 		HostName einverne.info

@@ -33,6 +33,28 @@ last_updated:
 }
 ```
 
+或者针对个别容器设置，在 docker-compose.yml 中：
+
+注意需要版本2及以上
+
+```
+version: '2'
+services:
+  app:
+    container_name: app
+    image: node
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+       max-file: "5"     // number of files or file count
+       max-size: "10m"  // file size
+```
+
+或者命令行：
+
+    docker run --log-opt max-size=10m --log-opt max-file=5 my-app:latest
+
 ## Docker 日志策略和最佳实践
 
 ### 通过应用自己管理日志

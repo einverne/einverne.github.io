@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "优秀开源项目推荐：BookStack 一款高效简单的 Wiki 系统"
+aliases: "优秀开源项目推荐：BookStack 一款高效简单的 Wiki 系统"
 tagline: ""
 description: ""
 category: 开源项目
-tags: [qnap, qnap-tutorial, github, bookstack, open-source, self-host, wiki, ]
+tags: [qnap, qnap-tutorial, github, bookstack, docker, open-source, self-host, wiki, ]
 last_updated:
 ---
 
