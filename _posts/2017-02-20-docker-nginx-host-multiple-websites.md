@@ -99,6 +99,11 @@ nginx-proxy 对外暴露 80 端口，并且监听 80 端口，允许 80 端口�
 ## 扩展
 如果想要支持 SSL，那么 `nginx-proxy` 有一个对应的项目 [letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion)，他可以自动创建和续签 Let's Encrypt 的证书。
 
+## 延展阅读
+
+- [Nginx Proxy Manager](https://nginxproxymanager.com/)
+- [docker-swag](https://github.com/linuxserver/docker-swag)，或者 [LinuxServer 网站指南](https://docs.linuxserver.io/general/swag)
+
 ## reference
 
 - <https://github.com/jwilder/nginx-proxy>

@@ -81,6 +81,17 @@ Funkwhale 用 Python，Django 编写，遇到 bug 倒时候也能看懂代码了
 		  - "6000:80"
 
 
+## 导入音乐文件
+
+
+```
+# For file structures similar to ./Artist/Album/Track.mp3
+docker exec -it funkwhale manage import_files $LIBRARY_ID "/music/**/**/*.mp3" --in-place --async
+```
+
+这里的 LIBRARY_ID 需要到界面中找。
+
+
 ## koel
 
 - <https://koel.phanan.net/>

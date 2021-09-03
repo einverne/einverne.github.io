@@ -30,7 +30,9 @@ last_updated:
 
 ### Docker 安装
 
-使用 Linuxserver 的镜像。
+使用 Linuxserver 的镜像安装：
+
+- <https://github.com/einverne/dockerfile/tree/master/syncthing>
 
 ## 端口
 Syncthing 有个端口需要注意一下

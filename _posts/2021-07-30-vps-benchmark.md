@@ -21,13 +21,13 @@ VPS 性能测试的几个方面：
 
 ### bench.sh
 
-[teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，IO，带宽：
+[teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，磁盘 IO，带宽：
 
 	wget -qO- bench.sh | bash
     curl -Lso- bench.sh | bash
 
 
-unixbench 测试，UnixBench 跑分不一定代表真实性能，但可以提供一定参考。
+UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供一定参考。
 
 	wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh
 	chmod +x unixbench.sh
@@ -73,7 +73,13 @@ unixbench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 [LemonBench](https://github.com/LemonBench/LemonBench)，是一款针对 Linux 服务器设计的服务器性能测试工具。通过综合测试，可以快速评估服务器的综合性能，为使用者提供服务器硬件配置信息。
 
+    wget -O- https://ilemonrain.com/download/shell/LemonBench.sh | bash
+    curl -fsL https://ilemonrain.com/download/shell/LemonBench.sh | bash
+
 ### Speedtest
+
+    curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -asia
+
 
 - <https://bench.monster/>
 

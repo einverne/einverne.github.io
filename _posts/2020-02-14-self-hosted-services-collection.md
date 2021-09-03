@@ -56,6 +56,12 @@ Php 站的又一个选择，比较轻量小巧，但是功能强大。
 
 - <https://github.com/typecho/typecho>
 
+## RSS 输出
+
+- [RSSHub](https://github.com/DIYgod/RSSHub)
+- [RSS-Bridge](https://github.com/RSS-Bridge/rss-bridge)
+- [Full Text RSS](https://hub.docker.com/r/heussd/fivefilters-full-text-rss)
+
 ## RSS 阅读器
 自从 Google Reader 关闭后，就一直用的 InoReader，完全没有任何问题，不过因为买了 NAS，就索性把 RSS 也自建了一个。数据在自己的数据库里面还是很安心的。我选用的是时间最久，功能比较稳定的 Tiny Tiny RSS. 当然也还有 FreshRSS，miniflux，NewsBlur 等可以选择。
 
@@ -74,9 +80,33 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 
 - [portainer](https://www.portainer.io/)
 
+## 统计数据
+
+- Umami
+- [Plausible](https://plausible.io/)
+- Matomo
+
+### Umami
+[[Umami]] 是一个使用 Node.js 编写可以自建的网站统计系统，作为 CNZZ/Google Analytics 代替品。Umami 相对于 Matomo 较好的一点是没有那么消耗资源，非常轻量，100 M 左右内存就能运行。
+
+- <https://github.com/mikecao/umami>
+
+### Matomo
+- [Matomo](https://matomo.org/) 是一个类似 Google Analytics 的工具
+
+## 邮件服务器
+
+- [maddy](https://github.com/foxcpp/maddy) 是一个用 Go 语言实现的邮件服务器
+
 ## 在线粘贴板
 
 - [hastebin](https://github.com/toptal/haste-server)，这是一个 Node.js 实现的开源版本的 pastebin。
+
+
+## Web archiving
+
+- [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
+
 
 ## 文件管理
 文件管理及同步，我使用 NextCloud，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
@@ -145,6 +175,11 @@ Calibre-web
 
 - [lsky-pro](https://github.com/wisp-x/lsky-pro) PHP
 - [auxpi](https://github.com/aimerforreimu/auxpi) Go
+- EasyImage
+- [Piwigo](https://github.com/Piwigo/Piwigo)
+- [Ownphoto](https://github.com/hooram/ownphotos)
+- [Photoprism](https://github.com/photoprism/photoprism)
+- [Lychee](https://github.com/LycheeOrg/Lychee)
 
 ### Lychee
 
@@ -152,6 +187,13 @@ Calibre-web
 
 - <https://lychee.electerious.com/>
 - <https://hub.docker.com/r/80x86/lychee>
+
+### PhotoView
+
+
+![self-hosted-photoview-20210831103724.png](/assets/self-hosted-photoview-20210831103724.png)
+
+- <https://github.com/photoview/photoview>
 
 ## 备份
 
@@ -173,6 +215,10 @@ Docker composte 安装
 
 - <https://github.com/WeblateOrg/docker-compose>
 
+## VoIP
+
+- teamspeak 3
+
 ## 搜索导航类
 anyi 导航、聚合搜索、webstack
 
@@ -180,17 +226,22 @@ anyi 导航、聚合搜索、webstack
 ### Homer
 [[another-simple-static-homepage-homer]]一个非常简单的静态页面，可以通过 yaml 配置。
 
-![[Pasted image 20210826211247.png]]
+![homer-20210826211247.png](/assets/homer-20210826211247.png)
 
 - <https://github.com/bastienwirtz/homer>
 
+### CF-Worker-Dir
+这是一个基于 Cloudflare Worker 的导航页面。
 
+![cf-worker-dir-20210831134208.png](/assets/cf-worker-dir-20210831134208.png)
+
+- <https://github.com/sleepwood/cf-worker-dir>
 
 
 ### heimdall
 一个非常漂亮的导航站
 
-![[Pasted image 20210826210930.png]]
+![heimdall-20210826210930.png](/assets/heimdall-20210826210930.png)
 
 - <https://hub.docker.com/r/linuxserver/heimdall>
 

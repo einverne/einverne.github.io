@@ -371,6 +371,11 @@ schema_version: 6
 
 - <https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration>
 
+## 延伸阅读
+
+- [adguard-sync](https://github.com/atoy3731/adguard-sync) 是一个同步配置的工具。
+
+
 ## reference
 
 - <https://github.com/AdguardTeam/AdguardHome>

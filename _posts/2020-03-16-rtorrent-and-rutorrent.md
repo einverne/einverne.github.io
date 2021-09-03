@@ -8,12 +8,32 @@ tags: [bittorrent, tmux, rtorrent, rutorrent, linux, command-line, command, ]
 last_updated:
 ---
 
-就和之前文章写的[那样](/post/2018/04/bittorrent-client.html) ， rTorrent 是一个 C++ 编写的 BitTorrent 客户端，ruTorrent 是它的其中一个 Web 界面，其他的还有 Flood 等等。
+在之前文章总结的[常见的 BitTorrent 客户端](/post/2018/04/bittorrent-client.html) 中就曾经提及过 rTorrent， rTorrent 是一个 C++ 编写的 BitTorrent 客户端，ruTorrent 是它的其中一个 Web 界面，其他的还有 Flood 等等。
 
 这篇文章就主要总结一下 rTorrent 和 ruTorrent 的使用和一些我使用的主题和插件。
 
 ## Docker
 
+### 2021年8月更新
+
+这些天去看 LinuxServer 突然发现它们不再维护更新 rutorrent 的镜像，可以转用 [crazy-max](https://github.com/crazy-max/docker-rtorrent-rutorrent) 编译的镜像。
+
+或者直接使用我的 [docker-compose.yml](https://github.com/einverne/dockerfile)。先参考 README 修改对应的配置之后，`docker-compose up -d`，然后如果要使用 MaterialDesign ，和下面方法一样，因为已经映射到了机器的路径，
+
+    ~/rtorrent/data/rutorrent/themes
+
+所以，直接在该目录中 clone 项目即可。
+
+    git clone git://github.com/phlooo/ruTorrent-MaterialDesign.git MaterialDesign
+
+不过需要注意的是，只有重启了 Container 之后才会生效。
+
+    docker-compose restart
+
+然后在设置中就可以切换主题了。
+
+
+### 失效方法
 linuxserver 提供的 [ruTorrent](https://hub.docker.com/r/linuxserver/rutorrent/) 很好用的。
 
 	docker pull linuxserver/rutorrent

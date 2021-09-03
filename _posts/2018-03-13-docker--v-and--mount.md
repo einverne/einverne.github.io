@@ -8,14 +8,14 @@ tags: [docker, dockerfile, command, docker-compose, linux,]
 last_updated: 
 ---
 
-Docker Volumes 机制通常用来给 Docker 容器保存持久化数据，使用 Volumes 有很多优势
+Docker Volumes 机制通常用来给 Docker 容器保存持久化数据，使用 Volumes 有很多优势：
 
 - 更容易备份和迁移
 - 使用 Docker CLI 命令或者 Docker API 来管理
 - 可以在 Linux 和 Windows 上使用
 - 可以更安全得在多个容器中共享
 - Volume drivers 允许容器将内容保存到远端，云服务提供商，或者加密volume内容，或者增加其他功能
-- 新 Volume 的内容可以被容器预先填充
+- 新 Volume 的内容可以被容器预先填充, volume 会先将容器内容拷贝到容器外目录
 
 Volumes 通常也优于容器的可写层，使用 Volumes 不会增加容器的体积，并且 Volumes 的内容存储在外部独立于容器的生命周期。如果容器不产生持久化数据，可以考虑使用 [tmpfs mount](https://docs.docker.com/storage/tmpfs/)来避免数据存储在其他可能的地方，避免增加容器的体积。
 

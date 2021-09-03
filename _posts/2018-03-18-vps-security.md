@@ -31,6 +31,22 @@ SSH 默认使用 22 端口，我们和 VPS 打交道用的最多的就是这一�
     adduser [nickname_you_want]
     adduser [nickname_you_want] sudo        # 或者 visudo
 
+## 禁止密码登录
+通过上面的命令生成公私钥之后，可以取消密码登录，编辑 `/etc/ssh/sshd_config` 然后修改：
+
+    PasswordAuthentication no
+
+然后重启 ssh 服务：
+
+    sudo /etc/init.d/ssh restart
+
+## 开启登录失败次数
+在 `/etc/ssh/sshd_config` 中增加：
+
+    MaxAuthTries 6
+
+然后重启 ssh。
+
 ## 禁用 ping
 不响应 ping，修改 `/proc/sys/net/ipv4/icmp_echo_ignore_all` 文件，0 为允许，1 为禁止
 

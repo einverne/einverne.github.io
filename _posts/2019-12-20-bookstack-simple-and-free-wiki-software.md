@@ -41,6 +41,27 @@ GitHub 地址：
 ## QNAP 上使用 Docker 安装
 首先开启 QNAP 上的 MySQL 服务，然后给 bookstack 新建一个数据库 bookstack，并且给 bookstack 这个数据单独创建一个用户 bookstack。然后因为我的 Docker 配置的网关地址是 10.0.3.1 所以就写了宿主机的地址。然后就不用上面提到的教程单独给 BookStack 开一个 MySQL 实例了，共享宿主机的 MySQL 就行了。
 
+使用命令行：
+
+```bash
+docker run -d \
+  --name=bookstack \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e APP_URL=${APP_URL} \
+  -e DB_HOST=${DB_HOST} \
+  -e DB_USER=${DB_USER} \
+  -e DB_PASS=${DB_PASS} \
+  -e DB_DATABASE=${DB_DATABASE} \
+  -p 6875:80 \
+  -v ~/path/to/bookstack_config:/config \
+  --restart unless-stopped \
+  linuxserver/bookstack
+```
+
+使用 `docker-compose`:
+
+
 	version: "2"
 	services:
 	  bookstack:
