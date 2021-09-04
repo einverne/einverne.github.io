@@ -4,11 +4,18 @@ title: "使用 Chevereto 自建照片分享"
 tagline: ""
 description: ""
 category: 产品体验
-tags: [php, photo, google, flickr, ]
+tags: [php, photo, google, flickr, chevereto, self-hosted, ]
 last_updated: 
 ---
 
 Chevereto 是一款分享照片的程序，可以非常轻松得在自己的服务器上搭建照片分享程序，功能强大，外观精美。Chevereto 本身是收费使用的，一次性付费，终身使用，但是其开源版本可以免费使用。
+
+目前 Chevereto 的价格是 $39，可以免费升级到 V4 版本。作者已经发生声明，在 2021 年底将终止 Free 版本的维护。
+
+## Docker 安装
+推荐使用 Docker 安装 Chevereto:
+
+- <https://github.com/einverne/dockerfile>
 
 ## 安装 {#install}
 在安装之前请先检查需要的系统[配置](https://chevereto.com/docs/requirements)，至少保证 VPS 安装有
