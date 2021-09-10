@@ -128,6 +128,7 @@ Alternatively, if you're setting up your BTSync server, install `btsync`:
 
 ### 分享密钥的网站
 
+- <https://www.synckeys.com/>
 - 推荐指数 5 星，这是我最早接触到的分享 key 网站，此类网站不宜多，精华就行 <http://btsynckeys.com/>
 - 推荐指数 4 星 <http://btsync.space/>
 - 一个[论坛](http://bbs.btnimei.xyz/category/7/%E4%B8%8B%E4%BD%A0%E5%A6%B9)

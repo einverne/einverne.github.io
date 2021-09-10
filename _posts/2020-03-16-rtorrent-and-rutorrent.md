@@ -18,7 +18,7 @@ last_updated:
 
 这些天去看 LinuxServer 突然发现它们不再维护更新 rutorrent 的镜像，可以转用 [crazy-max](https://github.com/crazy-max/docker-rtorrent-rutorrent) 编译的镜像。
 
-或者直接使用我的 [docker-compose.yml](https://github.com/einverne/dockerfile)。先参考 README 修改对应的配置之后，`docker-compose up -d`，然后如果要使用 MaterialDesign ，和下面方法一样，因为已经映射到了机器的路径，
+或者直接使用我的 [docker-compose.yml](https://github.com/einverne/dockerfile/tree/master/rtorrent-rutorrent)。先参考 README 修改对应的配置之后，`docker-compose up -d`，然后如果要使用 MaterialDesign ，和下面方法一样，因为已经映射到了机器的路径，
 
     ~/rtorrent/data/rutorrent/themes
 
@@ -80,6 +80,14 @@ LinuxServer 的 ruTorrent 镜像提供了最基本的 rtorrent 和 ruTorrent 功
 
 
 ### autodl-irssi
+首先要说一下 [Irssi](https://irssi.org/)， Irssi 是一个发明于 1999 年的基于文本的聊天应用。
+
+[autodl-irssi](https://github.com/autodl-community/autodl-irssi) 是一个可以根据 filters 从 IRC announce channel 中自动下载 torrents 的工具。
+
+而 [autodl-rutorrent](https://github.com/autodl-community/autodl-rutorrent) 则是在 rutorrent 之上的一个插件，但是配置则沿用了 autodl-irssi。
+
+
+所有的过滤器都定义在 `~/.autodl/autodl.cfg` 中。
 
 ### filemanager
 

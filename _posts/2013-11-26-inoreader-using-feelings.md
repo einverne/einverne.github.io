@@ -38,7 +38,7 @@ Inoreader就如我之前说过的一样，它自建立一套分享机制，就�
 
 相信对于任何一个Google Reader的重度使用者,搜索的功能会经常使用,很多自己整理好的资料隐藏在Google Reader中,搜索有的时候比加心收藏方便得多.以前我还将一些电影资源更新的网站订阅到Google Reader中,直接检索电影名就能找到资源呢~现在没办法只能另寻[法子](http://www.einverne.tk/2013/10/movie-cse-for-douban.html)了. 以前Google Reader还有一个很值得提的功能就是,即使你的博客挂了,不管是域名过期,空间过期等等其他问题,只要是Google Reader保存过的文章Google都会默默的保存下来,Google Search搜索不到的东西,或许在Reader中就能找到,并且Google Reader是我自己整理的资料订阅列表,我甚至能找到更加详细的资料或介绍.
 
-## Readability连接
+## Readability 连接
 
 这是一个不得不提的功能,很多用户因为这个甚至称赞inoreader已经超越了Google Reader,当然这样做的问题先不考虑哈~.那我来解释一下这个功能,也就是对于一些没有全文输出的博客,利用这个功能就能够在inoreader中看到全文输出.inoreader提供了快捷键"w",来加载全文.当然Android版也是有同样的功能的.这也就是超越Google Reader的地方.
 

@@ -22,6 +22,8 @@ last_updated:
 
 **正确用法**是**确保 session 在使用完成后用 session.close, session.commit 或者 session.rollback 把连接还回 pool**。
 
+Session 是一个和数据库交互的会话。在 SQLAlchemy 中使用 Session 来创建和管理数据库连接的会话。
+
 ## SQLAlchemy 数据库连接池使用
 
 [sessions 和 connections](http://docs.sqlalchemy.org/en/latest/orm/session_basics.html#what-does-the-session-do) 不是相同的东西， session 使用连接来操作数据库，一旦任务完成 session 会将数据库 connection 交还给 pool。
@@ -122,6 +124,13 @@ After this you can reinstate your session.
 
 - flush 预提交，等于提交到数据库内存，还未写入数据库文件；
 - commit 就是把内存里面的东西直接写入，可以提供查询了；
+
+## Session 的生命周期
+
+- Session 被创建，没有和 model 绑定，无状态
+- Session 接受查询语句，执行结果，关联对象到 Session
+- Session 管理对象
+- 一旦 Session 管理的对象有变化，commit 或者 rollback
 
 ## reference
 

@@ -8,7 +8,7 @@ tags: [Linux, Httrack, backup, ]
 last_updated: 
 ---
 
-HTTrack 根据官方的介绍[^intro]，是一个易用的离线浏览工具，他允许用户从万维网中离线备份某一个网站，包括建立层叠的目录，HTML，图片，以及其他文件。工具在 [GPL](http://www.gnu.org/licenses/gpl.txt) 协议下开源。
+根据官方的介绍[^intro]，HTTrack 是一个易用的离线浏览工具，他允许用户从万维网中离线备份某一个网站，包括建立层叠的目录，HTML，图片，以及其他文件。工具在 [GPL](http://www.gnu.org/licenses/gpl.txt) 协议下开源。
 
 最近主要是因为想要备份 http://www.runningman2015.com/guidang/ 这个网站，突然想到了这个工具。在此之前曾经想要自己用 scrapy 提取网站结构，然后存到数据库，想了一下，直接一个命令可以实现的事情，完全可以不用 scrapy 了。
 
@@ -45,6 +45,12 @@ W	mirror web sites, semi-automatic (asks questions) (--mirror-wizard) 更加自�
 -----------|---------------|---------------|----------------|
 Teleport Pro | <http://www.tenmax.com/teleport/pro/index.htm>  | Windows | 整站备份，网站结构清晰，只支持单一平台，收费
 Cyotek WebCopy | <https://www.cyotek.com/cyotek-webcopy> | Windows with .NET 4.6 | 整站备份，免费
+
+## 其他命令行
+
+    wget -r --no-parent -e robots=off http://www.example.com
+    wget -m -p -E -k www.example.com
+
 
 ## 缺点
 镜像站点功能很强大，但是下载离线的数据非结构化数据，镜像功能对与纯静态HTML站点非常有效，但是对于目前互联网上的大部分 JS 动态网站却无能为力，镜像后容易都是内容。

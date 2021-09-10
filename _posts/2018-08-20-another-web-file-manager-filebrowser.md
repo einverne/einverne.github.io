@@ -20,3 +20,5 @@ File Browser 是一个用 Go 和 Vue 编写的基于 Web 的文件管理器。
 
 ![filebrowser-20210827181233.png](/assets/filebrowser-20210827181233.png)
 
+默认的用户名和密码是 admin/admin，记得登录进去第一件事情就是修改密码。
+
