@@ -121,8 +121,13 @@ assh 非常小巧，当却很强大
 - Graphviz representation of the hosts
 
 ### Install
+如果本地安装了 Go 环境：
 
 	go get -u moul.io/assh/v2
+    
+macOS 上：
+
+    brew install assh
 
 ### Event
 assh 支持一些事件，可以用来触发一些操作或者进行通知。
