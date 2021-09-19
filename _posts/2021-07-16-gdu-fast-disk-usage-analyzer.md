@@ -21,11 +21,18 @@ gdu 为 SSD 做了优化，但在机械硬盘上也能很好的工作。
 ![gdu-20210904214154.png](/assets/gdu-20210904214154.png)
 
 ## Install
-
+Linux:
 ```
 curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
 chmod +x gdu_linux_amd64
 mv gdu_linux_amd64 /usr/bin/gdu
+```
+
+macOS:
+
+```
+brew install -f gdu
+brew link --overwrite gdu  # if you have coreutils installed as well
 ```
 
 更多的安装方式可以参考[repo](https://github.com/dundee/gdu)
