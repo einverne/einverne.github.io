@@ -132,6 +132,19 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 ### YouTube 视频下载
 youtube-dl
 
+## 文件分享
+
+### File Browser
+File Browser 是一个使用 Go 语言和 Vue 实现的在线文档共享。只依赖于 SQLite 数据库存储最基本的数据。
+
+- <https://github.com/filebrowser/filebrowser>
+
+### FileRun
+FileRun 是一个基于浏览器的文件分享和同步工具。兼容 NextCloud 客户端。
+
+- <https://filerun.com/>
+
+
 ## Self host IFTTT
 
 n8n.io
@@ -165,11 +178,20 @@ Calibre-web
 - <https://github.com/Technosoft2000/docker-calibre-web>
 
 ### LazyLibrarian
+LazyLibrarian is a program to follow authors and grab metadata for all your digital reading needs.
 
-- <https://lazylibrarian.gitlab.io/rss/>
+- <https://lazylibrarian.gitlab.io/>
+
+### talebook
+这是一个 Calibre 和 Vue 结合的在线图书站点
+
+- <https://github.com/talebook/talebook>
+
+![talebook-20210919083401.png](/assets/talebook-20210919083401.png)
+
 
 ## 图片管理类
-主要是对图片的管理，比较著名的是 [Chevereto](/post/2018/01/chevereto-self-hosted-photo-sharing.html)。
+主要是对图片的管理，比较著名的是 PHP 编写的 [Chevereto](/post/2018/01/chevereto-self-hosted-photo-sharing.html)。
 
 其他图床
 

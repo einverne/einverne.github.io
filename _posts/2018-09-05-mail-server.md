@@ -4,7 +4,7 @@ title: "邮件服务器"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [mail-server, mail, linux, smtp, ]
+tags: [mail-server, mail, linux, smtp, mailgun, email]
 last_updated:
 ---
 
@@ -40,12 +40,12 @@ IMAP 全称 Internet Message Access Protocol,RFC 2060 相对于 pop3 协议所�
 MUA 到 MTA，以及 MTA 和 MTA 之间使用 SMTP 协议，而收件时，MUA 到 MDA 之间最常使用的协议是 POP3 或 IMAP。
 
 ### Postfix
-一个开源的 MTA 服务器，负责通过 SMTP 协议管理发送到本机的邮件以及由本机向外发送的邮件。
+[[Postfix]] 是一个开源的 MTA 服务器，负责通过 SMTP 协议管理发送到本机的邮件以及由本机向外发送的邮件。
 
 Postfix 使用的默认端口为 25
 
 ### Dovecot
-一个开源的 IMAP 及 POP3 服务器。[doc](https://www.dovecot.org/)
+[[Dovecot]] 是一个开源的 IMAP 及 POP3 服务器。[doc](https://www.dovecot.org/)
 
 IMAP 协议使用的默认端口是 143
 

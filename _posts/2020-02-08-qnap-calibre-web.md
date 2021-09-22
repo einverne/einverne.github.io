@@ -70,3 +70,8 @@ last_updated:
 ### gshang2017
 
 - <https://github.com/gshang2017/docker/tree/master/calibre-web>
+
+
+## 延伸
+
+- Komga 另一个可以自行搭建的图书管理
