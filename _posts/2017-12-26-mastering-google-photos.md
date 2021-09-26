@@ -29,15 +29,19 @@ Google 一路改过来，Picasa -> Google+ Photos -> Google Photos，外链是�
 
 Picasa
 
-<https://lh3.googleusercontent.com/-b7vGrWO7M1Q/VeoaKTjWg_I/AAAAAAAA1uA/EKhtBNmcxzQ/s720-Ic42/IU%252520heart.jpg>
+![Picasa 链接](https://lh3.googleusercontent.com/-b7vGrWO7M1Q/VeoaKTjWg_I/AAAAAAAA1uA/EKhtBNmcxzQ/s720-Ic42/IU%252520heart.jpg)
 
 Google Photos
 
-<https://lh3.googleusercontent.com/7wqn4oULz6lckUdJbPZzT094xyJiDewL03QS5BZk5kz9c5vP_wvk7fGxSOtxYvAG9N98blJGfZTAdweG_rYnC7sLIrjBAJfX0uIsub_P6waW9AzWmhM0M23BRRVOjNVn52CZIpKbmxMdr9jyjI27zdFCKJb7ZenbDtsFhkr-O7gaXcKuQkQnXJPOI3I8rgYcLGDa3vggdeyCVneimFmRCWfRX75LtJegBshiF7Jy4-fE6slJalAUqtwRAmBck2kaAofuZOHlpAmSsmaNPuaIWoMuTu_AgX1FU1Xx0f9HONI-F0awr0vPl0en1klvBMWXS8RbW5GHrbOrDXtQbpveJ-KnfXPmtTkjxF7vakMMUvWugpg2eohkWh354ndUoqooOP3LrVc-Q8TjrP_9xxkJLOGCdK-Exh2mhXKiTnz_89iPD5dfI27ZmZdY4cVblw2qAOtJ-KVuGXT6oQy0mjttwuiVJONCz-Hl2Tvuncl9ZTCq0XvOBx6wJWDZELxtust5CXIsrsO4L5cSYlxNG_CBXTuR=s945-no>
+```
+https://lh3.googleusercontent.com/7wqn4oULz6lckUdJbPZzT094xyJiDewL03QS5BZk5kz9c5vP_wvk7fGxSOtxYvAG9N98blJGfZTAdweG_rYnC7sLIrjBAJfX0uIsub_P6waW9AzWmhM0M23BRRVOjNVn52CZIpKbmxMdr9jyjI27zdFCKJb7ZenbDtsFhkr-O7gaXcKuQkQnXJPOI3I8rgYcLGDa3vggdeyCVneimFmRCWfRX75LtJegBshiF7Jy4-fE6slJalAUqtwRAmBck2kaAofuZOHlpAmSsmaNPuaIWoMuTu_AgX1FU1Xx0f9HONI-F0awr0vPl0en1klvBMWXS8RbW5GHrbOrDXtQbpveJ-KnfXPmtTkjxF7vakMMUvWugpg2eohkWh354ndUoqooOP3LrVc-Q8TjrP_9xxkJLOGCdK-Exh2mhXKiTnz_89iPD5dfI27ZmZdY4cVblw2qAOtJ-KVuGXT6oQy0mjttwuiVJONCz-Hl2Tvuncl9ZTCq0XvOBx6wJWDZELxtust5CXIsrsO4L5cSYlxNG_CBXTuR=s945-no
+```
 
 API 导出
 
-<https://lh3.googleusercontent.com/bhmJ-XtoL1wMCw3Q2YA0Ff_L8m52OgFbxYfalNjLO22e=s0>
+```
+https://lh3.googleusercontent.com/bhmJ-XtoL1wMCw3Q2YA0Ff_L8m52OgFbxYfalNjLO22e=s0
+```
 
 我惊讶于同一个照片，在不同的产品中的地址都是不同的，当然基于产品的逻辑倒也不能说什么，但是 Google Photos 的链接也太难看了。
 

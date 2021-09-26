@@ -122,7 +122,7 @@ Prometheus Server 可以有很多安装方式，Docker，Ansible，Chef，Puppet
 	  - '9090:9090'
 
 ### Node exporter
-Prometheus 主要用于监控 Web 服务，如果要监控物理机，则需要在机器上安装 node exporter, exporter 会暴露 metrics 给 Prometheus，包括 cpu 负载，内存使用，磁盘 IO，网络等等。[^exporter]
+Prometheus 主要用于监控 Web 服务，如果要监控物理机，则需要在机器上安装 node exporter, exporter 会暴露 metrics 给 Prometheus，包括 CPU 负载，内存使用，磁盘 IO，网络等等。[^exporter]
 
 [^exporter](https://github.com/prometheus/node_exporter#enabled-by-default)
 

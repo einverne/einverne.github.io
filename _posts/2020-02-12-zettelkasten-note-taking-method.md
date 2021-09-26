@@ -97,6 +97,6 @@ Zettelkasten 适合的不同的场景，比如阅读一本书，或者随时冒�
 
 - <https://www.youtube.com/watch?v=b21JhcfuGac>
 - 《How to Take Smart Notes》
-- <https://matters.news/@onelight/zettelkasten%E5%8D%A1%E7%89%87%E7%9B%92%E8%A3%A1%E6%9C%89%E4%BB%80%E9%BA%BC%E7%A5%9E%E5%A5%87%E9%AD%94%E6%B3%95-%E5%8D%A1%E7%89%87%E7%9B%92%E7%AD%86%E8%A8%98%E6%B3%95-2-bafyreiakrxwq7r4jjprhe5ka44otlrkaxndhbt2dyl3azm567qprwkygpe>
+- [Zettelkasten卡片盒裡有什麼神奇魔法](https://matters.news/@onelight/zettelkasten%E5%8D%A1%E7%89%87%E7%9B%92%E8%A3%A1%E6%9C%89%E4%BB%80%E9%BA%BC%E7%A5%9E%E5%A5%87%E9%AD%94%E6%B3%95-%E5%8D%A1%E7%89%87%E7%9B%92%E7%AD%86%E8%A8%98%E6%B3%95-2-bafyreiakrxwq7r4jjprhe5ka44otlrkaxndhbt2dyl3azm567qprwkygpe)
 - <https://cloud.tencent.com/developer/article/1639332>
-- <https://writingcooperative.com/zettelkasten-how-one-german-scholar-was-so-freakishly-productive-997e4e0ca125>
+- [zettelkasten-how-one-german-scholar-was-so-freakishly-productive](https://gtk.pw/cwA8k)

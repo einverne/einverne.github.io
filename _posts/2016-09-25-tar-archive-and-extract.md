@@ -33,7 +33,7 @@ tar 命令常用参数
     tar -cvf filename.tar /folder    # 仅打包不压缩
     tar -xvf filename.tar            # 解压包
 
-压缩解压 gzip
+压缩与解压 gzip：
 
     tar -zcvf filename.tar.gz /folder # gzip 压缩
     tar -zxvf filename.tar.gz         # 当前目录下解压文件

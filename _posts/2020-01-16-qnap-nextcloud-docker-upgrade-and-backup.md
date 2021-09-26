@@ -50,3 +50,7 @@ last_updated:
 	alter table oc_flow_operations add column entity character varying(256) not null;
 
 如果是其他数据库可能需要对应的 SQL 语句。
+
+## 从 18 版本升级到 19 版本
+
+从 NextCloud 18 升级到 NextCloud 19 没有遇到什么坑。

@@ -1,15 +1,17 @@
 ---
 layout: post
 title: "Ansible 介绍及使用"
+aliases: "Ansible 介绍及使用"
 tagline: ""
-description: ""
+description: "Ansible 介绍、使用和使用教程"
 category: 学习笔记
 tags: [ansible, deploy, linux, management, ]
 last_updated:
 ---
 
-
 Ansible 是使用 Python 开发的自动化运维工具，如果这么说比较抽象的话，那么可以说 Ansible 可以让服务器管理人员使用文本来管理服务器，编写一段配置文件，在不同的机器上执行。
+
+Ansible 使用 YAML 作为配置文件，YAML 是一个非常节省空间，并且没有丧失可读性的文件格式，其设计参考了很多语言和文件格式，包括 XML，JSON，C 语言，Python，Perl 以及电子邮件格式 RFC2822 等等。
 
 Ansible 解决的问题正是在运维过程中多机器管理的问题。当有一台机器时运维比较简单，当如果要去管理 100 台机器，复杂度就上升了。使用 Ansible 可以让运维人员通过简单直观的文本配置来对所有纳入管理的机器统一进行管理。如果再用简单的话来概述 Ansible 的话，就是定义一次，无数次执行。
 
@@ -30,8 +32,8 @@ Ansible 是如何做到这件事情的呢？主要是划分了下面几个部分
 ## Ansible 的组成元素
 Ansible 中的一些概念。
 
-- control node: 控制节点，可以在任何安装了 Python 环境的机器中使用 ansible，两个重要的可执行文件在 `/usr/bin/ansible` 和 `/usr/bin/ansible-playbook`
-- managed node: 被控制的节点
+- **control node**: 控制节点，可以在任何安装了 Python 环境的机器中使用 ansible，两个重要的可执行文件在 `/usr/bin/ansible` 和 `/usr/bin/ansible-playbook`
+- **managed node**: 被控制的节点
 - **inventory**: 需要管理的节点，通常配置成 `hostfile` 文件 [^inventory]
 - modules: ansible 进行自动化任务时调用的模块，社区提供了非常多 [modules](https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html)
 - **Task**: Ansible 的执行单元
@@ -49,11 +51,12 @@ Ansible 中的一些概念。
 - Runner 执行
 - 输出
 
-
 ## 安装 {#installation}
 Ansible 的安装方法非常多，PPA，源码安装都可以。[^install]
 
 [^install]: <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html>
+
+Ubuntu 下安装：
 
 	$ sudo apt update
 	$ sudo apt install software-properties-common
@@ -103,7 +106,7 @@ remote_port = 222
 host_key_checking = False
 ```
 
-hostfile 文件指定了当前文件夹下的 hosts 文件。hosts 文件夹中配置：
+hostfile 文件指定了当前文件夹下的 hosts 文件。hosts 文件夹中可以配置：
 
 	[server]
 	10.0.0.1
@@ -177,7 +180,7 @@ inventory 中可以配置使用别名，但是推荐在 `ssh config` 中进行�
 		Port 22
 		User some-username
 
-然后就可以在 Ansible 的 inventory 中配置使用 `ds`, `aws1` 或者 `oracle1`.
+然后就可以在 Ansible 的 inventory 中配置使用 `ds`, `aws1` 或者 `oracle1`。
 
 
 更多 inventory 的配置可以参考[官方文档](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
@@ -237,18 +240,72 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 
 	ansible all -m setup
 
+每个被管理的节点在接受并运行管理命令之前都会将自己的信息报告给 Ansible 主机。
+
 ### command
+command 命令模块用于在远程主机执行命令，不能使用变量，管道等。
+
 执行命令：
 
 	ansible all -m command -a "ls -al ."
+	ansible all -m command -a "date"
 	# 切换到 sub-dir 目录，创建文件
 	ansible all -m command -a "chdir=sub-dir creates=test.file ls"
 	# 删除文件
 	ansible all -m command -a "chdir=sub-dir removes=test.file ls"
 
+### cron
+cron 用于配置 crontab
+
+    ansible host -m cron -a 'minute="*/10" job="/bin/echo hello" name="test cron job"'
+
+执行这以命令之后就会给 host 主机的 crontab 中写入
+
+```
+#Ansible: test cron job
+*/10 * * * * /bin/echo hello
+```
+
+可以通过如下命令验证：
+
+    ansible host -a 'crontab -l'
+
+如果要移除 cron 可以：
+
+    ansible host -m cron -a 'minute="*/10" job="/bin/echo hello" name="test cron job" state=absent'
+
+### user
+user 模块用来管理用户账户。
+
+    ansible all -m user -a 'name="einverne"'
+    ansible all -m user -a 'name="einverne" state=absent'
+
+和用户相关的字段：
+
+```
+   name    用户名
+   uid     uid
+   state   状态  
+   group   属于哪个组
+   groups  附加组
+   home    家目录
+   createhome  是否创建家目录
+   comment 注释信息
+   system  是否是系统用户
+```
+
+### group
+组管理同样拥有这些配置：
+
+```
+   gid     gid      
+   name    组名              
+   state   状态          
+   system  是否是系统组
+```
 
 ### file
-设置文件属性。
+file 可以用来设置文件属性。
 
 	# 创建 soft link
 	ansible all -m file -a "src=/etc/resolv.conf dest=/tmp/resolv.conf state=link"
@@ -256,19 +313,22 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 	ansible all -m file -a "path=/tmp/resolv.conf state=absent"
 
 ### copy
-复制文件到主机
+复制本地文件到远程主机指定位置
 
 	# 复制本地文件到远程主机，并授予权限
-	ansible all -m copy -a "src=/etc/ansible/ansible.cfg dest=/tmp/ansible.cfg owner=root group=root mode=0644"
+	ansible host -m copy -a "src=/etc/ansible/ansible.cfg dest=/tmp/ansible.cfg owner=root group=root mode=644"
+    # 直接使用 content
+    ansible host -m copy -a 'content="test content" dest=/tmp/test'
 
 ### shell
-在远程执行 shell 脚本
+在远程执行 shell 脚本，可以使用管道等
 
 	ansible all -m shell -a "~/setup.sh"
+    ansible all -m shell -a 'echo demo > /tmp/demo'
 
 更多 module 可以使用 `ansible-doc -l` 查看。
 
-## playbook
+## Ansible playbook
 上面提到 ad-hoc 可以执行一次性的命令，但如果要把多个 task 组织起来，那就不得不提到 playbook, playbook 可以编排有序的任务，可以在多组主机间，有序执行任务，可以选择同步或者异步发起任务。
 
 一个简单的例子：
@@ -305,6 +365,38 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 执行 playbook
 
 	ansible-playbook playbook.yml -f 10
+
+
+### when 语句
+在 task 后面可以增加 when 用于条件测试：
+
+```
+tasks:
+  - name 'test when'
+    command: /bin/echo hello
+    when: ansible_os_family == 'Debian'
+```
+
+### 循环
+如果需要重复执行一个任务，可以使用循环，将需要循环的内容定义为 item，然后通过 `with_items` 语句指定列表：
+
+```
+- name: add user
+  user: name={{ item }} state=present
+  with_items:
+    - user1
+    - user2
+```
+
+如果还要定义 group:
+
+```
+- name: add multiple item
+  user: name={{ item.name }} state=present groups={{ item.groups }}
+  with_items:
+    - { name: 'user1', groups: 'g1'}
+    - { name: 'user2', groups: 'root'}
+```
 
 ### role
 再来看一个例子：

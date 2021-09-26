@@ -8,7 +8,7 @@ tags: [linux, rsync, scp, sync, command, ]
 last_updated:
 ---
 
-rsync 全名 Remote Sync，是类 unix 系统下的数据镜像备份工具。可以方便的实现本地，远程备份，rsync 提供了丰富的选项来控制其行为。rsync 优于其他工具的重要一点就是支持增量备份。
+rsync 全名 Remote Sync，是类 UNIX 系统下的数据镜像备份工具。可以方便的实现本地，远程备份，rsync 提供了丰富的选项来控制其行为。rsync 优于其他工具的重要一点就是支持增量备份。
 
 > rsync - a fast, versatile, remote (and local) file-copying tool
 

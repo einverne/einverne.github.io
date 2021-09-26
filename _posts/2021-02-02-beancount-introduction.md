@@ -189,7 +189,7 @@ Beancount 中的五类根账号：
 
 ```text
 2019-01-01 pad Assets:DebitCard:CMB Equity:Opening-Balances
-2019-01-01 balance Assets:DebitCard:CMB          20000.00 CNY
+2019-01-02 balance Assets:DebitCard:CMB          20000.00 CNY
 ```
 
 
