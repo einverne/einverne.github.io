@@ -95,12 +95,15 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 - [Matomo](https://matomo.org/) 是一个类似 Google Analytics 的工具
 
 ## 邮件服务器
+[[邮件服务器]]
 
 - [maddy](https://github.com/foxcpp/maddy) 是一个用 Go 语言实现的邮件服务器
+- [[Poste]]
 
 ## 在线粘贴板
 
 - [hastebin](https://github.com/toptal/haste-server)，这是一个 Node.js 实现的开源版本的 pastebin。
+- [PrivateBin](https://github.com/PrivateBin/PrivateBin) 是一个开源的，使用 PHP 实现的 pastebin.
 
 
 ## Web archiving

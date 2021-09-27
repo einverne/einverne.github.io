@@ -318,6 +318,7 @@ pom 设置：
     </scm>
 
 ## Apache Maven Checkstyle Plugin
+[[maven-checkstyle-plugin]]
 引入 pom
 
     <plugin>
@@ -341,6 +342,8 @@ pom 设置：
             </execution>
         </executions>
     </plugin>
+
+用来检查代码规范。
 
 - <https://maven.apache.org/plugins/maven-checkstyle-plugin/>
 
