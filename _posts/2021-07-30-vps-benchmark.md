@@ -158,6 +158,18 @@ dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
 	# speed
 	wget http://cachefly.cachefly.net/100mb.test
 
+## 流媒体解锁脚本
+
+### RegionRestrictionCheck
+
+GitHub 地址：<https://github.com/lmc999/RegionRestrictionCheck>
+
+执行命令：
+
+```
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
+```
+
 
 ## reference
 
