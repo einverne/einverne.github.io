@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "从命令行制作 torrent"
+title: "使用 mktorrent 从命令行制作 torrent"
+aliases: "使用 mktorrent 从命令行制作 torrent"
 tagline: ""
 description: ""
 category: 学习笔记

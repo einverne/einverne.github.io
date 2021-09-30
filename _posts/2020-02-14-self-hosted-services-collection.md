@@ -282,6 +282,12 @@ anyi 导航、聚合搜索、webstack
 ## 服务器监控
 雅黑探针、云探针、[netdata](https://github.com/netdata/netdata)
 
+## 论坛
+
+### Discourse
+[[Discourse]] 是由 Stack Overflow 创始人之一的 Jeff Atwood 主导的开源论坛项目。摒弃了传统的话题讨论形式，可以无限加载内容，非常适合桌面端和客户端。Discourse 提供了非常丰富的配置方式，也支持插件扩展。
+
+
 
 ## Other
 

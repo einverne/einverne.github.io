@@ -9,7 +9,7 @@ last_updated:
 ---
 
 
-IPFS 的全称是 「InterPlanetary File System」，直译过来叫做「星际文件系统」，这是一个点对点的媒体传输协议，目的是为了建立一个持久的，分布式的文件系统。[^wiki]
+IPFS 的全称是 「InterPlanetary File System」，直译过来叫做「星际文件系统」，这是一个点对点的媒体传输协议，作者创建这个项目的目的是为了建立一个持久的，分布式的文件系统。[^wiki]
 
 > A peer-to-peer hypermedia protocol
 > designed to make the web faster, safer, and more open.
@@ -18,12 +18,13 @@ IPFS 的全称是 「InterPlanetary File System」，直译过来叫做「星际
 
 IPFS 白皮书由[Juan Benet](https://github.com/jbenet) 发表于 2014 年。
 
-IPFS 允许用户不仅接受文件，并且可以托管文件内容，类似 BitTorrent 协议的方式。和中心化的系统不一样的地方在于，IPFS 构建了一个去中心化的系统，任何用户都可以存储所有数据的部分，创建了一个可以快速恢复的文件存储和分享系统。
+IPFS 允许用户不仅可以接受文件，还可以托管文件内容，类似 [BitTorrent](/post/2020/02/everything-related-about-bittorrent-and-pt.html) 协议的方式，网络节点中的每一个节点都可以既是客户端也是服务端。
+
+和中心化的系统不一样的地方在于，IPFS 构建了一个去中心化的系统，任何用户都可以存储所有数据中的一部分，IPFS 网络创建了一个可以快速恢复的文件存储和分享系统。
 
 任何用户都可以通过内容地址来分享文件，网络中的任何对等节点都可以通过分布式散列表 (Distributed Hash Table DHT) 来查找和请求文件内容。
 
-源码：<https://github.com/ipfs>
-
+IPFS 项目源码：<https://github.com/ipfs>
 
 ## IPFS 设计前提
 
@@ -36,9 +37,9 @@ IPFS 允许用户不仅接受文件，并且可以托管文件内容，类似 Bi
 
 
 ## IPFS 网络和传统网络的区别
-首先，让我们来看一下目前的互联网，现在互联网上的大部分内容都依赖于一些大型或小型的服务器托管商。如果你要架设一个网站，你需要花钱购买一个服务器，或者找能够托管内容的提供商，然后将产生的内容放置到服务中。而对于 IPFS ，任何人都可以注册一个节点，开始托管自己的内容，不管是在 Raspberry Pi 上，还是跑在世界上最大的服务器集群中，你自己的节点都可以成为一个非常高效的节点。
+首先，让我们来看一下目前的互联网，现在互联网上的大部分内容都依赖于一些大型或小型的服务器托管商。如果你要架设一个网站，你需要花钱购买一个服务器，或者找能够托管内容的提供商，然后将产生的内容放置到服务中，这样当你提供内容时，别人都可以访问这一个中心化的节点来获取。而对于 IPFS ，任何人都可以注册一个节点，开始托管自己的内容，不管是在 Raspberry Pi 上，还是跑在世界上最大的服务器集群中，你自己的节点都可以成为一个非常高效的节点。因为即使你这个节点宕机了，只要在网络上还有地方存储着这部分内容，其他人都可以获取到。
 
-第二点区别在于，IPFS 的数据是内容寻址 (content-addressed)，而不是地址寻址 (location-addressed). 这是一个微妙的区别，但是结果却是巨大的。
+IPFS 网络和普通网络的第二点区别在于，IPFS 的数据是内容寻址 (content-addressed)，而不是地址寻址 (location-addressed). 这是一个微妙的区别，但是结果却是巨大的。
 
 目前如果你打开浏览器，输入 `example.com`，你是告诉浏览器「帮我获取存放在 example.com 的 IP 地址的数据」，这可能存放在 93.184.216.34 这台服务器中，然后你就请求这个 IP 地址的内容，然后服务器会将相关的内容返回到浏览器。（当然现代网络依赖的 DNS 系统，以及浏览器内部的实现细节这里就略过）。所以基本的逻辑是，你告诉网络你要查找地址，然后互联网会将找到的内容返回。
 
@@ -50,7 +51,7 @@ IPFS 允许用户不仅接受文件，并且可以托管文件内容，类似 Bi
 
 首先，这使得网络更有弹性，Hash 值是 `QmXnnyufdzAWL5CqZ2RnSNgPbvCc1ALT73s6epPrRnZ1Xy` 的内容可能被存放在成千上万的节点中，即使有一个节点 Crash 或者下线了，也不影响其他缓存过这个 Hash 的其他节点。
 
-第二，这个方式提高了安全级别。比如说你想要某一个 Hash 的文件，所以你向网络请求，给我 Hash 值是 QmXnnyufdzAWL5CqZ2RnSNgPbvCc1ALT73s6epPrRnZ1Xy 的内容，然后网络响应请求，然后发送数据。当你接受了所有的数据，你可以重新计算 Hash，如果数据在传输的过程中被更改了，那么你重新计算的 Hash 就和请求的 Hash 不一致。你可以想象 Hash 就像是文件的唯一指纹。如果你接收到了一个和希望的不一致的内容，他们将拥有不同的指纹。这意味着这个方式实现的网络会知道这个内容是否被篡改了。
+第二，这个方式提高了安全级别。比如说你想要某一个 Hash 的文件，所以你向网络请求，给我 Hash 值是 `QmXnnyufdzAWL5CqZ2RnSNgPbvCc1ALT73s6epPrRnZ1Xy` 的内容，然后网络响应请求，然后发送数据。当你接受了所有的数据，你可以重新计算 Hash，如果数据在传输的过程中被更改了，那么你重新计算的 Hash 就和请求的 Hash 不一致。你可以想象 Hash 就像是文件的唯一指纹。如果你接收到了一个和希望的不一致的内容，他们将拥有不同的指纹。这意味着这个方式实现的网络会知道这个内容是否被篡改了。
 
 ### IPFS 解决的问题
 和传统的互联网相比，IPFS 不仅解决了内容从互联网消失的问题，并且在抵抗审查，抵抗大规模监控等等方面都要比传统的互联网要有优势。
@@ -95,7 +96,7 @@ IPFS Gateway 网关提供了互联网用户访问托管在 IPFS 网络上内容�
 
 <https://ipfs.io/ipfs/QmcTzSJspTbafYWR1B8RqncNcvsaxnKQJmbtTU6GUkLJ8j>
 
-在 [目录](https://ipfs.io/ipfs/QmQsLcmxzAh7Y6Ho1Nt8bispVmeHqjzdGBjG5m8KoGYjGi)
+在 [目录](https://ipfs.io/ipfs/QmQsLcmxzAh7Y6Ho1Nt8bispVmeHqjzdGBjG5m8KoGYjGi) 中。
 
 ## IPNS
 IPFS 使用基于文件的寻址，这就使得分享文件的时候会有一大串的 Hash，并且一旦更新文件后，就会产生一个新的 Hash 值。
