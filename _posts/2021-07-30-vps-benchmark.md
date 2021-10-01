@@ -138,6 +138,18 @@ chmod +x besttrace
 
 	http://ce.cloud.360.cn/
 
+
+## 独立服务器检测 VPS 通电时间
+安装检查工具：
+
+    sudo apt install -y smartmontools
+    
+使用 `df -h` 查看硬盘设备，然后执行：
+
+    smartctl -A /dev/sda | grep "Power_On_Hours"
+    
+后面的数字即为硬盘的通电时间小时数。如果通电时间比较长，就要做好备份工作了。
+
 ## 手动测试 {#manual}
 
 ### CPU
