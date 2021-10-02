@@ -58,7 +58,7 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 ### Superbench
 
-`SuperBench.sh` 增强版，增加服务器类型检测，openvz, kvm 等。
+`SuperBench.sh` 是在 bench.sh 上的增强，增加了服务器类型检测，openvz, kvm ，独立服务器通电时间检测等。
 
 	wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
 	#或者
