@@ -58,7 +58,9 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 - <http://www.openmediavault.org/>
 
 ## ESXi
-由 VMware 开发，ESXi 是这家以虚拟机著称的公司开发的一款为企业而设计的虚拟机，是VMWare vSphere Hypervisor套件之下重要组件。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
+准确来讲 ESXi 不能算作是一个 NAS 系统，更多地可以称其为虚拟机系统，用户可以在 ESXi  上虚拟化出多个系统充分利用硬件性能。
+
+ESXi 由 VMware 公司开发，是VMWare vSphere Hypervisor套件之下重要组件，这是一套为企业而设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
 
 前身是 ESX，依赖 Linux，后来抛弃 Linux 变成了 ESXi。
 
@@ -68,6 +70,10 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 更详细的介绍可以参考这个[视频](https://www.youtube.com/watch?v=-Hltydu9PXk)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## PVE
+PVE 的全称是 Proxmox Virtual Environment，是基于 Debian 的 Linux 系统，虚拟机内核为 KVM，硬件兼容性好。和 ESXi 一样，也算不上 NAS 系统，但是可以将其作为物理机的操作系统，再此基础之上安装，比如 OpenMediaVault这样为 NAS 而设计的系统。我自己配置的 NAS 就是这样一套系统。
+
 
 ## unRAID
 [[unRAID]] 是基于 [Slackware](https://zh.wikipedia.org/wiki/Slackware) 这个 Linux 发行版的 NAS 系统 (6.2RC2 基于 14.2)。unRAID （又有人写作 Unraid, 或者 UnRaid) 是另一款 NAS 操作系统，实现的功能都大同小异 [^unraid]，unRAID 不通过组 RAID 方式来存储数据，但是可以和 RAID 一样做到冗余备份，简单来说 unRAID 就是带有检验盘的磁盘簇 (JBOD)。

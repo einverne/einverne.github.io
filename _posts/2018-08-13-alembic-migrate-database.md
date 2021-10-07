@@ -8,7 +8,7 @@ tags: [python, mysql, sql, migration, db, database, alembic, flask, sqlalchemy, 
 last_updated:
 ---
 
-Alembic 是一个处理数据库更改的工具，它利用 SQLAlchemy 来实现形成迁移。 因为 SQLAlchemy 只会在我们使用时根据 metadata create_all 方法来创建缺少的表 ，它不会根据我们对代码的修改而更新数据库表中的列。它也不会自动帮助我们删除表。 Alembic 提供了一种更新 / 删除表，更改列名和添加新约束的方法。因为 Alembic 使用 SQLAlchemy 执行迁移，它们可用于各种后端数据库。
+Alembic 是一个处理数据库更改的工具，它利用 SQLAlchemy 来实现形成迁移。因为 SQLAlchemy 只会在我们使用时根据 metadata create_all 方法来创建缺少的表 ，它不会根据我们对代码的修改而更新数据库表中的列。它也不会自动帮助我们删除表。 Alembic 提供了一种更新 / 删除表，更改列名和添加新约束的方法。因为 Alembic 使用 SQLAlchemy 执行迁移，它们可用于各种后端数据库。
 
 ## 安装
 

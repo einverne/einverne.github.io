@@ -39,5 +39,6 @@ last_updated:
 
 ## 爬虫框架
 
-- PySpider
-- Scrapy [介绍](/post/2017/04/scrapy-introduction.html)
+- [PySpider](https://github.com/binux/pyspider)
+- [Scrapy](https://github.com/scrapy/scrapy) [介绍](/post/2017/04/scrapy-introduction.html)
+

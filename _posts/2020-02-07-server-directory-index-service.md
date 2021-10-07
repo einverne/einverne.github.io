@@ -25,8 +25,28 @@ Nginx index 套了一层皮肤
 
 - <https://hub.docker.com/r/80x86/nginx-fancyindex>
 
-## olaindex
+## OLAINDEX
+OLAINDEX 是一个可以将 OneDrive 中的内容分享到网站的工具。使用 PHP 编写，界面也不错。
+
 OneDrive directory listing application
+
+从DockerHub拉取Docker镜像：
+
+```
+docker run -d --init --name olaindex -p 80:8000 xczh/olaindex:6.0
+```
+
+现在，访问`http://YOUR_SERVER_IP/`，可以看到你的OLAINDEX应用了。
+
+当然你也可以选择从 Dockerfile 自行编译Docker镜像，切换到项目根目录执行：
+
+```
+docker build -t xczh/olaindex:dev .
+
+docker run -d --init --name olaindex -p 80:8000 xczh/olaindex:dev
+```
+
+或者也可以使用这个镜像：
 
 - <https://hub.docker.com/r/80x86/olaindex>
 

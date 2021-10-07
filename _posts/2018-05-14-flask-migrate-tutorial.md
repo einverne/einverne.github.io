@@ -13,6 +13,7 @@ last_updated:
 文档主页：<https://flask-migrate.readthedocs.io/en/latest/>
 
 ## 安装
+执行：
 
     pip install Flask-Migrate
 

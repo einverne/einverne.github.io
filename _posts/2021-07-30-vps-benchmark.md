@@ -18,6 +18,7 @@ VPS 性能测试的几个方面：
 - 路由
 
 ## 综合类测试
+在运行这类测试脚本之前，最好先讲脚本下载下来之后打开看一眼，以防止安装执行一些不可信的文件。
 
 ### bench.sh
 
@@ -32,6 +33,11 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 	wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh
 	chmod +x unixbench.sh
 	./unixbench.sh
+
+### Yet-Another-Bench-Script
+[GitHub 页面](https://github.com/masonr/yet-another-bench-script)
+
+    curl -sL yabs.sh | bash
 
 
 ### nench
@@ -49,16 +55,9 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
     bash <(curl -Lso- https://git.io/superspeed)
 
 
-### Yet-Another-Bench-Script
-[GitHub 页面](https://github.com/masonr/yet-another-bench-script)
-
-    curl -sL yabs.sh | bash
-
-
-
 ### Superbench
 
-`SuperBench.sh` 是在 bench.sh 上的增强，增加了服务器类型检测，openvz, kvm ，独立服务器通电时间检测等。
+`SuperBench.sh` 是在 bench.sh 上的增强，增加了服务器类型检测，OpenVZ, KVM ，独立服务器通电时间检测等。
 
 	wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
 	#或者
@@ -71,10 +70,7 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 ### LemonBench
 
-[LemonBench](https://github.com/LemonBench/LemonBench)，是一款针对 Linux 服务器设计的服务器性能测试工具。通过综合测试，可以快速评估服务器的综合性能，为使用者提供服务器硬件配置信息。
-
-    wget -O- https://ilemonrain.com/download/shell/LemonBench.sh | bash
-    curl -fsL https://ilemonrain.com/download/shell/LemonBench.sh | bash
+~~[LemonBench](https://github.com/LemonBench/LemonBench)，是一款针对 Linux 服务器设计的服务器性能测试工具。通过综合测试，可以快速评估服务器的综合性能，为使用者提供服务器硬件配置信息。~~
 
 ### Speedtest
 
@@ -82,6 +78,29 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 
 - <https://bench.monster/>
+
+
+## CPU 测试
+可以通过手工执行命令的方式查看 CPU 信息：
+
+    cat /proc/cpuinfo
+
+同理可以查看内存：
+
+    cat /proc/meminfo
+    
+以及硬盘：
+
+    fdisk -l
+    df -lh
+
+
+## I/O test
+
+The speed of read and write of your hard drive.
+
+    dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
+    dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync
 
 
 ## 网速 Net speed

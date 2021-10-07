@@ -244,6 +244,10 @@ Docker composte 安装
 
 - teamspeak 3
 
+## 阅后即焚
+
+- [naiveboom](https://github.com/kchown/naiveboom)
+
 ## 搜索导航类
 anyi 导航、聚合搜索、webstack
 

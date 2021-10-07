@@ -30,19 +30,20 @@ Following command is to create a new user and set a password for this user. Plea
 
 After you create a new user account successfully, we give the new user root privileges. Someone may be curious about why we create a new user and grant root privileges, so why don’t we just use root account. There are two points. One is that this can prevent user making system-destroying mistakes, second is that all command run by `sudo` will have a record in `/var/log/secure` which can be reviewed later if needed.
 
-Run `visudo` command to enter sudo config file. Find a section called user privilege specification. And add a new line under this section like this:
-
-    # User privilege specification
-    root    ALL=(ALL)       ALL
-    # new add
-    einverne	ALL=(ALL)	ALL
-
 ### update default editor
 
     apt install vim -y
     update-alternatives --config editor
 
 choose: vim
+
+### sudo
+Run `visudo` command to enter sudo config file. Find a section called user privilege specification. And add a new line under this section like this:
+
+    # User privilege specification
+    root    ALL=(ALL)       ALL
+    # new add
+    einverne	ALL=(ALL)	NOPASSWD:ALL
 
 ### ssh configuration
 Now it's time to make the server more secure. You can set the ssh configuration to permit root login. But before doing this config, please make sure to have a new account have the root privileges.
@@ -143,13 +144,7 @@ After all this, you can type following command to have a try:
     sudo dpkg-reconfigure tzdata
 
 ## Test VPS
-
-### Processor test
-There are a several things need to check. The first thing is to test CPU, menory and hard drive.
-
-    cat /proc/cpuinfo
-    cat /proc/meminfo
-    df -lh
+单独总结了一篇文章来讲[如何测评一个 VPS 性能](/post/2021/07/vps-benchmark.html)。
 
 ### Network test
 You can use this [solution](https://github.com/sivel/speedtest-cli/) to solve the problem. Or there are some download test file.
@@ -202,12 +197,30 @@ Directspace 机房 /10M.100M 测试包 Portland
     wget http://bandwidth.directspace.net/10MBtest.zip
     wget http://bandwidth.directspace.net/100MBtest.zip
 
-### I/O test
+## Change default shell
 
-The speed of read and write of your hard drive.
+    sudo apt install zsh
+    chsh -s $(which zsh)
 
-    dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
-    dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync
+logout and login again.
+
+## BBR
+BBR 是 Google 提出的 TCP拥塞控制算法，可以使Linux服务器显著地提高吞吐量和减少TCP连接的延迟，已经提交并合并到了 Linux 内核。
+
+检查是否开启了 BBR：
+
+```
+sudo sysctl net.ipv4.tcp_available_congestion_control | grep bbr
+sudo sysctl net.ipv4.tcp_congestion_control | grep bbr
+```
+
+
+如果开启通常会在结果中包含 bbr。如果没有开启则使用 Teddysun 的一键脚本，注意开启之后需要重启才能生效。
+
+```
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+```
+
 
 ## docker
 Docker become much powerful these days, I can build and sever all my self-host services by using Docker.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Scrapy 学习笔记及简单使用"
+aliases: "Scrapy 学习笔记及简单使用"
 tagline: ""
 description: ""
 category: 学习笔记
