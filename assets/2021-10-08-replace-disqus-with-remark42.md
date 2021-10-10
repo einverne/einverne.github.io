@@ -99,3 +99,7 @@ Disqus 提供导出评论到一个压缩包的工具，可以在 Disqus Admin > 
 
 
 [^1]: <https://help.disqus.com/en/articles/1717164-comments-export>
+
+## reference
+
+- <https://darekkay.com/blog/static-site-comments/>
