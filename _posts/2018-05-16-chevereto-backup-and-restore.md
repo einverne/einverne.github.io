@@ -30,7 +30,7 @@ last_updated:
 
 然后文件恢复时直接恢复到 volumes 的目录，`sudo docker volume inspect volume_name` 然后查看 volume 的位置，将文件解压到该目录下。
 
-chevereto 两个挂载的路径是
+Chevereto 两个挂载的路径是
 
 - `/var/lib/docker/volumes/chevereto_chevereto/_data`
 - `/var/lib/docker/volumes/chevereto_chevereto_content/_data`

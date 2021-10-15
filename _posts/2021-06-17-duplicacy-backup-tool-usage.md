@@ -11,7 +11,7 @@ last_updated:
 ---
 
 
-Duplicacy 是一个用 Go 语言实现的，开源的，跨平台的备份工具。
+[Duplicacy](https://duplicacy.com/) 是一个用 Go 语言实现的，开源的，跨平台的备份工具。
 
 特性：
 

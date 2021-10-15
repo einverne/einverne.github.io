@@ -12,6 +12,7 @@ last_updated:
 
 
 ## cloud-init 是什么
+cloud-init 是一套工业标准为的是统一不同操作系统发行版在跨平台的云端服务器上初始化安装的流程。
 **cloud-init** 是运行在 Guest machine 中，并在初始化时将一些自定义的配置应用到 Guest machine 中的应用程序。想象一下，假如你是一个云主机提供商，每天都需要为客户初始化成千上万台虚拟主机，这些机器可能使用不用的操作系统，可能根据客户需求设定不同的 IP 地址，不同的 SSH key，以及设置不同的 hostname 等等，这个时候需要怎么办，cloud-init 就是为了解决这个问题而诞生的。
 
 cloud-init 最早由 Ubuntu 的开发商 Canonical 开发，现在已经支持绝大多数 Linux 发行版和 FreeBSD 系统。而目前大部分的公有云都在用 cloud-init 初始化系统配置，cloud-init 也支持部分私有云 (KVM, OpenStack, LXD 等等） [^cloud]，已经成为了事实上的标准。而这里就回到了 Proxmox，因为 Proxmox 是用来部署和管理虚拟机的平台，所以天然的适合 cloud-init 的使用场景，甚至可以说是不可或缺的一部分。

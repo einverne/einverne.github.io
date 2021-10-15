@@ -19,6 +19,9 @@ last_updated:
 
 - <https://github.com/mashirozx/Sakura>
 
+## Sakurairo
+
+- <https://github.com/mirai-mamori/Sakurairo>
 
 ## WordPress Git
 Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强大具有超强自定义能力的主题。

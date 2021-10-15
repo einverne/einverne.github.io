@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "Proxmox 设定直通硬盘"
+title: "Proxmox VE 设定直通硬盘"
+aliases: "Proxmox VE 设定直通硬盘"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [proxmox, virtual, linux, debian, ]
+tags: [proxmox, pve, virtual, linux, debian, ]
 last_updated:
 ---
 
-之前的文章讲了 Proxmox 的安装，以及在此基础上又安装了 OpenMediaVault，现在我的机器上一共三块硬盘，120 G SSD 安装了系统，并作为默认的 lvm，放一些 ISO，以及存放一些系统盘，另外的 1T 准备做 Proxmox 相关的数据盘，而剩下的一块 4T 盘想要直通给 OpenMediaVault 做数据盘。所以就产生了这样的一个需求。
+之前的文章讲了 [Proxmox VE 的安装](/post/2020/03/proxmox-install-and-setup.html)，以及在此基础上又安装了 OpenMediaVault，现在我的机器上一共三块硬盘，120G SSD 安装了系统，并作为默认的 lvm，放一些 ISO，以及存放一些系统盘，另外的 1T 准备做 Proxmox 相关的数据盘，而剩下的一块 4T 盘想要直通给 OpenMediaVault 做数据盘。所以就产生了这样的一个需求。
 
 首先在设定之前，需要知道 Linux 下的硬盘都会以文件方式存放在 `/dev/disk/by-id/` 目录下。
 
@@ -35,7 +36,7 @@ last_updated:
 
 如果要检查虚拟机 100 中已经添加的硬盘，可以在 Proxmox 后台，点击虚拟机 ID，然后在 Hardware 中看 Hard Disk。
 
-[pve-hard-disk-pass-through.png](/assets/pve-hard-disk-pass-through.png)
+![pve-hard-disk-pass-through.png](/assets/pve-hard-disk-pass-through.png)
 
 
 ## 检查是否配置成功

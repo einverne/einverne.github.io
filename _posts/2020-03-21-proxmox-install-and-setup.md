@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Proxmox 安装和设置"
+alias: "Proxmox 安装和设置"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,7 +9,9 @@ tags: [proxmox, pve, virtual, virtual-machine, ]
 last_updated:
 ---
 
-接触虚拟化的过程中慢慢的了解到了 Proxmox，再此之前是看到很多人在用 ESXi，一款 VMware 的商业化产品，不过个人授权是免费的，不过 Proxmox 是一款开源软件，对于我这样的初学者，学习过程要比产品的稳定性来的重要，所以对我个人而言 Proxmox 是一个不错的选择。
+接触虚拟化的过程中慢慢的了解到了 [[Proxmox VE]]，在此之前是看到很多人在用 [[ESXi]]，一款 VMware 的商业化产品，个人授权是免费的，不过 Proxmox VE 是一个基于 Debian 的开源虚拟化系统，对于我这样的初学者，学习过程要比产品的稳定性来的重要，所以对我个人而言 Proxmox 是一个不错的选择。
+
+Proxmox VE 全称是 Proxmox Virtual Environment 是一个开源的虚拟化解决方案，基于 QEMU/KVM 和 LXC。
 
 > Proxmox Virtual Environment is an open source server virtualization management solution based on QEMU/KVM and LXC. You can manage virtual machines, containers, highly available clusters, storage and networks with an integrated, easy-to-use web interface or via CLI. Proxmox VE code is licensed under the GNU Affero General Public License, version 3.
 
@@ -18,28 +21,28 @@ Proxmox VE 支持两类虚拟化技术：基于容器的 LXC（自 4.0 版开始
 
 Proxmox 支持的虚拟化：
 
-- 基于内核的 KVM (Kernel-based Virtual Machine)
-- 基于容器的虚拟化技术 LXC（Linux Containers）
+- 基于内核的 [[KVM]] (Kernel-based Virtual Machine)
+- 基于容器的虚拟化技术 [[LXC]]（Linux Containers）
 
 ## 准备工作 {#prerequisite}
-安装 Proxmox 之前有几件必需品：
+安装 Proxmox VE 之前有几件必须的东西需要准备：
 
-- Proxmox ISO，Etcher 安装程序
+- Proxmox VE ISO 镜像，Etcher 安装程序
 - 一个空 U 盘，容量不用太大，也不能小到 Proxmox ISO 文件都放不下
 - 主机 (64 位 CPU，至少 1G 内存，支持 KVM 的主板`egrep '(vmx|svm)' /proc/cpuinfo`），键盘和显示器（安装过程中需要，安装后就不用了）
 
 ## 安装 {#installation}
-和安装其他 Linux 系统一样，先用 Etcher 将 Proxmox ISO 写入 U 盘。或者使用 `dd` 命令：
+和安装其他 Linux 系统一样，先用 Etcher 将 Proxmox VE ISO 写入 U 盘。或者使用 `dd` 命令：
 
 	# dd bs=1M conv=fdatasync if=./proxmox-ve_*.iso of=/dev/XYZ
 
 一定要注意 `of` 后别写错设备。如果不知道 dd 命令如何使用千万别复制粘贴上面命令。
 
-将 U 盘插入主机，启动，在 BIOS 中选择 U 盘启动，或者使用 F12 或者 F2，或者 DELETE 等等按键选择 U 盘启动。然后在 Proxmox 安装程序中下一步下一步既可，注意安装时输入的局域网 IP 地址，后面需要用该 IP 或者 (hostname) 来访问 Proxmox 的 Web 管理界面。
+将 U 盘插入主机，启动硬件，在 BIOS 中选择 U 盘启动，或者使用 F12 或者 F2，或者 DELETE 等等按键选择 U 盘启动。然后在 Proxmox 安装程序中下一步下一步既可，注意安装时输入的局域网 IP 地址，后面需要用该 IP 或者 (hostname) 来访问 Proxmox 的 Web 管理界面。
 
 ## 使用 {#usage}
 
-安装完成后，重启系统，进入 Proxmox，等待屏幕显示黑色登录等待命令，可以使用局域网中其他电脑登录：
+安装完成后，重启系统，进入 Proxmox VE，等待屏幕显示黑色登录等待命令，可以使用局域网中其他电脑登录：
 
 	https://ip:8006
 
@@ -64,7 +67,7 @@ Proxmox 源自于 Debian，所以 Proxmox 也可以用 apt 的包管理。但是
 
 [^non]: <https://pve.proxmox.com/wiki/Package_Repositories>
 
-国内的 Proxmox 镜像：[^pr]
+国内的 Proxmox VE 软件源镜像：[^pr]
 
 	deb https://mirrors.tuna.tsinghua.edu.cn/proxmox/debian buster pve-no-subscription
 
@@ -72,7 +75,7 @@ Proxmox 源自于 Debian，所以 Proxmox 也可以用 apt 的包管理。但是
 
 设置 Debian 国内镜像
 
-Proxmox 基于 Debian 的软件源都可以替换成国内的镜像：[^tuna]
+Proxmox VE 基于 Debian 的软件源都可以替换成国内的镜像：[^tuna]
 
 	deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
 	# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
@@ -157,7 +160,7 @@ Proxmox 支持两类文件存储类型：
 ## Benchmark
 在安装成功的 Proxmox 系统中可以执行 `pveperf` 来检查一下 CPU 和其他硬件的性能。
 
-## 创建 VM
+## 创建 VM 以 OpenMediaVault 为例
 右上角创建 Virtual Machine，这里以安装 OpenMediaVault 来举例子。在 OpenMediaVault 下载好镜像 ISO，并上传到 Proxmox 中 local(pve) 中。
 
 ### General
@@ -258,13 +261,13 @@ LVM 是 Logical Volume Manager（逻辑卷管理）的简写，是 Linux 环境�
 OpenVZ 基于 Linux 内核的操作系统级虚拟化技术。OpenVZ 允许物理服务器同时运行多个操作系统。目前正逐渐被 KVM 代替。
 
 ### KVM
-KVM 全称是 Kernel-based Virtual Machine，基于内核的虚拟机，
+[[KVM]] 全称是 Kernel-based Virtual Machine，基于内核的虚拟机，
 
 ### Xen
 Xen 是开放源代码虚拟机监视器，由 XenProject 开发，经过十几年时间的发展，目前正逐渐被 KVM 代替。
 
 ### LXC
-LXC 名字来自于 Linux Containers 缩写，是操作系统级的虚拟化，LXC 是 Linux 内核容器功能的一个用户空间接口。
+[[LXC]] 名字来自于 Linux Containers 缩写，是操作系统级的虚拟化，LXC 是 Linux 内核容器功能的一个用户空间接口。
 
 ## 其他虚拟化系统
 

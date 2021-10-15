@@ -154,7 +154,8 @@ networks:
 - YOUR_DOMAIN: 子域名/域名
 - YOUR_EMAIL: 申请 SSL 证书的邮箱
 
-
+## 总结
+a400 在我过去使用的两个月里面发生了近5次的服务中断问题，幸亏好我把大部分的服务已经迁移到了 [HostHatch](/post/2021/08/hosthatch-vps-review.html) 后买的 VPS 上了。所幸网络延迟略好，拿来做个代理，做一些不需要 99.99% 在线的应用吧。
 
 ## reference
 
