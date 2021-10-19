@@ -50,6 +50,7 @@ docker run -d --init --name olaindex -p 80:8000 xczh/olaindex:dev
 
 - <https://hub.docker.com/r/80x86/olaindex>
 
+OneDrive 的目录程序还有 PyOne，OneIndex, [[OneList]]
 
 ## h5ai
 h5ai 比较简单，放到目录下就能使用，不过源码已经很久没有更新了。

@@ -14,6 +14,9 @@ last_updated:
 
 - <https://github.com/Vtrois/Kratos>
 
+动态加载版本：
+
+- <https://github.com/xb2016/kratos-pjax>
 
 ## Sakura
 
