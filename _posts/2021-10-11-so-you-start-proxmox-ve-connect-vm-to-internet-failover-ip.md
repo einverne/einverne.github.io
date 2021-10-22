@@ -10,7 +10,7 @@ tags: [ so-you-start, proxmox, proxmox-ve, pve, linux, ubuntu, failover-ip, netw
 last_updated:
 ---
 
-最近买了一台 [[so-you-start|So you Start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 Proxmox VE，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外可以购买的 16 个 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
+最近买了一台 [[so-you-start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 Proxmox VE，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外可以购买的 16 个 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
 
 安装 Proxmox VE 的过程就不多说了，在 So you Start 或者 OVH 后台直接使用模板安装即可，我使用的 6.x 版本，没有升级到最新的 7 版本。
 
@@ -113,9 +113,12 @@ dns-nameservers 208.67.222.222 208.67.220.220
 即可。
 
 #### Ubuntu 18.04
-Ubuntu 17 开始就使用 [Netplan](https://netplan.io/) 来管理网络配置，所以和 Debian 有一些区别：
+Ubuntu 17 开始就使用 [Netplan](https://netplan.io/) 来管理网络配置，所以和 Debian 有一些区别。
+
+修改 netplan 配置文件，根据不同的系统可能配置文件路径不一样，请注意一下：
 
     vi /etc/netplan/01-netcfg.yaml
+    vi /etc/netplan/00-installer-config.yaml
 
 然后使用：
 
@@ -129,7 +132,8 @@ network:
       dhcp4: no
       dhcp6: no
       addresses:
-        - 192.0.2.1/32
+        - 192.0.2.1/32  # 这里填写 failover ip（vMAC 地址需要提前配好)
+        - 1111:2222:3333:6666::2/64 # 如果有 IPv6 地址也可以配上，an ipv6 from your server allocation
       gateway4: 1.2.3.254
       nameservers:
         addresses: [8.8.8.8, 1.1.1.1]

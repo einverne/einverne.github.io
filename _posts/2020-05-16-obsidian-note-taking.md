@@ -38,6 +38,11 @@ Obsidian 这样介绍自己：
 
 ![obsidian note taking](/assets/obsidian-note-taking-screenshot.png)
 
+## 安装
+Linux 下官方默认给出的是 AppImage，还可以下载 snap 包，通过如下方式安装：
+
+    sudo snap install obsidian.snap --dangerous
+
 
 ## 特性
 Obsidian 这些功能是吸引我让我尝试的理由。

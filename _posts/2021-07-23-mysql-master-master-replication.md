@@ -185,6 +185,20 @@ binlog_ignore_db        = information_schema
 binlog_ignore_db        = performance_schema
 ```
 
+
+## bin log 管理
+MySQL 会产生很多 `mysql-bin.[index]` 这样的 log 在系统中。不建议直接删除，可以使用 MySQL 内建的机制定期清理。
+
+    SET GLOBAL expire_logs_days = 3;
+
+然后编辑配置 `vi /etc/mysql/my.cnf`:
+
+```sql
+[mysqld]
+expire_logs_days=3
+```
+
+
 ## reference 
 
 - [[MySQL Replication 主从同步原理]]
