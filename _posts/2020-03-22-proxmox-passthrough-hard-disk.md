@@ -4,7 +4,7 @@ title: "Proxmox VE 设定直通硬盘"
 aliases: "Proxmox VE 设定直通硬盘"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ 学习笔记 , Proxmox VE ]
 tags: [proxmox, pve, virtual, linux, debian, ]
 last_updated:
 ---
@@ -32,7 +32,10 @@ last_updated:
 
 	qm set 100 -scsi2 /dev/disk/by-id/ata-ST4000DM004-2CV104_WFN1XXXX
 
-这里 100 是我的 OpenMediaVault 虚拟机的 ID，后面是硬盘的位置。这里的参数 `-scsi2` 表示的是使用 SCSI 的第二块硬盘，如果你要加多块硬盘，数字 2 需要往后加 `-scsi3` 这样。
+说明：
+
+- 这里 100 是我的 OpenMediaVault 虚拟机的 ID
+- 后面是硬盘的位置，这里的参数 `-scsi2` 表示的是使用 [[SCSI]] 的第二块硬盘，如果你要加多块硬盘，数字 2 需要往后加 `-scsi3` 这样。
 
 如果要检查虚拟机 100 中已经添加的硬盘，可以在 Proxmox 后台，点击虚拟机 ID，然后在 Hardware 中看 Hard Disk。
 
@@ -49,11 +52,13 @@ last_updated:
 然后就能在 OpenMediaVault 中识别出该硬盘了。在 OpenMediaVault 中识别出硬盘之后就可以把这个硬盘加到联合硬盘池里面，扩展存储空间。
 
 ## SCSI vs VIRTIO
-上面 qm 命令中用了 `-scsi2` 这里指的是磁盘总线类型 (scsi) 和编号 (2)，目前磁盘总线类型大致上有这么几种：
+上面 `qm` 命令中用了 `-scsi2` 这里指的是磁盘总线类型 (scsi) 和编号 (2)，目前磁盘总线类型大致上有这么几种：
 
 - IDE (Integrated Drive Electronics, 电子集成驱动器） - Slow Write in the Guest System
 - SCSI (Small Computer System Interface, 小型计算机系统接口，用于计算机和设备比如硬盘，光驱，打印机等等的系统级接口和独立处理器标准） - Faster Write(as IDE) in Guest System
 - VIRTIO - Fastest Write (more that SCSI and IDE) in the Guest System, but only with extra Drivers (In Guest)
+
+三种类型的对比：
 
 
 

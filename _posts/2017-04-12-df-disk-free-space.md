@@ -30,7 +30,7 @@ df 全称 disk filesystem，用于显示 Linux 系统磁盘利用率，通常也
     --no-sync 忽略 sync 命令
     -P      输出格式为 POSIX
     --sync  在取得磁盘信息前，先执行 sync 命令
-    -T      文件系统类型
+    -T      展示文件系统类型，比如 ext4, tmpfs, 等等
 
 ## 使用实例
 
