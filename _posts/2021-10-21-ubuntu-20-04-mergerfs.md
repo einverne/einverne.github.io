@@ -10,7 +10,7 @@ tags: [ linux, ubuntu, mergerfs, proxmox-ve, proxmox, raid, pve, dedicated-serve
 last_updated:
 ---
 
-[[so-you-start|So you Start]] 的独服有4块 2T 的硬盘，本来想配置一个 Soft RAID-10，但折腾了一个礼拜，重装了无数遍系统，配置了很多次，从 Ubuntu，Proxmox VE，Debian 都尝试了一遍，最终放弃了，想着充分利用其空间，使用 Proxmox VE，备份好数据，不用 RAID 了，毕竟如果使用默认的 RAID-1，我只能利用8T空间中的 2T 不到，而使用 RAID-10 也只能利用不到 4T 左右空间。至于使用单盘，所有的数据备份，和数据安全性的工作就完全依靠自己的备份去完成了。但是好处是可利用的空间大了。
+[[so-you-start]] 的独服有4块 2T 的硬盘，本来想配置一个 Soft RAID-10，但折腾了一个礼拜，重装了无数遍系统，配置了很多次，从 Ubuntu，Proxmox VE，Debian 都尝试了一遍，最终放弃了，想着充分利用其空间，使用 Proxmox VE，备份好数据，不用 RAID 了，毕竟如果使用默认的 RAID-1，我只能利用8T空间中的 2T 不到，而使用 RAID-10 也只能利用不到 4T 左右空间。至于使用单盘，所有的数据备份，和数据安全性的工作就完全依靠自己的备份去完成了。但是好处是可利用的空间大了。
 
 ## Proxmox VE 硬盘直通
 参考之前的文章[Proxmox VE 硬盘直通](/post/2020/03/proxmox-passthrough-hard-disk.html)，将 Proxmox VE 安装后剩下的三块硬盘直通给 Ubuntu。
