@@ -64,9 +64,11 @@ search exmaple.com example1.com
 
 - domain: 指的是本地网络的名称，如果查询域名时没有包含点号，那么会自动加上网域的名称为结尾，再发送给 DNS 服务器
 - nameserver: 指定客户端进行域名解析的时候要用到的**域名服务器 IP 地址**，因此可以指定多个地址，客户端会按照次序进行查询请求
-- search: 非必填，举个例子来说明这个选项，当 search 设定为 `example.com` 时，在 DNS 解析的时候，无法对输入解析的时候，比如查询 blog，DNS 客户端会使用 search 指定的值加上需要查询的名称，即 blog.example.com 来进行解析，解析失败的时候会依次往后 blog.example1.com 查询
+- search: 非必填，举个例子来说明这个选项，当 search 设定为 `example.com` 时，在 DNS 解析的时候，无法对输入解析的时候，比如查询 blog，DNS 客户端会使用 search 指定的值加上需要查询的名称，即 `blog.example.com` 来进行解析，解析失败的时候会依次往后 blog.example1.com 查询
 
 当设定了 domain 时，配置的地址会自动成为 `search` 的第一个搜索域名。
+
+当去 `ping` 一个域名时，如果访问的域名无法被 DNS 解析，resolver 会将该域名加上 search 参数后面配置的内容，重新请求 DNS，知道被正确解析或尝试完 search 指定的所有列表为止。
 
 ## reference
 

@@ -27,6 +27,7 @@ last_updated:
 - <https://github.com/mirai-mamori/Sakurairo>
 
 ## CorePress
+一款开源的 WordPress 主题。
 
 - <https://www.lovestu.com/corepress.html>
 

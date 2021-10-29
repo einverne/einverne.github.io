@@ -64,7 +64,7 @@ Calibre is a cross-platform open-source suite of e-book software. Calibre suppor
 ## Telegram
 Telegram is a cloud-based instant messaging and voice over IP service developed by Telegram Messenger LLP, a privately held company registered in London, United Kingdom, founded by the Russian entrepreneur Pavel Durov and his brother Nikolai.
 
-## Etcher
-Etcher is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience.
+## balenaEtcher
+[[balenaEtcher]] is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience.
 
 

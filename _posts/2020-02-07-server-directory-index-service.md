@@ -25,6 +25,15 @@ Nginx index 套了一层皮肤
 
 - <https://hub.docker.com/r/80x86/nginx-fancyindex>
 
+## PanIndex
+网盘目录列表，支持天翼云、teambition, 阿里云盘，OneDrive 等等
+
+- <https://github.com/libsgh/PanIndex>
+
+演示：
+
+![[screenshot-area-2021-10-28-111720.png]]
+
 ## OLAINDEX
 OLAINDEX 是一个可以将 OneDrive 中的内容分享到网站的工具。使用 PHP 编写，界面也不错。
 

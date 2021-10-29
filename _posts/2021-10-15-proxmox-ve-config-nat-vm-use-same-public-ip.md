@@ -266,6 +266,13 @@ qm config <VMID>
     
 这样在外部互联网就可以通过 `ssh -p 2022 root@<proxmox ip` 来访问 Proxmox VE 中的虚拟机了。
 
+如果遇到要转发一组端口可以使用：
+
+```
+post-up   iptables -t nat -I PREROUTING -p tcp -i vmbr0 --dport 8000:9000 -j DNAT --to 10.0.0.102:8000-9000
+post-down iptables -t nat -D PREROUTING -p tcp -i vmbr0 --dport 8000:9000 -j DNAT --to 10.0.0.102:8000-9000
+```
+
 ## 延伸阅读
 
 如果已经购买了 Failover IP，或者独立服务器提供了多个可用的 IP，那么也可以参考 [这篇文章](/post/2021/10/so-you-start-proxmox-ve-connect-vm-to-internet-failover-ip.html) 配置 Proxmox VE 的虚拟机使用额外的 IP 地址。这样使用一台独立服务器就可以开多个 KVM 的 VPS 了。

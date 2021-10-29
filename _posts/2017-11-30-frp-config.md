@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "frp 使用笔记"
+aliases: "frp 使用笔记"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,9 +9,9 @@ tags: [frp, ssh, linux, ]
 last_updated: 
 ---
 
-[frp](https://github.com/fatedier/frp)  是中国开发者 [fatedier](http://blog.fatedier.com/)  的作品，frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, udp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。
+[frp](https://github.com/fatedier/frp) 是 [fatedier](http://blog.fatedier.com/)  的作品，frp 是一个高性能的反向代理应用，可以帮助您轻松地进行内网穿透，对外网提供服务，支持 tcp, udp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。
 
-frp用法和ngrok相似，但是frp比ngrok更加优秀。 配置过程很简单，但是也遇到一些问题，所以把过程记录下来。
+frp用法和ngrok相似，但是frp比ngrok更加优秀。配置过程很简单，但是也遇到一些问题，所以把过程记录下来。
 
 ## frp 作用
 

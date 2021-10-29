@@ -240,8 +240,10 @@ Docker become much powerful these days, I can build and sever all my self-host s
 
 Executing the docker command without sudo
 
-	sudo usermod -aG docker USER
+	sudo usermod -aG docker USER_NAME
     newgrp docker
+
+设置后登出，然后登录。
 
 ## shadowsocks
 sock5 proxy.

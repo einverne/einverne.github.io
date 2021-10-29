@@ -27,7 +27,7 @@ Proxmox 支持的虚拟化：
 ## 准备工作 {#prerequisite}
 安装 Proxmox VE 之前有几件必须的东西需要准备：
 
-- Proxmox VE ISO 镜像，Etcher 安装程序
+- Proxmox VE ISO 镜像，[[balenaEtcher]] 安装程序
 - 一个空 U 盘，容量不用太大，也不能小到 Proxmox ISO 文件都放不下
 - 主机 (64 位 CPU，至少 1G 内存，支持 KVM 的主板`egrep '(vmx|svm)' /proc/cpuinfo`），键盘和显示器（安装过程中需要，安装后就不用了）
 

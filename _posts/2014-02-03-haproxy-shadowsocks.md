@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "HAProxy 转发 shadowsocks"
+title: "HAProxy 转发 shadowsocks 流量"
+aliases: "HAProxy 转发 shadowsocks 流量"
 tagline: ""
 description: ""
 category: 经验总结

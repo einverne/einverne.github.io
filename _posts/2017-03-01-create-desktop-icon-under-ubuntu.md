@@ -10,6 +10,8 @@ last_updated:
 
 Mint 下有些应用下载之后，解压就能使用，但是这样每次启动该应用时就需要到这个目录中来启动，没有可快捷方式可以直接在桌面上，或者启动器中快速启动。 Mint/Ubuntu 中，gnome 桌面的快捷方式都存在 `~/.local/share/applications` 目录下。
 
+系统中还有另外一个目录 `/usr/share/applications` 也会存放桌面快捷方式。
+
 使用 `gnome-desktop-item-edit ~/.local/share/applications --create-new` 即可创建新的快捷方式。如果该命令不存在记得安装
 
     sudo apt-get install --no-install-recommends gnome-panel
