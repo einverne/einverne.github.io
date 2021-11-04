@@ -35,7 +35,9 @@ ls -al ~/.config/clash
 
 ## 修改配置 {#config}
 
-比如说对于我使用的[代理](https://portal.wallless.xyz/#/register?code=nlyM4OSi)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
+比如说对于我使用的[Wallless代理](https://portal.wallless.xyz/#/register?code=nlyM4OSi)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
+
+我也建了一个，有兴趣的可以[试用一下](https://board.gtk.pw)。
 
 然后将查看 `sub.html` 内容，应该是一个 yaml 格式的文件。将此格式的文件替换默认的配置。
 
