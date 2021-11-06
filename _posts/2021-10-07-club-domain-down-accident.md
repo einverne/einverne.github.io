@@ -159,3 +159,17 @@ gtk.pw.                 300     IN      A       172.67.182.127
 终于从 10月7号下午 6:52 开始，到 9:23 分为止，宕机了近 3 小时。
 
 ![](/assets/club-domain-down-for-3-hours-20211008084520.png)
+
+## 原因分析
+
+`.club` 通用顶级域名（gTLD) 的 name server 无响应，所有 6 台官方的服务器 `get.club` 都无响应，所以下游的 DNS 服务器都无法解析。
+
+> This morning there was a DNS service disruption impacting .Club websites. The issue has now been resolved. We apologize for any inconvenience this may have caused.
+> 
+> — .CLUB Domains (@getDotClub) [October 7, 2021](https://twitter.com/getDotClub/status/1446118781856595969?ref_src=twsrc%5Etfw)
+
+GoDaddy Registry tweeted:
+
+> This morning there was a DNS service disruption impacting .club websites. The issue has now been resolved. We apologize for any inconvenience this may have caused.
+> 
+> — GoDaddy Registry (@GoDaddyRegistry) [October 7, 2021](https://twitter.com/GoDaddyRegistry/status/1446124321324220417?ref_src=twsrc%5Etfw)

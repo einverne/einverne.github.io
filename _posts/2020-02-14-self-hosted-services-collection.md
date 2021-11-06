@@ -284,7 +284,12 @@ anyi 导航、聚合搜索、webstack
 - <https://github.com/helloxz/onenav>
 
 ## 服务器监控
+
 雅黑探针、云探针、[netdata](https://github.com/netdata/netdata)
+
+### nezha 监控（哪吒监控)
+哪吒监控是使用 Go 语言和 Vue 实现的一个监控面板，可以轻松地监控 CPU，内存，网速等等。详情可见[文章](/post/2021/08/nezha-monitor.html)。
+
 
 ## 论坛
 

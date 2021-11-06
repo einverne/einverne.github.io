@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Linux 主机在线监控"
+title: "Linux 主机在线监控: nodequery"
+aliases: "Linux 主机在线监控: nodequery"
 tagline: ""
 description: ""
 category: 产品体验
@@ -26,6 +27,15 @@ NodeQuery 免费账户可以提供 10 台机器的监控，
 
 ## 使用
 同样使用也非常方便，新建 Server，然后会给出一个一键脚本，在自己的 VPS 上一键安装就行，脚本同样是开源的托管在 GitHub 上。人人都可以审查。
+
+### 移除 nodequery
+2021 年 10月更新
+
+很多年没有上 NodeQuery 查看，发现 NodeQuery 已经不更新了，这里记录一下移除 NodeQuery 的命令：
+
+```
+rm -R /etc/nodequery && (crontab -u nodequery -l | grep -v "/etc/nodequery/nq-agent.sh") | crontab -u nodequery - && userdel nodequery
+```
 
 ## API
 这个网站也能够提供 API 支持，能够读取历史情况下 Server 的状态，目前写功能暂时还无法使用。

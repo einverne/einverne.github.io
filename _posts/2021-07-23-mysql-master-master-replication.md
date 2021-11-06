@@ -27,7 +27,7 @@ Install MariaDB on Ubuntu 18.04
 
 ## 首先配置第一台
 
-修改 MySQL 配置：
+修改 MySQL 配置 `vi /etc/mysql/mariadb.conf.d/50-server.cnf`：
 
 ```
 server-id = 1

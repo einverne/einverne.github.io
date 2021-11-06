@@ -73,7 +73,7 @@ To test the new ssh config, do not logout of root. Open a new terminal and login
 
 After you set up server ssh, you can generate SSH key at local computer and use SSH key to connect to server rather than using password. Generating a key at local computer:
 
-	ssh-keygen
+	ssh-keygen -t ed25519 -C "your@email.com"
 
 follow the instruction of this command, for example you name it **vps** , just enter to skip password of key, and you will get two files under `~/.ssh/`, **vps** is your private key, keep it safe. And **vps.pub** is the public key. And Now use `ssh-copy-id` to copy public key to server.
 
@@ -237,13 +237,23 @@ Docker become much powerful these days, I can build and sever all my self-host s
 或者通过一键脚本：
 
     curl -fsSL https://get.docker.com/ | sh
+    # 启动并设置开机自启docker
+    systemctl enable --now docker
 
-Executing the docker command without sudo
+Executing the docker command without sudo 非 root 用户执行 docker 命令：
 
-	sudo usermod -aG docker USER_NAME
+    # sudo groupadd docker
+	sudo usermod -aG docker $USER
     newgrp docker
 
 设置后登出，然后登录。
+
+### 安装 docker-compose
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    # 如果/usr/local/bin不在PATH里
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ## shadowsocks
 sock5 proxy.

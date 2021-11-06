@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "使用 zinit 管理 zsh 插件 完美代替 Antigen"
+aliases: "使用 zinit 管理 zsh 插件 完美代替 Antigen"
 tagline: ""
 description: ""
-category:
+category: 学习笔记
 tags: [zsh, zinit, linux, terminal, antigen, plugin,]
 last_updated:
 ---
@@ -11,22 +12,24 @@ last_updated:
 
 一直使用的 [antigen](/post/2017/09/antigen-zsh-plugin-manager.html) 来管理 zsh 的插件，但是最近 zsh 因为加了一些插件变得非常慢，所以就想找找办法提速 zsh，在查询的过程中发现 antigen 已经很久没有更新，很多人推荐 antibody, 于是又试了一下 antibody, 不过在调研的过程中又发现了 `zinit`。 再一番对比以后，发现 antibody 所谓的并行执行也没有提速很多，反而是名不见经传的 zinit 通过配置将加载时间稳稳地降低，在新建终端时几乎立即可用。
 
-## zinit
+## zinit 是什么
 [zinit](https://github.com/zdharma/zinit) 在众多的 zsh 插件管理工具中是一个比较小众的工具，但是因为其具备的 Turbo mode 可以显著的提升加载的速度。它的原理是通过在后台加载插件的方式提速。
 
 同时 zinit 也没有为了优化而牺牲易用性，可以通过加载 oh-my-zsh 和 Prezto 插件来扩展其能力。
+
+并且在使用的过程中渐渐发现 zinit 的能力并不仅仅在于扩展和管理 zsh 插件，还可以通过简单的配置从 GitHub Release 发布页面安装二进制等等。
 
 ## 安装 {#installation}
 自动安装：
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma-continuum/zinit/master/doc/install.sh)"
 ```
 
 或手动安装：
 
     mkdir ~/.zinit
-    git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+    git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 
 如果你使用我的 [dotfiles](https://github.com/einverne/dotfiles) 在 `~/.zshrc` 中会自动安装。
 
@@ -34,14 +37,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/i
 ## 配置 {#config}
 
 ### load vs light
-可以使用 `load` 和 `light` 来加载插件。
+`zinit` 使用 `load` 和 `light` 来加载插件。后面跟随的是插件仓库的路径：
 
 ```
-zinit load zdharma/history-search-multi-word
+zinit load zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-syntax-highlighting
 ```
 
-说明：
+这两个命令的差别在于：
 
 - `load` 加载的插件可以使用 `zinit report` 来查看加载过程
 - `light`, 表示关闭插件追踪功能，稍微比 `load` 快一些，但看不了 `report`
@@ -83,7 +86,7 @@ zinit snippet PZT::modules/git
 - Sticky-Emulation of Other Shells: `sh/!sh`, `bash/!bash`, `ksh/!ksh`, `csh/!csh`
 - Others: `as`, `id-as`, `compile`, `nocompile`, `service`, `reset-prompt`, `bindmap`, `trackbinds`, `wrap-track`, `aliaes`, `light-mode`, `extract`
 
-更多的可以看[官网](https://github.com/zdharma/zinit#ice-modifiers)
+更多的可以看[官网](https://github.com/zdharma-continuum/zinit#ice-modifiers)
 
 
 ### as"program"
@@ -91,7 +94,7 @@ zinit snippet PZT::modules/git
 
 ```bash
 zinit ice from"gh-r" as"program"
-zinit load junegunn/fzf-bin
+zinit load junegunn/fzf
 ```
 
 说明：
@@ -140,7 +143,7 @@ zinit ice wait'1'
 zinit light wfxr/forgit
 ```
 
-用法二，有条件加载 `wait’[[ ... ]]‘`/`wait'(( ... ))'`，当满足条件时，加载插件。
+用法二，有条件加载 `wait'[[ ... ]]'`/`wait'(( ... ))'`，当满足条件时，加载插件。
 
 ```bash
 zinit ice wait'[[ $PWD = */github || $PWD = */github/*  ]]'
