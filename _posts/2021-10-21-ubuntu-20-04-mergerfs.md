@@ -145,10 +145,17 @@ sr0
 /dev/disk/by-uuid/1de9b276-5a5d-41ac-989a-12bdc9ef4d0b /mnt/sdc1 ext4 defaults 0 0
 /dev/disk/by-uuid/420d99a9-de31-4df4-af93-6863f3284f3d /mnt/sdd1 ext4 defaults 0 0
 
-/mnt/sdb1:/mnt/sdc1/:/mnt/sdd1 /mnt/storage   fuse.mergerfs defaults,allow_other,use_ino,minfreespace=100G,ignorepponrename=true 0 0
+/mnt/sdb1:/mnt/sdc1/:/mnt/sdd1 /mnt/storage   fuse.mergerfs defaults,allow_other,use_ino,category.create=mfs,minfreespace=100G,fsname=mergerfs 0 0
 ```
 
+
 这样重启也会自动进行挂载。
+
+## 注意 rtorrent 使用
+如果要在 mergerfs 上使用 rtorrent 需要注意使用如下配置：
+
+    allow_other,use_ino,cache.files=partial,dropcacheonclose=true,category.create=mfs
+
 
 ## reference
 
