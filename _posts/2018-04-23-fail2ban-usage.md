@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "VPS 安全保护：使用 fail2ban 防止暴力破解"
+aliases: "VPS 安全保护：使用 fail2ban 防止暴力破解"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -16,7 +17,7 @@ last_updated:
 
 	sudo apt install fail2ban
 
-## Configurarion
+## Configuration
 fail2ban 的主要配置都集中在 `/etc/fail2ban/` 目录下
 
 - fail2ban.conf 主要是 fail2ban 自身的配置，包括日志级别，日志存储位置，PID 等
@@ -24,10 +25,10 @@ fail2ban 的主要配置都集中在 `/etc/fail2ban/` 目录下
 
 fail2ban 的功能可以分散在不同的文件中进行管理，配置优先顺序是：
 
-- jail.conf
-- jail.d/*.conf
-- jail.local
-- jail.d/*.local
+- `jail.conf`
+- `jail.d/*.conf`
+- `jail.local`
+- `jail.d/*.local`
 
 在 `jail.local` 中配置
 

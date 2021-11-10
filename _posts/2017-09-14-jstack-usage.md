@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：jstack 打印 Java 进程堆栈信息"
+aliases: "每天学习一个命令：jstack 打印 Java 进程堆栈信息"
 tagline: ""
 description: ""
 category: 每天学习一个命令
@@ -14,6 +15,9 @@ Jstack 用于打印出给定的 java 进程 ID 或 core file 或远程调试服�
 
 > Prints Java thread stack traces for a Java process, core file, or remote debug server. This command is experimental and unsupported.
 
+## 什么时候使用jstack
+应用有些时候会挂起或者突然变慢，定位根本原因可能不是简单的事情。线程 dump 提供了当前运行的 Java 进程的当前状态 SNAPSHOT。
+
 jstack 命令能够：
 
 - Troubleshoot with jstack Utility
@@ -25,7 +29,17 @@ jstack 命令能够：
 
 thread dump 就是将当前时刻正在运行的 JVM 的线程拷贝一份，可以用来分析程序执行情况。
 
-## 用法
+## JVM 中的线程
+JVM 使用线程来执行内部或外部的操作。
+
+## 获取 Java Thread Dump
+
+有很多的方法可以获取 Java Thread Dump 信息[^info]，这里使用最常用的 jstack。
+
+
+[^info]: <https://www.baeldung.com/java-thread-dump>
+
+### 用法
 打印某个进程的堆栈信息
 
     jstack [PID]
@@ -45,7 +59,7 @@ thread dump 就是将当前时刻正在运行的 JVM 的线程拷贝一份，可
 
 在执行 `jstack -l [PID] > /tmp/output.txt` 之后可以对 `/tmp/output.txt` 进行分析
 
-jstack 输出开头是当前 dump 的时间和 JVM 基本信息（包括版本等）:
+`jstack` 输出开头是当前 dump 的时间和 JVM 基本信息（包括版本等）:
 
     2018-05-24 14:41:06
     Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.101-b13 mixed mode):
@@ -85,21 +99,21 @@ jstack 输出开头是当前 dump 的时间和 JVM 基本信息（包括版本�
 			- None
 
 
-线程信息又可以划分成几个部分。
+线程信息又可以划分成几个部分，每一个线程都包含了如下信息：
 
-Section      | Example           | 解释
--------------|-------------------|---
-线程名字     | main 和 Reference Handler | 可读的线程名字，这个名字可以通过 `Thread` 方法 `setName` 设定
-线程 ID      | #1 | 每一个 `Thread` 对象的唯一 ID，这个 ID 是自动生成的，从 1 开始，通过 `getId` 方法获得
-是否守护线程 | daemon      | 这个标签用来标记线程是否是守护线程，如果是会有标记，如果不是这没有
-优先级       | prio=10     | Java 线程的优先级，可以通过 `setPriority` 方法设置
-OS 线程的优先级 | os_prio |
-CPU 时间     | cpu=94.43ms | 线程获得 CPU 的时间
-elapsed      | elapsed=509136.51s |线程启动后经过的 wall clock time
-Address      | tid |  Java 线程的地址，这个地址表示的是 JNI native Thread Object 的指针地址
-OS 线程 ID   |  nid | The unique ID of the OS thread to which the Java Thread is mapped.
-线程状态     | wating on condition | 线程当前状态 线程状态下面就是线程的堆栈信息
-Locked Ownable Synchronizer | |
+| Section                     | Example                   | 解释                                                                                  |
+| --------------------------- | ------------------------- | ------------------------------------------------------------------------------------- |
+| 线程名字                    | main 和 Reference Handler | 可读的线程名字，这个名字可以通过 `Thread` 方法 `setName` 设定                         |
+| 线程 ID                     | #1                        | 每一个 `Thread` 对象的唯一 ID，这个 ID 是自动生成的，从 1 开始，通过 `getId` 方法获得 |
+| 是否守护线程                | daemon                    | 这个标签用来标记线程是否是守护线程，如果是会有标记，如果不是这没有                    |
+| 优先级                      | prio=10                   | Java 线程的优先级，可以通过 `setPriority` 方法设置                                    |
+| OS 线程的优先级             | os_prio                   |                                                                                       |
+| CPU 时间                    | cpu=94.43ms               | 线程获得 CPU 的时间                                                                   |
+| elapsed                     | elapsed=509136.51s        | 线程启动后经过的 wall clock time                                                      |
+| Address                     | tid                       | Java 线程的地址，这个地址表示的是 JNI native Thread Object 的指针地址                 |
+| OS 线程 ID                  | nid                       | The unique ID of the OS thread to which the Java Thread is mapped.                    |
+| 线程状态                    | wating on condition       | 线程当前状态 线程状态下面就是线程的堆栈信息                                           |
+| Locked Ownable Synchronizer |                           |                                                                                       |
 
 线程的运行状态：
 
@@ -118,9 +132,57 @@ Locked Ownable Synchronizer | |
 
 以上内容来自 [Oracle](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/using_threaddumps.html)
 
+
+
+
 通过 jstack 信息可以分析线程死锁，或者系统瓶颈，但是这篇文章比较粗浅，只介绍了大概，等以后熟悉了补上。
+
+## 如何对 jstack 结果进行分析
+
+### 同步问题
+主要关注 `RUNNABLE` 或者 `BLOCKED` 线程，然后是 `TIMED_WAITING` 状态的线程。这些状态可以帮助我们定位：
+
+- 死锁问题，多个线程同时持有同步块，或者共享对象
+- thread contention，当一个线程被 block 等待其他线程结束
+
+### 执行问题
+异常的 CPU 使用率，通常需要我们关注 RUNNABLE 线程，可以和其他命令一起使用获取额外的信息，比如 `top -H -p PID`，可以显示操作系统中特定 CPU 使用率高的线程。
+
+另一方面，如果程序性能突然变慢，可以查看 BLOCKED 线程。这种情况下，单一一个 dump 可以不足以看出问题，我们需要在邻近时间的多个 dump，然后一次比较同一个线程在不同时间点。
+
+一个比较推荐的做法是，每隔 10 秒获取 dump，连续获取 3 次。
+
+## 在线分析工具
+主要注意的是任何在线的工具都有可能将 jstask 信息泄漏，上传文件之前请小心。
+
+### FastThread
+[FastThread](https://fastthread.io/) 是一个不错的在线分析工具。提供了友好的界面，包括线程的 CPU 使用率，stack 长度，以及其他信息。
+
+唯一的缺点就是 FastThread 会将 jstack 信息存储在云端。
+
+### JStack Review
+
+[JStack Review](https://jstack.review/) 也是一个在线的分析工具，不过是 client-side only，数据不会发送出去。
+
+
+### Spotify Online Java Thread Dump Analyzer
+[Spotify Online Java Thread Dump Analyser](https://spotify.github.io/threaddump-analyzer/) 是使用 JavaScript 编写的开源分析工具。
+
+## 独立的应用
+除了在线的分析工具，还有一些不错的独立工具可以用来分析。
+
+### JProfiler
+[JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html) 是一款比较出名的工具，有 10天的试用期。
+
+### IBM Thread Monitor and Dump Analyzer for Java (TMDA)
+[IBM TMDA](https://www.ibm.com/support/pages/ibm-thread-and-monitor-dump-analyzer-java-tmda) can be used to identify thread contention, deadlocks, and bottlenecks. It is freely distributed and maintained but it does not offer any guarantee or support from IBM
+
+### Irockel Thread Dump Analyser (TDA)
+
+[Irockel TDA](https://github.com/irockel/tda) is a standalone open-source tool licensed with LGPL v2.1. The last version (v2.4) was released in August 2020 so it is well maintained. It displays the thread dump as a tree providing also some statistics to ease the navigation
 
 ## reference
 
 - <https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr016.html>
 - <https://helpx.adobe.com/in/experience-manager/kb/TakeThreadDump.html>
+- <https://www.baeldung.com/java-analyze-thread-dumps>

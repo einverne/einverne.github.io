@@ -52,7 +52,7 @@ OLAINDEX 是一个可以将 OneDrive 中的内容分享到网站的工具。使�
 
 OneDrive directory listing application
 
-从DockerHub拉取Docker镜像：
+从 DockerHub 拉取Docker镜像：
 
 ```
 docker run -d --init --name olaindex -p 80:8000 xczh/olaindex:6.0
@@ -92,3 +92,8 @@ h5ai 比较简单，放到目录下就能使用，不过源码已经很久没有
 
 - <https://github.com/helloxz/zdir>
 - 帮助文档：<https://doc.xiaoz.me/#/zdir/>
+
+## GoIndex
+
+[[GoIndex]] 一个不需要服务器的 Google Drive 目录索引程序。
+

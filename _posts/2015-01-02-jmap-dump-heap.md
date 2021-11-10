@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "jmap 命令使用"
+title: "jmap 命令使用及内存分析"
+aliases: "jmap 命令使用及内存分析"
 tagline: ""
 description: ""
 category: 学习笔记
