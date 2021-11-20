@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "expect 脚本使用"
+aliases: "expect 脚本使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,8 +9,9 @@ tags: [expect, linux, automate, shell, script, 运维 , 自动化 ,  ]
 last_updated:
 ---
 
-
 expect 是用来进行自动化控制和测试的工具。主要是和交互式软件 telnet ftp passwd fsck rlogin ssh tip 等进行自动化的交互。Linux 交互命令中经常需要输入 yes/no 或者 password 等操作，模拟这些输入，就可以使用 expect 脚本。expect 是由 tcl 语言演变而来的。简单地说，expect 是一个工具，可以根据用户设定的规则和系统进程进行自动化交互，例如远程登陆的密码输入、自动化的执行远程命令。
+
+一个非常典型的使用场景就是一般在公司中都会使用 relay 来连接管理服务器的远程连接和使用，通常会需要在 SSH 登录的时候使用用户名和密码，甚至需要二步验证来增强安全性，但是如果不想每一次都重复输入用户名和密码就可以使用 expect 命令来快速实现登录。
 
 ## 安装
 Debian/Ubuntu/Linux Mint 系安装非常简单

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：df 查看磁盘剩余空间"
+aliases: "每天学习一个命令：df 查看磁盘剩余空间"
 tagline: ""
 description: ""
 category: 每天学习一个命令

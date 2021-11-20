@@ -9,13 +9,18 @@ tags: [ linux, clash, clashx, macos, proxy, socks, v2ray, ]
 last_updated:
 ---
 
-去年年中的时候切换到 macOS，一直用了 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。
+去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。
 
 Clash 是 Go 语言实现的，跨平台代理工具，支持 Shadowsocks/v2ray，支持规则分流等等。
 
 可以在官方页面[下载](https://github.com/Dreamacro/clash/releases)。
 
 Linux 下载对应的 `linux-amd64` 即可。
+
+## 2021 年 11 月更新
+在用了很长一段时间的 Clash 命令行之后，我发现 [Clash For Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases) 这个应用也能够在 Linux 下使用。所以最近就切换到了这个应用上。
+
+另外欢迎订阅使用 [EV Proxy](https://board.gtk.pw) 注册之后一键订阅即可使用。
 
 ## 安装 {#installation}
 下载对应的二进制，比如默认放到 `~/Downloads` 目录，在终端进入该目录。
@@ -37,7 +42,7 @@ ls -al ~/.config/clash
 
 比如说对于我使用的[Wallless代理](https://portal.wallless.xyz/#/register?code=nlyM4OSi)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
 
-我也建了一个，有兴趣的可以[试用一下](https://board.gtk.pw)。
+另外还有一个代理，有兴趣的可以[试用一下](https://board.gtk.pw)。
 
 然后将查看 `sub.html` 内容，应该是一个 yaml 格式的文件。将此格式的文件替换默认的配置。
 

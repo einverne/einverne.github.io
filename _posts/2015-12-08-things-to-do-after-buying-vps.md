@@ -255,6 +255,9 @@ Executing the docker command without sudo 非 root 用户执行 docker 命令：
     # 如果/usr/local/bin不在PATH里
     sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+
+如果使用我的 [dotfiles](https://github.com/einverne/dotfiles) 配置，在 `~/.zshrc` 第一次配置的时候就会把 `docker-compose` 二进制文件拉下来。
+
 ## shadowsocks
 sock5 proxy.
 

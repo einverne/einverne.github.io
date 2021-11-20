@@ -100,7 +100,7 @@ Proxmox VE 基于 Debian 的软件源都可以替换成国内的镜像：[^tuna]
 
 然后编辑 `visudo`:
 
-	einverne    ALL=(ALL:ALL) ALL
+	einverne    ALL=(ALL:ALL) NOPASSWD:ALL
 
 ## 配置 {#setup}
 经过上面的配置 Proxmox 已经处于一个可用的状态。

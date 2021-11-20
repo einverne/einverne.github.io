@@ -24,6 +24,7 @@ NAS 上的文件已经有足够多的[管理系统](/post/2018/06/qnap-file-sync
 Funkwhale 用 Python，Django 编写，遇到 bug 倒时候也能看懂代码了。
 
 ## Install
+使用 Docker 安装：
 
 	export FUNKWHALE_VERSION="0.20.1"
 	touch .env
@@ -82,7 +83,7 @@ Funkwhale 用 Python，Django 编写，遇到 bug 倒时候也能看懂代码了
 
 
 ## 导入音乐文件
-
+使用如下命令导入文件：
 
 ```
 # For file structures similar to ./Artist/Album/Track.mp3
@@ -91,20 +92,23 @@ docker exec -it funkwhale manage import_files $LIBRARY_ID "/music/**/**/*.mp3" -
 
 这里的 LIBRARY_ID 需要到界面中找。
 
+## 外延
 
-## koel
+### koel
+
+官网：<https://koel.dev/>
 
 - <https://koel.phanan.net/>
 
 
-## Koozic
+### Koozic
 
 - <https://koozic.net/>
 
 [^1]: [FileRun](/post/2018/06/filerun.html)
 [^2]: [NextCloud](/post/2018/04/nextcloud.html)
 
-## airsonic
+### airsonic
 
 - <https://github.com/airsonic/airsonic>
 

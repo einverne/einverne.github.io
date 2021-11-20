@@ -33,6 +33,11 @@ Pi-hole, A black hole for Internet advertisements
 
 - <https://github.com/AdguardTeam/AdGuardHome>
 
+## 代码
+
+[code-server](https://github.com/cdr/code-server)
+
+
 ## 博客类
 具体来说，是 CMS，内容管理平台
 
@@ -302,6 +307,9 @@ anyi 导航、聚合搜索、webstack
 
 ### Instagram scraper
 批量下载 Instagram
+
+[instagram-scraper](https://github.com/arc298/instagram-scraper):
+
  
 	touch ig_args.txt ig_users.txt
 	docker run -d \
@@ -309,6 +317,10 @@ anyi 导航、聚合搜索、webstack
 		-v $(pwd)/ig_args.txt:ig_args.txt \
 		-v $(pwd)/ig_users.txt:ig_users.txt \
 		shyd/instagram-scraper
+
+或者：
+
+    docker run -it --rm -v $(pwd)/data:/instagram-scraper/data alexnik/instagram-scraper -i -d data/<folder_name> --cookiejar data/my_cookies <params>
 
 
 ### youtube-dl

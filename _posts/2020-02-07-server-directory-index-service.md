@@ -17,7 +17,7 @@ last_updated:
 不过有些简陋而已。
 
 ## zfile
-一款基于 Java 的在线网盘程序，支持对接 S3，OneDrive，SharePoint，又拍云，本地存储，FTP 等等，支持在线浏览图片、播放音视频、文本文件等等。
+[[ZFile]] 是一款基于 Java 的在线网盘程序，支持对接 S3，OneDrive，SharePoint，又拍云，本地存储，FTP 等等，支持在线浏览图片、播放音视频、文本文件等等。
 
 ```
 docker run -d --name=zfile --restart=always \
@@ -27,6 +27,7 @@ docker run -d --name=zfile --restart=always \
     zhaojun1998/zfile
 ```
 
+或者参考我的 [docker-compose](https://github.com/einverne/dockerfile)。
 
 
 ## FileBrowser Enhanced

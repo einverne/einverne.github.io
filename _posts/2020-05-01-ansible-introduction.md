@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Ansible 介绍及使用"
-aliases: "Ansible 介绍及使用"
+title: "Ansible 入门篇一：简单介绍及使用"
+aliases: "Ansible 入门篇一：简单介绍及使用"
 tagline: ""
 description: "Ansible 介绍、使用和使用教程"
 category: 学习笔记
-tags: [ansible, deploy, linux, management, ]
+tags: [ansible, deploy, linux, management, python, ]
 last_updated:
 ---
 
@@ -27,7 +27,7 @@ Ansible 是如何做到这件事情的呢？主要是划分了下面几个部分
 - 无需在服务器中安装客户端，基于 SSH 工作，可并行执行
 - 无需服务端，直接终端命令即可
 - 管理的对象可以包括物理机，虚拟机，容器等等
-- 使用 yaml 格式文件编排 playbook
+- 使用 YAML 格式文件编排 playbook
 
 ## Ansible 的组成元素
 Ansible 中的一些概念。
@@ -58,17 +58,18 @@ Ansible 的安装方法非常多，PPA，源码安装都可以。[^install]
 
 Ubuntu 下安装：
 
-	$ sudo apt update
-	$ sudo apt install software-properties-common
-	$ sudo apt-add-repository --yes --update ppa:ansible/ansible
-	$ sudo apt install ansible
+	sudo apt update
+	sudo apt install software-properties-common
+	sudo apt-add-repository --yes --update ppa:ansible/ansible
+	sudo apt install ansible
 
-如果不想 PPA，也可以
+如果不想 PPA，也可以直接安装：
 
 	sudo apt-get install -y ansible
 
 
 ### 源码安装
+从源码安装：
 
 	sudo apt-get install -y libffi-dev libssl-dev python-dev
 	sudo pip install paramiko PyYAML Jinja2 httplib2 six pycrypto
@@ -86,50 +87,55 @@ Ubuntu 下安装：
     sudo pip install --trusted-host mirrors.aliyun.com 
     --index-url=http://mirrors.aliyun.com/pypi/simple/  ansible==2.7.1
 
-## 配置 {#config}
+## 相关配置 {#config}
 
 ### ansible.cfg
-`ansible.cfg` 文件是 Ansible 的主要配置文件，ansible 寻找的路径优先级是：
+`ansible.cfg` 文件是 Ansible 中最主要的配置文件，ansible 寻找配置文件按照如下的优先级：
 
 - 由环境变量 `ANSIBLE_CONFIG` 指定的文件
-- ./ansible.cfg (ansible.cfg in the current directory)
-- ~/.ansible.cfg (.ansible.cfg in your home directory)
-- /etc/ansible/ansible.cfg
+- `./ansible.cfg` (`ansible.cfg` in the current directory)
+- `~/.ansible.cfg` (`.ansible.cfg` in your home directory)
+- `/etc/ansible/ansible.cfg`
 
-配置内容：
+最简单的 `ansible.cfg` 配置示例：
 
 ```
 [defaults]
 hostfile = hosts
-remote_user = admin
-remote_port = 222
+remote_user = root
+remote_port = 22
 host_key_checking = False
 ```
 
-hostfile 文件指定了当前文件夹下的 hosts 文件。hosts 文件夹中可以配置：
+说明：
 
-	[server]
-	10.0.0.1
-	10.0.0.2
+- `hostfile` 文件指定了当前文件夹下的 hosts 文件。hosts 文件中会配置需要管理的机器 host
+    - 配置 SSH 免密登录的文章可以参考之前的[文章](/post/2016/06/ssh-copy-id.html).
+- `remote_user` 配置默认操作的用户，如果没有配置，默认会使用当前用户
+- `host_key_checking`: 禁用 SSH key host checking
 
-配置 SSH 免密登录的文章可以参考之前的[文章](/post/2016/06/ssh-copy-id.html).
 
 ### inventory
-inventory 可以对远程服务器 HOST 进行管理。可以配置 Ansible 默认的 `/etc/ansible/hosts` 创建基本的 inventory.
+在上面的配置中可以看到 `inventory` 指定了一个 hosts 文件，vega文件用来对远程服务器 Hosts 进行管理。
+
+默认的文件路径在 `/etc/ansible/hosts`。
 
 这里的 inventory 可以看成需要管理的节点的配置，可以直接配置到全局，然后使用 `all` 来引用，也可以用分组的形式来引用。
 
-比如，未分组形式：
+#### 未分组形式
+比如，未分组形式定义：
 
 ```
 xxx.einverne.info
 einverne.info
 12.12.12.12
 192.168.2.1
+192.168.2.200
+10.0.0.1
 ```
 
+#### 分组形式
 或者采用分组形式，用方括号表示下面的 HOST 都属于 webserver 这个组：
-
 
 ```
 [webserver]
@@ -137,6 +143,7 @@ einverne.info
 foo.example.com
 ```
 
+#### 配置范围
 如果有多个 HOST 可以用如下语法添加多个：
 
 ```
@@ -180,8 +187,9 @@ inventory 中可以配置使用别名，但是推荐在 `ssh config` 中进行�
 		Port 22
 		User some-username
 
-然后就可以在 Ansible 的 inventory 中配置使用 `ds`, `aws1` 或者 `oracle1`。
+我个人使用 [assh](/post/2020/07/advanced-ssh-config-management.html) 来对 SSH config 进行管理。
 
+然后就可以在 Ansible 的 inventory 中配置使用 `ds`, `aws1` 或者 `oracle1` 来指定 host。
 
 更多 inventory 的配置可以参考[官方文档](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
 
@@ -189,19 +197,24 @@ inventory 同样配置用来管理 AWS EC2，或者 OpenStack。[^in]
 
 [^in]: <https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html>
 
-## 使用 {#usage}
-基本使用方法：
+## Ansible 使用 {#usage}
+ansible 命令的基本使用方法：
 
-	ansible <pattern> -m <module_name> -a <arguments>
+	ansible <pattern> -m <module_name> -a <module_arguments>
 
-在简单配置后可以运行
+说明：这一行命令会定义并在一系列 host 上执行一个 `playbook` 任务。
 
-	# 一个节点
+## ad-hoc command
+ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复用，在了解 playbook 之前可以先体验一下 ad-hoc，感受一下 Ansible 的强大。
+
+简单示例：
+
+	# 在指定的 host1 节点上执行
 	ansible host1 -a "/bin/echo hello"
-	# 多个节点
+	# 在多个节点执行
 	ansible host1,host2 -a "/bin/echo hello"
 	ansible host1:host2 -a "/bin/echo hello"
-	# 全部节点
+	# ping 全部节点
 	ansible all -m ping
 	# 一组节点
 	ansible webservers -m service -a "name=httpd state=restarted"
@@ -216,34 +229,18 @@ inventory 同样配置用来管理 AWS EC2，或者 OpenStack。[^in]
 
 [^host]: <https://docs.ansible.com/ansible/latest/user_guide/intro_patterns.html>
 
-## ad-hoc command
-ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复用，在了解 playbook 之前先体验一下 ad-hoc 感受一下 Ansible 的强大。
-
-	ansible [pattern] -m [module] -a "[module options]"
-
-举例：
-
-	# 小心使用下面命令，比如重启服务
-	ansible atlanta -a "/sbin/reboot"
-	# 管理文件，复制文件
-	ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"
-	# 管理包
-	ansible webservers -m yum -a "name=acme state=present"
-	# 启动服务
-	ansible webservers -m service -a "name=httpd state=started"
-
-## module
-`-m` 选项后面的就是 module，常见的 module，之前例子中有非常多的 ping，就是用来检测连通性的。
+## Ansible module
+`-m` 选项后面的就是 Ansible 的 module，常见的 module，比如上面例子中的 ping，就是用来检测连通性的。
 
 ### setup
-用来查看远程主机信息：
+setup module 用来查看远程主机信息：
 
 	ansible all -m setup
 
 每个被管理的节点在接受并运行管理命令之前都会将自己的信息报告给 Ansible 主机。
 
 ### command
-command 命令模块用于在远程主机执行命令，不能使用变量，管道等。
+command 命令模块用于在远程主机执行命令，但是不能使用变量，管道等。
 
 执行命令：
 
@@ -255,7 +252,7 @@ command 命令模块用于在远程主机执行命令，不能使用变量，管
 	ansible all -m command -a "chdir=sub-dir removes=test.file ls"
 
 ### cron
-cron 用于配置 crontab
+cron 模块用于配置 crontab 定时任务：
 
     ansible host -m cron -a 'minute="*/10" job="/bin/echo hello" name="test cron job"'
 
@@ -276,36 +273,40 @@ cron 用于配置 crontab
 
 ### user
 user 模块用来管理用户账户。
-
+    
+    # 新增用户
     ansible all -m user -a 'name="einverne"'
+    # 删除用户
     ansible all -m user -a 'name="einverne" state=absent'
 
 和用户相关的字段：
 
 ```
-   name    用户名
-   uid     uid
-   state   状态  
-   group   属于哪个组
-   groups  附加组
-   home    家目录
-   createhome  是否创建家目录
-   comment 注释信息
-   system  是否是系统用户
+name    用户名
+uid     uid
+state   状态  
+group   属于哪个组
+groups  附加组
+home    家目录
+createhome  是否创建家目录
+comment 注释信息
+system  是否是系统用户
 ```
+
+user module 更多的说明可以参考[官网](https://docs.ansible.com/ansible/2.9/modules/user_module.html)
 
 ### group
 组管理同样拥有这些配置：
 
 ```
-   gid     gid      
-   name    组名              
-   state   状态          
-   system  是否是系统组
+gid     gid      
+name    组名              
+state   状态          
+system  是否是系统组
 ```
 
 ### file
-file 可以用来设置文件属性。
+file module 可以用来设置文件属性。
 
 	# 创建 soft link
 	ansible all -m file -a "src=/etc/resolv.conf dest=/tmp/resolv.conf state=link"
@@ -328,47 +329,89 @@ file 可以用来设置文件属性。
 
 更多 module 可以使用 `ansible-doc -l` 查看。
 
+### 小结
+看到这里的话，相信对 ansible 的 module 已经有了一个大致的了解，Ansible 官网提供了非常多的 [module 使用说明](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html)。
+
+但是你会发现一个问题，所有的这些命令都是一次性使用的，而无法做到复用，除非你拷贝这一行命令执行多次。所以 Ansible 也可以通过配置文件的方式，将这些操作记录下来，以文本的方式进行管理，这就是下面要说到的 Ansible playbook。
+
 ## Ansible playbook
-上面提到 ad-hoc 可以执行一次性的命令，但如果要把多个 task 组织起来，那就不得不提到 playbook, playbook 可以编排有序的任务，可以在多组主机间，有序执行任务，可以选择同步或者异步发起任务。
+上面提到 `ad-hoc` 可以执行一次性的命令，但如果要把多个 task 组织起来，那就不得不提到 playbook, playbook 可以编排有序的任务，可以在多组主机间，有序执行任务，可以选择同步或者异步发起任务。
 
-一个简单的例子：
+下面以一个安装 Docker 的例子做演示：
 
-```
+定义了变量的文件 `var/default.yml`:
+
+```yaml
 ---
-- hosts: webservers
-  vars:
-    http_port: 80
-    max_clients: 200
-  remote_user: root
-  tasks:
-  - name: ensure apache is at the latest version
-    yum: pkg=httpd state=latest
-  - name: write the apache config file
-    template: src=/srv/httpd.j2 dest=/etc/httpd.conf
-    notify:
-    - restart apache
-  - name: ensure apache is running
-    service: name=httpd state=started
-  handlers:
-    - name: restart apache
-      service: name=httpd state=restarted
-    - name: restart memcached
-      service: name=memcached state=restarted
+create_containers: 4
+default_container_name: docker
+default_container_image: ubuntu
+default_container_command: sleep 1d
 ```
+
+`playbook.yml` 文件：
+
+```yaml
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Install aptitude using apt
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install required system packages
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools']
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+
+    - name: Install Docker Module for Python
+      pip:
+        name: docker
+
+    - name: Pull default Docker image
+      docker_image:
+        name: "{{ default_container_image }}"
+        source: pull
+
+    # Creates the number of containers defined by the variable create_containers, using values from vars file
+    - name: Create default containers
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        image: "{{ default_container_image }}"
+        command: "{{ default_container_command }}"
+        state: present
+      with_sequence: count={{ create_containers }}
+```
+
 
 说明：
 
-- hosts: 指定哪些服务器执行命令
-- tasks: 一系列任务
-- handlers: 由通知者进行通知，只有 nofity 后 handler 才会执行，等到 tasks 执行完后才会执行，最多执行一次
+- hosts: 指定了哪些服务器执行该 playbook 中的 tasks
+- tasks: 一系列执行的任务，在上面的例子中就是安装必要的依赖，然后安装 Docker，随后 pull 镜像，并启动容器
 
-执行 playbook
+使用如下命令执行 playbook
 
 	ansible-playbook playbook.yml -f 10
 
+`-f` 表示的是指定并发进程来执行任务。
 
 ### when 语句
-在 task 后面可以增加 when 用于条件测试：
+在 task 后面可以增加 when 用于条件，比如只有系统是 `Debian` 才执行命令：
 
 ```
 tasks:
@@ -378,7 +421,7 @@ tasks:
 ```
 
 ### 循环
-如果需要重复执行一个任务，可以使用循环，将需要循环的内容定义为 item，然后通过 `with_items` 语句指定列表：
+如果需要重复执行一个任务，可以使用循环，将需要循环的内容定义为 item，然后通过 `with_items` 语句指定列表，比如新建两个用户：
 
 ```
 - name: add user
@@ -388,7 +431,15 @@ tasks:
     - user2
 ```
 
-如果还要定义 group:
+上面语句的功能等同于下面的语句：
+```
+- name: add user testuser1
+ user: name=user1 state=present
+- name: add user testuser2
+ user: name=user2 state=present
+```
+
+如果还要定义 group，可以使用 key-value 键值对:
 
 ```
 - name: add multiple item
@@ -398,12 +449,14 @@ tasks:
     - { name: 'user2', groups: 'root'}
 ```
 
+
+
 ### role
 再来看一个例子：
 
 	- hosts:webservers
 	  roles:
-		-tmux
+		- tmux
 
 这里 role 定义了 tmux(tmux 编译安装），则表示用 tmux 执行了一系列的命令。role 由其他一些组件组成：
 

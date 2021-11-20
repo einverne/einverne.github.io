@@ -18,7 +18,7 @@ VPS 性能测试的几个方面：
 - 路由
 
 ## 综合类测试
-在运行这类测试脚本之前，最好先讲脚本下载下来之后打开看一眼，以防止安装执行一些不可信的文件。
+在运行这类测试脚本之前，最好先将脚本下载下来之后打开看一眼，以防止安装执行一些不可信的文件。
 
 ### bench.sh
 
@@ -59,9 +59,14 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 `SuperBench.sh` 是在 bench.sh 上的增强，增加了服务器类型检测，OpenVZ, KVM ，独立服务器通电时间检测等。
 
+该脚本需要 root 运行：
+
 	wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
 	#或者
 	curl -Lso- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+    
+    wget -qO- git.io/superbench.sh | bash
+    curl -Lso- git.io/superbench.sh | bash
 
 ### Serverreview Benchmark
 [Serverreview Benchmark](https://github.com/sayem314/serverreview-benchmark):

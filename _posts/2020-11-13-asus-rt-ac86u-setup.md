@@ -32,7 +32,7 @@ AC86U 的刷机步骤非常简单，通过网页「升级页面」，直接上�
 
 禁用检测：
 
-    sed -i 's/\\tdetect\_package/\\t# detect\_package/g' /koolshare/scripts/ks\_tar\_install.sh
+    sed -i 's/\\tdetect\_package/\\t# detect\_package/g' /koolshare/scripts/ks_tar_install.sh
     
 [这里](https://github.com/hq450/fancyss) 是 shadowsocks 插件地址。
 

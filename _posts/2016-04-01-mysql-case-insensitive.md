@@ -9,11 +9,11 @@ last_updated:
 ---
 
 
-默认情况下 MySQL 的内容不是大小写敏感的。MySQL 的大小写和建数据库时的排序规则有关。
+默认情况下 MySQL 中存储内容不是大小写敏感的。MySQL 的大小写和建数据库时的排序规则有关。
 
-- utf8_bin 则是将字符串中的每一个字符用二进制存储，bin 是 binary case sensitive collation，区分大小写
-- utf8_general_ci 不区分大小写，ci 为 case insensitive
-- utf8_general_cs 区分大小写，cs 为 case sensitive 缩写
+- `utf8_bin` 则是将字符串中的每一个字符用二进制存储，bin 是 binary case sensitive collation，区分大小写
+- `utf8_general_ci` 不区分大小写，ci 为 case insensitive
+- `utf8_general_cs` 区分大小写，cs 为 case sensitive 缩写
 
 
 ### 建表时字段区分大小写
