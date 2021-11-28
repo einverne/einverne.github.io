@@ -19,7 +19,7 @@ Ansible 是如何做到这件事情的呢？主要是划分了下面几个部分
 
 - 定义目标机器列表，也就是需要管理的机器
 - 定义配置，使用 [YAML](/post/2015/08/yaml.html) 文件配置任务
-- 执行任务
+- 执行具体任务
 
 ## Ansible 的特性 {#feature}
 
@@ -66,7 +66,12 @@ Ubuntu 下安装：
 如果不想 PPA，也可以直接安装：
 
 	sudo apt-get install -y ansible
+    # or
+    sudo pip install ansible
 
+在 macOS 上：
+
+    brew install ansible
 
 ### 源码安装
 从源码安装：
@@ -90,7 +95,7 @@ Ubuntu 下安装：
 ## 相关配置 {#config}
 
 ### ansible.cfg
-`ansible.cfg` 文件是 Ansible 中最主要的配置文件，ansible 寻找配置文件按照如下的优先级：
+`ansible.cfg` 文件是 Ansible 中最主要的配置文件，ansible 寻找配置文件按照如下的优先级进行：
 
 - 由环境变量 `ANSIBLE_CONFIG` 指定的文件
 - `./ansible.cfg` (`ansible.cfg` in the current directory)
@@ -116,7 +121,7 @@ host_key_checking = False
 
 
 ### inventory
-在上面的配置中可以看到 `inventory` 指定了一个 hosts 文件，vega文件用来对远程服务器 Hosts 进行管理。
+在上面的配置中可以看到 `inventory` 指定了一个 hosts 文件，这个文件用来对远程服务器 Hosts 进行管理。
 
 默认的文件路径在 `/etc/ansible/hosts`。
 
@@ -231,6 +236,8 @@ ad-hoc 命令可以执行单一的任务，ad-hoc 命令很简单，但不能复
 
 ## Ansible module
 `-m` 选项后面的就是 Ansible 的 module，常见的 module，比如上面例子中的 ping，就是用来检测连通性的。
+
+下面介绍一下常用的 module 方便快速进入 Ansible 的世界，理解了下面这些 module 也比较方便之后学习更加复杂的模块。
 
 ### setup
 setup module 用来查看远程主机信息：

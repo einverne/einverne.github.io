@@ -440,6 +440,8 @@ Linux 和 NAS 上一直用的 Calibre
 
 aria2, you-get 和 `youtube-dl` 日常使用，Transmission 作为 BitTorrent 备用。
 
+自有了 NAS 以来，将 PT 下载切换到了 [rtorrent 和 ruTorrent](/post/2020/03/rtorrent-and-rutorrent.html)。
+
 ### 密码管理
 
 自己搭建的 Bitwarden，虽然常年使用 LastPass，但最近自己搭建 Bitwarden 后发现 Bitwarden 跨平台做的非常不错，还可以利用起 Mac 的 Touch ID。
@@ -485,21 +487,21 @@ yabai
 Touch Id 的妙用还可以参考：[pam-touchID](https://github.com/Reflejo/pam-touchID) 和 [pam_touchid](https://github.com/hamzasood/pam_touchid).
 
 ### 查看监听的端口
-Mac 上使用 netstat 显示监听的端口：
+Mac 上使用 `netstat` 显示监听的端口：
 
     netstat -an | grep LISTEN
 
-或者使用 lsof:
+或者使用 `lsof`:
 
     sudo lsof -iTCP -sTCP:LISTEN -n -P
 
-lsof 可以看到具体某个端口关联的 PID。
+`lsof` 可以看到具体某个端口关联的 PID。
 
 ## 开发环境安装
 上面提到基础的编程环境安装，这里在针对具体细节补充说明。
 
 ### 安装 asdf 多版本管理
-asdf 是一个命令行下的多语言，多版本管理工具，我之前的文章提到过 [pyenv](/post/2017/04/pyenv.html) 安装管理多个版本的 Python, 同样的我在外延部分提到了 Java 的多版本管理 jenv, 还有 Ruby 的多版本管理 rbenv，甚至还有 node.js 等等语言，等等编译工具的多版本管理工具，而 asdf 将这些多版本管理工具都整合到一起，通过简单的 asdf 一行命令就可以搞定很多二进制工具，或语言的版本管理，asdf 通过扩展的方式支持了非常多的常用工具。在 Mac 下的安装也非常简单，直接参考[官方网站](https://asdf-vm.com/) 即可。
+[asdf](/post/2020/04/asdf-vm-manage-multiple-language.html) 是一个命令行下的多语言，多版本管理工具，我之前的文章提到过 [pyenv](/post/2017/04/pyenv.html) 安装管理多个版本的 Python, 同样的我在外延部分提到了 Java 的多版本管理 jenv, 还有 Ruby 的多版本管理 rbenv，甚至还有 node.js 等等语言，等等编译工具的多版本管理工具，而 asdf 将这些多版本管理工具都整合到一起，通过简单的 asdf 一行命令就可以搞定很多二进制工具，或语言的版本管理，asdf 通过扩展的方式支持了非常多的常用工具。在 Mac 下的安装也非常简单，直接参考[官方网站](https://asdf-vm.com/) 即可。
 
 ### 安装 Java 开发环境
 
@@ -534,7 +536,7 @@ asdf 是一个命令行下的多语言，多版本管理工具，我之前的文
 
 
 ### 安装 MySQL 管理工具
-我使用 MySQL 官方的管理工具 MySQL Workbench.
+我使用 MySQL 官方的管理工具 MySQL Workbench 结合 JetBrains 的 DataGrip 一起使用，相辅相成。
 
 
 ## 迁移 Lightroom 图片库
@@ -562,10 +564,10 @@ Mac 自带的 rsync 会遇到乱码问题，使用 brew 重新安装
 
 ## 几点吐槽
 
-- 念念不忘的 Touchbar，真的很鸡肋
+- 念念不忘的 Touchbar，真的很鸡肋，我默认切换成了 Fn 功能键。
 - 右上角的日期竟然连日历都没有，幸好有 day-o 和 Itsycal 这样的扩展，勉强可以用
 - 分屏功能竟然需要第三方扩展来支持，虽然可以用 Option 来左右分屏，还是很鸡肋，连 Linux Mint 自带的桌面都赶不上
-- 自带的 Finder，是我没有使用习惯吗？我觉得 [Nemo](/post/2018/08/nemo-file-manager.html) 还是要远远好过 Finder
+- 自带的 Finder 也就勉强能用，是我没有使用习惯吗？我还是觉得 Cinnamon 自带的 [Nemo](/post/2018/08/nemo-file-manager.html) 要远远好过 Finder。
 
 
 ## reference

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十五：rtorrent-Pro 使用"
+aliases: "威联通折腾篇十五：rtorrent-Pro 使用"
 tagline: ""
 description: ""
 category: 经验总结

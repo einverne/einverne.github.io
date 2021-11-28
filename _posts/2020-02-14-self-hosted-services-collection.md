@@ -140,6 +140,10 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 ### YouTube 视频下载
 youtube-dl
 
+这个项目在 youtube-dl 上实现了一个 Web 界面，可以方面的通过请求提交任务：
+
+- <https://hub.docker.com/r/kmb32123/youtube-dl-server>
+
 ## 文件分享
 
 ### File Browser
@@ -322,7 +326,3 @@ anyi 导航、聚合搜索、webstack
 
     docker run -it --rm -v $(pwd)/data:/instagram-scraper/data alexnik/instagram-scraper -i -d data/<folder_name> --cookiejar data/my_cookies <params>
 
-
-### youtube-dl
-
-- <https://hub.docker.com/r/kmb32123/youtube-dl-server>
