@@ -129,7 +129,43 @@ Full Test       | https://browser.geekbench.com/v5/cpu/9485985
 ### 应用
 和之前在 [A400](/post/2021/08/a400-vps-test-and-usage.html) 的机器一样，用 Docker 来管理各个服务。基本上也是同步一下数据，更改一下[配置](https://github.com/einverne/dockerfile)就可以起来。
 
+```
+❯ docker ps -a
+CONTAINER ID   IMAGE                                    COMMAND                  CREATED        STATUS                    PORTS                                                                      NAMES
+5c9f15d2f6fd   cflask_simple_worker                     "/bin/sh -c 'celery …"   4 days ago     Up 6 hours                                                                                           cflask_simple_worker_1
+b9d05a0aab65   cflask-production                        "/bin/bash shell_scr…"   4 days ago     Up 6 hours                0.0.0.0:5000->5000/tcp, :::5000->5000/tcp                                  cflask_flask-prod_1
+fe5babd77ff8   technosoft2000/calibre-web               "/bin/bash -c /init/…"   2 weeks ago    Up 2 days                 8083/tcp                                                                   calibre-web
+27bb97742691   funkwhale/all-in-one:1.1.4               "/init"                  2 weeks ago    Up 2 days                 80/tcp                                                                     funkwhale
+9f167b8f1a27   umputun/remark42:latest                  "/init.sh /srv/remar…"   2 weeks ago    Up 2 days (healthy)       8080/tcp                                                                   remark42
+966776d9c62c   luminoleon/epicgames-claimer             "python3 -u main.py …"   2 weeks ago    Up 2 days                                                                                            epic
+11f2ab0251a3   gogs/gogs:0.12.3                         "/app/gogs/docker/st…"   4 weeks ago    Up 2 days                 3000/tcp, 0.0.0.0:10022->22/tcp, :::10022->22/tcp                          gogs
+2490f033f39d   wordpress:latest                         "docker-entrypoint.s…"   4 weeks ago    Up 2 days                 80/tcp                                                                     wordpress_blog
+8f11b6177487   kmb32123/youtube-dl-server:latest        "python -u ./youtube…"   4 weeks ago    Up 2 days                 0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                  youtube-dl-server_youtube-dl-server_1
+ed9cc80eac6a   ghcr.io/naiba/nezha-dashboard            "/dashboard/app"         4 weeks ago    Up 2 days                 80/tcp, 0.0.0.0:5555->5555/tcp, :::5555->5555/tcp                          nezha_dashboard_1
+6654066f6c09   wallabag/wallabag                        "/entrypoint.sh wall…"   4 weeks ago    Up 2 days (healthy)       80/tcp                                                                     wallabag
+406190504fd3   phpmyadmin/phpmyadmin                    "/docker-entrypoint.…"   4 weeks ago    Up 2 days                 80/tcp                                                                     phpmyadmin_phpmyadmin_1
+8c902e165528   chevereto:latest                         "docker-php-entrypoi…"   7 weeks ago    Up 2 days                 80/tcp                                                                     chevereto
+fcca09be33e6   redis:4-alpine                           "docker-entrypoint.s…"   7 weeks ago    Up 2 days                 0.0.0.0:6379->6379/tcp, :::6379->6379/tcp                                  redis
+b7c7844143ed   fengkx/postgres:13-alpine                "docker-entrypoint.s…"   2 months ago   Up 2 days (healthy)       0.0.0.0:5432->5432/tcp, :::5432->5432/tcp                                  postgres
+129bede6f06c   linuxserver/bookstack                    "/init"                  2 months ago   Up 2 days                 80/tcp, 443/tcp                                                            bookstack
+6901eecc15c8   diygod/rsshub                            "dumb-init -- npm ru…"   2 months ago   Up 2 days                 1200/tcp                                                                   rsshub_rsshub_1
+9229265c93de   yourls                                   "docker-entrypoint.s…"   2 months ago   Up 2 days                 80/tcp                                                                     yourls
+4f935d65a3fc   hurlenko/filebrowser                     "/filebrowser --root…"   2 months ago   Up 2 days                 8080/tcp                                                                   filebrowser
+8ab377d558e3   wordpress:latest                         "docker-entrypoint.s…"   2 months ago   Up 2 days                 80/tcp                                                                     wordpress
+4fa2aad47f10   miniflux/miniflux:latest                 "/usr/bin/miniflux"      3 months ago   Up 2 days                 8080/tcp                                                                   miniflux
+47b8ad4f0d41   netdata/netdata                          "/usr/sbin/run.sh"       3 months ago   Up 2 days (healthy)       0.0.0.0:19999->19999/tcp, :::19999->19999/tcp                              netdata
+87f802cee469   f6f2296798e9                             "docker-entrypoint.s…"   3 months ago   Up 2 days                 6379/tcp                                                                   rsshub_redis_1
+37898721ec5b   browserless/chrome:1.43-chrome-stable    "./start.sh"             3 months ago   Up 2 days                 3000/tcp                                                                   rsshub_browserless_1
+79e7d9774b63   b4bz/homer                               "/bin/sh /entrypoint…"   3 months ago   Up 2 days                 8080/tcp                                                                   homer
+f505c56e7a24   jrcs/letsencrypt-nginx-proxy-companion   "/bin/bash /app/entr…"   3 months ago   Up 2 days                                                                                            letsencrypt-nginx
+97486b8aa958   jwilder/nginx-proxy                      "/app/docker-entrypo…"   3 months ago   Up 2 days                 0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp   nginx-proxy
+```
 
+可以看到即使跑了这么多应用，内存连一半都没有用完。CPU 也不过刚刚 1/4，性能还是挺满意的。
+
+![hosthatch monitor](/assets/hosthatch-monitor-20211129211043.png)
+
+日常可以注册一下 [HostHatch](https://hosthatch.com/a?id=2135)，通常会在论坛或者邮件中通知有优惠。
 
 ## reference
 
