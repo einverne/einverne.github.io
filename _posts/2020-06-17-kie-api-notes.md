@@ -64,6 +64,16 @@ KieSession 是和工作流引擎交互的最常用的方式，KieSession 允许�
 
 每一个 KieBase 都可以有一个或者多个 KieSessions.
 
+## KieSession 是否是线程安全的
+
+KieContainer 是线程安全的。
+
+`KieContainer.newStatelessKieSession()` 和 
+
+
+`KieContainer.newKieSession()` 方法是线程不安全的。
+
+
 ## 有状态 Session 和无状态 Session 区别
 Drools 的 Session 分为有状态和无状态。
 

@@ -126,6 +126,10 @@ Linux 会存储下面的时间：
 - `-mtime +1` 表示的查找时间超过 1 天的内容
 - `-exec` 后面表示对搜索的结果进行处理
 
+或者直接使用 `-delete`:
+
+    find /path/to/folder/* -mtime +1 -delete
+
 ### 删除目录下空文件夹
 
 	find path/to/folder -type d -empty -print
