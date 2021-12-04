@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "配置 Tmux 的插件提高效率"
+title: "常用的 Tmux 的插件使用记录"
+aliases: "常用的 Tmux 的插件使用记录"
 tagline: ""
 description: "介绍目前我在使用的 Tmux 插件们"
 category: 学习笔记
@@ -15,7 +16,7 @@ Vim 有自己的插件管理系统，zsh 也有插件管理，那当然 Tmux 肯
 
 ## Tmux Plugin Manager
 
-安装的方法，在 GitHub 的页面非常清楚，`git clone` 项目，在 `.tmux.conf` 文件中加入配置，重新加载配置即可。
+安装的方法，在 GitHub 的页面非常清楚，`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` 项目，在 `.tmux.conf` 文件中加入配置，重新加载配置即可。
 
     # List of plugins
     set -g @plugin 'tmux-plugins/tpm'
@@ -33,13 +34,12 @@ Vim 有自己的插件管理系统，zsh 也有插件管理，那当然 Tmux 肯
 
     set -g @plugin '...'
 
-这样，再使用 `<prefix>` + <kbd>I</kbd> 大写的 I (Install) 来安装新插件
+三个操作：
 
-卸载插件时，配置文件中移除一行，并使用 `<prefix>` + <kbd>alt</kbd> + <kbd>u</kbd> (uninstall) 来卸载。
-
-更新所有插件的快捷键是 `<prefix>` + <kbd>U</kbd>，记住是大写的 `U`.
-
-然后还有一个移除列表中不存在的所有插件 `<prefix> + Alt + u`
+- 这样，再使用 `<prefix>` + <kbd>I</kbd> 大写的 I (Install) 来安装新插件
+- 卸载插件时，配置文件中移除一行，并使用 `<prefix>` + <kbd>alt</kbd> + <kbd>u</kbd> (uninstall) 来卸载。
+- 更新所有插件的快捷键是 `<prefix>` + <kbd>U</kbd>，记住是大写的 `U`.
+- 然后还有一个移除列表中不存在的所有插件 `<prefix> + Alt + u`
 
 ## tmux-yank
 
@@ -53,7 +53,7 @@ Linux 平台下需要安装依赖 xsel 或者 xclip
 
     sudo apt-get install xsel # or xclip
 
-快捷键
+一些常用的快捷键
 
 ### 在 normal mode 下
 在普通模式下

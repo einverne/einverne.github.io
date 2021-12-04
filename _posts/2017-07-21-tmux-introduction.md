@@ -1,23 +1,23 @@
 ---
 layout: post
-title: "Tmux 使用介绍"
+title: "终端复用工具 Tmux 使用介绍"
+aliases: "终端复用工具 Tmux 使用介绍"
 tagline: ""
 description: "非常棒的终端复用工具，和 Vim 一样，上手难，但使用起来非常方便"
 category: 学习笔记
-tags: [tmux, linux, command]
+tags: [tmux, linux, command, screen, terminal]
 last_updated:
 ---
 
-Tmux 是一个很棒的终端复用工具，和 screen 命令类似，但是 Tmux 终极的分屏功能要比 screen 强大很多，当然入门也比 screen 要高很多。如果你长时间在终端进行编程或者操作，或者你陷入无数的 Tab 而无法自拔，那么你应该需要开始了解一些 Tmux。
+Tmux 是一个很棒的终端复用工具，和 screen 命令类似，但是 Tmux 终极的分屏功能要比 screen 强大很多，当然入门也比 screen 要高很多。如果你长时间在终端进行编程或者操作，或者你陷入无数的 Tab 而无法自拔，那么你应该需要开始了解一些 Tmux 的基本使用。
 
 本文会从如下几个方面对 Tmux 进行介绍：
 
 1. Tmux 基本使用
 2. Tmux 的基本模块
-        - Windows
-        - Panes
-        - Sessions
-
+    - Windows
+    - Panes
+    - Sessions
 
 Tmux 主要包括以下几个模块：
 
@@ -26,29 +26,29 @@ Tmux 主要包括以下几个模块：
 - pane 面板：一个窗口可以包含多个面板，如果桌面足够大可以充分利用面板达到非常强大的分屏
 
 ## 安装 {#install}
-
-Ubuntu/Debian 系下
+Ubuntu/Debian 下:
 
 	sudo apt-get install tmux
 
 ## 系统选项 {#options}
 Tmux 和其他系统的命令一样拥有很多的启动选项，在 `man tmux` 里面能看到很多。比如 `-2` 就是启动 256 colours 支持。
 
-另外不如想要加载自己的 configuration file 可以使用 `-f file` 来指定。默认情况下，**tmux** 会加载系统配置 `/etc/tmux.conf` 然后是用户配置 `~/.tmux.conf`。如果配置了该选项，tmux 会在启动时加载，如果配置发生错误，那么会在第一个 session 创建时报错，然后继续处理下面的配置文件。
+默认情况下，**tmux** 会加载系统配置 `/etc/tmux.conf` 然后是用户配置 `~/.tmux.conf`。如果配置了该选项，tmux 会在启动时加载，如果配置发生错误，那么会在第一个 session 创建时报错，然后继续处理下面的配置文件。
+
+如果不想要加载自己的配置文件可以在启动的时候使用 `-f file` 来指定。
 
 ## 基础概念 {#basic}
 Tmux is a tool that allows running multiple terminal sessions through a single terminal window. It allows you to have terminal sessions running in the background and attach and detach from them as needed, which is very useful.
 
 ### Tmux 的前缀快捷键 {#tmux-prefix}
-
-Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和 screen 默认激活控制台的 <kbd>Ctrl</kbd>+<kbd>a</kbd> 不同，Tmux 默认的是 <kbd>Ctrl</kbd>+<kbd>b</kbd>。当想要使用 Tmux 的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。 例如，假如你想通过快捷键列出当前 Tmux 中的 session（对应的快捷键是 s），那么你只需要做以下几步：
+Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件的快捷键互不干扰，Tmux 提供了一个快捷键前缀，和 screen 默认激活控制台的 <kbd>Ctrl</kbd>+<kbd>a</kbd> 不同，Tmux 默认的是 <kbd>Ctrl</kbd>+<kbd>b</kbd>。当想要使用 Tmux 的快捷键时，需要先按下快捷键前缀，然后再按下快捷键。Tmux 所使用的快捷键前缀**默认**是组合键 Ctrl-b（同时按下 Ctrl 键和 b 键）。假如你想通过快捷键显示当前 Tmux 中的 session 列表（对应的快捷键是 s），那么你只需要做以下几步：
 
 1. 按下组合键 `Ctrl-b` (Tmux 快捷键前缀）
 2. 放开组合键 `Ctrl-b`
-3. 按下 `s` 键
+3. 然后按下 `s` 键
+4. 在显示的列表中选择
 
-
-使用快捷键之后就可以执行一些相应的指令了。当然如果你不习惯使用 `Ctrl+b`，也可以在 `~/.Tmux` 文件中加入以下内容把快捷键变为 Ctrl+a, 或者其他快捷键：
+使用快捷键之后就可以执行一些相应的指令了。当然如果你不习惯使用 `Ctrl+b`，也可以在 `~/.tmux.conf` 文件中加入以下内容把快捷键变为 Ctrl+a, 或者其他快捷键：
 
 	# Set prefix key to Ctrl-a
 	unbind-key C-b
@@ -63,16 +63,15 @@ Tmux 的快捷键前缀（Prefix）, 为了使自身的快捷键和其他软件�
 
 	bind r source-file ~/.tmux.conf \; display-message "tmux config reloaded" # create new short cut to reload tmux.conf
 
-这样配置了之后，每当向 ~/.tmux.conf 文件中添加了新的配置，只需要按下 `<prefix> r` 就可以重新加载配置并使新的配置生效，从而免去了开启一个新的会话。
-
+这样配置了之后，每当向 ~/.tmux.conf 文件中添加了新的配置，只需要按下 `<prefix> r` 就可以重新加载配置并使新的配置生效，从而免去了开启一个新的会话使之生效的步骤。
 
 以下所有的操作都是激活控制台之后，即键入 `<prefix>` 前提下才可以使用的命令
 
 基本操作
 
 	<prefix> ?    列出所有快捷键；按 q 返回
-	<prefix> d    脱离当前会话，可暂时返回 Shell 界面，输入`tmux attach`能够重新进入之前会话
-	<prefix> s    选择并切换会话 session；在同时开启了多个会话时使用
+	<prefix> d    Detach当前会话，可暂时返回 Shell 界面，输入`tmux attach`能够重新进入之前会话
+	<prefix> s    切换会话 session；在同时开启了多个会话时使用
 	<prefix> D    选择要脱离的会话；在同时开启了多个会话时使用
 	<prefix> :    进入命令行模式；此时可输入支持的命令，例如 kill-server 所有 Tmux 会话
 	<prefix> [    复制模式，光标移动到复制内容位置，空格键开始，方向键选择复制，回车确认，q/Esc 退出
@@ -122,14 +121,14 @@ window（窗口）在 session 里，一个 session 可以有 N 个 window，并�
 
 ## pane 相关 {#pane}
 
-pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 window 里移动、合并、拆分
+pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 window 里移动、合并、拆分。
 
 创建 pane:
 
 	<prefix> " 		横切 split pane horizontal，后面会 remap 这个键
 	<prefix> %      竖切 split pane vertical，后面 remap 这个键
 	<prefix> o 		按顺序在 pane 之间移动
-	<prefix> x      **关闭 pane**
+	<prefix> x      关闭 pane
 	<prefix> z      最大化 pane 和恢复原状 toggle pane zoom
 	<prefix> !      移动 pane 至 window
 	<prefix> "空格" 更换 pane 排版
@@ -137,7 +136,6 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> } 		移动 pane 往右边，往下面
 	<prefix> q 		显示 pane 编号，在显示编号的时候按对应数字可以切换到该 pane，这个操作太复杂，后面 remap
 	<prefix> 方向键上下左右   	上下左右选择 pane
-
 
 调整 pane 的大小
 
@@ -153,19 +151,15 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> :resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
 
 
-
-
 ## 其他低频率操作
 
 在上下左右的调整里，最后的参数可以加数字 用以控制移动的大小，例如：
 
 	<prefix> :resize-pane -D 50
 
-
 移动 pane 合并至某个 window
 
 	<prefix> :join-pane -t $window_name
-
 
 列出缓冲区目标
 
@@ -184,19 +178,16 @@ vi 模式
 
 	<prefix> ? (<prefix> :list-keys)
 
-
 Tmux 内置命令帮助
 
 	<prefix> :list-commands
-
-
 
 ## TIPS
 
 让你的 Tmux 更加高效，一下内容都可以编辑进 `~/.tmux.conf` 用来进一步自定义 Tmux 的行为。 默认的 Tmux 有很多操作方式可能比较 [awkward](http://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/), 只有自己配置让自己熟悉他的行为之后才能让 Tmux 展现出最高效的部分。
 
 ### 自定义 Prefix
-在前面也说过， Tmux 默认的 Prefix 是 Ctrl + b，可以按照自己的习惯设定 Prefix 快捷键，很多人将 Caps 和 Ctrl 互换，并且将 Prefix 定义为 Ctrl + a, 我自己使用了以下还是不怎么习惯，所以我将 Prefix 定义成了 Ctrl + \
+在前面也说过， Tmux 默认的 Prefix 是 <kbd>Ctrl</kbd> + <kbd>b</kbd>，可以按照自己的习惯设定 Prefix 快捷键，很多人将 Caps 和 Ctrl 互换，并且将 Prefix 定义为 Ctrl + a, 我自己使用了以下还是不怎么习惯，所以我将 Prefix 定义成了 Ctrl + \
 
 ### 定义分割 pane 的快捷键
 
@@ -226,6 +217,7 @@ Tmux 内置命令帮助
     export TERM="xterm-256color"
 
 ### 复制模式
+如果要在 Tmux 中进行复制可以使用 Tmux 的复制模式。
 Tmux 中的复制需要使用 `<prefix> [` 来进入，具体分为如下几步：
 
 - `<prefix> [` 进入复制模式
@@ -260,6 +252,9 @@ X Windows 系统中常用的 Xterm，GNU Screen，SSH， GNome 中的 Terminal�
     set -g status-utf8 on
 
 该配置已经被废弃。
+
+## 最后
+最后我的 [dotfiles](https://github.com/einverne/dotfiles) 配置中有我过去多年使用的配置。
 
 ## reference
 

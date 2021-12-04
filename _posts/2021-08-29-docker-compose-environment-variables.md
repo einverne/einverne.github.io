@@ -40,7 +40,7 @@ services:
       - DB_NAME=
 ```
 
-同样也可以使用 `.env` 文件来设定。
+同样也可以使用 `.env` 文件来设定。Compose 会自动寻找 compose 文件同级目录的 `.env` 文件，并自动使用 `.env` 文件中的环境变量值覆盖 shell environment 中的内容。
 
 ## Docker 使用环境变量
 配置可以包含 environment variables，Compose 会使用 Shell 的环境变量值作为这些配置值。
@@ -86,11 +86,13 @@ web:
 ## 环境变量优先级
 上面提到了多种环境变量使用的方式，Compose 在选择环境变量时按照如下的优先级：
 
-- `docker-compose.yml` 文件中的
-- Shell 环境变量
-- 环境文件
+- `docker-compose.yml` 文件中的 environment 设置
+- Shell 中指定的环境变量
+- 环境文件 `.env`
 - Dockerfile
+- Variable is not defined
 
+也就是说 compose 文件中定义的 environment 优先级是最高的。
 
 ## reference
 

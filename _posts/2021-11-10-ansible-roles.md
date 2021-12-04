@@ -180,14 +180,14 @@ roles_path    = /etc/ansible/roles:/usr/share/ansible/roles
 ```
 
 
-## 创建role
+## 使用 ansible-galaxy 创建 role
+可以使用 `ansible-galaxy role init role_name` 来创建 role，这个命令会创建一个目录结构。
 
-- 创建以roles命名的目录：
+- 创建以roles命名的目录
 - 在roles目录中分别创建以各角色命名的目录，如webserver等
 - 在每个角色命名的目录中分别创建files、handlers、meta、tasks、templates和vars目录；用不到的目录可以创建为空目录，也可以不创建
-- 在playbook文件中，调用各角色
 
-可以使用 `ansible-galaxy role init role_name` 来创建 role，这个命令会创建一个目录结构。
+使用 ansible-galaxy 创建的 role 会有一些初始化的设定，在 meta/main.yml 中可以看到基础的 `galaxy_info` 配置，包括了作者信息，协议等等。
 
 
 ### role内各目录中可应用的文件
