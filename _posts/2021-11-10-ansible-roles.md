@@ -13,6 +13,8 @@ last_updated:
 
 之前简单的了解过一下 Ansible，但没怎么具体使用起来，这两天因为要管理的机器多了起来，所以又把 Ansible 学了起来。这篇文章就主要了解一下 Ansible Roles 的使用。
 
+之前的文章简单的知道在 Ansible 中可以使用 playbook 来组织一系列的任务。但如果要复用这些任务，并且更加模块化的花，那就离不开 Ansible Roles。
+
 ## Role 用来解决的问题
 之前的文章中也说过可以使用 playbook 来管理一系列的任务，但随着使用 playbook 就不可以免的膨胀，可能会出现上百行的 playbook，那为了复用和结构化地组织 playbook, Ansible 在 1.2 版本引入了 Roles 的概念。
 
@@ -51,13 +53,13 @@ roles/
 默认情况下 Ansible 会自动寻找每一个目录下的 `main.yml` 文件（`main.yaml` 或者 `main`)。
 
 - `tasks/main.yml`，role 需要执行的主要任务
-- `handlers/main.yml`，可能会被使用的 handlers
+- `handlers/main.yml`，可能会被使用的 handlers，可以由该 role 使用，也可以被 role 之外的其他任务使用
 - `library/my_module.py` modules
 - `defaults/main.yml` 默认变量
 - `vars/main.yml` role 的其他变量
-- `files/main.yml` files that the role deploys
+- `files/main.yml` files that the role deploys，role 需要使用的文件
 - `templates/main.yml` templates that the role deploys
-- `meta/main.yml` metadata
+- `meta/main.yml` metadata，角色依赖
 
 ### Storing and finding roles
 默认情况下 Ansible 会在下面两个位置寻找 Roles:

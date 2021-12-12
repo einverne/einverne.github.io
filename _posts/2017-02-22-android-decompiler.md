@@ -14,9 +14,11 @@ last_updated:
 ## 概述
 反编译 Android APK 主要需要依靠如下几个工具:
 
-- apktool：A tool for reverse engineering Android apk files 查看 APK 包中的 AndroidManifest.xml 等 XML 资源文件
-- dex2jar：Tools to work with android .dex and java .class files 将 APK 包中的 Dalvik 字节码文件（.dex）转换为 .jar 文件
-- JD-GUI：Java Decompiler is a tools to decompile and analyze Java 5 “byte code” and the later versions 查看 .jar 文件的 Java 源码
+- `apktool`：A tool for reverse engineering Android apk files 查看 APK 包中的 `AndroidManifest.xml` 等 XML 资源文件 
+    - apk 本质上是一种压缩包，可以通过解压的方式获得资源文件，但是如果直接解压 manifest 和 XML 都是乱码，所以需要 apktool 工具来获得资源文件
+- `dex2jar`：Tools to work with android .dex and java .class files 将 APK 包中的 Dalvik 字节码文件（.dex）转换为 .jar 文件
+- `JD-GUI`：Java Decompiler is a tools to decompile and analyze Java 5 “byte code” and the later versions 查看 .jar 文件的 Java 源码
+    - jd-gui 可以用来查看上一步中从 dex 文件得到的 jar
 
 相关项目及工具地址后文贴出。
 
@@ -32,7 +34,7 @@ Apktook 是一个反编译(reverse engineering) 工具，可以用来反编译An
 
 地址: <https://ibotpeaches.github.io/Apktool/>
 
-###  apktool 安装 {#apktool-installation}
+### apktool 安装 {#apktool-installation}
 
 各平台的安装[指南](https://ibotpeaches.github.io/Apktool/install/)，如果使用 Linux 可以使用如下简易步骤：
 

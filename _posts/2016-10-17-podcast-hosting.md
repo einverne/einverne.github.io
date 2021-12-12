@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Podcast 托管"
+aliases: "Podcast 托管"
 tagline: ""
 description: "Podcast 托管，及申请攻略"
 category: 经验总结

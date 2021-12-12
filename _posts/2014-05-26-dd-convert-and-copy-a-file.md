@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：dd 读取转换输出数据"
+aliases: "每天学习一个命令：dd 读取转换输出数据"
 tagline: ""
 description: ""
 category: 学习笔记

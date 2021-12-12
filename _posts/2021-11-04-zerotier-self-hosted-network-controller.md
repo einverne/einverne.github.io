@@ -106,8 +106,8 @@ MYADDR=your.ip
 
 除了 ztncui 这一个用户界面，还有一些在逐渐发展的，可以根据自己需要挑选：
 
-- [thedunston / bash_cli_zt](https://github.com/thedunston/bash_cli_zt) - Command Line interface for self-hosted ZeroTier.
--  [dec0dOS / zero-ui](https://github.com/dec0dOS/zero-ui) - GUI for self-hosted ZeroTier.
+- [thedunston/bash_cli_zt](https://github.com/thedunston/bash_cli_zt) - Command Line interface for self-hosted ZeroTier.
+-  [dec0dOS/zero-ui](https://github.com/dec0dOS/zero-ui) - GUI for self-hosted ZeroTier.
 -  [mdplusplus/zerotier-network-controller-ui](https://hub.docker.com/r/mdplusplus/zerotier-network-controller-ui) - Docker image for self-hosted ZeroTier.
 
 
