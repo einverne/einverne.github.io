@@ -49,6 +49,10 @@ h2 {
     font-size: 1em;
 }
 
+a {
+    word-break: break-all;
+}
+
 #toc {
     margin-top: 10px;
     border: 1px solid #e2e2e2;
@@ -200,7 +204,7 @@ p img {
 }
 
 .post-content ::selection {
-    background-color: #dee2e6; 
+    background-color: #dee2e6;
  }
 
 
