@@ -2,7 +2,7 @@
 <html itemscope itemtype="http://schema.org/Blog">
   <head>
     <meta charset="utf-8">
-<!--		<link rel="manifest" href="/pwa/manifest.json">-->
+		<link rel="manifest" href="/pwa/manifest.json">
 
 		<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">
@@ -21,18 +21,23 @@
     <!--[if lt IE 9]>
       <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
-<!--  <script>-->
-<!--      if ('serviceWorker' in navigator) {-->
-<!--          window.addEventListener('load', function () {-->
-<!--              navigator.serviceWorker.register('/sw.js');-->
-
-<!--              //navigator.serviceWorker.ready always resolve-->
-<!--              navigator.serviceWorker.ready.then(function (registration) {-->
-<!--                  console.log('Service worker successfully registered on scope', registration.scope);-->
-<!--              });-->
-<!--          });-->
-<!--      }-->
-<!--  </script>-->
+  <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function () {
+              navigator.serviceWorker
+									.register('/sw.js')
+									.then(function(registration) {
+										console.log("Successfully registered service worker", registration.scope);
+									}).catch(function(err) {
+										console.log("Service worker registration failed: ", err);
+									});
+              //navigator.serviceWorker.ready always resolve
+              navigator.serviceWorker.ready.then(function (registration) {
+                  console.log('Service worker successfully registered on scope', registration.scope);
+              });
+          });
+      }
+  </script>
 	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
 
 	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
@@ -57,7 +62,6 @@
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-W2LDG64');</script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
   </head>
 
   <body>
@@ -123,7 +127,7 @@
       <div class="container">
         <div class="row mobilepadding">
           			<hr>
-      &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/einverne" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
+      &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/{{ site.author.github }}" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a>.
       <br><br>
       </div>
     </div>
@@ -149,20 +153,7 @@
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
 	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.bootstrap-autohidingnavbar.min.js"></script>
 	<script type="text/javascript" src="{{ ASSET_PATH }}/anchor.min.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.qrcode.min.js"></script>
-<!--  <script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>-->
 
-  <!-- MathJax -->
-<!--  <script type="text/x-mathjax-config">-->
-<!--		MathJax.Hub.Config({-->
-<!--			tex2jax: {-->
-<!--				inlineMath: [['$','$'], ['\\(','\\)']],-->
-<!--				displayMath: [ ['$$','$$'], ["\\[","\\]"] ],-->
-<!--				processEscapes: true-->
-<!--			}-->
-<!--		});-->
-<!--	</script>-->
-<!--  <script async type="text/javascript" src="{{ ASSET_PATH }}/MathJax-2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>-->
 	<script type="text/javascript" async>
 		window.___gcfg = {lang: 'zh-CN'};
 		(function() {
