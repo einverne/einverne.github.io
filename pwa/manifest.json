@@ -1,11 +1,12 @@
 {
   "name": "Verne in GitHub",
   "short_name": "Verne's Blog",
-  "description": "learning notes",
+  "description": "学习笔记、技术博客、生活随笔",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "standalone",
   "Scope": "/",
+  "id": "/",
   "start_url": "/",
   "orientation": "portrait",
   "icons": [
