@@ -2,52 +2,43 @@
 <html itemscope itemtype="http://schema.org/Blog">
   <head>
     <meta charset="utf-8">
-		<link rel="manifest" href="/pwa/manifest.json">
-
-		<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
+	<link rel="manifest" href="/pwa/manifest.json">
+	<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">
     <meta itemprop="description" content="{{ page.description }}">{% endif %}
 		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
-    <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="theme-color" content="#2196F3">
-		<meta name="google-site-verification" content="puZt0ZyqB-t67BYdYAgLUyIPBeismG68J0dmEc01QeY" />
+	<meta name="theme-color" content="#2196F3">
+	<meta name="google-site-verification" content="puZt0ZyqB-t67BYdYAgLUyIPBeismG68J0dmEc01QeY" />
 
 	{% if page.url == "/404.html" %}
 		<meta http-equiv = "refresh" content = "3;url=/">
 	{% endif %}
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
-    <![endif]-->
-  <script>
-      if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function () {
-              navigator.serviceWorker
-									.register('/sw.js')
-									.then(function(registration) {
-										console.log("Successfully registered service worker", registration.scope);
-									}).catch(function(err) {
-										console.log("Service worker registration failed: ", err);
-									});
-              //navigator.serviceWorker.ready always resolve
-              navigator.serviceWorker.ready.then(function (registration) {
-                  console.log('Service worker successfully registered on scope', registration.scope);
-              });
-          });
-      }
-  </script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-2.1.3.min.js"></script>
+    <script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+				navigator.serviceWorker
+										.register('/sw.js')
+										.then(function(registration) {
+											console.log("Successfully registered service worker", registration.scope);
+										}).catch(function(err) {
+											console.log("Service worker registration failed: ", err);
+										});
+				//navigator.serviceWorker.ready always resolve
+				navigator.serviceWorker.ready.then(function (registration) {
+					console.log('Service worker successfully registered on scope', registration.scope);
+				});
+			});
+		}
+    </script>
+	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-3.6.0.slim.min.js"></script>
 
 	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
-	<!-- Add fancyBox -->
-	<link rel="stylesheet" href="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
-		<!--<link href="/css/syntax.css" rel="stylesheet" type="text/css" media="all">-->
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ BASE_PATH }}/images/favicon.ico">
@@ -65,8 +56,8 @@
   </head>
 
   <body>
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LDG64"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2LDG64"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
           <div class="row mobilepadding">
@@ -135,51 +126,8 @@
 
     {% include JB/analytics %}
 
-	<script type="text/javascript" src="{{ ASSET_PATH }}/google-code-prettify/prettify.js?skin=desert"></script>
-	<script async type="text/javascript">
-		$(function(){
-    	$("pre").addClass("prettyprint");
-    	prettyPrint();
-      $('table').addClass('table table-hover');
-      $('.navbar').click(function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
-      })
-  	});
-	</script>
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery.bootstrap-autohidingnavbar.min.js"></script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/anchor.min.js"></script>
 
-	<script type="text/javascript" async>
-		window.___gcfg = {lang: 'zh-CN'};
-		(function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/platform.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-	</script>
-	<script async>
-		$(document).ready(function() {
-			$("p img").each(function(){
-				var strA = "<a class='fancybox' rel='gallery' href='" + this.src + "'></a>";
-				$(this).wrapAll(strA);
-			});
-			$(".fancybox").fancybox({
-				padding: 0,
-				beforeShow: function(){
-					var alt = this.element.find('img').attr('alt');
-					this.inner.find('img').attr('alt', alt);
-					this.title = alt;
-				}
-			});
-			$(".navbar-fixed-top").autoHidingNavbar({
-				'animationDuration': 300
-			});
-		});
-	</script>
-  </body>
+ </body>
 </html>
