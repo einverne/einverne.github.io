@@ -101,7 +101,7 @@ GEM
     html-pipeline (2.14.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
-    html-proofer (3.19.1)
+    html-proofer (3.19.2)
       addressable (~> 2.3)
       mercenary (~> 0.3)
       nokogumbo (~> 2.0)
@@ -236,8 +236,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
-      racc (~> 1.4)
     nokogumbo (2.0.5)
       nokogiri (~> 1.8, >= 1.8.4)
     octokit (4.21.0)
@@ -285,7 +283,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
-  x86_64-linux
 
 DEPENDENCIES
   github-pages
