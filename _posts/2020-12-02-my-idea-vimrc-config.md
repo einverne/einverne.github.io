@@ -160,6 +160,6 @@ nnoremap tp :action ActivateProjectToolWindow<CR>
 - <https://ikenox.info/blog/getting-started-ideavim/>
 
 
-[[常用的 IDEA 插件]]
+[[idea-plugins]]
 
 category: [[IntelliJ IDEA]] [[编程工具]] [[学习笔记]]

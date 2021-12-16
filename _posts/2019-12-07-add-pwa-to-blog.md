@@ -38,7 +38,7 @@ last_updated:
 		  }
 	  </script>
 
-关于 sw.js 比较复杂， 可以参考文末 Google 的文档。
+关于 `sw.js` 比较复杂， 可以参考文末 Google 的文档。
 
 ## Manifest
 

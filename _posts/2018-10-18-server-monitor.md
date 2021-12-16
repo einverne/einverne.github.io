@@ -4,11 +4,30 @@ title: "服务器监控整理"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [server, monitor, collection, ]
+tags: [server, monitor, collection, linux]
 last_updated:
 ---
 
+手上的 VPS 多余一台的时候总是想着通过一个统一的界面来监控管理。
+
+
+## 需要监控的项
+
+- VPS 及服务在线时间
+- 从某地到该 VPS 的 ping 值稳定程度 smokeping
+- 该 VPS 各项资源的使用情况，包括 CPU，内存，IO，网络带宽使用
+
+
+
 之前也有分享过两个很不错的服务器监控程序 [nodequery](/post/2017/08/nodequery.html) 和 [netdata](/post/2018/02/netdata.html)。之后又陆陆续续发现了其他一些不错的监控程序，所以就顺手整理一下。
+
+## Zabbix
+Zabbix 是一个企业级的开源监控方案。
+
+GPL开源协议。
+
+## Cockpit
+[[Cockpit]] 是一款开源的Linux服务器管理解决方案。可以执行如启动容器，管理存储，配置网络，检查日志等操作。它能够同时控制和监控多台服务器。它提供的主要功能如：可视化的监控系统性能，管理Docker容器，终端窗口中基于Web，管理用户帐号，收集系统配置和诊断信息，修改网络设置等。它的配置文档也很实用，可以快速安装并开始监控服务器。
 
 ## nodequery
 
@@ -34,6 +53,22 @@ netdata 是一款开源的监控程序，安装简单，安装之后会开启一
 
 主页：<https://www.ezservermonitor.com/>
 源码：<https://github.com/shevabam/ezservermonitor-web>
+
+## Nezha monitor
+
+- [[2021-08-28-nezha-monitor]]
+
+## Datadog
+
+
+- <https://www.datadoghq.com/>
+
+
+## EHEH
+一个闭源的监控平台，类似于 Nodequery，安全性待评估。
+
+- <https://eheh.org/index/index>
+
 
 ## reference
 

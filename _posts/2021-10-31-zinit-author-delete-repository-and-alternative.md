@@ -35,6 +35,6 @@ last_updated:
 ## reference
 
 - [使用 zinit 管理 zsh 插件 代替 Antigen](/post/2020/10/use-zinit-to-manage-zsh-plugins.html)
-- [[2020-10-17-use-zinit-to-manage-zsh-plugins|使用 zinit 管理 zsh 插件 完美代替 Antigen]]
+- [[2020-10-17-use-zinit-to-manage-zsh-plugins]]
 - [Reddit discuss](https://www.reddit.com/r/zinit/comments/ffohjj/zinit_project_status_paranoia/)
 - <https://github.com/nuta/nsh>

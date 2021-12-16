@@ -40,6 +40,7 @@ last_updated:
 
 Decorator 模式重点在于责任，在于**保持对外接口一致**的情况下扩展接口功能。这是符合开闭原则的一个模式。
 
+[[decorator design pattern]]
 
 ## 代理模式 {#proxy}
 代理模式给某个对象提供代理，由代理对象控制原对象的引用。
