@@ -21,7 +21,7 @@ rsync 是一个功能非常强大的工具，其命令也有很多功能选项�
 - 安全：可以使用 scp、ssh 等方式来传输文件，当然也可以通过直接的 socket 连接
 - 支持匿名传输，以方便进行网站镜像
 
-rysnc 的官方网站：<http://rsync.samba.org/>，可以从上面得到最新的版本。
+rsync 的官方网站：<http://rsync.samba.org/>，可以从上面得到最新的版本。
 
 ## rsync 的使用
 

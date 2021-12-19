@@ -61,6 +61,8 @@ Music > Artist > Album Name > Audio
 
 > ID3 是一个位于 mp3 文件开头或结尾若干字节的附加信息，包含了该 mp3 歌手，标题，专辑，年代，风格等等信息。
 
+[[ID3 tags]] 通常会被播放器用来展示其基本信息，包括封面，歌手，专辑等等。
+
 #### MusicBrainz Picard
 
 MusicBrainz Picard 是一个 Python 编写的、开源的（GPL 2.0）、跨平台的音乐文件元数据管理工具。很早之前在 Windows 上用过 一款叫做 Mp3tag 的软件，MusicBrainz Picard 就是类似的工具。

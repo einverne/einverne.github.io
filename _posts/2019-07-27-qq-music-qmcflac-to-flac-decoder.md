@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "QQ 音乐 qmcflac 文件解密"
+aliases: "QQ 音乐 qmcflac 文件解密"
 tagline: ""
 description: ""
 category: 学习笔记
