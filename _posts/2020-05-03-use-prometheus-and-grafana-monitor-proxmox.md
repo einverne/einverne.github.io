@@ -119,7 +119,7 @@ EOF
 	apt install python python-pip
 	pip install prometheus-pve-exporter
 
-创建授权配置
+创建授权配置：
 
 	vi /etc/prometheus/pve.yml
 
@@ -131,7 +131,7 @@ EOF
 		verify_ssl: false
 
 
-在这里要注意一个坑，使用 prometheus-pve-exporter 依赖于 Proxmox 的用户授权，而这里的用户需要到 Proxmox 后台，DataCenter -> user 标签下查看，对于我而言，这里需要填写 `root@pam`.
+在这里要注意一个坑，使用 `prometheus-pve-exporter` 依赖于 Proxmox 的用户授权，而这里的用户需要到 Proxmox 后台，DataCenter -> user 标签下查看，对于我而言，这里需要填写 `root@pam`.
 
 systemd
 
@@ -195,7 +195,7 @@ reload systemd
 
 [^add]: <https://forum.proxmox.com/threads/i-cant-create-a-password-for-a-second-user.16471/>
 
-pve_exporter 所能提供的打点 Metrics 大致有如下一些：
+`pve_exporter` 所能提供的打点 Metrics 大致有如下一些：
 
 	pve_cluster_info
 	pve_cpu_usage_limit
