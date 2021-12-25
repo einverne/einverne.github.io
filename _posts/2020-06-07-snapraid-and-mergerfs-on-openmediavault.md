@@ -26,11 +26,12 @@ MergerFS 则是一个联合文件系统，可以将多块硬盘挂载到一个�
 选用 MergerFS 另外一个理由就是，通过 MergerFS 合并的目录并不会对数据进行条带化的处理，每块硬盘上还是保存原来的文件目录和文件，任意一块硬盘单独拿出来放到其他系统上，不需要额外的逻辑卷的配置，就可以直接挂载读取这个硬盘的数据。
 
 ### 创建 MergerFS pool
+通过如下步骤创建 MergerFS 磁盘池：
 
 - Storage > Union Filesystems
 - Add
 - Give the pool a name
-- In the **Branches** 选项中，选择所有要合并的磁盘，这里不要选 parity 的磁盘
+- In the **Branches** 选项中，选择所有要合并的磁盘，这里**不要选 parity 的磁盘**
 - 在 **Create policy** 中选择 **Most free space**
 - **Minimum free space** 中选择一个合适的大小，默认也可以
 - **Option** 中，默认
@@ -42,7 +43,7 @@ MergerFS 则是一个联合文件系统，可以将多块硬盘挂载到一个�
 在创建了 MergerFS Pool 后，在 OpenMediaVault 的文件目录 `/srv` 目录下会多出一个文件夹，这个文件夹就会存放 MergerFS Pool 中的数据。
 
 ## SnapRAID
-[SnapRAID](https://www.snapraid.it/) 是一个磁盘阵列的冗余备份工具，它可以存储额外的奇偶校验信息用来恢复数据。
+[SnapRAID](https://www.snapraid.it/) 是一个磁盘阵列的冗余备份工具，它可以存储额外的奇偶校验信息用来校验数据，以便在磁盘发生故障时恢复数据。
 
 SnapRAID 适用于家庭媒体服务器，适合于存储多数不经常变动的大文件场景。
 

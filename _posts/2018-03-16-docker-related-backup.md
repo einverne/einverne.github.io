@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "备份 Docker 镜像容器和数据"
+title: "备份 Docker 镜像容器和数据以及无痛迁移"
+alias: "备份 Docker 镜像容器和数据以及无痛迁移"
 tagline: ""
 description: ""
 category: [ 学习笔记 , Docker]

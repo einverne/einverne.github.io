@@ -34,9 +34,36 @@ last_updated:
 
 	sudo apt install transmission-cli
 
+创建一个 torrent:
+
+```
+transmission-create -o path/to/example.torrent --tracker tracker_announce_url --piecesize 2048 path/to/file_or_directory
+```
+
+创建一个私有 Torrent：
+
+```
+transmission-create -p -o path/to/example.torrent --tracker tracker_announce_url --piecesize 2048 path/to/file_or_directory
+```
+
+说明：
+
+- `-p`: 私有种子，不使用 DHT
+- `-o`: 生成 torrent 文件路径
+- `-t`: tracker 地址
+- `-s`: 每个文件块大小(kb 单位，普通设置 2048即可)
+- `-c`: 备注，评论
+
+创建一个带 comment 的 torrent:
+
+```
+transmission-create -o path/to/example.torrent --tracker tracker_url1 -c comment path/to/file_or_directory
+```
+
+
 ## mktorrent
 
-或者使用 mktorrent 命令也能够快速的制作 torrent 文件
+或者使用 `mktorrent` 命令也能够快速的制作 torrent 文件
 
 	sudo apt install mktorrent
 

@@ -167,6 +167,7 @@ last_updated:
 跟多的详细配置可以参考官网[文档](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files)
 
 ## Add tracker
+选择合适的 [[Tracker]] 可以显著的提升下载体验。
 可以从下面两个地址中找到每天更新的 Tracker 服务器地址：
 
 - <https://github.com/ngosang/trackerslist>

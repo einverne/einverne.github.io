@@ -21,6 +21,12 @@ last_updated:
 
 之前也有分享过两个很不错的服务器监控程序 [nodequery](/post/2017/08/nodequery.html) 和 [netdata](/post/2018/02/netdata.html)。之后又陆陆续续发现了其他一些不错的监控程序，所以就顺手整理一下。
 
+## SyAgent
+SyAgent 是我在 LET 上面看到的一个选项，不过该网站由个人运营维护。
+
+- <https://syagent.com/>
+
+
 ## Zabbix
 Zabbix 是一个企业级的开源监控方案。
 
