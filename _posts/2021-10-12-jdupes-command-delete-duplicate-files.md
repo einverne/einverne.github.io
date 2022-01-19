@@ -43,7 +43,7 @@ jdupes 提供了 `-d` 选择，如果使用 `-d` 选项，jdupes 会弹出提示
 
 `-O` 选择可以让用户控制出现在第一条的文件，以便将其保留。
 
-    jdupes -N -r -O dir1 dir2
+    jdupes -nrdNO dir1 dir2
 
 上面的命令会递归查找 dir1 和 dir2 中的文件，并自动将 dir2 中和 dir1 重复的文件删除。
 

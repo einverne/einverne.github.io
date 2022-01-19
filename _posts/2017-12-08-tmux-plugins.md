@@ -9,14 +9,15 @@ tags: [tmux, linux, terminal, 终端工具 , ]
 last_updated:
 ---
 
-之前一篇[文章](/post/2017/07/tmux-introduction.html) 已经分享过 Tmux 的基本使用。这一篇就来总结一下 Tmux 下常用的插件。
+之前一篇[文章](/post/2017/07/tmux-introduction.html) 已经分享过 [[Tmux]] 的基本使用。这一篇就来总结一下 Tmux 下常用的插件。
 
 Vim 有自己的插件管理系统，zsh 也有插件管理，那当然 Tmux 肯定有插件管理，其实学习 Tmux 的过程中，和 Vim 当时一样，所有的拷贝，粘贴的内容都是在 Tmux 和 Vim 的内部，和外部操作系统的粘贴板完全隔离了，我就是为了解决这个问题，才接触到了 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)。
 
 
 ## Tmux Plugin Manager
+Tmux Plugin Manager 是一个 Tmux 插件管理器，用这个插件可以很方便的管理相关的插件。下文中可能把 Tmux Plugin Manager 简写成 tpm。
 
-安装的方法，在 GitHub 的页面非常清楚，`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` 项目，在 `.tmux.conf` 文件中加入配置，重新加载配置即可。
+tpm 的安装的方法，在 GitHub 的页面非常清楚，`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm` 项目，在 `.tmux.conf` 文件中加入配置，重新加载配置即可。
 
     # List of plugins
     set -g @plugin 'tmux-plugins/tpm'

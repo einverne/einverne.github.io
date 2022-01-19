@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "目录列表程序"
+title: "在线目录列表程序"
+aliases: "在线目录列表程序"
 tagline: ""
 description: ""
 category: 整理合集
@@ -16,7 +17,7 @@ last_updated:
 
 不过有些简陋而已。
 
-## zfile
+## ZFile
 [[ZFile]] 是一款基于 Java 的在线网盘程序，支持对接 S3，OneDrive，SharePoint，又拍云，本地存储，FTP 等等，支持在线浏览图片、播放音视频、文本文件等等。
 
 ```
@@ -40,7 +41,7 @@ Nginx index 套了一层皮肤
 - <https://hub.docker.com/r/80x86/nginx-fancyindex>
 
 ## PanIndex
-网盘目录列表，支持天翼云、teambition, 阿里云盘，OneDrive 等等
+[[PanIndex]] 是一个使用 JavaScript 实现的网盘目录列表，支持天翼云、teambition, 阿里云盘，OneDrive 等等
 
 - <https://github.com/libsgh/PanIndex>
 
@@ -49,7 +50,9 @@ Nginx index 套了一层皮肤
 ![[screenshot-area-2021-10-28-111720.png]]
 
 ## OLAINDEX
-OLAINDEX 是一个可以将 OneDrive 中的内容分享到网站的工具。使用 PHP 编写，界面也不错。
+OLAINDEX 是一个可以将 OneDrive 中的内容展示出来的目录列表程序。基于 PHP 框架 Laravel ，界面也不错。
+
+- <https://github.com/WangNingkai/OLAINDEX>
 
 OneDrive directory listing application
 
@@ -76,7 +79,7 @@ docker run -d --init --name olaindex -p 80:8000 xczh/olaindex:dev
 OneDrive 的目录程序还有 PyOne，OneIndex, [[OneList]]
 
 ## h5ai
-h5ai 比较简单，放到目录下就能使用，不过源码已经很久没有更新了。
+h5ai 是一个 PHP 实现的简单在线列表程序，将源码放到目录下，使用 PHP 就能打开列表，不过源码已经很久没有更新了。
 
 - <https://larsjung.de/h5ai/>
 
@@ -96,5 +99,14 @@ h5ai 比较简单，放到目录下就能使用，不过源码已经很久没有
 
 ## GoIndex
 
-[[GoIndex]] 一个不需要服务器的 Google Drive 目录索引程序。
+[[GoIndex]] 是一个使用了 [Cloudflare Workers](https://workers.cloudflare.com/一个不需要) 的 Google Drive 列表程序。在不需要自己的服务器的情况下就可以使用 GoIndex 来展示 Google Drive 中的内容。
 
+
+
+## 其他网盘程序
+
+- [[2018-04-08-nextcloud|NextCloud]]
+- [[CloudReve]]
+- [[SeaFile]]
+- [[KODExplorer]]
+- [[OwnCloud]]

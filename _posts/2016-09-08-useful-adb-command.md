@@ -58,6 +58,15 @@ Ubuntu 系下安装
 
     adb pull /sdcard/Download/filename.txt ~/filename.txt
 
+### 从设备上拉取多个文件
+`adb pull` 命令不知道为什么用 `*.apk` 这样的正则无法使用，所以只能先过滤出来特定的文件后缀，然后再使用 `adb pull`
+
+比如说要把 `/sdcard/Download` 文件夹中的 `*.apk` 文件都拉取到本地，那么可以：
+
+    adb shell ls /sdcard/Download/\*.apk | tr '\r' ' ' | xargs -n1 adb pull
+
+如果想要了解更多 `xargs` 命令的使用，可以参考[这一篇文章](/post/2019/06/xargs.html)。
+
 ## 检查设备是否已经 root
 
     adb shell

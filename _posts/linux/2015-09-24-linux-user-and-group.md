@@ -51,11 +51,11 @@ UID 是不能有冲突的，并且普通用户必须从 1000 开始，即使前�
 - 保留
 
 ### useradd
-增加用户
+`useradd` 命令可以用来新增用户
 
 	root@linux ~#  useradd username
 
-可以通过 `id username` 来查看用户的具体资料
+可以通过 `id username` 来查看用户的具体资料。
 
 #### /etc/default/useradd
 新增用户模板
@@ -78,12 +78,18 @@ SKEL=/etc/skel   #home 目录内容数据参考
 ### usermod
 调整用户帐户信息
 
+比如将用户 einverne 加入 docker 组：
+
+    sudo usermod -aG docker einverne
+
+记住这里的 `-a` 是非常重要的，是 append 附加到最后的意思，如果不加则会把历史的全部清空。
+
 ### userdel
 删除用户
 
 	root@linux /# userdel [-r] username
 
--r 连同 home 目录一起删除
+`-r` 连同 home 目录一起删除
 
 ## Group
 为了管理一组用户，Linux 系统中有组概念，通过用户组 GID, 来区别。
@@ -103,13 +109,17 @@ SKEL=/etc/skel   #home 目录内容数据参考
 - GID
 - 支持的帐号名称
 
-####有效用户组
-查看已 einverne 用户身份登录，支持的用户组命令：
+#### 有效用户组
+查看以 einverne 用户身份登录，支持的用户组命令：
 
 	pi@linux / $ groups
 	pi adm dialout cdrom sudo audio video plugdev games users netdev gpio i2c spi input
 
 使用命令 `newgrp groupname` 切换有效用户
+
+#### 查看用户在哪些 groups 中
+
+    groups einverne
 
 ### /etc/gshadow
 类似：
@@ -140,16 +150,18 @@ SKEL=/etc/skel   #home 目录内容数据参考
 
 ## su & sudo
 
-/etc/sudoers 文件，建议使用 `visudo` 编辑该文件
+`/etc/sudoers` 文件，建议使用 `visudo` 编辑该文件
 
 格式：用户帐号 登录主机 = （可变换的身份） 可执行的命令
 
+```
 用户
 einverne ALL = (ALL) ALL
 用户组内
 %groupname ALL = (ALL) ALL
 不需要密码
 %groupname ALL = (ALL) NOPASSWD: ALL
+```
 
 ## permission related
 
@@ -180,3 +192,8 @@ change file property, SUID
 u user  g group  o others  a all
 
 
+## 列举当前系统组和用户
+通过 Ubuntu 内置的 `compgen` 打印系统中所有的用户及组织。
+
+    compgen -u
+    compgen -g

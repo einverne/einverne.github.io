@@ -36,7 +36,7 @@ tmux 1.8 引入了 Zoom 功能，支持一键最大化当前 Working Pane，使�
 结合 fzf 的模糊查询，可以实现对 Tmux 会话的快速创建和搜寻，可以到 fzf 的 Wiki 页面具体查看。
 
 ## Tmuxinator vs tmuxp
-通常情况下创建一个 Tmux session 需要按很多个按键，假如有一个稍微复杂一点的项目，要开多个 Windows，第一个 Window 下开 3 个 Pane，那么每一次重启机器都要恢复这么多状态的话会非常累。有两种解决办法，一种就是在之前 [Tmux Plugin](/post/2017/12/tmux-plugins.html) 文中提到的 [tmux-resurrect](http://einverne.github.io/post/2017/12/tmux-plugins.html#tmux-resurrect) 插件。另一种就是使用配置文件，然后利用 [Tmuxinator](https://github.com/tmuxinator/tmuxinator) 或者 [tmuxp](https://github.com/tmux-python/tmuxp) 这两个工具来快速创建 Session。
+通常情况下创建一个 Tmux session 需要按很多个按键，假如有一个稍微复杂一点的项目，要开多个 Windows，第一个 Window 下开 3 个 Pane，那么每一次重启机器都要恢复这么多状态的话会非常累。有两种解决办法，一种就是在之前 [Tmux Plugin](/post/2017/12/tmux-plugins.html) 文中提到的 [tmux-resurrect](http://einverne.github.io/post/2017/12/tmux-plugins.html#tmux-resurrect) 插件。另一种就是使用配置文件，然后利用 [Tmuxinator](https://github.com/tmuxinator/tmuxinator) 或者 [tmuxp](https://github.com/tmux-python/tmuxp) 这两个工具来快速创建 Session。这两个工具可以通过读取配置文件，然后创建一个预设的 Tmux session。
 
 Tmuxinator 是 Ruby 编写的，tmuxp 是 Python 所写，根据自己的环境选择即可。
 
