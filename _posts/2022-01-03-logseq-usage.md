@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ""
-aliases: "Logseq 第一次试用记录以及发布 Logseq 到网页"
+title: "Logseq 第一次试用记录以及发布 Logseq 到网页"
+aliases: 
 - "Logseq 第一次试用记录以及发布 Logseq 到网页"
 tagline: ""
 description: "Logseq 和 Obsidian 对比，发布 Logseq 到 GitHub Pages"
