@@ -109,6 +109,12 @@ h5ai 是一个 PHP 实现的简单在线列表程序，将源码放到目录下�
 
 [样例](https://pan.hin.cool/)
 
+
+## Snap2HTML
+生成一个静态 HTML 页面展示文件列表。
+
+- <https://www.rlvision.com/snap2html/about.php>
+
 ## 其他网盘程序
 
 - [[2018-04-08-nextcloud|NextCloud]]
