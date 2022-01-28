@@ -10,7 +10,7 @@ last_updated:
 
 
 ## 并发
-Go 语言在语言级别支持协程，叫 goroutine。Go 语言标准库提供的所有系统调用 (syscall) 操作，当然也包括所有同步 IO 操作，都会出让 CPU 给其他 goroutine
+Go 语言在语言级别支持协程，叫 [[Goroutine]]。Go 语言标准库提供的所有系统调用 (syscall) 操作，当然也包括所有同步 IO 操作，都会出让 CPU 给其他 goroutine
 
 Go 语言推荐采用“Erlang 风格的并发模型”的编程范式来实现进程间通信。
 

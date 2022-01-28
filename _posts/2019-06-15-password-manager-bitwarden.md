@@ -49,3 +49,27 @@ Bitwarden 提供了非常丰富的客户端支持，从桌面端，到浏览器�
 - `.bw search_keyword` 搜索关键字
 
 
+## vaultwarden 开启 admin 页面
+
+强烈建议开启 HTTPS 之后再启用 admin 管理页面。
+
+该页面允许管理员检查注册用户并进行管理，即使注册关闭了也允许邀请用户。
+
+在配置中启用 `ADMIN_TOKEN`:
+
+```
+docker run -d --name bitwarden \
+  -e ADMIN_TOKEN=some_random_token_as_per_above_explanation \
+  -v /vw-data/:/data/ \
+  -p 80:80 \
+  vaultwarden/server:latest
+```
+
+强烈推荐使用 `openssl rand -base64 48` 来生成随机字符串作为 TOKEN。
+
+启用之后页面会在 `admin` 页面。
+
+
+## reference
+
+- <https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page>

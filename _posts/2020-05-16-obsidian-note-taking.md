@@ -43,6 +43,9 @@ Linux 下官方默认给出的是 AppImage，还可以下载 snap 包，通过�
 
     sudo snap install obsidian.snap --dangerous
 
+如果不添加 `--dangerous` 可能会报错：
+
+> error: cannot find signatures with metadata for snap "obsidian_0.13.19_amd64.snap"
 
 ## 特性
 Obsidian 这些功能是吸引我让我尝试的理由。
