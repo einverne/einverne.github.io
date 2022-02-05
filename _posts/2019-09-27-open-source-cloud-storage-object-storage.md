@@ -31,7 +31,7 @@ last_updated:
 - <https://github.com/0oVicero0/OneList>
 
 ## oneindex
-又一款用来展示 One Drive 列表的项目，PHP
+[[oneindex]] 是一款用来展示 One Drive 列表的项目，PHP 编写。
 
 - <https://github.com/donwa/oneindex>
 

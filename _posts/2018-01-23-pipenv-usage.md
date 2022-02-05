@@ -10,8 +10,8 @@ last_updated:
 
 [pipenv](https://github.com/pypa/pipenv) 是目前[官方](https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies) 推荐使用的包管理工具。能够为项目创建和管理虚拟环境，从 `Pipfile` 文件添加或删除安装的包，`Pipfile.lock` 来锁定安装包的版本和依赖信息。
 
-- 不用再维护 `requirements.txt`, 使用 Pipfile 和 Pipfile.lock 来代替
-- 在安装了 pyenv 的条件下，可以自动安装需要的 Python 版本
+- 不用再维护 `requirements.txt`, 使用 `Pipfile` 和 `Pipfile.lock` 来代替
+- 在安装了 `pyenv` 的条件下，可以自动安装需要的 Python 版本
 
 这里就不得不提到 [pyenv](/post/2017/04/pyenv.html) 了，`pyenv` 能用来管理不同的 Python 版本，结合 `pyenv-virtualenv` 也能够快速创建虚拟环境，不过这个 `pipenv` 提供了另外一种思路。
 
@@ -45,7 +45,7 @@ pipenv 会自动扫描系统寻找合适的版本信息，如果找不到的话�
 
 如果 install 后面没有任何 package 会自动安装所有，第一次安装包会自动生成 lock 文件
 
-兼容 requirements.txt
+兼容 `requirements.txt`
 
     pipenv install -r path/to/requirements.txt
 

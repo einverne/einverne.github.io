@@ -22,10 +22,10 @@ last_updated:
 ## 几个主要的步骤
 
 - 首先使用 So you Start 后台的系统安装工具，使用默认的 RAID1 安装 Debian Buster
-- 在线调整 RAID1 到 RAID10
+- 然后在线调整 RAID1 到 RAID10
 - 在 Debian 基础之上安装 [[Proxmox VE]]
 
-
+主要分成后面几个步骤（具体的操作步骤和演示可以参考后文）：
 
     mdadm /dev/md1 --fail /dev/sdc1
     mdadm /dev/md1 --remove /dev/sdc1
@@ -37,11 +37,10 @@ last_updated:
 first think about a partitioning scheme. usually there is no need to absolutely put everything on a single large partition. proxmox for instance puts disk images and whatnot into /var/lib/vz which then is an ideal mount point for a split partition.
 
 ## Install Debian
-首先在 So you Start 管理面板中使用 Reinstall 重新安装系统。
+首先在 So you Start 后台管理面板中使用 Reinstall 重新安装系统。
 
 - 使用 Custom 安装
 - 在下一步分区中，使用 RAID1 安装系统，可以根据自己的需要调整分区大小，如果怕麻烦可以，可以把所有空间划分给 `/` 然后留一定空间给 `swap`。比如我的机器是 32G 的，可以给 16G swap，然后剩余的空间都划给 `/`。如果熟悉 Linux 的分区，并且想要自己定义剩下的空间给 RAID-x，或 ZFS，或 LVM，可以划分一个比如 2G 给 `/boot` 分区，然后划分240G 给 `/` 然后 16G 给 `swap`，之后可以把 `/` 从 RAID1 调整为 RAID10
-
 
 安装完成进入系统：
 

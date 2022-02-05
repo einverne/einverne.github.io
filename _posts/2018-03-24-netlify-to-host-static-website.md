@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 netlify 托管静态网站"
+aliases: "使用 netlify 托管静态网站"
 tagline: ""
 description: ""
 category: 产品体验

@@ -15,12 +15,12 @@ last_updated:
 
 特性：
 
-- 提供了一个网页端管理
+- 命令行版本对个人用户完全免费
+- 付费授权会提供了一个网页端管理
 - 支持 Amazon S3，Google Cloud Storage，Microsoft Azure，Dropbox 和 Backblaze 等云存储，本地磁盘，SFTP 等等
 - 支持多个客户端备份到同一个云存储
 - 支持增量备份
 - 支持加密备份
-- 对个人用户完全免费
 
 ## Lock Free Deduplication
 这是一个对 Duplicacy 实现原理的简单介绍，完整的说明可以参考发布在 IEEE Transactions on Cloud Computing 的 [Paper](https://ieeexplore.ieee.org/document/9310668)。
@@ -56,7 +56,7 @@ sudo chmod +x /usr/local/bin/duplicacy
 ## 前提知识
 
 ### storage
-在 Duplicacy 的概念中 storage 指的是备份存储的地方。这个地方可以是 本地，可以是 SFTP，或者现成的云端存储服务比如 Backblaze。
+在 Duplicacy 的概念中 storage 指的是备份存储的地方。这个地方可以是本地，也可以是 [[SFTP]]，或者现成的云端存储服务比如 [[Backblaze]]。
 
 ### repository
 repository 可以理解成仓库，可以将一个本地文件夹作为仓库。
@@ -174,7 +174,9 @@ duplicacy backup -storage storage_name
 
     duplicacy prune -keep 0:180 -keep 7:30 -keep 1:7
 
-## 备份到 [[Backblaze B2]]
+## 备份到 Backblaze
+
+[[Backblaze B2 Cloud Storage]] 提供了 10GB 免费存储空间
 
 ```
 # 将本地存储加密备份到 B2 存储的 Bucket 
@@ -209,8 +211,6 @@ duplicacy init -e repository_id b2://unique-bucket-name
 另外一种推荐的做法是使用 `copy` 命令，将默认的存储内容复制到新配置的存储（offsite_storage) 上：
 
     duplicacy copy -from default -to offsite_storage_name
-
-
 
 ## 恢复到另外的文件夹或恢复到另外的电脑
 

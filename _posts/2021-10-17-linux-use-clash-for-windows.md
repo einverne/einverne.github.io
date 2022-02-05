@@ -20,6 +20,7 @@ Clash for Windows 的优点：
 - 支持本地编辑规则
 - 支持查看当前订阅的流量等信息
 
+更加详细的使用指南可以参考[这个文档](https://docs.gtk.pw/contents/quickstart.html)
 
 ## CFW 使用
 
@@ -35,7 +36,7 @@ gnome-desktop-item-edit ~/.local/share/applications --create-new
 
 在弹出的窗口中，填写 Name 和 Command
 
-![[gnome-new-launcher-20211216190628.png]]
+![gnome new launcher](/assets/gnome-new-launcher-20211216190628.png)
 
 说明：
 

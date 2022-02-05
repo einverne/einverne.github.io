@@ -3,7 +3,6 @@ layout: post
 title: "私人网盘 NextCloud"
 aliases: 
 - "私人网盘 NextCloud"
-- NextCloud
 tagline: ""
 description: ""
 category: 经验总结
