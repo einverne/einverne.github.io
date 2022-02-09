@@ -11,6 +11,7 @@ last_updated:
 不以引进正版为理由的打击盗版都是文化审查。
 
 ## BT
+公开的 BT 站点，请当心 DMCA 钓鱼。
 
 ### eztv
 
@@ -38,7 +39,7 @@ rss
 - https://rarbg.is/torrents.php
 
 ## PT
-Private tracker
+私有的 Private tracker
 
 最后如果有很多 PT 站，推荐 PT Plugin Plus 这个浏览器扩展来管理。
 
@@ -61,6 +62,7 @@ SceneTime 是一个0day/Scene综合PT站，目前存活种子数80000。
 自从有了 AvistaZ 就不怎么用了。
 
 ### HDArea
+一个没有那么活跃，但是种子数量很多。
 
 ### HDChina
 非常活跃，但平时不怎么用
@@ -80,7 +82,7 @@ SceneTime 是一个0day/Scene综合PT站，目前存活种子数80000。
 比较早的时候使用比较多，现在也还是不错的，成长比较快的一个站点。推荐。
 
 ### M-Team
-感谢好像人邀请，也是一非常大的站点。不过free电影比较少，基本是 50%
+感谢好心人邀请，也是一非常大的站点。不过free电影比较少，基本是 50%
 
 ### 聆音Club
 阅读，听书是其特色。
@@ -88,11 +90,12 @@ SceneTime 是一个0day/Scene综合PT站，目前存活种子数80000。
 ### PTMSG
 
 ### TorrentLeech
+0-day
 
 ### SoulVoice Club
 
-### [[AvistaZ]]
-AvistaZ 以前叫 AsiaTorrent，是一个东亚、东南亚、南亚的电影、电视剧、音乐的PT，主要还是中日韩加上港台的资源最多，高清和DVD资源都很多。有10万用户、3万种子，是一个比较活跃的高清电影等综合资源的PT站点。在注册使用一段时间之后，已经主要使用该网站来看日韩剧了。
+### AvistaZ
+[[AvistaZ]] 以前叫 AsiaTorrent，是一个东亚、东南亚、南亚的电影、电视剧、音乐的PT，主要还是中日韩加上港台的资源最多，高清和DVD资源都很多。有10万用户、3万种子，是一个比较活跃的高清电影等综合资源的PT站点。在注册使用一段时间之后，已经主要使用该网站来看日韩剧了。
 
 重在亚洲的影视资源。~~可我还没有账号，求邀请~~。感谢好心人给我邀请，再次感谢 🙏🏻️.
 
@@ -111,9 +114,12 @@ AvistaZ 以前叫 AsiaTorrent，是一个东亚、东南亚、南亚的电影、
 ### 52PT
 主打高清的，不怎么用。
 
+### PT GTK
+
+- <https://pt.gtk.pw/>
 
 ## 字幕
 
+- <https://a4k.net>
 - <http://www.zimuku.la>
 - <https://subhd.tv>
-
