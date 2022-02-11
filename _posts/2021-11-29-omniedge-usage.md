@@ -17,6 +17,11 @@ last_updated:
 官方提供 Starter 套餐，可以供一个用户，最多创建 1 个虚拟网络，连接 20台设备。
 
 ## 安装
+
+一键安装脚本：
+
+    curl https://omniedge.io/install/omniedge-install.sh | bash
+
 ### Linux
 
     curl https://omniedge.io/install/omniedge-install.sh | bash

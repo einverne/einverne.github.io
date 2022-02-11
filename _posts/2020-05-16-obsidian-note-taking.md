@@ -97,40 +97,41 @@ Obsidian 不期望有一个插件可以解决所有的问题，但 Obsidian 提�
 
 新建笔记相关：
 
-Shortcut | description
----------|------------
-Cmd+n    | New note
-Cmd+Shift+n | New Zettelkasten note
-Cmd+p    | Filter the command
+| Shortcut    | description           |
+| ----------- | --------------------- |
+| Cmd+n       | New note              |
+| Cmd+Shift+n | New Zettelkasten note |
+| Cmd+p       | Filter the command    |
 
 编辑相关的：
 
-Shortcut | description
----------|------------
-Cmd+b    | bold
-Cmd+i    | italic selection
+| Shortcut   | description                        |
+| ---------- | ---------------------------------- |
+| Cmd+b      | bold                               |
+| Cmd+i      | italic selection                   |
+| Ctrl+Alt+L | format markdown (借助 Linter 插件) |
 
 笔记间跳转：
 
-Shortcut | description
----------|------------
-Cmd+o    | Open quick switcher, jump to different notes by fuzz search
-Option+Enter | follow the link under cursor
-Cmd+Option+Enter | Open link under cursor in new pane
-Cmd+`[` | Back
-Cmd+`]` | Forward
-Cmd+hjkl | Navigate to left/below/above/right pane
-Cmd+w  | Close active pane
-Cmd+`\` | Split vertically
-Cmd+`-` | Split horizontally
+| Shortcut         | description                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| Cmd+o            | Open quick switcher, jump to different notes by fuzz search |
+| Option+Enter     | follow the link under cursor                                |
+| Cmd+Option+Enter | Open link under cursor in new pane                          |
+| Cmd+`[`          | Back                                                        |
+| Cmd+`]`          | Forward                                                     |
+| Cmd+hjkl         | Navigate to left/below/above/right pane                     |
+| Cmd+w            | Close active pane                                           |
+| Cmd+`\`          | Split vertically                                            |
+| Cmd+`-`          | Split horizontally                                          |
 
 浏览模式：
 
-Shortcut | description
----------|------------
-Cmd+e    | Toggle edit/preview mode
+| Shortcut | description              |
+| -------- | ------------------------ |
+| Cmd+e    | Toggle edit/preview mode |
 
-Obsidian 的模板功能非常强大，我自定义了一个快捷键 ⌘ + ⇧ + i 来从模板中快速插入到当前的文档中。
+Obsidian 的模板功能非常强大，我自定义了一个快捷键 <kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>i</kbd> 来从模板中快速插入到当前的文档中。
 
 
 ## Zettelkasten method
@@ -138,7 +139,9 @@ Obsidian 的模板功能非常强大，我自定义了一个快捷键 ⌘ + ⇧ 
 
 ## 延伸阅读
 
-- [[Trilium Notes]]
+- [[Trilium Notes]] 基于网页的笔记
+- [[Logseq]] 开源的基于块的双向链接笔记
+- [[TiddlyWiki]] 单文件Wiki
 
 ## 个人使用技巧
 
@@ -166,10 +169,11 @@ Obsidian 的开发 Roadmap
 
 ### Logseq
 
-Logseq 在自己的官网将自己描述为一个受到 Roam Research, Org mode, Tiddlywiki, Workflowy 启发的开源的 Roam 笔记应用，我打开官网尝试了一下，虽然双向链，块引用，运行在浏览器，以 GitHub 作为笔记的存储，看起来很美好，似乎是 Roam Research 的代替品，但是我在使用的过程中，不清楚是以为网络问题还是因为我没有登录的关系，体验并不是很好，一来创建新页面的时候卡了，而来默认的显示状态和编辑状态的变化略大，使得视觉上的体验不是很好。在界面交互上甚至并不能和其提到 Workflowy 的网页应用流畅度相比。不过因为其开源属性使得每一个人都可以根据自己的喜好进行扩展和修改，其未来可期。
+[[Logseq]] 在自己的官网将自己描述为一个受到 Roam Research, Org mode, Tiddlywiki, Workflowy 启发的开源的 Roam 笔记应用，我打开官网尝试了一下，虽然双向链，块引用，运行在浏览器，以 GitHub 作为笔记的存储，看起来很美好，似乎是 Roam Research 的代替品，但是我在使用的过程中，不清楚是以为网络问题还是因为我没有登录的关系，体验并不是很好，一来创建新页面的时候卡了，而来默认的显示状态和编辑状态的变化略大，使得视觉上的体验不是很好。在界面交互上甚至并不能和其提到 Workflowy 的网页应用流畅度相比。不过因为其开源属性使得每一个人都可以根据自己的喜好进行扩展和修改，其未来可期。
 
-另外一个需要注意的就是目前的 Logseq 只有网页版，并且因为 Logseq 网络访问需要经过其代理才能将数据保存到 GitHub，相较于 Obisidian 直接使用本地 Markdown 文件保存，Logseq 并不占优势。不过有能力可以自行搭建。
+~~另外一个需要注意的就是目前的 Logseq 只有网页版，并且因为 Logseq 网络访问需要经过其代理才能将数据保存到 GitHub，相较于 Obisidian 直接使用本地 Markdown 文件保存，Logseq 并不占优势。不过有能力可以自行搭建。~~
 
+Logseq 目前已经可以使用客户端，所有的数据都可以离线在本地。
 
 ### RoamEdit
 看名字就知道又是一款 Roam Research 的仿作，不过让我惊奇的是其网页的流畅度相较于 Logseq 还是不错。但是问题依然是那样的，官网一行隐私说明都没有，一个备案号，一个交流群，看着就不想深入使用的样子。可能也是某位大神练手之作，值得鼓励。不过我就不去尝试使用了。
