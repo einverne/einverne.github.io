@@ -18,7 +18,7 @@ last_updated:
 
 
 ## Elastic Email
-Elastic Email 似乎是一家加拿大的公司。官网地址：
+[[Elastic Email]] 是一家加拿大的公司。官网地址：
 
 - <https://elasticemail.com/>
 
@@ -26,7 +26,7 @@ Elastic Email 似乎是一家加拿大的公司。官网地址：
 
 
 ## Mailgun
-Mailgun 提供了 HTTP API 和 SMTP 两种方式发送邮件。
+[[Mailgun]] 提供了 HTTP API 和 SMTP 两种方式发送邮件。
 
 ~~免费服务每个月 10000 封 / 单个域名 限制，个人其实完全用不完。~~
 
@@ -34,7 +34,7 @@ Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可
 
 ## SendGrid
 
-免费服务每天可以发送 100 封邮件，同样支持 API 和 SMTP 方式，还可以使用 Webhook 方式。
+[[SendGrid]] 免费服务每天可以发送 100 封邮件，同样支持 API 和 SMTP 方式，还可以使用 Webhook 方式。
 
 ## Mailjet
 个人还没有注册

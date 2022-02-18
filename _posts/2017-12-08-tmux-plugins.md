@@ -9,7 +9,7 @@ tags: [tmux, linux, terminal, 终端工具 , ]
 last_updated:
 ---
 
-之前一篇[文章](/post/2017/07/tmux-introduction.html) 已经分享过 [[Tmux]] 的基本使用。这一篇就来总结一下 Tmux 下常用的插件。
+之前一篇[文章](/post/2017/07/tmux-introduction.html) 已经分享过 [[tmux]] 的基本使用。这一篇就来总结一下 Tmux 下常用的插件。
 
 Vim 有自己的插件管理系统，zsh 也有插件管理，那当然 Tmux 肯定有插件管理，其实学习 Tmux 的过程中，和 Vim 当时一样，所有的拷贝，粘贴的内容都是在 Tmux 和 Vim 的内部，和外部操作系统的粘贴板完全隔离了，我就是为了解决这个问题，才接触到了 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)。
 

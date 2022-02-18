@@ -61,7 +61,7 @@ last_updated:
 即可
 
 ### 远程控制
-配合 Android 上的 Transdroid 使用，需要开启远程访问控制，如果有固定的访问 IP 段，可以对应的配置，直接禁用下面两个白名单危险系数较高，慎重：
+配合 Android 上的 [[Transdroid]] 使用，需要开启远程访问控制，如果有固定的访问 IP 段，可以对应的配置，直接禁用下面两个白名单危险系数较高，慎重：
 
     "rpc-whitelist-enabled": false,
     "rpc-host-whitelist-enabled": false,

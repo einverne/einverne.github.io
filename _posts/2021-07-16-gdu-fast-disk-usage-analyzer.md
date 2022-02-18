@@ -22,10 +22,11 @@ gdu 为 SSD 做了优化，但在机械硬盘上也能很好的工作。
 
 ## Install
 Linux:
+
 ```
 curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
 chmod +x gdu_linux_amd64
-mv gdu_linux_amd64 /usr/bin/gdu
+sudo mv gdu_linux_amd64 /usr/bin/gdu
 ```
 
 macOS:

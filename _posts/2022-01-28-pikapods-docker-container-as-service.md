@@ -10,7 +10,7 @@ tags: [ self-hosted, pikapods, docker, container, freshrss,  ]
 last_updated:
 ---
 
-在逛 LET 的时候偶然间发现了一款叫做 [PikaPods](https://www.pikapods.com/) 的在线服务，看到作者将 Docker 容器作为一个服务出售给用户，并且当前注册用户可以免费享有一年的使用时间于是就试用了一下。[[PikaPods]] 是一个将容器平台化的网站，可以非常方便的一键搭建开源的服务。我只花了不到一分钟的时间就在 PikaPods 中搭建了一个 [[FreshRSS]] 服务，并且导入我的 1000 多条阅读源抓取效果也非常不错。
+在逛 [LET](https://lowendtalk.com/) 的时候偶然间发现了一款叫做 [PikaPods](https://www.pikapods.com/) 的在线服务，看到作者将 Docker 容器作为一个服务出售给用户，并且当前注册用户可以免费享有一年的使用时间于是就试用了一下。[[PikaPods]] 是一个将容器平台化的网站，可以非常方便的一键搭建开源的服务。我只花了不到一分钟的时间就在 PikaPods 中搭建了一个 [[FreshRSS]] 服务，并且导入我的 1000 多条阅读源抓取效果也非常不错。
 
 - <https://www.pikapods.com/>
 

@@ -236,7 +236,7 @@ BT 下载的工具有很多，qBittorrent，Transmission，rtorrent, uTorrent，
 
 
 ## Android Client
-记得启用之后可以使用 Transdroid Android 客户端来管理 rtorrent-pro. 可以从 Google Play Store 下载，或者从官网：
+记得启用之后可以使用 [[Transdroid]] Android 客户端来管理 rtorrent-pro. 可以从 Google Play Store 下载，或者从官网：
 
 - <http://transdroid.org/latest>
 

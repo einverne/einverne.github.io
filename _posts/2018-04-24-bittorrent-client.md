@@ -55,7 +55,7 @@ Transmission 的扩展，包括 Android 开源的 Remote control [Transdroid](ht
 更多参考[这里](https://hub.docker.com/r/linuxserver/transmission)
 
 ## rTorrent
-rTorrent 是一个用 C++ 编写的纯文本 BitTorrent 客户端。rTorrent 适合在 Tmux, screen, dtach 中使用，配和 [ruTorrent](https://github.com/Novik/ruTorrent/) 作为 GUI。
+[[rTorrent]] 是一个用 C++ 编写的纯文本 BitTorrent 客户端。rTorrent 适合在 Tmux, screen, dtach 中使用，配和 [ruTorrent](https://github.com/Novik/ruTorrent/) 作为 GUI。
 
 - <https://github.com/rakshasa/rtorrent>
 
