@@ -45,18 +45,22 @@ throttle.global_up.max_rate.set_kb = 102400¬
 
 通过配置不同的 watch 目录，每一个都对应着一个 category 或者 label，那么在 `/path/to/rtorrent/watch/tvshows` 中的 torrent 文件，就会自动有一个 `custom1` 的值，这个值在下一步会使用到。
 
+注意下面的配置在 rTorrent 0.9 版本以后可用[^change]：
+
+[^change]: <https://github.com/rakshasa/rtorrent/wiki/RPC-Migration-0.9>
+
 ```
 # TV shows
-schedule = watch_directory_1,10,10,"load_start=/path/to/rtorrent/watch/tvshows/*.torrent,d.set_custom1=tvshows"
+schedule2 = watch_directory_1,10,10,"load.start_verbose=/path/to/rtorrent/watch/tvshows/*.torrent,d.custom1.set=tvshows"
 
 # Movies
-schedule = watch_directory_2,10,10,"load_start=/path/to/rtorrent/watch/movies/*.torrent,d.set_custom1=movies"
+schedule2 = watch_directory_2,10,10,"load.start_verbose=/path/to/rtorrent/watch/movies/*.torrent,d.custom1.set=movies"
 
 # Comics
-schedule = watch_directory_3,10,10,"load_start=/path/to/rtorrent/watch/comics/*.torrent,d.set_custom1=comics"
+schedule2 = watch_directory_3,10,10,"load.start_verbose=/path/to/rtorrent/watch/comics/*.torrent,d.custom1.set=comics"
 
 # Music
-schedule = watch_directory_4,10,10,"load_start=/path/to/rtorrent/watch/music/*.torrent,d.set_custom1=music"
+schedule2 = watch_directory_4,10,10,"load.start_verbose=/path/to/rtorrent/watch/music/*.torrent,d.custom1.set=music"
 ```
 
 这些配置中有两个关键部分：
@@ -68,8 +72,8 @@ schedule = watch_directory_4,10,10,"load_start=/path/to/rtorrent/watch/music/*.t
 
 ```
 # Add new method to get finished dir
-method.insert = d.get_finished_dir,simple,"cat=/path/to/rtorrent/finished/,$d.get_custom1="
-method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_finished_dir=;execute=mkdir,-p,$d.get_finished_dir=;execute=mv,-u,$d.get_base_path=,$d.get_finished_dir="
+method.insert = d.get_finished_dir,simple,"cat=/path/to/rtorrent/finished/,$d.custom1="
+method.set_key = event.download.finished,move_complete,"d.directory.set=$d.get_finished_dir=;execute=mkdir,-p,$d.get_finished_dir=;execute=mv,-u,$d.base_path=,$d.get_finished_dir="
 ```
 
 第一行 `method.insert` 定义了一个方法 `get_finished_dir` 每一个 torrent 都会返回一个字符串 `/path/to/rtorrent/finished/` 和一个标签(custom1 的值)。
@@ -98,4 +102,5 @@ method.set_key = event.download.finished,move_complete,"d.move_to_complete=$d.da
 
 ## reference
 
+- [rTorrent 升级 0.9 的配置变更](https://github.com/rakshasa/rtorrent/blob/master/doc/scripts/update_commands_0.9.sed)
 - <https://www.krank.se/2014/06/25/rtorrent-magic-moving-finished-torrents-based-on-labels/>
