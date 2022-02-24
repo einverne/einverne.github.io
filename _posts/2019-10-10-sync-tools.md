@@ -1,11 +1,14 @@
 ---
+aliases: 
 layout: post
 title: "同步工具整理总结"
+aliases: "同步工具整理总结"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [sync, tools, linux, rsync, ]
-last_updated:
+tags: [sync, tools, linux, rsync, btsync, syncthing,]
+last_updated: 2022-02-22 01:01:01
+create_time: 2021-07-03 10:32:42
 ---
 
 陆陆续续用过不少同步工具，资料备份，各个设备间同步文件，从商业化的工具到命令行工具，但总还是一直在寻找一款足于满足我所有需求的工具。这里就整理一下，顺便整理一下我自己的思路。不久前就一直在思考一个问题，数字文件的生命有多长，以前看到过一句话，几十年前父母写下的日记如今依然能从旧书柜中翻出，数十年前的胶卷照片依然还很清晰，但往往几年前的网络文章，或者数字照片可能如今随着网络服务的关闭，物理硬盘的损坏而无法恢复。有人尝试使用多地备份，有人尝试云服务备份，却都无法从根本上解决这个问题，当然现在的我依然没有办法完全的解决这个问题。
@@ -46,7 +49,7 @@ unison 没怎么用过，但是 unison 经常被用来和 rsync, syncthing 一�
 
 之前也有写过一篇文章 [威联通上使用 verySync](/post/2019/04/qnap-verysync.html)，但是这个同步工具毕竟还是用的人少，并且还是国产闭源应用，可信度不高。作为 Resilio Sync 的国产代替品使用。
 
-### Syncthings
+### Syncthing
 开源，跨平台，Go 语言编写，其他就不用多说了。这可能是这一次整理收获最大的一个工具。
 
 - <https://syncthing.net/>
