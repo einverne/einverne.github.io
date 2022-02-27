@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "在命令行下给 socks 或者 http 代理测速"
+aliases: "在命令行下给 socks 或者 http 代理测速"
 tagline: ""
 description: ""
 category: 经验总结

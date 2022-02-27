@@ -197,6 +197,9 @@ Free 优惠的种子千万不要错过。
 
 - <https://api.rhilip.info/ptgen.html>
 
+
+最后，个人也搭建了一个[私人的 PT](https://pt.gtk.pw)，分享一些电影、图书、综艺，欢迎来玩。
+
 ## reference
 
 - <https://wiki.theory.org/index.php/Main_Page#Metainfo_File_Structure>

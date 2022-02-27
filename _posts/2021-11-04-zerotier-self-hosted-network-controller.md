@@ -4,7 +4,7 @@ title: "自行搭建 ZeroTier Network Controller 组件虚拟局域网"
 aliases: 
 - "自行搭建 ZeroTier Network Controller 组件虚拟局域网"
 tagline: ""
-description: ""
+description: "一键快速搭建 ZeroTier 行星节点加速网络访问"
 category: 学习笔记
 tags: [ zerotier, linux, networking, ]
 last_updated:
@@ -76,6 +76,7 @@ services:
 
 - `HTTP_PORT`：后台端口
 - `ZTNCUI_PASSWD`：后台默认密码
+- `MYADDR`: VPS 的网络地址，公网IP地址
 
 然后在同级目录新建文件 `.env`:
 
@@ -88,6 +89,10 @@ MYADDR=your.ip
 ```
 
 后续更新会在 [dockerfile](https://github.com/einverne/dockerfile)。
+
+然后使用 `docker-compose up -d` 启动。
+
+启动之后可以访问 `IP:3443` 可以访问管理后台。
 
 ## 独立网络控制器的优劣
 

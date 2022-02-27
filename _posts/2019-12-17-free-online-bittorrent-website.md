@@ -13,6 +13,11 @@ last_updated:
 ## BT
 公开的 BT 站点，请当心 DMCA 钓鱼。
 
+### Zooqle
+拥有500万验证种子文件。
+
+- https://zooqle.com/
+
 ### eztv
 
 - http://eztv.ag

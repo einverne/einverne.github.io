@@ -107,3 +107,6 @@ nexusphp:
       
 - `user-agent` **浏览器标识** 默认为Google浏览器
 - `remember` **记住优惠信息** 不建议设置为 no，因为会增大站点压力。默认 yes
+
+
+最后，个人也搭建了一个[私人的 PT](https://pt.gtk.pw)，分享一些电影、图书、综艺，欢迎来玩。
