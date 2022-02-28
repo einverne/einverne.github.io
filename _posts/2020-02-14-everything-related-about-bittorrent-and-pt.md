@@ -37,7 +37,7 @@ A seed is a peer that has a complete copy of the torrent’s contents and keeps 
 
 ### Super-seeding(initial seeding)
 
-Super-seeding, 或者又被叫做，初始做种 (initial seeding) 是一种为了节省带宽而设计的技术。试想一下，当你是种子发布者，并且第一将种子发布到网上时，种子的复制可能会很慢，因为初始的作种者会将同一块数据发送给不同的 peers，而其他块可能还没有被上传。为了防止这种情况，一些客户端可以开启 super-seeding 模式，这时会优先发送还没有被上传的数据块，通过算法来保证上传一个种子尽可能的节省带宽。[^1]
+Super-seeding, 或者又被叫做，初始做种 (initial seeding) 是一种为了节省带宽而设计的技术。试想一下，当你是种子发布者，并且第一将种子发布到网上时，种子的复制可能会很慢，因为初始的做种者会将同一块数据发送给不同的 peers，而其他块可能还没有被上传。为了防止这种情况，一些客户端可以开启 super-seeding 模式，这时会优先发送还没有被上传的数据块，通过算法来保证上传一个种子尽可能的节省带宽。[^1]
 
 [^1]: <http://bittornado.com/docs/superseed.txt>
 

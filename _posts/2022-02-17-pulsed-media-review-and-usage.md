@@ -11,7 +11,7 @@ last_updated: 2022-02-24 08:29:26
 create_time: 2022-02-24 08:28:04
 ---
 
-Pulsed Media 是一家 [[Seedbox]] 服务提供商，Seedbox 通常指的是专门为 Seeding（作种）而设计的下载上传服务器，通常有比较大的硬盘，带宽。Seedbox 通常有被称为「盒子」。
+Pulsed Media 是一家 [[Seedbox]] 服务提供商，Seedbox 通常指的是专门为 Seeding（做种）而设计的下载上传服务器，通常有比较大的硬盘，带宽。Seedbox 通常有被称为「盒子」。
 
 Pulsed Media 是一家共享盒子，也就是意味着多人共享一台独立主机，多人可能共享同一个 IP 地址。Pulsed Media 成立于 2009 年，机房在芬兰赫尔辛基。
 

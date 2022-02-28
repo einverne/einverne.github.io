@@ -116,6 +116,15 @@ Client: 这是用户用来管理虚拟网络的工具
 - 和节点通信，配置管理节点
 - 处理用户注册，登录流程
 
+## 利用 supernode 加速
+前两天看到 omniedge GitHub 发布了 supernode ，可以用来加速虚拟网络的网络状况。
+
+有兴趣可以自行编译 Docker 镜像：
+
+- <https://github.com/omniedgeio/docker-customize-supernode>
+
+需要注意的是如果要使用 Sueprnode 必须使用 Pro 或者 Team 套餐。
+
 ## reference
 
 - <https://omniedge.medium.com/how-omniedge-works-792499a8c2d>
