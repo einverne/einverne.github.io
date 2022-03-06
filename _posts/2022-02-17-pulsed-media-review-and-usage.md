@@ -15,7 +15,7 @@ Pulsed Media 是一家 [[Seedbox]] 服务提供商，Seedbox 通常指的是专�
 
 Pulsed Media 是一家共享盒子，也就是意味着多人共享一台独立主机，多人可能共享同一个 IP 地址。Pulsed Media 成立于 2009 年，机房在芬兰赫尔辛基。
 
-我够买的是 12 周年促销款 V10G L，包含 8T 空间，8G RAM，10Gbps 带宽，以及 32000 GiB 的外部流量，无线的内部机房流量。价格是 11.99€ 一个月。
+我购买的是 12 周年促销款 V10G L，包含 8T 空间，8G RAM，10Gbps 带宽，以及 32000 GiB 的外部流量，无线的内部机房流量。价格是 11.99€ 一个月。
 
 从官网及促销页面来看，自带支持 [[rTorrent]] 和 [[ruTorrent]]，以及可以选择开启的 [[Dulege]] 和 [[qBittorrent]]。支持公开的 tracker。
 
