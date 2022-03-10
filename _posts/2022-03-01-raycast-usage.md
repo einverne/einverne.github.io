@@ -67,7 +67,7 @@ last_updated:
 ### Browser Bookmarks
 首先在 Store 中安装 Browser Bookmarks
 
-![raycast-store-install-bookmarks](/asstes/raycast-store-install-bookmarks-20220310231737.png)
+![raycast-store-install-bookmarks](/assets/raycast-store-install-bookmarks-20220310231737.png)
 
 然后在设置中启用 Chrome：
 
