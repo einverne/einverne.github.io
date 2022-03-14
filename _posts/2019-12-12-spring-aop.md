@@ -9,13 +9,13 @@ tags: [spring, spring-boot, spring-framework, aop, spring-mvc, ]
 last_updated:
 ---
 
+Spring AOP 指的是 Aspect Oriented Programming（面向切面编程），AOP 是一种编程范式，AOP 提供了不同于 OOP 的另一种全新的软件架构思考方式，目的是为了通过分离切面问题来增加程序的模块化，同通俗的话讲就是不修改代码的情况下给程序增加额外的行为。[Spring AOP](https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop) 就是这样一个框架，可以提高我们切面编程的效率。
+
 Spring AOP 的几个常用的使用场景：
 
 - 事务，transaction management
 - 日志，logging
 - 安全，security
-
-AOP 提供了不同于 OOP 的另一种全新的软件架构思考方式。
 
 Spring 中有两种方式来使用 AOP
 
@@ -23,11 +23,11 @@ Spring 中有两种方式来使用 AOP
 - @Aspect annotation approach, 基于注解
 
 ## Terms
-一些关键性的术语：
+在深入 AOP 之前，先来了解一些关键性的术语：
 
-- `join-point`: **a point** during the execution of a program, in spring AOP always represents a method execution
+- `join-point`: 中文通常翻译成切点，切入点，也就是切入的地方，通常是一个方法 **a point** during the execution of a program, in spring AOP always represents a method execution
 - `pointcut`:is **a predicate or expression** that matches join-point
-- `advice`: **actions** taken by aspect at a particular **join-point**, is associated with a pointcut expression and runs at any join point matched by the pointcut
+- `advice`: 具体切入的动作 **actions** taken by aspect at a particular **join-point**, is associated with a pointcut expression and runs at any join point matched by the pointcut
 - `weaving`: linking aspects with other application types or objects to create an advised object.
 
 基于上面的认知，知道 join-point 可以认为是方法调用的时刻，所以 Spring 中有 5 种类型的 Advice 时机：
@@ -50,11 +50,20 @@ Spring 中 AOP 的实现主要是通过 JDK [[动态代理]]和 [[CGLIB]] 动态
 
 引入依赖：
 
-
+```
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.6.1</version>
+</parent>
+ 
+<dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-aop</artifactId>
     </dependency>
+</dependencies>
+```
 
 在启动类上使用 [[Spring @EnableAspectJAutoProxy]] 注解，但其实如果不配置该注解，`spring.aop.auto` 属性也是默认开启的。
 
@@ -104,6 +113,12 @@ Spring Boot 中指定 CGLIB 实现 AOP。
 `@Aspect` 注解将 Java 类定义为切面，使用 `@Pointcut` 定义切点。
 
 在不同的位置切入，可以使用 `@Before`, `@After`, `@AfterReturning`, `@Around`, `@AfterThrowing` 等等。
+
+- `@Before`，在方法执行前执行
+- `@After`，方法执行后执行
+- `@AfterRunning`，方法返回结果之后执行
+- `@AfterThrowing`，异常通知，方法抛出异常之后
+- `@Around`，环绕方法执行
 
 ## Pointcut Designators
 如何定义切点，以及切点表达式的编写是学习 AOP 的一个重点。
@@ -212,6 +227,8 @@ limits matching to join points where the subject of the join point (method being
 ## Order
 可以使用 `@Order` 来指定先后执行顺序。
 
+[[Spring @Order]]
+
 ## execution expression
 
 execution 在使用时有自己的语法规则：
@@ -235,6 +252,7 @@ execution 在使用时有自己的语法规则：
 	private void tradingOperation() {}
 
 
+## 总结
 代码地址：<https://github.com/einverne/thrift-swift-demo/tree/master/spring-boot-demo>
 
 ## reference

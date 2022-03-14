@@ -62,6 +62,8 @@ Port 设置为 80
 
 后台最重要的功能我认为就是这些了，接下来用邮件中的信息来登录 SSH 后台看看。
 
+同理如果要在 [[PT Plugin Plus]] 中配置下载服务器，也需要使用上面的配置，需要在个人的登录链接之后加上 SCGI mount point 的路径才能连接上。
+
 ## 使用 SSH 登录
 使用 SSH 登录后台之后可以看到用户 HOME 目录中非常干净，就这些目录。
 
@@ -268,6 +270,9 @@ For example see folder_rescan_interval below */
 一键安装 Sonarr, Raddarr, Prowllar, SABnzbd and Jellyfin：
 
     curl https://gist.githubusercontent.com/gsj1377/a7eb727e079a1cefc9baff4e130d8900/raw/app-installation.sh | bash && source ~/.bashrc
+
+## Pulsed Media 流量限制
+在登录账号之后，在后台右上角可以看到最近 30 天的流量使用情况。在 Pulsed Media 这里，流量的充值日期并不是每个月初，而是滚动限制，也就是当前看到的是过去 30 天的流量使用情况，Pulsed Media 在一篇很久之前的[文章](https://blog.pulsedmedia.com/2016/06/traffic-limits-why-and-what-is-rolling-30-days-limit/)中解释了这么做的理由。
 
 ## 总结
 总之这么一顿折腾以及完全可以使用，并且可以自动下载一些 Free 的种子，剩余的空间我也可以用来同步自己的文件。

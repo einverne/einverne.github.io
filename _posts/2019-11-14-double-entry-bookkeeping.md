@@ -5,7 +5,7 @@ aliases: "学习 Beancount 入门复式记账"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [accounting, debits-and-credits, ]
+tags: [accounting, debits-and-credits, beancount, double-entry, ]
 last_updated:
 ---
 

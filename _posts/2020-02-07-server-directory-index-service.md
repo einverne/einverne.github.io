@@ -50,7 +50,7 @@ Nginx index 套了一层皮肤
 ![[screenshot-area-2021-10-28-111720.png]]
 
 ## OLAINDEX
-OLAINDEX 是一个可以将 OneDrive 中的内容展示出来的目录列表程序。基于 PHP 框架 Laravel ，界面也不错。
+[[OLAINDEX]] 是一个可以将 OneDrive 中的内容展示出来的目录列表程序。基于 PHP 框架 Laravel ，界面也不错。
 
 - <https://github.com/WangNingkai/OLAINDEX>
 
@@ -114,6 +114,14 @@ h5ai 是一个 PHP 实现的简单在线列表程序，将源码放到目录下�
 生成一个静态 HTML 页面展示文件列表。
 
 - <https://www.rlvision.com/snap2html/about.php>
+
+## filestash
+[[filestash]]
+
+
+## alist
+
+[[alist-file-list]]
 
 ## 其他网盘程序
 

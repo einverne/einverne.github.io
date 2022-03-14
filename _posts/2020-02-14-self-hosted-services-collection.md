@@ -212,7 +212,7 @@ LazyLibrarian is a program to follow authors and grab metadata for all your digi
 - EasyImage
 - [Piwigo](https://github.com/Piwigo/Piwigo)
 - [Ownphoto](https://github.com/hooram/ownphotos)
-- [Photoprism](https://github.com/photoprism/photoprism)
+- [PhotoPrism](https://github.com/photoprism/photoprism)
 - [Lychee](https://github.com/LycheeOrg/Lychee)
 
 ### Lychee

@@ -14,6 +14,14 @@ last_updated:
 
 - <https://b-ok.cc/>
 
+- sg1lib.org
+- 1lib.pl
+- ng1lib.org
+- b-ok.com
+- bookzz.ren
+- booksc.xyz
+
+
 ## manybooks
 
     https://manybooks.net/
@@ -23,15 +31,19 @@ last_updated:
 
     https://worldmiao.com/
 
+
+
 ## 我的小书屋
 
     http://mebook.cc/
 
-以网盘下载为主
+~~以网盘下载为主~~
 
-可以用来推送电子书到 Kindle 邮箱
+~~可以用来推送电子书到 Kindle 邮箱~~
 
-2019 年 11 月更新，小书屋也不在了。愿站长一切安好！
+~~2019 年 11 月更新，小书屋也不在了。愿站长一切安好！~~
+
+
 
 ## 集思会
 强烈推荐的站点，几乎 kindle10000 之后就是他了。
@@ -141,13 +153,10 @@ last_updated:
     http://www.olecn.com/category/book/
 
 ## 其他
-mLook 精校电子书，注册需要邀请码
-
-    http://plugin.mlook.mobi/
-
-周读，资源都是放在百度盘上的
-
-    http://ireadweek.com/
+- [mLook](http://mlook.mobi/) 精校电子书，注册需要邀请码
+- [周读](http://ireadweek.com/)，资源都是放在百度盘上的
+- [SoBooks.cc](https://sobooks.cc/)
+- [知识库](https://book.zhishikoo.com/) 
 
 ## PDFDRIVE
 这是一个面向英文阅读者的 PDF 分享网站，托管了很多高清的 PDF 资源。
