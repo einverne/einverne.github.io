@@ -8,6 +8,8 @@ description: ""
 category: 经验总结
 tags: [rtorrent, rutorrent, linux, docker, rss, feed, private-tracker, torrent, bt, ]
 last_updated:
+redirect_from:
+  - /post/2021/09/rutorrent-RSS-auto-download.html
 ---
 
 自从在 QNAP 上遇到 [ruTorrent](/post/2019/05/qnap-rtorrent-bt-pt.html) 之后就发现这是我用过的最好用的 BitTorrent 客户端了，[rTorrent 结合 ruTorrent 界面](/post/2020/03/rtorrent-and-rutorrent.html)

@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ rtorrent, rutorrent, config, rtorrent-config, ]
+tags: [ rtorrent, rutorrent, config, rtorrent-config, bittorrent, torrent, private-tracker, tracker, bt ]
 last_updated: 2022-02-18 09:43:51
 create_time: 2022-02-18 02:09:09
 ---
