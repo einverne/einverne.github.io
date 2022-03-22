@@ -87,6 +87,8 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 
 ## 统计数据
 
+- [[google-analytics-alternative]]
+
 - Umami
 - [Plausible](https://plausible.io/)
 - Matomo

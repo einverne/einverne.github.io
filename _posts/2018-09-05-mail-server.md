@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "邮件服务器"
+title: "邮件服务器相关概念学习"
 tagline: ""
 description: ""
 category: 学习笔记

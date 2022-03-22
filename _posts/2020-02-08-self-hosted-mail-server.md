@@ -23,9 +23,7 @@ GitHub 地址：<https://github.com/postalserver/postal>
 - <https://mailinabox.email/guide.html>
 
 ## mailu
-Mailu.io是一款免费开源且性能强大、功能丰富的域名邮箱系统。它基于Docker, 具有部署简单，可移植性高，备份方便等多种优势。
-
-- <https://mailu.io/>
+[Mailu.io](https://mailu.io/) 是一款免费开源且性能强大、功能丰富的域名邮箱服务。它基于Docker, 具有部署简单，可移植性高，备份方便等多种优势。
 
 搭建介绍：
 
