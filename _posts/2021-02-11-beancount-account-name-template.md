@@ -383,3 +383,8 @@ Expenses (all types)
 ### 其他模板
 
 - <https://github.com/mckelvin/beancount-boilerplate-cn/blob/dev/ledger/account.beancount>
+
+
+## reference
+
+- [个人 Beancount 模板](https://github.com/einverne/beancount-sample)

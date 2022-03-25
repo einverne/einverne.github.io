@@ -87,3 +87,4 @@ plugin "beancount.plugins.forecast"
 
 - <https://beancount.github.io/docs/api_reference/beancount.plugins.html>
 - [如何编写插件](https://beancount.github.io/docs/beancount_scripting_plugins.html)
+- [个人 Beancount 模板](https://github.com/einverne/beancount-sample)

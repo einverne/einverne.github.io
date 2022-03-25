@@ -980,3 +980,7 @@ Vim 下将文件格式转换成 UTF-8 避免不必要的麻烦：
 
 到订单页面直接在浏览器自动生成 Beancount，粘贴即可。
 
+
+## reference
+
+- [个人 Beancount 模板](https://github.com/einverne/beancount-sample)

@@ -207,3 +207,4 @@ fava 就会根据你在 `main.bean` 文件中定义的内容渲染一个网页�
 ## reference
 
 - <https://plaintextaccounting.org/#comparisons>
+- [个人 Beancount 模板](https://github.com/einverne/beancount-sample)
