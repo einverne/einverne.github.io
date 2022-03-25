@@ -10,7 +10,7 @@ tags: [ so-you-start, proxmox, proxmox-ve, pve, linux, ubuntu, failover-ip, netw
 last_updated:
 ---
 
-最近买了一台 [[so-you-start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 Proxmox VE，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外可以购买的 16 个 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
+最近买了一台 [[so-you-start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 [[Proxmox VE]]，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外可以购买的 16 个 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
 
 安装 Proxmox VE 的过程就不多说了，在 So you Start 或者 OVH 后台直接使用模板安装即可，我使用的 6.x 版本，没有升级到最新的 7 版本。
 
@@ -19,6 +19,7 @@ last_updated:
 
 ## 前提准备工作
 
+- 安装好 Proxmox VE 的独立主机
 - 新建一台可以登录的虚拟机，操作系统不限
 - 购买好至少一个额外的 Failover IP
 
@@ -33,7 +34,7 @@ last_updated:
 
     02:01:00:78:95:aa
 
-新增 MAC 地址可能有一点延迟，等待生效即可。
+新增 MAC 地址可能有一点延迟，等待一小会儿生效即可。
 
 ### Add virtual MAC to the NIC of a VM
 然后需要在 Proxmox VE 虚拟机配置中将上述 MAC 地址配置。如果还没有安装虚拟机，可以参考 [Proxmox VE 官网的教程](https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines)。
@@ -42,17 +43,18 @@ VM 配置前需要是关闭状态。
 
 在 Proxmox VE 中，找到虚拟机的 Hardware 
 
-![[proxmox-ve-vm-hardward-20211019134831.png]]
+![](/assets/proxmox-ve-vm-hardward-20211019134831.png)
 
 找到 Network Device 选项，默认情况下是一个随机生成的 MAC 地址：
 
-![[proxmox-ve-vm-network-device-20211019134924.png]]
+![](/assets/proxmox-ve-vm-network-device-20211019134924.png)
 
 点击 Edit，然后在 MAC address 一栏将上一步的虚拟 MAC 地址填入，并保存。
 
 然后启动 VM，接下来需要配置虚拟机的网络接口。
 
 ### Configuring Network Settings
+配置虚拟机网络。
 
 #### Debian 10
 
@@ -113,7 +115,7 @@ dns-nameservers 208.67.222.222 208.67.220.220
 即可。
 
 #### Ubuntu 18.04
-Ubuntu 17 开始就使用 [Netplan](https://netplan.io/) 来管理网络配置，所以和 Debian 有一些区别。
+Ubuntu 从 17 版本开始就使用 [Netplan](https://netplan.io/) 来管理网络配置，所以和 Debian 有一些区别。
 
 修改 netplan 配置文件，根据不同的系统可能配置文件路径不一样，请注意一下：
 
@@ -148,7 +150,6 @@ network:
 然后使之生效：
 
     sudo netplan apply
-
 
 
 ## reference

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "独服 Proxmox VE 配置 NAT 使虚拟机共用一个公网 IP"
-aliases: 
+aliases:
 - "独服 Proxmox VE 配置 NAT 使虚拟机共用一个公网 IP"
 tagline: ""
 description: ""
@@ -9,7 +9,6 @@ category: 经验总结
 tags: [ proxmox, pve, linux, nat, networking ]
 last_updated:
 ---
-
 
 [[so-you-start]] 的独立服务器本来安装了 Ubuntu 20.04，后来想想为了充分利用 CPU 和内存，不如安装一个 [[Proxmox VE]] 然后在其基础之上再安装 Ubuntu 或者其他的系统测试。So you Start 通过后台安装 Proxmox 的过程比较简单，我直接使用了后台的 Proxmox VE 6 模板安装了 Proxmox。
 
@@ -52,24 +51,23 @@ iface eno4 inet manual
 
 auto vmbr0
 iface vmbr0 inet dhcp
-	bridge-ports eno3
-	bridge-stp off
-	bridge-fd 0
+    bridge-ports eno3
+    bridge-stp off
+    bridge-fd 0
 ```
 
 ### NAT
-NAT 全称是 Network Address Translation，在计算机网络中是网络地址转换的含义，也被叫做网络掩蔽，这是一种在 IP 数据包通过路由器或防火墙时重写来源 IP 地址或目的 IP 地址的技术。
+[[NAT]] 全称是 Network Address Translation，在计算机网络中是网络地址转换的含义，也被叫做网络掩蔽，这是一种在 IP 数据包通过路由器或防火墙时重写来源 IP 地址或目的 IP 地址的技术。
 
 在我们的 Proxmox VE 只有一个公网 IP 的情况下，如果要让多个虚拟机共享同一个 IP 地址对外提供服务，就需要用到 NAT 技术，让请求访问到宿主机的时候，转发到对应的虚拟机。
 
 所有的虚拟机使用内部私有 IP 地址，并通过 Proxmox VE 的公网 IP 访问外部网络。我们会使用 iptables 来改写虚拟机和外部通信的数据包：
 
 - 对于虚拟机向外部网络发出的数据包，源地址是内网 IP，目标终端在返回数据的时候，无法把数据包发送对正确的路由，所以在发送出去前，将源地址替换成 Proxmox VE 的 IP 地址
-- 对于外部网络返回的数据包，将目的地址替换成对应虚拟机的IP
+- 对于外部网络返回的数据包，将目的地址替换成对应虚拟机的 IP
 
 ### NDP
-NDP 全称是 Neighbor Discovery Protocol，简称 NDP，类似 IPv4 中的 ARP 协议。
-
+[[NDP]] 全称是 Neighbor Discovery Protocol，简称 NDP，类似 IPv4 中的 ARP 协议。
 
 ## 配置 Proxmox VE NAT
 上面的配置也提到了默认情况下 Proxmox VE 会创建一个 vmbr0 桥接找到的网卡。
@@ -86,7 +84,7 @@ root@pve:~# ip -f inet a s
        valid_lft 81976sec preferred_lft 81976sec
 ```
 
-Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge 并创建一个子网，然后将所有虚拟机包括宿主机都连接到这个子网内，再开启 iptables 的 NAT 功能。  
+Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge 并创建一个子网，然后将所有虚拟机包括宿主机都连接到这个子网内，再开启 iptables 的 NAT 功能。
 
 ### 创建 Linux Bridge
 在安装网桥之前，首先安装：
@@ -95,7 +93,7 @@ Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge
 
 然后登录 Proxmox VE 后台，创建 Linux Bridge，点击 PVE，然后选择 System -> Networks，然后点击创建。
 
-填写IP和子网掩码，IP地址填写个局域网的网段地址就行。其他项目不用填也不用改，保持默认（不用IPV6的情况下）。
+填写 IP 和子网掩码，IP 地址填写个局域网的网段地址就行。其他项目不用填也不用改，保持默认（不用 IPV6 的情况下）。
 
 - IP 地址填写一个局域网地址：10.0.0.1/24
 
@@ -134,12 +132,12 @@ iface vmbr1 inet static
 
 说明：
 
-- `ip_forward` 一行表示开启 IPv4 转发，这个是内核参数，将 Linux 当作路由器用的参数。一般来说，一个路由器至少要有两个网络接口，一个WAN，一个LAN，为了让 LAN 和 WAN 流量相同，需要内核上的路由
+- `ip_forward` 一行表示开启 IPv4 转发，这个是内核参数，将 Linux 当作路由器用的参数。一般来说，一个路由器至少要有两个网络接口，一个 WAN，一个 LAN，为了让 LAN 和 WAN 流量相同，需要内核上的路由
 - `post-up` 和 `post-down` 分别表示网卡启用和禁用之后，执行后面的命令
 - `iptables` 行表示，开启防火墙转发，`-A` 表示添加规则，配置一条 NAT 规则，源地址为 `10.0.0.0/24` 的流量，转发到 `vmbr0` 接口。
 - MASQUERADE 对 IP 地址数据包进行改写
 - 网卡关闭后 `-D` 删除这条规则
-- 最后2行是把虚拟机 10.0.0.102 上的 22 端口 NAT 到宿主机的 2022 端口，这样使得外部的网络可以通过 Proxmox VE 宿主机的 2022 端口访问虚拟机的 22 端口，可以直接使用上面的配置，或者手动执行下面的命令：
+- 最后 2 行是把虚拟机 10.0.0.102 上的 22 端口 NAT 到宿主机的 2022 端口，这样使得外部的网络可以通过 Proxmox VE 宿主机的 2022 端口访问虚拟机的 22 端口，可以直接使用上面的配置，或者手动执行下面的命令：
 
         iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2022 -j DNAT --to 10.0.0.102:22
 
@@ -202,7 +200,7 @@ network:
 
 注意配置其中的静态地址和网关。
 
-- 静态地址配置 `10.0.0.0/24` 网段下的地址
+- 静态地址配置 `10.0.0.0/24` 网段下的地址，比如 `10.0.0.102`
 - `gateway4` 地址配置 vmbr1 网桥的地址
 - DNS 服务器可以使用 Google 的，也可以用 1.1.1.1 Cloudflare 的，或者 OVH，或者 So you Start 提供的都行
 
@@ -238,7 +236,6 @@ dns-nameserver 8.8.8.8
 
 然后重启网络：`systemctl restart networking`。
 
-
 ## 如何调试
 在配置的过程中遇到很多问题，可以用一下一些命令熟悉 Linux 下的网络配置。
 
@@ -249,7 +246,6 @@ ip route show
 cat /proc/sys/net/ipv4/ip_forward
 qm config <VMID>
 ```
-
 
 ## 遇到的问题
 
@@ -264,7 +260,7 @@ qm config <VMID>
 下面一句的含义就是将 Proxmox VE(vmbr0) 的 2022 端口转发到 10.0.0.102 这台虚拟机的 22 端口：
 
     iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2022 -j DNAT --to 10.0.0.102:22
-    
+
 这样在外部互联网就可以通过 `ssh -p 2022 root@<proxmox ip` 来访问 Proxmox VE 中的虚拟机了。
 
 如果遇到要转发一组端口可以使用：
