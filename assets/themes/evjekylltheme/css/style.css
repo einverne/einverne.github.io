@@ -272,6 +272,7 @@ code {
     margin: 0;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Monaco, Lucida Console, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
     font-size: 105%;
+    word-break: break-all;
 }
 
 /*
