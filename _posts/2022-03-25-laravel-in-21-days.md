@@ -5,7 +5,7 @@ aliases:
 - "Laravel 21 天学习计划"
 tagline: ""
 description: ""
-category: 学习笔记
+category: laravel
 tags: [ php, laravel, website, learning-note, notes, phpstorm, docker, sail ]
 last_updated: 2022-03-29 09:46:33
 create_time: 2022-03-29 09:01:17
@@ -37,9 +37,9 @@ create_time: 2022-03-29 09:01:17
 
 - 首先比较重要的就是搭建一个开发环境。
 - 其次就是先上手使用，通过编码了解其工作原理，一次请求是如何在其中流转的
-    - [[Laravel 文件上传]]
+    - [[2022-03-28-laravel-file-upload]]
     - [[2022-03-29-laravel-send-email|Laravel 学习笔记：发送邮件]]
-    - [[Laravel 队列]]
+    - [[2022-03-30-laravel-queue]]
 - 在了解一定使用基础之后，去了解一些底层实现原理
     - [[Laravel 学习笔记 —— 服务容器]]
     - [[Laravel 服务提供器]]

@@ -5,7 +5,7 @@ aliases:
 - "Laravel 学习笔记：发送邮件"
 tagline: ""
 description: ""
-category: [ 学习笔记 , Laravel ]
+category: [ 学习笔记 , laravel ]
 tags: [ laravel, email, sendmail, mailer, mailgun, smtp]
 last_updated:
 ---

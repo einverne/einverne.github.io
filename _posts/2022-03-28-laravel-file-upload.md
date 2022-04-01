@@ -1,0 +1,133 @@
+---
+layout: post
+title: "Laravel 学习笔记：文件上传"
+aliases: 
+- "Laravel 学习笔记：文件上传"
+tagline: ""
+description: ""
+category: [ laravel ]
+tags: [ laravel, file-upload ]
+last_updated:
+---
+
+上传文件是一个网页应用必不可少的一部分，这里就记录一下 Laravel 中如何上传，并展示图片。
+
+
+## Model
+首先创建一个 Model 和 migration:
+
+    php artisan make:model Photo -m
+
+这行命令会创建一个数据库 Migration 文件，在 `database/migrations` 下：
+
+修改：
+
+```
+public function up()
+{
+    Schema::create('photos', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('path');
+        $table->timestamps();
+    });
+}
+```
+
+执行数据库变更：
+
+    php artisan migrate
+
+创建 route，打开 `web.php`:
+
+```
+Route::get('upload-image', [UploadImageController::class, 'index']);
+Route::post('save', [UploadImageController::class, 'save']);
+```
+
+然后创建 Controller
+
+    php artisan make:controller UploadImageController
+
+内容：
+
+```
+<?php
+ 
+namespace App\Http\Controllers;
+ 
+use Illuminate\Http\Request;
+use App\Models\Image;
+ 
+ 
+class UploadImageController extends Controller
+{
+    public function index()
+    {
+        return view('image');
+    }
+ 
+    public function save(Request $request)
+    {
+         
+        $validatedData = $request->validate([
+         'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+ 
+        ]);
+ 
+        $name = $request->file('image')->getClientOriginalName();
+ 
+        $path = $request->file('image')->store('public/images');
+ 
+ 
+        $save = new Photo;
+ 
+        $save->name = $name;
+        $save->path = $path;
+ 
+        $save->save();
+ 
+        return redirect('upload-image')->with('status', 'Image Has been uploaded');
+ 
+    }
+}
+```
+
+`store` 方法就把图片保存到了 `images` 目录中。
+
+可以修改一下文件路径
+
+```
+$filename= date('YmdHi').$file->getClientOriginalName();
+$file-> move(public_path('public/Image'), $filename);
+```
+
+
+### Blade View
+
+在 `resources/views` 下创建 `image.blade.php`，其中最重要的 form 部分：
+
+```
+<div class="card-body">
+    <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="file" name="image" placeholder="Choose image" id="image">
+                @error('image')
+                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                @enderror
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </div>
+        </div>     
+    </form>
+
+</div>
+```
+
