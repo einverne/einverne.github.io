@@ -37,7 +37,9 @@ Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可
 [[SendGrid]] 免费服务每天可以发送 100 封邮件，同样支持 API 和 SMTP 方式，还可以使用 Webhook 方式。
 
 ## Mailjet
-个人还没有注册
+
+
+- <https://app.mailjet.com/signin>
 
 
 ## Postmark
@@ -62,5 +64,13 @@ Mailchimp 是一个电子邮件订阅的在线工具。
 - <https://aws.amazon.com/cn/ses/>
 
 ## sendinblue
+sendinblue 提供免费的发送额度，每天可以至多发送 300 封邮件。
 
+- <https://www.sendinblue.com/>
+
+## mailtrap
+mailtrap 给个人开发这提供免费 500封测试邮件。
+
+
+- <https://mailtrap.io/>
 
