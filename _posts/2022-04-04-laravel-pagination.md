@@ -7,7 +7,8 @@ tagline: ""
 description: ""
 category: laravel
 tags: [ laravel, php, laravel-pagination,  ]
-last_updated:
+last_updated: 2022-04-09 01:29:04
+create_time: 2022-04-02 09:44:05
 ---
 
 
@@ -54,6 +55,17 @@ $users = DB::table('users')->simplePaginate(15);
 如果使用 Eloquent，可以直接在 Model 上调用：
 
     $users = User::paginate(15);
+
+
+## 排序
+如果要倒序来分页，有两种写法，一种是直接使用 DB：
+
+    $ondata = DB::table('official_news')->orderBy('created_date', 'desc')->paginate(10);
+
+另外一种就是使用 Model:
+
+    $posts = Post::orderBy('id', 'desc')->paginate(10);
+
 
 ## Cursor 分页
 除了使用 `offset` 方式分页，还可以使用游标：
