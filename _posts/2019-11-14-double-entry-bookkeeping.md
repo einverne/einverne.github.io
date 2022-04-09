@@ -229,3 +229,4 @@ beancount 具体语法和使用方式 byvoid 的[这篇文章](https://www.byvoi
 - <https://www.youtube.com/watch?v=VhwZ9t2b3Zk>
 - <http://www.mathstat.dal.ca/~selinger/accounting/tutorial.html>
 - [[fava 相关配置]]
+- [个人 Beancount 模板](https://github.com/einverne/beancount-sample)

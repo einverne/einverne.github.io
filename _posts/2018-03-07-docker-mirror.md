@@ -42,8 +42,13 @@ Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/
 
 
 ### 网易
+网易提供的地址：
 
 	https://hub-mirror.c.163.com
+
+### 百度
+
+    https://mirror.baidubce.com
 
 ### 腾讯
 腾讯只能在腾讯云上使用：
@@ -96,6 +101,9 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc) 的加速地�
 - <https://console.cloud.google.com/gcr/images/google-containers/GLOBAL?location=GLOBAL&project=google-containers>
 
 ### 阿里云
+阿里云加速器 (点击管理控制台 -> 登录账号 (淘宝账号) -> 右侧镜像中心 -> 镜像加速器 -> 复制地址)。
+
+
 这里是阿里云提供的镜像托管服务
 
 - <https://dev.aliyun.com/search.html>

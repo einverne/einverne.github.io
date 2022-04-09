@@ -12,15 +12,20 @@ last_updated:
 
 上传文件是一个网页应用必不可少的一部分，这里就记录一下 Laravel 中如何上传，并展示图片。
 
+拆分开来主要分为如下几个步骤：
 
-## Model
-首先创建一个 Model 和 migration:
+- 创建数据库 Model，用一个 Model 实体来保存上传图片的路径以及相关的 meta 信息
+- 添加 Controller 层用来处理保存图片逻辑，以及持久化的过程
+- 创建前端 Form 表单，并提交 POST 请求，提交图片
+
+## 创建数据库 Model
+首先使用 `artisan` 创建一个 Model 和 migration:
 
     php artisan make:model Photo -m
 
 这行命令会创建一个数据库 Migration 文件，在 `database/migrations` 下：
 
-修改：
+然后修改 `migration` 文件，创建数据库 schema：
 
 ```
 public function up()
@@ -34,10 +39,13 @@ public function up()
 }
 ```
 
-执行数据库变更：
+上面的操作便是创建了一张表叫做 `photos`，其中包含了 `id`, `name`, `path` 和时间四列
+
+执行数据库变更，会根据数据库的配置自动创建表：
 
     php artisan migrate
 
+## Controller 上传逻辑
 创建 route，打开 `web.php`:
 
 ```
@@ -95,7 +103,7 @@ class UploadImageController extends Controller
 
 `store` 方法就把图片保存到了 `images` 目录中。
 
-可以修改一下文件路径
+为了安全起见，可以修改一下文件路径：
 
 ```
 $filename= date('YmdHi').$file->getClientOriginalName();
@@ -130,4 +138,6 @@ $file-> move(public_path('public/Image'), $filename);
 
 </div>
 ```
+
+
 

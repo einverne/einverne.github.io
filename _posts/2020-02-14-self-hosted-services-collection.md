@@ -264,7 +264,7 @@ anyi 导航、聚合搜索、webstack
 
 
 ### Homer
-[[another-simple-static-homepage-homer]]一个非常简单的静态页面，可以通过 yaml 配置。
+[[2021-08-26-another-simple-static-homepage-homer]]一个非常简单的静态页面，可以通过 yaml 配置。
 
 ![homer-20210826211247.png](/assets/homer-20210826211247.png)
 

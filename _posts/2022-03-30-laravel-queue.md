@@ -22,10 +22,10 @@ Laravel 队列提供了一个统一的 API 访问入口，可以支持不同的�
 
 Laravel 队列的配置在 `config/queue.php` 中。
 
-Laravel 还提供了一个 Redis 队列的 Dashboard 叫做 [Horizon](https://laravel.com/docs/9.x/horizon)。
+Laravel 还提供了一个 Redis 队列的 Dashboard 叫做 [Horizon](https://laravel.com/docs/9.x/horizon)。但是这一篇文章不会涉及到 Horizon 相关内容。
 
 ## Connection Vs. Queues
-在 `config/queue.php` 配置文件中，有一个 `connections` 配置数组。这个选项用来定义和后端队列服务（比如 Amazon SQS，Beanstalk，Redis） 的连接。
+Laravel 队列的相关配置都在 `config/queue.php` 配置文件，其中有一个 `connections` 配置数组。这个选项用来定义和后端队列服务（比如 Amazon SQS，Beanstalk，Redis） 的连接。
 
 每一个 connection 配置，都有一个 `queue` 属性。如果没有指定队列，那么就会放到 default 
 
@@ -49,7 +49,7 @@ php artisan queue:work --queue=high,default
 ## Driver Notes & Prerequisites
 
 ### Database
-使用数据库作为队列驱动，用户需要一张表来存储任务。运行 `queue:table` 来创建表：
+如果使用数据库作为队列驱动，那么需要创建一张表来存储队列任务。运行 `queue:table` 来创建表：
 
     php artisan queue:table
     php artisan migrate
@@ -210,9 +210,6 @@ class UpdateSearchIndex implements ShouldQueue, ShouldBeUnique
 
 
 保持任务唯一，直到开始处理，可以实现 `ShouldBeUniqueUntilProcessing` 。
-
-
-
 
 
 ## Job Middleware
@@ -473,7 +470,7 @@ Laravel 包括了一个 Artisan 命令可以用来开始一个队列的 worker�
 
     php artisan queue:work
 
-为了是 `queue:work` 命令常驻后台，可以使用进程管理器 [Supervisor](https://laravel.com/docs/9.x/queues#supervisor-configuration)。
+为了使得 `queue:work` 命令常驻后台，可以使用进程管理器 [Supervisor](https://laravel.com/docs/9.x/queues#supervisor-configuration)。
 
 注意，queue workers 会将应用保存到内存中。这也就意味着代码的改动不会立即生效。在开发的过程中，注意重启 queue workers。
 

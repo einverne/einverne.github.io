@@ -116,7 +116,7 @@ Spring Boot 中指定 CGLIB 实现 AOP。
 
 - `@Before`，在方法执行前执行
 - `@After`，方法执行后执行
-- `@AfterRunning`，方法返回结果之后执行
+- `@AfterReturning`，方法返回结果之后执行 [[Spring AOP AfterReturning]]
 - `@AfterThrowing`，异常通知，方法抛出异常之后
 - `@Around`，环绕方法执行
 

@@ -11,19 +11,24 @@ last_updated:
 ---
 
 
-记录一下使用 Laravel 发送邮件。
+在我最初的设计中一共有两个地方需要发送邮件：
+
+- 第一就是用户注册，发送邮件激活
+- 第二就是当用户订阅一个书单的时候，自动给所有订阅的用户发送带有附件的电子书到其设定的邮箱中
+
+所以接下来就记录一下使用 Laravel 发送邮件。
 
 在 Laravel 中发送邮件并不是那么复杂。Laravel 通过 Symfony Mailer 实现了一套非常简洁的邮件 API。
 
 Laravel 中提供了很多种方式来发送邮件：
 
-- [[SMTP]]
-- [[Mailgun]]
+- [[SMTP]] 直接配置 SMTP服务器
+- [[Mailgun]] 通过 Mailgun 等发送邮件的服务提供商
 - [[Postmark]]
 - [[Amazon SES]]
 - sendmail
 
-通过配置 `env` 文件来选择使用哪个邮件发送方式。
+在 `env` 配置文件中选择使用哪个邮件发送方式。
 
 ## 配置 {#configuration}
 Laravel 邮件服务可以通过 `config/mail.php` 来配置。每一个邮件配置都有一个唯一 `transport`，这也就意味着你的应用可以使用不同的服务来发送不同的邮件。比如说你的应用可以使用 Postmark 来发送交易邮件，然后使用 Amazon SES 来批量发送营销邮件。

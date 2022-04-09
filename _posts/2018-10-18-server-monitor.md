@@ -21,11 +21,40 @@ last_updated:
 
 之前也有分享过两个很不错的服务器监控程序 [nodequery](/post/2017/08/nodequery.html) 和 [netdata](/post/2018/02/netdata.html)。之后又陆陆续续发现了其他一些不错的监控程序，所以就顺手整理一下。
 
-## SyAgent
+
+
+商业方案，也就是提供服务在线监控，并且如果超过一定使用量向用户收取一定费用的服务：
+
+- [[SyAgent]]
+- [[EHEH]]
+
+商业开源方案：
+
+- [[Netdata]]
+
+
+Self-hosted 方案，容器化方案，所有监控内容可以直接通过容器部署：
+
+- [[dockprom]]
+- [[2021-08-28-nezha-monitor]]
+- [[uptime-kuma]]
+- [[ServerStatus]]
+
+### SyAgent
 SyAgent 是我在 LET 上面看到的一个选项，不过该网站由个人运营维护。
 
 - <https://syagent.com/>
 
+### EHEH
+一个闭源的监控平台，类似于 Nodequery，安全性待评估。
+
+- <https://eheh.org/index/index>
+
+
+### dockprom
+一个容器化解决方案，集成了 Prometheus, Grafana, cAdvisor 等等。
+
+- <https://github.com/stefanprodan/dockprom>
 
 ## Zabbix
 Zabbix 是一个企业级的开源监控方案。
@@ -62,6 +91,7 @@ netdata 是一款开源的监控程序，安装简单，安装之后会开启一
 
 ## Nezha monitor
 
+- [哪吒监控使用](/post/2021/08/nezha-monitor.html)
 - [[2021-08-28-nezha-monitor]]
 
 ## Datadog
@@ -69,11 +99,6 @@ netdata 是一款开源的监控程序，安装简单，安装之后会开启一
 
 - <https://www.datadoghq.com/>
 
-
-## EHEH
-一个闭源的监控平台，类似于 Nodequery，安全性待评估。
-
-- <https://eheh.org/index/index>
 
 
 ## reference
