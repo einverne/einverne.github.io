@@ -20,6 +20,13 @@ Tmux 一个非常著名的功能就是可以多个 Pane 同步输入，使用方
 
 同理配置 `:set synchronise-panes off` 就可以关闭
 
+我在 `~/.tmux.conf` 中配置了：
+
+```
+bind C-x setw synchronize-panes
+```
+
+配合 `prefix` + `Ctrl-x` 就可以快速切换多 Pane 同步。
 
 ## Zooming tmux
 tmux 1.8 引入了 Zoom 功能，支持一键最大化当前 Working Pane，使用 `prefix` + `z` 来放大，再次按下恢复。
