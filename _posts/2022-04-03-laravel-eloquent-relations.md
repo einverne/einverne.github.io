@@ -45,7 +45,7 @@ class User extends Model
     return $this->hasOne(Phone::class, 'foreign_key');
 
 
-### 定义逆向关系
+### 定义一对一逆向关系
 比如 Phone 属于用户：
 
 ```
@@ -138,3 +138,40 @@ $comment = Comment::find(1);
  
 return $comment->post->title;
 ```
+
+## 多对多关系
+最常见的多对多关系就是，用户-角色，用户可能有多重角色，同一个角色也会有不同的用户。另外一个比较常见的场景就是标签系统，一本书会有标签1，2，3，标签1也会包含多本书。
+
+```
+class User extends Model
+{
+    public function roles() {
+        return $this->belongsToMany(
+            Role:class,
+            // pivot table
+            'role_user',
+            'user_id',
+            'role_id'
+        )
+    }
+}
+```
+
+Role 定义：
+
+```
+class Role extends Model {
+    public function users() {
+        return $this->belongsToMany(
+            User:class,
+            'role_user',
+            'role_id',
+            'user_id'
+        )
+    }
+}
+```
+
+## 远程一对一
+三个 Model 之间都是一对一关系，那么就可以建立远程一对一关系。
+
