@@ -74,3 +74,38 @@ mailtrap 给个人开发这提供免费 500封测试邮件。
 
 - <https://mailtrap.io/>
 
+
+## mail baby
+Mail baby 是一个邮件服务提供商。只需要保持每个月 1$ 的费用，每发送 1000 封邮件花费 20美分。
+
+- <https://www.mail.baby/>
+
+## mail space
+Mail Space 最低的一个套餐是每个月 3.33$，年付。每个月可以发送 1000 封邮件。
+
+
+- <https://mailpace.com/#pricing>
+
+## Tutanota
+Tutanota 是一家德国公司，可以支付每个月 1 欧元使用。
+
+- <https://tutanota.com/pricing/>
+
+
+## mailbox.org
+mailbox.org 也是一家德国公司，提供三档套餐：
+
+- Light，2GB 空间，3个域名昵称，日历和联系人同步，1欧元/每月
+- Standard，10GB 空间，5GB 云端存储，25个 @mailbox.org 邮箱昵称，50 个自定义域名迷城，3 欧元/每月
+- Premium，25GB 邮件空间，50GB 云端存储空间，25个 @mailbox.org 昵称，250 个自定义域名昵称，9欧元/每月
+
+- <https://register.mailbox.org/en>
+
+
+## ProtonMail
+ProtonMail 是一款加密电子邮箱。
+
+免费版提供 500MB 空间，每天 150 封邮件限制，3 个文件夹/标签限制。
+
+
+- <https://protonmail.com/pricing>

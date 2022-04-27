@@ -208,6 +208,12 @@ rsync 中的命令 参数 `-e, --rsh=COMMAND` 指定使用 rsh、ssh 方式进�
 
 	rsync --remove-source-files -zvh backup.tar /tmp/backups/
 
+
+### 同步过程中删除远程中已经在本地删除的文件
+使用 `--delete` 选项。
+
+    rsync -avh --delete /path/to/local root@remote:/path/to/remote
+
 ### 设置备份带宽
 
 	rsync --bwlimit=100 -avzhe ssh /var/lib/rpm/ root@remoteip:/root/tmprpm/

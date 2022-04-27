@@ -21,7 +21,7 @@ last_updated:
 - <https://github.com/zhaojun1998/zfile>
 
 ## lsky-pro
-又一款用 PHP 所写图片管理系统。
+[[lsky-pro]] 是一款用 PHP 框架 [[laravel]] 编写的图片管理系统。
 
 - <https://github.com/wisp-x/lsky-pro>
 
