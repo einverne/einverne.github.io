@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Python logging 模块使用"
+aliases: "Python logging 模块使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -13,49 +14,51 @@ last_updated:
 
 ## 基本使用
 
-    # -*- coding: utf-8 -*-
+```
+# -*- coding: utf-8 -*-
 
-    import logging
-    import sys
+import logging
+import sys
 
-    # 获取 logger 实例，如果参数为空则返回 root logger
-    # 最基本的入口，该方法参数可以为空，默认的 logger 名称是 root，如果在同一个程序中一直都使用同名的 logger，其实会拿到同一个实例，使用这个技巧就可以跨模块调用同样的 logger 来记录日志
-    logger = logging.getLogger("AppName")
+# 获取 logger 实例，如果参数为空则返回 root logger
+# 最基本的入口，该方法参数可以为空，默认的 logger 名称是 root，如果在同一个程序中一直都使用同名的 logger，其实会拿到同一个实例，使用这个技巧就可以跨模块调用同样的 logger 来记录日志
+logger = logging.getLogger("AppName")
 
-    # 指定 logger 输出格式
-    formatter = logging.Formatter('%(asctime)s %(levelname)-8s: %(message)s')
+# 指定 logger 输出格式
+formatter = logging.Formatter('%(asctime)s %(levelname)-8s: %(message)s')
 
-    # 文件日志
-    file_handler = logging.FileHandler("test.log")
-    file_handler.setFormatter(formatter)  # 可以通过 setFormatter 指定输出格式
+# 文件日志
+file_handler = logging.FileHandler("test.log")
+file_handler.setFormatter(formatter)  # 可以通过 setFormatter 指定输出格式
 
-    # 控制台日志
-    console_handler = logging.StreamHandler(sys.stdout)
-    console_handler.formatter = formatter  # 也可以直接给 formatter 赋值
+# 控制台日志
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.formatter = formatter  # 也可以直接给 formatter 赋值
 
-    # 为 logger 添加的日志处理器
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+# 为 logger 添加的日志处理器
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
 
-    # 指定日志的最低输出级别，默认为 WARN 级别
-    logger.setLevel(logging.INFO)
+# 指定日志的最低输出级别，默认为 WARN 级别
+logger.setLevel(logging.INFO)
 
-    # 输出不同级别的 log
-    logger.debug('this is debug info')
-    logger.info('this is information')
-    logger.warn('this is warning message')
-    logger.error('this is error message')
-    logger.fatal('this is fatal message, it is same as logger.critical')
-    logger.critical('this is critical message')
+# 输出不同级别的 log
+logger.debug('this is debug info')
+logger.info('this is information')
+logger.warn('this is warning message')
+logger.error('this is error message')
+logger.fatal('this is fatal message, it is same as logger.critical')
+logger.critical('this is critical message')
 
-    # 2016-10-08 21:59:19,493 INFO    : this is information
-    # 2016-10-08 21:59:19,493 WARNING : this is warning message
-    # 2016-10-08 21:59:19,493 ERROR   : this is error message
-    # 2016-10-08 21:59:19,493 CRITICAL: this is fatal message, it is same as logger.critical
-    # 2016-10-08 21:59:19,493 CRITICAL: this is critical message
+# 2016-10-08 21:59:19,493 INFO    : this is information
+# 2016-10-08 21:59:19,493 WARNING : this is warning message
+# 2016-10-08 21:59:19,493 ERROR   : this is error message
+# 2016-10-08 21:59:19,493 CRITICAL: this is fatal message, it is same as logger.critical
+# 2016-10-08 21:59:19,493 CRITICAL: this is critical message
 
-    # 移除一些日志处理器
-    logger.removeHandler(file_handler)
+# 移除一些日志处理器
+logger.removeHandler(file_handler)
+```
 
 ## 格式化输出
 

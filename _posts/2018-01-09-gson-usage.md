@@ -256,6 +256,13 @@ FieldNamingPolicy 还有这些
 		}
 	}
 
+然后创建 Gson 时：
+
+```
+    Gson gson = new GsonBuilder()
+        .registerTypeAdapter(Double.class, new DoubleTypeAdapter()).create();
+```
+
 
 ## reference
 

@@ -51,6 +51,7 @@ create_time: 2022-03-29 09:01:17
 官方：
 
 - [文档](https://laravel.com/docs/9.x/)
+- [Laravel best practices](https://github.com/alexeymezenin/laravel-best-practices)
 
 ### 网站教程
 
