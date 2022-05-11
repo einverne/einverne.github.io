@@ -8,7 +8,9 @@ tags: [termux, android, android-app, terminal, linux, 终端 , 工具 ,  ]
 last_updated:
 ---
 
-Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.
+Termux 是一个 Android 上的应用，但是这个应用是一个终端模拟器，可以完美的在 Android 上模拟一个 Linux 终端环境。甚至不需要 root 权限，正常安装即可使用。Termux 还提供了一套自己的包管理。
+
+> Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.
 
 官网地址：
 
@@ -81,7 +83,16 @@ pkg 命令
     export EDITOR=vi
     apt edit-sources
 
-    http://mirrors.tuna.tsinghua.edu.cn/termux stable main
+将其中内容替换为：
+
+    deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main
+
+在新版的 Termux 中官方提供了图形界面（TUI）来半自动替换镜像[^mirror]：
+
+    termux-change-repo
+
+
+[^mirror]: <https://mirrors.tuna.tsinghua.edu.cn/help/termux/>
 
 ## zsh
 安装 zsh
@@ -101,12 +112,12 @@ pkg 命令
 
     ssh-keygen -b 4096 -t rsa
 
-此时会在 Termux 手机上生成一队公钥私钥，在 `~/.ssh` 目录下。
+此时会在 Termux 手机上生成一对公钥私钥，在 `~/.ssh` 目录下。
 
 ### 从电脑 SSH 连接 Termux
-Termux 不支持密码登录，所以需要将客户端设备的 id_rsa.pub 文件内容拷贝到 Termux 的 `~/.ssh/authorized_keys` 文件中。因为 Termux 不支持 `ssh-copy-id` 所以只能手动操作。
+Termux 不支持密码登录，所以需要将客户端设备的 `id_rsa.pub` 文件内容拷贝到 Termux 的 `~/.ssh/authorized_keys` 文件中。因为 Termux 不支持 `ssh-copy-id` 所以只能手动操作。
 
-要实现如此可以在 Termux home 目录中
+要实现如此可以在 Termux home 目录中 SSH 到客户端的机器上，然后拷贝：
 
     scp username@desktop.ip:~/.ssh/id_rsa.pub .
     cat id_rsa.pub >> ~/.ssh/authorized_keys
@@ -127,6 +138,7 @@ Termux 不支持密码登录，所以需要将客户端设备的 id_rsa.pub 文�
 
 Termux 是单用户系统，所以不需要输入用户名，即使输入了 Termux 也会忽略。
 
+### 传输文件
 这样就免去了使用数据线连接手机传文件的问题，只要在局域网中能够互相访问，相互传输文件就方便许多。
 
     # PC to Phone
@@ -146,6 +158,7 @@ Termux 是单用户系统，所以不需要输入用户名，即使输入了 Ter
 
 最后可以在桌面端配置 `vi ~/.ssh/config`
 
+```
 Host op7
     HostName ipOfYourDevice
     User termux
@@ -154,6 +167,7 @@ Host op7
     ForwardX11Trusted yes
     IdentitiesOnly yes
     IdentityFile ~/.ssh/id_rsa
+```
 
 这样就可以 `ssh op7` 来登陆手机 Termux 了。
 
@@ -166,7 +180,7 @@ Host op7
 
 ## adb
 
-如果开启了 Android 远程调试，那么使用 adb connect ip 就方便许多，安装 adb 以备不时之需。
+如果开启了 Android 远程调试，那么使用 `adb connect ip` 就方便许多，安装 adb 以备不时之需。
 
 - <https://github.com/MasterDevX/Termux-ADB>
 

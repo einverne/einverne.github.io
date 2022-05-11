@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "几个常见的 NAS 系统整理及选择"
+aliases: "几个常见的 NAS 系统整理及选择"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [freenas, unraid, esxi, docker, linux, freebsd, openmediavault, nas, ]
+tags: [freenas, unraid, esxi, docker, linux, freebsd, openmediavault, nas, operating-system, ]
 last_updated:
 ---
 
@@ -51,16 +52,16 @@ OpenMediaVault 主要面向小型办公环境和家庭，所以体积非常小�
 - 内存占用小
 - 可以充分利用 Debian 的软件生态
 - 支持 Docker
-- 可以借助第三方软件组存储池，磁盘冗余备份
+- 可以借助第三方软件([[MergerFS]])组存储池，磁盘冗余备份
 
 ### 其他参考链接
 
 - <http://www.openmediavault.org/>
 
 ## ESXi
-准确来讲 ESXi 不能算作是一个 NAS 系统，更多地可以称其为虚拟机系统，用户可以在 ESXi  上虚拟化出多个系统充分利用硬件性能。
+准确来讲 [[ESXi]] 不能算作是一个 NAS 系统，更多地可以称其为虚拟机系统，用户可以在 ESXi 上虚拟化出多个系统充分利用硬件性能。
 
-ESXi 由 VMware 公司开发，是VMWare vSphere Hypervisor套件之下重要组件，这是一套为企业而设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
+ESXi 由 VMware 公司开发，是VMWare vSphere Hypervisor 套件之下重要组件，这是一套为企业而设计的虚拟机。ESXi 可以方便的安装在服务器中，然后就可以虚拟化安装其他系统。
 
 前身是 ESX，依赖 Linux，后来抛弃 Linux 变成了 ESXi。
 
@@ -72,7 +73,7 @@ ESXi 由 VMware 公司开发，是VMWare vSphere Hypervisor套件之下重要组
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-Hltydu9PXk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## PVE
-PVE 的全称是 Proxmox Virtual Environment，是基于 Debian 的 Linux 系统，虚拟机内核为 KVM，硬件兼容性好。和 ESXi 一样，也算不上 NAS 系统，但是可以将其作为物理机的操作系统，再此基础之上安装，比如 OpenMediaVault这样为 NAS 而设计的系统。我自己配置的 NAS 就是这样一套系统。
+[[PVE]] 的全称是 Proxmox Virtual Environment，是基于 Debian 的 Linux 系统，虚拟机内核为 KVM，硬件兼容性好。和 ESXi 一样，也算不上 NAS 系统，但是可以将其作为物理机的操作系统，再此基础之上安装，比如 OpenMediaVault这样为 NAS 而设计的系统。我自己配置的 NAS 就是这样一套系统。
 
 
 ## unRAID
@@ -138,14 +139,16 @@ NexentaStor is an OpenSolaris or more recently Illumos distribution optimized fo
 
 总结来讲，FreeNAS 有最好的文件系统 -- ZFS，但是对 Docker 支持需要借助虚拟机有一定性能损耗，OpenMediaVault 最轻量，但是对虚拟机不支持硬件直通，unRAID 可以非常方便的扩展硬盘池大小，对虚拟机支持也比较完善。
 
-对于我个人而言，目前我并没有支持 ECC 的内存，也没有备用多余的内存条，我目前的数据也不需要做到实时备份，所以目前我不需要 FreeNAS，而 UnRaid 又有一些我无法容忍的问题（比如配置丢失的问题，作为个人家用虽然可以 24 小时开机，但我不想每次开机后需要重新配置），综合下来 OpenMediaVault 最符合我的需求：
+对于我个人而言，目前我并没有支持 ECC 的内存，也没有备用多余的内存条，我目前的数据也不需要做到实时备份，所以目前我不需要 FreeNAS，而 unRaid 又有一些我无法容忍的问题（比如配置丢失的问题，作为个人家用虽然可以 24 小时开机，但我不想每次开机后需要重新配置），综合下来 OpenMediaVault 最符合我的需求：
 
 - 一个稳定的系统，Debian 上的扩展也非常多
 - Docker 也支持
 - 配合 [mergerfs](https://github.com/trapexit/mergerfs) 可以实现多物理盘组合，实现 UnRaid 中随时添加磁盘的特性
 - 配合 [SnapRAID](https://www.snapraid.it/) 可以实现冗余备份
-- 配合 Prometheus 和 [Grafana](/post/2018/02/grafana.html) 可以对 NAS 进行全面的监控，弥补起管理后台监控的不足
+- 配合 [[Prometheus]] 和 [Grafana](/post/2018/02/grafana.html) 可以对 NAS 进行全面的监控，弥补起管理后台监控的不足
 - 最重要的就是 [OpenMediaVault](/post/2020/04/prometheus-monitoring-system-and-tsdb.html) 是[开放源代码的](https://sourceforge.net/projects/openmediavault/)
+
+最后我的方案就是在硬件上安装 Proxmox，然后在 Proxmox 中安装了 OpenMediaVault。
 
 ## reference
 

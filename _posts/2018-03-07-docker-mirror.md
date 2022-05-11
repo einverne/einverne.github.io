@@ -20,7 +20,11 @@ last_updated:
         "insecure-registries": []
     }
 
-修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。下面就总结一下国内的 Docker 镜像站点。
+修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。
+
+在 macOS 中，可以在界面中配置，在 Docker 应用中，打开偏好设置，然后在 "Docker Engine" 中配置：
+
+![macos docker mirror](https://photo.einverne.info/images/2022/05/05/de29.png)
 
 修改后使用 `sudo docker info` 来检查配置是否生效。
 
@@ -32,7 +36,7 @@ Docker 官方提供的镜像：
 	https://registry.docker-cn.com
 
 ### Azure
-Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/blob/master/aks/README.md#22-container-registry-proxy) 包括 Docker Hub、GCR、Quay。
+~~Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/blob/master/aks/README.md#22-container-registry-proxy) 包括 Docker Hub、GCR、Quay。~~
 
 	https://dockerhub.azk8s.cn
 
@@ -51,7 +55,7 @@ Azure [中国镜像](https://github.com/Azure/container-service-for-azure-china/
     https://mirror.baidubce.com
 
 ### 腾讯
-腾讯只能在腾讯云上使用：
+腾讯提供的镜像，只能在腾讯云上使用：
 
 	https://mirror.ccs.tencentyun.com
 
@@ -102,7 +106,6 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc) 的加速地�
 
 ### 阿里云
 阿里云加速器 (点击管理控制台 -> 登录账号 (淘宝账号) -> 右侧镜像中心 -> 镜像加速器 -> 复制地址)。
-
 
 这里是阿里云提供的镜像托管服务
 

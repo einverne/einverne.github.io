@@ -57,6 +57,11 @@ rename 支持通配符
 
 批量修改文件后缀名
 
+或者匹配最后的部分：
+
+    rename "s/oldExt$/newExt/" *.oldExt
+    
+
 ### 批量添加文件后缀
 
     rename "s/$/.txt/" *     # 把所有的文件名都以txt结尾

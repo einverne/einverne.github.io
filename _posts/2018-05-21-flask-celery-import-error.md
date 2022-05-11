@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Flask 使用 Celery 避免循环引用"
+aliases: "Flask 使用 Celery 避免循环引用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -41,6 +42,7 @@ last_updated:
 
 在 `app/__init__.py`
 
+```
     from celery import Celery
     from flask import Flask
 
@@ -55,13 +57,16 @@ last_updated:
         celery.conf.update(app.config)	# 更新 celery 的配置
         # ...
         return app
+```
 
 在 `celery_worker.py`
 
-    from app import create_app, celery
+```
+from app import create_app, celery
 
-    app = create_app()
-    app.app_context().push()
+app = create_app()
+app.app_context().push()
+```
 
 这个文件有两个操作，一个为初始化 Flask 实例，也就初始化了 Celery 实例，然后第二个操作是使用 Flask 的 application context，celery 的所有操作都会在这个环境中执行。
 

@@ -4,7 +4,7 @@ title: "每天学习一个命令：qmv 在文本编辑器中对文件及目录�
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [qmv, linux, command, ]
+tags: [qmv, linux, command, rename, batch-rename, ]
 last_updated:
 ---
 
@@ -16,6 +16,15 @@ last_updated:
 
 ## 延展
 qmv 是属于`renameutils` 这个包，这个包中还有 `qcp` 和 `qcmd`，看名字应该比较好猜，`cp` 和 `cmd`，复制和执行。
+
+通过如下方式安装：
+
+    sudo apt install renameutils
+    
+macOS 下：
+
+    brew install renameutils
+
 
 ## reference
 

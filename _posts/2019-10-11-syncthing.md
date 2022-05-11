@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Syncthing 又一款同步工具"
+aliases: "Syncthing 又一款同步工具"
 tagline: ""
 description: ""
 category: 产品体验
@@ -124,6 +125,17 @@ Override Changes 或者撤销变动，中文译法有些不准确。出现这个
 然后重新 `sudo systemctl daemon-reload`，并重新启动 Syncthing：
 
     sudo systemctl start syncthing@einverne.service
+
+### inotify limit
+增加 inotify limit
+
+添加到配置(重启后生效)：
+
+    echo "fs.inotify.max_user_watches=204800" | sudo tee -a /etc/sysctl.conf
+
+立即生效可以配置：
+
+    echo 204800 | sudo tee /proc/sys/fs/inotify/max_user_watches
 
 
 ## reference

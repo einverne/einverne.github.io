@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Celery 最佳实践"
+aliases: "Celery 最佳实践"
 tagline: ""
 description: "Celery is a fast, reliable, distributed task queue"
 category: 经验总结

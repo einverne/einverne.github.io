@@ -108,12 +108,13 @@ SceneTime 是一个0day/Scene综合PT站，目前存活种子数80000。
 暂时无账号，求大佬邀请。
 
 ### OpenCD
-是另一个想进的站，听说音乐比较多。
+OpenCD 是一个主打音乐的站点，比较想进，但是一直没有机会，所以只能进了 jpopsuki，日韩音乐比较多。主要挺 kpop 的我，目前感觉还行。如果有人有 OpenCD 邀请有求一枚。
 
 ### CHD Bits
 听说是挺大的站，求邀请吧
 
 ### HDAI
+
 - <https://www.hd.ai/index.php>
 
 ### 52PT
