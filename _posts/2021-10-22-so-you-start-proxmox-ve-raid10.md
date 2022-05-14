@@ -5,8 +5,8 @@ aliases:
 - "So you Start 独服 Proxmox VE 配置 RAID 10"
 tagline: ""
 description: ""
-category: 经验总结
-tags: [ linux, raid, raid-10, proxmox, pve, dedicated-server, hard-disk, backup ]
+category: [ 经验总结, Proxmox-VE ]
+tags: [ linux, raid, raid-10, proxmox, pve, dedicated-server, hard-disk, backup, so-you-start, ovh ]
 last_updated:
 ---
 

@@ -5,9 +5,10 @@ aliases:
 - "独服 Proxmox VE 配置 NAT 使虚拟机共用一个公网 IP"
 tagline: ""
 description: ""
-category: 经验总结
-tags: [ proxmox, pve, linux, nat, networking ]
-last_updated:
+category: [ 经验总结 , Proxmox-VE ]
+tags: [ proxmox, pve, linux, nat, networking, operating-system  ]
+last_updated: 2022-05-14 02:49:48
+create_time: 2022-03-25 09:39:40
 ---
 
 [[so-you-start]] 的独立服务器本来安装了 Ubuntu 20.04，后来想想为了充分利用 CPU 和内存，不如安装一个 [[Proxmox VE]] 然后在其基础之上再安装 Ubuntu 或者其他的系统测试。So you Start 通过后台安装 Proxmox 的过程比较简单，我直接使用了后台的 Proxmox VE 6 模板安装了 Proxmox。

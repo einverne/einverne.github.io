@@ -5,7 +5,7 @@ aliases:
 - "So you Start 独服 Proxmox VE 虚拟机配置 Failover IP"
 tagline: ""
 description: ""
-category: 经验总结
+category: [ 经验总结, Proxmox-VE ]
 tags: [ so-you-start, proxmox, proxmox-ve, pve, linux, ubuntu, failover-ip, network, ip ]
 last_updated:
 ---

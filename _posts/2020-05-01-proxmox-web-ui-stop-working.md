@@ -3,7 +3,7 @@ layout: post
 title: "Proxmox Web 界面停止工作解决"
 tagline: ""
 description: ""
-category: 经验总结
+category: [ 经验总结 , Proxmox-VE]
 tags: [proxmox, virtual, linux, hostname,]
 last_updated:
 ---

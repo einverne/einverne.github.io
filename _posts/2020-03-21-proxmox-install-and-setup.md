@@ -4,7 +4,7 @@ title: "Proxmox 安装和设置"
 alias: "Proxmox 安装和设置"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ 学习笔记 , Proxmox-VE ]
 tags: [proxmox, pve, virtual, virtual-machine, ]
 last_updated:
 ---

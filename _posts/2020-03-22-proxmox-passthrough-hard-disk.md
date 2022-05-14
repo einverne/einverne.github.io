@@ -4,7 +4,7 @@ title: "Proxmox VE 设定直通硬盘"
 aliases: "Proxmox VE 设定直通硬盘"
 tagline: ""
 description: ""
-category: [ 学习笔记 , Proxmox VE ]
+category: [ 学习笔记 , Proxmox-VE ]
 tags: [proxmox, pve, virtual, linux, debian, ]
 last_updated:
 ---

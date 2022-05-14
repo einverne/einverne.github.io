@@ -4,7 +4,7 @@ title: "在 Proxmox VE 上使用 qm 命令管理虚拟机"
 aliases: "在 Proxmox VE 上使用 qm 命令管理虚拟机"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ 学习笔记 , Proxmox-VE ]
 tags: [proxmox, pve, linux, debian, qm, vm]
 last_updated:
 ---

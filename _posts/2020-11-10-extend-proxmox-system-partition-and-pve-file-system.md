@@ -3,7 +3,7 @@ layout: post
 title: "扩展 Proxmox 系统分区以及 Proxmox 文件系统初识"
 tagline: ""
 description: ""
-category: 学习笔记
+category: [ 学习笔记, Proxmox-VE ]
 tags: [proxmox, linux, nas, openmediavault, system, fdisk, partition, gpt, clonezilla]
 last_updated:
 ---
