@@ -209,6 +209,7 @@ LazyLibrarian is a program to follow authors and grab metadata for all your digi
 
 其他图床
 
+- [sapic](https://github.com/sapicd/sapic) 一款使用 Flask 编写的图床。可存储到又拍云、七牛云、阿里云OSS、腾讯云COS、GitHub、Gitee、S3等，支持自定义扩展。
 - [lsky-pro](https://github.com/wisp-x/lsky-pro) PHP
 - [auxpi](https://github.com/aimerforreimu/auxpi) Go
 - EasyImage

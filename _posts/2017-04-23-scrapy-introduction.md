@@ -92,31 +92,42 @@ Scrapy 使用了 Twisted 异步网络库来处理网络，可以对网站页面�
 
 Scrapy 的核心组件：
 
-- 引擎（Scrapy Engine）
+- Scrapy Engine
+- Scheduler
+- Downloader
+- Spider
+- Pipeline
+- Item
+- Middlewares
+    - Downloader Middlewares
+    - Spider Middlewares
+    - Scheduler Middlewares
+
+### 引擎（Scrapy Engine）
 用来处理整个系统的数据流，触发事务（框架核心），负责控制和调度各个组件
 
-- 调度器（Scheduler）
-用来接受引擎发过来的请求，压入队列中，并在引擎再次请求的时候返回，如：要抓取的链接（URL）的优先队列，由它来决定下一个要抓取的 URL 是什么，并进行去重。
+### 调度器（Scheduler）
+接受 Engine 发过来的请求，压入队列中，并在引擎再次请求的时候返回，如：要抓取的链接（URL）的优先队列，由它来决定下一个要抓取的 URL 是什么，并进行去重。
 
-- 下载器（Downloader）
+### 下载器（Downloader）
 下载器负责对目标页面发出请求并获取页面反馈的数据，之后传递给 Scrapy 引擎，最终传递给爬虫进行数据提取。
 
-- 爬虫（Spider）
+### 爬虫（Spider）
 爬虫是 Scrapy 的用户自行编写的一段数据提取程序，针对下载器返回的数据结构进行分析（一般为 HTML），并提取出其中的结构化数据，并可以指定其他需要跟进的 URL 和处理方法。每个爬虫负责处理一个或多个特定的网站。
 
-- 项目管道（Pipline）
+### 项目管道（Pipline）
 负责处理爬虫从网页中抽取的实体，主要的功能是持久化实体（Item）、验证实体的有效性、清除垃圾信息。当页面被爬虫解析后，解析后内容将会发送到项目管理通道，经过几个特定的次序处理。
 
-- 数据 (Item)
+### 数据 (Item)
 Item 是爬虫针对网页数据做解析后返回的数据，需要在使用之前预先定义好 Item 的数据结构，爬虫的解析程序负责将提取到的数据填充到 Item 中，并将 Item 返回，传递给数据管道进行后续处理。
 
-- 下载器中间件（Downloader Middlewares）
+### 下载器中间件（Downloader Middlewares）
 位于 Scrapy 引擎和下载器之间的框架，主要是处理 Scrapy 引擎和下载器之间的请求与响应。
 
-- 爬虫中间件（Spider Middlewares）
+### 爬虫中间件（Spider Middlewares）
 介于 Scrapy 引擎和 Spider 之间的框架，处理爬虫的响应输入和请求输出。
 
-- 调度中间件（Scheduler Middlewares）
+### 调度中间件（Scheduler Middlewares）
 介于 Scrapy 引擎和调度之间的中间件，从 Scrapy 引擎发送到调度的请求和响应。
 
 图解见官网：<https://doc.scrapy.org/en/latest/topics/architecture.html>
@@ -178,31 +189,32 @@ Item 是爬虫针对网页数据做解析后返回的数据，需要在使用之
 ## 定义 middlewares
 middlewares 是 Scrapy 在请求时中间必须经过的步骤，在 settings 中有设置 `DOWNLOADER_MIDDLEWARES` 。
 
-    import random
+```
+import random
 
-    from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 
-    from scrapy.conf import settings
-
-
-    class RandomUserAgentMiddleware(UserAgentMiddleware):
-
-        def __init__(self, user_agent=''):
-            self.user_agent = user_agent
-
-        # 每一请求都会走这个函数，在这里随机挑选 UA
-        def process_request(self, request, spider):
-            ua = random.choice(settings.get('USER_AGENT_LIST'))
-            if ua:
-                print "******Current UserAgent: %s **************" % ua
-
-                request.headers.setdefault("User-Agent", ua)
+from scrapy.conf import settings
 
 
-    class ProxyMiddleware(object):
-        def process_request(self, request, spider):
-            request.meta['proxy'] = random.choice(settings.get('HTTP_PROXY_LIST'))
+class RandomUserAgentMiddleware(UserAgentMiddleware):
 
+    def __init__(self, user_agent=''):
+        self.user_agent = user_agent
+
+    # 每一请求都会走这个函数，在这里随机挑选 UA
+    def process_request(self, request, spider):
+        ua = random.choice(settings.get('USER_AGENT_LIST'))
+        if ua:
+            print "******Current UserAgent: %s **************" % ua
+
+            request.headers.setdefault("User-Agent", ua)
+
+
+class ProxyMiddleware(object):
+    def process_request(self, request, spider):
+        request.meta['proxy'] = random.choice(settings.get('HTTP_PROXY_LIST'))
+```
 
 ## 多 pipeline 协同处理
 Item 在 Spider 中构造之后会被传送到 Pipeline 中，按照一定的顺序执行。一般情况下 pipeline 会做一些数据处理或存储的事情，一般写数据库操作都放到 Pipeline 中。

@@ -5,7 +5,7 @@ aliases: "免费发送邮件的服务收集整理"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [email, collection, email-service,]
+tags: [email, collection, email-service, linux, smtp]
 last_updated:
 ---
 
@@ -16,6 +16,15 @@ last_updated:
 - 有一些免费的额度可以供测试及小规模的使用
 - 域名不需要备案直接配置 DNS 即可使用
 
+## Gmail SMTP
+对于小型的应用，最开始的时候可以使用 Gmail SMTP 来发送邮件，免费，并且送达率由 Google 来保证，基本没有啥问题。
+
+但是 Gmail SMTP 发送有数量限制：
+
+- 对于免费的 Gmail 账号，每一天限制 500 封邮件
+- 对于 G Suite 账号每天 1000 封邮件
+
+如果你使用超过了 Gmail 的限制，那么 Google 会在没有任何警告的前提下停止 Gmail 账号的访问，需要等一整天之后才能再访问，所以如果你的服务每天会发送超过 500 封邮件的情况下最好还是不要使用 Gmail。
 
 ## Elastic Email
 [[Elastic Email]] 是一家加拿大的公司。官网地址：
@@ -47,6 +56,8 @@ Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可
 
 
 ## SparkPost
+
+Sparkpost 屏蔽了 xyz 域名。
 
 
 ## mailchimp
@@ -115,3 +126,13 @@ ProtonMail 是一款加密电子邮箱。
 Mailchannels 是一家邮件发送服务提供商。
 
 - <https://www.mailchannels.com/>
+
+## zoho
+一个域名邮箱提供商。
+
+- <https://www.zoho.com/mail/>
+
+
+## 相关
+
+- [[SMTP Relay]]

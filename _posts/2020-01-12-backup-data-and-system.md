@@ -77,7 +77,7 @@ last_updated:
 使用 OpenMediaVault 的系统使用 SnapRAID 来对磁盘做冗余备份，以防止一块硬盘挂掉。
 
 ### Time Machine 或者 Clonezilla
-macOS 下有 Time Machine 备份，Linux Mint 下可以使用 rsync 来备份，如果是 Windows 或 Proxmox 我就是用 Clonezilla 来备份一个分区。
+macOS 下有 Time Machine 备份，Linux Mint 下可以使用 rsync 来备份，如果是 Windows 或 [[Proxmox VE]] 我就是用 Clonezilla 来备份一个分区。
 
 
 ## 根据作用隔离磁盘

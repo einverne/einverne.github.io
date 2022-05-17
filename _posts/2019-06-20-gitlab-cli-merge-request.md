@@ -19,10 +19,12 @@ gitlab-cli 是一个用 Javascript 所写的工具，可以用来在命令行中
 
     lab -h
 
-全局配置
+通过环境变量全局配置
 
     GITLAB_URL=https://gitlab.yourcompany.com
     GITLAB_TOKEN=abcdefghijskl-1230
+
+TOKEN 可以在 `https://gitlab.yourcompany.com/profile/account` 这个地方找到。
 
 一些常用的选项：
 

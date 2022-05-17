@@ -1,14 +1,15 @@
 ---
 layout: post
 title: "使用 flask migrate 来迁移数据结构"
+aliases: "使用 flask migrate 来迁移数据结构"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [flask, sql, migrate, sqlalchemy, alembic]
-last_updated: 
+tags: [flask, sql, migrate, sqlalchemy, alembic, mysql, database, ]
+last_updated:
 ---
 
-最近在学习使用 Flask 生成一个短链接服务时看到了 Flask-Migrate 这样一款插件，之前学习 Django 的时候自带数据库迁移工具， Flask 中也有这样一款，不过是以插件的形式出现，Flask Migrate 基于 [Alembic](http://alembic.readthedocs.org/en/latest/)，Alembic 是 SQLAlchemy 作者开发的数据迁移工具。
+最近在学习使用 Flask 生成一个短链接服务时看到了 Flask-Migrate 这样一款插件，之前学习 Django 的时候自带数据库迁移工具， Flask 中也有这样一款，不过是以插件的形式出现，Flask Migrate 基于 [Alembic](http://alembic.readthedocs.org/en/latest/) ，Alembic 是 SQLAlchemy 作者开发的数据迁移工具。
 
 文档主页：<https://flask-migrate.readthedocs.io/en/latest/>
 
@@ -43,15 +44,40 @@ last_updated:
 
     flask db migrate
 
-迁移脚本不会检测models 的所有变更， Alembic 目前无法检测表名修改，列名修改，其他限制可以在[Alembic网站](http://alembic.zzzcomputing.com/en/latest/autogenerate.html#what-does-autogenerate-detect-and-what-does-it-not-detect)查看。
+迁移脚本不会检测 models 的所有变更， Alembic 目前无法检测表名修改，列名修改，其他限制可以在 [Alembic 网站](http://alembic.zzzcomputing.com/en/latest/autogenerate.html#what-does-autogenerate-detect-and-what-does-it-not-detect) 查看。
 
 之后可以应用该迁移
 
     flask db upgrade
 
-运行该命令来将修改应用到数据库，以后对model的每一次修改需要重复 `migrate` 和 `upgrade` 命令。如果要在不同机器之间同步数据库结构，只需要同步 migrations 文件夹，并且在另一台机器上运行 `flask db upgrade` 即可。
+运行该命令来将修改应用到数据库，以后对 model 的每一次修改需要重复 `migrate` 和 `upgrade` 命令。如果要在不同机器之间同步数据库结构，只需要同步 migrations 文件夹，并且在另一台机器上运行 `flask db upgrade` 即可。
 
-Flask Migrate 也支持直接使用脚本的方式运行，具体可参考[官方的文档](https://flask-migrate.readthedocs.io/en/latest/)，非常易懂。
+Flask Migrate 也支持直接使用脚本的方式运行，具体可参考 [官方的文档](https://flask-migrate.readthedocs.io/en/latest/) ，非常易懂。
 
 
+## 其他常用的命令
 
+```
+(venv) $ flask db
+Usage: flask db [OPTIONS] COMMAND [ARGS]...
+
+  Perform database migrations.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  branches   Show current branch points
+  current    Display the current revision for each...
+  downgrade  Revert to a previous version
+  edit       Edit a revision file
+  heads      Show current available heads in the script...
+  history    List changeset scripts in chronological...
+  init       Creates a new migration repository.
+  merge      Merge two revisions together, creating a new...
+  migrate    Autogenerate a new revision file (Alias for...
+  revision   Create a new revision file.
+  show       Show the revision denoted by the given...
+  stamp      'stamp' the revision table with the given...
+  upgrade    Upgrade to a later version
+```

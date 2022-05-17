@@ -23,6 +23,14 @@ create_time: 2020-12-29 09:24:49
 
 ## 豆瓣电影 剧集 {#movie}
 
+### NeoDB
+[NeoDB](https://neodb.social/home/)  是一个建立在 federated network （联邦网络）中的用来标记书籍、电影、音乐和游戏的网站。
+
+NeoDB 目前只能通过 [[Mastodon]] （或[[Pleroma]]/Friendica/PixelFed）实例的账号来登录。
+
+我的页面：<https://neodb.social/users/einverne@m.gtk.pw/>
+
+
 ### themoviedb
 
 themoviedb 简称为 [TMDB](https://www.themoviedb.org/) ，是一个从 2008 年开始的电影，剧集数据库。拥有非常全的数据库。

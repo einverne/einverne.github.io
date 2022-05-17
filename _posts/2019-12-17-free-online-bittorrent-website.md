@@ -124,6 +124,10 @@ OpenCD 是一个主打音乐的站点，比较想进，但是一直没有机会�
 
 - <https://pt.gtk.pw/>
 
+### Digital Core
+
+- <https://digitalcore.club/>
+
 ## 字幕
 
 - <https://a4k.net>
