@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MacBook Pro 初始设置记录"
+aliases: "MacBook Pro 初始设置记录"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -33,9 +34,11 @@ Whether that will make a difference for you at all is highly dependent on what y
 首先是一些必要设置的设置，后面的一切都依赖这些设置。
 
 ### 设置代理
-国内的网络环境，这已经成了所有设置的基础，甚至我想先下载一个 Chrome 都需要依赖代理设置好。首先从 GitHub 下载 [ClashX](https://github.com/yichengchen/clashX/releases)，然后导入 v2ray 配置。（或者可以用 v2rayU, [Qv2ray](https://github.com/Qv2ray/Qv2ray))
+~~国内的网络环境，这已经成了所有设置的基础，甚至我想先下载一个 Chrome 都需要依赖代理设置好。首先从 GitHub 下载 [ClashX](https://github.com/yichengchen/clashX/releases)，然后导入 v2ray 配置。（或者可以用 v2rayU, [Qv2ray](https://github.com/Qv2ray/Qv2ray))~~
 
-ClashX 的配置文件在 `~/.config/clash/` 目录下。
+~~ClashX 的配置文件在 `~/.config/clash/` 目录下。~~
+
+已经替换成 Clash For Windows。
 
 在终端中要进行代理：
 
@@ -168,17 +171,11 @@ brew 的备份和恢复，如果要在两台 Mac 间备份和恢复 brew 安装�
 
 [官网](https://www.iterm2.com/) 下载安装即可。
 
-
 zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 项目管理。
 
 	git clone git@github.com:einverne/dotfiles.git
-	ln -s ~/dotfiles/.zshrc ~/.zshrc
-	source ~/.zshrc
-
-    ln -s ~/dotfiles/.vimrc ~/.vimrc
-	# 然后进入 Vim，执行 `:PlugInstall`
-	ln -s ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-	ln -s ~/dotfiles/tmux/.tmux.conf.local ~/.tmux.conf.local
+    cd dotfiles
+    make bootstrap
 
 配置和 Guake 类似的下拉显示。
 
