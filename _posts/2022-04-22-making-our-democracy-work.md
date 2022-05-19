@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "《法官能为民主做什么》读书笔记"
+title: "法官能为民主做什么 读书笔记"
 aliases: 
-- "《法官能为民主做什么》读书笔记"
+- "法官能为民主做什么 读书笔记"
 tagline: ""
 description: ""
 category: 读书笔记
 tags: [ #reading, #reading-2022, #司法 , #大法官, #布雷耶 ]
-date: 2022-04-22 13:25:30
 create_time: 2022-04-22 01:49:28
 last_updated: 2022-04-22 09:48:43
 ---
