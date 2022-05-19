@@ -6,9 +6,10 @@ aliases:
 tagline: ""
 description: ""
 category: 读书笔记
-tags: [ #reading, #reading-2022, #司法 , #大法官, #布雷耶 ]
+rating: 5
+tags: [ reading, reading-2022, 司法 , 大法官, 布雷耶 ]
 create_time: 2022-04-22 01:49:28
-last_updated: 2022-04-22 09:48:43
+last_updated: 2022-05-19 07:38:04
 ---
 
 这是 [[20220417-21 天计划]] 中的第一本书，记录一下读书笔记。
