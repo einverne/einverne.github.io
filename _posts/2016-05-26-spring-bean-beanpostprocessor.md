@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Spring BeanPostProcessor 使用"
+aliases: "Spring BeanPostProcessor 使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -9,6 +10,21 @@ last_updated:
 ---
 
 `BeanPostProcessor` 接口允许在 Spring Bean Factory 返回 Bean instance 时修改 Bean 的创建过程。这是影响 Bean 生命周期的一部分。
+
+接口有两个方法：
+
+```
+public interface BeanPostProcessor {
+    @Nullable
+    default Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+            return bean;
+        }
+    @Nullable
+    default Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        return bean;
+    }
+}
+```
 
 ## Bean life cycle
 要了解 `BeanPostProcessor` 接口就不得不提及 Bean 的生命周期。

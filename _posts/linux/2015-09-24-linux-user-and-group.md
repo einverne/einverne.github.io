@@ -197,3 +197,4 @@ u user  g group  o others  a all
 
     compgen -u
     compgen -g
+

@@ -294,6 +294,7 @@ anyi 导航、聚合搜索、webstack
 ### onenav
 
 - <https://github.com/helloxz/onenav>
+- <https://gitee.com/baisucode/onenav>
 
 ## 服务器监控
 
