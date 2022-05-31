@@ -37,11 +37,11 @@ Lsky Pro 兰空图床是一个 PHP 编写的图床程序。Lsky Pro 升级了 2.
 
 示意图：
 
-![upic lsky pro config](http://img.gtk.pw/i/2022/05/30/6294a1c1228d3.png)
+![upic lsky pro config](https://img.gtk.pw/i/2022/05/30/6294a1c1228d3.png)
 
 然后配置 Other fields，添加 Header，记得 Bearer 后面添加上面获取的 Token。
 
-![upic other fields](http://img.gtk.pw/i/2022/05/30/6294a23a9ab47.png)
+![upic other fields](https://img.gtk.pw/i/2022/05/30/6294a23a9ab47.png)
 
 ### 设置 Chevereto
 
