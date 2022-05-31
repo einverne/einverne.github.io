@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 antigen 来管理 zsh 插件"
+aliases: "使用 antigen 来管理 zsh 插件"
 tagline: ""
 description: ""
 category: 经验总结

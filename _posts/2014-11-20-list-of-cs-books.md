@@ -259,7 +259,8 @@ C++
 - 《软件随想录 : 程序员部落酋长 Joel 谈软件》
 - 《如何把事情做到最好：改变全球 9800 万人的人生指导书》
 
+## reference
 
-- https://web.archive.org/web/20170728202627/http://www.pydevops.com/2016/11/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%BB%E4%B9%A6%E5%88%97%E8%A1%A8%E6%8E%A8%E8%8D%90/
+- [来源](https://web.archive.org/web/20170728202627/http://www.pydevops.com/2016/11/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E8%AF%BB%E4%B9%A6%E5%88%97%E8%A1%A8%E6%8E%A8%E8%8D%90/)
 
 

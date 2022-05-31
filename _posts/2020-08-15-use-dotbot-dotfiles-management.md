@@ -1,16 +1,18 @@
 ---
 layout: post
 title: "使用 dotbot 管理 dotfiles 配置文件"
+aliases: "使用 dotbot 管理 dotfiles 配置文件"
 tagline: ""
 description: ""
-category:
+category: 经验总结
 tags: [dotfiles, config, mac, linux, vim, zsh,]
-last_updated:
+last_updated: 2022-05-26 09:20:44
+create_time: 2020-08-15 08:15:33
 ---
 
 一直都使用手动的方式来管理 `dotfiles`，之前一方面是学习，一方面是熟悉整个配置，但随着配置文件的不断增多，管理便成为了一个问题。今天本来是在看 Karabiner 的配置，然后找到了一些参考，发现 [narze](https://github.com/narze/) 使用 `dotbot` 来管理其配置。便顺手也把我的 [dotfiles](https://github.com/einverne/dotfiles) 改了一下。
 
-`Dotbot` 的原理非常简单，就是将配置文件软链接到特定的位置，使得 Vim，Tmux, zsh 之类可以直接使用。然后 `Dotbot` 使用 YAML 定义的一套配置格式将整个过程简化。使得最后可以直接运行 `git clone git@github.com:einverne/dotfiles.git && cd dotfiles && ./install` 一键完成初始化。
+`dotbot` 的原理非常简单，就是将配置文件软链接到特定的位置，使得 Vim，Tmux, zsh 之类可以直接使用。然后 `dotbot` 使用 YAML 定义的一套配置格式将整个过程简化。使得最后可以直接运行 `git clone git@github.com:einverne/dotfiles.git && cd dotfiles && make bootstrap` 一键完成初始化。
 
 ## 使用 {#Usage}
 最基本的使用方法，参考[说明](https://github.com/anishathalye/dotbot#getting-started):
