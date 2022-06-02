@@ -16,6 +16,7 @@ ol, ul {
     list-style-type: disc;
     margin-left: 5px;
     padding-left: 20px;
+    font-size: 15px;
 }
 
 h2 {
