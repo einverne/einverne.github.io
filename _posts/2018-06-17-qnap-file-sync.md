@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇六：文件同步"
+aliases: "威联通折腾篇六：文件同步"
 tagline: ""
 description: ""
 category: 经验总结

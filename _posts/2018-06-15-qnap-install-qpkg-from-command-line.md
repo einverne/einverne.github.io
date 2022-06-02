@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇一：使用命令行安装威联通 QNAP 的 qpkg 安装包"
+aliases: "威联通折腾篇一：使用命令行安装威联通 QNAP 的 qpkg 安装包"
 tagline: ""
 description: ""
 category: 经验总结

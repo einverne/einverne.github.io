@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇二十：自带 Apache Web 服务器及 SSL 配置"
+aliases: "威联通折腾篇二十：自带 Apache Web 服务器及 SSL 配置"
 tagline: ""
 description: ""
 category: 学习笔记

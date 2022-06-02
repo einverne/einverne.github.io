@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "ffmpeg 入门笔记"
+title: "FFmpeg 入门笔记"
 tagline: ""
-description: "使用 ffmpeg 进行转码"
+description: "使用 FFmpeg 进行转码"
 category: 学习笔记
 tags: [ffmpeg, linux, media, movie, mp4, mp3, format, ffplay, ffprobe]
 last_updated: 2015-12-31

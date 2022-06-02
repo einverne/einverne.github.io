@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十三：替换默认 shell 为 zsh"
+aliases: "威联通折腾篇十三：替换默认 shell 为 zsh"
 tagline: ""
 description: ""
 category: [ 学习笔记 , 威联通 ]

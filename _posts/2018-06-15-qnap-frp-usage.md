@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇二：使用 frp 内网穿透"
+aliases: "威联通折腾篇二：使用 frp 内网穿透"
 tagline: ""
 description: ""
 category: 经验总结

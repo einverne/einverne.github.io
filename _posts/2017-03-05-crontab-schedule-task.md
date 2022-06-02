@@ -230,7 +230,7 @@ cron 在 `/var/log/syslog` 中有相关日志，可以使用 `tailf /var/log/sys
 
 ### 环境变量问题
 
-cron 使用 /usr/bin/sh 的命令，默认有以下内置变量：
+cron 使用 `/usr/bin/sh` 的命令，默认有以下内置变量：
 
     HOME=user home directory
     LOGNAME=user's login id

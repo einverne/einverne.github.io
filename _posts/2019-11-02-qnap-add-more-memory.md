@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十六：加内存"
+aliases: "威联通折腾篇十六：加内存"
 tagline: ""
 description: ""
 category: 经验总结

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇七：定时任务"
+aliases: "威联通折腾篇七：定时任务"
 tagline: ""
 description: ""
 category: 学习笔记

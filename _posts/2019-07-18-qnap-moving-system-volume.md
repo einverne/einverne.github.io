@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十四：迁移系统盘"
+aliases: "威联通折腾篇十四：迁移系统盘"
 tagline: ""
 description: ""
 category: 经验总结

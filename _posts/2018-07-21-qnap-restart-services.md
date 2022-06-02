@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇八：重启服务"
+aliases: "威联通折腾篇八：重启服务"
 tagline: ""
 description: ""
 category: 经验总结

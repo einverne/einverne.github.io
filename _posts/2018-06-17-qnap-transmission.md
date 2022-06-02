@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇五：安装 Transmission 下载 BT"
+aliases: "威联通折腾篇五：安装 Transmission 下载 BT"
 tagline: ""
 description: ""
 category: 经验总结

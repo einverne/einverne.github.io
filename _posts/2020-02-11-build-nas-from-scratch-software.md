@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "从零搭建一台 NAS：软件篇"
+aliases: "从零搭建一台 NAS：软件篇"
 tagline: ""
 description: ""
 category: 学习笔记

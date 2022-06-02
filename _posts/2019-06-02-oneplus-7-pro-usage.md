@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OnePlus 7 Pro 折腾记"
+aliases: "OnePlus 7 Pro 折腾记"
 tagline: ""
 description: ""
 category: 经验总结

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十六：为 Container Station 更换镜像"
+aliases: "威联通折腾篇十六：为 Container Station 更换镜像"
 tagline: ""
 description: ""
 category: [ 经验总结 , 威联通 ]

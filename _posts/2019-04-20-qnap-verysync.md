@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十二：verysync 微力同步"
+aliases: "威联通折腾篇十二：verysync 微力同步"
 tagline: ""
 description: ""
 category: [ 学习笔记 , 威联通 , 产品体验  ]

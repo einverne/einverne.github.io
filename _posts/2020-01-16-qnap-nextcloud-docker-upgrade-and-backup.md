@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十七：Docker 安装的 NextCloud 升级、备份及恢复"
+aliases: "威联通折腾篇十七：Docker 安装的 NextCloud 升级、备份及恢复"
 tagline: ""
 description: ""
 category: 经验总结

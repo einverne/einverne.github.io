@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十一：USB 一键备份"
+aliases: "威联通折腾篇十一：USB 一键备份"
 tagline: ""
 description: ""
 category: [ 经验总结 , 威联通 ]

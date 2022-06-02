@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Boox Note 2 使用感受及小技巧"
+aliases: "Boox Note 2 使用感受及小技巧"
 tagline: ""
 description: ""
 category:

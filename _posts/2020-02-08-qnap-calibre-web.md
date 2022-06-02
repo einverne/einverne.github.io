@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十九：Calibre-web"
+aliases: "威联通折腾篇十九：Calibre-web"
 tagline: ""
 description: ""
 category: 经验总结

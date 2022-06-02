@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇十：使用 aria2 下载百度云"
+aliases: "威联通折腾篇十：使用 aria2 下载百度云"
 tagline: ""
 description: ""
 category: 经验总结

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "威联通折腾篇九：MySQL 设置"
+aliases: "威联通折腾篇九：MySQL 设置"
 tagline: ""
 description: ""
 category: 经验总结

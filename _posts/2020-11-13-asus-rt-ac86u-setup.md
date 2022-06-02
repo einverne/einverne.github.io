@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Asus RT-AC86U 初始设置"
+aliases: "Asus RT-AC86U 初始设置"
 tagline: ""
 description: ""
 category:
