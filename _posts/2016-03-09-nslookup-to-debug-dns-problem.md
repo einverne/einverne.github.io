@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：nslookup 查询调试 DNS"
+aliases: "每天学习一个命令：nslookup 查询调试 DNS"
 tagline: ""
 description: ""
 category: 每天学习一个命令
@@ -12,6 +13,9 @@ last_updated:
 
 
 ## 命令
+在 Ubuntu 下可以使用如下命令安装：
+
+    sudo apt install dnsutils
 
 格式：
 
@@ -19,11 +23,15 @@ last_updated:
 
 ## 使用
 
-nslookup 是一个查询 Internet domain name server 的工具，nslookup 有两种模式： interactive and non-interactive。
+`nslookup` 是一个查询 Internet domain name server 的工具，nslookup 有两种模式： 
 
+- interactive 交互模式
+- non-interactive 非交互模式
+
+### 交互模式
 进入交互模式，总共有两种方法。
 
-第一种方法，直接输入 nslookup 命令，不加任何参数，则直接进入交互模式，此时 nslookup 会连接到默认的域名服务器（即 /etc/resolv.conf 的第一个 dns 地址）。
+第一种方法，直接输入 `nslookup` 命令，不加任何参数，则直接进入交互模式，此时 nslookup 会连接到默认的域名服务器（即 `/etc/resolv.conf` 的第一个 dns 地址）。
 
 第二种方法，是支持选定不同域名服务器的。需要设置第一个参数为“-”，然后第二个参数是设置要连接的域名服务器主机名或 IP 地址。
 
@@ -35,10 +43,10 @@ nslookup 是一个查询 Internet domain name server 的工具，nslookup 有两
 
     nslookup
     > www.douban.com
-    Server:	127.0.1.1   // 往上连接的 DNS 服务器
+    Server:	127.0.1.1   // 连接的 DNS 服务器
     Address:	127.0.1.1#53    // DNS 服务器 IP 地址与端口
 
-    Non-authoritative answer:    // 非权威答案，从上连 DNS 服务器本地缓存中读取，非实际查询得到
+    Non-authoritative answer:    // 非权威答案，从连接的 DNS 服务器本地缓存中读取，非实际查询得到
     Name:	www.douban.com
     Address: 115.182.201.6    // IP 地址
     Name:	www.douban.com
@@ -50,7 +58,7 @@ nslookup 是一个查询 Internet domain name server 的工具，nslookup 有两
 
 进入交互模式之后，使用  `server dns-server` 来改变上连 DNS 服务器地址
 
-### 查询域名 ip 地址
+### 查询域名 IP 地址
 
     nslookup www.douban.com [dns-server]
 

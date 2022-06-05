@@ -11,7 +11,7 @@ last_updated: 2022-04-28 10:08:20
 create_time: 2022-04-28 10:07:20
 ---
 
- [Mailcow](https://mailcow.email/) 是一个可以使用 Docker 容器化部署的邮件服务器。
+[Mailcow](https://mailcow.email/) 是一个可以使用 Docker 容器化部署的邮件服务器。
 
 GitHub： <https://github.com/mailcow/mailcow-dockerized>
 
@@ -36,7 +36,6 @@ Mailcow 整体的搭建过程比较简单，如果之前搭建过 Mailu，实际
 提前的 DNS 设置可以参考[官网](https://mailcow.github.io/mailcow-dockerized-docs/prerequisite/prerequisite-dns/)。
 
 安装：
-
 
     git clone https://github.com/mailcow/mailcow-dockerized
     cd mailcow-dockerized
@@ -98,6 +97,9 @@ server {
 | POP3S   | SSL        | 995  |
 | SMTP    | STARTTLS   | 587  |
 | SMTPS   | SSL        | 465  |
+
+### 手工配置
+
 
 
 ## reference
