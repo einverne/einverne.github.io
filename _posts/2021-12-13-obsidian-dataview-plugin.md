@@ -25,7 +25,7 @@ last_updated:
 
 ## 基本概念 {#concept}
 
-在 Obsidian 中可以以不同的方式对数据（笔记）进行标记，Dataview 会追踪所有 Markdown 文件中标记的数据。
+在 Obsidian 中可以用不同的方式对数据（笔记）进行标记，Dataview 会追踪所有 Markdown 文件中标记的数据。
 
 Dataview 插件中几个重要的概念：
 
@@ -74,6 +74,8 @@ tags:
 time: {{date}} {{time}}
 ---
 ```
+
+你当然还可以用 Templater 插件针对不同的笔记内容插入不同的 YAML 头，比如去记录看过的电影，我就会多加上 `rating`, `comment` 字段，简单的记录评分和短评。
 
 ### Inline Fields
 
