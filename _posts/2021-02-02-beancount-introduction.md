@@ -171,9 +171,19 @@ Beancount 中的五类根账号：
 
 ### 信用卡还款
 
+```
     2021-01-05 * "信用卡还款"
       Assets:DebitCard:CMB           -100 CNY
       Liabilities:CreditCard:BOCOM   +100 CNY
+```
+
+如果遇到双币信用卡还款问题可以使用 `@` 转换汇率：
+
+```
+2021-09-25 * "购汇 还款"
+  Liabilities:CreditCard:BOC:US              152 USD @ 6.461381579 CNY
+  Assets:DebitCard:CMB                        -982.13 CNY
+```
 
 ### 垫付
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "OpenMediaVault 初始化设置"
+aliases: "OpenMediaVault 初始化设置"
 tagline: ""
 description: ""
 category: 学习笔记

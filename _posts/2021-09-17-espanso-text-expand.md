@@ -144,9 +144,10 @@ Espanso 更加强大的地方在与其扩展性，通过安装其他包可以将
 可以使用软链接的方式将配置文件放在同步文件夹，或 git 仓库中保存管理。
 
     ln -s "/home/user/Dropbox/espanso" "/home/user/.config/espanso"
+
+我个人直接将配方放到 [dotfiles](https://github.com/einverne/dotfiles) 中管理。
     
 ## 配置
-
 
 - <https://www.webfx.com/tools/emoji-cheat-sheet/>
 

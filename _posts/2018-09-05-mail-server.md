@@ -11,18 +11,23 @@ last_updated:
 学习邮件服务器的一些笔记。
 
 ## 几个概念
+电子邮件相关的基本概念：
+
+- [[MUA]]
+- [[MTA]]
+- [[MDA]]
 
 ### MUA
-MUA 全称为 Mail User Agent 邮件用户代理。常见的 MUA 实例有： mutt, outlook, foxmail 等， 其主要任务是让用户能够收信，写信，发信。MUA 并非直接将 E-mail 发送到收件人手上，而是通过 MTA 代为传递。
+[[MUA]] 全称为 Mail User Agent 邮件用户代理。常见的 MUA 实例有： mutt, outlook, foxmail 等， 其主要任务是让用户能够收信，写信，发信。MUA 并非直接将 E-mail 发送到收件人手上，而是通过 MTA 代为传递。
 
 ### MTA
-全称 Mail Transfer Agent，MTA 仅仅负责邮件的传输。Postfix 扮演的角色。
+MTA 全称 Mail Transfer Agent，MTA 仅仅负责邮件的传输。常见的 MTA 有 Postfix, sendmail, [[exim4]]
 
 ### MDA
-全称为 Mail Delivery Agent，负责投递本地邮件到适当的邮箱，一封邮件从 MUA 发出后，通过一个或者多个 MTA 最终到达 MDA。MDA 可以过滤邮件内容，依照规则，将邮件分类到适当的邮箱，甚至可以将邮件转回 MTA，以寄到另一个邮箱。一旦邮件到达邮箱，就原地等待用户通过 MUA 将其取走。
+[[MDA]] 全称为 Mail Delivery Agent，负责投递本地邮件到适当的邮箱，一封邮件从 MUA 发出后，通过一个或者多个 MTA 最终到达 MDA。MDA 可以过滤邮件内容，依照规则，将邮件分类到适当的邮箱，甚至可以将邮件转回 MTA，以寄到另一个邮箱。一旦邮件到达邮箱，就原地等待用户通过 MUA 将其取走。
 
 ### SMTP
-SMTP 全称 Simple Mail Transfer Protocol ，简单邮件传输协议。主要工作是把邮件信息从发件人邮件服务器中传送到接收人邮件服务器。SMTP 协议出现比较早，所有很多问题都没有考虑全面，比如信息内容需要是 ASCII 码，再比如 SMTP 没有对发送方进行身份验证，所有现在垃圾邮件非常多。
+[[SMTP]] 全称 Simple Mail Transfer Protocol ，简单邮件传输协议。主要工作是把邮件信息从发件人邮件服务器中传送到接收人邮件服务器。SMTP 协议出现比较早，所有很多问题都没有考虑全面，比如信息内容需要是 ASCII 码，再比如 SMTP 没有对发送方进行身份验证，所有现在垃圾邮件非常多。
 
 ### LMTP
 全称是 Local Mail Transfer Protocol，本地邮件传输协议，类似 SMTP，主要应用于非广域网的邮件网关。
@@ -40,7 +45,7 @@ IMAP 全称 Internet Message Access Protocol,RFC 2060 相对于 pop3 协议所�
 MUA 到 MTA，以及 MTA 和 MTA 之间使用 SMTP 协议，而收件时，MUA 到 MDA 之间最常使用的协议是 POP3 或 IMAP。
 
 ### Postfix
-[[Postfix]] 是一个开源的 MTA 服务器，负责通过 SMTP 协议管理发送到本机的邮件以及由本机向外发送的邮件。
+[[Postfix]] 是一个开源的 [[MTA]] 服务器，负责通过 SMTP 协议管理发送到本机的邮件以及由本机向外发送的邮件。
 
 Postfix 使用的默认端口为 25
 
