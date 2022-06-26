@@ -48,7 +48,7 @@ sources.list 的格式大部分情况下都是
 
 ### Ubuntu
 
-- main 官方支持的自由软件
+- main 官方支持的[[自由软件]]
 - restricted 官方支持的非完全自由的软件
 - universe 社区维护的自由软件
 - multiverse 非自由软件

@@ -58,10 +58,10 @@ Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
 - `queueCapacity`：缓存队列
 - `rejectedExecutionHandler`：对拒绝 task 的处理策略
 
-	AbortPolicy，用于被拒绝任务的处理程序，它将抛出 RejectedExecutionException。
-	CallerRunsPolicy，用于被拒绝任务的处理程序，它直接在 execute 方法的调用线程中运行被拒绝的任务。
-	DiscardOldestPolicy，用于被拒绝任务的处理程序，它放弃最旧的未处理请求，然后重试 execute。
-	DiscardPolicy，用于被拒绝任务的处理程序，默认情况下它将丢弃被拒绝的任务。
+	- AbortPolicy，用于被拒绝任务的处理程序，它将抛出 RejectedExecutionException。
+	- CallerRunsPolicy，用于被拒绝任务的处理程序，它直接在 execute 方法的调用线程中运行被拒绝的任务。
+	- DiscardOldestPolicy，用于被拒绝任务的处理程序，它放弃最旧的未处理请求，然后重试 execute。
+	- DiscardPolicy，用于被拒绝任务的处理程序，默认情况下它将丢弃被拒绝的任务。
 
 将任务添加到线程池时：
 

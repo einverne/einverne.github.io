@@ -6,13 +6,13 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ #mac-app , #macos , #mac-application , #keyboard , #karabiner , #open-source  ]
+tags: [ mac-app , macos , mac-application , keyboard , karabiner , open-source  ]
 last_updated:
 create_time: 2021-05-25 20:04:30
 last_updated: 2022-06-25 20:04:30
 ---
 
-之前使用 macOS 外接键盘的时候因为想要实现和 Linux一致的键位，所以接触到了 Karabiner Elements 这一款 macOS 上的键盘映射工具，但是了解之后发现，Karabiner 能做的事情不只有键盘按键的映射，设置可以组合按键，区别短按和长按，组合使用不同的按键，下面就简单的介绍一下过去几年里面我使用的 Karabiner Elements 特性。
+之前使用 macOS 外接键盘的时候因为想要实现和 Linux 一致的键位，所以接触到了 Karabiner Elements 这一款 macOS 上的键盘映射工具，但是了解之后发现，Karabiner 能做的事情不只有键盘按键的映射，设置可以组合按键，区别短按和长按，组合使用不同的按键，下面就简单的介绍一下过去几年里面我使用的 Karabiner Elements 特性。
 
 Karabiner Elements 是 Mac 上一款强大的键盘自定义工具，几乎可以实现任何的键盘 remapping，并且也是开源的。如果说改键的话，只显示了 Karabiner 的很小一部分功能，Karabiner 还能实现组合按键触发一些功能，甚至可以针对不同的设备触发不同的功能。
 

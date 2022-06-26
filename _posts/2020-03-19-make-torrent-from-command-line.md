@@ -80,32 +80,34 @@ transmission-create -o path/to/example.torrent --tracker tracker_url1 -c comment
 
 查看 `man mktorrent` 手册，非常容易理解。
 
-	mktorrent 1.0 (c) 2007, 2009 Emil Renner Berthing
+```
+mktorrent 1.0 (c) 2007, 2009 Emil Renner Berthing
 
-	Usage: mktorrent [OPTIONS] <target directory or filename>
+Usage: mktorrent [OPTIONS] <target directory or filename>
 
-	Options:
-	-a, --announce=<url>[,<url>]* : specify the full announce URLs
-									at least one is required
-									additional -a adds backup trackers
-	-c, --comment=<comment>       : add a comment to the metainfo
-	-d, --no-date                 : don't write the creation date
-	-h, --help                    : show this help screen
-	-l, --piece-length=<n>        : set the piece length to 2^n bytes,
-									default is 18, that is 2^18 = 256kb
-	-n, --name=<name>             : set the name of the torrent
-									default is the basename of the target
-	-o, --output=<filename>       : set the path and filename of the created file
-									default is <name>.torrent
-	-p, --private                 : set the private flag
-	-t, --threads=<n>             : use <n> threads for calculating hashes
-									default is 2
-	-v, --verbose                 : be verbose
-	-w, --web-seed=<url>[,<url>]* : add web seed URLs
-									additional -w adds more URLs
+Options:
+-a, --announce=<url>[,<url>]* : specify the full announce URLs
+                                at least one is required
+                                additional -a adds backup trackers
+-c, --comment=<comment>       : add a comment to the metainfo
+-d, --no-date                 : don't write the creation date
+-h, --help                    : show this help screen
+-l, --piece-length=<n>        : set the piece length to 2^n bytes,
+                                default is 18, that is 2^18 = 256kb
+-n, --name=<name>             : set the name of the torrent
+                                default is the basename of the target
+-o, --output=<filename>       : set the path and filename of the created file
+                                default is <name>.torrent
+-p, --private                 : set the private flag
+-t, --threads=<n>             : use <n> threads for calculating hashes
+                                default is 2
+-v, --verbose                 : be verbose
+-w, --web-seed=<url>[,<url>]* : add web seed URLs
+                                additional -w adds more URLs
 
-	Please send bug reports, patches, feature requests, praise and
-	general gossip about the program to: esmil@users.sourceforge.net
+Please send bug reports, patches, feature requests, praise and
+general gossip about the program to: esmil@users.sourceforge.net
+```
 
 举个例子：
 
@@ -121,12 +123,22 @@ transmission-create -o path/to/example.torrent --tracker tracker_url1 -c comment
 - `-o` 后接输出的 torrent 文件
 - 最后就是要制作的 torrent 的文件目录或者文件
 
+mktorrent 在 1.1 版本之后添加了 `-s` 选项
+
+```
+-s                : add source string embedded in infohash
+```
+
+表示添加额外的信息到 torrent 文件中。
+
 ## web seed
 使用 mktorrent 还可以使用 `-w` 选项来添加 web seed URLs。
 
 > Web seeding was implemented in 2006 as the ability of BitTorrent clients to download torrent pieces from an HTTP source in addition to the swarm. The advantage of this feature is that a website may distribute a torrent for a particular file or batch of files and make those files available for download from that same web server; this can simplify long-term seeding and load balancing through the use of existing, cheap, web hosting setups. In theory, this would make using BitTorrent almost as easy for a web publisher as creating a direct HTTP download. In addition, it would allow the "web seed" to be disabled if the swarm becomes too popular while still allowing the file to be readily available.
 
 简而言之就是 Web seed 可以让 torrent 从 HTTP 来源来发布文件。
+
+最后的最后求一枚 Open.CD 的邀请。
 
 ## reference
 

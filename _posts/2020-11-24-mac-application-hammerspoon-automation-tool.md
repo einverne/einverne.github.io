@@ -51,8 +51,6 @@ hs.alert.show("Config reload!")
 
 然后重新加载 Hammerspoon 配置，就会看到在屏幕中央出现 "Config reload!" 的弹出提示。
 
-
-
 ## 使用 Hammerspoon 作为管理窗口工具
 虽然 [[Mac 上的窗口管理工具]] 有很多，免费的，收费的，Moom, Rectangle 等等，但是自由度都没有 Hammerspoon 多。
 
@@ -266,7 +264,7 @@ Hammerspoon 的配置文件是使用 Lua 书写，如果熟悉 Lua，可以更�
 
 参考 [这里](https://github.com/xream/.hammerspoon)
 
-[这里](https://github.com/ahonn/dotfiles/blob/master/hammerspoon/main.moon)
+ [这里](https://github.com/ahonn/dotfiles/blob/master/hammerspoon/main.moon)
 
 Hammerspoon [官网文档](https://www.hammerspoon.org/docs/)
 
@@ -291,7 +289,6 @@ Spoon 文件中的常用方法：
  { someFeature = {{"cmd", "alt"}, "f"},
       otherFeature = {{"shift", "ctrl"}, "b"}}
 ```
-
 
 ## reference
 

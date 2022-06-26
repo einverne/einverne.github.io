@@ -293,7 +293,20 @@ Ubuntu/Mint 下启动、停止与重启 cron:
     sudo /etc/init.d/cron stop
     sudo /etc/init.d/cron restart
 
+## crontab @reboot
+如果想要系统在重启之后执行某个脚本，通过 crontab 可以实现：
 
+编辑 crontab:
+
+```
+crontab -e
+```
+
+然后加入：
+```
+@reboot /usr/local/xxxxx
+@reboot /usr/local/xxxxx.sh
+```
 
 ## reference
 
