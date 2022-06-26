@@ -285,11 +285,6 @@ Spoon 文件中的常用方法：
 - `NAME: stop()`，关闭后台任务
 - `NAME: bindHotkeys(mapping)`，定义功能快捷键，通常是 table 的形式：
 
-```
- { someFeature = {{"cmd", "alt"}, "f"},
-      otherFeature = {{"shift", "ctrl"}, "b"}}
-```
-
 ## reference
 
 - <https://www.hammerspoon.org/docs/index.html>
