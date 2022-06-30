@@ -137,6 +137,22 @@ Override Changes 或者撤销变动，中文译法有些不准确。出现这个
 
     echo 204800 | sudo tee /proc/sys/fs/inotify/max_user_watches
 
+## Introducer 配置
+在 Syncthing 的 Remote Devices 中会看到一个 Introducer 的配置，通过简单的配置选项大概能知道其作用就是用于自动添加新设备（节点）。但是 Syncthing 是以一个什么逻辑来 Introduce 新设备并没有深入的了解，这里就整理一下官方文档中关于 [Introducer](https://docs.syncthing.net/users/introducer.html?highlight=introducer) 部分的内容。
+
+当两个设备连接的时候，他会会交换一个相互分享的文件列表以及设备连接到哪些共享文件夹。比如：
+
+> 本地设备 L 设置了远程设备 R 作为一个 Introducer。 他们共享文件夹 "Pictures"，设备 R 还和 A 和 B 共享 "Pictures" 文件夹，但是 L 仅仅和 R 共享。
+> 那么一旦 L 和 R 连接了，L 会自动添加 A 和 B 设备，就像 R 向 L 介绍了 A 和 B 一样
+> 远程设备 R 和设备 C 共享 "Videos" 文件夹，但是没有和本地设备 L 共享。那么设备 C 不会被添加到 L ，因为 C 并没有和 L 和 R 的任何文件夹相连。
+
+设备和设备的 Introduce 的过程包含着设备 IDs，标签，地址设置的自动配置，但是不包含设备本地的相关设置。设备的自动配置，仅会在连接到 Introducer 之后，或者重启时被应用一次，当设备连接到介绍器时就会完成。一旦完成自动配置，设备的设置将无法从 Introducer 那里收到任何更新。
+
+当一个 introducer 添加或移除设备，或者修改共享文件夹，或者修改设备分享设定，这些修改会在下一次连接时被应用到设备。类似的，如果一个被介绍的设备不再出现，或者不再fxl共同的文件夹，该设备会自动在下一次连接是从集群（cluster）节点中被移除。
+
+Introducer 状态是传递的，这意味着，Introducer 的 Introducer 也会成为 Introducer。
+
+将两个设备相互设置成 Introducer 是不推荐的。当添加设备，移除设备时可能会造成问题，两个设备会相互不停的 re-introducing 移除的设备。
 
 ## reference
 

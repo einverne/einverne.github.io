@@ -84,7 +84,6 @@ ref: refs/heads/dev
 - `MERGE_HEAD`: The commit(s) that you’re merging into the current branch with git merge.
 - `CHERRY_PICK_HEAD`: The commit that you’re cherry-picking.
 
-
 ## Reflog
 `Reflog` 是 Git 的安全网，他会记录在仓库中所有的操作。可以将其想象成一个本地仓库修改的时序历史记录.
 
@@ -96,8 +95,6 @@ Git reflog 是一个你对本地仓库所作的所有修改的记录。每一次
 git reflog
 ceb40ab HEAD@{0}: commit: messsage
 ```
-
-
 
 ## reference
 
