@@ -45,71 +45,85 @@ length | 输出长度
 
 常见的 if-else
 
-    { % if user % }
-        Hello, {{ user }}!
-    { % else % }
-        Hello, Stranger!
-    { % endif % }
+```
+{ % if user % }
+    Hello, {{ user }}!
+{ % else % }
+    Hello, Stranger!
+{ % endif % }
+```
 
 for 循环
 
-    <ul>
-    { % for comment in comments % }
-        <li>{{ comment }}</li>
-    { % endfor % }
-    </ul>
+```
+<ul>
+{ % for comment in comments % }
+    <li>{{ comment }}</li>
+{ % endfor % }
+</ul>
+```
 
 宏，类似方法
 
-    { % macro render_comment(comment) % }
-        <li>{{ comment }}</li>
-    { % endmacro % }
+```
+{ % macro render_comment(comment) % }
+    <li>{{ comment }}</li>
+{ % endmacro % }
 
-    <ul>
-    { % for comment in comments % }
-        {{ render_comment(comment) }}
-    { % endfor % }
-    </ul>
+<ul>
+{ % for comment in comments % }
+    {{ render_comment(comment) }}
+{ % endfor % }
+</ul>
+```
 
 保存到文件中使用 import
 
-    { % import 'macros.html' as macros % }
-    <ul>
-        { % for comment in comments % }
-            {{ macros.render_comment(comment) }}
-        { % endfor % }
-    </ul>
+```
+{ % import 'macros.html' as macros % }
+<ul>
+    { % for comment in comments % }
+        {{ macros.render_comment(comment) }}
+    { % endfor % }
+</ul>
+```
 
 需要多次使用的模板可以单独放在文件中，然后 使用 include
 
-    { % include 'common.html' % }
+```
+{ % include 'common.html' % }
+```
 
 模板继承，先定义父模板
 
-    <html>
-    <head>
-        { % block head % }
-            <title>{ % block title % }{ % endblock % } - My Application</title>
-        { % endblock % }
-    </head>
-    <body>
-    { % block body % }
+```
+<html>
+<head>
+    { % block head % }
+        <title>{ % block title % }{ % endblock % } - My Application</title>
     { % endblock % }
-    </body>
-    </html>
+</head>
+<body>
+{ % block body % }
+{ % endblock % }
+</body>
+</html>
+```
 
 然后继承
 
-    { % extends "base.html" % }
-    { % block title % }Index{ % endblock % }
-    { % block head % }
-        {{ super() }}
-        <style>
-        </style>
-    { % endblock % }
-    { % block body % }
-        <h1>Hello, World!</h1>
-    { % endblock % }
+```
+{ % extends "base.html" % }
+{ % block title % }Index{ % endblock % }
+{ % block head % }
+    {{ super() }}
+    <style>
+    </style>
+{ % endblock % }
+{ % block body % }
+    <h1>Hello, World!</h1>
+{ % endblock % }
+```
 
 ## 表单
 WTForms 支持的字段类型
@@ -152,10 +166,11 @@ NoneOf | 确保输入值不在可选值列表中
 
 在模板中使用
 
-    <form method="POST">
-    \{\{ form.hidden_tag() \}\}
-    \{\{ form.name.label \}\} \{\{ form.name(id='my-text-field') \}\}
-    \{\{ form.submit() \}\}
-    </form>
-
+```
+<form method="POST">
+{{ form.hidden_tag() }}
+{{ form.name.label }} {{ form.name(id='my-text-field') }}
+{{ form.submit() }}
+</form>
+```
 

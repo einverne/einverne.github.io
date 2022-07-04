@@ -16,6 +16,27 @@ last_updated:
 
     sudo apt-get install android-tools-fastboot
 
+## 检查设备是否 bootloader 解锁
+常用的命令如下：
+
+    adb devices
+    adb reboot bootloader
+    fastboot devices
+    fastboot oem device-info
+
+结果：
+
+```
+❯ fastboot oem device-info
+...
+(bootloader) Verity mode: true
+(bootloader) Device unlocked: true
+(bootloader) Device critical unlocked: true
+(bootloader) Charger screen enabled: false
+OKAY [  0.006s]
+finished. total time: 0.007s
+```
+
 ## bootloader
 关于 bootloader 部分可以参考 [之前的文章](/post/2013/09/prevent-flash-android-rom-brick.html)
 

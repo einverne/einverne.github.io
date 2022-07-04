@@ -36,6 +36,14 @@ brew install -f gdu
 brew link --overwrite gdu  # if you have coreutils installed as well
 ```
 
+Android Termux 安装：
+
+```
+wget https://github.com/dundee/gdu/releases/lastest/download/gdu_linux_arm64.tgz
+tar xzvf gdu_linux_arm64.tgz
+chmod +x gdu_linux_arm64
+```
+
 更多的安装方式可以参考[repo](https://github.com/dundee/gdu)
 
 ## Usage

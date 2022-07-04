@@ -64,7 +64,7 @@ PRIMARY KEYs（主键） 和 UNIQUE KEYs（唯一键约束） 是类似的， PR
     INDEX is something on the physical level, helps improve access time for table operations.
     Behind every PK there is (usually) UNIQUE INDEX created (automatically).
 
-## 操作索引
+## 操作索引 SQL
 
 建立索引会占用磁盘空间的索引文件。
 

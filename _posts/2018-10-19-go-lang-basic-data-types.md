@@ -10,12 +10,10 @@ last_updated:
 
 和大多数强类型语言一样，Go 也有自己基本的类型系统。Go 语言的类型大致可以分为四大类：
 
-- basic types
-- aggregate types
-- reference types
-- interface types
-
-基础类型（basic types）包括 `numbers`,`strings`,`booleans`。 聚合类型（aggregate types）包括 `arrays` , `structs` 。引用类型（reference types) 包括不同组，包括 `pointers` , `slices`, `maps`, `functions`, `channels` ，他们都是程序变量或者状态的引用。接口类型 (interface types) 是特殊的一个类型，会在后面单独介绍。
+- basic types 基础类型（basic types）包括 `numbers`,`strings`,`booleans`
+- aggregate types  聚合类型（aggregate types）包括 `arrays` , `structs` 
+- reference types 引用类型（reference types) 包括不同组，包括 `pointers` , `slices`, `maps`, `functions`, `channels` ，他们都是程序变量或者状态的引用
+- interface types, 接口类型 (interface types) 是特殊的一个类型，会在后面单独介绍。
 
 ## Integers
 

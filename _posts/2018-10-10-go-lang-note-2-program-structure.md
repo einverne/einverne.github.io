@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Go 语言学习笔记 2：基本结构"
+aliases: "Go 语言学习笔记 2：基本结构"
 tagline: ""
 description: ""
 category: [ 学习笔记 , Go ]
@@ -38,18 +39,17 @@ var
 
 三大类预定义的关键字
 
-分类    | 关键字
---------|------------
-Constants: | true false iota nil
-Types: | int int8 int16 int32 int64 <br/> uint uint8 uint16 uint32 uint64 uintptr <br/>
-            float32 float64 complex128 complex64 <br/> bool byte rune string error
-Functions: | make len cap new append copy close delete complex real imag panic recover
+|分类    | 关键字
+|--------|------------
+| Constants: | true false iota nil
+| Types: | int int8 int16 int32 int64 <br/> uint uint8 uint16 uint32 uint64 uintptr <br/> float32 float64 complex128 complex64 <br/> bool byte rune string error
+| Functions: | make len cap new append copy close delete complex real imag panic recover
 
 上面这些可以用于定义。
 
 
 ## 变量定义
-遵循
+变量定义遵循
 
     var name type = expression
 

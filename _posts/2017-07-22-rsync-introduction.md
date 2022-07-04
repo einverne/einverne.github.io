@@ -208,6 +208,9 @@ rsync 中的命令 参数 `-e, --rsh=COMMAND` 指定使用 rsh、ssh 方式进�
 
 	rsync --remove-source-files -zvh backup.tar /tmp/backups/
 
+需要注意的是 `rsync` 使用 `--remove-source-files` 之后源文件同步之后会被删除，但是源文件所在的文件夹是不会被删除的，可以通过如下命令删除空文件夹：
+
+    find . -depth -type d -empty -delete
 
 ### 同步过程中删除远程中已经在本地删除的文件
 使用 `--delete` 选项。

@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "go 语言学习笔记 1：基本介绍和使用"
+aliases: "go 语言学习笔记 1：基本介绍和使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [go-lang, google, java, programming, ]
+tags: [golang, google, java, programming, ]
 last_updated:
 ---
 
@@ -48,7 +49,7 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 ### Linux 安装
 从[这里](https://golang.org/dl/) 下载，然后解压并添加环境变量
 
-    tar -C /usr/local -xzf go1.11.1.linux-amd64.tar.gz
+    tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
     export PATH=$PATH:/usr/local/go/bin
 
 然后设置 `GOPATH` [环境变量](https://golang.org/wiki/SettingGOPATH)
@@ -87,13 +88,15 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 创建一个 workspace，然后开始 hello world，在 workspace 下新建 `src/hello` 目录，在目录下创建文件 `vim hello.go`
 
 
-    package main
+```
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-        fmt.Printf("hello, world\n")
-    }
+func main() {
+    fmt.Printf("hello, world\n")
+}
+```
 
 退出文件，在 hello 目录下执行 `go build`，此时会生成一二可执行文件 hello，执行 `./hello` 可以看到输出。
 
@@ -122,6 +125,16 @@ header 中包含一个指针，通过复制来传递一个引用类型的值的�
 
 ### 结构类型
 结构类型用来描述一组数据值。
+
+## 变量
+在 Go 语言中变量初始化和变量赋值是不同的概念。
+
+常见的语法，比如：
+
+    var var2 = 10
+    var3 := 11
+
+这里 `:=` 表示同时进行变量声明和初始化。出现在 `:=` 左侧的变量不应该是已经被声明过的。
 
 
 > 我们对于一些事物的不理解或者畏惧，原因都在于这些事情所有意无意带有的绚丽外衣和神秘面纱。只要揭开这一层直达本质，就会发现一切其实都很简单。

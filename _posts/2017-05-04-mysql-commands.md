@@ -126,7 +126,7 @@ Windows 下可以使用 net 命令
 
 删除列
 
-	ALTER TABLE table_name **DROP** column
+	ALTER TABLE table_name DROP column
 
 修改列，或者修改列类型
 
@@ -145,7 +145,12 @@ Windows 下可以使用 net 命令
 
 修改表名
 
-    ALTER TABLE origin_table_name **RENAME TO** new_table_name
+    ALTER TABLE origin_table_name RENAME TO new_table_name
+
+修改自增ID：
+
+    ALTER TABLE table_name AUTO_INCREMENT = 1000;
+
 
 ### 增删改查
 Like 通配符

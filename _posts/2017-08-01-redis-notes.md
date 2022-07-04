@@ -4,7 +4,7 @@ title: "Redis 读书笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [redis, database, database, key-value, db, ]
+tags: [redis, database, database, key-value, db, reading, ]
 last_updated:
 ---
 
@@ -140,7 +140,7 @@ Redis 从 2.1 版本开始支持乐观锁，可以使用 watch 显式对 key 加
 
 
 
-## 其他
+## Redis Client
 
 phpRedisAdmin 是一个 PHP 实现的 Redis 管理 Web 界面。地址：<https://github.com/erikdubbelboer/phpRedisAdmin>
 

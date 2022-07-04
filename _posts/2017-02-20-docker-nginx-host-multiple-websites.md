@@ -41,6 +41,8 @@ last_updated:
 
 然后在同目录下 `docker-compose up -d`
 
+Nginx Proxy Manager 的管理面板在 81 端口，默认的用户名和密码是 `admin@example.com` 和 `changeme`。
+
 nginx-proxy 对外暴露 80 端口，并且监听 80 端口，允许 80 端口的流量流入。而 `/var/run/docker.sock:/tmp/docker.sock` 这一行则表示着允许该容器访问宿主机器的 Docker socket，这也就意味着有新容器加入，或者新容器关闭时都会通知到 nginx-proxy。
 
 这样每一次添加容器，nginx-proxy 就会通过 socket 来接收到事件，自动创建对应的配置文件，然后重启 nginx 来生效。`nginx-proxy` 会寻找带有 `VIRTUAL_HOST` 环境变量的容器，然后依照配置进行。
