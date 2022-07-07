@@ -565,3 +565,4 @@ Redhat 给 Ansible 做了一套 GUI，叫做 Ansible Tower，感兴趣可以了�
 - <http://www.ansible.com.cn/docs/>
 - <https://galaxy.ansible.com/docs/>
 - <https://www.ansible.com/overview/how-ansible-works>
+- <https://spacelift.io/blog/ansible-playbooks>
