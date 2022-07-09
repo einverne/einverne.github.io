@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "推荐网站之快捷键：快捷键 ShortcutWorld Wiki"
+aliases: "推荐网站之快捷键：快捷键 ShortcutWorld Wiki"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [website, 推荐网站 ]
+tags: [website, 推荐网站 , tool, shortcut, ]
 last_updated:
 ---
 

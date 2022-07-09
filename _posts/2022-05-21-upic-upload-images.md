@@ -11,7 +11,7 @@ last_updated: 2022-05-31 07:55:35
 create_time: 2022-05-31 07:54:43
 ---
 
-[uPic](https://github.com/gee1k/uPic) 是一个 macOS 上的图片上传工具，使用 Swift 编写。支持对接非常多的对象存储，以及可以自定义使用 Chevereto，或者 Lsky Pro 作为图床。
+[uPic](https://github.com/gee1k/uPic) 是一个 macOS 上的图片上传工具，使用 Swift 编写。支持对接非常多的对象存储，以及可以自定义使用 [[Chevereto]]，或者 Lsky Pro 作为图床。
 
 ## 安装
 可以直接从 App Store 安装，或者：

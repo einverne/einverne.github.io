@@ -30,7 +30,7 @@ VMX 文件使用纯文本格式保存，并包含配置 `属性=值`。
 Fusion 保存的 VMX 文件通常存储在 `.vmwarevm` 包内。
 
 ### VMDK 文件
-VMDK 文件表示 `Virtual Machine Disk`，是虚拟机的虚拟硬盘格式。通常 `vmdk` 文件包含这虚拟机所需要的所有文件。
+VMDK 文件表示 `Virtual Machine Disk`，是 VMware 虚拟机的虚拟硬盘格式。通常 `vmdk` 文件包含这虚拟机所需要的所有文件。
 
 
 ## 导出

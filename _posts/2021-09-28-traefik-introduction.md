@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ traefik, nginx, cloud-native ]
+tags: [ traefik, nginx, cloud-native, reverse-proxy, ]
 last_updated:
 ---
 

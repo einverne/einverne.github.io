@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux 下使用 ClamAV 扫描病毒"
+aliases: "Linux 下使用 ClamAV 扫描病毒"
 tagline: ""
 description: ""
 category: 经验总结

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 Git worktree 将同一个项目分裂成多个本地目录"
+aliases: "使用 Git worktree 将同一个项目分裂成多个本地目录"
 tagline: ""
 description: ""
 category: 学习笔记

@@ -95,6 +95,7 @@ docker exec -it funkwhale manage import_files $LIBRARY_ID "/music/**/**/*.mp3" -
 ## 外延
 
 ### koel
+[[Koel]] 是一个基于网页的音乐媒体播放器。
 
 官网：<https://koel.dev/>
 
@@ -110,6 +111,7 @@ docker exec -it funkwhale manage import_files $LIBRARY_ID "/music/**/**/*.mp3" -
 
 ### airsonic
 
+- [[Airsonic]]
 - <https://github.com/airsonic/airsonic>
 
 ## reference

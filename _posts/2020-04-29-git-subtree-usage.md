@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "git subtree 简单使用记录"
+aliases: "git subtree 简单使用记录"
 tagline: ""
 description: ""
 category: 学习笔记

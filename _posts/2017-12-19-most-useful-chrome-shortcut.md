@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "最有用的 Chrome 快捷键提高数倍效率"
+aliases: "最有用的 Chrome 快捷键提高数倍效率"
 tagline: ""
 description: ""
 category: 经验总结

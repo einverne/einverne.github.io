@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Linux 安装 VMware workstation 12"
+aliases: "Linux 安装 VMware workstation 12"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [Linux, Mint, VMware,]
+tags: [linux, linux-mint, vmware, virtual-machine, ]
 last_updated: 
 ---
 
@@ -18,19 +19,19 @@ VMware Workstation 12 虚拟机，适用于  RHEL/CentOS 7, Fedora 20-24, Debian
 
 ## 安装
 
-- 更新
+更新
 
 	apt-get update && apt-get upgrade	# On Debian Systems
 
-- 下载
+下载
 
 	wget 'http://www.vmware.com/go/tryworkstation-linux-64'
 
-- 执行权限
+执行权限
 
 	chmod +x VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
 
-- 执行安装
+执行安装
 
 	./VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
 

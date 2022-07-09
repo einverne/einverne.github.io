@@ -313,20 +313,5 @@ anyi 导航、聚合搜索、webstack
 
 ## Other
 
-### Instagram scraper
-批量下载 Instagram
-
-[instagram-scraper](https://github.com/arc298/instagram-scraper):
-
- 
-	touch ig_args.txt ig_users.txt
-	docker run -d \
-		-v $(pwd)/download:/download \
-		-v $(pwd)/ig_args.txt:ig_args.txt \
-		-v $(pwd)/ig_users.txt:ig_users.txt \
-		shyd/instagram-scraper
-
-或者：
-
-    docker run -it --rm -v $(pwd)/data:/instagram-scraper/data alexnik/instagram-scraper -i -d data/<folder_name> --cookiejar data/my_cookies <params>
+[[instagram-scraper]]
 

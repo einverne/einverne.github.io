@@ -46,6 +46,13 @@ services:
 - admin@example.com
 - changeme
 
+### 使用
+创建一个 Nginx 反向代理到 81 端口，可以设置域名解析，将 `npm.example.com` 解析到 IP 地址，然后在 Nginx Proxy Manager 后台，创建 Proxy Host，按照自己的配置填入：
+
+![nginx proxy manager](https://img.gtk.pw/i/2022/07/09/62c9316325371.png)
+
+等待 DNS 解析生效，访问 `npm.example.com` 即可登录管理后台。
+
 ### 使用 Docker network
 在使用 Nginx Proxy Manager 的时候，可以不用让每一个容器都暴露一个端口，可以使用 Docker network 来将容器放到同一个网络下，然后使用名字来关联。
 
@@ -61,6 +68,7 @@ networks:
     external:
       name: nginx-proxy
 ```
+
 
 以 Portainer 举例：
 
