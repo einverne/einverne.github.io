@@ -129,6 +129,15 @@ Error: Let's Encrypt SSL creation failed
 - Additional FTP Accounts: 是否创建 FTP 账号
 
 
+## Tips
+
+### 修改面板的端口
+默认情况下 HestiaCP 使用 8083 端口，当然在安装的时候也可以指定，但是如果安装完成之后想要调整端口，可以使用如下的命令：
+
+```
+v-change-sys-port 2083
+```
+
 ## HestiaCP vs VestaCP
 HestiaCP 是 VestaCP fork，VestaCP 开发和维护趋于停止，存在许多漏洞和安全性问题。VestaCP 是第一个 Nginx 的 GUI 控制面板。在 VestaCP 之前有很多 CLI-only 的管理工具。
 
