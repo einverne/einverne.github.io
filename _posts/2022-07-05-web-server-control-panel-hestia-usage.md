@@ -19,7 +19,7 @@ HestiaCP 还提供了基于命令行的管理工具，具体可以见 [文档](h
 
 另一个值得一说的功能就是，HestiaCP 提供了一键安装网站（Quick Install App）的功能，默认提供了一些非常受欢迎的网页应用，包括 [[WordPress]], [[Drupal]], [[Joomla]], [[Opencart]], [[PrestaShop]], [[Lavarvel]], [[Symfony]]。
 
-在接触 Hestia 之前，有段时间直接使用 LNMP，或者使用 [[aapanel]]，但后来发现 aaPanel 的 License 或许存在某些问题，并且在读了 [Stallman](/post/2022/06/free-as-in-freedom.html) 的 [著作](/post/2022/05/free-software-free-society.html) 之后对自由软件的认识更深刻了一些，所以直接替换成 GPL 发布的 Hestia。
+在接触 Hestia 之前，有段时间直接使用 LNMP，或者使用 [[aapanel]]，但后来发现 aaPanel 的 License 或许存在某些问题，并且在读了 [Stallman](/post/2022/06/free-as-in-freedom.html) 的 [著作](/post/2022/05/free-software-free-society.html) 之后对自由软件的认识更深刻了一些，所以直接替换成 GPL 发布的 Hestia。作为 aaPanel 的开源代替品，发现 Hestia 还是非常不错的。
 
 - 官网：<https://hestiacp.com/>
 - GitHub: <https://github.com/hestiacp/hestiacp>
@@ -27,6 +27,15 @@ HestiaCP 还提供了基于命令行的管理工具，具体可以见 [文档](h
 后台演示：
 
 ![](https://photo.einverne.info/images/2022/04/30/dnaw.png)
+
+## Features
+
+- Apache2, Nginx, PHP-FPM
+- 多 PHP 版本
+- 集群功能的 DNS 服务器
+- POP/IMAP/SMTP 邮件服务器，带反垃圾邮件，病毒扫描
+- 支持 MariaDB 和 PostgreSQL 数据库
+- 自带 [[fail2ban]] 和防火墙
 
 ## Prerequisites
 
@@ -137,6 +146,50 @@ Error: Let's Encrypt SSL creation failed
 ```
 v-change-sys-port 2083
 ```
+
+### 强制主机 SSL
+强制主机名使用 SSL
+
+```
+v-add-letsencrypt-host
+v-add-web-domain-ssl-hsts 'admin' 'hcp.domain.com'
+v.add-web-domain-ssl-force 'admin' 'hcp.domain.com'
+```
+
+### 删除不需要的主机方案
+
+```
+rm -fr /usr/local/hestia/install/rhel
+rm -fr /usr/local/hestia/install/ubuntu
+rm -fr /usr/local/hestia/install/debian/7
+rm -fr /usr/local/hestia/install/debian/8
+rm -fr /usr/local/hestia/install/debian/9
+```
+
+### 开放端口
+
+```
+touch /etc/iptables.up.rules
+v-add-firewall-rule ACCEPT 0.0.0.0/0 22 TCP SSH
+v-add-firewall-rule ACCEPT 0.0.0.0/0 5566 TCP HestiaCP
+```
+
+### 使用命令行工具
+
+```
+source /etc/profile
+PATH=$PATH:/usr/local/hestia/bin && export PATH
+```
+
+### 修改控制面板的 IP
+可以使用命令行：
+
+```
+v-update-sys-ip 1.2.3.4
+v-rebuild-web-domains admin
+v-rebuild-mail-domains admin
+```
+
 
 ## HestiaCP vs VestaCP
 HestiaCP 是 VestaCP fork，VestaCP 开发和维护趋于停止，存在许多漏洞和安全性问题。VestaCP 是第一个 Nginx 的 GUI 控制面板。在 VestaCP 之前有很多 CLI-only 的管理工具。

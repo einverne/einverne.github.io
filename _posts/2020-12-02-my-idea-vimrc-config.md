@@ -9,15 +9,15 @@ tags: [idea, vim, vimrc, config, vim-config, jetbrain, intellij-idea, ide ]
 last_updated:
 ---
 
-
 IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 快捷键的开源插件。
+
+鉴于大部分的时间都在 IntelliJ IDEA 下工作，所以总结一下在 IDEA 下使用 Vim 的动作。
 
 ## 为什么要用 IdeaVim
 
 - 既充分利用了 IntelliJ 提供的代码补全，重构，代码浏览等等功能，又可以充分利用 Vim 的[多模式](http://einverne.github.io/post/2015/05/vim-mode.html)，以及 Vim 在编辑器中的高效操作
-- 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，以及充分利用 Idea 提供的 Action
+- 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，即使将工作环境切换到 Terminal 下也可以沿用，并且充分利用 Idea 提供的 Action
 - 多平台下沿用一套工作流程，不需要解决因为操作系统不同而产生的快捷键冲突
-
 
 ## 利用 .ideavimrc 配置 IdeaVim
 
@@ -129,12 +129,42 @@ nnoremap tp :action ActivateProjectToolWindow<CR>
 	nnoremap <space>h gT
 	nnoremap <space>l gt
 
+### 编辑器分屏
+Vim 的命令 `:e`, `:sp`, `:vsp` 是支持的。
+
+也可以直接使用快捷键 `<C-W>s`, `<C-W>v`, `<C-w>c` 来实现对编辑器的分屏。
+    
+`<C-W>w` 可以快速在不同的 Panel 之间切换。
+
+我想要达到的效果是和我在终端中使用 Tmux+Vim 类似，使用 Ctrl+h/j/k/l 来进行分屏。
+
+首先要到设置中把可能的快捷键冲突解决，比如 Ctrl+H 原来被我映射成 Find in Path，现在我使用 `gp` (go to path) 作为快捷键触发。
+
+然后将 `，` 作为 Leader 快捷键。
+
+```
+" screen management
+" Vertical split screen
+nnoremap <Leader>\ <C-W>v
+nnoremap <Leader>- <C-W>s
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+```
+
+这样就实现了 IDEA 内部的快速分屏。
+
+记得去设置中将 Ctrl + h/j/k/l 的默认快捷键移除，否则可能会有冲突。
+
+
+
 更多的配置可以参考我的 [dotfile](https://github.com/einverne/dotfiles/blob/master/idea/.ideavimrc) 配置。
 
 ## 两个比较有用的快捷键
 
-- ⌘+F12 ActivateTerminalToolWindow
-- ⌘+⇧+F12 HideAllWindows
+- ⌘+F12 ActivateTerminalToolWindow 在 Linux 下设置成 Alt+F12 可以快速调用或隐藏 IDEA 内置的终端
+- ⌘+⇧+F12 HideAllWindows 最大化编辑器，隐藏所有其他窗口
 
 
 ### Cmd 组合
@@ -152,8 +182,6 @@ nnoremap tp :action ActivateProjectToolWindow<CR>
 启用 surround 插件来模拟 [surround](http://einverne.github.io/post/2015/01/vim-plugin-vim-surround.html)
 
 	set surround
-
-
 
 ## reference
 

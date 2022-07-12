@@ -31,7 +31,7 @@ permalink: /about.html
 
 剩下的一些设备要不就是开机24小时跑程序或者下载的，要不就是晚上回家躺到床上享受高清电影的，用 NAS 下载后再局域网用 Android 盒子 Kodi 打开，输出到投影，享受100寸大屏的沉浸感。
 
-- 智能手机：OnePlus 7 Pro & iPhone 7
+- 智能手机：OnePlus 7 Pro & ~~iPhone 7~~
 - 平板电脑：Boox Note Pro 用来看 PDF & Kindle 4 阅读其他电子书
 - 耳机：Sony MDR 1000x 秋冬戴保暖 & Sony WI-1000x 春夏戴
 - 电脑：MSI GE60 with Linux Mint 19.2 / MacBook Pro
@@ -41,6 +41,7 @@ permalink: /about.html
 - 盒子：[Phicomm T1](/post/2018/01/phicomm-t1-remove-ads.html) & Phicomm N1
 - 路由器：[Phicomm K3](/post/2018/05/phicomm-k3.html) & Netgear WNDR3800 with OpenWrt & [xiaomi r3g](/post/2020/04/mi-wifi-3g.html) & [Asus RT-AC86U](/post/2020/11/asus-rt-ac86u-setup.html)
 - 主机：[PlayStation 4 Pro](/post/2019/11/play-station-4-pro-setup.html)，如果你也玩 PS4，欢迎一起来玩，我的 PSN：**einverne_hk**
+- 软路由：倍控 3865U 6 口千兆软路由+金士顿 8GB DDR4 2666 内存 + 金士顿 256 GB SSD mSATA
 
 ## 哪些 App 对你的工作 / 学习 / 生活最重要？
 

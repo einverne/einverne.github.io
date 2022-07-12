@@ -36,7 +36,7 @@ MTA 全称 Mail Transfer Agent，MTA 仅仅负责邮件的传输。常见的 MTA
 全称是 Post Office Protocol Version 3，RFC1939，用于用户管理邮件服务器上面的电子邮件。当外来邮件发送到收件人的邮件服务器上时，收件人可以使用邮件客户端连接邮件服务器，把未阅读的邮件服务器以及部分信息拉取回本地进行处理。
 
 ### IMAP
-IMAP 全称 Internet Message Access Protocol,RFC 2060 相对于 pop3 协议所有邮件的管理都需要下载下来进而管理，IMAP 提供了用户远程访问邮件服务器的途径。
+[[IMAP]] 全称 Internet Message Access Protocol,RFC 2060 相对于 pop3 协议所有邮件的管理都需要下载下来进而管理，IMAP 提供了用户远程访问邮件服务器的途径。
 
 发送一封邮件的基本流程就是：
 

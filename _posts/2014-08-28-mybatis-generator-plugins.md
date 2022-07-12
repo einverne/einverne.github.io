@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MyBatis Generator Plugins"
+aliases: "MyBatis Generator Plugins"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -147,7 +148,6 @@ validate 方法会在所有 setXXX 方法后被调用，但是会在其他方法
             IntrospectedTable introspectedTable, ModelClassType modelClassType);
 
 modelXXX 方法会在 table 中指定的列 field 被生成后调用。
-
 
 
 ## reference

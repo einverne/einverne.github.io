@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux 下使用命令获取硬盘信息"
+aliases: "Linux 下使用命令获取硬盘信息"
 tagline: ""
 description: ""
 category: 学习笔记
