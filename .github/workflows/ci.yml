@@ -27,5 +27,5 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.GC3_PORT }}
         source: "${{ github.workspace }}/_site/*"
-        target: "$HOME/blog/"
+        target: "$HOME/blog"
 
