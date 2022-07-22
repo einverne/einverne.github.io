@@ -92,6 +92,25 @@ networks:
 
 在配置中可以看到 Portainer 没有显示定义暴露的 9000 端口，这个时候可以在 Nginx Proxy Manager 后台，通过 `portainer` 作为 hostname 来创建反向代理，关联到这个容器。这种方法只需要保证每一个容器都有一个唯一的名字即可。
 
+## 本地静态网站
+首先添加一个额外的 Volume:
+
+```
+/opt/website:/var/www/website
+```
+
+Forward Hostname/IP 填写服务器 IP 地址。
+
+在 Advanced 中配置：
+
+```
+location / {
+  root /var/www/website;
+}
+```
+
+保存。然后将静态网站内容放到宿主机的 `/opt/website` 中即可。
+
 ## reference
 
 - <https://nginxproxymanager.com/advanced-config/#best-practice-use-a-docker-network>

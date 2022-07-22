@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：scp 命令行下远程主机之间拷贝文件"
+aliases: "每天学习一个命令：scp 命令行下远程主机之间拷贝文件"
 tagline: ""
 description: ""
 category: 学习笔记

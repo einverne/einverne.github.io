@@ -24,8 +24,9 @@ jobs:
       with:
         host: ${{ secrets.GC3_HOST }}
         username: ${{ secrets.GC3_USER }}
-        key: ${{ secrets.KEY }}
+        key: ${{ secrets.GC3_KEY }}
         port: ${{ secrets.GC3_PORT }}
         source: "${{ github.workspace }}/_site/*"
-        target: "$HOME/blog"
+        target: ${{ secrets.GC3_PATH }}
+        overwrite: true
 
