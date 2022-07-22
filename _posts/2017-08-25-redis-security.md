@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Redis 安全性检查"
+aliases: "Redis 安全性检查"
 tagline: ""
 description: ""
 category: 学习笔记

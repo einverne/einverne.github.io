@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "写了一个推送图书到 Kindle 的 bot"
+aliases: "写了一个推送图书到 Kindle 的 bot"
 tagline: ""
 description: ""
 category: 学习笔记

@@ -40,8 +40,7 @@ Spring Boot builds on top of Spring to make Spring even easier with simplified d
 
 application.properties
 
-只要它存
-在就会被加载，Spring 和应用程序代码都能获取其中的属性
+只要它存在就会被加载，Spring 和应用程序代码都能获取其中的属性
 
 ## maven plugin
 

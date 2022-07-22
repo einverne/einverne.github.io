@@ -8,6 +8,10 @@ tags: [rss, reader, self-hosted, linux, docker, qnap, qnap-tutorial, 威联通 ,
 last_updated:
 ---
 
+## Stringer
+[[stringer]] 是一个可以自行搭建的 RSS Reader，Ruby 编写。Stringer 没有任何社交媒体分享，没有机器学习算法。但有一套快捷键。非常适合构建一个个人的在线阅读体验。
+
+- <https://github.com/stringer-rss/stringer>
 
 ## Tiny Tiny RSS
 Php 5.6, Postgresql or MySQL
