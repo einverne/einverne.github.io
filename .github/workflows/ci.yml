@@ -19,3 +19,13 @@ jobs:
         docker run --rm \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:3.8 /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && jekyll build --future"
+    - name: copy file via ssh
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.GC3_HOST }}
+        username: ${{ secrets.GC3_USER }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.GC3_PORT }}
+        source: "${{ github.workspace }}/_site/*"
+        target: "$HOME/blog/"
+
