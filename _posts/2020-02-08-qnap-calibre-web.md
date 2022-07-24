@@ -72,6 +72,11 @@ last_updated:
 
 - <https://github.com/gshang2017/docker/tree/master/calibre-web>
 
+## 豆瓣 API
+在最早使用 Calibre-web 的时候还自带豆瓣图书的数据源，可以一键将图书的 metadata 信息补充完整，但后来豆瓣把 API 关闭了，所以可以借助如下的项目来将此部份模块替换，使用 Python 爬取豆瓣的数据。
+
+- <https://github.com/fugary/simple-boot-douban-api>
+- <https://github.com/fugary/calibre-web-douban-api>
 
 ## 延伸
 
