@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用 gdu 快速查看磁盘空间占用"
-aliases: 
+aliases:
 - "使用 gdu 快速查看磁盘空间占用"
 tagline: ""
 description: ""
@@ -10,13 +10,11 @@ tags: [ linux, gdu, du, disk, disk-space, cli, go-lang ]
 last_updated:
 ---
 
-
 gdu 是一个使用 Go 编写的，非常漂亮的磁盘空间占用分析工具。
 
 直接运行 gdu 可以展示一个非常直观的磁盘空间占用。
 
 gdu 为 SSD 做了优化，但在机械硬盘上也能很好的工作。
-
 
 ![gdu-20210904214154.png](/assets/gdu-20210904214154.png)
 
@@ -44,7 +42,7 @@ tar xzvf gdu_linux_arm64.tgz
 chmod +x gdu_linux_arm64
 ```
 
-更多的安装方式可以参考[repo](https://github.com/dundee/gdu)
+更多的安装方式可以参考 [repo](https://github.com/dundee/gdu)
 
 ## Usage
 

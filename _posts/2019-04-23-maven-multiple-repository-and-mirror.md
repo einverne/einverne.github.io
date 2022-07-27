@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Maven 多仓库和镜像配置"
+aliases: "Maven 多仓库和镜像配置"
 tagline: ""
 description: ""
 category: 学习笔记

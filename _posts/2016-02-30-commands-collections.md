@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Linux 常用命令合集"
+aliases: "Linux 常用命令合集"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [commands, linux, network, cpu, collection, ]
+tags: [commands, linux, cli, network, cpu, collection, ]
 last_updated:
 ---
 

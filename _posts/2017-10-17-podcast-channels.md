@@ -229,7 +229,7 @@ ABC The Dropout 听深度报道
 
 ## Podcast Hosting
 
-- <https://fireside.fm/>
+- [Fireside](https://fireside.fm/)  [[Fireside]] 是收费服务，最低档 $9 一个月
 - <https://www.stitcher.com/>
 
 ## 其他站点
