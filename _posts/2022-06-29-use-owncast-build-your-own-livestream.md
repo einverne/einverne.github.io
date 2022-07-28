@@ -205,8 +205,46 @@ systemctl start owncast
 
 ```
 ffmpeg -re -i /path/to/video.mp4 -c copy -f flv rtmp://localhost:1935/live/secret_key
+# or
+ffmpeg -i "http://IP_OF_HDHR:5004/auto/vCH.N" -c:v libx264 -c:a aac -b:v 512K -maxrate 512K -bufsize 1M -f flv rtmps://OWNCAST_URL:PORT/live/STREAM_KEY
 ```
+
+或者：
+
+```
+ffmpeg -f alsa -ac 2 -i hw:1,0 -thread_queue_size 64 \
+  -f v4l2 -framerate 60 -video_size 1280x720 -input_format yuyv422 -i /dev/video2 \
+  -c:v libx264 -preset veryfast -b:v 1984k -maxrate 1984k -bufsize 3968k \
+  -vf "format=yuv420p" -g 60 -c:a aac -b:a 128k -ar 44100 \
+  -f flv rtmp://<ip-of-your-server>/live/<your-streaming-key>
+```
+
+如果串流 MP4 遇到：
+
+> Codec mpeg4 is not supported in the official FLV specification,
+
+解决方案：
+
+```
+ffmpeg -re -nostdin -i "$file" \
+    -vcodec libx264 -preset:v ultrafast \
+    -acodec aac \
+    -f flv rtmp://<your-server>/app/STREAM_KEY
+```
+
+说明：
+
+- `-vcodec codec` 设置视频编码器，是 `-codec:v` 的别名
+- `-acodec codec` 设置音频解码器，是 `-codec:a` 的别名
+- `-nostdin` 表示禁止交互输入
+- `-preset:v` 表示使用 FFmpeg 默认的[编码](https://trac.ffmpeg.org/wiki/Encode/H.264)，按速度降序 ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow, placebo
+- `-f fmt` 强制指定输入或输出的文件格式
+
+ffmpeg -re -i ~/INPUT_FILE -vcodec libx264 -profile:v main -preset:v medium -r 30 -g 60 -keyint_min 60 -sc_threshold 0 -b:v 2500k -maxrate 2500k -bufsize 2500k -filter:v scale="trunc(oha/2)2:720" -sws_flags lanczos+accurate_rnd -acodec libfdk_aac -b:a 96k -ar 48000 -ac 2 -f flv rtmp://live.twitch.tv/app/STREAM_KEY
+
+
 
 ## reference
 
 - <https://www.vultr.com/docs/how-to-use-owncast-with-obs-on-ubuntu-20-04>
+- <https://stackoverflow.com/a/65424876/1820217>
