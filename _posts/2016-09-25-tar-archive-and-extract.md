@@ -115,6 +115,16 @@ tar 命令常用参数
 
     tar -tf archive.tar.gz
 
+### 跨机器压缩传输
+上面提到的命令都需要将压缩文件存储到本地，那么如果有一种情况，本地空间有限，无法容纳压缩包的内容，想要实时通过压缩，然后传输到另一台机器，可以使用：[^1]
+
+```
+tar czvf - /source | ssh username@remote.host "cd /destination; tar xzvf -"
+```
+
+[^1]: <https://serverfault.com/a/678430/288331>
+
+
 ## Gzip Bzip2 vs XZ
 
 Gzip, Bzip2 和 XZ 是 UNIX 系统下常见的压缩工具。 xz 是一个使用 LZMA 压缩算法的无损数据压缩文件格式，xz 文件格式的压缩率更高。

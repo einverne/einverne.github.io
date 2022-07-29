@@ -35,6 +35,9 @@ Self-Hosted 是一个关于如何自建各种服务，将自己的数字生活�
 - 时长：1h
 - 更新周期：一个月 2-3 期
 
+### 东腔西调
+[[东腔西调]] 是一档由大观天下制作的文化对谈类播客。主播邀请来自不同领域的嘉宾学者聊聊他们关心的世界和生活，探寻社会文化背后的来龙去脉。
+
 ### Talk Python to me (by Michael Kennedy)
 这是一个和 Python 相关的播客，但是又不止于 Python，还包括 Data Science，AI，Web development 等等话题。
 
