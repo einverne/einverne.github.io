@@ -4,7 +4,7 @@ title: "iPhone 设置及Review"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [iPhone, review, Google]
+tags: [iphone, ios, photos, review, Google]
 last_updated: 
 ---
 
@@ -21,11 +21,11 @@ last_updated:
 ## App 迁移
 最重要的部分都在于此，但是因为平时使用的应用，基本都是跨平台的，因此也没有遇上什么比较困难的问题，登陆应用内的账号，云同步一下数据基本就完事了。这里要分享一些 must have app，基本都是跨平台的
 
-- LastPass ，所有的密码
+- ~~LastPass ，所有的密码~~ 迁移到了 Bitwarden
 - Google Photos，所有的 Photos
-- Dropbox，所有的文档
-- 网易云音乐，所有的音乐
-- WizNote，所有的笔记
+- ~~Dropbox，所有的文档~~ 迁移到了 [[Syncthing]], NextCloud
+- ~~网易云音乐，所有的音乐~~ 自建 [[Plex Server]]，迁移到了 [[Plexamp]]
+- ~~WizNote，所有的笔记~~ 迁移到了 [[Obsidian]]
 
 所有的这些，我登陆一下账号，我想要的数据都来了。而剩下的其他社交类，工具类，修图类基本都能找到。
 
