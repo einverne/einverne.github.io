@@ -200,9 +200,13 @@ zsh, vim, tmux 的配置放在 [dotfiles](https://github.com/einverne/dotfiles) 
 
 ## 默认软件的熟悉
 
-### Finder 中显示 Home 目录
+### Finder
 
-使用快捷键 Command+Shift+H
+- Finder 中显示 Home 目录，使用快捷键 Command+Shift+h
+- 删除文件，Cmd+delete
+- 跳转到指定目录，Cmd+Shift+g，输入目录，Enter
+- 打开新标签页，Cmd+t
+- 切换窗口，Ctrl + Tab
 
 ### 鼠标滚轮的方向
 虽然大部分的情况下触摸板和快捷键已经能满足一定的需求，但有些时候还是会接上鼠标，尤其是当连接显示器将 Mac 作为主机使用的时候，这个时候我就发现一个问题，那就是鼠标滚轮的方向和我在 Linux 下养成的习惯相反了，看网上的材料说设置里面可以设置更改鼠标 nature 的方向，但是修改过后发现触摸板的双指滚动方向也跟着变了，然后继续搜索发现很多人推荐 [Scroll Reverse](https://pilotmoon.com/scrollreverser/) 但是这个小工具在 OSX10.15 及以上有兼容性问题，继续搜索就发现了 [Mos](https://mos.caldis.me/)，这个软件可以更改鼠标滚动的方向，也可以让滚动更加平滑。
@@ -230,7 +234,7 @@ Cmd + Tab | 切换打开的应用
 Cmd + , | 打开大部分应用的偏好设置
 **Cmd + [** | 后退
 **Cmd + ]** | 前进
-**Cmd + Space** | Spotlight search
+**Cmd + Space** | Spotlight search 被我替换成 [[Alfred]] 和 [[Raycast]] 的呼出按键
 **Cmd + L** | 定位到地址栏，非全局快捷键，在 Chrome 中非常好用
 Cmd + A | 全选
 Cmd + Z | 撤销上一次操作，Cmd + Shift + Z 重做
@@ -307,9 +311,13 @@ From: <https://apple.stackexchange.com/a/154296/149497>
 ### 多重粘贴板
 在 Linux 上我使用 fcitx 自带的粘贴板 <kbd>Ctrl</kbd>+<kbd>;</kbd> 就可以呼出，因为就是输入法的功能，所以非常方便。在 Windows 下用 Ditto 这样一款软件。那么切换到 MacOS 就想要一个代替品。
 
-    brew cask install maccy
+    ~~brew cask install maccy~~
 
 默认是 Shift+Cmd+C 弹出粘贴历史，我习惯了 Ctrl+`;` 所以直接改成这个快捷键。
+
+已经不再使用 maccy，先是购买了 Alfred，然后又切换到了 [[Raycast]] 其自带的粘贴板管理已经非常强大了。
+
+![raycast clipboard](https://img.gtk.pw/i/2022/07/31/62e5f65c980ac.png)
 
 ### 在文件管理器 Finder 中快速打开终端
 借助 [OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal) 这个 Finder 的插件可以实现在 Finder 目录中，立即打开终端。
@@ -343,8 +351,7 @@ Karabiner 之后也会用一个篇幅来介绍一下。
 ### 文件同步需求
 从 Dropbox 换成了 分布式的 [Syncthing](https://syncthing.net/downloads/).
 
-Syncthing 的配置[设置](https://docs.syncthing.net/users/config.html) 在 `$HOME/Library/Application Support/Syncthing`.
-
+[[Syncthing]] 的配置[设置](https://docs.syncthing.net/users/config.html) 在 `$HOME/Library/Application Support/Syncthing`.
 
 另外也会用中心化的 [NextCloud](https://nextcloud.com/install/#install-clients) 作为备份。
 
@@ -355,17 +362,16 @@ Syncthing 的配置[设置](https://docs.syncthing.net/users/config.html) 在 `$
 
 或者老牌的 VLC
 
-
 ### 笔记的需求
-历史的笔记在为知笔记里面，下载，登录数据就回来了。
+~~历史的笔记在为知笔记里面，下载，登录数据就回来了。~~ 已经切换为 [[Obsidian]]
 
 - [官网](https://www.wiz.cn/wiznote-mac.html) 下载。
 
-WizNote 打开的时候显示不被认证的开发者，需要执行
+~~WizNote 打开的时候显示不被认证的开发者，需要执行~~
 
 	sudo spctl --master-disable
 
-开启信任任何来源的安装，当然这个操作会降低系统的安全性，谨慎！
+~~开启信任任何来源的安装，当然这个操作会降低系统的安全性，谨慎！~~
 
 另外今年起，我渐渐的将笔记迁移到了 [Obsidian](/post/2020/05/obsidian-note-taking.html).
 
@@ -375,8 +381,9 @@ WizNote 打开的时候显示不被认证的开发者，需要执行
 
 
 ### 听音乐的需求
-唯一的选择，网易云音乐，我之前也写过文章，在[体验过市面上所有的音乐软件后](/post/2014/07/music-website-thinking.html)，选择了网易，然后已经很多年了。
+~~唯一的选择，网易云音乐，我之前也写过文章，在[体验过市面上所有的音乐软件后](/post/2014/07/music-website-thinking.html)，选择了网易，然后已经很多年了。~~
 
+本地音乐播放器替换为 [[Swinsian]]，跨平台音乐播放器已经替换为 [[Plexamp]]。
 
 ### Dash 文档查看
 [官网](https://kapeli.com/dash) 下载安装。
@@ -411,9 +418,8 @@ LICEcap
 - <https://www.keka.io/en/>
 
 ### 状态栏显示 CPU 内存网速
-虽然 iStat Menus 很强大，但看看 CPU 和内存占用，网速，用开源的 iGlance 足矣。
+虽然 iStat Menus 很强大，但看看 CPU 和内存占用，网速，用开源的 [iGlance](https://github.com/iglance/iGlance) 足矣。
 
-- <https://github.com/iglance/iGlance>
 
 ### 电子书管理
 Linux 和 NAS 上一直用的 Calibre

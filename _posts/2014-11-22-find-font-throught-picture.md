@@ -18,3 +18,7 @@ tags: [fonts, website, 推荐网站]
 今天看到别人在摄影上加上了很好看的Logo，不禁想知道中文的字体，于是找到了这个网站。使用体验都很好，因而推荐出来。
 
 ![找字体](https://lh3.googleusercontent.com/-KDY_hLIy6ao/VerrZB5eL1I/AAAAAAAA1vk/53mZmhGZVko/s0-Ic42/wKgB6lQFFCOAE5y7AAHJdhOHirA13.jpeg)
+
+
+## What The Font
+还有一个网站叫做 [What The Font](https://jixiaobai.club/links/what-the-font)，也可以上传图片识别字体。
