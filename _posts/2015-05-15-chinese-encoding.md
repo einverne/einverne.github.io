@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "中文编码"
+title: "中文字符编码"
 description: "中文字符编码"
 category: 经验总结
 tags: [encoding, chinese, ]

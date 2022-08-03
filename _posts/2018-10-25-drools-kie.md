@@ -5,7 +5,7 @@ aliases: "Drools Kie 简单使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [drools, rules, java, rule-engine, ]
+tags: [drools, rules, java, rule-engine, kie, rete, jbpm ]
 last_updated:
 ---
 
