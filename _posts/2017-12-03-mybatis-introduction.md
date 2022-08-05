@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MyBatis 使用介绍"
+aliases: "MyBatis 使用介绍"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,7 +9,9 @@ tags: [mybatis, mysql, orm, java, 教程 ,  ]
 last_updated:
 ---
 
-MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。用简单的话来说就是可以将数据库表映射到 Object 中 MyBatis 就是中间辅助处理的框架。
+MyBatis 是 Java 系的 ORM(Object Relational Mapping) 框架，提供了非常简洁的编程接口。用简单的话来说就是可以将数据库表映射到 Object 中 MyBatis 就是中间辅助处理的框架。
+
+类似于 Python 中的 [[SQLAlchemy]]。
 
 ## 整体架构
 分为三层
@@ -31,12 +34,12 @@ MyBatis 是 Java 系的 ORM 框架，提供了非常简洁的编程接口。用�
 
 核心处理层包括
 
-- 配置解析，初始化过程中，会加载 mybatis-config.xml 配置文件、映射配置文件以及 Mapper 接口中的注解信息，解析后的配置信息会形成相应的对象并保存到 Configuration 对象中
+- 配置解析，初始化过程中，会加载 `mybatis-config.xml` 配置文件、映射配置文件以及 Mapper 接口中的注解信息，解析后的配置信息会形成相应的对象并保存到 Configuration 对象中
 - SQL 解析和 scripting 模块，动态 SQL 语句
 - SQL 执行
 - 插件
 
-接口层相对较简单，核心是 SqlSession 接口，接口定义了 MyBatis 暴露给应用程序的 API。
+接口层相对较简单，核心是 `SqlSession` 接口，接口定义了 MyBatis 暴露给应用程序的 API。
 
 ## 基本使用流程
 所以如果要使用 MyBatis 基本有如下几个步骤：
