@@ -124,6 +124,12 @@ tar czvf - /source | ssh username@remote.host "cd /destination; tar xzvf -"
 
 [^1]: <https://serverfault.com/a/678430/288331>
 
+### 跨机器打包
+比如要在 A 机器将目录 `/www/backup` 备份到 B 机器的 `/home/einverne/Backup` 目录，并压缩：
+
+```
+tar zcvf - /www/backup/ | ssh your_username@ip_of_hostname "cat > /home/einverne/Backup/aapanel.tgz"
+```
 
 ## Gzip Bzip2 vs XZ
 

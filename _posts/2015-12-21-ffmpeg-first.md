@@ -151,6 +151,12 @@ ffmpeg -i input.mp4 -i input.mp3 -c copy -map 0:v:0 -map 1:a:0 output.mp4
 
     ffmpeg -i input.mp4 -ss 00:01:45 -t 10 output.mp4
 
+如果要精确控制切片的时间，比如想要剪切从 0 秒到 10 分的视频[^cut]
+
+    ffmpeg -ss 00:00:00 -to 00:10:00 -i input.mp4 -c copy output.mp4
+
+[^cut]: <https://stackoverflow.com/a/42827058/1820217>
+
 ### 加速减速视频
 加速视频
 

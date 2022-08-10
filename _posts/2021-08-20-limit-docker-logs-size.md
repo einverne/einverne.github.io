@@ -33,6 +33,8 @@ last_updated:
 }
 ```
 
+注意修改之后需要重启 Docker 使之生效 `sudo systemctl restart docker`。
+
 或者针对个别容器设置，在 docker-compose.yml 中：
 
 注意需要版本2及以上

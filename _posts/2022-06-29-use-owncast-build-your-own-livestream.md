@@ -23,6 +23,9 @@ Owncast 可以很好的成为 Twitch，YouTube Live 等等在线直播平台的�
 - [[FFmpeg]] 4.2 以上版本，需带有 x264/var_stream_map
 
 ## Docker 安装
+Docker compose[^1] 如下：
+
+[^1]: <https://github.com/einverne/dockerfile>
 
 ```
 version: '3.3'
