@@ -14,10 +14,25 @@ create_time: 2022-04-27 02:25:24
 在使用 LinuxServer 的 Docker 镜像的时候经常会需要设置 umask 值，这个值的具体作用一直不太清楚，正好整理一下。
 
 ## 什么是 umask
-在 Linux 或 Unix 操作系统中，所有的新文件都有默认权限的。`umask` 命令行允许用户设置文件的 creation mask, 这决定了新创建的文件或目录的权限。
+在 Linux 或 Unix 操作系统中，所有的新文件都有**默认权限**的。`umask` 命令行允许用户设置文件的 creation mask, 这决定了新创建的文件或目录的权限。
 
-这个配置会被 `mkdir`, `touch`, `tee` 等等一些命令。
+预设的文件夹权限是：
 
+```
+0777 drwxrwxrwx
+```
+
+预设的文件权限是：
+
+```
+0666 -rw-rw-rw-
+```
+
+当圆弧在 Linux 下创建目录或文件时有一个默认值，这个权限减去 umask 的权限就是新建的目录或文件的实际权限了。
+
+这个配置会被 `mkdir`, `touch`, `tee` 等等一些命令使用。
+
+## Linux 权限模型
 在深入了解 umask 之前，首先再来解释一下 Linux 的权限模型。在 Linux 中，每一个文件都三个类别用户组：
 
 - file owner

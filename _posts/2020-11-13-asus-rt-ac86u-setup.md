@@ -20,9 +20,9 @@ last_updated:
 
 ## 固件选择
 
+- [官改固件](https://koolshare.cn/thread-139965-1-1.html) 是在官方的固件上的增强，增加了软件中心
 - [原版 Merlin 固件](https://www.asuswrt-merlin.net/download)
-- [Merlin 改版](http://koolshare.cn/thread-127878-1-1.html)
-- [官改固件](https://koolshare.cn/thread-139965-1-1.html)
+- [Merlin 改版](http://koolshare.cn/thread-127878-1-1.html) 在原本梅林固件的基础上修改而来
 
 
 

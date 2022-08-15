@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vim 插件之 markdown : vim markdown"
+aliases: "Vim 插件之 markdown : vim markdown"
 tagline: ""
 description: ""
 category: vim-plugin
@@ -13,6 +14,7 @@ last_updated:
 - <https://github.com/plasticboy/vim-markdown>
 
 ## installation
+在 vim 配置文件
 
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
@@ -58,12 +60,14 @@ last_updated:
     :HeaderDecrease
     :HeaderIncrease
 
-显示 Toc
+显示 Toc(Table of Content) 目录：
 
     :Toc
-    :Toch          " 水平打开
+    :Toch          " 水平打开 horizontal
+    :Tocv          " 垂直窗口打开 vertical
     :Toct          " 新 tab 中打开
 
+### 表格相关
 格式化表格
 
     :TableFormat

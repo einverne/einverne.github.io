@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "SQLAlchemy session 使用问题"
+aliases: "SQLAlchemy session 使用问题"
 tagline: ""
 description: ""
 category: 经验总结

@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "kibana query syntax"
+title: "kibana query 语法"
+aliases: "kibana query 语法"
 tagline: ""
 description: ""
-category: 
-tags: []
+category: 学习笔记
+tags: [kibana, lucene, ]
 last_updated: 
 ---
 
