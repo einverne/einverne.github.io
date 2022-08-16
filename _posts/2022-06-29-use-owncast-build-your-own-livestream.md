@@ -210,6 +210,11 @@ systemctl start owncast
 ffmpeg -re -i /path/to/video.mp4 -c copy -f flv rtmp://localhost:1935/live/secret_key
 # or
 ffmpeg -i "http://IP_OF_HDHR:5004/auto/vCH.N" -c:v libx264 -c:a aac -b:v 512K -maxrate 512K -bufsize 1M -f flv rtmps://OWNCAST_URL:PORT/live/STREAM_KEY
+# or
+ffmpeg -video_size 1280x720 -i $1 \
+  -c:v libx264 -b:v 512k -maxrate 1984k -bufsize 3968k \
+  -c:a aac -b:a 128k -ar 44100 \
+  -f flv rtmp://live.einvrne.info/live/KEY
 ```
 
 或者：

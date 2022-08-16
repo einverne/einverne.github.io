@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Spring 中 ThreadPoolTaskExecutor 配置"
+aliases: "Spring 中 ThreadPoolTaskExecutor 配置"
 tagline: ""
 description: ""
 category: 学习笔记

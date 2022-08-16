@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Maven 插件学习之： shade 插件"
+aliases: "Maven 插件学习之： shade 插件"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -12,6 +13,11 @@ last_updated:
 maven shade plugin 插件允许把工程使用到的依赖打包到一个 `uber-jar`（单一 jar 包） 中并隐藏（重命名）起来。
 
 Shade Plugin 绑定到 `package` 生命周期。
+
+使用 shade 常见的场景：
+
+- 对包名进行重命名
+- 生成单一 jar 包
 
 ## 使用
 
@@ -48,27 +54,29 @@ Shade Plugin 绑定到 `package` 生命周期。
 
 默认情况下，到执行 installed/deployed 时默认会生成两个 jar 包，一个以 `-shaded` 结尾，这个名字是可以配置的。
 
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.2.1</version>
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>shade</goal>
-                </goals>
-                <configuration>
-                  <shadedArtifactAttached>true</shadedArtifactAttached>
-                  <shadedClassifierName>customName</shadedClassifierName> <!-- Any name that makes sense -->
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+```
+<build>
+<plugins>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.2.1</version>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+        <configuration>
+          <shadedArtifactAttached>true</shadedArtifactAttached>
+          <shadedClassifierName>customName</shadedClassifierName> <!-- Any name that makes sense -->
+        </configuration>
+      </execution>
+    </executions>
+  </plugin>
+</plugins>
+</build>
+```
 
 创建可执行 jar 包，可以将入口添加进来。 [官网](https://maven.apache.org/plugins/maven-shade-plugin/examples/executable-jar.html)
 
