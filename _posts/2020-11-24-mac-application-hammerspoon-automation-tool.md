@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Mac 应用篇：Hammerspoon 自动化工具"
+title: "Mac 应用篇：Hammerspoon 自动化工具使用"
 aliases:
-- "Mac 应用篇：Hammerspoon 自动化工具"
+- "Mac 应用篇：Hammerspoon 自动化工具使用"
 tagline: ""
 description: ""
 category: 经验总结
@@ -11,7 +11,7 @@ last_updated: 2022-06-24 08:46:11
 create_time: 2021-09-27 07:44:20
 ---
 
-这是一篇耽搁了很久，一直躺在我的 Obsidian 笔记中的一篇文章，一直就想好好介绍一下 Hammerspoon，但是因为过去虽然也在用 macOS，但是使用最多的还是 Ubuntu，Hammerspoon 只能在 macOS 上使用，就没有那么大的兴致再花时间学习它的使用。但最近更新了一下系统，发现 Hammerspoon 出了一点问题，没有了 Hammerspoon 之后我才发现很多不适应的地方，那就在花一点时间梳理一下我的配置。
+这是一篇耽搁了很久，一直躺在我的 Obsidian 笔记中的一篇文章，一直就想好好介绍一下 Hammerspoon，但是因为过去虽然也在用 macOS，但是使用最多的还是 Ubuntu，Hammerspoon 只能在 macOS 上使用，就没有那么大的兴致再花时间学习它的使用。但最近更新了一下系统，发现 Hammerspoon 出了一点问题，没有了 Hammerspoon 之后我才发现很多不适应的地方，那就在花一点时间再梳理一下我的配置。
 
 ## Hammerspoon 是什么？
 Hammerspoon 是一个 macOS 上开源的自动化工具，什么叫做自动化工具呢？通过 Hammerspoon ，可以使用一些脚本来实现原来只能通过界面操作，或快捷键才能达到的效果，并且实现系统自动化。最简单的例子，比如当我连上家里的 WiFi 的时候，就自动将音量调成 3 档；再比如当我切换窗口的时候，自动切换输入法，比如在 IDEA IntelliJ 中自动使用英文输入法，当我打开 Obsidian 则自动切换成中文输入法。
