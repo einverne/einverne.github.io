@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "排序算法"
+aliases: "排序算法"
 tagline: ""
 description: ""
 category: 经验总结
