@@ -22,6 +22,13 @@ last_updated:
 
 修改其中的 `加速地址`，不同的服务提供的镜像加速地址不一样。记得修改配置之后 `sudo /etc/init.d/docker restart` 重启 docker。
 
+或者
+
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
 在 macOS 中，可以在界面中配置，在 Docker 应用中，打开偏好设置，然后在 "Docker Engine" 中配置：
 
 ![macos docker mirror](https://photo.einverne.info/images/2022/05/05/de29.png)
@@ -116,4 +123,16 @@ DaoCloud [提供](https://www.daocloud.io/mirror#accelerator-doc) 的加速地�
 - <https://hub.docker.com/u/googlecontainer/>
 
 更多的 registry 可以参考[这里](https://github.com/veggiemonk/awesome-docker#registry)
+
+
+## 检查 docker mirror 是否生效
+在配置完 Docker 镜像之后可以执行 `docker info` 查看输出中的：
+
+```
+ Registry Mirrors:
+  https://docker.mirrors.ustc.edu.cn/
+  https://hub-mirror.c.163.com/
+```
+
+如果出现配置的镜像地址则表示生效了。
 

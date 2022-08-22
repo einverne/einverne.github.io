@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ubuntu/Debian 安装 nginx"
+aliases: "Ubuntu/Debian 安装 nginx"
 tagline: ""
 description: ""
 category: 经验总结
