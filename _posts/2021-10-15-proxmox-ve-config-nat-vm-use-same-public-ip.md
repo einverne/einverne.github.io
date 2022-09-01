@@ -85,7 +85,7 @@ root@pve:~# ip -f inet a s
        valid_lft 81976sec preferred_lft 81976sec
 ```
 
-Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge 并创建一个子网，然后将所有虚拟机包括宿主机都连接到这个子网内，再开启 iptables 的 NAT 功能。
+Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge 并创建一个子网，然后将所有虚拟机包括宿主机都连接到这个子网内，再开启 [[iptables]] 的 NAT 功能。
 
 ### 创建 Linux Bridge
 在安装网桥之前，首先安装：
@@ -94,7 +94,7 @@ Proxmox VE 上使用 NAT 创建虚拟机的原理是，创建一个 Linux Bridge
 
 然后登录 Proxmox VE 后台，创建 Linux Bridge，点击 PVE，然后选择 System -> Networks，然后点击创建。
 
-填写 IP 和子网掩码，IP 地址填写个局域网的网段地址就行。其他项目不用填也不用改，保持默认（不用 IPV6 的情况下）。
+填写 IP 和子网掩码，IP 地址填写个局域网的网段地址就行。其他项目不用填也不用改，保持默认（不用 IPv6 的情况下）。
 
 - IP 地址填写一个局域网地址：10.0.0.1/24
 
@@ -119,7 +119,7 @@ iface vmbr0 inet dhcp
 auto vmbr1
 iface vmbr1 inet static
         address 10.0.0.1/24
-        gateway 1.2.3.254  # 独立服务器IP前三个数字加上 254
+        gateway 1.2.3.254  # 独立服务器IP前三个数加上 254
         bridge-ports none
         bridge-stp off
         bridge-fd 0
@@ -262,7 +262,7 @@ qm config <VMID>
 
     iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 2022 -j DNAT --to 10.0.0.102:22
 
-这样在外部互联网就可以通过 `ssh -p 2022 root@<proxmox ip` 来访问 Proxmox VE 中的虚拟机了。
+这样在外部互联网就可以通过 `ssh -p 2022 root@<proxmox ip>` 来访问 Proxmox VE 中的虚拟机了。
 
 如果遇到要转发一组端口可以使用：
 

@@ -16,11 +16,10 @@ last_updated:
 
 安装完成后使用 Ubuntu Server 的 ISO 镜像完成虚拟机的安装。
 
-
 ## 前提准备工作
 
-- 安装好 Proxmox VE 的独立主机
-- 新建一台可以登录的虚拟机，操作系统不限
+- 一台安装好 Proxmox VE 的独立主机
+- 新建一台可以登录的虚拟机，操作系统不限 (推荐 Debian/Ubuntu)
 - 购买好至少一个额外的 Failover IP
 
 
@@ -94,7 +93,7 @@ dns-nameservers 208.67.222.222 208.67.220.220
 
 然后使得接口生效：
 
-   ip link set ens18 up
+    ip link set ens18 up
 
 最后重启 networking:
 
@@ -156,3 +155,4 @@ network:
 
 - [[Proxmox VE]]
 - <https://support.us.ovhcloud.com/hc/en-us/articles/360002394324-How-to-Connect-a-VM-to-the-Internet-Using-Proxmox-VE>
+- [Proxmox VE 配置 NAT 与虚拟机共享一个公网 IP](/post/2021/10/proxmox-ve-config-nat-vm-use-same-public-ip.html)

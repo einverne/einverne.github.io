@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java collections"
+aliases: "Java collections"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -11,7 +12,7 @@ last_updated:
 Collection 是接口，包含 List 和 Set 。List 有序，Set 无序不允许重复元素。
 
 - List 实现类有 LinkedList, ArrayList, Vector, Stack
-- Set 的实现类 HashSet， TreeSet。HashSet 依赖 HashMap，TreeSet 依赖 TreeMap。
+- Set 的实现类 HashSet， [[TreeSet]]。HashSet 依赖 HashMap，TreeSet 依赖 TreeMap。
 
 ## List
 List 接口下主要实现

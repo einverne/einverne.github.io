@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "在 Spring Boot 中使用 Swagger"
+title: "在 Spring Boot 中使用 Swagger 生成接口文档"
+aliases: "在 Spring Boot 中使用 Swagger 生成接口文档"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [Spring, Swagger, Java]
+tags: [spring, spring-boot, swagger, java, restful-api, api-doc, ]
 last_updated:
 ---
 

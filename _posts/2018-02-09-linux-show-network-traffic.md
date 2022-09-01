@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Linux 下显示网络流量"
+aliases: "Linux 下显示网络流量"
 tagline: ""
 description: ""
 category: 整理合集
@@ -41,7 +42,7 @@ ifstat: 按设备查看流量
 
 ## ethtool
 
-ethtool: 诊断工具
+[[ethtool]]: 诊断工具
 
 ## ss
 

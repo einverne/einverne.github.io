@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "jvm parameters"
+title: "JVM parameters"
+aliases: "JVM parameters"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [java, java, ]
+tags: [java, jvm, java-virtual-machine, ]
 last_updated:
 ---
 
