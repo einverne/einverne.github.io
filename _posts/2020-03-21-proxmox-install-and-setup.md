@@ -235,7 +235,7 @@ Type 选择 Host，可以提供最好的性能。
 
 
 ### Directory
-Directory 是最常见的文件格式，Proxmox 包括了 ext4， xfs 。更多的文件格式可以参考我之前的[文章](/post/2020/02/linux-nas-file-system.html)
+Directory 是最常见的文件格式，Proxmox 包括了 ext4，xfs 。更多的文件格式可以参考我之前的[文章](/post/2020/02/linux-nas-file-system.html)
 
 > Proxmox VE can use local directories or locally mounted shares for storage. A directory is a file level storage, so you can store any content type like virtual disk images, containers, templates, ISO images or backup files.
 
@@ -281,7 +281,6 @@ Hyper-V 是以 Hypervisor 为基础的虚拟化技术。适用于 x64 位的 Win
 
 - Proxmox 提供的官方[文档](https://pve.proxmox.com/pve-docs/)
 - Proxmox 官方 [Wiki](https://pve.proxmox.com/wiki/Main_Page)
-
 
 ## reference
 

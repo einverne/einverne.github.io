@@ -100,6 +100,70 @@ Syncthing 支持三种工作模式：[^folder]
 - B 会扫描test以及推送其关于test变动的信息，但会被A忽略，A也会忽略其它同步设备关于test的信息；
 - B 会接收来自其它同步设备推送的关于test的信息；
 
+这里有一个小提示，因为 `.stignore` 文件是不会同步的，每个设备都需要自行设置。如果想要同步这个配置，那么可以先创建一个 `.globalstignore` 文件，把需要忽略的内容写到这个文件中，然后在 Syncthing 中配置：
+
+```
+#include .globalstignore
+```
+
+一份常用的 `.globalstignore`:
+
+```
+//---Mac-specific---//
+//Mac Comments, Finder Windows Size, Tags, ...
+(?d).DS_Store
+.DocumentRevisions-V100
+//Mac Folder Icons, which will not sync to Windows
+(?d)Icon*
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.fseventsd
+(?d).localized
+//Mac Temporary iCloud files while synching
+.iCloud
+//Mac OS Metadata on Windows or Linux filesystems
+(?d)._*
+
+//---Windows-Specific---//
+(?d)desktop.ini
+(?d)Thumbs.db
+(?d)$RECYCLE.BIN
+*.lnk
+
+//---Linux-specific---//
+.Trash-*
+
+//---QNAP-specific---//
+(?d).@__thumb
+(?d).AppleDB
+
+//---Synology-specific---//
+(?d)@eaDir
+
+//---Application-specific---//
+//-Syncthing
+(?d).stignore
+(?d).stfolder
+//-vi(m)
+(?d)*.*.sw[a-p] # Thankys to Tom Hale!
+//-Dropbox
+.dropbox
+.dropbox.attr
+//-Microsoft Office temporary files/lock files
+(?d)~*
+//-KDE
+.directory
+
+//---OTHER---//
+Microsoft-Benutzerdaten
+Notizbuch von Wolf.url
+Outlook-Dateien
+RDC Connections
+.parallels-vm-directory
+Default.rdp
+```
+
 ### 同步状态 {#lastest-change}
 管理后台显示的最后更改（Lastest Change)是指的，根据【别人的变动】【对自己做修改】的情况和时间。或许用英语来解释稍微易懂一些， The "Latest Change" on the folder only shows incoming changes.
 
@@ -153,6 +217,15 @@ Override Changes 或者撤销变动，中文译法有些不准确。出现这个
 Introducer 状态是传递的，这意味着，Introducer 的 Introducer 也会成为 Introducer。
 
 将两个设备相互设置成 Introducer 是不推荐的。当添加设备，移除设备时可能会造成问题，两个设备会相互不停的 re-introducing 移除的设备。
+
+## 移动 Syncthing 同步文件夹位置
+当发生空间不足，或者想要移动同步文件夹位置的时候。可以通过如下步骤完成：
+
+- 在 Syncthing 管理后台将文件夹移除
+- 然后在系统中移动文件夹内容
+- 在 Syncthing 后台将文件夹添加，并指定为新的位置。
+
+建议只在同步完成的文件夹中操作。
 
 ## reference
 
