@@ -37,22 +37,26 @@ The Python SQL Toolkit and Object Relational Mapper
 
 对于 MySQL 而言，driver 可以有如下选择
 
-    # default
-    engine = create_engine('mysql://scott:tiger@localhost/foo')
+```
+# default
+engine = create_engine('mysql://scott:tiger@localhost/foo')
 
-    # mysql-python
-    engine = create_engine('mysql+mysqldb://scott:tiger@localhost/foo')
-    # sudo apt-get install libmysqlclient-dev
-    # pip install mysqlclient
+# mysql-python
+engine = create_engine('mysql+mysqldb://scott:tiger@localhost/foo')
+# sudo apt-get install libmysqlclient-dev
+# pip install mysqlclient
 
-    # MySQL-connector-python
-    engine = create_engine('mysql+mysqlconnector://scott:tiger@localhost/foo')
+# MySQL-connector-python
+engine = create_engine('mysql+mysqlconnector://scott:tiger@localhost/foo')
 
-    # OurSQL
-    engine = create_engine('mysql+oursql://scott:tiger@localhost/foo')
+# OurSQL
+engine = create_engine('mysql+oursql://scott:tiger@localhost/foo')
 
-    # pymysql
-    engine = create_engine('mysql+pymysql://user:pass@localhost/foo')
+# pymysql
+engine = create_engine('mysql+pymysql://user:pass@localhost/foo')
+```
+
+PyMySQL 是使用纯 Python 实现的。
 
 ## Declare a Mapping
 定义和数据库 Map 的实体

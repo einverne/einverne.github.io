@@ -9,7 +9,12 @@ tags: [java, jvm, java-virtual-machine, ]
 last_updated:
 ---
 
-jvm 启动参数
+如果要更加了解 JVM 启动参数，那么对 JVM 的内存结构需要有一定的了解。JVM 内存主要分为三大块：
+
+- Heap，又分为 Eden，From Survivor，To Survivor
+- 方法区，存储类信息，常量，静态变量
+- 栈，又分为虚拟机栈（Java Stack）和本地方法栈（Native Method Stack），用于方法执行
+
 
 ## -Xms
 初始堆大小，默认值是物理内存的 1/64 . 默认 (MinHeapFreeRatio 参数可以调整）空余堆内存小于 40% 时，JVM 就会增大堆直到 -Xmx 的最大限制。

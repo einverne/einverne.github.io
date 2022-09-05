@@ -53,6 +53,41 @@ PlanetScale 令人心动的一个功能就是可以给数据库 [拉分支](http
 
 当然 PlanetScale 后台也提供了简单的监控，包括每秒读写。
 
+
+## 导入数据
+因为 PlanetScale 可以直接使用 MySQL 命令行连接，所以可以直接命令行导入：
+
+```
+sudo mysql -h xxx.ap-northeast-2.psdb.cloud -u inxxxxxxx -ppscale_xxxxxx --ssl-mode=VERIFY_IDENTITY --ssl-ca=/etc/ssl/cert.pem < ~/database.sql
+```
+
+注意这里的证书位置，我是在 macOS 下执行，所以证书在 `/etc/ssl/cert.pem`，如果是 Linux，证书在 `/etc/ssl/certs/ca-certificates.crt`。[^1]
+
+[^1]: <https://planetscale.com/docs/concepts/secure-connections>
+
+
+
+导入数据包包含 `0000-00-00 00:00:00` 数据
+
+```
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1292 (22007) at line 383: vttablet: rpc error: code = InvalidArgument desc = Incorrect datetime value: '0000-00-00 00:00:00' for column 'update_time' at row 1 (errno 1292) (sqlstate 22007) (CallerID: planetscale-admin): Sql: "insert into tb_dy_resource values (:vtg1, :vtg2, :vtg3, :vtg4, :vtg5, :vtg6, :vtg7, :vtg8, :vtg9, :vtg10, :vtg11, :vtg12, :vtg13, :vtg14, :vtg15, :vtg16, :vtg17, :vtg18, :vtg19, :vtg20, :vtg21, :vtg22, :vtg23, :vtg24, :vtg25, :vtg26, :vtg27, :vtg28, :vtg29, :vtg30, :vtg31, :vtg32, :vtg33, :vtg34, :vtg35, :vtg3
+```
+
+查了一下 PlanetScale 似乎无法修改 `sql_mode` 字段，那就只能手动修改 SQL 了。
+
+```
+sed -i 's/0000-00-00 00:00:00/2022-01-01 00:00:01/g' gagays.sql
+```
+
+## Client
+因为 PlanetScale 是兼容 MySQL 的，所以任何 [[MySQL客户端]] 都可以使用。
+
+这里推荐 JetBrains 的 [[DataGrip]]。
+
+在调研的过程中还发现了一款新型的 SQL 客户端，叫做 [[Arctype SQL Client]]，主打同步，感兴趣也可以试试。
+
+
 ## related
 
 - [[Bytebase]] 是一个面向 DBA 和研发工程师的数据库 Schema change/migration 和版本控制工具。

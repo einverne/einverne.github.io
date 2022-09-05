@@ -8,6 +8,24 @@ tags: [id, instagram, decode, reverse]
 last_updated: 
 ---
 
+Instagram 的 ID 生成策略是经过精心设计过的。[^1] 每一秒 Instagram 都会收到无数用户上传的照片，在内部使用 [[PostgreSQL]] 分片存储到不同的服务器上。
+
+[^1]: <https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c?gi=506417a005c8>
+
+这就产生了一个问题，要设计一个唯一 ID 生成方法用来标记系统中发布的每一张图片。
+
+系统唯一 ID 需要满足如下条件：
+
+- ID 应该是时间有序的，一组照片 ID 列表不再需要外部信息就可以排序（UUID 就不合适，因为完全无序）
+- ID 最好是 64bit ，可以节省存储空间，索引也可以更小，也方便存储到 Redis 这样的系统中
+- 系统应该尽可能少引入外部依赖 （比如使用 Snowflake，就需要引入 Zookeeper，Snowflake 服务）
+
+所以最后 ID 的构成：
+
+- 41 bit 用来存储毫秒时间（使用自定义 epoch 可以表示 41 年）
+- 13 bit 存储逻辑分片 ID
+- 10 bit 存储自增序列（对 1024 取模， id%1024），这意味着每一个 shard 每一毫秒可以生成 1024 个 ID
+
 Instagram 在他的API文档和网站地址栏中对同一个 Post，使用了两种不一样的ID。在他们的 API 文档中，ids 类似于 `908540701891980503_1639186` ， 但是在网站浏览器中则使用的是 `ybyPRoQWzX` 这样的ID。如果查看几组 ids，能够确性这两种类型的 ids 之间存在关联，Instagram 内部也不可能为同一个帖子存储两套 ids。
 
 在仔细看一下数字的ID，`908540701891980503` 显然下划线分割的后面为作者的id，前面18位的id 被转为 `ybyPRoQWzX` 10 位的长度。URL 中的ID信息的密度显然要比数字的id要高。

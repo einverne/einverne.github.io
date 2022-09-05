@@ -61,7 +61,11 @@ Executors 是一个工具类。 Executors 类中有很多创建线程池的方�
 
 - `corePoolSize` 基本大小，在没有任务执行时，线程池的大小
 - `maximumPoolSize` 最大大小，可同时活动的线程数量上限
-- `keepAliveTime` 当某个线程空闲时间超过存活时间，会被标记为回收，当线程池大小超过基本大小时，该线程会被终止
+- `keepAliveTime` 超时时间，当某个线程空闲时间超过存活时间，会被标记为回收，当线程池大小超过基本大小时，该线程会被终止
+- `TimeUnit` 超时时间单位
+- 缓冲队列
+- 线程工厂
+- 拒绝策略
 
 在 Executors 中提供了很多静态方法：
 
@@ -91,3 +95,45 @@ volatile vs synchronized
 User 和 Daemon 两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread 已经全部退出运行了，只剩下 Daemon Thread 存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon 也就没有工作可做了，也就没有继续运行程序的必要了。
 
 
+## 常见的线程池
+可缓存线程池
+
+```
+Executors.newCacheThreadPool()
+```
+
+线程池为无限大，当执行当前任务时上一个任务已经完成，会复用执行上一个任务的线程
+
+可重用固定个数的线程池
+
+```
+Executors.newFixedThreadPool(int n)
+```
+
+固定长度，定时：
+
+```
+Executors.newScheduledThreadPool(int n)
+```
+
+单线程化的线程池
+
+```
+Executors.newSingleThreadExecutor()
+```
+
+## 缓冲队列
+
+BlockingQueue是双端队列。
+
+- ArrayBlockingQueue 有界队列
+- LinkedBlockingQueue 无界队列
+- PriorityBlockingQueue
+- SynchronizedQueue
+
+
+假设队列大小为 10，corePoolSize 为 3，maximumPoolSize 为 6，那么当加入 20 个任务时，执行的顺序就是这样的：首先执行任务 1、2、3，然后任务 4~13 被放入队列。这时候队列满了，任务 14、15、16 会被马上执行，而任务 17~20 则会抛出异常。
+
+最终执行顺序大略是：1、2、3、14、15、16、4、5、6、7、8、9、10、11、12、13。
+
+## TheadFactory

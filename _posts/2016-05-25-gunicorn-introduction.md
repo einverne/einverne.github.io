@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "gunicorn 使用"
+aliases: "gunicorn 使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -40,7 +41,7 @@ last_updated:
 gunicorn 的[设计](http://docs.gunicorn.org/en/latest/design.html)，官方这篇说明清楚的解释了 同步 worker 和 异步 worker 的区别，如果你的应用程序接口有大量的 IO 操作推荐使用 异步 worker。
 
 ## 重新加载配置
-首先要知道 master workder 的 pid 发送 `-HUP` 信号
+首先要知道 master worker 的 pid 发送 `-HUP` 信号
 
     kill -HUP masterpid
 

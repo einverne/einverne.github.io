@@ -54,8 +54,8 @@ Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
 属性字段说明：
 
 - `corePoolSize`：核心线程数，线程池维护的最少线程数，不管创建后空闲与否，除非设置了 `allowCoreThreadTimeOut`
-- `keepAliveSeconds`：存活时间，允许的空闲时间，如果经过 `keepAliveTime` 时间后，超过核心线程数的线程还没有接受到新的任务，那就回收
 - `maxPoolSize`：线程池维护线程的最大数量
+- `keepAliveSeconds`：存活时间，允许的空闲时间，如果经过 `keepAliveTime` 时间后，超过核心线程数的线程还没有接受到新的任务，那就回收
 - `queueCapacity`：缓存队列
 - `rejectedExecutionHandler`：对拒绝 task 的处理策略
 

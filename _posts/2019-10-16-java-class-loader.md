@@ -13,14 +13,14 @@ last_updated:
 类加载的时机，整个生命周期包括：
 
 - Loading
-- Verifacation
+- Verification
 - Preparation
 - Resolution
 - Initialization 初始化
 - Using
 - Unloading
 
-其中 Verifacation, Preparation, Resolution 三个部分称为 Linking。
+其中 Verification, Preparation, Resolution 三个部分称为 Linking。
 
 四种情况必须对类进行“初始化”。
 
@@ -36,7 +36,7 @@ last_updated:
 - 将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构
 - Java 堆中生成一个代表这个类的 java.lang.Class 对象，作为方法区这些数据的访问入口
 
-## Verifacation
+## Verification
 
 Linking 的第一步，为了确保 Class 文件字节流中包含的信息符合当前虚拟机的要求，并且不会危害到虚拟机自身的安全。
 
@@ -52,7 +52,6 @@ Linking 的第一步，为了确保 Class 文件字节流中包含的信息符�
 
 ### 符号应用验证
 符号引用验证的目的是确保解析动作能正常执行，如果无法通过符号引用验证，会抛出一个 java.lang.IncompatibleClassChangeError 异常的子类，比如 java.lang.IllegalAccessError, java.lang.NoSuchFieldError, java.lang.NoSuchMethodError 等等。
-
 
 
 ## Preparation

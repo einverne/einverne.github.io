@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "pipenv 使用"
+aliases: "pipenv 使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,14 +9,16 @@ tags: [python, virtualenv, pyenv, pipenv, ]
 last_updated:
 ---
 
-[pipenv](https://github.com/pypa/pipenv) 是目前[官方](https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies) 推荐使用的包管理工具。能够为项目创建和管理虚拟环境，从 `Pipfile` 文件添加或删除安装的包，`Pipfile.lock` 来锁定安装包的版本和依赖信息。
+[pipenv](https://github.com/pypa/pipenv) 是目前[官方](https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies) 推荐使用的包管理工具。
 
+- 能够为项目创建和管理虚拟环境，从 `Pipfile` 文件添加或删除安装的包，`Pipfile.lock` 来锁定安装包的版本和依赖信息。
 - 不用再维护 `requirements.txt`, 使用 `Pipfile` 和 `Pipfile.lock` 来代替
 - 在安装了 `pyenv` 的条件下，可以自动安装需要的 Python 版本
 
 这里就不得不提到 [pyenv](/post/2017/04/pyenv.html) 了，`pyenv` 能用来管理不同的 Python 版本，结合 `pyenv-virtualenv` 也能够快速创建虚拟环境，不过这个 `pipenv` 提供了另外一种思路。
 
 ## 安装 {#installation}
+安装：
 
     pip install pipenv
 
@@ -23,6 +26,11 @@ last_updated:
 
 - 虚拟环境如果不存在的话，会自动创建
 - `--three / --two     Use Python 3/2 when creating virtualenv.`
+
+如果在 macOS 下：
+
+    brew install pipenv
+
 
 ## 常用命令
 
@@ -59,22 +67,24 @@ pipenv 会自动扫描系统寻找合适的版本信息，如果找不到的话�
 ### 指定安装包源
 直接修改 `Pipfile` 文件
 
-    [[source]]
-    url = "https://pypi.python.org/simple"
-    verify_ssl = true
-    name = "pypi"
+```
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
 
-    [[source]]
-    url = "http://pypi.home.kennethreitz.org/simple"
-    verify_ssl = false
-    name = "home"
+[[source]]
+url = "http://pypi.home.kennethreitz.org/simple"
+verify_ssl = false
+name = "home"
 
-    [dev-packages]
+[dev-packages]
 
-    [packages]
-    requests = {version="*", index="home"}
-    maya = {version="*", index="pypi"}
-    records = "*"
+[packages]
+requests = {version="*", index="home"}
+maya = {version="*", index="pypi"}
+records = "*"
+```
 
 ### 激活和退出当前虚拟环境
 
@@ -102,7 +112,7 @@ pipenv 默认集成了 flake8
     pipenv check --style hello.py
 
 ## 区别
-关于 pipenv 和 pyenv 等等其他的区别，可以看[这个回答](https://stackoverflow.com/a/41573588/1820217) ，如果想要在 Intellij 中使用 pipenv ，2018.2 更新的版本中，也已经[支持](https://www.jetbrains.com/help/idea/pipenv.html) 了。
+关于 pipenv 和 pyenv 等等其他的区别，可以看[这个回答](https://stackoverflow.com/a/41573588/1820217) ，如果想要在 IntelliJ 中使用 pipenv ，2018.2 更新的版本中，也已经[支持](https://www.jetbrains.com/help/idea/pipenv.html) 了。
 
 pipenv 也使用 [pyenv](https://pipenv.readthedocs.io/en/latest/advanced/#automatic-python-installation) 来做 Python 的版本管理，所以基本上，分工明确了，pyenv 用来区分 Python 版本，pipenv 用来管理包依赖。
 
