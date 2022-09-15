@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "利用 AdGuard Home 过滤广告"
+aliases: "利用 AdGuard Home 过滤广告"
 tagline: ""
 description: ""
 category: 学习笔记

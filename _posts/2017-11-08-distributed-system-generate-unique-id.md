@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "分布式系统中唯一 ID 的生成方法"
+aliases: "分布式系统中唯一 ID 的生成方法"
 tagline: ""
 description: ""
 category: 
@@ -100,6 +101,12 @@ unique ID 生成过程:
 从 Snowflake 的官方文档 (https://github.com/twitter/snowflake/#system-clock-dependency) 中也可以看到, 它明确要求 “You should use NTP to keep your system clock accurate”. 而且最好把 NTP 配置成不会向后调整的模式. 也就是说, NTP 纠正时间时, 不会向后回拨机器时钟.
 
 下面是 Snowflake 的其他变种， Instagram 产生 ID 的方法也借鉴 Snowflake
+
+### 雪花算法存在的问题
+
+- 时间拨回问题
+- 机器ID 的分配和回收问题
+- 机器 ID 的上限问题
 
 ### Boundary flake
 代码地址：<https://github.com/boundary/flake>

@@ -9,16 +9,23 @@ tags: [java, jdk, design-pattern, collection, ]
 last_updated:
 ---
 
-Collection 是接口，包含 List 和 Set 。List 有序，Set 无序不允许重复元素。
+Java 容器是 JDK 为 Java 使用者设计好的一套基础的数据结构。
+
+Collection 是接口，包含 List 、Set  和 Queue。List 有序，Set 无序不允许重复元素。
 
 - List 实现类有 LinkedList, ArrayList, Vector, Stack
 - Set 的实现类 HashSet， [[TreeSet]]。HashSet 依赖 HashMap，TreeSet 依赖 TreeMap。
+- Queue 有 LinkedList，PriorityQueue
+
+其中 LinkedList 实现了 List 和 Queue 接口。
+
+另外一个重要的接口是 Map，实现有 HashMap，TreeMap。
 
 ## List
 List 接口下主要实现
 
 ### ArrayList
-动态数组，继承 AbstractList 实现了 List，RandomAccess，Cloneable， Serializable 等接口。
+动态数组实现，继承 AbstractList 实现了 List，RandomAccess，Cloneable， Serializable 等接口。
 
 线程不安全，多线程使用 Vector 或者 CopyOnWriterArrayList
 
@@ -30,7 +37,7 @@ List 接口下主要实现
 - modCount 用来记录 List 被修改的次数，被 Iterator 使用，可以用来实现 fail-fast 异常，ArrayList 在修改时都会改动 modCount 值，该异常会在多线程中在一个线程中访问数组，另一个线程修改数组时抛出异常
 
 ### LinkedList
-LinkedList 双向链表，继承自 AbstractSequentialList，可以被当做堆栈，队列，双端队列，实现了 List，Deque，Cloneable，Serializable 等接口。
+LinkedList 双向链表，继承自 `AbstractSequentialList`，可以被当做堆栈，队列，双端队列，实现了 List，Deque，Cloneable，Serializable 等接口。
 
 非线程安全
 
@@ -44,7 +51,7 @@ LinkedList 双向链表，继承自 AbstractSequentialList，可以被当做堆�
 ### Vector
 Vector 继承 AbstractList，实现了 RandomAccess，Cloneable, Serializable 接口，是一个列表。
 
-线程安全。
+线程安全。效率较低。
 
 - 和 ArrayList 一样，默认的长度是 10
 - 重要的成员变量 elementData， elementCount， capacityIncrement
@@ -56,6 +63,14 @@ Vector 继承 AbstractList，实现了 RandomAccess，Cloneable, Serializable �
         elementData[elementCount++] = e;
         return true;
     }
+
+### Queue
+队列「先进先出」
+
+- offer
+- peek
+- poll
+
 
 ### 总结
 
@@ -199,8 +214,9 @@ hash 函数的目的是为了让 key 的 hash 尽量均匀的分布到 bucket �
 ## Set
 Set 的实现类基于 Map 实现
 
-- HashSet 通过 HashMap 实现
-- TreeSet 通过 TreeMap 实现
+- HashSet 通过 HashMap 实现，不保证顺序
+- TreeSet 通过 TreeMap 实现，有序
+
 
 ### HashSet
 没有重复元素的集合，由 HashMap 实现，不保证顺序，允许使用 null。非同步。
@@ -210,7 +226,7 @@ Set 的实现类基于 Map 实现
         implements Set<E>, Cloneable, java.io.Serializable
 
 ### TreeSet
-有序 Set 集合，基于 TreeMap 实现，非同步的
+有序 Set 集合，基于 TreeMap 实现，二叉树实现，非同步的
 
     public class TreeSet<E> extends AbstractSet<E>
         implements NavigableSet<E>, Cloneable, java.io.Serializable {

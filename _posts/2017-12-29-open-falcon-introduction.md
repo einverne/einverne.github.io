@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Open Falcon 使用和介绍"
+aliases: "Open Falcon 使用和介绍"
 tagline: ""
 description: ""
 category: 学习笔记

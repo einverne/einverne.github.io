@@ -24,6 +24,23 @@ javadoc 标记有如下一些：
 
 不过已经不建议在 Java 源文件中使用 `@author` 标记，现代的 git 完全能够满足模块作者的追溯，甚至可以精确到每一行的作者。
 
+### see vs link
+`@see` 允许用户引用其他类的文档
+
+- `@see classname`
+- `@see fully-qualified-classname`
+- `@see fully-qualified-classname#method`
+
+see 也可以使用一个超链接
+
+```
+/**
+ * @see <a href="https://docs.oracle.com/en/java/">Java Dcoumentation</a>
+ */
+```
+
+`@link` 是 `inline` tag
+
 ### Package doc
 上面的方法可以给类，方法，参数等等编写注释，如果要给一个包添加注释，就需要额外添加 `package-info.java` 的文件。
 

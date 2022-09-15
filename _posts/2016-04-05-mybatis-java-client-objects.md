@@ -94,6 +94,9 @@ MyBatis GeneratorXML 配置文件在大多数情况下由 [XML](http://www.mybat
 - [如何实现插件](http://www.mybatis.org/generator/reference/pluggingIn.html)
 - [MyBatis Generator 提供的插件](http://www.mybatis.org/generator/reference/plugins.html)
 
+
+
+
 ### generatorConfiguration
 
 generatorConfiguration 配置，文档地址[这里](http://www.mybatis.org/generator/configreference/generatorConfiguration.html)，每个子元素文档都存在。

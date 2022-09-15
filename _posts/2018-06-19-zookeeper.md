@@ -59,7 +59,7 @@ ZooKeeper 数据节点类型：
 - follower: 负责参与选举的服务器节点
 - observer: 不参加选举
 
-服务端选举算法 paxos 类似
+服务端选举算法 Paxos 类似
 客户端通信方式 JAVA-NIO
 
 ## 服务端运行

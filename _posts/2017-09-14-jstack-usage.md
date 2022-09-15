@@ -9,7 +9,7 @@ tags: [jstack, java, debug, linux, thread-dump, ]
 last_updated:
 ---
 
-Jstack 用于打印出给定的 java 进程 ID 或 core file 或远程调试服务的 Java 堆栈信息。
+Jstack 用于打印出给定的 Java 进程 ID 或 core file 或远程调试服务的 Java 堆栈信息。
 
 这里需要注意的是 Java 8 引入了 Java Mission Control，Java Flight Recorder，和 `jcmd` 等工具来帮助诊断 JVM 和 Java 应用相关的问题。推荐使用最新的工具以及 `jcmd` 来进行诊断。
 
@@ -25,7 +25,7 @@ jstack 命令能够：
 - Stack Trace from a Core Dump
 - Mixed Stack
 
-如果 java 程序崩溃生成 core 文件，jstack 工具可以用来获得 core 文件的 java stack 和 native stack 的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题。另外，jstack 工具还可以附属到正在运行的 java 程序中，看到当时运行的 java 程序的 java stack 和 native stack 的信息，如果运行的 java 程序呈现 hung 的状态，jstack 是非常有用的。
+如果 Java 程序崩溃生成 core 文件，jstack 工具可以用来获得 core 文件的 java stack 和 native stack 的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题。另外，jstack 工具还可以附属到正在运行的 java 程序中，看到当时运行的 java 程序的 java stack 和 native stack 的信息，如果运行的 java 程序呈现 hung 的状态，jstack 是非常有用的。
 
 thread dump 就是将当前时刻正在运行的 JVM 的线程拷贝一份，可以用来分析程序执行情况。
 
@@ -132,9 +132,6 @@ JVM 使用线程来执行内部或外部的操作。
 
 以上内容来自 [Oracle](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/using_threaddumps.html)
 
-
-
-
 通过 jstack 信息可以分析线程死锁，或者系统瓶颈，但是这篇文章比较粗浅，只介绍了大概，等以后熟悉了补上。
 
 ## 如何对 jstack 结果进行分析
@@ -142,7 +139,7 @@ JVM 使用线程来执行内部或外部的操作。
 ### 同步问题
 主要关注 `RUNNABLE` 或者 `BLOCKED` 线程，然后是 `TIMED_WAITING` 状态的线程。这些状态可以帮助我们定位：
 
-- 死锁问题，多个线程同时持有同步块，或者共享对象
+- 死锁问题，多个线程同时持有相互需要的同步块，或者共享对象
 - thread contention，当一个线程被 block 等待其他线程结束
 
 ### 执行问题

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Mybatis Generator 配置详解"
+aliases: "Mybatis Generator 配置详解"
 tagline: ""
 description: ""
 category: 经验总结
@@ -8,7 +9,7 @@ tags: [mybatis, orm, mysql, java, ]
 last_updated:
 ---
 
-通常情况下会用 xml 来配置 Mybatis Generator 通常在 `src/main/resources/generatorConfig.xml` 文件中。
+通常情况下会用 xml 来配置 MyBatis Generator 通常在 `src/main/resources/generatorConfig.xml` 文件中。
 
 官方的配置文档可以在[这里](http://www.mybatis.org/generator/configreference/xmlconfig.html) 找到。
 

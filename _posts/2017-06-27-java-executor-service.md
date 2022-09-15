@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Java 查漏补缺之并发编程 ExecutorService"
+aliases: "Java 查漏补缺之并发编程 ExecutorService"
 tagline: ""
 description: ""
 category: Java
-tags: [java, thread, runnable, callable, executor, ]
+tags: [java, thread, runnable, callable, executor, threadpool, ]
 last_updated:
 ---
 
@@ -49,23 +50,35 @@ ExecutorService 的生命周期有三种：运行，关闭和已终止。
 ## Executors
 Executors 是一个工具类。 Executors 类中有很多创建线程池的方法，这些方法都是调用
 
-    public ThreadPoolExecutor(int corePoolSize,
-                              int maximumPoolSize,
-                              long keepAliveTime,
-                              TimeUnit unit,
-                              BlockingQueue<Runnable> workQueue,
-                              ThreadFactory threadFactory,
-                              RejectedExecutionHandler handler) { ... }
+```
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler) { ... }
+```
 
 参数说明
 
-- `corePoolSize` 基本大小，在没有任务执行时，线程池的大小
-- `maximumPoolSize` 最大大小，可同时活动的线程数量上限
-- `keepAliveTime` 超时时间，当某个线程空闲时间超过存活时间，会被标记为回收，当线程池大小超过基本大小时，该线程会被终止
+- `corePoolSize` 核心线程数，当前线程数没有达到 coolPoolSize，会创建线程
+    - 核心线程一般不会被销毁即使是空闲的，如果通过 `allowCoreThreadTimeOut` 设置了超时，也会被销毁
+- `maximumPoolSize` 最大线程数，可同时活动的线程数量上限
+    - 当核心线程无空闲，队列已满的时候会创建临时线程
+- `keepAliveTime` 超时时间，当某个线程空闲时间超过存活时间，会被标记为回收（默认用于非核心线程），当线程池大小超过基本大小时，该线程会被销毁
 - `TimeUnit` 超时时间单位
-- 缓冲队列
-- 线程工厂
-- 拒绝策略
+- `workQueue` 缓冲队列，等待执行的任务队列，如果核心线程没有空闲，新来的任务会被放入到队列，队列可以分为有界和无界，决定了运行策略
+    - 有界，队列长度有限，核心线程无空闲，新任务进入队列，队列满，创建临时线程（警惕临时线程无线增加风险）
+    - 无界，核心线程无空闲，新任务添加到队列，不会创建临时线程（警惕队列任务无线增加风险）
+- `threadFactory` 线程工厂，创建线程的方式，线程名，是否后台执行等等
+- `handler` 拒绝策略，没有空闲线程处理任务，队列已满，再有新任务添加，这个参数指定策略：
+    - ThreadPoolExecutor.AbortPolicy：直接抛出异常，这是默认策略；
+    - ThreadPoolExecutor.DiscardPolicy：直接丢弃任务，但是不抛出异常。
+    - ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后将新来的任务加入等待队列
+    - ThreadPoolExecutor.CallerRunsPolicy：由线程池所在的线程处理该任务，比如在 main 函数中创建线程池，如果执行此策略，将有 main 线程来执行该任务
+
+虽然不提倡使用 Executors 中的方法来直接创建线程池，但也需要了解一下几种常见的线程池。
 
 在 Executors 中提供了很多静态方法：
 
