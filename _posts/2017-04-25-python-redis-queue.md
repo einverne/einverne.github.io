@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "在 Python 中使用 redis 作为任务队列 Python RQ 使用"
+aliases: "在 Python 中使用 redis 作为任务队列 Python RQ 使用"
 tagline: ""
 description: ""
 category: 学习笔记

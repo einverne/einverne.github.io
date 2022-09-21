@@ -94,7 +94,7 @@ app.app_context().push()
         db.session.add(admin)
         db.session.commit()
 
-来自 [stackoverflow](https://stackoverflow.com/a/50572705/1820217)
+来自 [StackOverflow](https://stackoverflow.com/a/50572705/1820217)
 
 ## reference
 

@@ -46,7 +46,7 @@ This dumping process is much faster than dumping with `jmap`! Dumpfiles are much
 
 ### Memory Analyzer Tool (MAT)
 
-The Eclipse Memory Analyzer is a fast and feature-rich Java heap analyzer that helps you find memory leaks and reduce memory consumption.
+The [[Eclipse Memory Analyzer]] is a fast and feature-rich Java heap analyzer that helps you find memory leaks and reduce memory consumption.
 
 Use the Memory Analyzer to analyze productive heap dumps with hundreds of millions of objects, quickly calculate the retained sizes of objects, see who is preventing the Garbage Collector from collecting objects, run a report to automatically extract leak suspects.
 

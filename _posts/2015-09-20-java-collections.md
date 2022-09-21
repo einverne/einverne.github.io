@@ -13,9 +13,9 @@ Java 容器是 JDK 为 Java 使用者设计好的一套基础的数据结构。
 
 Collection 是接口，包含 List 、Set  和 Queue。List 有序，Set 无序不允许重复元素。
 
-- List 实现类有 LinkedList, ArrayList, Vector, Stack
+- List 实现类有 [[LinkedList]], [[ArrayList]], Vector, Stack
 - Set 的实现类 HashSet， [[TreeSet]]。HashSet 依赖 HashMap，TreeSet 依赖 TreeMap。
-- Queue 有 LinkedList，PriorityQueue
+- Queue 有 LinkedList，PriorityQueue， ArrayDeque
 
 其中 LinkedList 实现了 List 和 Queue 接口。
 
@@ -163,7 +163,7 @@ TreeMap 不是线程安全的。
 
 ### WeakHashMap
 
-WeakHashMap 是弱键，当某个键不再正常使用时会被从 WeakHashMap 中自动移除。准确的来说，对于一个给定的键，并不能阻止垃圾回收器对该键的回收。
+[[WeakHashMap]] 是弱键，当某个键不再正常使用时会被从 WeakHashMap 中自动移除。准确的来说，对于一个给定的键，并不能阻止垃圾回收器对该键的回收。
 
 WeakHashMap 的 key 是弱键，通过 WeakReference 类型实现。
 
