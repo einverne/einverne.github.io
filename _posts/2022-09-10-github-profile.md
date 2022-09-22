@@ -39,7 +39,6 @@ last_updated: 2022-09-21 18:43:07
     <img  margin-top="-30px" width="55%" align="right" alt="einverne's github stats" src="https://github-readme-stats.vercel.app/api?username=einverne&show_icons=true&include_all_commits=true&count_private=true&layout=compact&hide_border=true" />
   </a>
 </p>
-
 ```
 
 ## 图标 {#icons}
@@ -101,6 +100,11 @@ https://skyline.github.com/
 
 ### Waka
 如果你使用 [[WakaTime]] 来统计编码时间，那么可以使用 [waka-readme-stats](https://github.com/anmol098/waka-readme-stats) 来展示。
+
+
+## 总结
+最终的效果见 <https://github.com/einverne/>
+
 
 ## reference
 
