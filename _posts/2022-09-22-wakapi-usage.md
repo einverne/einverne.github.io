@@ -40,6 +40,20 @@ docker-compose up -d
 
 服务启动之后，注册登录，然后就可以配置编辑器插件，把 IntelliJ IEDA，[[VSCode]]，[[Vim]] 先配置上。这部分可以直接查看 WakaTime 的官方文档。
 
+编辑客户端配置 `~/.wakatime.cfg`
+
+因为使用 Self-hosted 的后端，所以需要设置 `api_url` 。`api_key` 则从后台获取即可。
+
+```
+[settings]
+api_url=https://wakapi.einverne.info/api
+api_key=b5b0xxx
+proxy=
+debug=false
+status_bar_enabled=true
+```
+
+
 ## GitHub Actions
 
 - [waka-readme](https://github.com/athul/waka-readme)

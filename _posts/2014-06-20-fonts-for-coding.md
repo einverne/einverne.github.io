@@ -57,6 +57,8 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 - <https://github.com/googlefonts/Inconsolata>
 
 ## Fira Code
+个人使用的编程字体 Fira Code，用了很多年了。
+
 为 Programming 设计的等宽字体。该字体为 Programming 做了非常多的特殊设计，比如大于等于，不等于等等。
 
 这款字体区别与其他字体的另一个典型特点就是 `@`, `&` 和 `r` 的区别。
@@ -76,6 +78,11 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 ## Fantasque Sans Mono
 
 - <https://github.com/belluzj/fantasque-sans>
+
+
+更多编程字体预览：
+
+- <https://coding-fonts.netlify.app/>
 
 ## reference
 

@@ -19,6 +19,13 @@ IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 快捷键的开源插件�
 - 利用 `~/.ideavimrc` 来复用 Vim 的工作方式，即使将工作环境切换到 Terminal 下也可以沿用，并且充分利用 Idea 提供的 Action
 - 多平台下沿用一套工作流程，不需要解决因为操作系统不同而产生的快捷键冲突
 
+## 必须安装的插件
+
+- IdeaVim
+- AceJump
+- IdeaVim-EasyMotion
+
+
 ## 利用 .ideavimrc 配置 IdeaVim
 
 ### 重新加载 .ideavimrc
