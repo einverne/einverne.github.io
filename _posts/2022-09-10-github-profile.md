@@ -50,6 +50,8 @@ last_updated: 2022-09-21 18:43:07
 - [Icons8](https://icons8.com/) 同样是一个图标库，但是也包含一些收费的图标
 - [Wikimedia Commons](https://commons.wikimedia.org/) 是另一个不错的选择，可以找到很多官方的图标，并且可以自由使用。
 
+另外一个寻找 icon 的方式就是利用 <https://cs.github.com> GitHub 的 Code Search，然后直接搜索，比如我想要找到豆瓣的 svg ，输入 `douban.svg` 然后就能找到。
+
 ## 其他徽章
 
 ### github-readme-stats

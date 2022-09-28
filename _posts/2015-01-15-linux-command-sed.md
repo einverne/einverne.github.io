@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：sed 流式字符编辑器"
+aliases: "每天学习一个命令：sed 流式字符编辑器"
 tagline: ""
 description: ""
 category: 每天学习一个命令
@@ -24,7 +25,7 @@ sed 功能：
 
 ## 行编辑器 ed
 
-awk 的起源追溯到 sed 和 grep，再往前追溯就到了 ed，最初的 UNIX 行编辑器。关于 ed 编辑器可以参考之前的『[文章](/post/2018/02/ed-line-editor.html)』
+awk 的起源追溯到 sed 和 grep，再往前追溯就到了 ed，最初的 UNIX 行编辑器。关于 ed 编辑器可以参考之前的 [文章](/post/2018/02/ed-line-editor.html)。
 
 ## sed 使用参数
 
@@ -54,6 +55,27 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
 ```
 
 ## 实例
+注意如下的命令如果不清楚其含义的情况下，请谨慎执行!
+
+下面的演示中会使用一个 `nl` 命令，这个命令会在打印文件内容的时候在前面增加行数显示。
+
+### 显示特定行
+仅列出 `/etc/passwd` 文件内的第 5-7 行
+
+    nl /etc/passwd | sed -n '5,7p'
+    5 lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+    6 sync:x:5:0:sync:/sbin:/bin/sync
+    7 shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+
+这个 sed 的以行为单位的显示功能，就能够将某一个文件内的某些行号选择出来显示。
+
+也可以直接使用
+
+```
+# 打印文件第3到5行
+sed -n '3,5p' /path/to/file
+```
+
 
 ### 行删除及增加
 以行为单位的新增 / 删除
@@ -126,16 +148,6 @@ s ：替换，通常这个 s 的命令可以搭配正则 `1,20s/old/new/g`
     sed '/192.168.1.2/s/$/ host25' path/to/file
     
 验证无误之后可以直接使用 `sed -i` 原地替换。
-
-### 显示特定行
-仅列出 `/etc/passwd` 文件内的第 5-7 行
-
-    nl /etc/passwd | sed -n '5,7p'
-    5 lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-    6 sync:x:5:0:sync:/sbin:/bin/sync
-    7 shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-
-这个 sed 的以行为单位的显示功能，就能够将某一个文件内的某些行号选择出来显示。
 
 ### 数据的搜寻并显示
 
