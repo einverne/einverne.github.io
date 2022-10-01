@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Warp 终端初体验"
-aliases: 
+aliases:
 - "Warp 终端初体验"
 tagline: ""
 description: ""
@@ -25,7 +25,7 @@ Warp 是一个 Rust 编写，使用 GPU 渲染的终端(terminal)应用。目标
 上手体验的过程也可以知道，Warp 基本上没什么配置，基本上所有的功能都是内建快捷键调用，对新手非常友好。
 
 ### 速度
-早在之前的文章中我就[提到过](/post/2020/10/use-zinit-to-manage-zsh-plugins.html) 因为使用越来越多的 zsh 插件，导致每一次打开新的 Tab 终端都要有一个明显的停顿，虽然后来使用 zinit 优化了一下插件加载，但是还是会感觉到一小点的卡顿，希望 Warp 能解决这个问题吧。
+早在之前的文章中我就 [提到过](/post/2020/10/use-zinit-to-manage-zsh-plugins.html) 因为使用越来越多的 zsh 插件，导致每一次打开新的 Tab 终端都要有一个明显的停顿，虽然后来使用 zinit 优化了一下插件加载，但是还是会感觉到一小点的卡顿，希望 Warp 能解决这个问题吧。
 
 通过终端自身的能力，可以精减掉一些 zsh 的插件。
 
@@ -46,11 +46,8 @@ Warp 的创始人在总结其过去 20 年的程序生涯的时候说过现存�
 
 在 Warp 中用户可以共享自己的命令行，设置，和历史。
 
-
-
-
 ## 上手体验
-可以点击[这里](https://app.warp.dev/referral/7GVDWJ)下载体验。
+可以点击 [这里](https://app.warp.dev/referral/7GVDWJ) 下载体验。
 
 ### 登录不上问题
 如果在国内，大概率会卡在登录的界面（在还没有开放 beta testing 的时候会卡在输入邀请码的界面）。
@@ -64,8 +61,7 @@ export HTTPS_PROXY=http://127.0.0.1:1080
 /Applications/Warp.app/Contents/MacOS/stable
 ```
 
-在 macOS 上推荐使用 [Clash for windows](https://docs.gtk.pw/contents/macos/cfw.html)。
-
+在 macOS 上推荐使用 [Clash for windows](https://docs.gtk.pw/contents/macos/cfw.html) 。
 
 ### 几个重要的快捷键
 
@@ -86,7 +82,7 @@ Warp 提供了对于命令结果的快速复制，以及分享，点击 Share �
 
 ![warp command copy](https://photo.einverne.info/images/2022/04/09/59r4.png)
 
-比如对于我上面的 `git --help` 的结果可以到[这里查看](https://app.warp.dev/block/XxeO8Htvba4TiHAmOwGwGU)
+比如对于我上面的 `git --help` 的结果可以到 [这里查看](https://app.warp.dev/block/XxeO8Htvba4TiHAmOwGwGU)
 
 当然如果没有 Warp，我会在 Tmux 中用 Tmux 的复制粘贴来实现这个需要。
 
@@ -100,28 +96,25 @@ Warp 提供了对于命令结果的快速复制，以及分享，点击 Share �
 ```
 which fe
 fe () {
-	local files
-	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-	[[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+    local files
+    IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+    [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 ```
-
 
 ## 总结
 Warp 不需要用户查看文档也可以有一个不错的上手体验，更不像其他终端那样需要一个非常复杂的配置文档才能将其调教得比较好用。
 
-如果你看完这篇文章觉得 Warp.dev 还不错，可以点击[邀请](https://app.warp.dev/referral/7GVDWJ)来尝试一下。
-
+如果你看完这篇文章觉得 Warp.dev 还不错，可以点击 [邀请](https://app.warp.dev/referral/7GVDWJ) 来尝试一下。
 
 ## 相关联终端
 
 - 在 macOS 上我一直都用的 [kitty](/post/2020/08/cross-platform-gpu-based-terminal-emulator-kitty.html) 这样一款终端，通过简单的配置，日常用起来目前还没有遇到比较大的问题，配合 zsh, tmux 还算得上顺手
 - [[Mac 应用 iTerm2]] 是一款比较正统的终端
-- [[Mac应用 alacritty 终端]] 也是一款 GPU 加速终端
+- [[Mac 应用 alacritty 终端]] 也是一款 GPU 加速终端
 - [[hyper.is]] 一款基于 Electron 的终端
 - [[wezterm-terminal]] 是另一款 GPU 加速的终端，用 Rust 和 Lua 编写的，轻度体验了一下确实比较快，但是最近还没来得及深度体验。
 - [fig.io](https://fig.io/) 是一款可以嵌入到其他 IDE 内部使用的终端，也实现了命令的自动补全等等功能。
-
 
 ## reference
 
