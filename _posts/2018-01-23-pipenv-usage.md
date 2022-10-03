@@ -34,6 +34,9 @@ last_updated:
 
 ## 常用命令
 
+- `pipenv install package`
+- `pipenv update package` 升级包
+
 ### 指定 Python 版本信息
 在创建虚拟环境时，我们可以使用 python 版本信息
 

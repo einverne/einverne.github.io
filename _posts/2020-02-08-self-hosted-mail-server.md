@@ -5,7 +5,7 @@ alias: "自建邮件服务器可选项"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [mail, linux, docker, smtp, mail-server,  ]
+tags: [mail, linux, docker, smtp, mail-server, self-hosted ]
 last_updated:
 ---
 
@@ -51,7 +51,6 @@ mailcow 使用介绍：
 Poste 运行需要 800MB 左右空间，只支持 64 位操作系统。
 
 Poste 可以支持 Docker 安装，但是提供了 Free、Pro 和 Pro+ 版本，都需要按年订阅。
-
 
 ## docker-mailserver
 文档不是很全

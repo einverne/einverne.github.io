@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "启动器 Raycast 简单使用"
+title: "macOS 下启动器 Raycast 简单使用"
 aliases: 
-- "启动器 Raycast 简单使用"
+- "macOS 下启动器 Raycast 简单使用"
 tagline: ""
 description: ""
 category: 产品体验
-tags: [ launcher, alfred, macos, application,  ]
-last_updated:
+tags: [ launcher, alfred, macos, mac-application ,  ]
+last_updated: 2022-09-29 09:38:41
+create_time: 2022-03-10 11:57:31
 ---
 
 在逛 Twitter 的时候看到有人分享了一款 Launcher，叫做 Raycast，因为平时一直使用 [[Alfred]] 倒是没有引起我的太多注意，但今天又看到了一次，所以就想好好来了解一下这个新出来的启动器。
@@ -57,6 +58,8 @@ last_updated:
 
 ![raycast clipboard history hotkey](/assets/raycast-clipboard-history-hotkey-20220310225717.png)
 
+### Search Screenshot
+Raycast 支持直接搜索图片中的内容，还可以选中图片之后使用，cmd + Shift + a 使用 Cleanshot 对图片标注。
 
 ### Store
 输入 `Store` 可以打开 Raycast 的商店，然后可以在其中安装、启用非常多的三方插件。
@@ -106,7 +109,8 @@ Raycast 可以直接连接 Calendar，因为我的 macOS 上的日历同步了 G
 其他比如计算器、汇率转换、时间查询等等基础功能就不再展开。
 
 如果有时间会再讲讲如何在 Raycast 中执行自定义脚本，或者如何编写自己的扩展。
-Raycast 支持的脚本语言，Bash、Swift、AppleScript 
+Raycast 支持的脚本语言，Bash、Swift、AppleScript。
+
 
 
 ## related
