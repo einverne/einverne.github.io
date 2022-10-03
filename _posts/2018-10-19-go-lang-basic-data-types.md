@@ -1,17 +1,18 @@
 ---
 layout: post
 title: "Go 语言学习笔记 3：基础类型"
+aliases: "Go 语言学习笔记 3：基础类型"
 tagline: ""
 description: ""
 category: [ 学习笔记 , Go]
-tags: [go-lang, programming, ]
+tags: [golang, programming, ]
 last_updated:
 ---
 
 和大多数强类型语言一样，Go 也有自己基本的类型系统。Go 语言的类型大致可以分为四大类：
 
 - basic types 基础类型（basic types）包括 `numbers`,`strings`,`booleans`
-- aggregate types  聚合类型（aggregate types）包括 `arrays` , `structs` 
+- aggregate types  聚合类型（aggregate types）包括 `arrays` , `structs`
 - reference types 引用类型（reference types) 包括不同组，包括 `pointers` , `slices`, `maps`, `functions`, `channels` ，他们都是程序变量或者状态的引用
 - interface types, 接口类型 (interface types) 是特殊的一个类型，会在后面单独介绍。
 
@@ -38,8 +39,8 @@ float32 类型的浮点数可以提供大约 6 个十进制数的精度，而 fl
 ## Complex Numbers 复数
 Go 语言提供了两种精度的复数类型：complex64(8 字节） 和 complex128(16 个字节），分别对应 float32 和 float64 两种浮点数精度。内置的 complex 函数用于构建复数，`real` 和 `imag` 函数用来返回实部和虚部：
 
-    var x complex128 = complex(1, 2) // 1+2i
-    var y complex128 = complex(3, 4) // 3+4i
+    var x complex128 = complex(1,2) // 1+2i
+    var y complex128 = complex(3,4) // 3+4i
     fmt.Println(x*y)                 // "(-5+10i)"
     fmt.Println(real(x*y))           // "-5"
     fmt.Println(imag(x*y))           // "10"
@@ -61,7 +62,7 @@ unicode 包提供了 IsDigit、IsLetter、IsUpper 和 IsLower 等类似功能，
 ## Constants
 常量表达式在编译器计算，每种常量的潜在类型都是基础类型。
 
-常量声明语句定义了常量的名字，常量值不能修改。
+常量声明语句定义了常量的名字，常量值不能被修改。
 
     const pi = 3.1415
 
@@ -86,5 +87,3 @@ unicode 包提供了 IsDigit、IsLetter、IsUpper 和 IsLower 等类似功能，
         Friday
         Saturday
     )
-
-

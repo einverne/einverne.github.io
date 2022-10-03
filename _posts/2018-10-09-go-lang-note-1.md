@@ -9,9 +9,22 @@ tags: [golang, google, java, programming, ]
 last_updated:
 ---
 
+Go 语言特性：
+
+- 静态语言
+- 函数支持多返回值
+- 错误处理机制
+- 支持语言并发
+- 面向对象：使用类型，组合，接口来实现面向对象思想
+- 反射
+- CGO，可以调用 C 语言实现的模块
+- 自动垃圾回收
+- 静态编译
+- 交叉编译
+- BSD 开源协议
 
 ## 并发
-Go 语言在语言级别支持协程，叫 [[Goroutine]]。Go 语言标准库提供的所有系统调用 (syscall) 操作，当然也包括所有同步 IO 操作，都会出让 CPU 给其他 goroutine
+Go 语言在语言级别支持[[Coroutine|协程]]，叫 [[Goroutine]]。Go 语言标准库提供的所有系统调用 (syscall) 操作，当然也包括所有同步 IO 操作，都会出让 CPU 给其他 goroutine
 
 Go 语言推荐采用“Erlang 风格的并发模型”的编程范式来实现进程间通信。
 
@@ -21,7 +34,13 @@ Go 语言推荐采用“Erlang 风格的并发模型”的编程范式来实现�
 花括号写法，还有错误处理，都有详细的规定。Go 语言也是至今为止学习的语言中，唯一一个将编码风格写入语言要求的。
 
 ### 变量
-对于 Go 的变量，推荐使用 `驼峰式`
+对于 Go 的变量，推荐使用 ` 驼峰式 `
+
+Go 语言标识命名规则：
+
+- 只能由非空 Unicode，数字，下划线组成（所以 Go 语言中可以使用中文作为变量名，但是不建议）
+- 只能以字母或下划线开始
+- 区分大小写，避免使用 Go 语言预定义标识符
 
 ### 包名
 包名要求小写。
@@ -47,7 +66,7 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 ## 安装使用
 
 ### Linux 安装
-从[这里](https://golang.org/dl/) 下载，然后解压并添加环境变量
+从 [这里](https://golang.org/dl/) 下载，然后解压并添加环境变量
 
     tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
     export PATH=$PATH:/usr/local/go/bin
@@ -58,17 +77,18 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 
     sudo apt-get install bison ed gawk gcc libc6-dev make
 
-### Mac 安装
+### macOS 下安装
+在 macOS 下安装：
 
-	brew install go
+    brew install go
 
 可以使用 `go version` 来验证是否安装成功。
 
 ### 安装目录
 在安装好的 Go 目录下，有几个重要的目录
 
-- `/bin`，可执行文件，编译器，Go 工具
-- `/doc`
+- `/bin`，可执行文件，编译器，Go 语言相关工具
+- `/doc`，文档
 - `/lib`，文档模板
 - `/misc`，支持 Go 编辑器相关配置
 - `/os_arch` 包含标准库包对象文件 `.a`
@@ -80,13 +100,17 @@ Go 语言引入 goroutine 概念，关键字 go， 可以让函数以 goroutine 
 - `$GOROOT` 表示该 go 的安装目录，值一般都是 `/usr/local/`, 当然，也可以安装在别的地方
 - `$GOARCH` 表示目标机器的处理器架构，它的值可以是 386、amd64 或 arm
 - `$GOOS` 表示目标机器的操作系统，它的值可以是 arwin、freebsd、linux 或 windows
-- `$GOPATH` 采用和 $GOROOT 一样的值，但从 Go1.11 本开始，你必须修改为其它路径。它可以包含多个包含 Go 语言源码文件、包文件和可执行文件的路径，而这些路径下又必须分别包含三个规定的目录：`src` 、`pkg` 和 `bin` , 这三个目录分别用于存放源码文件、包文件和可执行文件
+- `$GOPATH` 采用和 `$GOROOT` 一样的值，但从 Go 1.11 本开始，你必须修改为其它路径。它可以包含多个包含 Go 语言源码文件、包文件和可执行文件的路径，而这些路径下又必须分别包含三个规定的目录：`src` 、`pkg` 和 `bin` , 这三个目录分别用于存放源码文件、包文件和可执行文件
 
+GOPATH 可以理解成工作目录，一般需要包括 3 个文件夹：
+
+- `src` 源文件，通过包名区分
+- `pkg` 编译后的文件
+- `bin` 可执行文件(go install)，只需要将 `$GOPATH/bin` 加入环境变量就可以在操作系统任意位置执行
 
 ### Hello World
 
 创建一个 workspace，然后开始 hello world，在 workspace 下新建 `src/hello` 目录，在目录下创建文件 `vim hello.go`
-
 
 ```
 package main
@@ -115,6 +139,11 @@ func main() {
 ## 类型系统
 在 Go 语言中有四个关键字和定义类型相关，`var`,`const`,`type` 和 `func` 前两个和变量相关，第三个可以用来自定义类型，`func` 定义方法。
 
+- 内置常量：true, false, nil, iota
+- 内置类型：bool, byte, rune, int, int8, int16, int32, int64, uint, unit8 ..., float32, ...
+- 内置函数：make, len, cap, new, append, copy, close, delete, complex, real, imag, panic, revoer,
+- 空白标识符：`_`
+
 ### 内置类型
 和其他强类型语言一样，Go 语言内置一些基础类型，比如 Strings，Numbers（int32,int64,float32,float64 等等），Booleans。这些类型本质上是原始类型。当对值进行增加或者删除市，会创建一个新值。当把这些值传递给方法时，会传递一个对应值的副本。
 
@@ -126,6 +155,13 @@ header 中包含一个指针，通过复制来传递一个引用类型的值的�
 ### 结构类型
 结构类型用来描述一组数据值。
 
+## 保留字
+Go 语言有很多保留字
+
+- 声明：import, package
+- 实体声明和定义：chan, const, func, interface, map, struct, type, var
+- 流程控制：break, case, continue, default, defer, else, fallthrough, for, go, goto, if, range, return, select, switch
+
 ## 变量
 在 Go 语言中变量初始化和变量赋值是不同的概念。
 
@@ -136,6 +172,23 @@ header 中包含一个指针，通过复制来传递一个引用类型的值的�
 
 这里 `:=` 表示同时进行变量声明和初始化。出现在 `:=` 左侧的变量不应该是已经被声明过的。
 
+## 操作符
+
+- 算术运算符：+, -, `*`, `/`, %, ++, --
+- 关系： >, < ...
+- 逻辑运算符： &&, ||, !
+- 位运算符：&, |, ^, << , >> , &^
+- 赋值运算符：=, +=, -=, *=, %=, &=, |=, ^=, <<=, >>=
+- 其他运算符：`<-`
+
+## 声明语句
+
+- 声明变量 var
+- 常量 const  `const PI = 3.14`
+- 方法 func
+- 类型 type
+
+## 最后
 
 > 我们对于一些事物的不理解或者畏惧，原因都在于这些事情所有意无意带有的绚丽外衣和神秘面纱。只要揭开这一层直达本质，就会发现一切其实都很简单。
 

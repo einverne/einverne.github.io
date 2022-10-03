@@ -11,6 +11,7 @@ last_updated:
 
 和大部分编程语言一样，Go 也有很多内置关键字，下面这些关键字和语法相关，不能用于定义。
 
+```
 break
 case
 chan
@@ -36,31 +37,43 @@ struct
 switch
 type
 var
+```
 
 三大类预定义的关键字
 
-|分类    | 关键字
-|--------|------------
-| Constants: | true false iota nil
-| Types: | int int8 int16 int32 int64 <br/> uint uint8 uint16 uint32 uint64 uintptr <br/> float32 float64 complex128 complex64 <br/> bool byte rune string error
-| Functions: | make len cap new append copy close delete complex real imag panic recover
+| 分类       | 关键字                                                                                                                                                |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Constants: | true false iota nil                                                                                                                                   |
+| Types:     | int int8 int16 int32 int64 <br/> uint uint8 uint16 uint32 uint64 uintptr <br/> float32 float64 complex128 complex64 <br/> bool byte rune string error |
+| Functions: | make len cap new append copy close delete complex real imag panic recover                                                                             |
 
 上面这些可以用于定义。
-
 
 ## 变量定义
 变量定义遵循
 
     var name type = expression
 
-type 可以省略
+type （类型）可以省略
 
-    var b, f, s = true, 2.3, "four" // bool, float64, string
+    var name, age, gender = "EV", 18, 1
+
+或者：
+
+```
+	var (
+		name   = "EV"
+		age    = 18
+		gender = 1
+	)
+```
 
 type 会自动推导
 
+变量只能被声明一次。
+
 ### Short Variable Declarations
-定义简短的写法
+定义简短的写法，只能在函数内部使用
 
     name := expression
 
@@ -69,6 +82,19 @@ type 会自动推导
 注意 `:=` 是变量声明，而 `=` 是赋值。
 
 short variable declaration 不是总是定义左边的变量，当在同一个作用域，已经声明过的变量，那么 `:=` 表现为赋值。
+
+### 枚举
+Go 语言不提供枚举类型，不过可以使用常量+iota 来模拟枚举：
+
+```
+const (
+    E1 int = iota
+    E2
+    E3
+)
+```
+
+这三个变量分别是 0,1,2
 
 ### 指针
 `variable` 是包含值的一块内存区域，`pointer` 值是 `variable` 的地址，指针指向变量真正存储值的地方。不是每一个 value 都有地址，但是每一个变量都有地址。即使在不知道变量名的情况下，可以通过指针间接地读写变量相关的 value。
@@ -161,6 +187,7 @@ Go 也支持远程导入包，比如导入 github 上的包
 
 一个句法上的块 （block）指的是花括号包围的一组语句。
 
+```
     func f() {}
 
     var g = "g"
@@ -171,6 +198,7 @@ Go 也支持远程导入包，比如导入 github 上的包
         fmt.Println(g) // "g"; package-level var
         fmt.Println(h) // compile error: undefined: h
     }
+```
 
 ## reference
 
