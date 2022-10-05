@@ -73,6 +73,15 @@ ffmpeg -i video.mkv -map <stream number> subs.srt
 ffmpeg -i video.mkv -map 0:2 subs.srt
 ```
 
+另外一种更复杂一些的写法可以
+
+```
+ffmpeg -i video.mkv -map 0:s:0 subtitle.srt
+```
+
+这个地方 `-map 0:s:0` 中的第一个 `0` 表示的是输入文件的序号，因为这个地方只有一个输入文件 `video.mkv` 所以就表示这个文件。
+
+
 ## reference
 
 - <https://gist.github.com/pavelbinar/20a3366b54f41e355d2745c89091ec46>
