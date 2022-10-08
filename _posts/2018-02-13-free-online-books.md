@@ -12,8 +12,9 @@ last_updated:
 
 ## zlibrary
 
-- <https://b-ok.cc/>
-
+- https://zh.au1lib.org/
+- https://zh.b-ok.asia/
+- https://b-ok.cc/
 - sg1lib.org
 - 1lib.pl
 - ng1lib.org

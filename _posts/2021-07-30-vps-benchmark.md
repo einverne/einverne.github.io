@@ -132,6 +132,11 @@ python speedtest.py --share
 ```
 
 ## ping测试
+全球各地 ping 测试网站：
+
+- <https://ping.pe>
+
+或者
 
     http://www.ipip.net/ping.php
 
