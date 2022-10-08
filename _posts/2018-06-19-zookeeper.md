@@ -68,7 +68,7 @@ ZooKeeper 服务器端运行于两种模式下：standalone 和 quorum。
 - standalone 一个单独服务器，ZooKeeper 状态无法复制。
 - quorum 一组服务器，同时服务器客户端请求。
 
-选举算法，类似 paxos 算法
+选举算法，类似 [[Paxos 算法]]
 
 
     ZKReentrantLock lock = new ZKLock(zk,timeout,sessionManager);

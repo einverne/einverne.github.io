@@ -57,7 +57,7 @@ Java 版本号从 45 开始，JDK 1.1 后每个 JDK 大版本发布主版本加 
 
 常量池主要存放两大类常量：
 
-- 字面值 Literial
+- 字面值 Literal
 - 符号引用 Symbolic References , 包含
 
 		- 类和接口的全限定名 Fully Qualified Name

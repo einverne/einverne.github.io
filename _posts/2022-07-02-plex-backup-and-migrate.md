@@ -11,6 +11,8 @@ create_time: 2022-09-02 01:21:05
 last_updated: 2022-07-02 02:54:42
 ---
 
+这些年来逐渐将我的音乐库迁移到了 Plex Media Server 上，因为之前部署的 Plex 是用了 Docker，迁移到独立主机之后想直接安装，所以想将之前的 Plex 数据迁移出来，直接恢复使用。
+
 ## 备份
 备份是一定要做的事情，为了数据安全。
 
@@ -45,7 +47,7 @@ $PLEX_HOME/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Dat
 
 备份时不要对备份的数据进行任何修改，防止备份数据库出错。
 
-如果修改了媒体文件的地址，需要更新数据库：
+如果修改了本地媒体文件的地址，需要更新数据库：
 
 ```
 UPDATE `section_locations` 
