@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "kafka 基础知识笔记"
+title: "Kafka 基础知识笔记"
+aliases: "Kafka 基础知识笔记"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [kafka, linkedin, message, broker, ]
+tags: [Kafka, linkedin, message, broker, ]
 last_updated:
 ---
 
@@ -23,13 +24,13 @@ Kafka 中消息是以 topic 进行分类的，生产者通过 topic 向 Kafka br
 
 假设 Kafka 消息文件存储目录
 
-    log.dirs=/tmp/kafka-logs
+    log.dirs=/tmp/Kafka-logs
 
 假设 partition 数量为 4
 
-    /bin/kafka-topics.sh –create –zookeeper localhost:2181 –partitions 4 –topic mytopic –replication-factor 4
+    /bin/Kafka-topics.sh –create –zookeeper localhost:2181 –partitions 4 –topic mytopic –replication-factor 4
 
-然后就能在 `/tmp/kafka-logs` 目录中看到 4 个目录。
+然后就能在 `/tmp/Kafka-logs` 目录中看到 4 个目录。
 
 在 Kafka 文件存储中，同一个 topic 下有多个不同的 partition，每个 partiton 为一个目录，partition 的名称规则为：topic 名称 + 有序序号，第一个序号从 0 开始计，partition 是实际物理上的概念，而 topic 是逻辑上的概念。
 
@@ -43,7 +44,7 @@ segment 文件由两部分组成，分别为`.index`文件和`.log`文件，分�
 
 一类 topic 可以认为一类消息，每个 topic 会被分成多个 partition，每个 partition 使用 append log 文件存储。
 
-在创建 topic 时可以在 `$KAFKA_HOME/config/server.properties` 中指定 partition 的数量，也可以在 topic 创建之后去修改 partition 的数量。
+在创建 topic 时可以在 `$Kafka_HOME/config/server.properties` 中指定 partition 的数量，也可以在 topic 创建之后去修改 partition 的数量。
 
 ```
 # The default number of log partitions per topic. More partitions allow greater
@@ -57,34 +58,34 @@ Kafka 有非常多的参数可以控制其工作和运行，大部分情况下�
 
 ### broker.id
 
-每个 kafka broker 都需要有一个整型的唯一标识，这个标识通过 `broker.id` 来设置。默认的情况下，这个数字是 0, 但是它可以设置成任何值。需要注意的是，需要保证集群中这个 id 是唯一的。这个值是可以任意填写的，并且可以在必要的时候从 broker 集群中删除。比较好的做法是使用主机名相关的标识来做为 id, 比如，你的主机名当中有数字相关的信息，如 hosts1.example.com,host2.example.com, 那么这个数字就可以用来作为 broker.id 的值。
+每个 Kafka broker 都需要有一个整型的唯一标识，这个标识通过 `broker.id` 来设置。默认的情况下，这个数字是 0, 但是它可以设置成任何值。需要注意的是，需要保证集群中这个 id 是唯一的。这个值是可以任意填写的，并且可以在必要的时候从 broker 集群中删除。比较好的做法是使用主机名相关的标识来做为 id, 比如，你的主机名当中有数字相关的信息，如 hosts1.example.com,host2.example.com, 那么这个数字就可以用来作为 broker.id 的值。
 
 ### port
 
-默认启动 kafka 时，监听的是 TCP 的 9092 端口，端口号可以被任意修改。如果端口号设置为小于 1024, 那么 kafka 需要以 root 身份启动。但是并不推荐以 root 身份启动。
+默认启动 Kafka 时，监听的是 TCP 的 9092 端口，端口号可以被任意修改。如果端口号设置为小于 1024, 那么 Kafka 需要以 root 身份启动。但是并不推荐以 root 身份启动。
 
 ### zookeeper.connect
 这个参数指定了 Zookeeper 所在的地址，它存储了 broker 的元信息。在前一章节的例子中，Zookeeper 是运行在本机的 2181 端口上，因此这个值被设置成 localhost:2181。这个值可以通过分号设置多个值，每个值的格式都是 `hostname:port/path`, 其中每个部分的含义如下：
 
 - hostname 是 zookeeper 服务器的主机名或者 ip 地址
 - port 是服务器监听连接的端口号
-- /path 是 kafka 在 zookeeper 上的根目录。如果缺省，会使用根目录
+- /path 是 Kafka 在 zookeeper 上的根目录。如果缺省，会使用根目录
 
 ### log.dirs
-这个参数用于配置 Kafka 保存数据的位置，Kafka 中所有的消息都会存在这个目录下。可以通过逗号来指定多个目录，kafka 会根据最少被使用的原则选择目录分配新的 parition。注意 kafka 在分配 parition 的时候选择的规则不是按照磁盘的空间大小来定的，而是分配的 parition 的个数多小。
+这个参数用于配置 Kafka 保存数据的位置，Kafka 中所有的消息都会存在这个目录下。可以通过逗号来指定多个目录，Kafka 会根据最少被使用的原则选择目录分配新的 parition。注意 Kafka 在分配 parition 的时候选择的规则不是按照磁盘的空间大小来定的，而是分配的 parition 的个数多小。
 
 ### num.recovery.thread.per.data.dir
-kafka 可以配置一个线程池，线程池的使用场景如下：
+Kafka 可以配置一个线程池，线程池的使用场景如下：
 
 - 当正常启动的时候，开启每个 parition 的文档块 segment
 - 当失败后重启时，检查 parition 的文档块
-- 当关闭 kafka 的时候，清除关闭文档块
+- 当关闭 Kafka 的时候，清除关闭文档块
 
 默认，每个目录只有一个线程。最好是设置多个线程数，这样在服务器启动或者关闭的时候，都可以并行的进行操作。尤其是当非正常停机后，重启时，如果有大量的分区数，那么启动 broker 将会花费大量的时间。注意，这个参数是针对每个目录的。比如，num.recovery.threads.per.data.dir 设置为 8, 如果有 3 个 log.dirs 路径，那么一共会有 24 个线程。
 
 ### auto.create.topics.enable
 
-在下面场景中，按照默认的配置，如果还没有创建 topic,kafka 会在 broker 上自动创建 topic:
+在下面场景中，按照默认的配置，如果还没有创建 topic,Kafka 会在 broker 上自动创建 topic:
 
 - 当 producer 向一个 topic 中写入消息时
 - 当 cosumer 开始从某个 topic 中读取数据时
@@ -95,10 +96,10 @@ kafka 可以配置一个线程池，线程池的使用场景如下：
 ### num.partitions
 这个参数用于配置新创建的 topic 有多少个分区，默认是 1 个。注意 partition 的个数只可以被增加，不能被减少。这就意味着如果想要减少主题的分区数，那么就需要重新创建 topic。
 
-Kafka 通过分区来对 topic 进行扩展，因此需要使用分区的个数来做负载均衡，如果新增了 broker, 那么就会引发重新负载分配。这并不意味着所有的主题的分区数都需要大于 broker 的数量，因为 kafka 是支持多个主题的，其他的主题会使用其余的 broker。需要注意的是，如果消息的吞吐量很高，那么可以通过设置一个比较大的分区数，来分摊压力。
+Kafka 通过分区来对 topic 进行扩展，因此需要使用分区的个数来做负载均衡，如果新增了 broker, 那么就会引发重新负载分配。这并不意味着所有的主题的分区数都需要大于 broker 的数量，因为 Kafka 是支持多个主题的，其他的主题会使用其余的 broker。需要注意的是，如果消息的吞吐量很高，那么可以通过设置一个比较大的分区数，来分摊压力。
 
 ### log.retention.ms
-用于配置 kafka 中消息保存的时间，也可以使用 log.retention.hours, 默认这个参数是 168 个小时，即一周。另外，还支持 log.retention.minutes 和 log.retention.ms。这三个参数都会控制删除过期数据的时间，推荐还是使用 log.retention.ms。如果多个同时设置，那么会选择最小的那个。
+用于配置 Kafka 中消息保存的时间，也可以使用 log.retention.hours, 默认这个参数是 168 个小时，即一周。另外，还支持 log.retention.minutes 和 log.retention.ms。这三个参数都会控制删除过期数据的时间，推荐还是使用 log.retention.ms。如果多个同时设置，那么会选择最小的那个。
 
 过期时间是通过每个 log 文件的最后修改时间来定的。在正常的集群操作中，这个时间其实就是 log 段文件关闭的时间，它代表了最后一条消息进入这个文件的时间。然而，如果通过管理员工具，在 brokers 之间移动了分区，那么这个时候会被刷新，就不准确了。这就会导致本该过期删除的文件，被继续保留了。
 
@@ -106,7 +107,7 @@ Kafka 通过分区来对 topic 进行扩展，因此需要使用分区的个数�
 这个参数也是用来配置消息过期的，它会应用到每个分区，比如，你有一个主题，有 8 个分区，并且设置了 log.retention.bytes 为 1G, 那么这个主题总共可以保留 8G 的数据。注意，所有的过期配置都会应用到 patition 粒度，而不是主题粒度。这也意味着，如果增加了主题的分区数，那么主题所能保留的数据也就随之增加。
 
 ### log.segment.bytes
-用来控制 log 段文件的大小，而不是消息的大小。在 kafka 中，所有的消息都会进入 broker, 然后以追加的方式追加到分区当前最新的 segment 段文件中。一旦这个段文件到达了 log.segment.bytes 设置的大小，比如默认的 1G, 这个段文件就会被关闭，然后创建一个新的。一旦这个文件被关闭，就可以理
+用来控制 log 段文件的大小，而不是消息的大小。在 Kafka 中，所有的消息都会进入 broker, 然后以追加的方式追加到分区当前最新的 segment 段文件中。一旦这个段文件到达了 log.segment.bytes 设置的大小，比如默认的 1G, 这个段文件就会被关闭，然后创建一个新的。一旦这个文件被关闭，就可以理
 解成这个文件已经过期了。这个参数设置的越小，那么关闭文件创建文件的操作就会越频繁，这样也会造成大量的磁盘读写的开销。
 
 ### log.segment.ms
@@ -117,7 +118,7 @@ Kafka 通过分区来对 topic 进行扩展，因此需要使用分区的个数�
 
 ## Kafka 特点
 
-- kafka 也被设计为多个消费者去读取任意的单个消息流而不相互影响；同时多个 kafka 消费者也可以选择作为一个组的一部分，来分担一个消息流，确保这整个组，这个消息只被消费一次
+- Kafka 也被设计为多个消费者去读取任意的单个消息流而不相互影响；同时多个 Kafka 消费者也可以选择作为一个组的一部分，来分担一个消息流，确保这整个组，这个消息只被消费一次
 - 基于硬盘的消息保存，消息将按照持久化配置规则存储在硬盘上。这个可以根据每个 topic 进行设置，允许根据不同的消费者的需求不同设置不同消息流的保存时间不同，持久化保存意味着一旦消费者来不及消费或者突然出现流量高峰，而不会有丢失数据的风险。同样也意味着消息可以由 consumer 来负责管理，比如消费消息掉线了一段时间，不需要担心消息会在 producer 上累积或者消 息丢失，consumer 能够从上次停止的地方继续消费
 - 水平扩展能力强，扩展可以在集群正常运行的时候进行，对于整个系统的运作没有影响，集群如果要同时容忍更多的故障的话，可以配置更高的 replication factors
 - 高性能
