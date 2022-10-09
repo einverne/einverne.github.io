@@ -26,7 +26,7 @@ HestiaCP 还提供了基于命令行的管理工具，具体可以见 [文档](h
 
 后台演示：
 
-![](https://photo.einverne.info/images/2022/04/30/dnaw.png)
+![hestia control panel](https://photo.einverne.info/images/2022/04/30/dnaw.png)
 
 ## Features
 
@@ -137,7 +137,6 @@ Error: Let's Encrypt SSL creation failed
 - Enable SSL for this domain: 开启 SSL
 - Additional FTP Accounts: 是否创建 FTP 账号
 
-
 ## Tips
 
 ### 修改面板的端口
@@ -190,7 +189,6 @@ v-rebuild-web-domains admin
 v-rebuild-mail-domains admin
 ```
 
-
 ## HestiaCP vs VestaCP
 HestiaCP 是 VestaCP fork，VestaCP 开发和维护趋于停止，存在许多漏洞和安全性问题。VestaCP 是第一个 Nginx 的 GUI 控制面板。在 VestaCP 之前有很多 CLI-only 的管理工具。
 
@@ -204,3 +202,7 @@ HestiaCP 是 VestaCP fork，VestaCP 开发和维护趋于停止，存在许多�
 - [[aapanel]]
 - [[CyberPanel]]
 - [[DirectAdmin]]
+
+## reference
+
+- <https://bytexd.com/install-hestiacp/>
