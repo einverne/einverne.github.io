@@ -68,7 +68,7 @@ ls -al ~/.config/clash
 
 以后修改配置都记住修改 `/etc/clash` 目录下的这个配置文件。
 
-然后使用 `vi` 增加 systemd 配置 `sudo vi /systemd/system/clash.service` 放入如下内容：
+然后使用 `vi` 增加 systemd 配置 `sudo vi /etc/systemd/system/clash.service` 放入如下内容：
 
 ```
 [Unit]
