@@ -10,6 +10,8 @@ last_updated:
 
 git describe --- 显示当前离当前提交最近的 tag
 
-
+```
+git describe --tags --abbrev=0
+```
 
 

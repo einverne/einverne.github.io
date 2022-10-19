@@ -71,7 +71,7 @@ sh（或者叫做 Shell Command Language), 是由 [POSIX 标准](http://pubs.ope
     #!/bin/bash
     echo "Hello World !"
 
-“#!” 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行。通常这一行被称作 [Shebang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29)。
+`#!` 是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行。通常这一行被称作 [Shebang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29)。常见的有 `#!/bin/bash` 是用 Bash Shell, `#!/bin/sh` 使用 Bourne Shell。
 
 	chmod +x ./test.sh  #使脚本具有执行权限
 	./test.sh  #执行脚本

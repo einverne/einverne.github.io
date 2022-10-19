@@ -125,25 +125,25 @@ Ctrl + Z |  Send the signal `SIGTSTP` to the current task, which suspends it. <b
 
 最常使用的应该还是 `Ctrl-a`, `Ctrl-e`, `Ctrl-f`, `Ctrl-b`, `Ctrl-l`, `Ctrl-h`, `Ctrl-w`, `Ctrl-k`, `Ctrl-u`, `Ctrl-y`, `Ctrl-r`.
 
-命令    |     说明    |
---------|-----------|
-Ctrl-B  | 后移一个字符|
-Ctrl-F  | 向前移动一个字符|
-DEL     | 向后删除一个字符|
-Ctrl-D  | 向前删除一个字符|
-Ctrl-A  | 移到行首|
-Ctrl-E  | 移到行尾 |
-Ctrl-K  | 向前删除到行尾 |
-Ctrl-P  | 移到前一行|
-Ctrl-N  | 移到后一行 |
-Ctrl-R  | 向后搜索 |
-Ctrl-J  | 等同于 RETURN|
-Ctrl-L  | 清除屏幕，将当前行放到屏幕最上面 |
-Ctrl-M  | 等同于 RETURN |
-Ctrl-O  | 等同于 RETURN 随后在显示历史命令中下一行 |
-Ctrl-T  | 颠倒光标左右两个字符，将光标向前移一个|
-Ctrl-U  | 从光标位置开始删除行 ，向后删除到行首|
-Ctrl-V  | 引用插入|
+| 命令   | 说明                                     |
+| ------ | ---------------------------------------- |
+| Ctrl-B | 后移一个字符                             |
+| Ctrl-F | 向前移动一个字符                         |
+| DEL    | 向后删除一个字符                         |
+| Ctrl-D | 向前删除一个字符                         |
+| Ctrl-A | 移到行首                                 |
+| Ctrl-E | 移到行尾                                 |
+| Ctrl-K | 向前删除到行尾                           |
+| Ctrl-P | 移到前一行                               |
+| Ctrl-N | 移到后一行                               |
+| Ctrl-R | 向后搜索                                 |
+| Ctrl-J | 等同于 RETURN                            |
+| Ctrl-L | 清除屏幕，将当前行放到屏幕最上面         |
+| Ctrl-M | 等同于 RETURN                            |
+| Ctrl-O | 等同于 RETURN 随后在显示历史命令中下一行 |
+| Ctrl-T | 颠倒光标左右两个字符，将光标向前移一个   |
+| Ctrl-U | 从光标位置开始删除行 ，向后删除到行首    |
+| Ctrl-V | 引用插入                                 |
 
 
 ## Vi 编辑模式
@@ -230,14 +230,14 @@ shopt 选项
     vi                  on
     xtrace              off
 
-选项     |       解释      |
----------|-------------|
-emacs       | emacs 编辑模式 |
-vi          | vi 编辑模式  |
-ignoreeof   | 不允许单独使用 Ctrl-D 退出  |
-noclobber   | 不允许输出重定向（>）覆盖已存在的文件 |
-noglob      | 不允许扩展文件名通配符如*和？
-nounset     | 试图使用未定义变量时给出错误
+| 选项      | 解释                                  |
+| --------- | ------------------------------------- |
+| emacs     | emacs 编辑模式                        |
+| vi        | vi 编辑模式                           |
+| ignoreeof | 不允许单独使用 Ctrl-D 退出            |
+| noclobber | 不允许输出重定向（>）覆盖已存在的文件 |
+| noglob    | 不允许扩展文件名通配符如`*`和 `?`     |
+| nounset   | 试图使用未定义变量时给出错误          |
 
 
 ### 变量 {#variable}
@@ -248,7 +248,7 @@ Shell 变量也是一个拥有取值的名字，bash 有一些内置的变量，
 
 **等号两边必须没有空格**。
 
-引用变量，使用符号 $ , 单引号内部的变量会直接使用而不需要转义，而**双引号内部变量需要转义**。
+引用变量，使用符号 `$` , 单引号内部的变量会直接使用而不需要转义，而**双引号内部变量需要转义**。
 
 	echo $varname
 
@@ -261,12 +261,12 @@ PATH 变量，帮助 shell 找到输入的命令。输入 `echo $PATH` 得到类
 	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 
-变量      |     含义
-------------|--------------|
-HOME        |  主目录
-SECONDS     |  调用 shell 的秒数
-BASH        |   正在运行的 shell 实例路径名
-BASH_VERSION    | shell 版本号
-BASH_VERSINFO   | shell 版本信息数组
-PWD             |  当前目录
-OLDPWD          |  最后一个 cd 命令前的目录
+| 变量          | 含义                        |
+| ------------- | --------------------------- |
+| HOME          | 主目录                      |
+| SECONDS       | 调用 shell 的秒数           |
+| BASH          | 正在运行的 shell 实例路径名 |
+| BASH_VERSION  | shell 版本号                |
+| BASH_VERSINFO | shell 版本信息数组          |
+| PWD           | 当前目录                    |
+| OLDPWD        | 最后一个 cd 命令前的目录    |

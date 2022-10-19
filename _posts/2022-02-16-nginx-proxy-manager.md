@@ -15,6 +15,11 @@ Nginx Proxy Manager 是一个可以自动暴露网络服务，并申请 Let's En
 在没有使用 Nginx Proxy Manager 之前我一直使用 [Nginx Proxy](/post/2017/02/docker-nginx-host-multiple-websites.html) 来自动暴露 Docker 服务，并生成 SSL 证书。
 
 ## 安装
+
+首先创建 network:
+
+    docker network create nginx-proxy
+
 docker-compose 配置：
 
 ```

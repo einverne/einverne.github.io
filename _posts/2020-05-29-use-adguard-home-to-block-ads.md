@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "利用 AdGuard Home 过滤广告"
-aliases: "利用 AdGuard Home 过滤广告"
+title: "利用 AdGuard Home 自建 DNS 服务器过滤广告"
+aliases: "利用 AdGuard Home 自建 DNS 服务器过滤广告"
 tagline: ""
 description: ""
 category: 学习笔记
 tags: [adguard, adguard-home, adblock, browser, dns,]
 last_updated:
 ---
+
+AdGuard Home 是 AdGuard 发布的一款借助于 DNS 来实现广告过滤的服务。
 
 过滤广告的方式有非常多的方式，比如加本地 Host，比如浏览器中的 Adblock 插件，或者之前在 OpenWrt 或者其他固件上添加的广告过滤插件，甚至在 Android 上也用过通过在本地设定一个代理，所有的流量走代理，然后在代理中将广告过滤掉的应用，那么这个 AdGuard Home 有什么优势呢？在我看来，吸引我使用它的几个优势是：
 
