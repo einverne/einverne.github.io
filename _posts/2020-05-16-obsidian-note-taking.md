@@ -148,7 +148,7 @@ Obsidian 的模板功能非常强大，我自定义了一个快捷键 <kbd>⌘</
 ## 个人使用技巧
 
 ### 使用 GitHub 作为同步后端
-都知道 Obisidian 其实是一个本地的离线客户端，官方截止 11 月份还没有推出同步的功能，但是优先推出了 Publish 服务，可以将笔记一键发布到 Obisidian 提供的网站上。但是对于我而言，我习惯将笔记在本地整理，然后将相关的内容整理成文章发布在这个博客中，所以剩下的问题就是我的本地笔记同步的问题了。
+都知道 Obsidian 其实是一个本地的离线客户端，官方截止 11 月份还没有推出同步的功能，但是优先推出了 Publish 服务，可以将笔记一键发布到 Obsidian 提供的网站上。但是对于我而言，我习惯将笔记在本地整理，然后将相关的内容整理成文章发布在这个博客中，所以剩下的问题就是我的本地笔记同步的问题了。
 
 我个人是将 Obsidian 的本地仓库放到一个 Git 仓库中管理，并且每隔一定时间自动提交到 Git 中，这样即使我不在电脑边，也可以第一时间访问到我的内容。我使用 Hammerspoon 提供的 task api，写了一个 [简单的脚本](https://github.com/einverne/dotfiles/blob/master/hammerspoon/autoscript.lua) 自动提交仓库。
 
@@ -159,19 +159,19 @@ Obsidian 的开发 Roadmap
 
 ## 对比其他产品
 
-在整理了这篇文章半年后，我几乎每条都在使用 Obisidian，甚至用 Karabine [绑定了 ob 的快捷键](https://github.com/einverne/dotfiles/blob/master/karabiner/karabiner.edn) ，在任何情况，任何应用中，我只需要按下 o，不松开，然后快速按下 b，就可以 open Obsidian 了。
+在整理了这篇文章半年后，我几乎每条都在使用 Obsidian，甚至用 Karabine [绑定了 ob 的快捷键](https://github.com/einverne/dotfiles/blob/master/karabiner/karabiner.edn) ，在任何情况，任何应用中，我只需要按下 o，不松开，然后快速按下 b，就可以 open Obsidian 了。
 
 这是半年后的 Graph
 
 ![Obsidian graph](/assets/obsidian-graph.png)
 
-虽然使用过程中从来没有遇到任何问题，但是却一直收到其他产品的推荐，比如 Logseq, RoamEdit 等等，虽然 Obisidian 已经足够满足我的使用了，但也经不住尝试了一下其他的产品，只能说今年因为 Roam Research 的创新激活了笔记应用的市场。
+虽然使用过程中从来没有遇到任何问题，但是却一直收到其他产品的推荐，比如 Logseq, RoamEdit 等等，虽然 Obsidian 已经足够满足我的使用了，但也经不住尝试了一下其他的产品，只能说今年因为 Roam Research 的创新激活了笔记应用的市场。
 
 ### Logseq
 
 [[Logseq]] 在自己的官网将自己描述为一个受到 Roam Research, Org mode, Tiddlywiki, Workflowy 启发的开源的 Roam 笔记应用，我打开官网尝试了一下，虽然双向链，块引用，运行在浏览器，以 GitHub 作为笔记的存储，看起来很美好，似乎是 Roam Research 的代替品，但是我在使用的过程中，不清楚是以为网络问题还是因为我没有登录的关系，体验并不是很好，一来创建新页面的时候卡了，而来默认的显示状态和编辑状态的变化略大，使得视觉上的体验不是很好。在界面交互上甚至并不能和其提到 Workflowy 的网页应用流畅度相比。不过因为其开源属性使得每一个人都可以根据自己的喜好进行扩展和修改，其未来可期。
 
-~~另外一个需要注意的就是目前的 Logseq 只有网页版，并且因为 Logseq 网络访问需要经过其代理才能将数据保存到 GitHub，相较于 Obisidian 直接使用本地 Markdown 文件保存，Logseq 并不占优势。不过有能力可以自行搭建。~~
+~~另外一个需要注意的就是目前的 Logseq 只有网页版，并且因为 Logseq 网络访问需要经过其代理才能将数据保存到 GitHub，相较于 Obsidian 直接使用本地 Markdown 文件保存，Logseq 并不占优势。不过有能力可以自行搭建。~~
 
 Logseq 目前已经可以使用客户端，所有的数据都可以离线在本地。
 
@@ -181,9 +181,9 @@ Logseq 目前已经可以使用客户端，所有的数据都可以离线在本�
 ### Workflowy
 Workflowy 和 RoamEdit 比较类似，并且在网页操作上也比较流畅，但两者虽然都支持导出数据，但依然需要联网才能使用，和我个人的情况并不相符，就算了。
 
-往往有些时候鱼与熊掌不可兼得，当选择了网页版，就自然地获得了数据的同步，也自然可以期望未来的多客户端同步，但问题也就是在此，一旦这些网络的服务关闭，或者再一个没有网络的地方，那么一切都没有办法获取了。而 Obisidian 使用纯文本的方式，并且桌面客户端并不会发起网络连接，那么自然就丢失了同步的便利，而与此同时你也就获得了自己笔记的所有权，即使 Obisidian 未来不再更新了，那么也可以使用 Vim 或者 VS Code 的 [Foam](https://foambubble.github.io/foam/) 获得一份相差不多的体验，并且因为是纯文本，所以那些 [终端里的工具](/post/2020/10/my-favorite-cli-tools.html) ，比如 [fzf](/post/2019/08/fzf-usage.html) ， [Vim](https://einverne.github.io/categories.html#Vim) ， [rg](/post/2019/09/ripgrep-recursively-searches-directories-using-regex-pattern.html) 等等都可以直接拾起来用。这样的体验反而要比等待网络连接，然后才能进行操作要来的快捷方便很多。另外 Obisidian 不能在移动端使用的问题，我通过 [Syncthing](/post/2019/10/syncthing.html) 加上 [Markor](https://play.google.com/store/apps/details?id=net.gsantner.markor&hl=en_US) 完美的解决了。其他移动端的可以参考官网给出的 [建议](https://forum.obsidian.md/t/how-do-i-work-with-obsidian-on-mobile/471) 。
+往往有些时候鱼与熊掌不可兼得，当选择了网页版，就自然地获得了数据的同步，也自然可以期望未来的多客户端同步，但问题也就是在此，一旦这些网络的服务关闭，或者再一个没有网络的地方，那么一切都没有办法获取了。而 Obsidian 使用纯文本的方式，并且桌面客户端并不会发起网络连接，那么自然就丢失了同步的便利，而与此同时你也就获得了自己笔记的所有权，即使 Obsidian 未来不再更新了，那么也可以使用 Vim 或者 VS Code 的 [Foam](https://foambubble.github.io/foam/) 获得一份相差不多的体验，并且因为是纯文本，所以那些 [终端里的工具](/post/2020/10/my-favorite-cli-tools.html) ，比如 [fzf](/post/2019/08/fzf-usage.html) ， [Vim](/categories.html#Vim) ， [rg](/post/2019/09/ripgrep-recursively-searches-directories-using-regex-pattern.html) 等等都可以直接拾起来用。这样的体验反而要比等待网络连接，然后才能进行操作要来的快捷方便很多。另外 Obsidian 不能在移动端使用的问题，我通过 [Syncthing](/post/2019/10/syncthing.html) 加上 [Markor](https://play.google.com/store/apps/details?id=net.gsantner.markor&hl=en_US) 完美的解决了。其他移动端的可以参考官网给出的 [建议](https://forum.obsidian.md/t/how-do-i-work-with-obsidian-on-mobile/471) 。
 
-再就是块应用，Obsidian 不支持，但是 Obisidian 可以对笔记的子标题进行引用，对我来说似乎也已经足够了。毕竟 [Zettelkasten](/post/2020/02/zettelkasten-note-taking-method.html) 的精髓部分就是每一则笔记的原子性。
+再就是块应用，Obsidian 不支持，但是 Obsidian 可以对笔记的子标题进行引用，对我来说似乎也已经足够了。毕竟 [Zettelkasten](/post/2020/02/zettelkasten-note-taking-method.html) 的精髓部分就是每一则笔记的原子性。
 
 ## reference
 

@@ -32,6 +32,7 @@ last_updated: 2022-10-21 11:21:19
 
 按照罗马拼音正常输入，对照五十音图。
 
+```
 あ い う え お /ア イ ウ エ オ a i u e o
 か き く け こ /カ キ ク ケ コ ka ki ku ke ko
 さ し す せ そ /サ シ ス セ ソ sa shi su se so
@@ -43,26 +44,32 @@ last_updated: 2022-10-21 11:21:19
 ら り る れ ろ /ラ リ ル レ ロ ra ri ru re ro
 わ を /ワ ヲ wa wo
 ん /ン n
+```
 
 需要注意的是其中有几个
 
-し 是 shi 而不是 si
-ち 是 chi
-つ 是 tsu
+- し 是 shi 而不是 si
+- ち 是 chi
+- つ 是 tsu
 
 ### 浊音
 
+```
 が　ぎ　ぐ　げ　ご  \ ガ　ギ　グ　ゲ　ゴ ga gi gu ge go
 ざ　じ　ず　ぜ　ぞ \ ザ　ジ　ズ　ゼ　ゾ za ji zu ze zo
 だ　ぢ　づ　で　ど \ ダ　ヂ　ヅ　デ　ド da di du de do
 ば　び　ぶ　べ　ぼ \ バ　ビ　ブ　べ　ボ ba bi bu be bo
+```
 
 ### 半浊音
 
+```
 ぱ　ぴ　ぷ　ぺ　ぽ \ パ　ピ　プ　ぺ　ポ pa pi pu pe po
+```
 
 ### 拗音
 
+```
 きゃ　きゅ　きょ  \ キャ　キュ　キョ kya kyu kyo
 しゃ　しゅ　しょ \ シャ　シュ　ショ sha shu sho
 ちゃ　ちゅ　ちょ \ チャ　チュ　チョ cha chu cho
@@ -74,6 +81,7 @@ last_updated: 2022-10-21 11:21:19
 じゃ　じゅ　じょ ジャ　ジュ　ジョ ja ju jo
 びゃ　びゅ　びょ ビャ　ビュ　ビョ bya byu byo
 ぴゃ　ぴゅ　ぴょ ピャ　ピュ　ピョ pya pyu pyo
+```
 
 片假名转换
 
@@ -85,7 +93,7 @@ macOS 自带的输入法平假名和片假名切换是  F6 变成平假名，F7 
 
 拨音输入 n，比如
 
-にほん　nihon
+- にほん　nihon
 
 ### 促音输入
 
