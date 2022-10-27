@@ -16,5 +16,11 @@ last_updated:
     docker run -p 8080:8080 -d -v /media/meta:/data/meta -v /media/files:/data/files einverne/linx-server
 
 
+## 源码
 
+源码中使用的框架和工具：
 
+- flag 标准库中的命令行参数
+- [Goji](https://github.com/zenazn/goji) ，一个简单的 Web 框架。
+- [pongo2](https://github.com/flosch/pongo2) Django 语法类似的模板引擎
+- [bencode](https://github.com/zeebo/bencode) bencode 编码解码库
