@@ -102,6 +102,19 @@ Proxmox VE 基于 Debian 的软件源都可以替换成国内的镜像：[^tuna]
 
 	einverne    ALL=(ALL:ALL) NOPASSWD:ALL
 
+### BBR
+目前的Proxmox VE版本的linux内核版本比较新，已经包含了bbr模块了。
+
+如果没有包含可以使用如下方法：
+
+```
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+# 验证
+lsmod | grep bbr
+```
+
 ## 配置 {#setup}
 经过上面的配置 Proxmox 已经处于一个可用的状态。
 

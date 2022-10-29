@@ -22,16 +22,18 @@ Proxmox VE 6.4 版本已经 [停止更新](https://pve.proxmox.com/wiki/FAQ#faq-
 
 ## Preconditions
 
-- 升级到 PVE 6.x
+- 升级到 PVE 6.x （最新版本是 6.4）
+    - `apt update && apt upgrade -y`
 - 如果使用了 Hyper-converged Ceph, 需要根据 [文档](https://pve.proxmox.com/wiki/Ceph_Nautilus_to_Octopus) 将 Ceph Nautilus cluster 升级到 Ceph 15.2 Octopus
 - 如果使用 Proxmox Backup Server 需要同步 [升级到 1.2 版本](https://pbs.proxmox.com/wiki/index.php/Upgrade_from_1.1_to_2.x)
 - 可靠的连接，推荐使用 iKVM 或者 [[IPMI]]，或者可以直接物理访问的方式，以防止突然网络断开可能造成的问题
     - 如果只有 SSH 连接，推荐在非生产的环境中先测试升级，然后再升级生产
+    - 或者使用可靠的 [[Tmux]]
 - 备份并验证所有 VMs 和 CTs 的完整性，防止出现问题
 - 在 root 分区至少需要 4 GiB 空闲空间
 - 查阅所有 [已知的升级问题](https://pve.proxmox.com/wiki/Upgrade_from_6.x_to_7.0#Known_upgrade_issues)
 
-在更新之前，先把虚拟机全部关机，并且取消所有的自动启动。
+在更新之前，先把虚拟机全部关机，并且取消所有的自动启动（Options->Start at boot 取消勾选）。
 
 ## Step by step
 
@@ -40,6 +42,8 @@ Proxmox VE 6.4 版本已经 [停止更新](https://pve.proxmox.com/wiki/FAQ#faq-
 ```
 pve6to7
 ```
+
+确保没有 FAILURES。
 
 确保在升级之前执行一次完整检查：
 
@@ -110,6 +114,46 @@ apt dist-upgrade
 
 命令执行完成之后，重启系统就可以享受新的 PVE kernel 了。
 
+
+## 问题
+
+### OVH 机器升级后网络问题
+一台 OVH(So you Start) 独立服务器上的 PVE 从 6.4 升级到 7.0 之后，重启系统后无法找到网络。
+
+仔细的搜索了一番，并看了很多帖子之后得出来的结论是，OVH（So you Start）的机器网络配置会根据 mac 地址。PVE 升级的过程中会将网络接口的 mac 地址改掉，需要在 `/etc/network/interfaces` 中把网络接口的硬件 mac 地址配置上。
+
+```
+iface eth0 inet manual
+
+auto vmbr0
+iface vmbr0 inet dhcp
+        hwaddress ac:xx:yy:ee:cf:xx   # <- 这里
+        bridge-ports eth0
+        bridge-stp off
+        bridge-fd 0
+```
+
+而我机器的问题是在 PVE 升级的过程中将网络接口的名字也改了，以前叫 `eno3`，现在升级之后变成了 eth0。所以需要将配置中对应的 `eno3` 都替换成 `eth0`。
+
+这些网络配置信息都可以从 Rescue mode 中，执行 `ip a` 和 `ip r` 来获取。进入 Rescue mode 的方式是从 Web 管理后台，点击 Netboot，然后选择 Rescue，重启服务器。过一会儿后注册账户的邮箱里面会收到 Rescue mode 机器的密码，使用 ssh 连接，然后在 Rescue mode 中挂载磁盘。Rescue mode 类似于 OVH 用网络启动的方式启动了一个恢复模式的系统，在这个系统中可以看到 OVH 机器系统上的配置文件。通过恢复模式可以去修复一些常见的配置文件导致的系统挂掉的情况。
+
+首先执行 `fdisk -l` 查看磁盘，然后找到系统的分区，一般会在第一块硬盘上的某个分区中。然后挂载分区到本地的 `/mnt` 目录中：
+
+```
+mount /dev/sda2 /mnt
+```
+
+然后进入 `/mnt` 目录修改机器上的 `etc/network/interfaces` 注意，这里别修改到 Rescue mode 系统的配置，这里的配置是在 `/mnt` 目录下的。
+
+
+### 升级后虚拟机启动问题
+启动虚拟机报错：
+
+> TASK ERROR: failed to get address info for: localhost: Temporary failure in name resolution
+
+需要在 PVE 系统的 `/etc/hosts` 文件中配置 localhost。
+
+
 ## related
 
 - [[Proxmox VE]]
@@ -118,3 +162,8 @@ apt dist-upgrade
 ## reference
 
 - <https://pve.proxmox.com/wiki/Upgrade_from_6.x_to_7.0>
+- <https://pve.proxmox.com/wiki/Network_Configuration>
+- <https://forum.proxmox.com/threads/upgrade-to-7-no-network-after-reboot.101342/>
+- <https://forum.proxmox.com/threads/warning-upgrade-to-7-network-problem-do-not-upgrade.114472/>
+- <https://forum.proxmox.com/threads/pve-upgrade-6-4-7-network-completely-down.96658/>
+- <https://forum.proxmox.com/threads/pve-6-4-to-7-no-network-only-for-host.98198/>
