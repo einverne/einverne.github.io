@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "每天学习一个命令：top 查看资源占用"
+aliases: "每天学习一个命令：top 查看资源占用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -29,13 +30,14 @@ top 命令能够实时显示系统中各个进程资源占用情况。可以用�
 - 第一行，系统时间，已运行天数，登录用户数，1 分钟，5 分钟，15 分钟负载
 - 第二行，运行任务数
 - 第三行，CPU 运行状态
-	- us 用户空间占用 CPU 百分比
-	- sy 内核空间占用 CPU 百分比
-	- ni 改变过优先级的进程占用 CPU 百分比
-	- id 空闲 CPU 百分比
-    - wa IO 等待占用 CPU 的百分比
-	- hi 硬中断（Hardware IRQ）占用 CPU 的百分比
-	- si 软中断（Software Interrupts）占用 CPU 的百分比
+	- `us` 用户空间(user)占用 CPU 百分比
+	- `sy` 内核空间(system)占用 CPU 百分比
+	- `ni` (nice)改变过优先级的进程占用 CPU 百分比
+	- `id` (idle)空闲 CPU 百分比
+       - `wa` IO 等待(wait)占用 CPU 的百分比
+	- `hi` 硬中断（Hardware interrupts）占用 CPU 的百分比
+	- `si` 软中断（Software Interrupts）占用 CPU 的百分比
+	- `st` (steal)
 - 第四行，内存使用
 	- total 全部物理内存
 	- free 空闲内存

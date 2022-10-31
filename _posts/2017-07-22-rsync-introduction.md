@@ -218,6 +218,7 @@ rsync 中的命令 参数 `-e, --rsh=COMMAND` 指定使用 rsh、ssh 方式进�
     rsync -avh --delete /path/to/local root@remote:/path/to/remote
 
 ### 设置备份带宽
+`--bwlimit=RATE` 选项允许用户指定最大传输速率，RATE 值可以是字符串也可以是数值，如果是字符串，比如 `--bwlimit=1.5m` 表示每秒最高传输速率 1.5m，如果没有后缀那么单位是 1024 bytes。
 
 	rsync --bwlimit=100 -avzhe ssh /var/lib/rpm/ root@remoteip:/root/tmprpm/
 
