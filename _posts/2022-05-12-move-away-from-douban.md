@@ -28,7 +28,7 @@ create_time: 2020-12-29 09:24:49
 
 NeoDB 目前只能通过 [[Mastodon]] （或[[Pleroma]]/Friendica/PixelFed）实例的账号来登录。
 
-我的页面：<https://neodb.social/users/einverne@m.gtk.pw/>
+我的页面：<https://neodb.social/users/einverne@m.einverne.info/>
 
 
 ### themoviedb

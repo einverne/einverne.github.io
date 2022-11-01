@@ -19,7 +19,7 @@ Mastodon 由无数社区维护的服务器运行，用户在某一台服务器�
 
 先来看看成果：
 
-- <https://m.gtk.pw>
+- <https://m.einverne.info>
 
 欢迎来玩。
 

@@ -1,4 +1,5 @@
 ---
+aliases: 
 layout: post
 title: "Proxmox 安装和设置"
 alias: "Proxmox 安装和设置"
@@ -6,7 +7,8 @@ tagline: ""
 description: ""
 category: [ 学习笔记 , Proxmox-VE ]
 tags: [proxmox, pve, virtual, virtual-machine, ]
-last_updated:
+last_updated: 2022-11-01 03:11:32
+create_time: 2022-10-29 08:36:49
 ---
 
 接触虚拟化的过程中慢慢的了解到了 [[Proxmox VE]]，在此之前是看到很多人在用 [[ESXi]]，一款 VMware 的商业化产品，个人授权是免费的，不过 Proxmox VE 是一个基于 Debian 的开源虚拟化系统，对于我这样的初学者，学习过程要比产品的稳定性来的重要，所以对我个人而言 Proxmox 是一个不错的选择。
@@ -47,6 +49,14 @@ Proxmox 支持的虚拟化：
 	https://ip:8006
 
 这里有两点需要注意，一定要用 https 访问，我用 http 访问是没有回应的，还重装了一遍，还以为有硬件故障检查了半天，甚至 root 登录进去重启了各种服务，最后发现必须要使用 https 登录；第二点就是输入安装时设置的 IP 地址，加上 8006 端口进行访问。
+
+### 设置 host
+PVE 官方要求设置 `/etc/hosts` 防止出现问题，可以手动执行 `hostnamectl set-hostname pve` 将本机 hostname 设置为 pve
+
+```
+127.0.0.1 localhost.localdomain localhost
+your.ip pve.domain.com pve
+```
 
 ### 设置更新源 {#source}
 Proxmox 源自于 Debian，所以 Proxmox 也可以用 apt 的包管理。但是 Proxmox 维护了一套自己的软件源，如果没有订阅企业授权，在 apt update 的时候会报错。所以需要注释掉企业的 source list:

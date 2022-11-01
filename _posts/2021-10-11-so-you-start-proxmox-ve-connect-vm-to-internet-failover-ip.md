@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "So you Start 独服 Proxmox VE 虚拟机配置 Failover IP"
-aliases: 
+aliases:
 - "So you Start 独服 Proxmox VE 虚拟机配置 Failover IP"
 tagline: ""
 description: ""
@@ -10,7 +10,7 @@ tags: [ so-you-start, proxmox, proxmox-ve, pve, linux, ubuntu, failover-ip, netw
 last_updated:
 ---
 
-最近买了一台 [[so-you-start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 [[Proxmox VE]]，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外可以购买的 16 个 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
+最近买了一台 [[so-you-start]] 的独立服务器，开始的时候安装了 Ubuntu 没有充分利用独立服务器的优势，所以这两天把系统重新安装成了 [[Proxmox VE]]，然后在上面又安装了 Ubuntu 20.04，So you Start 提供了额外 16 个可以以 1.5 美元购买的 [[Failover IPs]]，Failover IP 本来是为了可以将服务器迁移到另外的服务器而提供的机制，但在 Proxmox VE 虚拟化技术系统下，可以给虚拟机也分配不同的 IP，这样就实现了从一台服务器虚拟化多个 VPS 的操作。
 
 安装 Proxmox VE 的过程就不多说了，在 So you Start 或者 OVH 后台直接使用模板安装即可，我使用的 6.x 版本，没有升级到最新的 7 版本。
 
@@ -22,9 +22,7 @@ last_updated:
 - 新建一台可以登录的虚拟机，操作系统不限 (推荐 Debian/Ubuntu)
 - 购买好至少一个额外的 Failover IP
 
-
 ## 配置 Failover IP 到虚拟机
-
 
 ### Create a Virtual MAC Address
 首先到 So you Start 后台 IP，然后选择购买的 Failover IP，新增 virtual MAC 地址，然后复制该 MAC 地址备用。
@@ -36,11 +34,11 @@ last_updated:
 新增 MAC 地址可能有一点延迟，等待一小会儿生效即可。
 
 ### Add virtual MAC to the NIC of a VM
-然后需要在 Proxmox VE 虚拟机配置中将上述 MAC 地址配置。如果还没有安装虚拟机，可以参考 [Proxmox VE 官网的教程](https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines)。
+然后需要在 Proxmox VE 虚拟机配置中将上述 MAC 地址配置。如果还没有安装虚拟机，可以参考 [Proxmox VE 官网的教程](https://pve.proxmox.com/wiki/Qemu/KVM_Virtual_Machines) 。
 
 VM 配置前需要是关闭状态。
 
-在 Proxmox VE 中，找到虚拟机的 Hardware 
+在 Proxmox VE 中，找到虚拟机的 Hardware
 
 ![](/assets/proxmox-ve-vm-hardward-20211019134831.png)
 
@@ -88,7 +86,7 @@ dns-nameservers 208.67.222.222 208.67.220.220
 
 - 修改其中的 ens18 为自己的相应的配置
 - address 一行：`192.0.2.1` 修改为自己的 Failover IP
-- gateway 一行： `203.0.113.254` 前3个字节的数字，修改成独立服务器 IP 地址的前三个字节 IP 地址，最后添加 254，比如独立服务器的 IP 是 `1.2.3.4`，那么使用 `1.2.3.254` 作为网关
+- gateway 一行： `203.0.113.254` 前 3 个字节的数字，修改成独立服务器 IP 地址的前三个字节 IP 地址，最后添加 254，比如独立服务器的 IP 是 `1.2.3.4`，那么使用 `1.2.3.254` 作为网关
 - 最后一行是 DNS 设置，可以使用上面使用的 OpenDNS，也可以使用任何其他的，比如 Cloudflare 的 1.1.1.1, 或者 Google 的 8.8.8.8
 
 然后使得接口生效：
@@ -149,7 +147,6 @@ network:
 然后使之生效：
 
     sudo netplan apply
-
 
 ## reference
 

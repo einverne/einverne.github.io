@@ -107,6 +107,8 @@ last_updated: 2022-10-19 16:13:40
 - 新标日语中级上下
 - 新完全掌握日语能力考试
 - 考前对策
+- Tae Kim 的语法书（Tae Kim's Japanese Grammar Guide），这是一本面向英语母语者的日语语法书，就像[导读](https://skdesu.com/en/tak-kim-grammar-guide-japanese/) 上提到的那样，如果你会英语，那就等于打开了一道巨大的门，市场上充满了非常多质量不错的内容，比如这一本。这也让我想起来我当时学韩语的时候知道的 Talk To Me in Korean，做了非常长时间的内容，当有一定基础之后再去听他们的播客不知不觉就学会了很多语法和搭配。
+
 
 ## 相关应用
 
