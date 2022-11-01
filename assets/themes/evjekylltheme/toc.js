@@ -151,6 +151,9 @@ $(document).ready(function () {
     }
 
     $(window).scroll(function () {
+        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+            return;
+        }
         var currentScroll = $(window).scrollTop();
         if (currentScroll >= fixmeTop) {
             $('#post-directory-module').css({
