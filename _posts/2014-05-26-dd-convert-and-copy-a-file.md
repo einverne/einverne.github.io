@@ -31,8 +31,18 @@ dd 命令可以复制文件并对原文件内容进行转换和格式处理。dd
 **注意**: 运行 dd 命令需要非常小心，如下命令如果不清楚其含义请千万不要轻易尝试。
 
 ### 测试硬盘读写速度
+可以使用如下的命令来测试磁盘的读写速度：
 
-	dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file
+	dd if=/dev/zero bs=1024 count=1 of=/tmp/test.file
+	dd if=/dev/zero bs=1G count=1 of=/tmp/1Gb.file
+
+说明：
+
+- `if`  input file
+- `of` output file
+- `bs` block size
+- `count` number of blocks
+- `oflag` synchronization I/O for data
 
 ### 备份整块磁盘
 将整块磁盘 /dev/sda 备份到 /dev/sdb，注意 sdb 上的数据将会被覆盖！！！

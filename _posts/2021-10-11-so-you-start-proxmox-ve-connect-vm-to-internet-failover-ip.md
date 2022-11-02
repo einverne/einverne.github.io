@@ -148,8 +148,19 @@ network:
 
     sudo netplan apply
 
+注意在配置 Ubuntu 22.04 的时候 Netplan 可能会有一 WARNING：
+
+> `gateway4` has been deprecated, use default routes instead. See the 'Default routes' section of the documentation for more details.
+
+简单的查了一下 Netplan 的配置格式发生了改变。如果不修改理论上也没有关系，不过为了之后兼容，可以改用 Netplan 最新的配置。[^netplan]
+
+[^netplan]: <https://netplan.io/examples/>
+
+
+
 ## reference
 
 - [[Proxmox VE]]
 - <https://support.us.ovhcloud.com/hc/en-us/articles/360002394324-How-to-Connect-a-VM-to-the-Internet-Using-Proxmox-VE>
 - [Proxmox VE 配置 NAT 与虚拟机共享一个公网 IP](/post/2021/10/proxmox-ve-config-nat-vm-use-same-public-ip.html)
+- <https://docs.ovh.com/gb/en/dedicated/network-ipaliasing/>
