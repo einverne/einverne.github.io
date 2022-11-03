@@ -57,6 +57,8 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000
 
 可以看到系统分区的容量 `/dev/sda2` 并没有扩展。
 
+还可以用 `sudo fdisk -l` 来查看。
+
 然后检查一下分区，执行 `sudo lsblk`
 
 ```
@@ -77,9 +79,11 @@ sda      8:0    0  128G  0 disk
 
 可以看到系统的分区 sda2 确实是没有完全占用全部的磁盘（sda）。这个时候我们只需要扩展一下系统分区即可。
 
-我们可以使用很多种方式扩展分区，这里我们就使用 `growpart` 命令。
+我们可以使用很多种方式（`parted`, `growpart`, `cfdisk`）扩展分区，这里我们就使用 `growpart` 命令。
 
 在 Debian 和 Ubuntu 下 `growpart` 命令在 [cloud-guest-utils](https://packages.debian.org/stretch/cloud-guest-utils) 包中。
+
+注意这里的数字 `2` 要替换成自己的分区号。
 
     sudo growpart /dev/sda 2
 
@@ -90,7 +94,7 @@ sda      8:0    0  128G  0 disk
 CHANGED: partition=2 start=4096 old: size=134211584 end=134215680 new: size=268431327 end=268435423
 ```
 
-然后执行：
+没有使用 [[LVM]]，就使用 `resize2fs`，执行：
 
     sudo resize2fs /dev/sda2
 
@@ -105,6 +109,18 @@ The filesystem on /dev/sda2 is now 33553915 (4k) blocks long.
 ```
 
 之后在查询 `df -h` 就看到空间完美的被使用了。
+
+如果使用了 LVM，需要执行如下步骤：
+
+```
+sudo pvresize /dev/sda2
+```
+
+更新逻辑卷的大小：
+
+```
+sudo lvresize --extents +100%FREE --resizefs /dev/mapper/ubuntu--vg-ubuntu--lv
+```
 
 ## reference
 
