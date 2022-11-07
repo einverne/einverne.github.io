@@ -29,6 +29,11 @@ Ali Abdaal 提供的一些 Tips：
 - 做一些输入练习 [10 Fast Fingers](https://10fastfingers.com/typing-test/english) 是一个在线的输入速度测试网站。
 - 定向训练，比如使用下面的提到的 [keybr](https://www.keybr.com/) 这个网站上的单词不是真实的单词，但是可以通过输入的错误来定向看看哪些字母输入错误比较多
 
+### 蓝豆打字
+蓝豆打字，来自评论中玛卡巴卡的推荐。蓝豆打字是一个在线打字练习的网站，渐进式、智能辅助、强化记忆。
+
+- <https://www.ldou.com/>
+
 ### keybr
 
 - <https://www.keybr.com/>
