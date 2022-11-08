@@ -40,9 +40,12 @@ dd 命令可以复制文件并对原文件内容进行转换和格式处理。dd
 
 - `if`  input file
 - `of` output file
-- `bs` block size
-- `count` number of blocks
+- `bs` block size  表示同时读入/输出的块大小
+- `count` number of blocks ，拷贝的块个数
 - `oflag` synchronization I/O for data
+
+最后读写的文件大小是 bs 乘以 count 数。
+
 
 ### 备份整块磁盘
 将整块磁盘 /dev/sda 备份到 /dev/sdb，注意 sdb 上的数据将会被覆盖！！！
@@ -75,3 +78,20 @@ dd 命令可以复制文件并对原文件内容进行转换和格式处理。dd
 将压缩文件恢复
 
 	gzip -dc /root/image.gz | dd of=/dev/sda
+
+### 对比
+
+```
+dd bs=64k count=4k if=/dev/zero of=test
+dd bs=64k count=4k if=/dev/zero of=test; sync
+dd bs=64k count=4k if=/dev/zero of=test conv=fdatasync
+dd bs=64k count=4k if=/dev/zero of=test oflag=dsync
+```
+
+dd 命令的区别在于写缓存的处理方式。
+
+- 第一条，不包括 sync，dd 命令完成之前并没有让系统把文件写入磁盘，只是把数据读入内存缓存中。dd 命令完成之后系统才会往磁盘写数据，所以这个速度不是真实速度
+- 第二条，使用独立的 sync 命令，但是在 sync 命令执行之前 dd 就已经把速度打印出来了，所以也不是真正的速度
+- 第三条命令使用 `conv=fdatasync` 执行之后，会执行一次同步操作
+- 第四条命令 `oflag=dsync` 在执行每次都会进行同步写入操作，这是最慢的一种很是，基本没有用到写缓存
+

@@ -48,6 +48,32 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
     curl -sL yabs.sh | bash
 
+默认情况下脚本会测试：
+
+- 磁盘读写
+- 网络带宽
+- Geekbench 5 Benchmark
+
+可以通过如下参数来禁用一些检测。
+
+格式：
+
+```
+curl -sL yabs.sh | bash -s -- -flags
+```
+
+将其中的 `flags` 替换：
+
+- `-f/-d` 禁用 fio 磁盘
+- `-i` 禁用 iperf 网络带宽检测
+- `-g` 禁用 Geekbench
+
+比如只想检测磁盘读写：
+
+```
+curl -sL yabs.sh | bash -s -- -i -g
+```
+
 
 ### nench
 [Nench](https://github.com/n-st/nench)

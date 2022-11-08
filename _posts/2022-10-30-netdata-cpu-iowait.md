@@ -7,8 +7,8 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [ netdata, cpu, iowait, rsync, top, iostat ]
-create_time: 2022-08-08 17:07:56
-last_updated: 2022-08-08 17:07:56
+create_time: 2022-10-30 04:15:43
+last_updated: 2022-11-08 02:10:11
 ---
 
 这些天在一台备份服务器上安装了 Netdata 做监控之后每天都会给我发送很多  `10min_cpu_iowait` 的邮件告警。
@@ -107,6 +107,15 @@ cd /etc/netdata/
 ### 调整 rsync 传输速率
 
 既然是因为 rsync 备份传输文件导致的，那就看一下传输的速率，在 rsync 命令上加上 `--progress`，可以看到普通情况下能在 20MB/s ，那就限制一下速率 `--bwlimit=5m` ，然后再执行。可以看到 iowait 稳定在告警线一下。
+
+### 联系 VPS 提供商
+如果发现只有简单的读写，并且速度不高（10MB/s）的情况，可以使用 [benchmark](/post/2021/07/vps-benchmark.html) 脚本来检测磁盘读写速度：
+
+```
+curl -sL yabs.sh | bash -s -- -i -g
+```
+
+正常情况 blocksize 在 512k 以上，读写速度应该在 100MB/s 以上，否则可能 VPS 的磁盘出现问题，可以直接 Open a ticket ，并贴上命令的结果寻问服务提供商。
 
 ## reference
 

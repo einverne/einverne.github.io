@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ obsidian, japanese, obsidian-plugins, hiragana, ]
+tags: [ obsidian, japanese, obsidian-plugins, hiragana, furigana, html-ruby, html, w3c, ]
 create_time: 2022-11-06 10:28:55
 last_updated: 2022-11-06 10:28:55
 ---
