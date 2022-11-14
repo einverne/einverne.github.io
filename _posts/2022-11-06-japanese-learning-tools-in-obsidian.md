@@ -48,6 +48,8 @@ Markdown furigana 沿用了 markdown-it-ruby 的语法
 
 在显示的时候就会将假名显示在汉字上方。
 
+![obsidian furigana](https://photo.einverne.info/images/2022/11/14/ZLfD.png)
+
 同样这个插件不仅支持假名，注音，拼音都可以使用相同的语法进行标注。
 
 ## Word Splitting for Japanese in Edit mode
