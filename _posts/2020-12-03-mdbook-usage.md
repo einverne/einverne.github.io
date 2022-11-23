@@ -18,11 +18,9 @@ last_updated:
 
 > Create book from markdown files. Like Gitbook but implemented in Rust.
 
-
 官方网站：
 
 - <https://github.com/rust-lang/mdBook/>
-
 
 ## 安装 {#installation}
 
@@ -61,11 +59,9 @@ last_updated:
 
     cargo install mdbook-toc
 
-
-
 ## 相关
 
-Python 的文档工具 MkDocs ：
+Python 的文档工具 [[mkdocs]] ：
 
 - <https://www.mkdocs.org/>
 

@@ -58,9 +58,7 @@ services:
 
 如果要配置默认的环境变量，可以使用一个 `.env` 文件，Compose 会自动寻找项目目录下的该文件（和 docker-compose.yml 文件同级目录），Shell 环境变量中的值会覆盖 `.env` 文件中的。
 
-
 `$VARIABLE` 和 `${VARIABLE}` 两种语法都支持。
-
 
 - `${VARIABLE:-default}` 如果 VARIABLE 没有设置或是空，那么结果是 default
 - `${VARIABLE-default}` 只有当 VARIABLE 没有设置的时候才为 default
@@ -71,7 +69,7 @@ services:
 - `${VARIABLE?err}` 如果 VARIABLE 没有设置，会抛出 err
 
 ## 使用 `--env-file` 选项
-
+在命令行中指定 `--env-file` 路径。
 
     docker-compose --env-file ./config/.env.dev up
 

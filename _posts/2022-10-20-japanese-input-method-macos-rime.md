@@ -24,7 +24,7 @@ last_updated: 2022-10-21 11:21:19
 简单的搜索一下就发现了比较成熟的 Rime 下的日语输入方案 ---- [Rime Japanese](https://github.com/gkovacs/rime-japanese)
 
 简单的看了一下，这个方案使用的是 [Hepburn romanization 方案](https://en.wikipedia.org/wiki/Hepburn_romanization) ，平文式罗马字标注。
-平文式罗马字是一种使用罗马字母来为日语的发音进行标注的方案，是
+平文式罗马字是一种使用罗马字母来为日语的发音进行标注的方案
 
 ## 平假名
 

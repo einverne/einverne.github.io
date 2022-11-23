@@ -13,7 +13,7 @@ create_time: 2022-01-11 05:49:09
 
 早之前就对 Mastodon 有所耳闻，当时 Google+ 关闭的时候就想着自建一个 Mastodon 实例，但是一直因为没有服务器，也没抽出时间就耽搁了，期间一直在寻找一个比较合适的栖息地，但国内的豆瓣越来越封闭，动不动就删贴，Twitter 是进来使用比较多的社交媒体，但也并没有怎么深入的用，只是在上面关注了一些行业里面的大佬。最近正好 So you Start 服务器中的资源很有剩余，就尝试安装一下 Mastodon。
 
-[[Mastodon]] 是一个开源的、分布式社交网络，他创立的目的就是用来代替 Twitter。和 Twitter 一样，用户可以 Follow 他人，也可以相互关注，用户可以发布消息、图片、视频等等。但是和 Twitter 不同的是，Mastodon 没有一个中心化的存储和内容审查。
+[[Mastodon]] 是一个开源的、分布式社交网络，他创立的目的就是用来代替 Twitter。和 Twitter 一样，用户可以 Follow 他人，也可以相互关注，用户可以发布消息、图片、视频等等。但是和 Twitter 不同的是，Mastodon 没有一个中心化的存储和内容审查。Mastodon 使用 [[ActivityPub]] 协议进行通信，任何实现了该协议的站点都可以同 Mastodon 实例进行通信。
 
 Mastodon 由无数社区维护的服务器运行，用户在某一台服务器上注册的账号可以和其他网络节点进行通信，也可以跨节点交换数据。
 
@@ -83,7 +83,7 @@ networks:
 
 ### Nginx 反向代理
 
-在 mastodon 的 GitHub 仓库中官方提供了 [Nginx 配置文件模板](https://github.com/mastodon/mastodon/blob/main/dist/nginx.conf) 。
+在 Mastodon 的 GitHub 仓库中官方提供了 [Nginx 配置文件模板](https://github.com/mastodon/mastodon/blob/main/dist/nginx.conf) 。
 
 可以拉一下代码，然后直接拷贝使用。
 
@@ -100,7 +100,7 @@ networks:
 
 ## 实例维护
 
-查看 Mastodon 实例的性能和日志，可以访问：<https://domain.com/sidekiq>
+查看 Mastodon 实例的性能和日志，可以访问：<https://domain.com/sidekiq>  [[Sidekiq]] 是一个 Ruby 的后台异步任务系统。
 
 查看数据库的信息和查询效率，可以访问：<https://domain.com/pghero>
 
@@ -184,7 +184,7 @@ web_1        | [9c1db729-7032-4c87-a85c-c38dc47380cf] Errno::EACCES (Permission 
 sidekiq_1    | 2022-05-12T03:59:56.171Z pid=6 tid=2fmy WARN: Errno::ENOENT: No such file or directory @ rb_sysopen - /opt/mastodon/public/system/media_attachments/files/108/286/964/537/181/703/original/559172f05be085c3.jpeg
 ```
 
-一查配置发现，sidekiq 挂载的时候没有暴露其中最后一行。
+一查配置发现，Sidekiq 挂载的时候没有暴露其中最后一行。
 
 ```
      volumes:

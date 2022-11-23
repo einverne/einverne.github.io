@@ -33,7 +33,24 @@ Mailcow 相较于 Mailu 整体比较完整，功能相对比较丰富。
 ## 安装
 Mailcow 整体的搭建过程比较简单，如果之前搭建过 Mailu，实际上，参考官网的教程，并没有太多需要再强调的，甚至如果在同一台机器上，从 Mailu 上迁移过来，只需要修改 [[DKIM]] 记录即可。
 
-提前的 DNS 设置可以参考[官网](https://mailcow.github.io/mailcow-dockerized-docs/prerequisite/prerequisite-dns/)。
+提前的 DNS 设置可以参考[官网](https://mailcow.github.io/mailcow-dockerized-docs/prerequisite/prerequisite-dns/)。主要需要配置一些 A 记录，CNAME，[[DKIM]]， [[SPF]]，[[DMARC]] 等等。
+
+配置 DNS
+
+```
+# Name              Type       Value
+mail                IN A       1.2.3.4
+autodiscover        IN CNAME   mail.example.org. (your ${MAILCOW_HOSTNAME})
+autoconfig          IN CNAME   mail.example.org. (your ${MAILCOW_HOSTNAME})
+@                   IN MX 10   mail.example.org. (your ${MAILCOW_HOSTNAME})
+```
+
+### SPF
+
+```
+# Name              Type       Value
+@                   IN TXT     v=spf1 mx a -all
+```
 
 安装：
 
@@ -82,12 +99,17 @@ server {
 
 ## 使用
 
-进入后台之后，在 Configuration->Mailboxes 添加域名。
+进入后台之后，在 Configuration->Domains -> 添加域名。
 
+添加域名之后需要修改域名的对应 DNS 记录。在界面会有显示。
+
+添加完域名之后可以点击页面中的 Mailboxes 来添加域名邮箱来收发邮件。
+
+Mailcow 使用 [[SOGo]] 作为默认的 Webmail 客户端。
 
 ## 客户端设置
 
-几个端口：
+几个常用的端口：
 
 | Service | Encryption | Port |
 | ------- | ---------- | ---- |
@@ -97,6 +119,8 @@ server {
 | POP3S   | SSL        | 995  |
 | SMTP    | STARTTLS   | 587  |
 | SMTPS   | SSL        | 465  |
+
+
 
 ### 手工配置
 
