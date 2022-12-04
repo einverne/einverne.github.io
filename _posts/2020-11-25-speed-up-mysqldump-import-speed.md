@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "提升 mysqldump 导入导出 MySQL 的速度"
-aliases: 
+aliases:
 - "提升 mysqldump 导入导出 MySQL 的速度"
 tagline: ""
 description: ""
@@ -10,7 +10,7 @@ tags: [ mysql, linux, mysqldump, sql, methodology, ]
 last_updated:
 ---
 
-在前端时间网上泄漏出来一个巨大包括了近8亿 QQ 账号的绑定电话号码数据库，于是想着导入到本地的 MySQL 看看，提升一下查询的速度，因为这个巨大的绑定关系，即使用 grep 查询也需要花费非常多的时间。
+在前端时间网上泄漏出来一个巨大包括了近 8 亿 QQ 账号的绑定电话号码数据库，于是想着导入到本地的 MySQL 看看，提升一下查询的速度，因为这个巨大的绑定关系，即使用 grep 查询也需要花费非常多的时间。
 
 于是我新建了表
 
@@ -53,7 +53,7 @@ mycli -h host -u root -p -D database_name -e "LOAD DATA INFILE '/path/to/file.cs
 
 说明：
 
-- Terminated 字段分隔符（列分隔符）。一般是空格或者`\t`
+- Terminated 字段分隔符（列分隔符）。一般是空格或者 `\t`
 - Enclosed 字段括起字符。没有为空字符即可
 - Escaped 转义字符。没有为空字符即可
 - Terminated 记录分隔符（行结束符）
@@ -64,22 +64,20 @@ mycli -h host -u root -p -D database_name -e "LOAD DATA INFILE '/path/to/file.cs
 - Replace Into Table 代表覆盖，记录已存在则覆盖（是整条记录覆盖，没有列出的字段给默认值）。
 - Ignore Into Table 遇到已存在直接跳过。
 
-
 ## LOAD DATA INFILE 原理
 
 `LOAD DATA INFILE` 比单纯的 INSERT 要快。
 
 - insert 每次运行，都会更新一次索引，而 load 语句全部执行完才会更新索引。
 
-
 需要注意的是，当时用  `LOCAL` 或者 `LOAD DATA` 时，文件的拷贝会保存到服务器的 temp 目录，这个目录不是由 `tmpdir or slave_load_tmpdir` 配置决定的，而是操作系统的临时目录 （temporary 目录）。
 
 所以如果 CSV 文件比较大，操作系统临时目录无法放下，可以将文件分割成多份，分批次进行操作。
 
-	$ split -l (numbersofrowsinfile / ((filesize/tmpsize) + 1)) /path/to/your/<file>.csv
+    $ split -l (numbersofrowsinfile / ((filesize/tmpsize) + 1)) /path/to/your/<file>.csv
 
 ## reference
 
 - <https://dba.stackexchange.com/a/37497/124317>
 - <https://dev.mysql.com/doc/refman/8.0/en/optimizing-myisam-bulk-data-loading.html>
-- [如何导入5亿条数据到数据库](https://derwiki.tumblr.com/post/24490758395/loading-half-a-billion-rows-into-mysql)
+- [如何导入 5 亿条数据到数据库](https://derwiki.tumblr.com/post/24490758395/loading-half-a-billion-rows-into-mysql)

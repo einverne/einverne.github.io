@@ -227,6 +227,12 @@ chmod +x besttrace
     
 后面的数字即为硬盘的通电时间小时数。如果通电时间比较长，就要做好备份工作了。
 
+一键脚本：
+
+```
+wget -q https://github.com/Aniverse/A/raw/i/a && bash a
+```
+
 ## 手动测试 {#manual}
 
 ### CPU

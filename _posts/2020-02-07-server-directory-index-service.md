@@ -124,8 +124,10 @@ h5ai 是一个 PHP 实现的简单在线列表程序，将源码放到目录下�
 [[alist-file-list]]
 
 
-## directorylister
+## DirectoryLister
+[[DirectoryLister]] 是一个简洁的文件目录程序，需要依赖 PHP，Nginx。
 
+- GitHub：<https://github.com/DirectoryLister/DirectoryLister>
 - <https://www.directorylister.com/>
 
 
