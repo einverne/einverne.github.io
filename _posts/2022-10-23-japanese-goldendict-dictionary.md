@@ -19,12 +19,15 @@ last_updated: 2022-10-23 09:23:00
 
 在信息化的时代，虽然也可以去翻阅纸本字典，但是在数字产品，PC，手机上显然查阅电子词典要来得更加便捷，下文就结合我之前强烈推荐过的开源、跨平台的查词应用 [GoldenDict](/post/2018/08/goldendict.html) 来介绍一下我这些天遇到的一些不错的辞典。
 
-- 小学館日中辞典
+- 小学館日中辞典（中日辞典）
 - 新世纪日汉双解大辞典
 - 爱知大学中日大辞典
 - 广辞苑，第一版出版于 1955 年，收录超过 20 万词条
 - 大辞林，第一版出版于 1988 年，也是一本收录超过 20 万词条的字典
 - 大辞泉
+- 讲谈社日中
+
+## 离线辞典
 
 ### 小学館日中辞典
 
@@ -35,6 +38,13 @@ last_updated: 2022-10-23 09:23:00
 或者：
 
 ![小学馆日中辞典](https://photo.einverne.info/images/2022/11/02/ZIBy.png)
+
+或者：
+
+![小学馆日中辞典v3 最高](https://photo.einverne.info/images/2022/12/09/Zhhn.png)
+
+小学馆日中辞典的一个好处就是可以立即查看到日语词的假名注音。
+
 
 ### 新世纪日汉双解大辞典
 
@@ -53,19 +63,26 @@ last_updated: 2022-10-23 09:23:00
 
 《三省堂 スーパー大辞林・敬語のお辞典》
 
+![三省堂大辞林](https://photo.einverne.info/images/2022/12/09/Zuml.png)
+
+
 ### 大辞泉
 
- [大辞泉](https://daijisen.jp/digital/) 收录超过 30 万词条。
+[大辞泉](https://daijisen.jp/digital/) 收录超过 30 万词条。
+
+![大辞泉](https://photo.einverne.info/images/2022/12/09/ZSay.png)
 
 ## 在线词典
 最后再推荐两个在之前的文章中提到过的在线词典：
 
 - [OJAD 在线日语声调词典](https://www.gavo.t.u-tokyo.ac.jp/ojad/) 面向日语老师和学习者的在线口音词典，支持 9000 多名词，3500 多动词，い形容詞，な形容詞，有超过 4 万条发音。甚至可以根据教材分类检索。缺点是需要一个不错的 [网络环境](https://board.gtk.pw) 并且也只有网页版本。
 - [広辞苑無料検索](https://sakura-paris.org/dict/) 一个在线的日语查词网站，可以免费查询包括广辞苑，大辞林，大辞泉，新辞林，小学馆中日日中等等非常多的词典。该网站还支持 Google 登录，数据都会存储在用户 Google Drive 的 Soradict 文件夹中。界面也非常简洁。
+- [weblio](https://cjjc.weblio.jp/) 提供日中中日翻译。
+- [goo.ne.jp](https://dictionary.goo.ne.jp/) 在线查词。
 
-## 补充说明
+## 补充说明 macOS 和 iOS 自带字典
 
-虽然我个人在全平台都使用 GoldenDict，但是还是要推荐一下 macOS 和 iOS 上系统自带的字典应用，Apple 在系统内置了一些正版的字典，不仅有常用的英汉字典，也包括了日中，日英辞典。并且在 macOS 下和系统结合得比较好。
+虽然我个人在全平台都使用 [GoldenDict](/post/2018/08/goldendict.html)，但是还是要推荐一下 macOS 和 iOS 上系统自带的字典应用，Apple 在系统内置了一些正版的字典，不仅有常用的英汉字典，也包括了日中，日英辞典。并且在 macOS 下和系统结合得比较好。
 
 Apple 系统中包含的辞典：
 
@@ -81,6 +98,16 @@ Apple 系统中包含的辞典：
 也可以使用触摸板在单词上重按来查询。
 
 ![macos touchpal japanese](https://photo.einverne.info/images/2022/11/02/ZGPc.png)
+
+## 使用案例
+
+### 中文查日文
+对于我而言，在初学阶段，使用中文查日文是非常高频的使用场景，尤其是对于大量不熟悉的名词，这个时候中日辞典就非常有用。
+
+![japanese 明天](https://photo.einverne.info/images/2022/12/09/Zc9g.png)
+
+这个时候能看到日语中会写作「明日」，然后继续查就会发现明天有三种说法，あした、あす、みょうにち。这个时候如何区别这三个单词的用法就只能再去查阅其他[材料](https://japanese.stackexchange.com/a/14399/55185) 了。
+
 
 ## reference
 
