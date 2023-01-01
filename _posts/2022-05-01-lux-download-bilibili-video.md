@@ -6,11 +6,11 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ lux, bilibili, annie, video, ]
+tags: [ lux, bilibili, annie, video, 视频下载 ,  ]
 last_updated:
 ---
 
-Lux 是一个使用 Go 语言编写的视频下载命令行工具，支持的平台很多，提供了包括 macOS、Windows、Linux 等等平台的命令行支持，安装和使用非常简单的。Lux 原来的名字是叫做 Annie（安妮），对标的是 macOS 上一款非常著名的视频下载软件叫做 Downie（唐尼）。但后来改名成了 Lux。
+Lux 是一个使用 Go 语言编写的视频下载命令行工具，支持的平台很多，提供了包括 macOS、Windows、Linux 等等平台的命令行支持，安装和使用非常简单的。Lux 原来的名字是叫做 Annie（安妮），对标的是 macOS 上一款非常著名的视频下载软件叫做 [[Downie]]（唐尼）。但后来改名成了 Lux。
 
 Lux 支持非常多的视频网站：抖音、哔哩哔哩、半次元、pixivision、优酷、YouTube、爱奇艺、芒果 TV、Tumblr、Vimeo、Facebook、斗鱼视频、秒拍、新浪微博、Instagram、Twitter、腾讯视频、网易云音乐、音悦台
 
@@ -121,7 +121,7 @@ lux -F /path/to/links.txt
 
 B 站上可以用 av 和 ep 加数字下载视频，比如：
 
-annie -i ep198381 av21877586
+    annie -i ep198381 av21877586
 
 还有三个参数也很有用：
 
