@@ -12,9 +12,9 @@ last_updated:
 
 今天在 review tldr 提交的新命令的时候发现了一个新的工具 espanso，查看其官网发现是一个文本扩展的工具。在之前 macOS 上短暂的体验过 [[Keyboard Maestro]] 但因为其是 macOS 独占，所以之后再回到 Ubuntu 下的时候就渐渐不用了，并且其授权还挺贵的。然后就一直使用 RIME 配置自定义的短语来作为短语的快捷输入，比如输入 date 的时候自动在候选词中添加日期。但这样的问题便在于每一次更改 RIME 的配置文件都需要经历 RIME 部署这样一个漫长的过程。并且可扩展性也不强。于是想来体验一下 espanso 。
 
-Espanso 是一个使用 Rust 实现的跨屏平台的 Text Expander，可以在任何编辑器中扩展短语。可以完美代替 [[Keyboard Maestro]] 的 Text Expand 功能。
+[[Espanso]] 是一个使用 Rust 实现的跨屏平台的 Text Expander，可以在任何编辑器中扩展短语。可以完美代替 [[Keyboard Maestro]] 的 Text Expand 功能。
 
-官网地址：  
+官网地址：
 
 - <https://espanso.org>
 
@@ -32,6 +32,7 @@ Espanso 是一个使用 Rust 实现的跨屏平台的 Text Expander，可以在�
 - 用于特定程序匹配
 
 ## 安装
+
 在 macOS 上：
 
     brew tap federico-terzi/espanso
@@ -50,17 +51,16 @@ Espanso 是一个使用 Rust 实现的跨屏平台的 Text Expander，可以在�
 
 启动后台任务。这样在任何编辑器中输入 `:espanso` 会自动转变成 `Hi there!`。
 
-    
 更多安装方式可以参考[官网](https://espanso.org/install/)。
 
 ## 使用
+
 其官网有一个非常生动形象的 GIF，当输入:
 
 - `:greet` 自动变成 `hello world`
 - `:date` 自动产生日期
 - `:llo` 变成一串 Emoji
 - `:ip` 变成真实的 IP 地址
-
 
 执行 `espanso edit` 会自动使用默认的编辑器创建一个默认的配置文件到 `~/.config/espanso/default.yml` 文件：
 
@@ -90,6 +90,7 @@ matches:
 ```
 
 ## Configuration
+
 espanso 基于文本的配置文件对软件的行为进行设定，在不同操作系统上的路径：
 
 - Linux: `~/.config/espanso`
@@ -113,8 +114,8 @@ espanso 基于文本的配置文件对软件的行为进行设定，在不同操
     replace: "<div>$|$</div>"
 ```
 
-
 ## Package
+
 Espanso 更加强大的地方在与其扩展性，通过安装其他包可以将 espanso 的能力扩展。比如从 [espanso hub](https://hub.espanso.org/) 安装 [Basic Emojis](https://hub.espanso.org/packages/basic-emojis/) :
 
     espanso install basic-emojis
@@ -129,14 +130,16 @@ Espanso 更加强大的地方在与其扩展性，通过安装其他包可以将
 
 更多的 package 可以看 [espansohub](https://hub.espanso.org/)。
 
-
 ## 快捷键
+
 一些非常有用的快捷键。
 
 ### Toggle Key
+
 可以通过连续按两次 `ALT`(macOS 下为 Option) 按键来临时禁用 espanso。可以看到通知 `Espanso disabled`。 再按两次可以开启。可以通过配置文件修改 [Toggle Key](https://espanso.org/docs/configuration/#customizing-the-toggle-key)
 
 ### Backspace Undo
+
 有些时候可能无意识中触发了 expansion，但又不想要这个结果，那么可以按一下 `BACKSPACE` 撤销这一次修改。
 
 ## 同步配置文件
@@ -146,7 +149,7 @@ Espanso 更加强大的地方在与其扩展性，通过安装其他包可以将
     ln -s "/home/user/Dropbox/espanso" "/home/user/.config/espanso"
 
 我个人直接将配方放到 [dotfiles](https://github.com/einverne/dotfiles) 中管理。
-    
+
 ## 配置
 
 - <https://www.webfx.com/tools/emoji-cheat-sheet/>
