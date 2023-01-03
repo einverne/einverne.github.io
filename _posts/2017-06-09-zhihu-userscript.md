@@ -4,7 +4,7 @@ title: "知乎上被删除的良心回答之油猴脚本"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [Chrome, userscript, tampermonkey, ]
+tags: [chrome, userscript, tampermonkey, ]
 last_updated: 
 ---
 
@@ -16,9 +16,9 @@ last_updated:
 
 直接来看 油猴脚本能干啥：
 
-- 直接观看各大视频网站的VIP 视频
+- 直接观看各大视频网站的 VIP 视频
 - 去除各大视频广告，百度搜索广告
-- 免费收听网易云320k 高音质音乐
+- 免费收听网易云 320k 高音质音乐
 - 高速下载百度云
 - 去除各种验证码
 
@@ -32,25 +32,24 @@ last_updated:
 
 地址：<https://greasyfork.org/zh-CN/scripts/23222>
 
+### 百度网盘直接下载助手
 
-###  百度网盘直接下载助手
 这个插件，你可以使用它可以直接获取文件原始链接，这样你就可以使用第三方（IDM，Folx）下载了，再也不用使用百度云客户端的龟速了。
 还可以多个文件选择，批量下载。
 
-
 地址：<https://greasyfork.org/zh-CN/scripts/23635>
 
-解决百度云大文件下载限制  <https://greasyfork.org/zh-CN/scripts/17800>
+解决百度云大文件下载限制 <https://greasyfork.org/zh-CN/scripts/17800>
 
 百度网盘的下载助手，一直在有效，失效，修复，有效，再失效的过程中，因为在 Linux 下很久不用百度云的客户端，而百度最近频频限制下载速度，并且在分享页面增加很多限制，只能使用客户端下载，这么多动作的背后，一方面是因为带宽和存储费用逐渐增高，却无奈找不到任何赢利点，另一方面也因为监管力度的加强。在网盘大战落下帷幕的时候市场上还能够坚持到最后的也就剩下百度，金山，乐视云，360，大大小小的众网盘纷纷宣布停止运营。百度在一家独大之后也是频频限制免费用户的行为，所以用这么多的脚本来提高百度的体验，还不如彻底的原理百度云盘。用自己的一点钱买一个 [Dropbox](https://db.tt/B0sJSIVy) 或者 Google Drive 反而要轻松很多呢。
 
-
 ### 一键离线下载
+
 将网页上的磁力链接离线到网盘,在寻找电影的时候，这也是经常的动作，这个脚本将找电影，然后到离线的过程自动化了。
 
 <https://greasyfork.org/zh-CN/scripts/22590>
 
-### 免费看VIP 视频
+### 免费看 VIP 视频
 
 直接在 greasyfork.org 搜索 VIP 即可。
 
