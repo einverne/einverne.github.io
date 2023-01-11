@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "跨平台的 GPU 加速终端 kitty"
+aliases: "跨平台的 GPU 加速终端 kitty"
 tagline: ""
 description: ""
 category: 学习笔记

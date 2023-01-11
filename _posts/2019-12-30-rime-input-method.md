@@ -18,11 +18,11 @@ last_updated:
 ## 多输入法
 就像 Rime 自己说的那样，Rime 是一个输入方案的合集。所以只要有合适的输入方案，就可以输入对应的语言，从方言，到世界其他各国的语言，Rime 都可以轻松的实现，甚至可以借助 Rime 来实现一套自己的输入编码方案，比如官网教学中的一套输入中文大写数字的输入方案，定义 schema, 字典，然后就实现了一套中文大写数字的输入法。
 
-- [Rime 韩语方案](https://github.com/einverne/rime-hangul)
+- [RIME 韩语方案](https://github.com/einverne/rime-hangul)
+- [RIME 日语方案](https://einverne.github.io/post/2022/10/japanese-input-method-macos-rime.html)
 
 ## 安全
 Rime 输入法不会联网，所有的配置都以文本的方式保存在本地，虽然一定成都上削弱了 Rime 的便捷性，但实际上就加强了 Rime 的安全性。只要保证自己的电脑安全，所有的数据都是安全的。
-
 
 ## 完全可配置
 Rime 输入法从外观到词库，到甚至到输入方案都可以自己定制。熟悉 Rime 的机制后，完全可以使用 Git 将一整套配置管理起来。你可以使用一个输入法输入多国语言，<kbd>Ctrl</kbd> + <kbd>`</kbd> 切换 Schema，非常轻松可以实现。
@@ -50,3 +50,5 @@ Rime 输入法从外观到词库，到甚至到输入方案都可以自己定制
 	  - xxxxx
 	  - "table_translator@custom_phrase"
 
+### lua
+如果在 macOS 上还可以添加 lua 扩展，在输入的过程中通过定制关键字，触发 lua 函数的调用，生成输入法结果返回，比如经常在输入法中输入日期，那么可以定义输入 `rq` 的时候，自动返回当前的日期。

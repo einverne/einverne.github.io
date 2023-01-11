@@ -111,7 +111,7 @@ h5ai 是一个 PHP 实现的简单在线列表程序，将源码放到目录下�
 
 
 ## Snap2HTML
-生成一个静态 HTML 页面展示文件列表。
+Snap2HTML 是一个生成一个静态 HTML 页面展示文件列表的程序。
 
 - <https://www.rlvision.com/snap2html/about.php>
 
