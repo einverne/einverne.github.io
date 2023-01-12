@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ rime, squirrel,  ]
+tags: [rime, squirrel, input-method, macos, mac, open-source]
 last_updated:
 ---
 
