@@ -73,6 +73,10 @@ last_updated: 2022-10-27 23:05:37
 - [weblio](https://cjjc.weblio.jp/) 提供日中中日翻译。
 - [goo.ne.jp](https://dictionary.goo.ne.jp/) 在线查词。
 
+## 日语语法检查
+
+- [enno.jp](https://enno.jp/) 是一个提供了日语语法在线检查的工具
+
 ## More
 
 [[EBWin]]

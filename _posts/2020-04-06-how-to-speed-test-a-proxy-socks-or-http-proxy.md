@@ -9,7 +9,7 @@ tags: [speedtest, socks, http_proxy, proxy, vps, v2ray]
 last_updated:
 ---
 
-在国内不可避免的要用到代理，这些年陆陆续续从 GAE 上的代理，到自己购买 VPS 搭建，从 Shadowsocks 到 V2ray，自己花费了不少的时间，而现在虽然手上也有两台 VPS，但是已经不拿他们作为主要的代理了，我一台 Directspace 的 VPS，线路没有优化过，到国内的延迟略高，而另一台 AWS 的 EC2，虽然地理位置在韩国，也只勉强到能用的阶段。所以这两年陆陆续续不再自己维护代理服务，之前有购买过因为 Ingress 结缘的 Shadowsocks 服务，一直用到现在，虽然有些情况下会发生断流，倒也一直没有放在心上。直到尝试了一周的 [V2ray 服务提供商](https://portal.wallless.xyz/#/register?code=pyHxQdJr)，我想是回不去 SS 了。
+在国内不可避免的要用到代理，这些年陆陆续续从 GAE 上的代理，到自己购买 VPS 搭建，从 Shadowsocks 到 V2ray，自己花费了不少的时间，而现在虽然手上也有两台 VPS，但是已经不拿他们作为主要的代理了，我一台 Directspace 的 VPS，线路没有优化过，到国内的延迟略高，而另一台 AWS 的 EC2，虽然地理位置在韩国，也只勉强到能用的阶段。所以这两年陆陆续续不再自己维护代理服务，之前有购买过因为 Ingress 结缘的 Shadowsocks 服务，一直用到现在，虽然有些情况下会发生断流，倒也一直没有放在心上。直到尝试了一周的 [V2ray 服务提供商](https://portal.wl-site3.com/#/register?code=pyHxQdJr)，我想是回不去 SS 了。
 
 那么有什么方法来对一个代理服务的提供商的速度进行测试呢？这就是这篇文章的最主要的内容。
 
