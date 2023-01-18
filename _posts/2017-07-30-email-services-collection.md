@@ -75,7 +75,7 @@ Mailchimp 是一个电子邮件订阅的在线工具。
 - <https://aws.amazon.com/cn/ses/>
 
 ## sendinblue
-sendinblue 提供免费的发送额度，每天可以至多发送 300 封邮件。
+[[sendinblue]] 提供免费的发送额度，每天可以至多发送 300 封邮件。
 
 - <https://www.sendinblue.com/>
 

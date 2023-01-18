@@ -9,10 +9,11 @@ last_updated:
 ---
 
 ### puock
- 一款基于WordPress开发的高颜值的自适应主题，支持白天与黑夜模式、无刷新加载等
- 
+一款基于WordPress开发的高颜值的自适应主题，支持白天与黑夜模式、无刷新加载等
  
 - <https://github.com/Licoy/wordpress-theme-puock>
+
+![](https://photo.einverne.info/images/2023/01/16/gq1D.jpg)
 
 ### Kratos
 开源的响应式主题
