@@ -19,14 +19,14 @@ jobs:
         docker run --rm \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:3.8 /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && jekyll build --future"
-    - name: copy file via sftp
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+    - name: copy file via ssh
+      uses: appleboy/scp-action@master
       with:
-        server: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        port: ${{ secrets.PORT }}
-        ssh_private_key: ${{ secrets.KEY }}
-        local_path: "${{ github.workspace }}/_site/*"
-        remote_path: ${{ secrets.PATH }}
-        sftp_only: true
+        host: ${{ secrets.GC3_HOST }}
+        username: ${{ secrets.GC3_USER }}
+        key: ${{ secrets.GC3_KEY }}
+        port: ${{ secrets.GC3_PORT }}
+        source: "${{ github.workspace }}/_site/*"
+        target: ${{ secrets.GC3_PATH }}
+        overwrite: true
 
