@@ -29,4 +29,5 @@ jobs:
         source: "${{ github.workspace }}/_site/*"
         target: ${{ secrets.PATH }}
         overwrite: true
+        strip_components: 1
 
