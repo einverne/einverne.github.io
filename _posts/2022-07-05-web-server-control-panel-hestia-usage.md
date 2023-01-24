@@ -11,13 +11,23 @@ create_time: 2022-07-08 09:37:34
 last_updated: 2022-07-08 09:37:34
 ---
 
-Hestia 是一个开源的 Linux 服务器控制面板，HestiaCP fork 自另一款流行的控制面板 [VestaCP](https://vestacp.com/) 。由于 VestaCP 开发和维护趋于停止，很多安全问题和漏洞没有及时修复，所以有人从 VestaCP 拉出新分支进行开发和维护。
+Hestia 是一个开源的 Linux 服务器控制面板（Control Panel），HestiaCP fork 自另一款流行的控制面板 [VestaCP](https://vestacp.com/) 。由于 VestaCP 开发和维护趋于停止，很多安全问题和漏洞没有及时修复，所以有人从 VestaCP 拉出新分支进行开发和维护。Hestia 可以作为 aaPanel（宝塔面板）的很好的开源代替。
 
-HestiaCP 提供了一个简单干净的网页界面，给网站维护人员提供了更加简单的方式维护网页服务器。HestiaCP 提供了很多功能，包括管理部署网站(Nginx, Apache，PHP)，数据库（MySQL,PostgreSQL）, FTP（[[ProFTPd]], [[vsftpd]]），DNS zones（Bind），邮件服务器（[[Dovecot]], [[exim4]]）,垃圾邮件扫描（[[SpamAssassin Score]]），邮件病毒扫描（[[ClamAV]]）等等。
+HestiaCP 提供了一个简单干净的网页界面，给网站维护人员提供了更加简单的方式维护网页服务器。HestiaCP 提供了很多功能，包括
 
-HestiaCP 还提供了基于命令行的管理工具，具体可以见 [文档](https://docs.hestiacp.com/cli_commands.html)
+- 管理部署网站(Nginx, Apache，PHP)
+- SSL 证书及 SNI Wildcard support
+- 数据库（MySQL,PostgreSQL）
+- FTP（[[ProFTPd]], [[vsftpd]]）
+- DNS zones（Bind）DNS 服务器
+- 邮件服务器（[[Dovecot]], [[exim4]]）支持 DKIM 等
+- 垃圾邮件扫描（[[SpamAssassin Score]]）
+- 邮件病毒扫描（[[ClamAV]]）
+- 多种数据备份方案
 
-另一个值得一说的功能就是，HestiaCP 提供了一键安装网站（Quick Install App）的功能，默认提供了一些非常受欢迎的网页应用，包括 [[WordPress]], [[Drupal]], [[Joomla]], [[Opencart]], [[PrestaShop]], [[Lavarvel]], [[Symfony]]。
+HestiaCP 还提供了基于命令行的管理工具，具体可以见 [文档](https://docs.hestiacp.com/cli_commands.html)。
+
+另一个值得一说的功能就是，HestiaCP 提供了一键安装网站（Quick Install App）的功能，默认提供了一些非常受欢迎的网页应用，包括 [[WordPress]], [[Drupal]], [[Joomla]], [[Opencart]], [[PrestaShop]], [[Lavarvel]], [[Symfony]]  等等。
 
 在接触 Hestia 之前，有段时间直接使用 LNMP，或者使用 [[aapanel]]，但后来发现 aaPanel 的 License 或许存在某些问题，并且在读了 [Stallman](/post/2022/06/free-as-in-freedom.html) 的 [著作](/post/2022/05/free-software-free-society.html) 之后对自由软件的认识更深刻了一些，所以直接替换成 GPL 发布的 Hestia。作为 aaPanel 的开源代替品，发现 Hestia 还是非常不错的。
 
@@ -61,7 +71,7 @@ sudo bash hst-install.sh --apache no --phpfpm yes --multiphp no --vsftpd yes --p
 
 你可以根据自己的需要自行选择需要的组件。可以在官网 [文档](https://docs.hestiacp.com/getting_started.html) 中查看默认会安装的组件。
 
-安装完成之后会在日志中看到后台登录的链接，已经默认的用户名和密码。安装完成后可能会需要一次重启来完成安装。
+安装完成之后会在日志中看到后台登录的链接，以及默认的用户名（admin）和密码。脚本执行完成后可能会需要一次重启来完成安装。
 
 访问 `https://ip:8083` ，或者如果已经配置了域名 A 记录指向该 IP，也可以使用域名加端口来访问。
 
@@ -89,7 +99,7 @@ Example: bash hst-install-ubuntu.sh --force
 Error: Unable to detect netplan configuration.
 ```
 
-是因为 Ubuntu 没有使用 netplan，或者 VPS 主机提供的镜像没有使用 netplan，但是 `/etc/netplan` 文件夹存在，这就导致 HestiaCP 安装脚本执行过程中判断错误。
+这个错误是因为 Ubuntu 没有使用 netplan，或者 VPS 主机提供的镜像没有使用 netplan，但是 `/etc/netplan` 文件夹存在，这就导致 HestiaCP 安装脚本执行过程中判断错误。
 
 解决方案：查看 `/etc/netplan` 文件夹，如果配置文件夹是空的，那么可以直接删除该文件夹，如果确定自己已经使用了 netplan 作为网络配置，那么检查一下网络配置。
 
@@ -98,7 +108,7 @@ Error: Unable to detect netplan configuration.
 ### 申请 Let's Encrypt SSL 证书
 在完成安装访问后台的时候，浏览器会报 Your connection is not private 的错误，这是因为 SSL 证书缺失了。
 
-可以使用 `v-add-letsencrypt-host` 命令来圣晴证书。
+可以使用 `v-add-letsencrypt-host` 命令来申请证书。
 
 不过我在执行的过程中发生一些问题，报错：
 
@@ -137,6 +147,22 @@ Error: Let's Encrypt SSL creation failed
 - Enable SSL for this domain: 开启 SSL
 - Additional FTP Accounts: 是否创建 FTP 账号
 
+## Nginx 模板设置
+可以在 `/usr/local/hestia/data/templates/web/nginx/` 目录下查看到默认的 Nginx 配置模板。其中的默认模板：
+
+- `default.tpl`
+- `default.stpl`
+
+可以将默认的模板拷贝到新的文件修改：
+
+```
+cp original.tpl new.tpl
+cp original.stpl new.stpl
+cp original.sh new.sh
+```
+
+模板中支持的变量可以参考[官网](https://docs.hestiacp.com/admin_docs/web.html?highlight=template#how-do-web-templates-work)
+
 ## Tips
 
 ### 修改面板的端口
@@ -144,6 +170,12 @@ Error: Let's Encrypt SSL creation failed
 
 ```
 v-change-sys-port 2083
+```
+
+### 重置 admin 密码
+
+```
+v-change-user-password admin yourpass
 ```
 
 ### 强制主机 SSL
@@ -202,6 +234,7 @@ HestiaCP 是 VestaCP fork，VestaCP 开发和维护趋于停止，存在许多�
 - [[aapanel]]
 - [[CyberPanel]]
 - [[DirectAdmin]]
+- [[Control Panel]]
 
 ## reference
 

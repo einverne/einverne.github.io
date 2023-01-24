@@ -13,58 +13,35 @@ last_updated:
 
 很多搭建教程都已经在之前的文章中有提到，所以这篇文章不会具体展开搭建过程，主要用来记录一下，并在各个服务之间做一个简单的比较，以及我选择的理由。
 
-本文不可能囊括很多内容，GitHub 上有一个 [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) repo, 里面详细记录着开源的许许多多的优秀自建项目，本文为涉及到的内容可以自行参考该项目。另外这个项目也是一个学习的好地方，每一个开源项目都标注着实现语言，如果想要系统的学习某一个实现这里也是不错的选择。
+本文不可能囊括很多内容，GitHub 上有一个 [awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) repo，里面详细记录着许许多多开源的优秀自建项目，本文为涉及到的内容可以自行参考该项目。另外这个项目也是一个学习的好地方，每一个开源项目都标注着实现语言，如果想要系统的学习某一个实现这里也是不错的选择。
 
-有很多自建成本比较高，比如自建 SMTP 邮件服务，虽然也有比较成熟的方案，MailCow,Mailu 等等，但本文不再展开。
+有很多自建成本比较高，比如自建 SMTP 邮件服务，虽然也有比较成熟的方案，比如 MailCow，Mailu 等等，但因为涉及内容比较复杂本文不再展开。后续如果有机会的话再展开。
 
 ## DNS
 自建家用的 DNS 服务，有两个不错的开源选择：
 
-- Pi-hole
-- AdGuard Home
+- [Pi-hole](https://pi-hole.net/)，A black hole for Internet advertisements
+- [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome)，AdGuard Home 是 AdGuard 推出的开源的 DNS 去广告系统
 
-Pi-hole 相较于普通用户使用稍微复杂一些，但是功能强大。
-
-Pi-hole, A black hole for Internet advertisements
-
-- <https://pi-hole.net/>
-
-而 AdGuard Home 是 AdGuard 推出的开源的 DNS 去广告系统。
-
-- <https://github.com/AdguardTeam/AdGuardHome>
+Pi-hole 相较于普通用户使用稍微复杂一些，但是功能更强大。AdGuard Home 则在界面设计和使用使用层面更加便于使用。
 
 ## 代码
 
 [code-server](https://github.com/cdr/code-server)
 
-
 ## 博客类
 具体来说，是 CMS，内容管理平台
 
-### Lektor
-Python 编写的静态网站生成器。
+- [[WordPress]]，老牌的 CMS 管理平台，PHP 编写。
+- [[Jekyll]]，Ruby 编写的静态页面生成器，也可以作为博客系统使用。
+- [Lektor](https://www.getlektor.com/)，Python 编写的静态网站生成器。
+    - [Lektor Atom Plugin](https://github.com/nixjdm/lektor-atom)
+- [[Typecho]]，[Typecho](https://github.com/typecho/typecho) PHP 建站的又一个选择，比较轻量小巧，但是功能一样强大。
 
-- <https://www.getlektor.com/>
+## RSS 相关
 
-#### Lektor Atom Plugin
-
-- <https://github.com/nixjdm/lektor-atom>
-
-### WordPress
-WordPress 自然不用多说，PHP 编写。
-
-### Jekyll
-Jekyll 算是静态页面生成器，不过也能用来当作博客系统。
-
-### Typecho
-Php 站的又一个选择，比较轻量小巧，但是功能强大。
-
-- <https://github.com/typecho/typecho>
-
-## RSS 输出
-
-- [RSSHub](https://github.com/DIYgod/RSSHub)
-- [RSS-Bridge](https://github.com/RSS-Bridge/rss-bridge)
+- [RSSHub](https://github.com/DIYgod/RSSHub) 将不带 RSS 输出的内容生成 RSS
+- [RSS-Bridge](https://github.com/RSS-Bridge/rss-bridge)，一款 PHP 编写的转成 RSS 输出的工具
 - [Full Text RSS](https://hub.docker.com/r/heussd/fivefilters-full-text-rss)
 
 ## RSS 阅读器
@@ -75,10 +52,16 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 更多自建的方案可以参考[这篇文章](/post/2020/02/self-hosted-rss-reader.html)。
 
 ## 代码托管
-代码托管除了非常著名的 GitLab，其实还有很多选择，比如 Go 编写的 Gogs，以及它的 fork, [Gitea](https://gitea.io/)。个人在 NAS 上用的 Gogs，不过要我现在再选，我可能会用 Gitea.
+代码托管除了非常著名的 GitLab，其实还有很多选择，比如 Go 编写的 Gogs，以及它的 fork, [Gitea](https://gitea.io/)。个人在 NAS 上用的 Gogs，不过要我现在再选，我可能会用 Gitea。
+
+- [[Gitea]]
+- [[Gogs]]
+- [[GitLab]] 更加重的选择
 
 ## CI
 
+- [[Jenkins]]
+- Gitea Action
 - [drone](https://drone.io/)
 
 ## 容器管理
@@ -87,50 +70,50 @@ Tiny Tiny RSS 和 FreshRSS 都是 PHP 编写的，[[miniflux]] 比较新是 Go �
 
 ## 统计数据
 
+- [[Umami]]
+- [Plausible](https://plausible.io/)
+- [[Matomo]]
 - [[google-analytics-alternative]]
 
-- Umami
-- [Plausible](https://plausible.io/)
-- Matomo
-
 ### Umami
-[[Umami]] 是一个使用 Node.js 编写可以自建的网站统计系统，作为 CNZZ/Google Analytics 代替品。Umami 相对于 Matomo 较好的一点是没有那么消耗资源，非常轻量，100 M 左右内存就能运行。
-
-- <https://github.com/mikecao/umami>
+[Umami](https://github.com/mikecao/umami) 是一个使用 Node.js 编写可以自建的网站统计系统，作为 CNZZ/Google Analytics 代替品。Umami 相对于 Matomo 较好的一点是没有那么消耗资源，非常轻量，100 M 左右内存就能运行。
 
 ### Matomo
 - [Matomo](https://matomo.org/) 是一个类似 Google Analytics 的工具
 
 ## 邮件服务器
-[[邮件服务器]]
+自建 [[邮件服务器]] 是一个比较复杂并且需要长期维护的工作，不仅需要有一个赶紧的 IP，而且需要特别注意多个和邮件相关的协议配置。
 
-- [maddy](https://github.com/foxcpp/maddy) 是一个用 Go 语言实现的邮件服务器
+- [[mailcow]]，[使用 Mailcow 自建邮件服务器](/post/2022/04/mailcow-email-server.html)
+- [[Mailu]]，[使用 Mailu 搭建邮件服务器](/post/2021/07/email-server-mailu.html)
 - [[Poste]]
+- [maddy](https://github.com/foxcpp/maddy) 是一个用 Go 语言实现的邮件服务器
 
 ## 在线粘贴板
 
 - [[hastebin]] 是一个 Node.js 实现的开源版本 pastebin。
 - [PrivateBin](https://github.com/PrivateBin/PrivateBin) 是一个开源的，使用 PHP 实现的 pastebin.
 
-
 ## Web archiving
+提交链接自动存档页面内容。
 
 - [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
 
-
 ## 文件管理
-文件管理及同步，我使用 NextCloud，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
+文件管理及同步，我使用 [[NextCloud]]，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
 
 和 NextCloud(ownCloud) 类似的也还有 FileRun, seaFile 等
 
 和 NextCloud 中心化不同的另一个文件同步 [Syncthing](/post/2019/10/syncthing.html) 也要强烈推荐，自己架设都比较简单。
 
+多年的使用之后，我选择了 Syncthing 作为唯一的文件同步工具。
+
 ### 下载类
 下面这些工具都因为可以下载种子而被人所知，不过也可以用来分享文件的。
 
-- Transmission
-- qTorrent
-- ruTorrent
+- [[Transmission]]
+- [[qTorrent]]
+- [[ruTorrent]]
 
 上面这几个都能找到对应的 Docker image.
 
@@ -158,22 +141,20 @@ FileRun 是一个基于浏览器的文件分享和同步工具。兼容 NextClou
 
 - <https://filerun.com/>
 
-
 ## Self host IFTTT
 
-n8n.io
+n8n.io 是一个可以自建的 IFTTT 类似的工具，可以实现发生什么之后触发动作，并且支持编程，非常强大。
 
 - <https://n8n.io/>
 
-Huginn 也是一个不错的 IFTTT 开源代替品。
-[[2019-01-11-huginn]]
+[[Huginn]] 也是一个不错的 IFTTT 开源代替品。
+
 
 
 ## 稍后阅读
 开源版本的稍后阅读，[wallabag](https://wallabag.org/en) 。
 
 可以用来代替 Pocket 和 Instapaper。
-
 
 ## 网站收藏
 
@@ -228,7 +209,7 @@ LazyLibrarian is a program to follow authors and grab metadata for all your digi
 ### PhotoView
 
 
-![self-hosted-photoview-20210831103724.png](/assets/self-hosted-photoview-20210831103724.png)
+![self-hosted-photoview-20210831103724.png](https://photo.einverne.info/images/2023/01/16/gn4C.png)
 
 - <https://github.com/photoview/photoview>
 
@@ -243,6 +224,7 @@ LazyLibrarian is a program to follow authors and grab metadata for all your digi
 Syncthing 是我对比了一系列的同步工具之后选择的，基本上已经满足了我日常所有的需求。
 
 ## Translate tool
+翻译相关的自建服务，提供了上传文本，协同翻译的能力。
 
 ### Weblate
 
@@ -265,7 +247,7 @@ anyi 导航、聚合搜索、webstack
 
 
 ### Homer
-[[2021-08-26-another-simple-static-homepage-homer]]一个非常简单的静态页面，可以通过 yaml 配置。
+[[Homer]] 是一个非常简单的静态页面导航网站，可以通过 yaml 配置生成一个漂亮的个人导航页。
 
 ![homer-20210826211247.png](/assets/homer-20210826211247.png)
 

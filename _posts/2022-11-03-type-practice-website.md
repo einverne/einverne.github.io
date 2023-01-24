@@ -29,6 +29,12 @@ Ali Abdaal 提供的一些 Tips：
 - 做一些输入练习 [10 Fast Fingers](https://10fastfingers.com/typing-test/english) 是一个在线的输入速度测试网站。
 - 定向训练，比如使用下面的提到的 [keybr](https://www.keybr.com/) 这个网站上的单词不是真实的单词，但是可以通过输入的错误来定向看看哪些字母输入错误比较多
 
+### Qwerty Learner
+打字练习的网站。
+
+- <https://qwerty.kaiyi.cool/>
+
+
 ### 蓝豆打字
 蓝豆打字，来自评论中玛卡巴卡的推荐。蓝豆打字是一个在线打字练习的网站，渐进式、智能辅助、强化记忆。
 
@@ -67,3 +73,8 @@ codeflow.biaoyansu.com 是一个开源的在线指法练习网站。提供了常
 
 ## 练习韩语输入
 待补充。
+
+## 联系日语输入
+日语输入，提供了包括单词、新闻、歌词、文章在内的很多内容。
+
+- <https://typing.twi1.me/>
