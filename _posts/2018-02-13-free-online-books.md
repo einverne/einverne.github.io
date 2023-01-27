@@ -10,6 +10,10 @@ last_updated:
 
 一年前使用 kindle 的时候有 kindle10000 ，还有无数的 kindle push 网站，去年突然全部一下子都关闭了，这一年多来，陆陆续续又发现了一些很不错的站点。现在整理整理分享一下。我电脑中还有大概五六十 G 的当年 kindle 人倒闭时全站资源的打包只是一直都还么有时间建立索引，整理出来，有时间还是要整理一下的。
 
+
+## Anna's Archive
+[Anna's Archive](https://annas-archive.org) 是一个非盈利的、开源的 [Shadow library](https://en.wikipedia.org/wiki/Shadow_library) 搜索引擎，可以搜索 Z-library 的内容。
+
 ## zlibrary
 
 - https://zh.au1lib.org/

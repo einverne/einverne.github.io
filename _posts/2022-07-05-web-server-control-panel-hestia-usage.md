@@ -6,9 +6,9 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ linux, control-panel, hestia, web-server, mail-server, dns, aapanel, ]
+tags: [linux, control-panel, hestia, web-server, mail-server, dns, aapanel, php, nginx, open-source, mail-server, pop2, imap, mariadb, vsftpd, iptables]
 create_time: 2022-07-08 09:37:34
-last_updated: 2022-07-08 09:37:34
+last_updated: 2023-01-27 04:54:59
 ---
 
 Hestia 是一个开源的 Linux 服务器控制面板（Control Panel），HestiaCP fork 自另一款流行的控制面板 [VestaCP](https://vestacp.com/) 。由于 VestaCP 开发和维护趋于停止，很多安全问题和漏洞没有及时修复，所以有人从 VestaCP 拉出新分支进行开发和维护。Hestia 可以作为 aaPanel（宝塔面板）的很好的开源代替。
@@ -20,7 +20,7 @@ HestiaCP 提供了一个简单干净的网页界面，给网站维护人员提�
 - 数据库（MySQL,PostgreSQL）
 - FTP（[[ProFTPd]], [[vsftpd]]）
 - DNS zones（Bind）DNS 服务器
-- 邮件服务器（[[Dovecot]], [[exim4]]）支持 DKIM 等
+- 邮件服务器（[[Dovecot]], [[exim4]]）支持 [[SPF]]、[[DKIM]] 等
 - 垃圾邮件扫描（[[SpamAssassin Score]]）
 - 邮件病毒扫描（[[ClamAV]]）
 - 多种数据备份方案

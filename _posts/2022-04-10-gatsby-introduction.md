@@ -11,8 +11,8 @@ create_time: 2022-07-19 16:28:46
 last_updated: 2022-07-19 16:28:46
 ---
 
-Gatsby 是一个基于 React 的、免费开源的、用于搭建静态站点的框架。Gatsby 虽然是一个静态站点框架，但其数据却可以从任何地方获取之后渲染。
-Gatsby 是基于 React 和 GraphQL. 结合了 webpack, babel, react-router 等前端领域中最先进的工具. 对开发人员来说开发体验非常好。
+[Gatsby](https://www.gatsbyjs.com/) 是一个基于 [[React]] 的、免费开源的、用于搭建静态站点的框架。Gatsby 虽然是一个静态站点框架，但其数据却可以从任何地方获取之后渲染。
+Gatsby 是基于 React 和 [[GraphQL]]。 结合了 webpack, babel, react-router 等前端领域中最先进的工具。 对开发人员来说开发体验非常好。
 
 Gatsby 采用数据层和 UI 层分离的现代前端开发模式。静态 HTML 访问快，对 SEO 非常友好。
 
@@ -32,13 +32,14 @@ Gatsby 采用数据层和 UI 层分离的现代前端开发模式。静态 HTML 
 - `/src/components` 公共可复用的组件
 - `/static` 静态资源， webpack 会跳过
 - `gatsby-config.js` 配置
-    - siteMetadata 全局配置
-    - plugins 插件配置
+  - siteMetadata 全局配置
+  - plugins 插件配置
 - `gatsby-node.js` 可以调用 [Gatsby node APIs](https://www.gatsbyjs.org/docs/node-apis/)
-    - 添加额外的配置
+  - 添加额外的配置
 - `gatsby-browser.js` 调用 Gatsby 浏览器 API
 
 ## GraphQL
+
 作为 Gatsby 在本地管理资源的一种方式，作为一个数据库查询语言，它有非常完备的查询语句。
 
 在 `src/pages` 下的页面可以直接 `export` GraphQL 查询，在其它页面需要用 [StaticQuery](https://www.gatsbyjs.org/docs/static-query/) 组件或者 [useStaticQuery](https://www.gatsbyjs.org/docs/use-static-query/) hook。
@@ -92,6 +93,7 @@ export default () => (
 访问 http://localhost:8000/about 即可查看。
 
 ## Plugins
+
 在 Gatsby 中有三种类型的插件: 分别为数据源插件 ( source ), 数据转换插件 ( transformer ), 功能插件 ( plugin )
 
 - 数据源插件负责从应用外部获取数据，将数据统一放在 Gatsby 的数据层中。

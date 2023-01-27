@@ -24,7 +24,7 @@ Pipedream 可以定义不同的触发器（HTTP，Webhook，定时，收到邮�
 
 特性：
 
-- 每个月提供 10000 次免费调用，每条 333 次，对集成的应用，事件源没有任何限制
+- 每个月提供 10000 次免费调用，每天近 333 次，对集成的应用，事件源没有任何限制
 - 支持超过 [1000 多个外部 APP](https://pipedream.com/apps) ，Google，GitHub，Netlify，Twilio，Slack，Discord，等等
 - 并且因为支持编程，并且可以通过环境变量将 API keys 或验证等传入给代码，所以 Pipedream 几乎可以连接任意的应用
 - 可以编写代码完全控制工作流
