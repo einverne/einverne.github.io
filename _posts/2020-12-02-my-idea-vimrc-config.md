@@ -20,7 +20,7 @@ IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 模式及快捷键的开�
 ## 必须安装的插件
 
 - [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim)，用来在 IDEA 中模拟 Vim 下的操作
-- [AceJump](https://plugins.jetbrains.com/plugin/7086-acejump)
+- [AceJump](https://plugins.jetbrains.com/plugin/7086-acejump)，用来快速跳转
 - [IdeaVim-EasyMotion](https://plugins.jetbrains.com/plugin/13360-ideavim-easymotion)，EasyMotion 给 IdeaVim 增加更多的操作动词
 
 ## 利用 .ideavimrc 配置 IdeaVim
