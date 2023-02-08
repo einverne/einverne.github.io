@@ -4,15 +4,14 @@ title: "常用的 Tmux 的插件使用记录"
 aliases: "常用的 Tmux 的插件使用记录"
 tagline: ""
 description: "介绍目前我在使用的 Tmux 插件们"
-category: 学习笔记
-tags: [tmux, linux, terminal, 终端工具 , ]
+category: [ 学习笔记 , 整理合集 ]
+tags: [tmux, linux, terminal, 终端工具, tmux-plugins, tools]
 last_updated:
 ---
 
 之前一篇[文章](/post/2017/07/tmux-introduction.html) 已经分享过 [[tmux]] 的基本使用。这一篇就来总结一下 Tmux 下常用的插件。
 
 Vim 有自己的插件管理系统，zsh 也有插件管理，那当然 Tmux 肯定有插件管理，其实学习 Tmux 的过程中，和 Vim 当时一样，所有的拷贝，粘贴的内容都是在 Tmux 和 Vim 的内部，和外部操作系统的粘贴板完全隔离了，我就是为了解决这个问题，才接触到了 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)。
-
 
 ## Tmux Plugin Manager
 Tmux Plugin Manager 是一个 Tmux 插件管理器，用这个插件可以很方便的管理相关的插件。下文中可能把 Tmux Plugin Manager 简写成 tpm。
@@ -99,6 +98,12 @@ tmux-continuum 配合 tmux-resurrect 可以实现连续的保存 Tmux 的状态�
 然后启用：
 
 	set -g @continuum-restore 'on'
+
+## tmux-sidebar
+[Tmux Sidebar](https://github.com/tmux-plugins/tmux-sidebar) 可以在 Tmux 中展示当前路径的目录树。非常适合和 Vim 一起使用。
+
+## tmux-battery
+[Tmux Battery](https://github.com/tmux-plugins/tmux-battery) 在 Tmux 中显示电量和状态。
 
 ## reference
 
