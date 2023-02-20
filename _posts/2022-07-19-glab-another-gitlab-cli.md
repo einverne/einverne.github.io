@@ -26,7 +26,42 @@ brew install glab
 ```
 
 ## config
-配置文件的地址在本地 `~/.config/glab-cli/`
+配置文件的地址在本地 `~/.config/glab-cli/`。
+
+```
+❯ cat .config/glab-cli/config.yml
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: https
+# What editor glab should run when creating issues, merge requests, etc.  This is a global config that cannot be overridden by hostname.
+editor:
+# What browser glab should run when opening links. This is a global config that cannot be overridden by hostname.
+browser:
+# Set your desired markdown renderer style. Available options are [dark, light, notty] or set a custom style. Refer to https://github.com/charmbracelet/glamour#styles
+glamour_style: dark
+# Allow glab to automatically check for updates and notify you when there are new updates
+check_update: false
+# Whether or not to display hyperlink escapes when listing things like issues or MRs
+display_hyperlinks: false
+# configuration specific for gitlab instances
+hosts:
+    gitlab.com:
+        # What protocol to use to access the api endpoint. Supported values: http, https
+        api_protocol: https
+        # Configure host for api endpoint, defaults to the host itself
+        api_host: gitlab.com
+        # Your GitLab access token. Get an access token at https://gitlab.com/-/profile/personal_access_tokens
+        token:
+# Default GitLab hostname to use
+    gitlab_host:
+      token: glpxxx
+      apt_host: gitlab_host
+      git_protocol: https
+      api_protocol: https
+      user: gitlab_username
+host: gitlab.com
+```
+
+附加填充里面的 `token` 等信息即可。
 
 ## 环境变量
 

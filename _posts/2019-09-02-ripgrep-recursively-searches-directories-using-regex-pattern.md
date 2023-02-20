@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 ripgrep 通过正则快速查找文件内容"
+aliases: "使用 ripgrep 通过正则快速查找文件内容"
 tagline: ""
 description: "Linux 下文本搜索神器"
 category: 学习笔记
@@ -8,7 +9,7 @@ tags: [ripgrep, grep, find, ag, rg, search, regex, ]
 last_updated:
 ---
 
-`ripgrep`（简称 rg)，是一个用 Rust 实现的命令行搜索工具，可以通过正则来搜索当前的目录。默认情况下 ripgrep 会遵循 `.gitignore` 的内容，并且自动跳过隐藏的文件目录，以及二进制文件。 ripgrep 原生支持 Windows, MacOS, Linux。ripgrep 和其他流行的搜索工具非常相似，比如 `The Silver Searcher`, `ack` 和 `grep`.
+`ripgrep`（简称 `rg`)，是一个用 Rust 实现的命令行搜索工具，可以通过正则来搜索当前的目录。默认情况下 ripgrep 会遵循 `.gitignore` 的内容，并且自动跳过隐藏的文件目录，以及二进制文件。 ripgrep 原生支持 Windows, MacOS, Linux。`ripgrep` 和其他流行的搜索工具非常相似，比如 `The Silver Searcher`, `ack` 和 `grep`.
 
 - <https://github.com/BurntSushi/ripgrep>
 
@@ -112,6 +113,15 @@ last_updated:
 	rg -w "myword" .
 
 比如搜索 abc，可能有些单词包含 dabce ，那么也会被搜索出来，而加上 `-w` 就不会搜索出来了。
+
+### 搜索文件名
+如果只想要查找文件名中的关键字可以联合 `--files` 使用。
+
+`--files` 选项会打印出 rg 将会搜索的所有文件名，包含路径，那如果想要查找文件名中是否包含某个关键字，就可以使用
+
+```
+rg --files | rg regular_expression
+```
 
 ## reference
 

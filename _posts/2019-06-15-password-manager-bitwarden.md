@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "全平台开源的密码管理软件 Bitwarden"
-aliases: "全平台开源的密码管理软件 Bitwarden"
+aliases: 
+- "全平台开源的密码管理软件 Bitwarden"
 tagline: ""
 description: ""
 category: 产品体验
@@ -29,7 +30,7 @@ Bitwarden 的[官方网站](https://help.bitwarden.com/article/install-on-premis
 
 Bitwarden 自己的[服务端](https://github.com/bitwarden/server) 依赖比较重，还需要 MySQL，所以我选择了 [Rust 实现的版本](https://github.com/dani-garcia/bitwarden_rs)
 
-官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)
+官方的 Wiki 中写的非常详细，使用 Docker Compose [搭建](https://github.com/dani-garcia/bitwarden_rs/wiki/Using-Docker-Compose)。
 
 ## 使用 Bitwarden 客户端
 Bitwarden 提供了非常丰富的客户端支持，从桌面端，到浏览器扩展，非常好用，并且 macOS 上还支持指纹。
@@ -67,8 +68,7 @@ docker run -d --name bitwarden \
 
 强烈推荐使用 `openssl rand -base64 48` 来生成随机字符串作为 TOKEN。
 
-启用之后页面会在 `admin` 页面。
-
+启用之后页面会在 `/admin` 页面上使用，进入管理员的页面。
 
 ## reference
 

@@ -82,4 +82,4 @@ last_updated: 2022-11-28 09:36:14
     - ヤフオク，Yahoo 旗下的二手拍卖网站 [Web](https://auctions.yahoo.co.jp)
     - ラクマ，乐天旗下 [Web](https://fril.jp/)
 - 楽天市場， [Web](https://www.rakuten.co.jp/)
-- Paypay，移动支付，使用之前需要注册账户，绑定银行或电子钱包。
+- [[PayPay]]，移动支付，使用之前需要注册账户，绑定银行或电子钱包。

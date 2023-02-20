@@ -15,6 +15,17 @@ last_updated:
 
 ![](https://photo.einverne.info/images/2023/01/16/gq1D.jpg)
 
+### Mynote
+一个给开发者的 WordPress 主题。特色就是简洁、简单。
+
+- <https://terryl.in/>
+
+### Argon
+一个简洁大方的主题，还有 Hexo 版本。
+
+- <https://github.com/solstice23/argon-theme>
+
+
 ### Kratos
 开源的响应式主题
 
@@ -25,6 +36,7 @@ last_updated:
 - <https://github.com/xb2016/kratos-pjax>
 
 ### Sakura
+Sakura 樱花庄的白猫博客主题
 
 - <https://github.com/mashirozx/Sakura>
 
@@ -36,7 +48,6 @@ last_updated:
 一款开源的 WordPress 主题。
 
 - <https://www.lovestu.com/corepress.html>
-
 
 ### WordPress Git
 Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强大具有超强自定义能力的主题。
@@ -53,3 +64,10 @@ Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强�
 [jnews](https://jnews.io/) 是一款适合内容发布者的 WordPress 主题，非常容易就可以用它来打造一个视频分享网站，付费阅读站， 播客站点。
 
 
+
+### Begin 主题
+知更鸟定制主题，售价 299 RMB。
+
+- <https://zmingcx.com/begin.html>
+
+![[wordpress-begin-theme-20211001124336.png]]

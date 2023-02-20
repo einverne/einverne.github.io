@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ apple-id, apple-store, app-store, japan, ]
+tags: [ apple-id, apple-store, app-store, japan, 日本, 应用市场 ]
 create_time: 2022-11-25 04:13:53
 last_updated: 2022-11-25 05:46:24
 ---
@@ -45,3 +45,5 @@ last_updated: 2022-11-25 05:46:24
 登录成功之后就会发现 App Store 中的搜索关键字也变成日文了，热门推荐应用也变了就表示可以了。
 
 下一篇再整理一下在日本常用的 App 吧。
+
+另外如果有人需要日区的 Gift Card，也可以到[这里](https://board.gtk.pw/#/register?code=6a6tPur2) 咨询购买。

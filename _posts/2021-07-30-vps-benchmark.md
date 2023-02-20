@@ -68,7 +68,7 @@ curl -sL yabs.sh | bash -s -- -flags
 - `-i` 禁用 iperf 网络带宽检测
 - `-g` 禁用 Geekbench
 
-比如只想检测磁盘读写：
+比如只想检测磁盘读写，可以使用如下的命令：
 
 ```
 curl -sL yabs.sh | bash -s -- -i -g

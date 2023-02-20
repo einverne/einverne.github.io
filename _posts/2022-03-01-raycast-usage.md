@@ -11,7 +11,7 @@ last_updated: 2022-09-29 09:38:41
 create_time: 2022-03-10 11:57:31
 ---
 
-在逛 Twitter 的时候看到有人分享了一款 Launcher，叫做 Raycast，因为平时一直使用 [[Alfred]] 倒是没有引起我的太多注意，但今天又看到了一次，所以就想好好来了解一下这个新出来的启动器。
+在逛 Twitter 的时候看到有人分享了一款 Launcher，叫做 [[Raycast]]，因为平时一直使用 [[Alfred]] 倒是没有引起我的太多注意，但今天又看到了一次，所以就想好好来了解一下这个新出来的启动器。
 
 在 macOS 上其实有非常多的启动器，包括了系统默认的 [[Spotlight]]，以及很多第三方应用，包括了 [[Alfred]], [[LaunchBar]] 在内的无数优质应用。这些应用有着各自的特点。但最重要的一点就是提高我们打开应用的速度，以及在各个小细节方面提高易用程度，比如我最喜欢的 Alfred 的一个贴心功能就是历史粘贴板，在 Linux 上我一直都是用的 [[fcitx]] 默认的快捷键 `Ctrl+;`，所以在 macOS 也用一样的快捷键。
 
@@ -35,7 +35,7 @@ create_time: 2022-03-10 11:57:31
 
 ## 使用
 
-### Snippet
+### Auto-expand Snippet
 写过代码的人应该对 Snippet 非常熟悉，我们可以定义一些常用的代码块，然后通过简单的几个字母来快速补充一段内容。
 
 在 Raycast 中，可以通过输入 `Create snippet` 来创建 Snippet，在弹出的设置窗口中输入想要设置的内容。
@@ -57,6 +57,15 @@ create_time: 2022-03-10 11:57:31
 同样，在应用设置中，可以设置快捷键，我就设置成和 Linux 下一致的 `Ctrl+;`
 
 ![raycast clipboard history hotkey](/assets/raycast-clipboard-history-hotkey-20220310225717.png)
+
+### File Search
+在 Raycast 中输入 `f` 可以看到 File Search，授权 Raycast 搜索本地文件之后，就可以直接在 Raycast 中根据文件名一键搜索到。
+
+### Define Word
+在 Raycast 中输入 `dw` 就可以看到 Define Word  的选项，这个可以用来查单词。
+
+### Switch Windows
+在 Raycast 的扩展中有一个 Switch Windows  的插件，可以设置一个快捷键，比如 Option + Tab，这样就可以快速调用出窗口切换功能，直接输入关键字 Enter，就能切换窗口，再不用 Cmd + Tab 来换切换了。当然可以根据自己的需要设置成任意的快捷键。
 
 ### Search Screenshot
 Raycast 支持直接搜索图片中的内容，还可以选中图片之后使用，cmd + Shift + a 使用 Cleanshot 对图片标注。
