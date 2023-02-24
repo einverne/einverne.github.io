@@ -8,6 +8,7 @@ tags: [wordpress, themes, php, design, blog,  ]
 last_updated:
 ---
 
+
 ### puock
 一款基于WordPress开发的高颜值的自适应主题，支持白天与黑夜模式、无刷新加载等
  
@@ -55,6 +56,8 @@ Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强�
 
 - <https://github.com/BennyThink/WordPressGit>
 
+## 主题开发者
+[Anders Norén](https://andersnoren.se/) 是一位在 Sweden 斯德哥尔摩的设计师和开发者。他在博客上提供了很多免费的 WordPress 模板。
 
 
 ## 收费主题
