@@ -114,17 +114,14 @@ Raycast 可以直接连接 Calendar，因为我的 macOS 上的日历同步了 G
 ### 系统设置
 比如输入 volume 可以调整音量。
 
-
 其他比如计算器、汇率转换、时间查询等等基础功能就不再展开。
 
 如果有时间会再讲讲如何在 Raycast 中执行自定义脚本，或者如何编写自己的扩展。
 Raycast 支持的脚本语言，Bash、Swift、AppleScript。
 
-
-
 ## related
 
 - [[Alfred]]
 - [[LaunchBar]]
-- [[hapigo]]
+- [[HapiGo]]
 - [Raycast 相关脚本](https://github.com/raycast/script-commands/tree/master/commands)

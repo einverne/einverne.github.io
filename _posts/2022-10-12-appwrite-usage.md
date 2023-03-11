@@ -15,6 +15,8 @@ last_updated: 2022-11-08 03:06:38
 
 看来创始人起名字的时候也非常直截了当，Appwrite 就是一款为前端和移动开发人员提供的可以自行搭建的后端服务，使用 PHP 编写，提供了构建一款应用需要的最基础的一些功能，比如注册，登录，K-V 数据存储，云函数等等功能。并且 Appwrite 提供了非常多的客户端支持，包括常用的 iOS，Flutter，Android，Swift 等等，也包括了大部分的后端常用语言的 SDK，Python，Php，Ruby 等等。
 
+Appwrite 是一个开源的、自托管的，Backend-as-a-Service（BaaS，后端即服务），可以快速构建安全的、现代的应用程序。Appwrite 提供了用户身份验证，授权，会话管理，角色访问控制，数据库，对象存储等等基础组件。
+
 ![appwrite](https://photo.einverne.info/images/2023/02/24/kCGN.jpg)
 
 ## Installation
@@ -66,3 +68,14 @@ Appwrite Storage 服务提供的最有用的功能之一是能够预览文件内
 ### 团队管理
 
 Appwrite Teams 服务允许您和您的用户创建团队并共享对不同 API 资源（如文件或文档）的许可。每个团队成员还可以担任不同的角色，以使开发者拥有更大的灵活性。
+
+
+## API
+
+### Account API vs Users API
+
+Account API 在当前登录的用户下，通常是客户端集成。而 Users API 通常是集成到服务端，在管理员的权限下，用来操作所有用户。
+
+当通过 JWT 验证的时候，Account API 中有一些方法也可以被服务端使用。这可以允许服务端来以用户的身份执行某些行为。
+
+

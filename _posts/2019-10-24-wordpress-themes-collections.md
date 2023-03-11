@@ -74,3 +74,8 @@ Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强�
 - <https://zmingcx.com/begin.html>
 
 ![[wordpress-begin-theme-20211001124336.png]]
+
+### RiPro-V2
+RiPro-V2是一个RiPro主题的全新升级重构，首页拖拽布局，高级筛选，自带会员生态系统，超全支付接口。
+
+- <https://ritheme.com/theme/820.html>

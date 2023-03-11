@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Rime 配置使用韩语及日语输入法"
+aliases:
+- "Rime 配置使用韩语及日语输入法"
 tagline: ""
 description: ""
 category: 经验总结
