@@ -37,3 +37,7 @@ user-agent 规则，将`user-agent` 修改成 `Mozilla/5.0 (Macintosh; Intel Mac
 ![22HH](https://photo.einverne.info/images/2023/03/12/22HH.png)
 
 好在回答的还算比较准确。
+
+
+## Bing Unchained
+感谢 Zealer Chan 在评论中补充了一种方法，可以直接安装 [Bing Unchained](https://chrome.google.com/webstore/detail/bing-unchained-use-new-bi/laldfnbbeocphnilnofhedhcjcnchbld/related) 即可。
