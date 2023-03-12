@@ -77,6 +77,15 @@ tar 命令常用参数
 
 然后打包的结果 tar 中就只有 `chevereto_chevereto_content` 目录下的内容。
 
+### 解压时展开压缩包的目录
+比如说在使用 `-C` 来解压目录的时候，在压缩包内所有的文件内容都在 `path-1.4` 这样的带版本的文件夹内，如果要想要解压到 `path` 这样的目录，可以使用：
+
+```
+tar xzvf path-1.4.tar.gz -C path --strip-components=1
+```
+
+注意 `path` 目录需要存在，否则会报错。
+
 ### 列出压缩包内的文件
 
     tar -ztvf filename.tar.gz     # 列出 tar.gz 下文件

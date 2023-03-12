@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Lemon Squeezy 简单介绍"
+title: "电子销售平台：Lemon Squeezy 简单介绍"
 aliases:
-- "Lemon Squeezy 简单介绍"
+- "电子销售平台：Lemon Squeezy 简单介绍"
 tagline: ""
 description: ""
 category: 产品体验
