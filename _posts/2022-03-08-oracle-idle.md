@@ -32,6 +32,6 @@ Oracle 给出的描述非常清晰，就目前我的理解，应该是只要上�
 
 解决方案其实也比较简单，一个就是按照官网所提供的方式升级成付费账号，用多少支付多少（Pay As You Go (PAYG)）；另外一个方案就是真实地把机器利用起来，跑一些程序，或者将起作为 [[k3s]] 节点加入集群跑起来，看看满足其使用的最低要求。
 
-说实话，网上有一些教程让用户禁用 oracle cloud agent，禁止 Oracle 监控实例的运行状况。因为可以猜测的就是 Oracle 会在 VM 实例中跑监控程序，然后批量地监控用户机器的使用情况，包括 CPU，内存，网络等等，如果把这个 agent 卸载掉了是否 Oracle 就检测不到了。说实话我是不推荐这个方法的，因为 VM 运行在 Oracle 的机房，要检测还是能通过其他手段来检测到的。
+说实话，网上有一些教程让用户禁用 oracle cloud agent（root 模式下执行 `snap remove oracle-cloud-agent`），禁止 Oracle 监控实例的运行状况。因为可以猜测的就是 Oracle 会在 VM 实例中跑监控程序，然后批量地监控用户机器的使用情况，包括 CPU，内存，网络等等，如果把这个 agent 卸载掉了是否 Oracle 就检测不到了。说实话我是不推荐这个方法的，因为 VM 运行在 Oracle 的机房，要检测还是能通过其他手段来检测到的。
 
 所以个人还是推荐将 VM 好好利用起来，个人在过去尝试过的 Self-hosted 应用，非常不错的都在[这里](https://github.com/einverne/dockerfile) 管理了起来，也可以在 GitHub Awesome Self hosted 项目里面找找自己感兴趣的利用起来。

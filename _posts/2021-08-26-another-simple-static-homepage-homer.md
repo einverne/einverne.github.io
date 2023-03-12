@@ -392,6 +392,10 @@ services:
 
 或者看看这里的 [SuperTinyIcons](https://github.com/edent/SuperTinyIcons) 或者 [homer-icons](https://github.com/NX211/homer-icons)
 
+## related
+
+- [[homepage]] 是一个使用 JavaScript 编写，使用 YAML 作为配置的个人页面。
+
 ## reference
 
 - <https://hub.docker.com/r/b4bz/homer>
