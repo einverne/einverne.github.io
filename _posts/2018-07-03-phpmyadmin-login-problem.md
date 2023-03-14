@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "phpMyAdmin 登录无反应问题记录"
+aliases: "phpMyAdmin 登录无反应问题记录"
 tagline: ""
 description: ""
 category: 经验总结

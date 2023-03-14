@@ -5,7 +5,7 @@ aliases:
 - "在 Obsidian 中集成 GPT-3 提高输入效率"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [obsidian, text-generator, gpt-3, openai, chatgpt, github-copilot]
 create_time: 2023-01-03 10:33:06
 last_updated: 2023-01-03 10:33:06
