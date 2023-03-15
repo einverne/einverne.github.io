@@ -70,3 +70,5 @@ last_updated: 2023-03-15 09:23:50
 免费的 .mx 域名 (限时)
 
 - <https://www.ionos.mx/>
+
+如果有兴趣讨论关于本文章，或者本博客的所有内容可以到 [Telegram 群组](https://t.me/+RUBhyY60iVcl6hdX)。
