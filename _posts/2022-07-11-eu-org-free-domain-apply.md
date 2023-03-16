@@ -1,12 +1,12 @@
 ---
 layout: post
-title: ""
+title: "Eu.org 免费域名申请"
 aliases:
-- ""
+- "Eu.org 免费域名申请"
 tagline: ""
 description: ""
-category: 
-tags: [ ]
+category: 经验总结
+tags: [ eu-org, domain, free-domain,  ]
 create_time: 2022-02-16 21:39:01
 last_updated: 2023-03-16 21:38:02
 ---
