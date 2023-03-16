@@ -112,6 +112,19 @@ then
 	sudo iptables -P OUTPUT ACCEPT
 	sudo iptables -F
 
+甲骨文的 Ubuntu 镜像内置了防火墙规则，即使在面板上开通了端口白名单，重启之后端口依然会被防火墙拦住，所以每次都得手动执行上面的命令。主要原因是 Oracle 自带的 Ubuntu 镜像默认设置了 iptable 规则，可以手动关闭：
+
+```
+sudo apt purge netfilter-persistent
+sudo reboot
+```
+
+或者可以直接删除 iptabls 的配置文件
+
+```
+rm -rf /etc/iptables && reboot
+```
+
 ## 卸载停止不需要的服务
 
 	sudo systemctl stop rpcbind.socket
