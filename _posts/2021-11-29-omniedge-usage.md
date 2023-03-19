@@ -12,7 +12,7 @@ last_updated:
 
 [[OmniEdge]] 是一个可以用来快速组建点对点私有网络的工具，也可以用来做内网穿透。
 
-- <https://omniedge.io/>
+- [https://omniedge.io/](https://omniedge.io?referral_code=omnied149476)
 
 官方提供 Starter 套餐，可以供一个用户，最多创建 1 个虚拟网络，连接 20台设备。
 
