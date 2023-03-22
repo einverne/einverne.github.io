@@ -15,6 +15,8 @@ Wise 的账户其实很早就已经开了，但是觉得好像没有那么麻烦
 
 在等待卡片的过程中顺便把之前记录在笔记里面的一些重点梳理了一下。这一篇文章就简单介绍一下 Wise 账号的注册以及日常的使用，以避免账号被封。
 
+![](https://photo.einverne.info/images/2023/03/20/O14G.jpg)
+
 ## Wise 是什么
 
 Wise 原名 TransferWise，是一个做跨境汇款的公司。由 Kristo Käärmann 和 Taavet Hinrikus 于 2011 年创立，总部设在伦敦。Wise 账户提供多个币种的账户，支持上百种种货币的兑换服务。
