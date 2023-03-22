@@ -16,6 +16,8 @@ GoldenDict 是一个开源词典，用 QT 编写，使用 WebKit 作为渲染核
 
 2020 年 8 月更新，让我异常惊喜的时，当我更换到 MacOS 时，GoldenDict 的 Mac 版虽然很久没有更新，但依然可以非常完美的工作，[Syncthing](/post/2019/10/syncthing.html) 同步字典文件和[脚本](https://github.com/einverne/translator) 后立马就工作，不用改变习惯，并且我也没有习惯使用 Mac 上自带的词典（虽然和系统集成得比较好，重按触摸板选中单词即可）。
 
+2023 年 3 月更新，macOS 因为发布了 ARM 芯片的 MacBook，所以 GoldenDict 也可以选择 [这个版本](https://github.com/xiaoyifang/goldendict) ，可以在  M1，M2，芯片下运行。
+
 ## 安装
 Ubuntu/Linux Mint 下安装非常简单
 
