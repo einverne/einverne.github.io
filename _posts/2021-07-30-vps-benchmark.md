@@ -44,7 +44,7 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 	./unixbench.sh
 
 ### Yet-Another-Bench-Script
-[GitHub 页面](https://github.com/masonr/yet-another-bench-script)
+[Yet Another Bench Script](https://github.com/masonr/yet-another-bench-script) 正如其名，也是一个用来全面测试 VPS 性能的脚本。
 
     curl -sL yabs.sh | bash
 
@@ -74,6 +74,12 @@ curl -sL yabs.sh | bash -s -- -flags
 curl -sL yabs.sh | bash -s -- -i -g
 ```
 
+### bench monster
+[Bench.monster](https://bench.monster/) 是一个服务器网络连接速度，I/O 速度等等的脚本。
+
+```
+curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
+```
 
 ### nench
 [Nench](https://github.com/n-st/nench)

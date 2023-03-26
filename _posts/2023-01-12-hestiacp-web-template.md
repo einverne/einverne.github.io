@@ -11,7 +11,7 @@ create_time: 2023-01-27 04:57:42
 last_updated: 2023-01-27 04:58:19
 ---
 
-HestiaCP 中是通过模板配置文件来配置网站。修改网站的模板可能会造成服务器错误，修改之前请小心。
+之前的一篇文章介绍过 [HestiaCP](/post/2022/07/web-server-control-panel-hestia-usage.html) 的简单使用，在 HestiaCP 中是通过模板配置文件来配置网站。修改网站的模板可能会造成服务器错误，修改之前请小心。
 
 HestiaCP 的模板文件存放在 `/data/templates/` 目录中，对于 Web 服务器，包括了一个初始化脚本 `.sh` 文件，一个默认的模板 `.tpl` 和一个 ssl 模板 `.stpl`。
 

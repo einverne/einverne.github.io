@@ -10,25 +10,28 @@ last_updated:
 
 最近浏览 GitHub 发现一个有趣的[项目 PT Plugin Plus](https://github.com/ronggang/PT-Plugin-Plus/) 代码拉下来发现是 ts 语言写的，就顺便了解一下。[^ts] 目标很简单，不是为了写 ts 项目，只是为了能看懂项目。
 
-
 ## ts in 5 minutes
 
 ### 强类型
-Js 中原来变量是没有类型的，只有运行时赋值了才决定变量的类型，但是 ts 在方法定义的时候可以给参数加上类型校验
+JavaScript 中原来变量是没有类型的，只有运行时赋值了才决定变量的类型，但是 TypeScript 在方法定义的时候可以给参数加上类型校验：
 
-	function greeter(person: string) {
-		return "Hello, " + person;
-	}
+```
+function greeter(person: string) {
+    return "Hello, " + person;
+}
+```
 
-一旦类型不匹配则在编译时就会报错。
+一旦类型不匹配，在编译时就会报错。
 
 ### Interfaces
 可以使用 interface 来定义对象
 
+```
 	interface Person {
 		firstName: string;
 		lastName: string;
 	}
+```
 
 ### Classes
 ts 支持基于类的面向对象编程，classes 和 interfaces 可以协同工作，
@@ -56,6 +59,8 @@ document.body.textContent = greeter(user);
 ```
 
 ## handbook
+[TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html)
+
 
 ### 类型
 ts 支持 js 的类型，number, string, structure, boolean 等等，不过 ts 增加了枚举类型。

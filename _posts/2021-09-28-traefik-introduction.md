@@ -138,13 +138,11 @@ X-Forwarded-Server: ab231307712a
 X-Real-Ip: 172.30.0.1
 ```
 
-
 ## Configuration
 [[traefik-configuration]] 有两种配置方式：
 
 - 完全动态的配置 (dynamic configuration)
 - 静态初始配置（static configuration)
-
 
 ### 自动重定向到 https
 

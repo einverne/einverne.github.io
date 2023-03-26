@@ -47,6 +47,11 @@ Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可
 
 [[SendGrid]] 免费服务每天可以发送 100 封邮件，同样支持 API 和 SMTP 方式，还可以使用 Webhook 方式。
 
+## MXRoute
+[MXRoute](https://mxroute.com/) 是 LowEndTalk 上一位名叫 [jar](https://lowendtalk.com/profile/jar) 的管理员提供的邮件服务，在最便宜的时候可以以 15 美元的价格购买一年的服务，目前也在官网提供 199 美元终身的服务。
+
+MXRoute  不允许发送垃圾邮件，并且对于发送邮件每个电子邮件地址每小时 300 封出站电子邮件。
+
 ## Mailjet
 
 - <https://app.mailjet.com/signin>
@@ -134,6 +139,10 @@ Mailchannels 是一家邮件发送服务提供商。
 一个域名邮箱提供商。
 
 - <https://www.zoho.com/mail/>
+
+## Mailcheap
+[Mailcheap](https://www.mailcheap.co/) 是一家提供邮件发送服务的供应商。
+
 
 ## 相关
 
