@@ -27,7 +27,6 @@ last_updated:
 
 - <https://nextdns.io/?from=fgmesze4>
 
-
 ### Pomotodo
 番茄工作法
 
@@ -40,15 +39,18 @@ last_updated:
 
 ## VPS
 
-### DirectSpace
-从 14 年开始用，只遇到过一次宕机，虽然是 ovz 的但架个代理也完全足够了，况且两年才 15 刀干啥不续费。
+~~### DirectSpace
+从 14 年开始用，只遇到过一次宕机，虽然是 ovz 的但架个代理也完全足够了，况且两年才 15 刀干啥不续费。~~
+~~<https://gtk.pw/ds>~~
 
-- <https://gtk.pw/ds>
+DirectSpace 多年没有更新，虚拟化也停留在老一代的 OpenVZ ，放弃使用了。
+
+### BandwagonHost
+[搬瓦工](https://gtk.pw/bwg)是一家提供高可靠 VPS 的虚拟主机提供商，网络质量比较好。
 
 ### Linode
-用的日本的节点，稳得不行，5 刀一个月
+[Linode](https://gtk.pw/linode) 用的日本的节点，稳得不行，5 刀一个月
 
-- <https://gtk.pw/linode>
 
 ## 云产品
 

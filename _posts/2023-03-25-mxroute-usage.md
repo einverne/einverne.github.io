@@ -109,3 +109,17 @@ v=DMARC1; p=none;, p=reject;, p=quarantine;
 ## 最后测试
 
 打开网站 <https://www.mail-tester.com/>， 之前几篇将 Self-hosted Email 的文章中也提到过，可以用来检测邮件服务器的得分（从各个方面判定邮件会不会进入垃圾邮箱）。打开这个网站之后，会生成一个随机的邮箱，使用自定义的域名邮箱向这个邮箱发送一封邮件（标题和内容随意），发送后点击页面中的 Then check your score 按钮，即可查看分数。正常如果得到 10 分才算是正常，如果不是，则按里面的要求进行改进，一般都是 DNS 配置错误。或者 如果发信的 IP 地址在黑名单中，也可能导致分数不好看。
+
+## 最后的最后
+
+MXRoute 不仅提供了邮件中显示的 Roundcube 的 Web Client，还可以登录 <https://mail.mxlogin.com> 这个客户端来收发邮件。这个客户端还不仅提供邮件的功能，还能作为 NextCloud 来管理自己的文件。
+
+![Oceh](https://photo.einverne.info/images/2023/03/28/Oceh.png)
+
+同时登录的时候还可以选择自己喜欢的 Web Client。
+
+![OMCC](https://photo.einverne.info/images/2023/03/28/OMCC.png)
+
+## reference
+
+- [官方文档](https://mxroutedocs.com/dns/cloudflare/)

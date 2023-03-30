@@ -52,7 +52,7 @@ DMARC 记录使用可扩展的 “标签-值” 语法。
 
 这是一个典型的 DMARC 记录：
 
-> v=DMARC1; p=reject; rua=mailto: dmarc_report@example.com; ruf=mailto: dmarc_report@example.com; pct=100; adkim=s; aspf=s;
+> v=DMARC1; p=none; rua=mailto:dmarc_report@example.com; ruf=mailto:dmarc_report@example.com; pct=100; adkim=s; aspf=s;
 
 它由多个 key-value 标签组成。这些标签会告诉邮件服务提供商如何发送 DMARC 报告:
 
@@ -61,11 +61,11 @@ DMARC 记录使用可扩展的 “标签-值” 语法。
   - 'none' 如果接收服务器接收到的邮件没有通过 DMARC 校验，不会做任何操作，邮件会正常被递交
   - 'quarantine' 用来隔离可疑邮件，如果接收服务器收到的邮件没有通过验证，那么会把邮件单独隔离
   - 'reject' 告诉接收方拒收可疑邮件
-- rua  是一组用来接收报告的电子邮件地址(DMARC aggregate)
-- ruf  是一系列用来接受失败报告的电邮地址(DMARC failure)
-- pct  对失败邮件应用策略的百分比
-- adkim  制定 DKIM 的对齐策略，可选 `s` 或 `r`
-- aspf  制定 SPF 的对齐策略，可选 `s` 或 `r`
+- `rua`  是一组用来接收报告的电子邮件地址(DMARC aggregate)
+- `ruf`  是一系列用来接受失败报告的电邮地址(DMARC failure)
+- `pct`  对失败邮件应用策略的百分比
+- `adkim`  制定 DKIM 的对齐策略，可选 `s` 或 `r`
+- `aspf`  制定 SPF 的对齐策略，可选 `s` 或 `r`
 
 如果不想配置报告失败的邮箱，可以
 

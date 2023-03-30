@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ dmarc, email, ]
+tags: [ dmarc, email, spf, self-hosted, email-hosting, dns-record ]
 last_updated:
 ---
 
