@@ -192,6 +192,19 @@ Mailcow 的 alias 是指可以通过该功能，将收件人的电子邮件地�
 
 ![ObDH](https://photo.einverne.info/images/2023/03/28/ObDH.png)
 
+### Address rewriting
+Address rewriting (地址重写) 的功能就是在用户配置的域名邮箱往外发送邮件的时候，通过 BCC 的方式重写发件人的信息。
+
+这个功能下面有两个部分:
+
+- BCC maps，用于将发送和接收到的邮件的副本静默转发到后台配置的一个地址。BCC map 下有两种类型
+    - Sender map，如果发件人是配置的 Local destination，则增加 BCC 邮箱地址
+    - Recipient map，如果收件人是配置的 Local destination，则增加 BCC 邮箱地址
+- Recipient maps，用于在发送邮件之前替换邮件上的目标地址。
+
+![O0S2](https://photo.einverne.info/images/2023/03/30/O0S2.png)
+
+
 ### 手工配置
 
 ## reference
