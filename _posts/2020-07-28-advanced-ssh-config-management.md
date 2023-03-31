@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "使用 assh 来管理 SSH config"
+aliases:
+- "使用 assh 来管理 SSH config"
 tagline: ""
 description: ""
 category: 学习笔记
