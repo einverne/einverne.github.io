@@ -62,6 +62,9 @@ Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强�
 
 ## 收费主题
 
+### ASTRA
+[ASTRA](https://wpastra.com/) 是一个轻量，简介，快速的 WordPress 主题，高度可订制化。也可以通过此主题将网站快速转变成一个在线商城。
+
 ### jnews
 
 [jnews](https://jnews.io/) 是一款适合内容发布者的 WordPress 主题，非常容易就可以用它来打造一个视频分享网站，付费阅读站， 播客站点。

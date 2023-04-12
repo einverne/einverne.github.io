@@ -19,6 +19,46 @@ last_updated: 2023-04-05 08:41:54
 
 这就非常奇怪， 为了验证我的 SMTP 配置是没有问题的，我还直接写了一段 Python 发送邮件的程序，邮件是可以正常的发送出去的。所以我把怀疑点移动到了 Clientexec 面板。开始怀疑是不是 [[Clientexec]] 在 SMTP 配置的地方有什么 BUG。
 
+Python
+
+```python
+import smtplib  
+from email.mime.text import MIMEText  
+from email.mime.multipart import MIMEMultipart  
+  
+  
+def send_email(sender_email, recipient_email, subject, body, smtp_server,  
+smtp_port, username, password):  
+    # Create a message object  
+    message = MIMEMultipart()  
+    message['From'] = sender_email  
+    message['To'] = recipient_email  
+    message['Subject'] = subject  
+      
+    # Add the body of the message as a MIMEText object  
+    message.attach(MIMEText(body, 'plain'))  
+      
+    # Connect to the SMTP server and send the message  
+    with smtplib.SMTP(smtp_server, smtp_port) as server:  
+    server.starttls()  
+    server.login(username, password)  
+    server.sendmail(sender_email, recipient_email, message.as_string())  
+  
+  
+sender_email = ''  
+recipient_email = ''  
+subject = 'Test Email'  
+body = 'This is a test email sent from Python!'  
+smtp_server = ''  
+smtp_port = 587  
+username = ''  
+password = ''  
+  
+if __name__ == '__main__':  
+    send_email(sender_email, recipient_email, subject, body, smtp_server,  
+    smtp_port, username, password)
+```
+
 ## 验证 Clientexec 后台 SMTP 设置
 
 为了验证 Clientexec 后台的 SMTP 设置是可以正常工作的，我看到官方的文档上提供了 Gmail SMTP 设置的说明，所以我直接用之前的 Gmail 的 SMTP 设置，在 Clientexec 后台配置了一下。测试是可以正常发送邮件的。唉，难道还是我的 SMTP 配置不正确。
