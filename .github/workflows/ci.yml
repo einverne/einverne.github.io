@@ -20,7 +20,7 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:3.8 /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && jekyll build --future"
     - name: copy file via ssh
-      uses: appleboy/scp-action@v0.1.3
+      uses: appleboy/scp-action@7af00892de6f8397c5c3393cfb3b32ae7f91b94b
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
