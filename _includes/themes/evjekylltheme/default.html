@@ -136,5 +136,21 @@
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
 
+  <script>
+    (function(d,t) {
+      var BASE_URL="https://chat.einverne.info";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: '5tYM48tMpT4RMGU6UfQCCE7V',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
  </body>
 </html>
