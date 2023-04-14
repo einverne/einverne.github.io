@@ -13,13 +13,15 @@ last_updated: 2023-04-04 22:58:42
 
 因为自己之前买过一些 VPS，但是一直空闲很多，所以想着是否能够充分利用起来。最近正好看到可以免费使用 [[Clientexec]] 管理 Web Hosting 账单，所以隆重介绍一下刚刚推出的新服务 [EV Hosting](https://client.einverne.info/)，目前上线了两个功能，共享网站托管服务和自定义域名邮箱服务。
 
-## 共享网站托管服务
+## 新加坡 共享网站托管服务
 
 共享网站托管服务（Shared Web Hosting） 是一种网站托管服务，是将多个网站存储在同一台服务器上，并共享服务器上的 CPU、内存和带宽。这种类型的托管服务通常是最便宜和最受欢迎的选择，特别适合个人和小型企业。
 
 如果你是一个不懂技术的个人但想在网络上有一片属于自己的空间，或者你想以最低的成本开展在线商城，欢迎来订购使用。
 
 本站提供的托管服务，服务器位于新加坡，CPU 是 AMD Ryzen 9 3900X 12-Core Processor，服务器共 128 GB 内存。
+
+![ev hosting sg](https://photo.einverne.info/images/2023/04/08/sll3.jpg)
 
 ### 一键安装超过 400 种应用
 
@@ -48,6 +50,12 @@ DirectAdmin 后台也有一个在线的文件管理器，可以直接基于网�
 ![neId](https://photo.einverne.info/images/2023/04/04/neId.png)
 
 为了庆祝上线，在订购年付套餐的时候输入 `EVHOSTING` 则可以享受 5 折的优惠（优惠截止 4 月末）。最低可以以 8 元购买一年 Bronze 套餐。
+
+## 加利福尼亚 网络优化 共享空间
+
+加利福尼亚的共享空间是大陆网络优化空间，到大陆的网络延迟非常文档。
+
+![ev hosting us](https://photo.einverne.info/images/2023/04/08/sokY.png)
 
 ## 自定义域名邮箱服务
 

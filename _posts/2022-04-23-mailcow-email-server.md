@@ -207,6 +207,9 @@ Address rewriting (地址重写) 的功能就是在用户配置的域名邮箱�
 
 ### 手工配置
 
+## 推广
+如果你不想自己搭建邮件服务器，那么也可以选购 [EV Hosting](https://client.einverne.info) 推出的域名邮箱托管服务，可以以极低的价格获得无限域名无限邮箱服务。
+
 ## reference
 
 - <https://mailcow.github.io/mailcow-dockerized-docs/manual-guides/u_e-80_to_443/>

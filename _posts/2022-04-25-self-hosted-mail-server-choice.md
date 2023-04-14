@@ -32,7 +32,13 @@ create_time: 2022-04-26 12:47:22
 - [[zimbra]]
 
 ## 总结
+
 我个人在首先尝试 Mailu ，学习基本的[邮件服务器的协议](/post/2018/09/mail-server.html)必要的 DNS 配置之后，从 Mailu 切换长期使用 Mailcow。Mailcow 支持多用户，多域名配置，相对 Mailu 要重一些。所以如果是简单的轻度使用推荐 Mailu，Python 编写，Docker 镜像依赖简单，后台简洁。如果是重度使用，那么推荐 Mailcow，虽然镜像搭建稍微复杂，后台管理也稍微复杂一些，但是更强大。
 
-更多总结： <https://medevel.com/list-os-mail-server/>
+## 推广
 
+如果你不想自己搭建邮件服务器，那么也可以选购 [EV Hosting](https://client.einverne.info) 推出的域名邮箱托管服务，可以以极低的价格获得无限域名无限邮箱服务。
+
+## reference
+
+更多总结： <https://medevel.com/list-os-mail-server/>

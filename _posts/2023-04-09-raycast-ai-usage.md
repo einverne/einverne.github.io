@@ -49,3 +49,7 @@ Raycast 代替了如下我过去常常做的事情：
 - 如果不满意 Raycast AI 的结果，可以直接按 Cmd+R 重新生成。
 - 生成内容之后可以使用 Cmd+k 来对结果进行更多的操作，比如复制，比如粘贴回选中的地方
 - Raycast AI 可以设置快捷键，比如可以将常用的 Ask AI，translate 等等设置一个单独的快捷键
+
+## alternative
+如果还没有排到 Raycast AI，还可以试试 macOS 上的 [MacGPT](https://www.macgpt.com/)。
+

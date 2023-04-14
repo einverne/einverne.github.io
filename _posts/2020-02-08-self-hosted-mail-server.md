@@ -11,7 +11,6 @@ last_updated:
 
 整理一些可以自行搭建邮件服务器的项目。
 
-
 ## Postal
 [[postal]] 是一个使用 Rust 编写的邮件服务器，可以发送和接收邮件。这是一个可以代替 [[SendGrid]]、[[Mailgun]] 或者 Postmark 的开源工具，可以在自己的服务器上假设。
 

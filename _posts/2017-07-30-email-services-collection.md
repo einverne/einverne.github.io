@@ -52,6 +52,8 @@ Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可
 
 MXRoute  不允许发送垃圾邮件，并且对于发送邮件每个电子邮件地址每小时 300 封出站电子邮件。
 
+如果你想以更低的价格使用 MXRoute 的服务，也可以[联系我](https://client.einverne.info) 以更低的价格出售 MXRoute 的服务。
+
 ## Mailjet
 
 - <https://app.mailjet.com/signin>

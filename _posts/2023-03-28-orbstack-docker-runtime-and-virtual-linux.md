@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "macOS 上轻便的 Docker 容器以及 Linux 运行环境"
+title: "macOS 上轻便的 Docker 容器以及 Linux 运行环境：OrbStack"
 aliases:
-- "macOS 上轻便的 Docker 容器以及 Linux 运行环境"
+- "macOS 上轻便的 Docker 容器以及 Linux 运行环境：OrbStack"
 tagline: ""
 description: ""
 category: 产品体验
@@ -66,6 +66,11 @@ orb -m ubuntu -u root uname -a
 ## 目前的一些局限
 
 OrbStack 虚拟的 Linux 是不支持 GUI 的，不过这也不妨碍，我想大部分开发应该只会使用命令行去管理 Linux 运行环境吧。大致猜想 OrbStack 应该只是用 Docker 开启了一个 Linux 的容器，所以不支持图形化界面也是可以理解的。
+
+## alternative
+
+- [colima](https://github.com/abiosoft/colima) 也是 macOS 上的一款容器运行时。
+- [lima](https://github.com/lima-vm/lima) 也是 macOS 上的一款 Linux 虚拟机应用。
 
 ## 总结
 
