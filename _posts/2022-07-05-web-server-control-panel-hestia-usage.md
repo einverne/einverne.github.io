@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Linux 服务器控制面板 Hestia 使用"
+title: "Linux 服务器控制面板 HestiaCP 使用"
 aliases:
-- "Linux 服务器控制面板 Hestia 使用"
+- "Linux 服务器控制面板 HestiaCP 使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -11,7 +11,7 @@ create_time: 2022-07-08 09:37:34
 last_updated: 2023-04-08 05:25:15
 ---
 
-Hestia 是一个开源的 Linux 服务器控制面板（Control Panel），HestiaCP fork 自另一款流行的控制面板 [VestaCP](https://vestacp.com/) 。由于 VestaCP 开发和维护趋于停止，很多安全问题和漏洞没有及时修复，所以有人从 VestaCP 拉出新分支进行开发和维护。Hestia 可以作为 aaPanel（宝塔面板）的很好的开源代替。
+Hestia CP 是一个开源的 Linux 服务器控制面板（Control Panel），HestiaCP fork 自另一款流行的控制面板 [VestaCP](https://vestacp.com/) 。由于 VestaCP 开发和维护趋于停止，很多安全问题和漏洞没有及时修复，所以有人从 VestaCP 拉出新分支进行开发和维护。Hestia 可以作为 aaPanel（宝塔面板）的很好的开源代替。
 
 HestiaCP 提供了一个简单干净的网页界面，给网站维护人员提供了更加简单的方式维护网页服务器。HestiaCP 提供了很多功能，包括
 
