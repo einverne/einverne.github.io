@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "chatwoot 开源的客户支持工具"
+title: "chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
 aliases:
-- "chatwoot 开源的客户支持工具"
+- "chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
 tagline: ""
 description: ""
 category: 产品体验
@@ -106,11 +106,16 @@ server {
     proxy_hide_header Upgrade;
 ```
 
-也就是说默认情况下会隐藏请求头。这倒置了我在安装完 chatwoot 之后，发送消息，管理后台以及前端小插件，iOS 客户端都不能实时收到新消息，必需整页刷新才能收到新消息，这导致我 Debug 了好久。虽然在之前安装 [VS Code Server 在线版](/post/2023/03/visual-studio-code-server-usage.html) 的时候就遇到过一次，但还是掉进了这个坑里面。
+也就是说默认情况下会隐藏请求头。这导致了我在安装完 chatwoot 之后，发送消息，管理后台以及前端小插件，iOS 客户端都不能实时收到新消息，必需整页刷新才能收到新消息，这导致我 Debug 了好久。虽然在之前安装 [VS Code Server 在线版](/post/2023/03/visual-studio-code-server-usage.html) 的时候就遇到过一次，但还是掉进了这个坑里面。
 
 ## Agent
 
 通过 Chatwoot 的 Agent API 可以自行编写回答机器人。如果接入了 OpenAI，Rasa 等聊天机器人就可以快速的搭建一套智能客服了。
+
+## Super Admin
+可以访问，`<chatwoot-installation-url>/super_admin`。
+
+
 
 ## reference
 
