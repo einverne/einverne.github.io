@@ -8,7 +8,6 @@ tags: [samba, smb, openwrt, linux]
 last_updated: 2017-03-10
 ---
 
-
 Samba，是种用来让 UNIX 系列的操作系统与微软 Windows 操作系统的 SMB/CIFS（Server Message Block/Common Internet File System）网络协议做链接的自由软件。[^1] Samba 能够为选定的 Unix 目录（包括所有子目录）创建网络共享。该功能使得 Windows 用户可以像访问普通 Windows 下的文件夹那样来通过网络访问这些 Unix 目录。
 
 samba 有两个守护进程，smbd 和 nmbd，是 samba 的核心进程。nmbd 进程允许其他计算机浏览 Linux 服务器，smbd 进程在 SMB 服务请求到达时进行处理，并对共享的资源进行协调。
