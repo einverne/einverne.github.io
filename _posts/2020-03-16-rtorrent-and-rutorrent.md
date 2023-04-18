@@ -18,7 +18,9 @@ last_updated:
 
 这些天去看 LinuxServer 突然发现它们不再维护更新 rutorrent 的镜像，可以转用 [crazy-max](https://github.com/crazy-max/docker-rtorrent-rutorrent) 编译的镜像。
 
-或者直接使用我的 [docker-compose.yml](https://github.com/einverne/dockerfile/tree/master/rtorrent-rutorrent)。先参考 README 修改对应的配置之后，`docker-compose up -d`，然后如果要使用 MaterialDesign ，和下面方法一样，因为已经映射到了机器的路径，
+或者直接使用我的 [docker-compose.yml](https://github.com/einverne/dockerfile/tree/master/rtorrent-rutorrent)。先参考 README 修改对应的配置之后，`docker-compose up -d`。
+
+然后我比较喜欢 MaterialDesign 这个 ruTorrent 的主题，如果要使用可以通过下面方法，因为已经映射到了机器的路径，
 
     ~/rtorrent/data/rutorrent/themes
 
@@ -31,7 +33,6 @@ last_updated:
     docker-compose restart
 
 然后在设置中就可以切换主题了。
-
 
 ### 失效方法
 linuxserver 提供的 [ruTorrent](https://hub.docker.com/r/linuxserver/rutorrent/) 很好用的。

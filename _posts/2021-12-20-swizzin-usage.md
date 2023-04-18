@@ -88,6 +88,15 @@ Swizzin 的密码是在执行初始化脚本的时候设定的，可以使用如
     sudo systemctl restart rtorrent@<yourusername>
     sudo systemctl status rtorrent@<yourusername>
 
+## 修改 ruTorrent 主题
+ruTorrent 的安装地址在
+
+```
+/srv/rutorrent/plugins/theme/themes
+```
+
+找到合适的主题克隆到该目录下即可。
+
 ## Transdroid/Transdrone 配置
 [[Transdroid]] 是一款 Android 上用来管理 BT 客户端的软件，Swizzin 安装的 ruTorrent 需要按照如下方式配置才能连接上。
 
