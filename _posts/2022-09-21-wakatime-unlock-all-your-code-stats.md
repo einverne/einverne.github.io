@@ -49,12 +49,10 @@ status_bar_enabled = true
 如果要设置 proxy，可以在下面填入 `http_proxy` 类似：`http://localhost:1080`
 
 ## Vim
-
+在 Vim 的配置中增加如下配置，Vim 下使用 [vim-plug](https://github.com/junegunn/vim-plug) 来管理插件：
 
     Plug 'wakatime/vim-wakatime'
 
-
-
 ## Self-hosted
 
-- [[wakapi]]
+- [[wakapi]] 是一个可以自己架设的 WakaTime 兼容后端管理平台，可以完美的作为 WataTime 的开源代替存在。
