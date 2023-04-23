@@ -47,8 +47,6 @@ StdSchedulerFactory 是 Scheduler 的工厂方法，实现了 SchedulerFactory �
     // 返回当前 JVM 中通过该 Factory 创建的所有 Scheduler
     Collection<Scheduler> getAllSchedulers() throws SchedulerException;
 
-
-
 SchedulerRepository 单例，内部持有一个 Map `HashMap<String, Scheduler> schedulers`
 
 类中，绑定 (bind)，解绑 (remove) 都为同步方法，保证线程安全。

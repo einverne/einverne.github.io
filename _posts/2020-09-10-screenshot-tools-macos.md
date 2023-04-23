@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Mac 上的截图工具"
+title: "macOS 上好用的截图工具"
 aliases: 
-- "Mac 上的截图工具"
+- "macOS 上好用的截图工具"
 tagline: ""
 description: ""
 category: 整理合集
-tags: [ macos, screenshot, snipaste, shottr,  ]
+tags: [ macos, screenshot, snipaste, shottr, record, ]
 last_updated:
 ---
 
@@ -23,7 +23,12 @@ last_updated:
 
 ## shottr
 
-[shottr](https://shottr.cc/) 是一款 macOS 上的截图工具。
+[shottr](https://shottr.cc/) 是一款 macOS 上的截图工具，支持部分，全屏，窗口，滚动截图。shottr 还支持文字打码。
+
+我沿用之前的习惯：
+
+- F1 部分截图
+- Cmd+Shift+F1 截取窗口
 
 ## Snipaste
 
@@ -39,6 +44,15 @@ last_updated:
 Jietu 是腾讯推出的截图工具。
 
 - <https://jietu.qq.com/>
+
+## CleanShot X
+[CleanShot X](https://cleanshot.com/) 是一款收费的截图工具。
+
+- 截图后的图片编辑器
+- CleanShot Cloud，一键上传图片
+- 滚动截图
+
+一次性付费 29$ 可以到的软件及 1GB 的 Cloud 空间。也可以选择月付费 10$，或者年付费，获得无限空间，自定义域名等服务。
 
 ## reference
 

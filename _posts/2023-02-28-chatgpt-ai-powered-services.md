@@ -120,6 +120,7 @@ Day 2
 ## 对话
 
 - [GPTBase](https://gptbase.ai/) 将自己的私有数据变成一个对话机器人并发布到网站。
+- [Mendable](https://www.mendable.ai/) 是一个可以将在线文档搜索变成一个非常有好的对话形式的网站，通常开发文档是又臭又长，但是逻辑非常严谨的，结构非常清晰的，所以比如 [[LlamaIndex]] 的在线[文档](https://gpt-index.readthedocs.io/) ，[LangChain.js](https://js.langchain.com/docs/) 就已经使用上了。
 
 ## 代码生成
 

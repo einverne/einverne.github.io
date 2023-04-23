@@ -40,11 +40,12 @@ Raycast 代替了如下我过去常常做的事情：
 如果在网上看到一段非常长的文章，可以直接选中，然后让 Raycast 总结。
 ![sA2g](https://photo.einverne.info/images/2023/04/11/sA2g.gif)
 
-## Create AI Command
+## Create AI Command 创建自己的命令行
 
-可以看到的是上面的所有的操作，大部分都是 Raycast AI 默认自己定义的，但是 Raycast AI 更强大的一点在于它可以自己创建 AI Command（prompt），也就是说可以利用 OpenAI 的上下文对话的能力，将一些固定的模式写道 Raycast 中，然后下次使用的时候就可以直接输入几个字母触发了。
+可以看到的是上面的所有的操作，大部分都是 Raycast AI 默认自己定义的，但是 Raycast AI 更强大的一点在于它可以自己创建 AI Command（prompt），也就是说可以利用 OpenAI 的上下文对话的能力，将一些固定的模式写道 Raycast 中，然后下次使用的时候就可以直接输入几个字母触发了。也可以利用 Raycast 自己的快捷键来一键呼出。
 
-## 一些小 Tip
+## 一些使用小 Tip
+Raycast 本身已经非常强大了，但是有一些贴心的功能他没有展示出来，需要用户自己去发现，下面就是一些使用的小 Tip。
 
 - 如果不满意 Raycast AI 的结果，可以直接按 Cmd+R 重新生成。
 - 生成内容之后可以使用 Cmd+k 来对结果进行更多的操作，比如复制，比如粘贴回选中的地方
