@@ -115,8 +115,6 @@ server {
 ## Super Admin
 可以访问，`<chatwoot-installation-url>/super_admin`。
 
-
-
 ## reference
 
 - <https://www.chatwoot.com/docs/self-hosted/deployment/docker>
