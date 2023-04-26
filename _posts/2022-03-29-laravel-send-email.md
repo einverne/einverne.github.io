@@ -139,7 +139,7 @@ Route::get('send-mail', function () {
         'body' => 'This is a test mail from Laravel',
     ];
 
-    Mail::to('einverne@gmail.com')->send(new \App\Mail\BookSendMail($detail));
+    Mail::to('demo@example.com')->send(new \App\Mail\BookSendMail($detail));
 
     dd("Email sent");
 });

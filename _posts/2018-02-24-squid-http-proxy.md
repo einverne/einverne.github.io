@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Squid http 代理"
+aliaes:
+- "Squid http 代理"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -26,7 +28,6 @@ Squid 默认是不允许任何客户端连接的，通过修改配置允许所�
 修改完成后重启代理服务
 
     sudo service squid restart
-
 
 ## reference
 

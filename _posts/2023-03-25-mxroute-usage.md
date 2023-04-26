@@ -120,6 +120,8 @@ MXRoute 不仅提供了邮件中显示的 Roundcube 的 Web Client，还可以�
 
 ![OMCC](https://photo.einverne.info/images/2023/03/28/OMCC.png)
 
+我现在也通过 [EV Hosting](https://client.einverne.info/order.php?step=1&productGroup=9&product=14) 来售卖 MXRoute 的邮箱服务，可以以比官方更便宜的价格最低套餐一年只需要 50 元来使用 MXRoute 的服务。
+
 ## reference
 
 - [官方文档](https://mxroutedocs.com/dns/cloudflare/)
