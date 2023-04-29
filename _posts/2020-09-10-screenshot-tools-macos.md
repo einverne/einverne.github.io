@@ -39,6 +39,9 @@ last_updated:
 
 - <https://zh.snipaste.com/>
 
+## iShot
+[iShot](https://www.better365.cn/ishot.html) 是一款 macOS 上的截图工具，支持长截图，OCR，标注等等功能。
+
 ## Jietu
 
 Jietu 是腾讯推出的截图工具。
