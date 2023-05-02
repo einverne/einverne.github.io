@@ -44,9 +44,9 @@ last_updated:
 
 [Sakurairo](https://github.com/mirai-mamori/Sakurairo) 一个多彩、轻松上手、体验完善，具有强大自定义功能的 WordPress 主题（基于 Sakura 主题，支持简繁英日多语言）
 
-### CorePress
+### CorePress Pro
 
-[CorePress](https://www.lovestu.com/corepress.html) 一款开源的 WordPress 主题。
+[CorePress Pro](https://www.lovestu.com/corepress.html) 一款开源的 WordPress 主题。但是目前也提供两个不同的版本，Free 版和 Pro 版，Pro 版一次性付费 99 元。
 
 ### WordPress Git
 
