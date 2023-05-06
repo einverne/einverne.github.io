@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "EV Hosting "
+title: "EV Hosting 注册服务"
 aliases:
-- ""
+- "EV Hosting 注册服务"
 tagline: ""
 description: ""
-category: 
-tags: [ ]
+category: 经验总结
+tags: [ev-hosting, domain, domain-registry, nameserver, dns,]
 create_time: 2023-05-06 14:08:10
 last_updated: 2023-05-06 14:08:10
 ---
