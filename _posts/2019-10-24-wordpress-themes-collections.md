@@ -53,6 +53,9 @@ last_updated:
 [WordPressGit](https://github.com/BennyThink/WordPressGit) Git 主题，由云落基于 yusi 主题基础上二次开发的一款功能强大具有超强自定义能力的主题。
 响应式，短代码，绿色，多彩，双栏，博客主题，小清新，代码高亮，强大，免费主题，CMS 主题，卡片式，图片主题
 
+[Independent Publish 2](https://wordpress.com/theme/independent-publisher-2) 是一款非常简洁的 WordPress 主题，由 Raam Dev 开发。
+
+
 ## 主题开发者
 
 [Anders Norén](https://andersnoren.se/) 是一位在 Sweden 斯德哥尔摩的设计师和开发者。他在博客上提供了很多免费的 WordPress 模板。

@@ -28,27 +28,28 @@ AdGuard 官方的文章也总结了 AdGuard Home 的几大优势：[^home]
 - Filter lists, 可以自定义过滤列表
 - Query Log，也就是我提到的可视化的访问日志
 
-
 ## AdGuard vs AdGuard Home
+
 开始之前要先声明一下，这篇文章后面提到的 AdGuard Home 都会是 AdGuard 这个公司提供的一个产品 ---- AdGuard Home.[^home]
 
 [^home]: <https://adguard.com/en/blog/introducing-adguard-home.html>
 
-
 ## AdGuard Home 的原理
+
 上面提到过很多不同的广告过滤方式，但是 AdGuard Home 采用完全不同的方式。首先来介绍一下什么是 AdGuard Home，AdGuard Home 是一个过滤全网范围的广告和追踪代码的 DNS Server，它的设计目的是让用户来全权掌握整个网络环境，它不依赖于任何客户端。所以从本质上来讲 AdGuard Home 是一个 DNS 服务器，通过屏蔽掉黑名单的域名来达到过滤广告的目的。
 
 ## 在 Raspberry Pi 中安装使用 AdGuard Home
+
 在树莓派上安装 AdGuard Home 非常简单，安装 [wiki](https://github.com/AdguardTeam/AdGuardHome/wiki/Raspberry-Pi) 上执行即可。
 
 ### 给 Raspberry Pi 设定静态 IP 地址
 
 Raspberry Pi 的网络配置 `/etc/dhcpcd.conf`，在下方添加
 
-	interface eth0
-	static ip_address=192.168.2.3/24
-	static routers=192.168.2.1
-	static domain_name_servers=192.168.2.1
+    interface eth0
+    static ip_address=192.168.2.3/24
+    static routers=192.168.2.1
+    static domain_name_servers=192.168.2.1
 
 注意我这里是使用的 `eth0` 接口，也就是网线连接的，如果使用 WiFi，那么需要设定 `wlan0`。
 
@@ -57,38 +58,41 @@ Raspberry Pi 的网络配置 `/etc/dhcpcd.conf`，在下方添加
 之后我的树莓派静态 IP 地址就是 `192.168.2.3`
 
 ### 验证安装
+
 上面提到过保证树莓派静态地址，然后执行安装向导，设定后台管理页面的端口（一般为 80，可以自行修改），以及 DNS 服务端口（一般为 53)。这样 53 端口就对外提供了 DNS 服务，可以通过
 
-	nslookup douban.com 192.168.2.3
+    nslookup douban.com 192.168.2.3
 
 来验证 DNS 服务器正常工作，如果正常工作返回
 
-	Server:         192.168.2.3
-	Address:        192.168.2.3#53
+    Server:         192.168.2.3
+    Address:        192.168.2.3#53
 
-	Non-authoritative answer:
-	Name:   douban.com
-	Address: 154.8.131.171
-	Name:   douban.com
-	Address: 154.8.131.172
-	Name:   douban.com
-	Address: 154.8.131.165
+    Non-authoritative answer:
+    Name:   douban.com
+    Address: 154.8.131.171
+    Name:   douban.com
+    Address: 154.8.131.172
+    Name:   douban.com
+    Address: 154.8.131.165
 
 验证拦截
 
-	nslookup doubleclick.net 192.168.2.3
-	Server:         192.168.2.3
-	Address:        192.168.2.3#53
+    nslookup doubleclick.net 192.168.2.3
+    Server:         192.168.2.3
+    Address:        192.168.2.3#53
 
-	** server can't find doubleclick.net: NXDOMAIN
+    ** server can't find doubleclick.net: NXDOMAIN
 
 ### 设置路由器和其他设备
+
 如果能够设置路由器，直接去路由器管理后台，将网络的 DNS，改为树莓派的地址，比如我的 192.168.2.3 即可。其他设备直接就生效了。如果改不了路由器就只能每一个设备改了。
 
 ### 其他管理命令
+
 AdGuardHome 安装的命令：
 
-	sudo ./AdGuardHome -s install
+    sudo ./AdGuardHome -s install
 
 其他管理命令：
 
@@ -98,11 +102,11 @@ AdGuardHome 安装的命令：
 - AdGuardHome -s restart - restarts the service.
 - AdGuardHome -s status - shows the current service status.
 
-
 ## Docker 安装
+
 因为 AdGuardHome 是使用 Go 所写，所以跨平台天然支持，Docker 安装自然也非常容易。
 
-	docker pull adguard/adguardhome
+    docker pull adguard/adguardhome
 
 ```
 docker run --name adguardhome \
@@ -123,11 +127,9 @@ docker run --name adguardhome \
 - `-p 784:784/udp` 作为 DNS-over-QUIC 服务器
 - `-p 5443:5443/tcp -p 5443:5443/udp` 作为 DNSCrypt 服务器
 
-
 参数可以参数官方网站：
 
 - <https://hub.docker.com/r/adguard/adguardhome>
-
 
 ## 设置
 
@@ -143,7 +145,7 @@ AdGuard 提供了一份非常详细的 DNS 服务提供商的列表：
 
 进入后台可以看到 AdGuard 默认使用的是
 
-	https://dns10.quad9.net/dns-query
+    https://dns10.quad9.net/dns-query
 
 不过在国内可能在测试上游 DNS 服务器的时候
 
@@ -188,7 +190,6 @@ Bootstrap DNS 服务器
 2620:fe::fe:10
 ```
 
-
 ### 过滤器
 
 AdGuard Home 自身已经内置了一些过滤规则，并且 AdGuard Home 兼容 Adblock 的过滤规则。
@@ -209,11 +210,12 @@ AdGuard Home 自身已经内置了一些过滤规则，并且 AdGuard Home 兼�
 
 如果想要反解析一个给定的 IP 地址，需要反转 IP 地址，然后在后面添加一个特殊的域名，比如 `in-addr.arpa`，比如想要反解析 8.8.4.4 对应的域名，需要构造这样的地址：
 
-	4.4.8.8.in-addr.arpa
+    4.4.8.8.in-addr.arpa
 
 然后可以使用 `dig -x 4.4.8.8.in-addr.arpa @8.8.8.8` 来进行反向解析查看结果。
 
 ### SERVFAIL
+
 观察查询日志，在我的内网里面能看到不少的 `SERVFAIL`，这里就顺带复习一下 DNS RCODE[^rcode]，DNS 请求的返回码：
 
 - NOERROR(0)，成功响应，解析成功
@@ -235,15 +237,16 @@ AdGuard Home 和 Pi-Hole 利用相似的原理可以达到基本一致的效果�
 - 访问控制，可以实现精确的谁能访问 DNS 服务器
 
 ## Configuration
+
 AdGuard Home 的配置文件是 yaml 格式，格式非常易读。
 
 ### DNS TTL
+
 在设置里面有一个 DNS TTL 的设置，这里 TTL 是 `Time to Live` 缩写，指的是 DNS 需要缓存多久然后才去刷新新的解析结果。
 
 当改变 DNS 配置的时候，需要花费一些时间来通知互联网这个修改，比如修改一个域名对应的 IP 地址，修改 MX 记录等等，TTL 配置就是告诉互联网需要缓存这一次的结果多久才需要再来请求信息。
 
 那么在家用环境里面可以根据自己的情况设置一个合理的值，我个人觉得大部分网站设置一个 10 分钟的缓存就可以了。
-
 
 ```
 bind_host: 0.0.0.0
@@ -369,7 +372,6 @@ verbose: false
 schema_version: 6
 ```
 
-
 更加具体的配置选项可以参考：
 
 - <https://github.com/AdguardTeam/AdGuardHome/wiki/Configuration>
@@ -377,7 +379,6 @@ schema_version: 6
 ## 延伸阅读
 
 - [adguard-sync](https://github.com/atoy3731/adguard-sync) 是一个同步配置的工具。
-
 
 ## reference
 
