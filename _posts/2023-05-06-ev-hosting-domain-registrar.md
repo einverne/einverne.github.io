@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "EV Hosting 注册服务"
+title: "EV Hosting 域名注册服务"
 aliases:
-- "EV Hosting 注册服务"
+- "EV Hosting 域名注册服务"
 tagline: ""
 description: ""
 category: 经验总结
