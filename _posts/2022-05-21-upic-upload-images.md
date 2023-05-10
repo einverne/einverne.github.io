@@ -53,7 +53,7 @@ Lsky Pro 兰空图床是一个 PHP 编写的图床程序。Lsky Pro 升级了 2.
 
 API:
 
-	GET http://mysite.com/api/1/upload/?key=12345&source=http://somewebsite/someimage.jpg&format=json
+	POST http://mysite.com/api/1/upload/?key=12345&source=http://somewebsite/someimage.jpg&format=json
 
 参数：
 

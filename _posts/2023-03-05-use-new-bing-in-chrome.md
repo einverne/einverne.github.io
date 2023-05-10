@@ -13,7 +13,12 @@ last_updated: 2023-03-12 08:35:41
 
 拿到 New Bing（新病）的体验，但是 Microsoft 却要让我下载 Edge 才能体验，这个体验真的很差，所以回去用 Google 搜了一下「如何在 Chrome 中使用 New Bing」，还在还是有方法的。
 
-- 安装 [HeaderEditor](https://chrome.google.com/webstore/detail/header-editor/eningockdidmgiojffjmkdblpjocbhgh/related) 插件
+## 2023 年 5 月 9 号更新
+5 月以后推荐 [New Bing Anywhere](https://chrome.google.com/webstore/detail/new-bing-anywhere/hceobhjokpdbogjkplmfjeomkeckkngi) 这款[开源](https://github.com/haozi/New-Bing-Anywhere)的 Chrome 插件。
+
+## HeaderEditor
+
+- ~~安装 [HeaderEditor](https://chrome.google.com/webstore/detail/header-editor/eningockdidmgiojffjmkdblpjocbhgh/related) 插件~~
 - 按下图的方式添加两条规则
 
 ![2naD](https://photo.einverne.info/images/2023/03/12/2naD.png)
