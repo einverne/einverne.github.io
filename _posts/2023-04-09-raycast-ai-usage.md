@@ -45,6 +45,7 @@ Raycast 代替了如下我过去常常做的事情：
 可以看到的是上面的所有的操作，大部分都是 Raycast AI 默认自己定义的，但是 Raycast AI 更强大的一点在于它可以自己创建 AI Command（prompt），也就是说可以利用 OpenAI 的上下文对话的能力，将一些固定的模式写道 Raycast 中，然后下次使用的时候就可以直接输入几个字母触发了。也可以利用 Raycast 自己的快捷键来一键呼出。
 
 ## 一些使用小 Tip
+
 Raycast 本身已经非常强大了，但是有一些贴心的功能他没有展示出来，需要用户自己去发现，下面就是一些使用的小 Tip。
 
 - 如果不满意 Raycast AI 的结果，可以直接按 Cmd+R 重新生成。
@@ -52,5 +53,11 @@ Raycast 本身已经非常强大了，但是有一些贴心的功能他没有展
 - Raycast AI 可以设置快捷键，比如可以将常用的 Ask AI，translate 等等设置一个单独的快捷键
 
 ## alternative
+
 如果还没有排到 Raycast AI，还可以试试 macOS 上的 [MacGPT](https://www.macgpt.com/)。
 
+## 折扣码
+
+Raycast AI 将会进入 Raycast Pro 的套餐，每个月 8 美元，目前可以使用 RAYFRIENDS10 来获取 10% 的折扣。
+
+![raycast ai pro](https://photo.einverne.info/images/2023/05/10/qJ8I.png)

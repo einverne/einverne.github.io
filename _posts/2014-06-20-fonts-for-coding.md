@@ -83,9 +83,14 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 更多编程字体预览：
 
 - <https://coding-fonts.netlify.app/>
+- https://www.programmingfonts.org/#pt
+- https://github.com/subframe7536/Maple-font
+- https://rubjo.github.io/victor-mono/
+- https://github.com/TakWolf/fusion-pixel-font
+- https://www.ibm.com/plex/
+- https://github.com/be5invis/Sarasa-Gothic
 
 ## reference
-
 
 - <https://itnext.io/11-best-programming-fonts-724283a9ed57>
 - <https://github.com/ProgrammingFonts/ProgrammingFonts>
