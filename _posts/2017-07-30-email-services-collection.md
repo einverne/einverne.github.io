@@ -39,18 +39,21 @@ last_updated:
 
 [[Mailgun]] 提供了 HTTP API 和 SMTP 两种方式发送邮件。
 
-~~免费服务每个月 10000 封 / 单个域名 限制，个人其实完全用不完。~~老账号似乎还有每个月 10000 封邮件的免费额度。
+~~免费服务每个月 10000 封 / 单个域名 限制，个人其实完全用不完。~~老账号似乎还有每个月 10000 封邮件的免费额度。但是 Mailgun 的 Free 账号，没有绑定信用卡已经无法添加域名了。
 
 Mailgun 似乎调整了收费方式，对于新注册的用户，前三个月可以每个月有 5000 封邮件的免费额度。一旦超过 3 个月，就需要根据使用来选择套餐付费使用。
+
+而 Mailgun 升级第一档付费的就要 35 美元一个月，并且也只能发送 5 万邮件一个月。
 
 ## SendGrid
 
 [[SendGrid]] 免费服务每天可以发送 100 封邮件，同样支持 API 和 SMTP 方式，还可以使用 Webhook 方式。
 
 ## MXRoute
+
 [MXRoute](https://mxroute.com/) 是 LowEndTalk 上一位名叫 [jar](https://lowendtalk.com/profile/jar) 的管理员提供的邮件服务，在最便宜的时候可以以 15 美元的价格购买一年的服务，目前也在官网提供 199 美元终身的服务。
 
-MXRoute  不允许发送垃圾邮件，并且对于发送邮件每个电子邮件地址每小时 300 封出站电子邮件。
+MXRoute 不允许发送垃圾邮件，并且对于发送邮件每个电子邮件地址每小时 300 封出站电子邮件。
 
 如果你想以更低的价格使用 MXRoute 的服务，也可以[联系我](https://client.einverne.info) 以更低的价格出售 MXRoute 的服务。
 
@@ -143,8 +146,12 @@ Mailchannels 是一家邮件发送服务提供商。
 - <https://www.zoho.com/mail/>
 
 ## Mailcheap
+
 [Mailcheap](https://www.mailcheap.co/) 是一家提供邮件发送服务的供应商。
 
+## Migadu
+
+[Migadu](https://www.migadu.com/) 是一个收费的域名邮箱服务提供商，看了一下价格还挺贵。
 
 ## 相关
 

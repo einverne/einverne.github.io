@@ -97,11 +97,11 @@ GitLab 是一个比较完善的解决方案，但缺点就是重，维护成本�
 使用 [qiandao](https://einverne.github.io/post/2021/10/qiandao.html) 来搭建自己的自动化每日签到网站。
 
 ## 统计数据
+[[2023-05-13-google-analytics-alternative]]
 
 - [[Umami]]
 - [Plausible](https://plausible.io/)
 - [[Matomo]]
-- [[google-analytics-alternative]]
 
 ### Umami
 
