@@ -6,10 +6,9 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ backup, duplicacy, backblaze, google-drive, rsync ]
+tags: [ backup, backup-tool, duplicacy, backblaze, google-drive, rsync ]
 last_updated:
 ---
-
 
 [Duplicacy](https://duplicacy.com/) 是一个用 Go 语言实现的，开源的，跨平台的备份工具。
 
