@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ev-hosting, domain, domain-registry, nameserver, dns,]
+tags: [ev-hosting, hosting, clientexec, domain, domain-registry, nameserver, dns,]
 create_time: 2023-05-06 14:08:10
 last_updated: 2023-05-06 14:08:10
 ---
