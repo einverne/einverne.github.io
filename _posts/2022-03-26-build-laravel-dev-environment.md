@@ -6,14 +6,14 @@ aliases:
 tagline: ""
 description: ""
 category: laravel
-tags: [ laravel, php, dev, ide, phpstorm, jetbrains ]
+tags: [ laravel, php, dev, ide, phpstorm, jetbrains, docker ]
 last_updated:
 ---
 
 Laravel 提供了多种安装方式：
 
 - 可以通过官方提供的 [[Laravel Sail]] 初始化环境，Laravel Sail 是一个轻量的命令行工具可以和 Docker 开发环境交互。这意味着如果要使用 Sail 本地需要安装 Docker 环境。
-- 通过 Composer 安装，Composer 是一个 PHP 环境下的依赖管理器工具
+- 通过 [[Composer]] 安装，Composer 是一个 PHP 环境下的依赖管理器工具
 - Laravel Installer
 
 ## Laravel Sail
@@ -33,9 +33,9 @@ cd example-app
 
 之后就可以直接使用 `sail up` 命令。
 
-一旦应用启动之后，可以访问本地：http://localhost .
+一旦应用启动之后，可以访问本地：<http://localhost> .
 
-不过这里我不清楚为什么我本地的 80 端口始终无法访问，所以我只能按照 `docker-compose.yml` 中的配置，将 `APP_PORT` 修改成 8080 端口，才能正常访问到。
+不过在这里，我不清楚为什么我本地的 80 端口始终无法访问，所以我只能按照 `docker-compose.yml` 中的配置，将 `APP_PORT` 修改成 8080 端口，才能正常访问到。
 
 Laravel Sail 启动之后会自动拉取如下组件：
 

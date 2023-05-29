@@ -153,6 +153,10 @@ Mailchannels 是一家邮件发送服务提供商。
 
 [Migadu](https://www.migadu.com/) 是一个收费的域名邮箱服务提供商，看了一下价格还挺贵。
 
+## mailtrap
+
+[mailtrap](https://mailtrap.io/) 是一个发送邮件的服务，免费版本提供每个月 100 封的测试邮件。
+
 ## 相关
 
 - [[SMTP Relay]]

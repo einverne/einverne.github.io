@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ japanese, dictionary, learning-note,  ]
+tags: [japanese, dictionary, learning-note, language-learning]
 create_time: 2022-10-23 09:23:00
 last_updated: 2022-10-23 09:23:00
 ---
@@ -107,7 +107,6 @@ Apple 系统中包含的辞典：
 ![japanese 明天](https://photo.einverne.info/images/2022/12/09/Zc9g.png)
 
 这个时候能看到日语中会写作「明日」，然后继续查就会发现明天有三种说法，あした、あす、みょうにち。这个时候如何区别这三个单词的用法就只能再去查阅其他[材料](https://japanese.stackexchange.com/a/14399/55185) 了。
-
 
 ## reference
 
