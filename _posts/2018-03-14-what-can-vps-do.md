@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "VPS 云服务器能够做什么"
+aliases: "VPS 云服务器能够做什么"
 tagline: ""
 description: ""
 category: 经验总结

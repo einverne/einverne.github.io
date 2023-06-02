@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "我的 Obsidian 笔记跨设备同步方案"
+aliases: "我的 Obsidian 笔记跨设备同步方案"
 tagline: ""
 description: ""
-category: 检验总结
+category: 经验总结
 tags: [obsidian, markdown, git, syncthing, note, note-taking,]
 last_updated:
 ---
@@ -11,6 +12,7 @@ last_updated:
 自从半年前发现了 [Obsidian](/post/2020/05/obsidian-note-taking.html) 这款笔记软件，我就开始大量的使用该应用做笔记，有人说过：「工具是开发者方法论的固化」。这么多年了我一直有一种工具控的倾向，往往同一个需求会对比可能的所有方案，最后再决定一个，但是近些年来我越来越倾向于「简单就是好」，并且数据要由自己掌控的「工具选择逻辑」。
 
 ## Do one thing and do it well
+
 基于上面的选择逻辑，我的 Obsidian 跨平台同步工具，我选择了：
 
 - [Syncthing](/post/2019/10/syncthing.html)，作为文件同步工具
@@ -28,8 +30,8 @@ last_updated:
 
 <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">用了一年多 <a href="https://twitter.com/hashtag/obsidian?src=hash&amp;ref_src=twsrc%5Etfw">#obsidian</a> ，虽然平时都用 Syncthing 来同步，但还是买了一年 Sync，支持一下开发者。 <a href="https://t.co/YPvNXMDhyI">pic.twitter.com/YPvNXMDhyI</a></p>&mdash; Ein Verne (@einverne) <a href="https://twitter.com/einverne/status/1440676136460046351?ref_src=twsrc%5Etfw">September 22, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
 ## 我的需求
+
 我最基本的需求，就是当我有什么想法的时候，可以随时随地地记录到一个地方，这个地方以前是 wiznote，但是我迁移到了 Obsidian 之后，缺乏两个机制：
 
 - 一个是多平台的同步
