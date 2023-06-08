@@ -25,7 +25,7 @@ Skiff 将 E2EE （端到端加密技术）作为在线工作的核心设计原�
 - 支持三个邮箱别名
 - 客户端有 Android, iOS, macOS 版本
 
-今年 3 月 31 日，Skiff 完成了 1050 万美元 A 轮融资，由红杉资本领投。在去年 5 月红杉资本就参与领投了 Skiff 420 万美元种子轮，投资方还包括一群在隐私和去中心化领域拥有深厚专业知识的天使投资人：Mozilla 前首席执行官 John Lilly、Coinbase 前首席技术官 Balaji Srinivasan、TCG 加密投资者 Gaby Goldberg 和来自 Dropbox 和以太坊基金会的 Albert Ni。
+今年 3 月 31 日，Skiff 完成了 1050 万美元 A 轮融资，由红杉资本领投。在去年 5 月红杉资本就参与领投了 Skiff 420 万美元种子轮，投资方还包括一群在隐私和去中心化领域拥有深厚专业知识的天使投资人：Mozilla 前首席执行官 John Lilly、[[Coinbase]] 前首席技术官 Balaji Srinivasan、TCG 加密投资者 Gaby Goldberg 和来自 Dropbox 和以太坊基金会的 Albert Ni。
 
 ## 端到端加密
 用户每次登录 Skiff 时，浏览器都会生成一个密钥，该密钥用于在成功登录后解密由 Skiff 的服务器发送到您设备的帐户数据，并且都是在本地发生的。从中派生的密钥永远不会通过任何网络发送和存储在 Skiff 的服务器中。
