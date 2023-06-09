@@ -157,6 +157,9 @@ Mailchannels 是一家邮件发送服务提供商。
 
 [mailtrap](https://mailtrap.io/) 是一个发送邮件的服务，免费版本提供每个月 100 封的测试邮件。
 
+## Sendy
+[Sendy](https://sendy.co/) 是一个电子邮件发送服务，宣称比 Amazon SES 便宜 100 倍。
+
 ## 相关
 
 - [[SMTP Relay]]
