@@ -57,6 +57,10 @@ MXRoute 不允许发送垃圾邮件，并且对于发送邮件每个电子邮件
 
 如果你想以更低的价格使用 MXRoute 的服务，也可以[联系我](https://client.einverne.info) 以更低的价格出售 MXRoute 的服务。
 
+## Resend
+[Resend](https://resend.com/home) 是一个专为开发者而服务的发送邮件系统。提供每天 100 封，一个月 3000 封邮件的免费试用额度。
+
+
 ## Mailjet
 
 - <https://app.mailjet.com/signin>

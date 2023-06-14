@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ cursor, editor, programming, ai,  ]
+tags: [ cursor, editor, programming, ai, ide, visual-code, ]
 create_time: 2023-03-24 10:49:07
 last_updated: 2023-03-24 10:49:07
 ---

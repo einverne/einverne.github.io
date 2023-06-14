@@ -20,8 +20,8 @@ VPS 性能测试的几个方面：
 ## 综合类测试
 在运行这类测试脚本之前，最好先将脚本下载下来之后打开看一眼，以防止安装执行一些不可信的文件。
 
-## IPASN AIO Benchmark by mastervnc
-相较于其他 benchmark 的优势在于可以测试全球不同地区的网络延迟情况。
+### IPASN AIO Benchmark by mastervnc
+The Ultimate Benchmark Script 相较于其他 benchmark 的优势在于可以测试全球不同地区的网络延迟情况。
 
 ```
 sudo curl -sL -k https://ipasn.com/bench.sh | sudo bash
