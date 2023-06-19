@@ -18,24 +18,11 @@ last_updated:
 
 ## 工具应用
 
-### Trello
-看板应用
+- [Trello](https://trello.com/einverne/recommend) 看板应用
+- [NextDNS](https://nextdns.io/?from=fgmesze4)
 
-- <https://trello.com/einverne/recommend>
-
-### NextDNS
-
-- <https://nextdns.io/?from=fgmesze4>
-
-### Pomotodo
-番茄工作法
-
-- <https://pomotodo.com/r/MFPLHRDX>
-
-### Airbnb
-民宿
-
-- <https://abnb.me/e/YynYPCsLWU>
+- [Pomotodo](https://pomotodo.com/r/MFPLHRDX) 番茄工作法
+- [Airbnb](https://abnb.me/e/YynYPCsLWU) 民宿
 
 ## VPS
 
@@ -45,12 +32,11 @@ last_updated:
 
 DirectSpace 多年没有更新，虚拟化也停留在老一代的 OpenVZ ，放弃使用了。
 
-### BandwagonHost
-[搬瓦工](https://gtk.pw/bwg)是一家提供高可靠 VPS 的虚拟主机提供商，网络质量比较好。
-
-### Linode
-[Linode](https://gtk.pw/linode) 用的日本的节点，稳得不行，5 刀一个月
-
+- [搬瓦工 BandwagonHost](https://gtk.pw/bwg)是一家提供高可靠 VPS 的虚拟主机提供商，网络质量比较好。
+- [Linode](https://gtk.pw/linode) 用的日本的节点，5 刀一个月
+- HostHatch
+- GreenCloud
+- RackNerd
 
 ## 云产品
 
@@ -59,13 +45,9 @@ DirectSpace 多年没有更新，虚拟化也停留在老一代的 OpenVZ ，放
 ## 网盘
 
 ### Dropbox
-Dropbox 用到如今最好的网盘，我也[只推荐 Dropbox](/post/2015/07/dropbox-tips.html)
+[Dropbox](https://db.tt/isyvu6ny) 用到如今最好的网盘，我也[只推荐 Dropbox](/post/2015/07/dropbox-tips.html)
 
-- <https://db.tt/isyvu6ny>
-
-### PCloud
-
-- <https://my.pcloud.com/#page=register&invite=VKXvZKvEM17>
+- [PCloud](https://my.pcloud.com/#page=register&invite=VKXvZKvEM17)
 
 ## 论坛
 
