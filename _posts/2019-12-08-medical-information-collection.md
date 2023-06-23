@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "专业医学信息网站整理"
+aliases: "专业医学信息网站整理"
 tagline: ""
 description: ""
 category: [ 经验总结 , 整理合集 ]

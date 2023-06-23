@@ -5,7 +5,7 @@ aliases:
 - "日语学习相关工具"
 tagline: ""
 description: ""
-category: 
+category: 整理合集
 tags: [japanese, japan, goldendict, chrome-extension, translator]
 create_time: 2022-10-27 23:05:37
 last_updated: 2022-10-27 23:05:37
@@ -53,7 +53,7 @@ last_updated: 2022-10-27 23:05:37
 
 - [Furigana](https://chrome.google.com/webstore/detail/furigana/ingbigompaecaefaoihaicmkgepkmkeg)
 - [Furigana Toggle](https://chrome.google.com/webstore/detail/furigana-toggle/nkkjdpdmojaobchjkhhlfgeopllbldcg/related)
-- [10ten Japanese Reader (Rikaichamp)](https://chrome.google.com/webstore/detail/10ten-japanese-reader-rik/pnmaklegiibbioifkmfkgpfnmdehdfan)
+- [[10ten-ja-reader]]  [10ten Japanese Reader (Rikaichamp)](https://chrome.google.com/webstore/detail/10ten-japanese-reader-rik/pnmaklegiibbioifkmfkgpfnmdehdfan) 
 
 10ten Japanese Reader 可以告知词语的来源，比如 アンケート 来自于法语。
 ![](https://photo.einverne.info/images/2023/01/12/g2wr.png)

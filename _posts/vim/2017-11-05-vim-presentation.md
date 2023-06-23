@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "一次 vim 的简单介绍"
+aliases: "一次 vim 的简单介绍"
 tagline: ""
 description: ""
 category: Vim

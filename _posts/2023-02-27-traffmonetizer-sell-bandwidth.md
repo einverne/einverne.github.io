@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "使用 Traffmonetizer 来售卖闲置流量"
+title: "使用 Traffmonetizer 来售卖闲置流量 VPS 挂机赚钱"
 aliases:
-- "使用 Traffmonetizer 来售卖闲置流量"
+- "使用 Traffmonetizer 来售卖闲置流量 VPS 挂机赚钱"
 tagline: ""
 description: ""
 category: 产品体验
