@@ -97,9 +97,7 @@ Mailchimp 是一个电子邮件订阅的在线工具。
 
 ## mailtrap
 
-mailtrap 给个人开发这提供免费 500 封测试邮件。
-
-- <https://mailtrap.io/>
+[mailtrap](https://mailtrap.io/) 给个人开发这提供免费 500 封测试邮件。
 
 ## mail baby
 
