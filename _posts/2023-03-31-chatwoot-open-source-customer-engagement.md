@@ -115,6 +115,17 @@ server {
 ## Super Admin
 可以访问，`<chatwoot-installation-url>/super_admin`。
 
+## 升级 Chatwoot
+
+因为使用 Docker Compose 安装 Chatwoot，所以升级非常简单。
+
+```
+docker-compose pull
+docker-compose up -d
+
+docker exec -it $(basename $(pwd))-rails-1 sh -c 'RAILS_ENV=production bundle exec rails db:chatwoot_prepare'
+```
+
 ## reference
 
 - <https://www.chatwoot.com/docs/self-hosted/deployment/docker>
