@@ -94,7 +94,7 @@ docker pull loadimpact/k6
 
 ## **HTTP 请求**
 
-新建一个 script.js 文件
+新建一个 `script.js` 文件
 
 Get 请求 `get(url, [params])`
 
@@ -109,8 +109,7 @@ export let options = {
 export default function() {
   // 标头
   let params = { headers: { 'Content-Type': 'application/json' } };
-
-  var res=http.get("https://test.k6.io",params)
+  var res=http.get("https://test.k6.io", params)
 }
 ```
 
@@ -257,7 +256,7 @@ export default function () {
 
 设置了 `sending_time` 这个自定义指标之后在 k6 运行的结果中就能看到新定义的指标。
 
-## **常用 Option 选项**
+## 常用 Option 选项
 
 VUs：指定同时运行的虚拟用户数量，必须是一个整数，和 duration 搭配使用。默认值：1
 
@@ -551,6 +550,24 @@ export let options = {
 k6 run --http-debug test.js
 ```
 
+## Options 的顺序
+
+k6 提供了很多方式来设置 [Options](https://k6.io/docs/using-k6/k6-options/how-to/).
+
+- CLI 选项
+- 环境变量
+- 脚本中的 options 对象
+
+执行的顺序，优先级从低到高：
+
+- Defaults，默认使用
+- `--config`
+- Script options
+- Environment variables
+- CLI Flags
+
+如果 Options 发生冲突，那么 k6 会遵循上面的优先级，CLI flags 中的是最高优先级，会覆盖其他所有设置。
+
 ## **Checks 检查**
 
 Checks 类似断言，不同在于 Checks 不会停止当前的脚本。指标都可以作为检查的项目。
@@ -757,6 +774,84 @@ k6 run --out influxdb=http://xxxxx:8086/K6test test.js
 效果图
 
 ![DEgL](https://photo.einverne.info/images/2023/07/10/DEgL.png)
+
+## Scenarios
+
+Scenarios （场景）配置 VU 和迭代计划的方式，通过 Scenarios 配置，可以在负载测试中对不同的工作负载或流量模式进行建模。
+
+使用场景的优势 ：
+
+- 同一个脚本中可以声明多个场景，每个场景都可以执行不同的 JavaScript 函数
+- 模拟更真实的流量，每个场景都可以使用不同的 VU 和调度模式
+- 并行或顺序执行测试
+- 每个场景都可以设置不同的环境变量和指标
+
+```
+export const options = {
+  scenarios: {
+    example_scenario: {
+      // name of the executor to use
+      executor: 'shared-iterations',
+
+      // common scenario configuration
+      startTime: '10s',
+      gracefulStop: '5s',
+      env: { EXAMPLEVAR: 'testing' },
+      tags: { example_tag: 'testing' },
+
+      // executor-specific configuration
+      vus: 10,
+      iterations: 200,
+      maxDuration: '10s',
+    },
+    another_scenario: {
+      /*...*/
+    },
+  },
+};
+```
+
+`executor` 场景必须使用预定义的 executor 来配置，设置运行的时间，流量是否保持恒定，工作负载是按 VU 还是按到达率。
+
+- 按迭代次数
+  - `shared-iterations` 在 VUs 之前 shares iterations
+  - `per-vu-iterations` 让每一个 VU 运行配置的迭代
+- 按 VU 数量
+  - `constant-VUs` 恒定数量发送 VU
+  - `ramping-vus` 根据配置阶段性增加 VU 数量
+- 按 iteration rate
+  - `constant-arrival-rate` 以恒定速率开始迭代
+  - `ramping-arrival-rate` 根据配置的阶段提高 iteration rate
+
+Scenario example
+
+```
+import http from "k6/http";
+
+export const options = {
+  scenarios: {
+    shared_iter_scenario: {
+      executor: "shared-iterations",
+      vus: 10,
+      iterations: 100,
+      startTime: "0s",
+    },
+    per_vu_scenario: {
+      executor: "per-vu-iterations",
+      vus: 10,
+      iterations: 10,
+      startTime: "10s",
+    },
+  },
+};
+
+export default function () {
+  http.get("https://test.k6.io/");
+}
+```
+
+- `shared_iter_scenario` 10 个 VU 进行 100 次迭代
+- `per-vu-iterations` 在 10 秒之后开始，10 个 VU 每个运行 10 次迭代
 
 ## **总结**
 

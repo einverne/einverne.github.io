@@ -144,7 +144,7 @@ Day 2
 ## 相关 GitHub 开源项目
 
 - [LlamaIndex (GPT Index)](https://github.com/jerryjliu/llama_index) 是一个处理 LLM 外部数据的 Python 库。解决 prompt 大小限制的问题。
-- [chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) 一个开源的用于构建聊天对话的 UI，使用 Next.js, TypeScript, 和 [[TailwindCSS]] 构建
+- [chatbot-ui](https://github.com/mckaywrigley/chatbot-ui) 一个开源的用于构建聊天对话的 UI，使用 Next.js, [[TypeScript]], 和 [[TailwindCSS]] 构建
 - [myGPTReader](https://github.com/madawei2699/myGPTReader) 一个基于 Slack 的 ChatGPT 机器人。
 - [bilingual_book_maker](https://github.com/yihong0618/bilingual_book_maker) 用来制作双语电子书的 Python 脚本
 - [xiaogpt](https://github.com/yihong0618/xiaogpt) 让小爱于 ChatGPT 连接
