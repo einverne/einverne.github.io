@@ -814,13 +814,13 @@ export const options = {
 `executor` 场景必须使用预定义的 executor 来配置，设置运行的时间，流量是否保持恒定，工作负载是按 VU 还是按到达率。
 
 - 按迭代次数
-  - `shared-iterations` 在 VUs 之前 shares iterations
-  - `per-vu-iterations` 让每一个 VU 运行配置的迭代
+  - `shared-iterations` 在 VUs 之前 shares iterations，在所有并发的 VUs 中共享迭代，当所有的迭代完成时，测试结束
+  - `per-vu-iterations` 让每一个 VU 运行配置的迭代，每个 VU 执行一定数量的迭代。
 - 按 VU 数量
-  - `constant-VUs` 恒定数量发送 VU
-  - `ramping-vus` 根据配置阶段性增加 VU 数量
+  - `constant-VUs` 恒定数量发送 VU，在指定的时间内以恒定的并发虚拟用户数 (VUs) 执行
+  - `ramping-vus` 根据配置阶段性增加 VU 数量，缓慢增加并发用户数
 - 按 iteration rate
-  - `constant-arrival-rate` 以恒定速率开始迭代
+  - `constant-arrival-rate` 以恒定速率开始迭代，
   - `ramping-arrival-rate` 根据配置的阶段提高 iteration rate
 
 Scenario example
