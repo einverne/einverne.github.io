@@ -11,7 +11,7 @@ create_time: 2023-06-08 22:35:17
 last_updated: 2023-06-08 22:35:17
 ---
 
-[Traffmonetizer](https://gtk.pw/traff) 是一个售卖流量的平台，闲置的流量可以售卖给该网站赚取利润。同样该网站售卖的流量也可以兑换成 USDT。
+[Traffmonetizer](https://gtk.pw/traff) 是一个售卖流量的平台，闲置的流量可以售卖给该网站赚取利润。同样该网站售卖的流量也可以兑换成 USDT。如果手上有闲置的 VPS，并且不在乎流量那么可以挂一挂 Traffmonetizer 来赚赚钱来小小弥补一下 VPS 的支出。
 
 在 Traffmonetizer 之前我还用过一段时间 [[nanowire]] ，用一台废弃的 [[OpenVZ]] 的机器挂了不知道多久，然后还兑换了几个 XNO 代币。
 
