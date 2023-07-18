@@ -10,7 +10,7 @@ tags: [typescript, javascript, web, frontend, ]
 last_updated:
 ---
 
-最近浏览 GitHub 发现一个有趣的[项目 PT Plugin Plus](https://github.com/ronggang/PT-Plugin-Plus/) 代码拉下来发现是 ts 语言写的，就顺便了解一下。[^ts] 目标很简单，不是为了写 ts 项目，只是为了能看懂项目。
+最近浏览 GitHub 发现一个有趣的[项目 PT Plugin Plus](https://github.com/ronggang/PT-Plugin-Plus/) 代码拉下来发现是 TypeScript 语言写的，就顺便了解一下。[^ts] 目标很简单，不是为了写 ts 项目，只是为了能看懂项目。
 
 ## ts in 5 minutes
 
@@ -63,13 +63,19 @@ let user = new Student("Jane", "M.", "User");
 document.body.textContent = greeter(user);
 ```
 
+TypeScript 中 class 和 interfaces 都可以用来定义对象结构和行为，但是有一些区别：
+
+- class 可以实例化，创建对象并使用对象的属性和方法，接口只是对对象的结构定义，不能直接实例化对对象
+- class 可以包含属性和方法实现，可以定义构造汉书，访问修饰符；接口智能定义对象结构，不能包含具体实现
+- class 支持继承，多态，通过继承来扩展现有类功能；接口不能继承，但是可以通过多个接口组合来达到类似的效果
+
 ## handbook
 
 [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html)
 
 ### 类型
 
-ts 支持 JavaScript 的类型，number, string, structure, boolean 等等，不过 ts 增加了枚举类型。
+TypeScript 支持 JavaScript 的类型，number, string, structure, boolean 等等，不过 TypeScript 增加了枚举类型。
 
 #### Boolean
 
@@ -115,7 +121,7 @@ ts 支持 JavaScript 的类型，number, string, structure, boolean 等等，不
 
 #### Enum
 
-枚举类型是 ts 新增加的，用来扩展 number 表达的含义。
+枚举类型是 TypeScript 新增加的，用来扩展 number 表达的含义。
 
     enum Color {RED, GREEN, BLUE}
     let c: Color = Color.RED;

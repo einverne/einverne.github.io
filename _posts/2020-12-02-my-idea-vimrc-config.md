@@ -11,6 +11,12 @@ last_updated:
 
 IdeaVim 是 IntelliJ IDEA 编辑器下一款模拟 Vim 模式及快捷键的开源插件。鉴于大部分的时间都在 IntelliJ IDEA 下工作，所以总结一下在 IDEA 下使用 Vim 的一些快捷方式。
 
+阅读完本文之后，你可以
+
+- 在 IntelliJ IDEA 下完全通过键盘操作完成 99% 的操作
+- 可以通过组合按键实现任意自己想达到的操作
+- 保持在多个平台（macOS，Linux，Windows） 下操作一致
+
 ## 为什么要用 IdeaVim
 
 - 既充分利用了 IntelliJ 提供的代码补全，重构，代码浏览等等功能，又可以充分利用 Vim 的[多模式](http://einverne.github.io/post/2015/05/vim-mode.html)，以及 Vim 在编辑器中的高效操作
@@ -61,7 +67,7 @@ IDEA 自身就提供了非常多的快捷来在代码之间跳转，比如：
 - 跳转到文件
 - 跳转到测试类
 
-等等，在我的工作流里面，为了方便记忆，统一使用 `g` 作为简记符。比如 `gd` 表示 `go to definition`。
+在我的工作流里面，为了方便记忆，统一使用 `g` 作为简记符（表示 go）。比如 `gd` 表示 `go to definition`。
 
 在 `.ideavimrc` 文件中，定义 `map xxx :action yyy` 表示自定义一个 `keymap` 调用 IntelliJ 的 action。
 
@@ -93,7 +99,7 @@ nnoremap gl :<C-u>action Forward<CR>
 
 ### Toggle Actions
 
-我使用 `t` 加上一个字母作为 Toggle 动作的开始方便记忆。
+我使用 `t` 加上一个字母作为 Toggle 动作的开始方便记忆（t 就表示 toggle）。
 
 比如下面的第一条的 `ta`，表示的就是 `Toggle Annotate`，在 IDEA 主编辑区域经常看这行代码是谁提交的，那么会使用右击序号空白处，然后选择 Annotate，这个操作可以简化成直接在 Vim 模式的阅读模式下按下 `ta`。
 
@@ -189,7 +195,8 @@ nnoremap <C-k> <C-W>k
     set surround
 
 ## related
-在了解了简单的 Vim，并知道 Vim 的能力之后就可以做到 Vim  Everywhere，比如
+
+在了解了简单的 Vim，并知道 Vim 的能力之后就可以做到 Vim Everywhere，比如
 
 - 在浏览器中安装 [Vimium](/post/2017/12/most-useful-chrome-shortcut.html) 插件之后可以在浏览器中使用 Vim 的浏览，搜索等
 - 在 Obsidian 中开启 Vim 模式，也可以自定义使用 [Vimrc 配置文件](/post/2022/07/obsidian-vim-and-vimrc.html)

@@ -35,18 +35,20 @@ last_updated:
 
 Cache 接口定义的方法大都一目了然，值得一说的就是 `stats()` 方法，这个方法会返回一个 `CacheStats` 对象，这个对象包括了该 Cache 的一些统计信息，包括 `hitCount`， `missCount`，`loadSuccessCount`，`loadExceptionCount`，`totalLoadTime` 和 `evictionCount`。
 
-`Cache` 通过 `CacheBuilder` 类的 Builder 模式获取：
+`Cache` 通过 `CacheBuilder` 类的 Builder 模式获取，常见的用法：
 
-    LoadingCache<Key, Graph> graphs = CacheBuilder.newBuilder()
-           .maximumSize(1000)
-           .expireAfterWrite(10, TimeUnit.MINUTES)
-           .removalListener(MY_LISTENER)
-           .build(
-               new CacheLoader<Key, Graph>() {
-                 public Graph load(Key key) throws AnyException {
-                   return createExpensiveGraph(key);
-                 }
-               });
+```
+LoadingCache<Key, Graph> graphs = CacheBuilder.newBuilder()
+       .maximumSize(1000)
+       .expireAfterWrite(10, TimeUnit.MINUTES)
+       .removalListener(MY_LISTENER)
+       .build(
+           new CacheLoader<Key, Graph>() {
+             public Graph load(Key key) throws AnyException {
+               return createExpensiveGraph(key);
+             }
+           });
+```
 
 如果使用的场景中对应着 key 的值有默认的值，那么可以选择使用 `CacheLoader`，如果没有默认值，那么仍然可以原子的 `get-if-absent-compute` 方法，在 `get` 方法中提供一个 `Callable`，或者元素也可以通过 `Cache.put` 来直接插入到缓存中。
 
