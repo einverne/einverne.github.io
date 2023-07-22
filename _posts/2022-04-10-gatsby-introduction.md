@@ -24,6 +24,7 @@ Gatsby 采用数据层和 UI 层分离的现代前端开发模式。静态 HTML 
 
 - 充分享受现代 Web 开发工具带来的便捷，GraphQL，React，Webpack
 - 数据与界面的分离
+- 丰富的插件生态系统
 
 ## Gatsby 项目结构
 
