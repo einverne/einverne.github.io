@@ -47,6 +47,11 @@ last_updated:
 
 可以查看一千多个顶级域名在各个网站上的价格。
 
+## nazhumi
+
+
+- https://www.nazhumi.com/
+
 ### domcomp.com
 
 网站地址

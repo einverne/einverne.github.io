@@ -24,3 +24,10 @@ last_updated:
 
 离线版本的 Squoosh 基于 Electron，并使用了 GoogleChromeLabs 之前开源的在线版。
 
+## 如果是在 macOS 下
+
+macOS 有一个内置的图片压缩命令
+
+```
+sips -s formatOptions high path/*.jpg
+```
