@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "PT 站点一键转载脚本"
+title: "PT 站点一键转载脚本 easy-upload"
 aliases:
-- "PT 站点一键转载脚本"
+- "PT 站点一键转载脚本 easy-upload"
 tagline: ""
 description: ""
 category: 学习笔记
