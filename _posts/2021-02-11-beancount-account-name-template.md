@@ -24,6 +24,7 @@ last_updated:
 在 fava 展示损益表的时候会使用到 Income 和 Expense，而在展示负债表的时候会用到 Assets, Liabilities 和 Equity。
 
 ## 文件组织
+
 在构建了一个完整的命名体系之前，可以先对 Beancount 帐本进行提前的规划。比如我以如下的方式管理：
 
 ```
@@ -63,7 +64,6 @@ last_updated:
 
 在 `main.bean` 中通过 `include` 语法将其他 bean 引入，同时还定义了一些可选项。
 
-
     option "title" "ledger" ; "我的账本" ledger
     option "operating_currency" "CNY" ; 帐本货币
     option "operating_currency" "USD"
@@ -79,6 +79,7 @@ last_updated:
 当然你并不需要按照这样的方式来管理，Beancount 完全支持在一个文件中记录所有的内容，就像[这个演示](https://fava.pythonanywhere.com/example-with-budgets/editor/) 那样。
 
 ## 给 Assets 账户命名
+
 对于个人而言，如果用最通俗的语言来解释 Assets 的话，「那就是你所拥有的资产」，这个资产包括现金，银行的存款，证券市场上的股票等等能够产生购买力的，或者能够用来清还债务的东西。
 
 对于国内的场景，可能还会有账户叫做支付宝余额，或者微信零钱。那么有这样的概念之后就可以轻松的定义出这样的账户。
@@ -98,7 +99,7 @@ last_updated:
     ; 银行账户来
     2010-11-11 open Assets:DebitCard:CMB CNY
 
-去除上面这些比较好理解的实体账户，还有一类虚拟账户，比方说借钱给了张三10000元，那么就应该开一个「应收款」账户：
+去除上面这些比较好理解的实体账户，还有一类虚拟账户，比方说借钱给了张三 10000 元，那么就应该开一个「应收款」账户：
 
     ; 欠的钱
     2000-01-01 open Assets:Receivables:Zhangsan CNY
@@ -108,15 +109,15 @@ last_updated:
     2000-03-09 * "借钱给张三 100000"
       Assets:Receivables:Zhangsan 10000 CNY
       Assets:DebitCard:CMB   -10000 CNY
-    
+
 等张三将钱归还，就可以将此账户关闭：
 
     2001-01-01 close Assets:Receivables:Zhangsan
-    
+
 但是如果要去通过 Beancount 来记录证券交易，那么便会稍微复杂一些。之后会再写新的文章进行总结。
 
-
 ## 给 Income 账户命名
+
 收入账户也比较好理解，有多少收入便开通多少个收入账户。一般来说如果是月工资则会按序进入上面开的银行账户。如果年终有奖励则还会开一个 Bonus 的账户。
 
     2010-11-11 open Income:Salary:Hooli CNY  	; "Regular Pay"
@@ -125,6 +126,7 @@ last_updated:
 对于普通的收入账户比较明确，但是如果要记录比如未成熟的期权，股票等，则就稍微复杂一些，之后再用其他文章说明。
 
 ## 给 Expense 账户命名
+
 开支账户是一个相对比较繁琐的账户，但理念非常容易理解。在普通的记账软件中，一般会对消费进行分类，那么就可以根据自己的真实情况将这一个分类搬到 Beancount 的 Expense 账户中。
 
 如果之前没有使用过类似的记账软件，那么大概也会知道可能有那么几类，衣、食、住、行。日常生活的开支基本上这几大类也都覆盖了，其他的开支账户可以等用到的时候再建立。
@@ -179,7 +181,7 @@ last_updated:
         Phone
         Postal Services
         Software
-   
+
 再比如 MoneyWiz 默认账户名
 
     Automobile
@@ -263,12 +265,12 @@ last_updated:
     ; other
     2010-01-01 open Expenses:Digital
 
-
 开支分类这个事情也可以做的比较智能一些，比如通过学习，[自动进行分类](https://github.com/beancount/smart_importer)。
 
 不过我个人还是觉得通过关键字自动进行开支账户的导入还是足够精确的。
 
 ## 给 Liabilities 账户命名
+
 最常见的负债账户就是信用卡了，可以将开卡的时间以及开卡的银行记录下来。以后按月整理信用卡账单就会方便很多。
 
 如果涉及到房贷等等，其实是差不多的。
@@ -285,11 +287,12 @@ last_updated:
 Beancount 这样的纯文本记账工具，对于账户开通和关闭处理几乎没有成本，可以任性地添加账户。
 
 ## 命令规范
+
 命名规范可以简化理解的成本，和代码规范一样，帐本被阅读的次数肯定要比记录的时候要多，尤其是当帐本越来越复杂的时候。一套有机完整的命名不仅可以让记账更人性化，也可以免去之后再去频繁修改账户名字的烦恼。
 
 个人为 Beancount 的账户命名应该要遵守几点：
 
-- 账户名要尽量详细，但不应该太长，个人使用的习惯一般不会超过3级目录。
+- 账户名要尽量详细，但不应该太长，个人使用的习惯一般不会超过 3 级目录。
 - 帐户名有大到小整理，在 fava 界面中，多级账户会进行归类求和，可以清晰地看到上一级账户的总额
 - 在初始开通账户的时候尽量采用详细的多级账户，在未来合并账户的操作可以通过替换完成，但是拆分账户的操作则需要一一核对
 - 降低记账的认知负担，在确定好帐户名之后尽量可以通过直觉直接确定应该归属到哪一类账户。
@@ -297,6 +300,7 @@ Beancount 这样的纯文本记账工具，对于账户开通和关闭处理几�
 ## 附录
 
 ### mint-categories
+
 mint-categories https://www.mint.com/mint-categories
 
 ```
@@ -330,7 +334,6 @@ Expenses (all types)
       b. Movies
       c. Vacations
 ```
-
 
 ### GnuCash
 
@@ -378,12 +381,11 @@ Expenses (all types)
           Garbage collection
           Gas
           Water
-      
- 
+
+
 ### 其他模板
 
 - <https://github.com/mckelvin/beancount-boilerplate-cn/blob/dev/ledger/account.beancount>
-
 
 ## reference
 
