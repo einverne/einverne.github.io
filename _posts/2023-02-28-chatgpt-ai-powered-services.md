@@ -66,6 +66,8 @@ Day 1
 Day 2
 ![26I9](https://photo.einverne.info/images/2023/03/07/26I9.png)
 
+## Gramma 
+[Gramma.app](https://gamma.app/) 是一个可以使用 AI 生成报告，网页，文档的在线工具。
 ### Tome
 
 [Tome](https://tome.app/) 是一款 AI 生成 PPT 的在线工具，输入关键字即可生成图文并茂的 PPT，在此基础之上进行更新提升制作 PPT 的效率。
