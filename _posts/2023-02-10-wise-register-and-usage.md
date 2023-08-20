@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Wise 注册及使用"
+title: "2023 年 Wise 账号注册及使用"
 aliases:
-- "Wise 注册及使用"
+- "2023 年 Wise 账号注册及使用"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ wise, transfer, wise-card, ]
+tags: [ wise, transfer, wise-card, virtual-bank, digital-bank, debit-card, bank-card]
 create_time: 2023-03-12 21:24:20
 last_updated: 2023-03-12 21:24:20
 ---
