@@ -10,23 +10,23 @@ tags: [ vps, linux, docker, network, cn2, miniflux ]
 last_updated:
 ---
 
-昨天心血来潮，看到推送的主机优惠信息中有一条半价的优惠，[A400互联](https://portal.a400.net/aff/JTNBOUMX)(带AFF），查了一下是一家成立不久的国人主机服务提供商，顿时就失去了兴趣，不过后来看到其配置又有点心动。
+昨天心血来潮，看到推送的主机优惠信息中有一条半价的优惠，[A400 互联](https://portal.a400.net/aff.php?aff=41)(带 AFF），查了一下是一家成立不久的国人主机服务提供商，顿时就失去了兴趣，不过后来看到其配置又有点心动。
 
-洛杉矶 [[CN2 线路]]的 VPS:
+洛杉矶 [[CN2 线路]]的 VPS：
 
-- 1和1G 30M 带宽, 20G 存储 1T 月流量，36 RMB/三个月
-- 1核2G 30M 带宽, 50G 存储 2T 月流量，17 RMB/month
-- 2核2G 50M 带宽, 60G 存储 1T 月流量，29 RMB/month
-- 2核4G 30M 带宽, 80G 存储 4T 月流量，33.5 RMB/month
+- 1 和 1G 30M 带宽, 20G 存储 1T 月流量，36 RMB/三个月
+- 1 核 2G 30M 带宽, 50G 存储 2T 月流量，17 RMB/month
+- 2 核 2G 50M 带宽, 60G 存储 1T 月流量，29 RMB/month
+- 2 核 4G 30M 带宽, 80G 存储 4T 月流量，33.5 RMB/month
 
 都是 KVM 架构的。
 
 随后我又找到两个测试的 IP：
 
-- 洛杉矶CN2 GIA：103.150.215.12
-- 香港cn2：45.195.69.36
+- 洛杉矶 CN2 GIA：103.150.215.12
+- 香港 CN2：45.195.69.36
 
-最后让我订购的原因就是网络，虽然我对网络要求没有那么高，但是我之前的服务器要不就是在美国网络延迟超过 200ms，要不就是内存空间比较小，稍微吃一点资源的应用就没有办法用上。所以综上我就买了一个洛杉矶的 2核4G 配置，网络带宽 30M 我个人也差不多够用了。
+最后让我订购的原因就是网络，虽然我对网络要求没有那么高，但是我之前的服务器要不就是在美国网络延迟超过 200ms，要不就是内存空间比较小，稍微吃一点资源的应用就没有办法用上。所以综上我就买了一个洛杉矶的 2 核 4G 配置，网络带宽 30M 我个人也差不多够用了。
 
 因为是国人商家，还是对其抱有一点敬畏，所以重要的数据都不在上面保存，我计划就是用来作为数据中转，以及因为其网络比较满足我的需求，可能用来做一下 [frp 端口映射](/post/2017/11/frp-config.html), Gost 端口转发。
 
@@ -35,6 +35,7 @@ last_updated:
 同时定时备份一下相关数据，因为 Syncthing 本身就是多节点的，挂掉一个也不会有影响，我只不过用它来提升同步速度；另外 RSS 阅读器我只需要定期备份一下订阅源即可（如果想保留数据的话，把 PostgreSQL 数据库数据也备份一下即可；Huginn 我只需要备份我的 Task 即可，在新的机器上 Docker 其服务导入即可。
 
 ## 测评
+
 使用 [teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 的 benchmark 简单的测试一下：
 
 执行：
@@ -83,7 +84,6 @@ last_updated:
 
 IO 性能一般，好一点的机器通常能到 700 MB/s，甚至超过 1GB/s，网络带宽除了一次广州的下载有点奇怪，还行，可以多跑几次看一下，没有虚标。
 
-
 ## 使用
 
 - [在购买 VPS 之后首先要做的事情](/post/2015/12/things-to-do-after-buying-vps.html)
@@ -93,14 +93,16 @@ IO 性能一般，好一点的机器通常能到 700 MB/s，甚至超过 1GB/s�
 - [之前整理的常用的 Docker 镜像和使用方法](https://github.com/einverne/dockerfile)
 - [可以自行架设的服务整理](/post/2020/02/self-hosted-services-collection.html)
 
-如果看到这里，你也想购买可以在下单的时候使用优惠码 [0811](https://portal.a400.net/aff/JTNBOUMX)，会立即使用半价。
+如果看到这里，你也想购买，可以使用 [链接](https://portal.a400.net/aff.php?aff=41)。
 
 ### nginx-proxy
+
 在执行下的 `docker-compose` 之前需要先创建 `nginx-proxy` 名字的网络。可以参考[这里](https://github.com/einverne/dockerfile/tree/master/nginx-proxy)
 
     docker network create nginx-proxy
 
 ### miniflux
+
 [[miniflux]] 是一款用 Go 写的开源 RSS 阅读器，比较轻量，但是功能都有。
 
 ```
@@ -155,7 +157,8 @@ networks:
 - YOUR_EMAIL: 申请 SSL 证书的邮箱
 
 ## 总结
-a400 在我过去使用的两个月里面发生了近5次的服务中断问题，幸亏好我把大部分的服务已经迁移到了 [HostHatch](/post/2021/08/hosthatch-vps-review.html) 后买的 VPS 上了。所幸网络延迟略好，拿来做个代理，做一些不需要 99.99% 在线的应用吧。
+
+A400 在我过去使用的两个月里面发生了近 5 次的服务中断问题，幸亏好我把大部分的服务已经迁移到了 [HostHatch](/post/2021/08/hosthatch-vps-review.html) 后买的 VPS 上了。所幸网络延迟略好，拿来做个代理，做一些不需要 99.99% 在线的应用吧。
 
 ## reference
 
