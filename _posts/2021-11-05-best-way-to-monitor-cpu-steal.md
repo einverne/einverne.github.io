@@ -36,15 +36,15 @@ for x in `seq 1 1 30`; do ps -eo state,pid,cmd | grep "^D"; echo "-"; sleep 2; d
 top -bn 1 | head -15
 ```
 
-拆分开每一行命令：
+拆分开每一行命令进行解释：
 
 ```
 iostat 1 10
 ```
 
-每隔 1s 执行一次 iostat 命令，执行 10 次。
+每隔 1s 执行一次 iostat 命令，一共执行 10 次。
 
-结果可能是这样的：
+其结果可能是这样的：
 
 ```
 avg-cpu:  %user   %nice %system %iowait  %steal   %idle

@@ -16,7 +16,7 @@ last_updated:
 基于上面的选择逻辑，我的 Obsidian 跨平台同步工具，我选择了：
 
 - [Syncthing](/post/2019/10/syncthing.html)，作为文件同步工具
-- Markor，作为 Android 上的 Markdown 编辑器，我提交了一段模板可以来创建 Zettelkasten 笔记
+- ~~Markor，作为 Android 上的 Markdown 编辑器，我提交了一段模板可以来创建 Zettelkasten 笔记~~ 不再使用 Marker 作为 Android 客户端
 - Git，版本同步（配合[git subtree](/post/2020/04/git-subtree-usage.html)）
 - Bash/Cron/[Hammerspoon](https://github.com/einverne/dotfiles/blob/master/hammerspoon/autoscript.lua)，定时脚本提交备份到 Git，然后自动推送到远端备份。
 
@@ -26,7 +26,7 @@ last_updated:
 
 这一年来 Obsidian 的生态发生了很多变化，Obsidian 已经发布了 Android/iOS 版本，虽然现在我依然使用 Markor 来查看笔记，但最近已经慢慢的转向 Obsidian 官方的应用，Obsidian 官方的应用在搜索方面做的要比 Markor 好。
 
-而之前使用 Syncthing，现在也一如既往的使用 Syncthing，但是最近购入了 Obsidian Sync 一方面支持一下开发者，另一方面也想慢慢地将移动端使用官方的同步工具来同步笔记。
+~~而之前使用 Syncthing，现在也一如既往的使用 Syncthing，但是最近购入了 Obsidian Sync 一方面支持一下开发者，另一方面也想慢慢地将移动端使用官方的同步工具来同步笔记。~~ 还是回归了 Syncthing。
 
 <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">用了一年多 <a href="https://twitter.com/hashtag/obsidian?src=hash&amp;ref_src=twsrc%5Etfw">#obsidian</a> ，虽然平时都用 Syncthing 来同步，但还是买了一年 Sync，支持一下开发者。 <a href="https://t.co/YPvNXMDhyI">pic.twitter.com/YPvNXMDhyI</a></p>&mdash; Ein Verne (@einverne) <a href="https://twitter.com/einverne/status/1440676136460046351?ref_src=twsrc%5Etfw">September 22, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

@@ -49,6 +49,11 @@ DirectSpace 多年没有更新，虚拟化也停留在老一代的 OpenVZ ，放
 
 - [PCloud](https://my.pcloud.com/#page=register&invite=VKXvZKvEM17)
 
+## InfiniCLOUD
+[InfiniCloud](https://einverne.github.io/post/2022/08/teracloud-webdav-usage.html) 是一款日本的提供 [[WebDAV]] 支持的云存储服务提供商。
+
+[注册](https://infini-cloud.net/) 的时候使用 `7BUQR` 可以额外获得 1GB 的容量。
+
 ## 论坛
 
 ### v2ex

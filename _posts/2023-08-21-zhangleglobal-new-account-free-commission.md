@@ -24,6 +24,9 @@ last_updated: 2023-08-22 23:48:00
 - 开户
 - 并在开户之后 30 天之内入金大于等于 20000 港币，或其他等值货币。
 
+## 补充
+另外如果关注投资的话，也可以关注我的 [投资相关的记录](https://invest.einverne.info/)。
+
 ## 活动规则
 
 1.活动时间
@@ -74,7 +77,10 @@ last_updated: 2023-08-22 23:48:00
 
 （4）30 天 5%加息券需在订单金额符合使用范围内生效，限内年化 5%加息，最高可享 30 天，港币和美元使用门槛及上限如下：
 
-<table><tbody><tr><td nowrap=""><p><span><span face="PMingLiU">基金币种</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td><td nowrap=""><p><span><span face="PMingLiU">使用门槛</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td><td nowrap=""><p><span><span face="PMingLiU">使用上限</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td><td nowrap=""><p><span><span face="PMingLiU">最高加息金额</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td></tr><tr><td nowrap=""><p><span><span face="PMingLiU">港币</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">1000<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">100000<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">410.96<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td></tr><tr><td nowrap=""><p><span><span face="PMingLiU">美元</span></span><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">128<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">12821<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td><td nowrap=""><p><spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"="">52.69<spantimes new="" roman';="" font-size:9.0000pt;mso-font-kerning:0.0000pt;"=""><o:p></o:p></spantimes></spantimes></p></td></tr></tbody></table>
+| 基金币种 | 使用门槛 | 使用上限 | 最高加息金额 |
+| -------- | -------- | -------- | ------------ |
+| 港币     | 1000     | 100000   | 410.96       |
+| 美元     | 128      | 12821    | 52.69             |
 
 (5)本次活动所涉指定开户、入金任务的完成时间点，以华泰金控后台系统时间为准，活动解释权在法律允许范围内归华泰金控解释。
 

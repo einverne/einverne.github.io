@@ -88,6 +88,18 @@ Swizzin 的密码是在执行初始化脚本的时候设定的，可以使用如
     sudo systemctl restart rtorrent@<yourusername>
     sudo systemctl status rtorrent@<yourusername>
 
+## 重启 Syncthing
+
+```
+sudo systemctl restart syncthing@yourname.service
+```
+
+## 重启 Plex
+
+```
+sudo systemctl restart plexmediaserver
+```
+
 ## 修改 ruTorrent 主题
 ruTorrent 的安装地址在
 

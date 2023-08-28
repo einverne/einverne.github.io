@@ -39,14 +39,16 @@ XML 数字签名分成三种类型：
 
 Enveloped 格式 XML 签名是把签名节点 `Signature` 直接嵌入到原始 XML 文档中。比如下方的样式中的 `<Signature>` 节点。
 
+e-Gov 采用的方式就是这个 Enveloped 格式。
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<PurchaseOrder>
+<POrder>
  <Item number="130055555232">
   <Description>Game</Description>
   <Price>19.99</Price>
  </Item>
- <Buyer id="8492340">
+ <Customer id="8492340">
   <Name>My Name</Name>
   <Address>
    <Street>One Network Drive</Street>
@@ -55,7 +57,7 @@ Enveloped 格式 XML 签名是把签名节点 `Signature` 直接嵌入到原始 
    <Country>United States</Country>
    <PostalCode>01803</PostalCode>
   </Address>
- </Buyer>
+ </Customer>
  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
   <SignedInfo>
    <CanonicalizationMethod
@@ -85,7 +87,7 @@ Enveloped 格式 XML 签名是把签名节点 `Signature` 直接嵌入到原始 
    </X509Data>
   </KeyInfo>
  </Signature>
-</PurchaseOrder>
+</POrder>
 ```
 
 ### Enveloping
@@ -119,12 +121,12 @@ Enveloping 格式的 XML 签名和 Enveloped 正好相反，把原始 XML 文档
    </X509Data>
   </KeyInfo>
   <Object ID="order">
-      <PurchaseOrder>
+      <POrder>
        <Item number="130045555532">
         <Description>Game</Description>
         <Price>19.99</Price>
        </Item>
-       <Buyer id="849">
+       <Customer id="849">
         <Name>Your Name</Name>
         <Address>
          <Street>One Network Drive</Street>
@@ -133,8 +135,8 @@ Enveloping 格式的 XML 签名和 Enveloped 正好相反，把原始 XML 文档
          <Country>United States</Country>
          <PostalCode>01803</PostalCode>
         </Address>
-       </Buyer>
-      </PurchaseOrder>
+       </Customer>
+      </POrder>
    </Object>
  </Signature>
 ```
@@ -145,9 +147,16 @@ Enveloping 格式的 XML 签名和 Enveloped 正好相反，把原始 XML 文档
 
 Detached 格式是指新生成的 Signature 节点作为一个独立的文档单独保存和传输，而不会对原始文档进行修改。
 
+## 数字签名的应用场景
+
+- 可靠信息交换
+- 电子公文传输
+
 ## XML 数字签名的结构
 
 ### Signature 结构
+
+对于 XML 签名来说就是根据 XML 文档内容以及证书生成下面的一个签名结构。
 
 ```
 <Signature ID?>
@@ -166,13 +175,48 @@ Detached 格式是指新生成的 Signature 节点作为一个独立的文档单
 </Signature>
 ```
 
+举例
+
+```
+<署名情報>
+<Signature
+	xmlns="http://www.w3.org/2000/09/xmldsig#" Id="20230720113000">
+	<SignedInfo>
+		<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+		<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+		<Reference URI="#%E6%A7%8B%E6%88%90%E6%83%85%E5%A0%B1">
+			<Transforms>
+				<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+			</Transforms>
+			<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+			<DigestValue>BdQwkfm3lyDWV2mTu+CxBPU=</DigestValue>
+		</Reference>
+		<Reference URI="900A01000200800001_01.xml">
+			<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+			<DigestValue>2WrlTW71oH+E6FuhxGR0=</DigestValue>
+		</Reference>
+	</SignedInfo>
+	<SignatureValue>gjeaEM7qng==</SignatureValue>
+	<KeyInfo>
+		<X509Data>
+			<X509Certificate>MIIEizCU</X509Certificate>
+		</X509Data>
+	</KeyInfo>
+</Signature>
+</署名情報>
+```
+
 - `Signature` 节点是数字签名根节点
 - `SignedInfo` 保存签名和摘要信息以及使用的各种算法
   - `SignedInfo` 中的 `CanonicalizationMethod` 子节点用来指定生成签名的 SignedInfo 节点规范化处理方法，具体的方法可以参考规范中的 「Exclusive XML Canonicalization」
-  - `SignatureMethod` 子节点用来指定签名使用的摘要算法和签名算法
+    - 只有对 XML 内容规范化之后，才不会因为 XML 文档格式稍有不同而影响验证结果
+  - `SignatureMethod` 子节点用来指定签名使用的**摘要算法**和**签名算法**
+    - 如果 `Algorithm` 值是 `http://www.w3.org/2001/04/xmldsig-more#rsa-sha256` 表示使用的签名算法是 SHA256-RSA
   - `SignedInfo` 可以包含一个或多个 `Reference` 子节点，每个 Reference 用来指定某个引用的 XML 节点经过规范化后的摘要信息和生成摘要的方法
-- `SignatureValue` 用来保存整个 SignedInfo 节点经过规范化后输出内容的签名
-- `KeyInfo` 是可选的，用来保存验证签名的非对称加密算法公钥（只有公钥可以公开）
+    - Reference 中会包含一个 URI 属性，用来指定对 XML 中哪一个节点进行签名，一般会是 `#node`，或者直接是指定文件名。
+    - Reference 中同样包含两个子节点，分别表示摘要的算法以及对指定内容进行摘要之后的值
+- `SignatureValue` 用来记录整个 `SignedInfo` 节点经过规范化后输出内容的签名，并使用 Base64 编码算法转换成可见的字符串
+- `KeyInfo` 可选，用来保存验证签名的非对称加密算法公钥（只有公钥可以公开）
 - `Object` 节点是可选的，只有在 Enveloping XML 签名时才会用到
 
 ## 开发相关的库
@@ -183,15 +227,28 @@ Detached 格式是指新生成的 Signature 节点作为一个独立的文档单
 
 XMLSec Library 支持 W3C 的 XML Signature 和 XML Encryption 规范，同时也支持 Canonical XML 和 Exclusive Canonical XML 规范。
 
-## 数字签名处理过程
+## XML 数字签名处理过程
 
-主要工作是根据内容创建 Signature 节点。
+主要工作是根据内容创建 Signature 节点。主要是分成三个步骤
 
-- 首先生成”Reference“节点
-- 然后再这个基础上创建”SignedInfo“
-- 最后针对”SignedInfo“生成数字签名，并最终生成“Signature”节点
+- 第一步是根据指定的 XML 节点，生成 SignedInfo 中的 "Reference" 节点，Reference 节点会指定需要签名的对象，然后根据 Reference 指定的签名算法，生成签名值，比如在电子申请中，有两个 Reference，一个是 `構成情報`，另外一个是手续的申请书。
+- 第二步是在 Reference 的基础上创建 SignedInfo 节点，并指定 SignedInfo 需要的规范化处理方法，以及签名算法
+- 最后是根据 SignedInfo 以及证书，生成数字签名 SignatureValue，并最终生成完整的 Signature 节点
 
-## Java
+当有了完整的 Signature 节点之后再根据不同的格式对 XML 内容进行操作。
+
+## XML 签名验证
+有 XML 签名的过程，同样在验证时只需要对上面的过程进行逆向就可以。当接收方接收到了包含 Signature 的 XML 文档。
+
+- 首先根据 SignedInfo 中指定的规范化方法处理整个 SignedInfo 节点，保证不会因为格式问题出错，然后根据 SignatureMethod 中的数字签名算法验证签名信息，如果验证通过表示 SignedInfo 中的内容没有被篡改
+- 然后开始验证 SignedInfo 中所有的 Reference 节点
+    - 通过定义的 URI 找到对应的 XML 节点，通常这个 XML 的 ID 应该是整个文档唯一的
+    - 根据 XML 中的节点，按照 Reference 中的 Transforms 指定的规范化方法处理
+    - 然后根据 DigestMethod 中指定的摘要算法对规范化之后的内容进行摘要处理
+    - 然后将摘要信息和 DigestValue 中的摘要值（Base64 解码）进行对比，一致则表示通过
+
+通过以上的验证就可以确保传输的内容没有被篡改。
+## Java 实现
 
 引入依赖
 
@@ -206,8 +263,7 @@ XMLSec Library 支持 W3C 的 XML Signature 和 XML Encryption 规范，同时�
 编码例子
 
 ```
-public static void sign(Key signKey, X509Certificate signCert,
-    Element signElement) throws XKMSException {
+public static void sign(Key signKey, X509Certificate signCert, Element signElement) throws XKMSException {
   String elementId = signElement.getAttribute("Id");
   if (elementId == null) {
     throw new XKMSException("Id of the signing element is not set");
@@ -238,5 +294,7 @@ public static void sign(Key signKey, X509Certificate signCert,
 
 ## reference
 
+- <https://www.w3.org/TR/xmldsig-core/>
 - <https://www.w3.org/TR/xmldsig-core1/>
+- [Exclusive XML Canonicalization Version 1.0](https://www.w3.org/TR/xml-exc-c14n/)
 - <https://github.com/rng-web-geeks/back-end/blob/master/src/main/java/com/ringcentral/demo/xml/CreateXMLSignature.java>

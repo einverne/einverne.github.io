@@ -15,7 +15,6 @@ last_updated:
 
 [^1]: https://git-scm.com/docs/git-worktree
 
-
 ## 疑惑
 
 于是我又去找了一些材料 [^2]，这个回答解决了我部分疑惑，他说到在大型软件开发过程中可能经常需要维护一个古老的分支，比如三年前的分支，当然 git 允许你每个分支维护一个版本，但是切换 branch 的成本太高，尤其是当代码变动很大的时候，有可能改变了项目结构，甚至可能变更了 build system，如果切换 branch，IDE 可能需要花费大量的时间来重新索引和设置。
@@ -37,7 +36,6 @@ git worktree 的命令只有几行非常容易记住
 
 当工作结束后可以直接删除该目录，然后运行 `git worktree prune`.
 
-
 ## 总结
 
 git worktree 非常适合大型项目又需要维护多个分支，想要避免来回切换的情况，这里总结一些优点：
@@ -46,4 +44,6 @@ git worktree 非常适合大型项目又需要维护多个分支，想要避免�
 - git worktree 的提交可以在同一个项目中共享
 - git worktree 和单独 clone 项目相比，节省了硬盘空间，又因为 git worktree 使用 hard link 实现，要远远快于 clone
 
+## More
 
+- 学习 Git 最好的[动画交互教程](https://learngitbranching.js.org/)
