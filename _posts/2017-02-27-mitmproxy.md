@@ -8,7 +8,7 @@ tags: [mitmproxy, android, proxy, linux, http, debug, reverse]
 last_updated:
 ---
 
-在之前的文章 [Android 抓包](/post/2016/11/android-http-proxy-debug.html) 中介绍过 Mac 下 Charles 进行客户端的抓包，那篇文章中最后介绍其他工具的时候提到了 mitmproxy 这样一款命令行工具，最近使用来看，也是非常强大的工具。这里就简单记录一下。
+在之前的文章 [Android 抓包](/post/2016/11/android-http-proxy-debug.html) 中介绍过 Mac 下 [[Charles]] 进行客户端的抓包，那篇文章中最后介绍其他工具的时候提到了 [[mitmproxy]] 这样一款命令行工具，最近使用来看，也是非常强大的工具。这里就简单记录一下。
 
 mitmproxy 是用 Python 和 C 开发的一款支持 HTTP(S) 的中间人代理软件（man-in-the-middle proxy），不同于 Fiddler2，burpsuite 等类似功能工具，mitmproxy 可在终端下运行并且可以用来拦截、修改、重放和保存 HTTP/HTTPS 请求。mitmproxy 可以辅助 WEB 及客户端调试、开发和测试，是一个渗透测试的工具。
 
