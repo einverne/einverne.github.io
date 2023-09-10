@@ -19,6 +19,10 @@ last_updated:
 - https://zh.au1lib.org/
 - https://zh.b-ok.asia/
 - https://b-ok.cc/
+- https://zlibrary-asia.se
+- https://zlibrary-global.se
+- https://singlelogin.se
+- https://singlelogin.re
 - sg1lib.org
 - 1lib.pl
 - ng1lib.org

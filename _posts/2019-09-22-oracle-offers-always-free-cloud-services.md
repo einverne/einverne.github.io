@@ -12,6 +12,8 @@ last_updated:
 
 这里再整理一下 Oracle 提供的服务内容，根据它官方的[博文](https://www.oracle.com/corporate/pressrelease/oow19-oracle-free-tier-091619.html)，Oracle 提供的服务没有像其他云服务提供商一样提供 12 个月的免费体验，而是对于基础服务，比如 Compute VMs, Database, Block and Object Storage, and Load Balancer, 等等只要在用，不超过限额，那么就在账号有效期内免费使用。
 
+甲骨文的永久免费 VPS，可以永久免费使用 2 台 AMD 服务器，外加 4 台 Arm-based 云服务器，还有数据库，对象存储等等服务。
+
 这里引用 Oracle 官方的文章：
 
 > The new program enables developers to build applications using any language and framework on top of Oracle Cloud Infrastructure and Autonomous Database. They can get started quickly without waiting for IT to provision and learn new technologies such as artificial intelligence and machine learning. Enterprises can use Free Tier to prototype, prove out new technologies, and do testing before moving production workloads to the cloud. They can sample robust enterprise infrastructure capabilities like load balancing and storage cloning. Additionally, students can learn how to use the latest technologies and become better prepared for their careers.
@@ -102,15 +104,25 @@ then
 
 另外我个人建议可以登陆后修改一下默认的 SSH 端口。
 
+## Ping 设置
+
+甲骨文的主机创建之后无法 ping 通，是因为在网络安全组里面禁用了 ICMP ping。
+
+点击子网，在安全列表中，找到入站规则，允许 ICMP (IP 协议选项中)。
+
+![UuQp](https://photo.einverne.info/images/2023/09/08/UuQp.png)
+
 ## 防火墙设置
 实例管理页面，Virtual Cloud Network Details，Security Lists, 在防火墙安全策略里面将需要的端口配上。
 
 另外需要特别注意需要登录机器配置实例上的防火墙。
 
-	sudo iptables -P INPUT ACCEPT
-	sudo iptables -P FORWARD ACCEPT
-	sudo iptables -P OUTPUT ACCEPT
-	sudo iptables -F
+```
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -F
+```
 
 甲骨文的 Ubuntu 镜像内置了防火墙规则，即使在面板上开通了端口白名单，重启之后端口依然会被防火墙拦住，所以每次都得手动执行上面的命令。主要原因是 Oracle 自带的 Ubuntu 镜像默认设置了 iptable 规则，可以手动关闭：
 
