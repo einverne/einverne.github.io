@@ -29,6 +29,12 @@ Ali Abdaal 提供的一些 Tips：
 - 做一些输入练习 [10 Fast Fingers](https://10fastfingers.com/typing-test/english) 是一个在线的输入速度测试网站。
 - 定向训练，比如使用下面的提到的 [keybr](https://www.keybr.com/) 这个网站上的单词不是真实的单词，但是可以通过输入的错误来定向看看哪些字母输入错误比较多
 
+### monkeytype
+
+[monkeytype](https://monkeytype.com/) 是一个支持多语言输入练习的网站，可以统计输入速度，注册帐号之后就可以保存历史的记录。monkeytype 还支持中文，韩文，日文，等等语言。
+
+monkeytype 也是开源的，可以直接在 GitHub 上看到其源代码。
+
 ### Qwerty Learner
 打字练习的网站。
 
