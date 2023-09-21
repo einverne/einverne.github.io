@@ -1,26 +1,35 @@
 ---
 layout: post
 title: "使用 Goku 配置 Karabiner"
+aliases:
+- "使用 Goku 配置 Karabiner"
 tagline: ""
-description: ""
-category:
+description: "使用 Goku 来配置 Karabiner"
+category: 学习笔记
 tags: [karabiner, mac, goku, edn, config]
 last_updated:
 ---
 
-[Karabiner](https://pqrs.org/osx/karabiner/) 是 MacOS 上一款强大的自定义键盘的软件，可以非常自由的定义任何键位。
+[Karabiner](https://pqrs.org/osx/karabiner/) 是 MacOS 上一款强大的自定义键盘的软件，可以非常自由的定义任何键位。Karabiner 是一个开源软件，用于在 macOS 系统上自定义键盘映射。它允许用户修改键盘输入以实现更高效的使用体验。
 
 之前看文章是将 Caps Lock 作为一个 Hyper key，但看过 [@nikitavoloboev](https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6) 的文章之后，发现利用 Karabiner 和 [Goku](https://github.com/yqrashawn/GokuRakuJoudo) 定义的 DSL 配置语言可以更加充分的发挥 Karabiner 的功能。
 
-Karabiner Elements 使用 [JSON](https://pqrs.org/osx/karabiner/json.html) 作为配置规则的格式。使用 JSON 作为 Karabiner 配置格式的问题在于，这种格式非常庞大，在生成之后几乎很难徒手去做修改，对于复杂的配置可能长达几万行。
+Karabiner Elements 使用 [JSON](https://pqrs.org/osx/karabiner/json.html) 作为配置规则的格式，但是使用 JSON 作为 Karabiner 配置格式的问题在于 JSON 格式非常庞大冗余，在生成之后几乎很难徒手去做修改，对于复杂的配置可能长达几万行。
+
+所以诞生了 Goku，可以利用非常简洁的配置语法来配置 Karabiner 的 JSON 配置文件。
+Goku 是一个基于 Karabiner 的配置工具，它使用了 EDN 格式来定义键盘映射和自定义操作。
 
 ## 前提知识
 
-### Sticky keys
+在进入配置之前需要先了解一些前提知识。
+
+### Sticky keys 粘滞键
+
 Sticky Keys 叫做粘滞键，是方便无法同时按下 Ctrl C 这样组合按键的用户，启用粘滞键后按下任何 modifier 按键后，这个 modifier 按键会持续激活直到按下一个非 modifier 按键。
 
-### Modifier key
-常见的 modifier 按键有 Ctr, Command, Shift, Alt, Option，Fn, Caps Lock 等等。
+### Modifier key 修饰键
+
+常见的 modifier 按键有 Ctrl, Command, Shift, Alt, Option，Fn, Caps Lock 等等。
 
 > A keyboard feature that enables you to press a modifier key (CTRL, ALT, or SHIFT), or the Windows logo key, and have it remain active until a non-modifier key is pressed. This is useful for people who have difficulty pressing two keys simultaneously.
 
@@ -33,7 +42,10 @@ Sticky Keys 叫做粘滞键，是方便无法同时按下 Ctrl C 这样组合按
 - `Tab`
 
 ## EDN
-EDN 全称是 「extensible data notation」，下面是一个最基本的 EDN：
+
+EDN 全称是 「extensible data notation」，是一种用于表示数据的轻量级文本格式。它的语法类似于 Clojure 语言的数据结构表示法，可以用于序列化和传输数据。
+
+下面是一个最基本的 EDN：
 
 ```
 {:main [
@@ -45,10 +57,11 @@ EDN 全称是 「extensible data notation」，下面是一个最基本的 EDN�
 ]}
 ```
 
-不用担心这里看不明白，后面会继续展开。
+不用担心这里看不明白，后面会继续展开。上面的配置及时目前看不明白，可以大致了解到，是一条自定义的规则，描述和具体的 rule ，将按键 a 映射到 按键 b。
 
 ## 什么是 Karabiner
-Karabiner 是一个 MacOS 上的键盘自定义工具。
+
+[[Karabiner Elements]] 是一个 MacOS 上的键盘自定义工具。
 
 ## 定义第一个 Hyper key
 
@@ -64,6 +77,33 @@ Karabiner 是一个 MacOS 上的键盘自定义工具。
 Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以执行 goku 来生成 JSON 配置。
 
 ## 基本使用
+
+### 安装 Goku
+
+```
+brew install yqrashawn/goku/goku
+```
+
+安装之后配置文件默认位置在 `~/.config/karabiner.edn` 但是可以使用环境变量 `GOKU_EDN_CONFIG_FILE` 自定义配置路径。
+
+服务其中之后，日志在 `~/Library/Logs/goku.log` ，任何错误都可以查看。
+
+完成安装之后可以运行 `goku --version` 来查看版本。可以使用 `gokuw` 来持续监控配置文件生成 karabiner.json
+
+重启服务
+
+```
+brew services restart yqrashawn/goku/goku
+```
+
+查看服务配置
+
+```
+less ~/Library/LaunchAgents/homebrew.mxcl.goku.plist
+```
+
+### 配置
+
 整个 EDN 配置大体可以分成几个部分：
 
 - 定义主要的 profile 及基本信息
@@ -81,31 +121,44 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 ```
 
 - 花括号内整个内容表示一个规则
-- `:des` 部分用来注释
+- `:des` 部分用来注释规则
 - `:rules` 中是真正的规则
 - 规则又分成 `from`, `to`, `condition`，其中 `condition` 部分是可选的。
+
+更加详细的配置可以参考我的 [dotfiles](https://github.com/einverne/dotfiles/tree/master/karabiner)。
 
 ### 预置条件
 
 #### 定义应用
-比如定义应用程序，可以使用 bundle ID，如何查找这个 Bundle ID，可以利用 Karabiner 自带一个 EventViewer 工具，可以很方便地查看应用的 Bundle ID，或者右键『应用.app』-> 显示包内容 Contents/Info.plist -> BundleIdentifier 也可以查看到。
 
-	:applications {:chrome ["^com\\.google\\.Chrome$"]}
+可以使用 bundle ID 来定义应用程序，如何查找这个 Bundle ID，可以利用 Karabiner 自带一个 EventViewer 工具，很方便地查看应用的 Bundle ID，或者右键『应用.app』-> 显示包内容 `Contents/Info.plist` -> `BundleIdentifier` 也可以查看到。
+
+    :applications {:chrome ["^com\\.google\\.Chrome$"]}
+
+在 Karabiner EventViewer 中
+
+![U8zW](https://photo.einverne.info/images/2023/09/21/U8zW.png)
 
 #### 定义设备
+
 定义设备，同样设备的 ID 也可以在 EventViewer 中查看：
 
-	:devices {:quickfire [{:vendor_id 1234 :product_id 17}]}
+    :devices {:quickfire [{:vendor_id 1234 :product_id 17}]}
+
+通常当你有外置的键盘等等设备时会使用到这个。比如当你有不同布局的外置键盘的时候，可以配合 [[Hammerspoon]] 来自动切换 Karabiner 的配置。
 
 #### 定义输入法
-定义输入法：
 
-	 :input-sources {:squirrel {:input_mode_id "com.googlecode.rimeime.inputmethod.Squirrel"
+定义输入法，也可以通过应用的 ID 来配置：
+
+```
+     :input-sources {:squirrel {:input_mode_id "com.googlecode.rimeime.inputmethod.Squirrel"
                   :input_source_id "com.googlecode.rimeime.inputmethod.Squirrel.Rime"
                   :language "zh-Hans"}
                  :us {:input_mode_id ""
                       :input_source_id "com.apple.keylayout.US"
                       :language "en"}}
+```
 
 变量条件定义：
 
@@ -130,9 +183,9 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 
 上面的这三条规则就是表示
 
-- 在 Chrome 中 a 映射到 1
-- 在 Chrome，safari 中 a 映射到 1
-- 除了在 Chrome 或 safari 中其他应用中 a 映射到 1
+- 在 Chrome 应用中将按键 a 映射到按键 1
+- 在 Chrome，Safari 中 a 映射到 1
+- 除了在 Chrome 或 safari 中，其他应用中 a 映射到 1
 
 或者组合使用：
 
@@ -143,7 +196,10 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 
 这条规则就表示在 Chrome 中，使用外置的 quickfire 键盘，并且输入法是 us 时，将 a 键映射到 1。
 
+有了这样的组合，就可以非常轻松地实现一个 Windows 布局键盘修改成 macOS 使用的键盘，比如将 Ctrl 映射成 Command。
+
 #### 组合规则
+
 简单规则，一个键映射到另一个按键，一个键映射到多个按键
 
 ```
@@ -152,7 +208,7 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
         {:des "c to insert 123" :rules [[:c [:1 :2 :3]]]}]}
 ```
 
-多个按键映射到其他按键，比如同时按下 j,l 映射到 F20
+多个按键映射到其他按键，比如同时按下 `j,l` 映射到 F20
 
 ```
 :rules [[:j :l] :f20]
@@ -213,10 +269,6 @@ Goku 会通过 EDN 文件生成 `karabiner.json`，编写好 edn 文件后可以
 
 上面的规则定义了如果按下了 `d` 按键，则设置变量 `vi-mode` 为 1，表示进入 simlayer vi-mode，`to_if_alone d`， `to_after_key_up` 然后设置变量 `vi-mode` 到 0 。
 
-
-
-
-
 ## 配置样例
 
 ### 交换 Left Option 和 Left Command
@@ -266,6 +318,7 @@ hold caps lock -> hold Ctrl+Shift+Option+Command at same time
 ```
 
 ### Left Shift/Right Shift
+
 在英文的世界中，有一种 Remap，是将
 
 ```
@@ -276,6 +329,7 @@ right_shift once -> type )
 但是在中文的世界里面，我的 Shift 是作为中英文切换按键，非常重要的一个按键。
 
 ### O 模式
+
 如果经常在几个常见的应用之间切换，即使用了不错的比如 Context 这样的窗口管理工具，那也会在 Command + Tab 按键中非常频繁的按键。假如有方式可以通过按下键盘上的快捷键就可以直接切换到不同的窗口，是不是可以省去不少的烦恼。
 
 下面是一个模式，通过按住 O，然后快速按下第二个按键就可以实现在常用的应用之间切换。
@@ -290,8 +344,6 @@ tap o  -> type "o"
 记住一定要按住 o 不要松开然后再按 c 就可以快速切换到 Chrome。
 一旦熟悉了自己的配置，就会发现再也不需要使用 Cmd + Tab 来切换了。
 
-
-
 ### 将 Caps Lock 作为 Command+Control+Option+Shift 同时按下的效果
 
 ```
@@ -300,7 +352,6 @@ tap o  -> type "o"
                  [:##caps_lock :!CTOleft_shift nil {:alone :escape}]
                  ]}
 ```
-
 
 ### Ctrl+np 作为上下
 
@@ -312,7 +363,6 @@ tap o  -> type "o"
                  ]}
 ```
 
-
 ### 禁用 Cmd+H 隐藏
 
 ```
@@ -322,16 +372,15 @@ tap o  -> type "o"
                  ]}
 ```
 
-
 ### 按住 Cmd+q 退出应用
+
+在默认情况下 macOS 按下 Cmd + q 就会退出当前应用，没有任何提示，使用这个配置之后就必须同时按下 Cmd + q 一秒钟时间才会触发退出。
 
 ```
         {:des "Cmd + Q held 1 second to quit"
          :rules [
                  [:!Cq nil nil {:held :!Cq }]]}
 ```
-
-
 
 ## Cheatsheet
 
@@ -365,7 +414,6 @@ tap o  -> type "o"
     ;; https://github.com/yqrashawn/GokuRakuJoudo/blob/b9b334a187379f9bc8182ad59e2cca2a1789e9c0/src/karabiner_configurator/keys.clj#L68
 ```
 
-
 ## 更多
 
 - 阅读 [Nikita Voloboev](https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6) 的博客
@@ -373,7 +421,6 @@ tap o  -> type "o"
 - 然后在仔细的读一读上面的例子
 
 ## reference
-
 
 - <https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md>
 - <https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6>
