@@ -12,7 +12,7 @@ ownCloud 是一个文件分享服务，可以将个人的文件内容，比如�
 
 ## ownCloud 安装
 
-安装之前确保有 `sudo` 权限，并且 ownCloud 需要 
+[[OwnCloud]] 安装之前确保有 `sudo` 权限，并且 ownCloud 需要 
 
 - web 服务器，比如 nginx 或者 Apache
 - 数据库 MySQL

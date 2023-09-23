@@ -42,6 +42,11 @@ last_updated:
 ## iShot
 [iShot](https://www.better365.cn/ishot.html) 是一款 macOS 上的截图工具，支持长截图，OCR，标注等等功能。
 
+- 可以在图片上进行标注步骤（数字）
+- 可以高亮显示截图中的部分内容，其他内容使用灰色
+- OCR
+- 截长图
+
 ## Jietu
 
 Jietu 是腾讯推出的截图工具。
