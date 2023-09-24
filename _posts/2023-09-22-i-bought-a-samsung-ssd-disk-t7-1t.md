@@ -57,4 +57,4 @@ Samsung T7 可以用自带的软件实现磁盘加密。
 
 ## 总结
 
-买这一块 1T 的固态也只是用来做一下应急处理，主要是家里的 NAS 没有带在身边，而使用普通的硬盘处理 Lightroom 中的照片也略慢，所以临时用这一块固态硬盘来应急一下。如果是存储重要的资料，我个人还是会用类似 [Duplicacy](https://einverne.github.io/post/2021/06/duplicacy-backup-tool-usage.html) 等增量备份工具多地备份一下的。
+买这一块 1T 的固态也只是用来做一下应急处理，主要是家里的 NAS 没有带在身边，而使用普通的硬盘处理 Lightroom 中的照片也略慢，所以临时用这一块固态硬盘来应急一下。如果是存储重要的资料，我个人还是会用类似 [Duplicacy](/post/2021/06/duplicacy-backup-tool-usage.html) 等增量备份工具多地备份一下的。更具体的可以参考之前的[备份方案](/post/2020/01/backup-data-and-system.html)。
