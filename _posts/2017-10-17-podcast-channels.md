@@ -53,6 +53,8 @@ This American Life is an American weekly hour-long radio program produced in col
 - 时长： over 1 hour
 - 更新周期：大致为一周
 
+- 688 期，首个获得普利策奖的音频节目
+
 ### Talk to me in Korean
 学习基础韩国语的节目
 
@@ -211,6 +213,23 @@ ABC The Dropout 听深度报道
 
 ### Planet Money
 这档节目来自 NPR，绝对的明星节目。每期不到 30 分钟，把抽象的经济理论和政治决议与日常生活的种种现象结合，或者通过一个普通的生活事例分析出里面蕴含的经济学道理。听这档节目会上瘾。
+
+- 502 集，棉花
+
+### Freakonomics Radio
+
+[Freakonomics Radio](https://freakonomics.com/series/freakonomics-radio/) 是一个经济话题相关的播客，里面总是会提到很多经济概念。
+
+### ChooseFI
+[ChooseFI](https://podcasts.apple.com/us/podcast/choosefi/id1187770032) [[FIRE]] 运动
+
+### Mad Fintest
+[Mad Fintest](https://www.madfientist.com/)
+
+### All in Podcast
+[All In Podcast](https://www.allinpodcast.co/) 四位投资人。
+
+
 
 ## 曾经听过但个人不是很推荐
 每个人都个人的喜好，网上很多 list 也不都是我最喜欢的博客，我觉得能够找到方法找到自己喜欢的某一类播客就是很好的，授人以鱼不如授人以渔，就是这样，但是这些我听过，并不是非常喜欢的播客我也列出来，喜不喜欢可以自行判断。

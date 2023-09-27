@@ -33,7 +33,7 @@ k6 具有下面几个特点
 
 ## 为什么选择 k6
 
-性能测试工具有很多
+[[性能测试工具]]有很多
 
 - [[Hey]] [Hey](https://github.com/rakyll/hey) 是一个使用 Golang 实现的 HTTP 压测工具。
 - [[Apache Bench]] [Apache Bench](/post/2018/10/ab-apache-bench-tool-load-testing.html) 是一个轻量的 HTTP 压力测试工具。

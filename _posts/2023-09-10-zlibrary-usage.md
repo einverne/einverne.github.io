@@ -37,6 +37,18 @@ zlibrary 的很多域名都被 sized 了，包括
 
 在使用自己的账号登录 zlibrary 之后，在我的页面中，可以找到绑定 Telegram Bot 的地方，
 
+登录 zlibrary 之后，点击右上角
+![X5DN](https://photo.einverne.info/images/2023/09/25/X5DN.png)
+
+
+![XR6G](https://photo.einverne.info/images/2023/09/25/XR6G.png)
+
+找到这个 Telegram Bot ，根据这个提示，在 Telegram 中创建 Bot，然后获取 Bot 的 API 。将这个 API 粘贴到网页上。
+![XZnM](https://photo.einverne.info/images/2023/09/25/XZnM.png)
+
+或者直接编辑个人页面，找到页面下方的 Personal Telegram bot
+![XdJ2](https://photo.einverne.info/images/2023/09/25/XdJ2.png)
+
 ## kindle bot
 
 在绑定了 zlib Telegram bot 之后，只要发送书名，就可以返回搜索的书，然后可以将书转发到我写的 KindlePush bot 中，发到 Kindle

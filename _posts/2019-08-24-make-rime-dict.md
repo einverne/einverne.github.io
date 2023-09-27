@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "利用 imewlconverter 制作 Rime 词库"
+aliases:
+- "利用 imewlconverter 制作 Rime 词库"
 tagline: ""
 description: ""
 category: 学习笔记
