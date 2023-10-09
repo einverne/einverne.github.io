@@ -29,8 +29,7 @@ zlibrary 的很多域名都被 sized 了，包括
 
 - https://singlelogin.re/
 - https://singlelogin.se
-- 或者使用 Tor 地址
-  http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion
+- 或者使用 [Tor 地址](http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion)
 - 下载客户端 https://go-to-zlibrary.se/
 
 ## Telegram Bot
