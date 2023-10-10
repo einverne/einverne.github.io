@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ git, linux, git-repair,  ]
+tags: [ git, linux, git-repair, ubuntu, ]
 create_time: 2022-06-27 15:25:58
 last_updated: 2022-06-27 03:58:32
 ---
@@ -19,7 +19,7 @@ error: object file .git/objects/2b/ca69094c49050b232756d8d862c39be9d4fe55 is emp
 fatal: loose object 2bca69094c49050b232756d8d862c39be9d4fe55 (stored in .git/objects/2b/ca69094c49050b232756d8d862c39be9d4fe55) is corrupt
 ```
 
-git 仓库损坏了！虽然之前因为把 git 放到 Syncthing 中同步也曾经出现过一次 corrupt 的情况，但是之前修复的时候已经把全部代码 push 到了远端仓库，所以直接重新拉一下代码就可以。
+git 仓库损坏了！虽然之前把 git 仓库放到 Syncthing 中同步也曾经出现过一次 corrupt 的情况，但是之前修复的时候已经把全部代码 push 到了远端仓库，所以直接重新拉一下代码就可以。
 
 但是这一次我本地的分支没有推送到远端所有的修改还在本地，但是这个时候已经无法访问本地的分支代码了!
 

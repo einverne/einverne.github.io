@@ -1,6 +1,8 @@
 ---
 layout: post
-title: "iPhone 设置及Review"
+title: "iPhone 设置及 Review"
+aliases:
+- "iPhone 设置及 Review"
 tagline: ""
 description: ""
 category: 经验总结

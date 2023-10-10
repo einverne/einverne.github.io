@@ -71,3 +71,5 @@ Trancy 也提供了 [Chrome 插件](https://www.trancy.org/#download)，可以�
 - [ELSA](https://elsaspeak.com/en/) 是一个在线练习英语口语的网站，这个网站的优势时可以告诉用户具体在哪个发音位置需要注意。
 - [Replika](https://replika.com/) 是一个 Android 和 iOS，Oculus 上的虚拟 AI 伴侣，你可以在这个应用内自定义一个虚拟形象，也可以和这个虚拟形象进行口语交流。
 - [[Chatty Tutor]] 是一个 AI 支持的英语对话练习网站。
+- Reply 是一款 iOS 上的语言对话练习应用，可以通过与 AI 进行口语对话练习来提高口语，听力，写作技能
+- [[Kaizen Languages]] 是一个可以用于语言学习的手机应用，可以和 AI 进行口语对话练习。
