@@ -38,7 +38,7 @@ WizNote for Windows/Mac/Linux is a cross-platform cloud based note-taking client
 GoldenDict is an open-source dictionary program that gives translations of words and phrases for different languages. It allows the use of several popular dictionary file formats simultaneously and without conversion. The project aims to create a feature-rich dictionary search program.
 
 ## TeamViewer
-TeamViewer is proprietary software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.
+[[TeamViewer]] is proprietary software for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.
 
 ## pCloud
 

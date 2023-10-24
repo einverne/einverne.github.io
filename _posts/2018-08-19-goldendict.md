@@ -27,6 +27,13 @@ Ubuntu/Linux Mint 下安装非常简单
 - For Mac OS X : <https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Mac-OS-X>
 - For Windows: <https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows>
 
+### macOS
+原始版本的 GoldenDict 因为有一些时间没有发布二进制，所以在最新的 macOS 上可能会遇到一些兼容性问题。
+
+这里推荐几个别人维护的版本
+
+- [GoldenDict++](https://vercel.autoptr.top/gdocr/GoldenDict-OCR-Deployment/) 增强了 OCR，以及做了一些兼容性修改
+
 ## 功能特色
 
 支持的字典格式

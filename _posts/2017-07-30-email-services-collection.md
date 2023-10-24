@@ -162,6 +162,9 @@ Mailchannels 是一家邮件发送服务提供商。
 ## Sendy
 [Sendy](https://sendy.co/) 是一个电子邮件发送服务，宣称比 Amazon SES 便宜 100 倍。
 
+## XyaMail
+[XyaMail](https://xyamail.com/) 是一个发送邮件的服务，基本套餐 7.99$ 一年，Premium 19.99$ 一年。
+
 ## 相关
 
 - [[SMTP Relay]]

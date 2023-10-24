@@ -17,7 +17,7 @@ last_updated: 2023-05-24 18:24:49
 
 ## 体验套餐
 
-为了让大家快速体验这个域名邮箱托管服务，现在设置了一个[体验套餐](https://client.einverne.info/order.php?step=1&productGroup=9&product=46) 只需要 15 元就可以购买入门的套餐，包含 250 MB 空间，一个域名，一个子域名，每个邮箱可以享受每小时 300 封邮件的发信。
+为了让大家快速体验这个域名邮箱托管服务，现在设置了一个[体验套餐](https://client.einverne.info/order.php?step=1&productGroup=9&product=46) 只需要 24 元就可以购买入门的套餐，包含 500 MB 空间，一个域名，一个子域名，每个邮箱可以享受每小时 300 封邮件的发信。
 
 ## 使用教程
 

@@ -385,7 +385,7 @@ anyi 导航、聚合搜索、webstack
 
 ## 远程桌面
 
-- [[RustDesk]] 是一个开源，小巧的远程桌面控制软件，和 [[TeamViewer]]，[[anydesk]]，[[ToDesk]] 等等一样好用。
+- [[RustDesk]] 是一个开源，小巧的远程桌面控制软件，和 [[TeamViewer]]，[[AnyDesk]]，[[ToDesk]] 等等一样好用。
 
 ## 备忘录
 

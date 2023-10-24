@@ -98,6 +98,8 @@ themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站
 
 [RiPro-V2](https://ritheme.com/theme/820.html) 是一个 RiPro 主题的全新升级重构，首页拖拽布局，高级筛选，自带会员生态系统，超全支付接口。
 
+适合资源，源码站点。
+
 ### XIU
 
 [XIU](https://themebetter.com/theme/xiu) 主题，支持百度收录推送，评论算术验证码，适用于图片展示、多元化图片新闻展示、个人博客、资源分享站，扁平化设计、简洁风、全面 SEO 优化、多重列表展示方式
@@ -105,3 +107,6 @@ themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站
 ### zibll 子比主题
 
 [zibll](https://www.zibll.com/) 是一款 WordPress 商城主题。包含付费商城，VIP 会员，社区论坛，用户权限等等功能。
+
+### Grace
+Grace 主题是一款自适应的 WordPress 博客主题。目前的版本有 Grace 8.0

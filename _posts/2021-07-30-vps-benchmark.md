@@ -29,6 +29,20 @@ sudo curl -sL -k https://ipasn.com/bench.sh | sudo bash
 
 来自：[LET](https://lowendtalk.com/discussion/180666/ipasn-2022-new-aio-benchmark-script#latest)
 
+### NodeBench
+
+NodeBench 是一个聚合脚本
+
+- 自动测试 Yabs，三网线路，地区解锁情况
+- 输出 Markdown 格式
+- 自动复制到粘贴板
+
+```
+bash <(curl -sL https://raw.githubusercontent.com/LloydAsp/NodeBench/main/NodeBench.sh)
+```
+
+来自：[nodeseek](https://www.nodeseek.com/post-11619-1)
+
 ### bench.sh
 
 [teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，磁盘 IO，带宽：
@@ -43,10 +57,13 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 	chmod +x unixbench.sh
 	./unixbench.sh
 
+
 ### Yet-Another-Bench-Script
 [Yet Another Bench Script](https://github.com/masonr/yet-another-bench-script) 正如其名，也是一个用来全面测试 VPS 性能的脚本。
 
-    curl -sL yabs.sh | bash
+```
+curl -sL yabs.sh | bash
+```
 
 默认情况下脚本会测试：
 
@@ -156,6 +173,11 @@ The speed of read and write of your hard drive.
 	pip install speedtest-cli
 	speedtest-cli
 
+一键脚本测速
+
+```
+wget -qO- network-speed.xyz | bash
+```
 
 测试服务器到国内的速度，[oooldking](https://github.com/oooldking/script):
 
