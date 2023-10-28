@@ -34,6 +34,8 @@ brew install -f gdu
 brew link --overwrite gdu  # if you have coreutils installed as well
 ```
 
+在 macOS 下因为 gdu 和 coreutils 中的命名冲突了，所以 Brew 安装完成之后名字叫做 `gdu-go`。
+
 Android Termux 安装：
 
 ```
