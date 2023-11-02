@@ -394,4 +394,4 @@ duplicity 有一个严重的缺陷在于其增量备份方法，每一次备份�
 - <https://duplicacy.com/>
 - <https://github.com/gilbertchen/duplicacy/wiki/Lock-Free-Deduplication>
 - [Duplicacy User Guide](https://forum.duplicacy.com/t/duplicacy-user-guide/1197)
-- [[backup-tools-options]]
+- [[backup-tools]]
