@@ -34,7 +34,7 @@ cer 是证书的公钥，一般都是二进制文件，不保存私钥。
     openssl x509 -in certificate.der -inform der -text -noout
 
 ## pem
-pem 全称是 Privacy Enhanced Mail，格式一般为文本格式，以 `-----BEGIN` 开头，以 `-----END` 结尾，中间内容是 BASE64 编码，可保存公钥，也可以保存私钥。有时候会将 pem 格式的私钥改后缀为 `.key` 以示区别。
+[[PEM]] 全称是 Privacy Enhanced Mail，格式一般为文本格式，以 `-----BEGIN` 开头，以 `-----END` 结尾，中间内容是 BASE64 编码，可保存公钥，也可以保存私钥。有时候会将 pem 格式的私钥改后缀为 `.key` 以示区别。
 
 这种格式的证书常用于 Apache 和 Nginx 服务器，所以我们在配置 Nginx SSL 的时候就会发现这种格式的证书文件。
 
