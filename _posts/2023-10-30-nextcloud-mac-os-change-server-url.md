@@ -1,12 +1,12 @@
 ---
 layout: post
-title: ""
+title: "NextCloud macOS 客户端修改服务端地址"
 aliases:
 - "NextCloud macOS 客户端修改服务端地址"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [nextcloud, macos, config]
+tags: [nextcloud, macos, config, cloud, storage, selfhosted, zerotier,]
 create_time: 2022-07-20 03:43:51
 last_updated: 2023-10-30 10:18:00
 ---
