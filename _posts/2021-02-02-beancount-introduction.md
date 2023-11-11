@@ -49,7 +49,7 @@ Beancount 其他重要的特性：
 - Expense 支出账户使用 `+`, 表示支出增加
 - Liabilities 负债账户，`-` 表示借款，负债增加，`+` 表示还款，负债减少
 
-每一笔交易都是资金在这样四个基础账户中流转。
+每一笔交易（Transaction）都是资金在这样四个基础账户中流转。
 
 Beancount 定义了一些基本的语法规则，用户需要按照这样的规则对自己的交易进行记录。
 
@@ -114,6 +114,16 @@ yyyy-MM-dd open 账户类型:命名:命名区别 货币[,货币2]
 
 - `*` 完成的交易，确切的知道交易额
 - `!` 未完成的交易，需要确认或修改交易额
+
+另外还可以使用如下的语法给交易添加 #标签 和 链接
+
+```
+2015-05-30 ! "Cable Co" "Phone Bill" #tag ^link
+  id: "TW378743437"               ; Meta-data
+  Expenses:Home:Phone  87.45 USD
+  Assets:Checking                 ; You may leave one amount out
+```
+
 
 记住这个公式：
 
@@ -195,6 +205,17 @@ Beancount 中的五类根账号：
       Liabilities:CreditCard:BOC -200 CNY
       Assets:WeChatPay         +150 CNY; 发回来的红包
 
+### 标签
+假如已经计划了一次外出的度假，想把所有的相关的交易都打上一个标签，那么可以不用在每一个交易记录上手动加上标签，可以使用 `pushtag` 和 `poptag` 的语法。
+
+```
+pushtag #trip-to-japan
+...
+poptag #trip-to-japan
+```
+
+在两个标签中间添加自己的账单交易即可。
+
 ### 初始化设置
 
 使用 `pad` 来初始化账户。如果一开始的时候账户中本身有一些数据，可以使用 `pad` 来初始化账户。
@@ -217,6 +238,8 @@ fava 就会根据你在 `main.bean` 文件中定义的内容渲染一个网页�
 - <https://fava.pythonanywhere.com/example-beancount-file/income_statement/>
 
 在这个界面上可以看到 Income Statement [[资产损益表]]， Balance Sheet [[资产损益表]]，Trail Balance [[试算表]]，Journal 日记帐等等功能。
+
+之后会再写一篇文章重点介绍一下 [[Fava]] 的使用。
 
 ## reference
 

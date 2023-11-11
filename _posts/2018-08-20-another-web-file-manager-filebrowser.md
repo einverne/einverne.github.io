@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "又一个网页文件管理：filebrowser"
+aliases: "又一个网页文件管理：filebrowser"
 tagline: ""
 description: ""
 category: 经验总结

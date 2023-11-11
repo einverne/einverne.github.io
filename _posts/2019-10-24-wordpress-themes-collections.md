@@ -98,7 +98,7 @@ themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站
 
 [RiPro-V2](https://ritheme.com/theme/820.html) 是一个 RiPro 主题的全新升级重构，首页拖拽布局，高级筛选，自带会员生态系统，超全支付接口。
 
-适合资源，源码站点。
+适合资源，源码站点。599 RMB 购买 VIP 后使用。
 
 ### XIU
 

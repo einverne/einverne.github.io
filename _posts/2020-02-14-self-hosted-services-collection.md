@@ -135,7 +135,7 @@ GitLab 是一个比较完善的解决方案，但缺点就是重，维护成本�
 
 文件管理及同步，我使用 [[NextCloud]]，没使用 NextCloud 之前，我使用 Dropbox 作为同步工具。
 
-和 NextCloud(ownCloud) 类似的也还有 FileRun, seaFile 等
+和 NextCloud(ownCloud) 类似的也还有 [[FileRun]], seaFile 等
 
 和 NextCloud 中心化不同的另一个文件同步 [Syncthing](/post/2019/10/syncthing.html) 也要强烈推荐，自己架设都比较简单。
 

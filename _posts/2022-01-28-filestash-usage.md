@@ -11,7 +11,7 @@ last_updated: 2022-08-02 07:16:43
 create_time: 2022-01-28 06:30:29
 ---
 
-[[filestash]] 是一个在线的文件管理器，可以使用浏览器管理分布在各种服务，各种磁盘上的数据，支持包括 SFTP，FTP，S3，[[WebDAV]]，[[Dropbox]]，[[Google Drive]]，[[Gogs]] 存储的内容。
+[[FileStash]] 是一个在线的文件管理器，可以使用浏览器管理分布在各种服务，各种磁盘上的数据，支持包括 SFTP，FTP，S3，[[WebDAV]]，[[Dropbox]]，[[Google Drive]]，[[Gogs]] 存储的内容。
 
 Filestash 的目的在给存储层增加一层抽象，这使得我们可以通过一个简单的界面来管理我们所有的后端数据。
 
