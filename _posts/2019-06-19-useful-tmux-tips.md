@@ -8,7 +8,7 @@ tags: [tmux, linux, commands, terminal,]
 last_updated:
 ---
 
-Tmux 是一个很强大的终端复用工具，下面是日常积累中记录的一些使用经验。
+[[Tmux]] 是一个很强大的终端复用工具，下面是日常积累中记录的一些使用经验。
 
 
 ## 多 Pane 同步输入 Multiple Pane Synchronization

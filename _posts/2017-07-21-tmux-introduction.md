@@ -30,6 +30,12 @@ Ubuntu/Debian 下:
 
 	sudo apt-get install tmux
 
+如果是在 macOS 下：
+
+```
+brew install tmux
+```
+
 ## 系统选项 {#options}
 Tmux 和其他系统的命令一样拥有很多的启动选项，在 `man tmux` 里面能看到很多。比如 `-2` 就是启动 256 colours 支持。
 
@@ -149,7 +155,6 @@ pane 在 window 里，可以有 N 个 pane，并且 pane 可以在不同的 wind
 	<prefix> :resize-pane -R 20 (Resizes the current pane right by 20 cells)
 	<prefix> :resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
 	<prefix> :resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
-
 
 ## 其他低频率操作
 

@@ -14,17 +14,16 @@ last_updated:
 官网地址：<https://github.com/kovidgoyal/kitty>
 
 ## 为什么要换用 kitty？
-之前使用的 Guake, iTerm 自身也并没有什么问题，但近两年来越来越喜欢纯文本的配置，这样就可以放到 dotfiles 中进行追踪，并且跨平台也只需要同步一下配置即可，Guake 和 iTerm 在各自的平都是非常不错的选择，但都不是跨平台的选择。所以综上这些原因，让我有了尝试一下 kitty 的动力。
+之前使用的 [[Guake]], iTerm 自身也并没有什么问题，但近两年来越来越喜欢纯文本的配置，这样就可以放到 dotfiles 中进行追踪，并且跨平台也只需要同步一下配置即可，Guake 和 iTerm 在各自的平都是非常不错的选择，但都不是跨平台的选择。所以综上这些原因，让我有了尝试一下 kitty 的动力。
 
 kitty 的一些特性：
 
-- 跨平台，日常在 Linux 和 Mac 之间切换，我希望配置一遍就可以在不同的平台上使用。
+- 跨平台，日常在 Linux 和 macOS 之间切换，我希望配置一遍就可以在不同的平台上使用。
 - 纯文本的配置，理由同上
 - GPU 渲染，肉眼可见的速度提升
 
-
 ## 配置 {#config}
-kitty 默认的配置文件在 `~/.config/kitty/kitty.conf`，可以将这个文件拷贝到 dotfiles 仓库中管理，然后用软链接链过去。kitty 默认不支持热加载配置文件 [^1]，所以每一次修改配置都需要退出重进。
+kitty 默认的配置文件在 `~/.config/kitty/kitty.conf`，可以将这个文件拷贝到 dotfiles 仓库中管理，然后用软链接链过去。kitty 默认不支持热加载配置文件 [^1]，所以每一次修改配置都需要退出重进。具体的配置可以参考[我的 GitHub](https://github.com/einverne/dotfiles)
 
 [^1]: <https://github.com/kovidgoyal/kitty/issues/635>
 
@@ -48,7 +47,7 @@ adjust_column_width -1
 
 
 ### 配置和 Guake 类似的下拉式终端
-借助 Hammerspoon 可以实现类似 Guake 类似的下拉效果。
+借助 [[Hammerspoon]] 可以实现类似 Guake 类似的下拉效果。
 
 ```
 hs.hotkey.bind({}, "F12", function()

@@ -23,7 +23,7 @@ pfx 全称是 Predecessor of PKCS#12, 是微软支持的私钥格式，二进制
 
 转为 pem
 
-    openssl pkcs12 -in for-iis.pfx -out for-iis.pem -nodes
+    openss pkcs12 -in for-iis.pfx -out for-iis.pem -nodes
 
 ## cer
 cer 是证书的公钥，一般都是二进制文件，不保存私钥。

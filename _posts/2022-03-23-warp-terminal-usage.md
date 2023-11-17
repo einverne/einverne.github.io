@@ -11,9 +11,7 @@ last_updated: 2022-04-09 11:40:58
 create_time: 2022-04-09 10:41:21
 ---
 
-Warp 是一个 Rust 编写，使用 GPU 渲染的终端(terminal)应用。目标是提升开发者的效率。
-
-- <https://www.warp.dev/>
+[Warp](https://www.warp.dev/) 是一个 Rust 编写，使用 GPU 渲染的终端(terminal)应用。目标是提升开发者的效率。
 
 最近 Warp 发布了新闻稿，筹集了 2300 万美元的资金全力用来构建这个终端。
 
