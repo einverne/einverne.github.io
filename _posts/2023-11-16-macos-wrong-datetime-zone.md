@@ -1,12 +1,12 @@
 ---
 layout: post
-title: ""
+title: "修复 macOS 时区和时间错误"
 aliases:
-- ""
+- "修复 macOS 时区和时间错误"
 tagline: ""
 description: ""
-category: 
-tags: [ ]
+category: 经验总结
+tags: [ macos, datetime, macbook, mac ]
 create_time: 2023-11-16 19:00:19
 last_updated: 2023-11-16 19:00:19
 ---
