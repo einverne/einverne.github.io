@@ -44,6 +44,12 @@ last_updated:
 
 [Sakurairo](https://github.com/mirai-mamori/Sakurairo) 一个多彩、轻松上手、体验完善，具有强大自定义功能的 WordPress 主题（基于 Sakura 主题，支持简繁英日多语言）
 
+### Type
+
+[Type](https://wordpress.org/themes/type/) 是一款入门的 WordPress 主题。
+
+![fjai](https://photo.einverne.info/images/2023/11/18/fjai.png)
+
 ### CorePress Pro
 
 [CorePress Pro](https://www.lovestu.com/corepress.html) 一款开源的 WordPress 主题。但是目前也提供两个不同的版本，Free 版和 Pro 版，Pro 版一次性付费 99 元。
@@ -66,9 +72,10 @@ last_updated:
 
 [ASTRA](https://wpastra.com/) 是一个轻量，简介，快速的 WordPress 主题，高度可订制化。也可以通过此主题将网站快速转变成一个在线商城。
 
-### blocksy
+### Blocksy
 
 [blocksy](https://creativethemes.com/blocksy/) 是一款非常强大的主题。
+
 
 ### B2 主题
 

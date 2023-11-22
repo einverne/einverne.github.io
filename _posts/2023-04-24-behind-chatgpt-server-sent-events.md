@@ -52,12 +52,23 @@ Connection: keep-alive
 
 这个请求会开启一个长连接，服务端可以将实时的内容发送给客户端。Events 发送的内容是 UTF-8 编码的文本内容。
 
+### 优点
+
+- 简单，EventSource API 非常简单
+- 服务器推送，适用于服务器向客户端推送数据，客户端只能接收
+- EventSource 会自动处理断开和重连
+
 ### 缺点
 
 - Server-Sent Events 的一大缺点就是数据的格式只支持 UTF-8，二进制数据是不支持的。
 - 当没有使用 HTTP/2 的时候，另一个限制就是同一个浏览器最多只能有 6 个并发连接。当使用多个标签页的时候可能成为瓶颈。
 
 ![Ya7w](https://photo.einverne.info/images/2023/04/24/Ya7w.jpg)
+
+## more
+
+Microsoft 提供了 [fetch-event-source](https://github.com/Azure/fetch-event-source) 这个库来实现了 POST 请求的 EventSource。
+
 
 ## reference
 

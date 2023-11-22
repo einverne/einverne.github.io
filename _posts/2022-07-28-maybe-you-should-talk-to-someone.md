@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "也许你该找个人聊聊 读书笔记"
+title: "《也许你该找个人聊聊》读书笔记"
 aliases:
-- "也许你该找个人聊聊 读书笔记"
+- "《也许你该找个人聊聊》读书笔记"
 tagline: ""
 description: ""
 category: 读书笔记

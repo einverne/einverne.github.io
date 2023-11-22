@@ -102,7 +102,7 @@ fe () {
 ## 总结
 Warp 不需要用户查看文档也可以有一个不错的上手体验，更不像其他终端那样需要一个非常复杂的配置文档才能将其调教得比较好用。
 
-如果你看完这篇文章觉得 Warp.dev 还不错，可以点击 [我的邀请](https://app.warp.dev/referral/7GVDWJ) 来尝试一下。
+如果你看完这篇文章觉得 Warp.dev 还不错，可以点击 [我的邀请1](https://app.warp.dev/referral/7GVDWJ) 或 [邀请2](https://app.warp.dev/referral/Z95Q64) 来尝试一下。
 
 ## 相关联终端
 

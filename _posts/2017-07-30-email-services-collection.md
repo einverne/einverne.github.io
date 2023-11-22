@@ -165,6 +165,13 @@ Mailchannels 是一家邮件发送服务提供商。
 ## XyaMail
 [XyaMail](https://xyamail.com/) 是一个发送邮件的服务，基本套餐 7.99$ 一年，Premium 19.99$ 一年。
 
+## mymangomail
+
+[mymangomail](https://www.mymangomail.com/)  是一个收费的邮件发送服务。
+
+![feVl](https://photo.einverne.info/images/2023/11/20/feVl.png)
+
+
 ## 相关
 
 - [[SMTP Relay]]
