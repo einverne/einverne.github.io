@@ -27,6 +27,7 @@ create_time: 2023-04-26 01:50:53
 
 不可自架，闭源
 
+- [[Microsoft Clarity]]
 - [[Splitbee]] 被 Vercel 收购，即将关闭，过去调研的时候曾经用过一段时间，体验确实不错，界面非常简洁，但是被收购之后就被整合到了 Vercel
 - [[Tiny Analytics]]
 - [[Smatlook]]
