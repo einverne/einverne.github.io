@@ -45,7 +45,7 @@ asyncio.run(main())
 
 - 网络请求，比如爬虫 [[aiohttp]]
 - 文件读写，[[aiofile]]
-- Web 框架，[[aiohttp]], [[fastapi]]
+- Web 框架，[[aiohttp]], [[FastAPI]]
 - 数据库查询，[[asyncpg]], [[databases]], [[aiomysql]]
 
 ## Installation

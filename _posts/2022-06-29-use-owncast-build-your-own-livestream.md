@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ owncast, docker-compose, docker, livesteam,  ]
+tags: [ owncast, docker-compose, docker, livesteam, streaming ]
 create_time: 2022-06-27 04:53:45
 last_updated: 2022-07-27 05:36:18
 ---
@@ -23,6 +23,7 @@ Owncast 可以很好的成为 Twitch，YouTube Live 等等在线直播平台的�
 - [[FFmpeg]] 4.2 以上版本，需带有 x264/var_stream_map
 
 ## Docker 安装
+
 Docker compose[^1] 如下：
 
 [^1]: <https://github.com/einverne/dockerfile>
@@ -202,9 +203,11 @@ systemctl start owncast
 ```
 
 ## 设置 OBS
-在 [OBS 官网](https://obsproject.com/) 安装OBS，在设置>服务中选择自定义（Custom），在管理员页面获取RTMP服务器链接和流密钥并填入OBS中，点击Start Streaming测试链接，开始推流。
+
+在 [OBS 官网](https://obsproject.com/) 安装 OBS，在设置>服务中选择自定义（Custom），在管理员页面获取 RTMP 服务器链接和流密钥并填入 OBS 中，点击 Start Streaming 测试链接，开始推流。
 
 ## FFmpeg
+
 也可以直接从命令行使用 [[FFmpeg]] 来推流到 Owncast 服务器。
 
 ```
@@ -249,8 +252,9 @@ ffmpeg -re -nostdin -i "$file" \
 - `-preset:v` 表示使用 FFmpeg 默认的[编码](https://trac.ffmpeg.org/wiki/Encode/H.264)，按速度降序 ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow, placebo
 - `-f fmt` 强制指定输入或输出的文件格式
 
-
+```
 ffmpeg -re -i ~/INPUT_FILE -vcodec libx264 -profile:v main -preset:v medium -r 30 -g 60 -keyint_min 60 -sc_threshold 0 -b:v 2500k -maxrate 2500k -bufsize 2500k -filter:v scale="trunc(oha/2)2:720" -sws_flags lanczos+accurate_rnd -acodec libfdk_aac -b:a 96k -ar 48000 -ac 2 -f flv rtmp://live.twitch.tv/app/STREAM_KEY
+```
 
 ## reference
 

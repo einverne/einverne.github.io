@@ -121,7 +121,7 @@ Snap2HTML 是一个生成一个静态 HTML 页面展示文件列表的程序。
 
 ## alist
 
-[[alist-file-list]]
+[[AList]]
 
 
 ## DirectoryLister
