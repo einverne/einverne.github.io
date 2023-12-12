@@ -9,7 +9,7 @@ permalink: /about.html
 
 之前在少数派写过一篇自我介绍，之后发现自己的博客的 About 反而写的不如这篇认真，不如就把之前写的整理一下发到 About。
 
-哈喽，大家好，我通常在网上都叫自己 Ein Verne，仅仅是之前起的英文名，就一直用下来了，平时也常常写写 [文章](https://blog.einverne.info/)，但总是不知不觉中就变成了学习笔记。
+哈喽，大家好，我通常在网上都叫自己 Ein Verne，仅仅是之前起的英文名，就一直用下来了，平时也常常写写 [文章](https://blog.einverne.info/)，但总是不知不觉中就变成了学习笔记。
 
 我是一个兴趣广泛的人，其实也就是什么都不会，日常[看看电影，书](https://www.douban.com/people/einverne/)，偶尔写写博客，影评，都非专业，发发自己所思所想而已。算是曾经的谷粉，但渐渐的便不再依赖于 Google 的服务，尤其是在 Google Reader， Google Plus 关闭后，2019 年对于我来说也算是一个逃离 Google 的一年，我将我使用的 Google 服务中的个人数据陆陆续续迁移到本地来保存（Google Reader -> [Miniflux](https://github.com/einverne/dockerfile), Play Music -> Plex/Swinsian, Picasa/Google Photos -> 本地 NAS, Gmail -> Self-hosted domain mail box/Cloudflare Email Routing, Google Drive -> Syncthing) ，当然很可惜到目前为止我依然没有办法完全逃离，毕竟现在还天天在用 Gmail，Google Calendar，YouTube 等等。
 
@@ -17,7 +17,7 @@ permalink: /about.html
 
 2023 年初，我来到了日本工作，我把我的日语学习笔记放到了[这里](https://japanese-learning-notes.einverne.info/)，我也新开了一个博客专门用来记录[日本的生活](https://japan.einverne.info/)。如果你有任何关于日本想要了解的方面，也欢迎通过下面的联系方式来找到我。
 
-我是一个 Podcast 狂热分子，这些年也听了 [不少](https://blog.einverne.info/post/2017/10/podcast-channels.html) 很有意思的播客，一直想自己做一档节目，思考过桌游，读书，但最后还是没有下文。
+我是一个 Podcast 狂热分子，这些年也听了[不少](https://blog.einverne.info/post/2017/10/podcast-channels.html)很有意思的播客，一直想自己做一档节目，思考过桌游，读书，但最后还是没有下文。
 
 我不是一个游戏爱好者，之前最多也就是玩一些益智手机游戏，[Mini Metro](https://play.google.com/store/apps/details?id=nz.co.codepoint.minimetro&hl=en_US&gl=US), [Dark Echo](https://play.google.com/store/apps/details?id=com.rac7.DarkEcho&hl=en_US&gl=US), Osmos HD 等等，不过去年入手 Sony PS4 后就又像是新打开了新世界的一扇大门，玩了《神秘海域 4》，《Horizon Zero Dawn》，《战神》，尤其是 《Horizon Zero Dawn》之后发现原来游戏可以有如此的沉浸感，故事性也极强，就像是一个超长的第一人称电影。
 
@@ -51,7 +51,7 @@ permalink: /about.html
 
 - 输入法：[RIME](/post/2014/11/rime.html)，一个随时随地适合我习惯的输入法
 - 资讯类：~~InoReader 推荐过很多回~~ 现在虽然 RSS 看得少了，但希望之后慢慢再捡起来（2023 年我又开始用 Miniflux 来阅读文章了），Twitter，在 Google Plus 关闭后很久后选择开始用起来，不过也不是经常发，已经对社交媒体不关心了。
-- 个人管理：[Trello](/post/2017/12/trello-introduction.html)，Google Calendar，Trello 又是一个可以展开多个篇幅的内容，总之它已经成为了我唯一的  GTD 工具，加上和其他比如 Calendar 的配合，非常完美。Calendar 是作为桌面 Widget 存在的，代办事项，设定的周期性目标，活动，提醒都可以在上面展示。
+- 个人管理：[Trello](/post/2017/12/trello-introduction.html)，Google Calendar，Trello 又是一个可以展开多个篇幅的内容，总之它已经成为了我唯一的 GTD 工具，加上和其他比如 Calendar 的配合，非常完美。Calendar 是作为桌面 Widget 存在的，代办事项，设定的周期性目标，活动，提醒都可以在上面展示。
 - 笔记：~~WizNote 多年来一直用的它，跨平台同步也没有其他能代替了。~~ 在 [Obisidian](/post/2020/05/obsidian-note-taking.html) 出现之后，我就全面换成了 Obsidian。
 - 播客：Google Podcasts，至今为止我还安装了 Pocket Casts, Breaker, Anchor ，但用的最多的还是 Google Podcasts，似乎是最全的。随着小宇宙的上线，有些时候听中文播客也会用小宇宙。
 - IM 类：[Telegram](/post/2016/07/telegram-review.html)，WeChat 自不必多说。个人写了一个 [@kindlepush_bot](https://einverne.github.io/post/2017/09/telegram-bot.html) 用来发送电子书到 Kindle 。
@@ -120,5 +120,6 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 
 - [GitHub](https://github.com/einverne)
 - [Twitter](https://twitter.com/einverne)
-- ~~[豆瓣](https://www.douban.com/people/einverne/)~~
+- [Mastodon](https://m.einverne.info/@einverne)
+- ~~[豆瓣](https://www.douban.com/people/einverne/)~~ 自从豆瓣开始自我审查开始，就不再使用
 

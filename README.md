@@ -1,5 +1,7 @@
-Personal website using Jekyll-Bootstrap  
-http://einverne.github.io
+## Personal website using Jekyll-Bootstrap  
+
+- https://einverne.github.io
+- https://blog.einverne.info
 
 写给我自己：
 
