@@ -17,7 +17,7 @@ jks 全称 Java KeyStore ，是 Java 的 keytools 证书工具支持的证书私
 
 ## pfx
 
-pfx 全称是 Predecessor of PKCS#12, 是微软支持的私钥格式，二进制格式，同时包含证书和私钥，一般有密码保护。一般用于 Windows IIS 服务器。
+[[PFX]] 全称是 Predecessor of PKCS#12, 是微软支持的私钥格式，二进制格式，同时包含证书和私钥，一般有密码保护。一般用于 Windows IIS 服务器。
 
     openssl pkcs12 -in xxx.pfx
 
