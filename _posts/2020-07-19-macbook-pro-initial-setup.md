@@ -391,7 +391,7 @@ Karabiner 之后也会用一个篇幅来介绍一下。
 ### 窗口管理
 在 Mac 上我发现我无法想在 Mint 中拖拽窗口到左右边缘，然后将窗口左右分屏，导致现在 Mac 上的窗口层层叠叠，管理起来非常的不方便。找了几个开源的工具。
 
-- SizeUp
+- [SizeUp](https://www.irradiatedsoftware.com/sizeup/) SizeUp 是一个 Irradiated Software 开发的窗口管理软件
 - [Spectacle](https://www.spectacleapp.com/)
 - [Rectangle](https://rectangleapp.com/)
 

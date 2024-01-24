@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "阿加莎・克里斯蒂自传"
+title: "《阿加莎・克里斯蒂自传》读书笔记"
 aliases:
-- "阿加莎・克里斯蒂自传"
+- "《阿加莎・克里斯蒂自传》读书笔记"
 tagline: ""
 description: ""
 category: 读书笔记

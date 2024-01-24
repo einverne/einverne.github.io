@@ -29,6 +29,7 @@ Podcast 近两年又突然火起来，一度认为 Podcast 是最近才流行起
 
 iTunes 和 Google Play Music 都需要不同格式的 RSS，需要特别考虑。另外音频最好带封面 1400*1400 px 到 2048*2048 px 大小，这个是 iTunes Store 需要的。
 
+-你觉得到大理，如果要推荐一个必吃的美食，你会推荐什么？
 
 
 ### iTunes 需要的标签

@@ -24,6 +24,8 @@ create_time: 2023-04-26 01:50:53
 - [[shynet]] Python
 - [[Ackee]] Node.js, JavaScript, SCSS
 - [[uxwizz]] PHP+MySQL
+- [Posthog](https://posthog.com) 可以自架
+- [GoatCounter](https://www.goatcounter.com/) 一个开源的统计应用
 
 不可自架，闭源
 
@@ -32,6 +34,7 @@ create_time: 2023-04-26 01:50:53
 - [[Tiny Analytics]]
 - [[Smatlook]]
 - [Simple Analytics](https://simpleanalytics.com/)
+- [[Microsoft Clarity]]
 
 下面就重点介绍一下我准备去试试的几个服务。
 

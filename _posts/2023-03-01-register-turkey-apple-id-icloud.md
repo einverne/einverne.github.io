@@ -31,9 +31,13 @@ iCloud 土耳其区 2TB 空间的方案，只需要 65 里拉一个月，折合�
 
 这个时候就需要使用到 [oyunfor](https://www.oyunfor.com/) 这个网站，先注册这个网站的账号，然后在页面中选购 Apple Store Gift Card。
 
+![uU6N](https://photo.einverne.info/images/2023/12/21/uU6N.png)
+
 礼品卡可以通过信用卡（Visa，Mastercard，等等）来进行支付，当然也可以通过虚拟信用卡，比如 N26 的虚拟卡，或者 Wise 的实体卡等，我之前注册了 N26 的虚拟卡，正好这里排上用场。
 
 另外这里需要注意的是，oyunfor 竟然不支持 IPv6 网络，我家里的带宽默认是 IPv6 的，支付的时候报错了，没想到的是我在日本还要用 Clash for Windows 找了一个美国的代理才能过这个支付。
+
+![uXs2](https://photo.einverne.info/images/2023/12/21/uXs2.png)
 
 购买成功之后，在[个人页面已购](https://www.oyunfor.com/profil/aldiklarim)里面可以查看到兑换码。界面上大概在这个位置。
 
@@ -44,6 +48,8 @@ iCloud 土耳其区 2TB 空间的方案，只需要 65 里拉一个月，折合�
 ## 购买 iCloud+
 
 在设置中，点击 iCloud 升级 iCloud 空间，因为我个人目前还用不到 2T 那么大的空间，先升级了一个 200 GB。
+
+原价 19.9 TL，翻倍之后 39.9 TL
 
 ## 建立家庭共享
 
