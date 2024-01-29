@@ -121,6 +121,12 @@ last_updated: 2024-01-28 11:10:50
   - Puff Glide
   - Maomi
 
+列举了上面这么多的应用，我实际使用最多，比较推荐的几个应用
+
+- 本地视频播放 VidHub ，Fileball，Conflux
+- 在线视频，YouTube，弹幕播放器
+- 在线媒体库，Plex
+
 ### VidPlay
 
 VidPlay 一款 可高级玩法的 VOD 播放器
