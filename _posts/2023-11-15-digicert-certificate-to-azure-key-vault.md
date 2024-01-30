@@ -70,7 +70,7 @@ PFX 文件和 PEM 文件的主要区别在于，PFX 文件包含私钥，而 PEM
 - 生成 [[CSR]] 文件，提供给 DigiCert
 - 等待 DigiCert 发行证书，获取 DigiCert 发行证书
 - 将产生 CSR 文件的本地私钥和 DigiCert 发行的证书合并
-- 生成 pem 或者 pfx 上传到 [[Azure Key Vault]] 中
+- 生成 pem 或者 PFX 上传到 [[Azure Key Vault]] 中
 
 从 DigiCert 官网获取证书文件，然后使用命令行工具生成 PFX 文件。
 

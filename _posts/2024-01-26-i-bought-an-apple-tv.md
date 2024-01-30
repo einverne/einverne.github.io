@@ -127,6 +127,7 @@ last_updated: 2024-01-28 11:10:50
 - 本地视频播放 VidHub ，Fileball，Conflux
 - 在线视频，YouTube，弹幕播放器
 - 在线媒体库，Plex
+- 投屏，DLPlay
 
 ### VidPlay
 
