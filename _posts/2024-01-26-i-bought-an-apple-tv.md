@@ -104,8 +104,9 @@ last_updated: 2024-01-28 11:10:50
 - m3u
   - BestTV [下载](https://apps.apple.com/us/app/besttv-live-stream-player/id6443592543?l=zh-Hans-CN) Live Stream Player，售价 4.99 USD，限免过
   - APTV，一款用于观看 IPTV 的应用，需要自行配置直播源
-- 投屏
+- 投屏，支持在 Android 设备上投屏
   - UnPlay，支持 [[DLNA]] 协议
+  - DLPlay，支持 DLNA 投屏协议，1.99 USD/ 300JPY
 - 工具
   - SpeedTest 测试外网速度
   - iPerf 测试内网速度
