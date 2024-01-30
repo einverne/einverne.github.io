@@ -50,6 +50,10 @@ h2 {
     font-size: 1em;
 }
 
+p {
+    word-break: break-all;
+}
+
 a {
     word-break: break-all;
 }
