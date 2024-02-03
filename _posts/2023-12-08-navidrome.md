@@ -6,18 +6,21 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [navidrome, plexamp, plex, subsonic, open-source, music-server, music-management, music, music-library]
+tags: [navidrome, plexamp, plex, subsonic, open-source, music-server, music-management, music, music-library, self-hosted]
 create_time: 2024-01-31 08:38:00
 last_updated: 2024-01-31 08:38:00
 ---
 
 [Navidrome](https://www.navidrome.org/) 是一个现代的音乐服务器，兼容所有的 Subsonic/Airsonic 客户端。
 
+Navidrome 后端使用 Go 语言编写，前端基于 React，界面风格采用 Material UI，串流音乐的接口兼容 [[Subsonic]]，所以支持 Subsonic 的客户端都可以使用。
+
 ## Navidrome 是什么
 
 Navidrome 是什么呢，引用官网的原话：
 
 > **Navidrome is a self-hosted, open source music server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.**
+> 
 > Navidrome 是一个自托管的开源音乐服务器和流媒体。它让您可以自由地从任何浏览器或移动设备收听您的音乐收藏。
 
 特点：
@@ -61,6 +64,10 @@ docker-compose logs -f
 ```
 
 因为我个人使用 [[Nginx Proxy Manager]] 来反向代理 Navidrome 实例，所以里面多配了一些 Nginx 代理的选项，可以根据自己的需要配置。如果不配置 Nginx 代理，可以直接使用端口来访问。
+
+> panic: chi: routing pattern must begin with '/' in '""/auth'
+
+如果安装的过程中遇到这个报错，那么查看一下 docker-compose.yml 文件中的 `ND_BASEURL`，如果留空就会抛出上面的错误。
 
 比如，安装完成之后访问 [http://your-vpsip:4533/](http://your-vpsip:4533/)，首次登录会要求创建管理员账户，和密码。
 
@@ -143,6 +150,12 @@ ND_SPOTIFY_SECRET
 - Android，Symfonium(付费)，Ultrasonic
 - 桌面端，[[Sonixd]]
   - `brew install --cask sonixd`
+
+
+macOS 下的 Sonixd
+
+![4aYN](https://photo.einverne.info/images/2024/02/02/4aYN.png)
+
 
 ## 歌词
 

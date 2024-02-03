@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 产品体验
-tags: [ macos, mac, time-out, timer, 眼睛保护 ]
+tags: [macos, mac, mac-app, mac-appli time-out, timer, mac-application]
 create_time: 2023-08-25 09:35:09
 last_updated: 2023-08-25 09:35:09
 ---
