@@ -19,7 +19,7 @@ create_time: 2023-04-26 01:50:53
 
 - [[Matomo]] (PHP + MySQL)是一款 PHP 开发的流量监控工具，报表功能比较强大.
 - [[Umami]] [[TypeScript]] + MySQL/PostgreSQL
-- [[Plausible]] [plausible analytics](https://github.com/plausible/analytics) Elixir 开发的小巧的流量监控平台.
+- [[Plausible Analytics]] [plausible analytics](https://github.com/plausible/analytics) Elixir 开发的小巧的流量监控平台.
 - [[Fathom Analytics]] Go + JavaScript
 - [[shynet]] Python
 - [[Ackee]] Node.js, JavaScript, SCSS
