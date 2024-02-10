@@ -56,6 +56,12 @@ MVP 核心思想在于快，通过设定精确的目标，构建最小版本，�
 
 与 MVP 类似的还有一个概念叫做 MMF，Minimum Marketable Feature，最小可销售特性。这个也是产品开发非常重要的一个概念，它强调的是在产品中添加最小限度可以被销售或交付的功能。与 MVP 不同，MMF 更侧重于产品的营销和销售能力，而不仅仅是验证产品概念和核心功能。
 
+## 总结
+
+最后使用 [[Marc Lou]] 的话来做一个总结，「忘记 SaaS，Passive income，The perfect co-founder，从一个 Feature，One-time Payment，Repeated small wins 开始」。[^1]这句话恰好印证了 MVP 思想，核心功能，收费，然后不断验证并迭代更新。
+
+[^1]: <https://x.com/marc_louvion/status/1755973581945929902>
+
 ## related
 
 - [[MMF]]
