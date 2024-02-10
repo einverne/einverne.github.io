@@ -37,9 +37,10 @@ Coolify 是一个开放源代码的项目，但是如果你觉得 Coolify 很棒
 - 2 GB，如果部署的服务比较多，看情况增加内存
 - 30 GB 以上的空间，镜像地址，以及数据库可能占用过多的磁盘空间，实时监控
 
-一键安装脚本
+在 root 下，一键安装脚本
 
 ```
+apt install curl wget git jq jc
 curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 ```
 
