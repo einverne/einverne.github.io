@@ -1,11 +1,13 @@
 ---
 layout: post
 title: "You Quiz on the Block E70 世代差异"
+aliases: "You Quiz on the Block E70 世代差异"
 tagline: ""
-description: ""
+description: "由 You Quiz on the Block 联想到的"
 category: 思考感悟
-tags: [thinking, ]
-last_updated:
+tags: [thinking, south-korea, history]
+last_updated: 2024-02-11 01:35:42
+create_time: 2021-07-03 11:31:53
 ---
 
 Covid-19 以来很少有让我继续追下去的韩综，除了带我入坑的周末综艺，一个 《[[Begin Again Korea]]》剩下的就只有《You Quiz On the Block》了。可以看得出来韩国的综艺人，电视人总还是带着一些社会关怀再做内容，之前在《Begin Again》里面就提过，在这个特殊的时代，他们把歌声第一时间先给一线的医护人员，公共服务人员，在这个疫情的特殊时期《Begin Again》就是一个治愈的存在，而相同的《You Quiz》第三期开篇就是对社会一线人员的致敬，公交司机，私营店老板，快递员，防疫人员，社会正是在这些人继续工作下去的时候才能维持正常的运行。
