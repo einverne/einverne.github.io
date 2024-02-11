@@ -7,8 +7,8 @@ tagline: ""
 description: ""
 category: 经验总结
 tags: [printer, hardware, office, ]
-create_time: 2024-01-22 17:02:37
-last_updated: 2024-01-22 17:02:37
+create_time: 2023-11-22 17:02:37
+last_updated: 2023-12-22 17:02:37
 ---
 
 因为时不时需要有打印和复印的需求（日本政府总有一些奇怪的手续需要提供纸质的材料），之前看到有人出家用打印机就用 3000 JPY 买了一台，这是一台 Canon TS3330。下面记录一下我自己的初始化过程以及更换墨盒的过程，以备自己后续查看。
