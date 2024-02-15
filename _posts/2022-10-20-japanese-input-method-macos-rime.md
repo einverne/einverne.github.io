@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ japanese, rime, input-method,  ]
+tags: [ japanese, rime, input-method, korean, ]
 create_time: 2022-10-21 11:21:19
 last_updated: 2022-10-21 11:21:19
 ---
@@ -24,7 +24,8 @@ last_updated: 2022-10-21 11:21:19
 简单的搜索一下就发现了比较成熟的 Rime 下的日语输入方案 ---- [Rime Japanese](https://github.com/gkovacs/rime-japanese)
 
 简单的看了一下，这个方案使用的是 [Hepburn romanization 方案](https://en.wikipedia.org/wiki/Hepburn_romanization) ，平文式罗马字标注。
-平文式罗马字是一种使用罗马字母来为日语的发音进行标注的方案
+
+平文式罗马字是一种使用罗马字母来为日语的发音进行标注的方案。
 
 ## 平假名
 
@@ -98,7 +99,11 @@ macOS 自带的输入法平假名和片假名切换是  F6 变成平假名，F7 
 
 ### 促音输入
 
-っ(促音)双打后一个假名的罗马字发音的第一个辅音，如“ちょっと”为“chotto”。输入两次 `t` 
+っ(促音)双打后一个假名的罗马字发音的第一个辅音，如“ちょっと”为“chotto”。输入两次 `t` 。
+
+```
+やっぱり  yappari
+```
 
 ### 小写
 小写的输入，在前面加上 `x` 或者 `_` 即可

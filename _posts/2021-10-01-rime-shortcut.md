@@ -6,15 +6,13 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ rime, shortcut, keybinding, ]
+tags: [rime, shortcut, keybinding, input-method,]
 last_updated:
 ---
-
 
 今天在整理 [Rime 插件使用](/post/2021/09/rime-plugin-lua-octagram.html)的时候，想起来整理一下 Rime 输入法的快捷键。
 
 在之前整理 [Rime 基础配置](/post/2014/11/rime.html) 的时候稍微带到一下。
-
 
 通过配合这些快捷键可以在输入很长一段句子的时候提升体验。
 
@@ -68,8 +66,8 @@ key_binder:
     - {accept: "Control+period", toggle: ascii_punct, when: always}
 ```
 
-
 ## 自定义快捷键
+
 在上面的配置中可以看到 Rime 默认就定义了非常多的快捷键绑定，并且这些快捷键都可以通过配置改变。
 
 这里做一个例子，比如平时用 Vim 较多，想要更换成更加舒服的 Vim 绑定，可以在 Rime 配置根目录中 `vi default.custom.yaml` 中配置：
@@ -89,6 +87,7 @@ patch:
 这样就可以使用 Ctrl+j/k 来上下翻页，而使用 Ctrl+h/l 来左右切换候选词。不过我个人还是还是习惯默认设置的快捷键。
 
 ## 配置说明
+
 在上面的例子中可以看到 bindings 配置中有三个配置选项。每一条 `binding` 下面可以包含：
 
 - accept，实际接受的按键
@@ -115,7 +114,7 @@ composing	操作输入码用
 always	全域
 ```
 
-accept 和 send 可用字段除A-Za-z0-9外，还可以包含键盘上实际的所有按键：
+accept 和 send 可用字段除 A-Za-z0-9 外，还可以包含键盘上实际的所有按键：
 
 ```
 BackSpace	退格
@@ -187,7 +186,7 @@ greater	>
 question	?
 at	@
 bracketleft	[
-backslash	
+backslash
 bracketright	]
 asciicircum	^
 underscore	_
@@ -233,7 +232,6 @@ KP_9	小鍵板9
     { when: has_menu, accept: ";", send: 2 }
 
 这样当候选词出现在第二位时，直接按下 `;` 就可以输入。
-
 
 ## reference
 

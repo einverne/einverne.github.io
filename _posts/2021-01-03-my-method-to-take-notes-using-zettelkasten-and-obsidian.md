@@ -42,7 +42,7 @@ Zettelkasten 卡片的第一个准则，就是一条笔记只记录一个想法�
 书籍还有一个比较重要的便是阅读过程中的标注或者是高亮部分，我个人因为不是固定使用一个设备来阅读，所以有可能：
 
 - 有一部分笔记在 Moon+ Reader Pro 中
-- 微信读书
+- [[微信读书]]
 - Kindle App 和设备的 clippings 中
 - 还有一部分在 [Boox Note 电子书](/post/2019/10/boox-note-pro-2-tips.html) 中
 

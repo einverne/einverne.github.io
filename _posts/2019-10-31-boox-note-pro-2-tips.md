@@ -94,7 +94,7 @@ Note2 的笔记应用已经自带很多笔记模板，但是你也可以自定�
 - KOReader <https://github.com/koreader/koreader>
 - Moon Reader Pro 很早就买了，Android 上唯一阅读器
 
-其他应用，比如微信读书，多看，掌阅，网易蜗牛，kindle，不过个人倒不是很喜欢在 Boox 上用这些为手机而设计的应用。
+其他应用，比如[[微信读书]]，多看，掌阅，网易蜗牛，kindle，不过个人倒不是很喜欢在 Boox 上用这些为手机而设计的应用。
 
 ### 漫画
 平时不怎么看漫画，不过这几个似乎不错：
