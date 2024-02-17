@@ -43,7 +43,7 @@ Laravel Sail 启动之后会自动拉取如下组件：
 - [[Redis]]
 - [[mailhog]]，mailhog 是一个本地开发测试的邮件服务器，非常方便在本地测试 SMTP
 - [[meilisearch]]
-- [[selenium]]
+- [[Selenium]]
 - Laravel 应用本身
 
 ### 邮件
