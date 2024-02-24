@@ -44,7 +44,10 @@ Self-hosted 方案，容器化方案，所有监控内容可以直接通过容�
 
 ### EHEH
 
-[EHEH](https://eheh.org/index/index) 是一个闭源的监控平台，类似于 Nodequery，安全性待评估。
+~~[EHEH](https://eheh.org/index/index) 是一个闭源的监控平台，类似于 Nodequery，安全性待评估。~~
+
+服务已经不存在。果然闭源的不可信啊。
+
 ### dockprom
 
 一个容器化解决方案，集成了 Prometheus, Grafana, cAdvisor 等等。
@@ -89,9 +92,9 @@ GPL 开源协议。
 源码：<https://github.com/shevabam/ezservermonitor-web>
 
 ## Nezha monitor
+[[nezha 哪吒面板]] 是一款使用 Go 编写的服务器内存，CPU，网络使用情况的开源监控面板。
 
 - [哪吒监控使用](/post/2021/08/nezha-monitor.html)
-- [[2021-08-28-nezha-monitor]]
 
 ## Datadog
 Datadog 是一个企业级的服务监控，日志记录等等平台。
