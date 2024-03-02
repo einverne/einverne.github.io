@@ -22,7 +22,7 @@ PaaS 作为一个平台提供给了开发者构建，部署，管理应用的能
 与之对应的概念还有
 
 - [[IaaS]]，Infrastructure as a Service，基础设施即服务，通过虚拟化技术，提供了操作系统级别的服务，允许用户租用虚拟服务器，包括计算资源，存储，内存，网络等等。典型的 IaaS 提供商是 Amazon AWS（Amazon Web Services），Microsoft Azure，Google Cloud Platform，[[Oracle Cloud]]，阿里云等等
-- [[BaaS]]，Backend-as-a-Service，一种托管的后端服务，比如提供托管的数据库，后端代码的运行时环境，通常也会提供能让开发者轻松构建移动应用或 Web 应用的后台服务，开发者无需自己维护后端数据库及应用程序运行时。BaaS 通常会提供数据存储，用户管理，文件存储，通知推送，第三方 API 集成等。借助 BaaS 开发者可以不用关心数据，只专注于前端，用户界面的体验。常见的提供商有 Google [[Firebase]]，Facebook Parse，AWS Amplify，[[supabase]] 等等。开源的代替也有我之前介绍过的 [Appwrite](/post/2022/10/appwrite-usage.html)。
+- [[BaaS]]，Backend-as-a-Service，一种托管的后端服务，比如提供托管的数据库，后端代码的运行时环境，通常也会提供能让开发者轻松构建移动应用或 Web 应用的后台服务，开发者无需自己维护后端数据库及应用程序运行时。BaaS 通常会提供数据存储，用户管理，文件存储，通知推送，第三方 API 集成等。借助 BaaS 开发者可以不用关心数据，只专注于前端，用户界面的体验。常见的提供商有 Google [[Firebase]]，Facebook Parse，AWS Amplify，[[Supabase]] 等等。开源的代替也有我之前介绍过的 [Appwrite](/post/2022/10/appwrite-usage.html)。
 - [[SaaS]]，Software-as-a-Service，软件即服务，通过互联网提供给用户软件产品。用户通过网络访问使用这些服务而不需要自己安装，配置和维护这些软件。
 - [[FaaS]]，Function-as-a-Service，函数即服务，开发者专注于编写函数（片段的代码），配置触发器来指定函数何时触发。函数被触发时，自动分配计算资源，执行用户代码，并返回结果。开发者不用再关心除函数以外的其他资源。FaaS 提供商包括 AWS Lambda，Google Cloud Functions，Azure Functions。
 

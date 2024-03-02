@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Celery 使用介绍"
+aliases: "Celery 使用介绍"
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [celery, python, queue, task, distribution]
+tags: [celery, python, queue, task, distribution, ]
 last_updated:
 ---
 

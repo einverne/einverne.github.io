@@ -95,7 +95,7 @@ ChatGPT Embedding 后的内容相似度查询是用 Cosine 算法
 - [[zilliz]] 托管的 Milvus 数据库
 - [metal.io](https://getmetal.io/)
 - [drant](https://qdrant.tech/) 注册赠送 1 GB 存储空间
-- [[supabase]] 开启 pgvector 扩展
+- [[Supabase]] 开启 pgvector 扩展
 
 ## 相关工具
 

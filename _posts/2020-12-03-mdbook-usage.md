@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ gitbook, online-document, rust, wiki, markdown, notes, ]
+tags: [gitbook, online-document, rust, wiki, markdown, notes, static-site]
 last_updated:
 ---
 

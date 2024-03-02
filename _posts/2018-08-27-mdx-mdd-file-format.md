@@ -8,7 +8,13 @@ tags: [python, goldendict, mdx, mdd, dict, ]
 last_updated:
 ---
 
-MDict 将字典定义（关键字，解释）放在 MDX 文件中，字典相关的其他资源样式文件，比如图片，发音，样式放在 MDD 文件中，虽然存放的内容是不一样的，但是两种文件的结构是一致的。
+MDict 将字典定义（关键字，解释）放在 MDX(全称 Mobile Dictionary eXchange) 文件中，字典相关的其他资源样式文件，比如图片，发音，样式放在 MDD 文件中，虽然存放的内容是不一样的，但是两种文件的结构是一致的。
+
+- mdx 文件包含了词典所有的文本，HTML，索引头部以及单词解释
+- mdd 文件包含了除文本以外的其他资源文件，比如图片，音频，CSS 样式，或者 JavaScript 脚本等
+- 还有一些字典会将 CSS 单独拿出来
+
+mdx 和 mdd 文件通常是同名出现，否则可能就会丢失样式之类。
 
 ## 源文件格式
 
@@ -71,3 +77,14 @@ MDict 的 html 格式
 一个 Python 库可以用来制作 mdx 词典
 
 - <https://github.com/zhansliu/writemdict>
+- <https://github.com/ffreemt/readmdict> 读取 MDX 文件
+
+Java 库
+
+- <https://github.com/KnIfER/mdict-java>
+
+更多
+
+- <https://github.com/liuyug/mdict-utils>
+- <https://github.com/Litles/AutoMdxBuilder>
+- <https://github.com/VimWei/MdxScraper>
