@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
+title: "Chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
 aliases:
-- "chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
+- "Chatwoot 开源的客户支持工具：在网站上加上聊天对话框"
 tagline: ""
 description: ""
 category: 产品体验
@@ -11,7 +11,7 @@ create_time: 2023-03-31 13:12:37
 last_updated: 2023-03-31 13:12:37
 ---
 
-[Chatwoot](https://www.chatwoot.com/) 是一个 Ruby 编写的，开源的，可自建的即时消息的客户支持工具 [[Business Messaging Platform]]，可以嵌入到网页，集成 Telegram，电子邮件，帮助企业提供在线的客户服务支持。chatwoot 开始于 2016 年。
+[Chatwoot](https://www.chatwoot.com/) 是一个 [[Ruby]] 编写的，开源的，可自建的即时消息的客户支持工具 [[Business Messaging Platform]]，可以嵌入到网页，集成 Telegram，电子邮件，帮助企业提供在线的客户服务支持。Chatwoot 开始于 2016 年。
 
 在接触到 Chatwoot 之前，陆陆续续了解过 [[crisp.chat]]，[tawk.to](/post/2023/03/tawk-to-usage.html)。而我昨天稍微了解了一下这个行业之后就发现原来对企业的在线实时聊天的服务已经竞争非常充分了。只简单的了解了一下就发现超过 10 家公司在做类似的事情，并且还有非常多的公司以开源的方式在进行。
 
@@ -42,6 +42,7 @@ last_updated: 2023-03-31 13:12:37
 
 但总之上面的这些都不是本文的重点，下面就重点放在 Chatwoot 的使用上面。
 
+![gihv4qRa64](https://pic.einverne.info/images/gihv4qRa64.png)
 ## Installation
 
 Chatwoot 官方提供了[很多种方式安装](https://www.chatwoot.com/docs/self-hosted)，还包括很多云服务提供商可以一键安装。但是我选择用 Docker(docker-compose) 安装。详情配置见[这里](https://github.com/einverne/dockerfile/tree/master/chatwoot)
@@ -111,6 +112,9 @@ server {
 ## Agent
 
 通过 Chatwoot 的 Agent API 可以自行编写回答机器人。如果接入了 OpenAI，Rasa 等聊天机器人就可以快速的搭建一套智能客服了。
+
+## 配置 SMTP
+邮件发送是现代应用中必不可少的一部分，Chatwoot 也天然支持 SMTP 邮件发送。
 
 ## Super Admin
 可以访问，`<chatwoot-installation-url>/super_admin`。
