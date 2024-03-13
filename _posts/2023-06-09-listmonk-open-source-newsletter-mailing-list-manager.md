@@ -159,3 +159,18 @@ cp default.stpl listmonk.stpl
 然后最好把 `stpl` 文件中的 `proxy_hide_header Upgrade;` 删除。
 
 再进入 HestiaCP 管理后台，创建用户，然后创建网站，填入域名。创建域名进入高级管理，在 Web Template（Nginx）中选择刚刚创建的 listmonk，保存。然后在高级设置中，配置 SSL，等待获取证书，保存之后就能通过域名来访问 listmonk 了。
+
+## Upgrade
+如果使用 Docker 安装，那么升级非常简单，更新镜像，更新数据库，重启即可。
+
+```
+docker compose pull
+docker compose run --rm app ./listmonk --upgrade
+docker compose up app db
+```
+
+
+## related
+
+- [[SendPortal]]
+- [[Mautic]]
