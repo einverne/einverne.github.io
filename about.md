@@ -111,6 +111,7 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 
 - [日本生活记录](https://japan.einverne.info)，主要记录在日本的生活，分享关于日本的一切
 - [EV 的投资笔记](https://invest.einverne.info/)，主要记录投资学习过程中的疑惑和笔记
+- [暮色时光](https://twilight-time.einverne.info) 和朋友的闲聊播客
 - [Kindle Push](https://book.einverne.info/) 之前练手 Python 的图书站点
 - [个人在线相册](https://photo.einverne.info/)
 - [Kindle 笔记](https://kindle.einverne.info/)
