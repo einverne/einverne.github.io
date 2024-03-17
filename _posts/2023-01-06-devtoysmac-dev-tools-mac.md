@@ -72,3 +72,7 @@ DevToysMac 提供的一些功能:
 - 颜色拾取器
 - 音频转码
 - Gif 转换
+
+## related
+
+- [[MooTool]] 一款使用 Java 编写的开源工具。
