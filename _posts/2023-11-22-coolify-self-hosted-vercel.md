@@ -17,7 +17,7 @@ last_updated: 2024-02-09 19:50:28
 
 用户只需要在后台点击就可以托管应用，数据库，或其他开源服务。
 
-- Coolify 支持非常多的语言，包括静态代码，Svelte，React，Vue，Next，Nuxt，Astro，PHP，Rust 等等
+- [[Coolify]] 支持非常多的语言，包括静态代码，Svelte，React，Vue，Next，Nuxt，Astro，PHP，Rust 等等
 - 支持反向代理和免费的 SSL 证书（Let's Encrypt）
 - 数据库支持 MongoDB，MySQL，PostgreSQL，CouchDB，Redis 等等
 - 也支持一键安装常用的应用，包括 WordPress，Ghost，Plausible Analytics，NocoDB，Bitwarden/Vaultwarden，LanguageTool，[[n8n]]，VSCode Server 等服务

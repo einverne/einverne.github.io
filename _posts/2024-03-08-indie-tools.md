@@ -57,3 +57,21 @@ CDN： @BunnyCDN  $0 [[Bunny CDN]]
 - 5GB 独立域名邮箱 1 年
 - 5GB 新加坡共享主机空间 1 年
 - [域名注册九折优惠](https://client.einverne.info/order.php?step=1&productGroup=13) 一年
+
+## 寻找同路人
+我因为自己的需求所以维护了这样一套服务，如果你也是一位独立开发者，你也需要为你的早期项目接入邮件注册，也需要网站托管内容
+
+如果你满足了如下的条件，欢迎[找我](https://blog.einverne.info/about.html)，提供免费一年的 99 套餐。
+
+- 你愿意将你的项目主页地址公布到本文下方（GitHub Pull Request）
+- 你愿意将 EV Hosting 以及官网链接放置到您的项目主页
+- 你愿意根据使用至少贡献 2 篇关于 EV Hosting 使用相关的文章（至少 1000 字并配上至少 2 张图）并发布到[EV Hosting 帮助文档](https://docs.einverne.info/) 或者一篇您自己的使用体验包括一个链接到官网主页
+
+Pull Request 格式
+
+```
+- [项目名字](项目地址)
+```
+
+使用的项目：
+
