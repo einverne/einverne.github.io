@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ shaarli, docker, bookmarking, selfhosted  ]
+tags: [shaarli, docker, bookmarking, self-hosted, read-it-later, reader, webpage, link]
 create_time: 2022-07-09 13:57:14
 last_updated: 2022-07-09 04:39:25
 ---
@@ -16,6 +16,7 @@ Shaarli 是一个使用 PHP 编写的，开源的，可自行搭建的书签服�
 这篇文章就简单的介绍一下 Shaarli 搭建的过程。
 
 ## Installation
+
 使用 Docker 安装
 
 ```
@@ -44,7 +45,7 @@ shaarli  | #0 /var/www/shaarli/index.php(59): Katzgrau\KLogger\Logger->__constru
 shaarli  | #1 {main}
 shaarli  |   thrown in /var/www/shaarli/vendor/katzgrau/klogger/src/Logger.php on line 134" while reading response header from upstream, client: 11.22.33.44, server: , request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php-fpm.sock:", host: ":8080"
 shaarli  | 11.22.33.44 - - [09/Jul/2022:08:00:46 +0000] "GET / HTTP/1.1" 500 5 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36"
-````
+```
 
 需要调整文件夹的权限。[^1]
 
@@ -58,11 +59,13 @@ docker exec -it shaarli chown -R nginx: nginx /var/www/shaarli/cache
 或者改写，直接使用 Docker volumes，避免权限的问题。
 
 ## 和 Nginx Proxy Manager 一起使用
+
 假设已经使用了 [Nginx Proxy Manager 反向代理](/post/2022/02/nginx-proxy-manager.html)了，那么在 Nginx Proxy Manager 中创建一个 Host，然后填入
 
 ![nginx proxy manager shaarli](https://img.gtk.pw/i/2022/07/09/62c93ea0e650f.png)
 
 ## 浏览器书签栏按钮
+
 将下面的 `shaarli.your_domain.com` 替换为自己的域名：
 
 ```
@@ -76,3 +79,6 @@ javascript:(          function()%7B            var url %3D location.href%3B     
 - [[Wallabag]]
 - [[onenav]]
 - [[Shiori]]
+- [[Huntly]]
+- [[linkwarden]]
+

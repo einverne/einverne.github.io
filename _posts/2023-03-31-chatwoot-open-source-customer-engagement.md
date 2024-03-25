@@ -121,7 +121,7 @@ server {
 
 ## 升级 Chatwoot
 
-因为使用 Docker Compose 安装 Chatwoot，所以升级非常简单。
+因为使用 Docker Compose 安装 Chatwowat，所以升级非常简单。
 
 ```
 docker-compose pull

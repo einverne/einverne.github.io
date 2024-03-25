@@ -8,7 +8,7 @@ tags: [linux, command, files, file-manager, ]
 last_updated:
 ---
 
-整理文件的时候总想快速的删掉重复的文件，这里就总结下个人使用感觉良好的几个命令工具，包括 jdupes, rdfind, fdupes 这些。
+整理文件的时候总想快速的删掉重复的文件，这里就总结下个人使用感觉良好的几个命令工具，包括 [[jdupes]], rdfind, fdupes, [[fclones]] 这些。
 
 依据推荐指数从高到低。
 

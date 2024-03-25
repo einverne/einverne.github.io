@@ -36,3 +36,9 @@ cd build && sh build.sh
 Bypass Paywalls Chrome Clean 的安装也非常简单，直接 clone 项目，然后拖拽到 Chrome 即可。
 
 ![WW38QjvCqg](https://pic.einverne.info/images/WW38QjvCqg.png)
+
+## related
+
+最后再补充一个网站，把链接直接输入进去，可以查看原文
+
+- <https://12ft.io>

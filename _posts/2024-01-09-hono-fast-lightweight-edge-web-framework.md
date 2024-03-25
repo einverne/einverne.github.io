@@ -19,7 +19,7 @@ Hono 的特点就是简单，轻量，快。
 - 轻，`hono/tiny` 只有 14kB，零依赖
 - Multi-runtime，支持非常多的 JavaScript 运行时
 - 完整，自带中间件，可以自定义中间件
-  - 验证，缓存，Cookie，CORS，ETag 等等
+- 验证，缓存，Cookie，CORS，ETag 等等
 
 ## 使用场景
 

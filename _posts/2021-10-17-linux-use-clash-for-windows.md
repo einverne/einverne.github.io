@@ -51,5 +51,11 @@ Clash For Windows 页面：
 
 ![](/assets/clash-for-windows-under-linux.png)
 
-在 Profile 页面上可以添加订阅地址，订阅地址可以在[这里](https://board.mirror.gtk.pw/) 获取。
+在 Profile 页面上可以添加订阅地址，订阅地址可以在[这里](https://c1board.gtk.pw/) 获取。
 
+## related
+
+- [在 macOS 上使用 Clash 代理](https://docs.gtk.pw/contents/macos.html)
+- [在 Windows 上使用 Clash 代理](https://docs.gtk.pw/contents/windows.html)
+- [在 Android  上使用 Clash 代理](https://docs.gtk.pw/contents/android.html)
+- [在 iOS 上使用 Clash 代理](https://docs.gtk.pw/contents/ios.html)
