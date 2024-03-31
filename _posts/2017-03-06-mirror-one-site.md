@@ -12,7 +12,6 @@ last_updated:
 
 最近主要是因为想要备份 http://www.runningman2015.com/guidang/ 这个网站，突然想到了这个工具。在此之前曾经想要自己用 scrapy 提取网站结构，然后存到数据库，想了一下，直接一个命令可以实现的事情，完全可以不用 scrapy 了。
 
-
 ## 安装
 在許多Unix-like系統下，只需要用包管理工具安裝httrack即可。例如Debian使用
 
@@ -30,9 +29,9 @@ last_updated:
 
 其他参数
 
-O	镜像后本地路径 -O path/to/local 
+- O	镜像后本地路径 -O path/to/local 
 
-w	镜像网站 (--mirror)
+- w	镜像网站 (--mirror)
 W	mirror web sites, semi-automatic (asks questions) (--mirror-wizard) 更加自动化的备份
 
 更多参考官网手册[^guide]。
@@ -41,16 +40,22 @@ W	mirror web sites, semi-automatic (asks questions) (--mirror-wizard) 更加自�
 
 ## 其他工具
 
-名称  |  网址  |   平台  |  优缺点 
------------|---------------|---------------|----------------|
-Teleport Pro | <http://www.tenmax.com/teleport/pro/index.htm>  | Windows | 整站备份，网站结构清晰，只支持单一平台，收费
-Cyotek WebCopy | <https://www.cyotek.com/cyotek-webcopy> | Windows with .NET 4.6 | 整站备份，免费
+| 名称  |  网址  |   平台  |  优缺点  |
+|------------|---------------|---------------|----------------|
+| Teleport Pro | <http://www.tenmax.com/teleport/pro/index.htm>  | Windows | 整站备份，网站结构清晰，只支持单一平台，收费 
+| Cyotek WebCopy | <https://www.cyotek.com/cyotek-webcopy> | Windows with .NET 4.6 | 整站备份，免费
 
 ## 其他命令行
+通过 `wget` 命令来下载整个站点内容
 
-    wget -r --no-parent -e robots=off http://www.example.com
-    wget -m -p -E -k www.example.com
+    wget -m -p -E -k -r --no-parent -e robots=off www.example.com
 
+说明：
+
+- `-r` 表示递归下载，即下载网站的所有页面和资源。
+- `-np` 表示不下载父目录，即只下载当前目录及其子目录的内容。
+- `-p` 表示下载 HTML 页面中引用的所有资源，例如图片、CSS 和 JavaScript 文件。
+- `-k` 表示转换 HTML 页面中的链接，使其指向本地文件。
 
 ## 缺点
 镜像站点功能很强大，但是下载离线的数据非结构化数据，镜像功能对与纯静态HTML站点非常有效，但是对于目前互联网上的大部分 JS 动态网站却无能为力，镜像后容易都是内容。
