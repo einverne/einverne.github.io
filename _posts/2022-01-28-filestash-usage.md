@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ selfhosted,  self-hosted, self-hosting, file-manage ]
+tags: [ selfhosted,  self-hosted, self-hosting, file-manage, docker, stash, sftp, webdav ]
 last_updated: 2022-08-02 07:16:43
 create_time: 2022-01-28 06:30:29
 ---

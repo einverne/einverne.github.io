@@ -11,6 +11,14 @@ last_updated:
 
 横向比较一下 BitTorrent 客户端。
 
+- [[Transmission]]
+- [[rTorrent]]
+- [[qBittorrent]]
+- [[Deluge]]
+- [[uTorrent]]
+- [[Vuze]]
+- [[BiglyBT]]
+
 ## Transmission
 开源地址：
 
@@ -144,7 +152,34 @@ Deluge 比较优秀的一点是支持 Plugin，官网上有非常丰富的插件
 
 不支持 Linux, 不开源，就不说了。
 
-## VUZE
-看到有推荐，支持三大主流桌面平台。
+## Vuze
+[Vuze](http://www.vuze.com/) 是一款使用 Java 编写的 BT 客户端，支持三大主流桌面平台。
 
-- <http://www.vuze.com/>
+## BiglyBT
+[BiglyBT](https://www.biglybt.com/) 是一款开源的，跨平台的 BT 客户端。BiglyBT 是 Vuze 开源项目的延续，由 Vuze/Azureus 开发，由两个原始开发人员和社区成员维护，从 2003 年至今已经维护超过 20 年
+
+
+特性
+
+- 快速下载 BT 种子
+- 按 IP 地址过滤
+- 限制上传和下载速度
+- 多语言
+- 通过下载，标签，网络（来对特定国家的 peers）进行全局限速
+- 下载开始之前支持选择要下载的文件
+- [[WebTorrent]] 支持，内置一个 WebTorrent tracker
+- 局域网查找，允许同一个防火墙背后的普通网络中多个 BiglyBT 客户端通过端到端直接连接提高下载速度
+- 通过 Android 等应用程序进行控制，支持 （Transmission RPC 的客户端）
+- 订阅 RSS 源，还可以创建自己的订阅与他人共享
+- 去中心化的公共和匿名聊天，带有默认频道
+- I2P DHT 进行匿名下载
+- 检测 VPN 
+- Tor 代理
+- 媒体播放
+- 媒体转换
+- [[UPnP]] 服务器和 [[DLNA]] 支持，允许设备直接连接和浏览内容，允许 BiglyBT 将内容直接发送到设备
+
+## Motrix
+[Motrix](https://motrix.app) 是一款全能的下载管理器，跨平台，支持 HTTP，FTP，BT，磁力链接等等。
+
+Motrix 使用 Vue 以及 Electron 技术构建。
