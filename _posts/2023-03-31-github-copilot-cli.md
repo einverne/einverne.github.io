@@ -18,6 +18,41 @@ GitHub Copilot CLI 是一个让 GitHub Copilot 来在命令行环境下使用自
 - <https://www.npmjs.com/package/@githubnext/github-copilot-cli>
 - 有问题可以加入 [Discord](https://discord.com/invite/githubnext)
 
+## 最新教程
+
+GitHub Copilot 已经发布正式版本，可以直接通过官方的 `gh` 命令来使用。
+
+```
+gh auth login
+gh extension install github/gh-copilot
+gh extension upgrade github/gh-copilot
+```
+
+几个子命令
+
+```
+# 解释命令
+gh copilot explain "sud apt update"
+# 执行命令
+gh copilot suggest
+gh copilot suggest "show process"
+```
+
+设置 alias
+
+```
+echo 'eval "$(gh copilot alias -- zsh)"' >> ~/.zshrc
+```
+
+然后就可以执行
+
+```
+ghce
+ghcs
+```
+
+参考[官方文档](https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli)。
+
 ## 安装
 
 使用 `npm` 全局安装：
@@ -82,3 +117,4 @@ GitHub Copilot CLI 还会逐步解释建议命令的作用。 当学习新命令
 
 - [Warp](/post/2022/03/warp-terminal-usage.html) 是我去年介绍的一款使用 Rust 编写的终端，Warp 也提供了类似的通过 AI 支持的命令行补全，如果感兴趣也可以去体验一下。
 - 另外还有一些 Zsh 插件也可以借助 OpenAI Codex 的能力提供命令自动补全的能力，比如 [Zsh Codex](https://github.com/tom-doerr/zsh_codex) 但是该项目有一段时间没有更新了。
+- [[AI Shell]]

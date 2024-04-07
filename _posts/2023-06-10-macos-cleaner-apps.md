@@ -40,9 +40,9 @@ brew install gdu
 ## 几款 macOS 上的清理工具
 
 - [[Clean My Mac]] 收费软件
-- [[Pretty Clean]] 免费
+- [[Pretty Clean]] [Pretty Clean](https://pretty-clean.github.io/) 免费
 - [[App Cleaner]] 免费，卸载应用
-- [[Clean Me]] 清理磁盘
+- [[Clean Me]]  [Clean Me](https://kevin-de-koninck.github.io/Clean-Me/) 是一款开源的清理磁盘工具
 
 ## Pretty Clean
 
@@ -55,3 +55,7 @@ brew install gdu
 [App Cleaner](https://freemacsoft.net/appcleaner/) 是一款可以用来快速卸载应用以及应用相关残留文件的应用，非常小巧，但是非常强大。
 
 ![AdJ6](https://photo.einverne.info/images/2023/06/10/AdJ6.png)
+## 脚本
+
+- [mac-cleanup-py](https://github.com/mac-cleanup/mac-cleanup-py) 是一个 macOS 上的清理脚本。
+
