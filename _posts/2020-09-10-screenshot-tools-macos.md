@@ -62,6 +62,9 @@ Jietu 是腾讯推出的截图工具。
 
 一次性付费 29$ 可以到的软件及 1GB 的 Cloud 空间。也可以选择月付费 10$，或者年付费，获得无限空间，自定义域名等服务。
 
+## Xnip
+[Xnip](https://xnipapp.com/) 是一个 macOS 上的截图工具。
+
 ## reference
 
 - [[Mac 快捷键]]

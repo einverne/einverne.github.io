@@ -9,7 +9,6 @@ tags: [linux, command, cron, crontab, scheduler, period]
 last_updated:
 ---
 
-
 通过 crontab 命令可以让我们在固定的时间点或者特定时间间隔执行指定的系统指令或 shell 脚本。时间间隔的单位可以是分钟、小时、日、月、周及以上的任意组合。这个命令非常适合周期性的日志分析或数据备份等工作。
 
 cron 的名字，没有特别明确的定义，cron 名字的由来是 Ken Thompson（Unix cron 的作者）说过的， cron 的名字由希腊语 time 的前缀 chron 得来 [^cronname]。

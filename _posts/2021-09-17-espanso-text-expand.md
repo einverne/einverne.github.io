@@ -10,7 +10,7 @@ tags: [ linux, macos, keyboard, text-expander,  ]
 last_updated:
 ---
 
-今天在 review tldr 提交的新命令的时候发现了一个新的工具 espanso，查看其官网发现是一个文本扩展的工具。在之前 macOS 上短暂的体验过 [[Keyboard Maestro]] 但因为其是 macOS 独占，所以之后再回到 Ubuntu 下的时候就渐渐不用了，并且其授权还挺贵的。然后就一直使用 RIME 配置自定义的短语来作为短语的快捷输入，比如输入 date 的时候自动在候选词中添加日期。但这样的问题便在于每一次更改 RIME 的配置文件都需要经历 RIME 部署这样一个漫长的过程。并且可扩展性也不强。于是想来体验一下 espanso 。
+今天在 review tldr 提交的新命令的时候发现了一个新的工具 espanso，查看其官网发现是一个文本扩展的工具（[[TextExpander]]）。在之前 macOS 上短暂的体验过 [[Keyboard Maestro]] 但因为其是 macOS 独占，所以之后再回到 Ubuntu 下的时候就渐渐不用了，并且其授权还挺贵的。然后就一直使用 RIME 配置自定义的短语来作为短语的快捷输入，比如输入 date 的时候自动在候选词中添加日期。但这样的问题便在于每一次更改 RIME 的配置文件都需要经历 RIME 部署这样一个漫长的过程。并且可扩展性也不强。于是想来体验一下 espanso 。
 
 [[Espanso]] 是一个使用 Rust 实现的跨屏平台的 Text Expander，可以在任何编辑器中扩展短语。可以完美代替 [[Keyboard Maestro]] 的 Text Expand 功能。
 
@@ -146,7 +146,11 @@ Espanso 更加强大的地方在与其扩展性，通过安装其他包可以将
 
 可以使用软链接的方式将配置文件放在同步文件夹，或 git 仓库中保存管理。
 
+Linux 下
+
     ln -s "/home/user/Dropbox/espanso" "/home/user/.config/espanso"
+
+macOS 下，见脚本。
 
 我个人直接将配方放到 [dotfiles](https://github.com/einverne/dotfiles) 中管理。
 

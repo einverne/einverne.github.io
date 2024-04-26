@@ -118,3 +118,4 @@ GitHub Copilot CLI 还会逐步解释建议命令的作用。 当学习新命令
 - [Warp](/post/2022/03/warp-terminal-usage.html) 是我去年介绍的一款使用 Rust 编写的终端，Warp 也提供了类似的通过 AI 支持的命令行补全，如果感兴趣也可以去体验一下。
 - 另外还有一些 Zsh 插件也可以借助 OpenAI Codex 的能力提供命令自动补全的能力，比如 [Zsh Codex](https://github.com/tom-doerr/zsh_codex) 但是该项目有一段时间没有更新了。
 - [[AI Shell]]
+- [aider](https://github.com/paul-gauthier/aider)

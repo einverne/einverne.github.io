@@ -57,5 +57,5 @@ brew install gdu
 ![AdJ6](https://photo.einverne.info/images/2023/06/10/AdJ6.png)
 ## 脚本
 
-- [mac-cleanup-py](https://github.com/mac-cleanup/mac-cleanup-py) 是一个 macOS 上的清理脚本。
+- [mac-cleanup-py](https://github.com/mac-cleanup/mac-cleanup-py) 是一个使用 Python 编写的 macOS 上的清理脚本。
 

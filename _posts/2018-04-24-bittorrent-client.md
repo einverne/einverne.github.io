@@ -12,12 +12,12 @@ last_updated:
 横向比较一下 BitTorrent 客户端。
 
 - [[Transmission]]
-- [[rTorrent]]
+- [[rTorrent]] 一款使用 C++ 编写的 BitTorrent 客户端，rTorrent 只提供命令行版本
 - [[qBittorrent]]
 - [[Deluge]]
 - [[uTorrent]]
 - [[Vuze]]
-- [[BiglyBT]]
+- [[BiglyBT]] 一款使用 Java 编写的跨平台开源 BT 客户端，功能非常丰富
 
 ## Transmission
 开源地址：
