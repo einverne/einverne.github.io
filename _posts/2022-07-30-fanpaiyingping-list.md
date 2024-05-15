@@ -17,7 +17,7 @@ last_updated: 2022-07-30 08:12:04
 
 离线备份小鹅通上的反派影评一直在我的待办事项上，今天终于有时间处理一下了。
 
-Python 代码如下，注意将其中的  `YOUR_COOKIE` 替换成自己的 Cookie。
+~~Python 代码如下，注意将其中的  `YOUR_COOKIE` 替换成自己的 Cookie。~~
 
 在浏览器访问 [反派影评](https://appzmhvxypr1060.h5.xiaoeknow.com/) 的小鹅通主页，或者登录之后在我的中点击已购找到专辑。然后执行如下代码就可以下载专辑中的音频内容。
 

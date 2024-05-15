@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Trello 类似的工具和应用整理"
+aliases: "Trello 类似的工具和应用整理"
 tagline: ""
 description: ""
 category: 整理合集

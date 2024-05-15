@@ -4,9 +4,9 @@ title: "我购买了一台 Apple TV"
 aliases:
 - "我购买了一台 Apple TV"
 tagline: ""
-description: ""
+description: "Apple TV 必备的应用，Apple TV 价格对比，Apple TV 型号对比，Apple TV 使用技巧"
 category: 经验总结
-tags: [ apple-tv, apple, tv-box, android-box, android-tv, projector, 电视, tvos, vidhub ]
+tags: [ apple-tv, apple, tv-box, android-box, android-tv, projector, 电视, tvos, vidhub, tvos ]
 create_time: 2024-01-20 10:10:50
 last_updated: 2024-01-28 11:10:50
 ---
@@ -74,7 +74,7 @@ last_updated: 2024-01-28 11:10:50
 - 本地播放器
   - [[Infuse]] Infuse 是一款非常强大的 iOS 和 tvOS 视频播放器应用程序，它可以播放多种格式的视频文件，并从网络资源中流式传输视频内容。它还集成了 Trakt.tv 支持来跟踪你的观看历史记录，并具有美丽而简单的用户界面。
   - [[VidHub]] 新晋本地播放器，缺点不支持杜比
-  - Fileball，本地播放器，可以连接网络共享，支持 SMB，FTP，SFTP，Synology，NFS，WebDAV 等，支持 Emby Jellyfin 等，还可以连接百度网盘，Box，Dropbox，Google Drive，OneDrive，pCloud 等，可以作为 Infuse 平替，高级版本价格也比较合适
+  - [[Fileball]]，本地播放器，可以连接网络共享，支持 SMB，FTP，SFTP，Synology，NFS，WebDAV 等，支持 Emby Jellyfin 等，还可以连接百度网盘，Box，Dropbox，Google Drive，OneDrive，pCloud 等，可以作为 Infuse 平替，高级版本价格也比较合适
   - IIVA [TestFlight](https://testflight.apple.com/join/F7fk3Oaw) 播放器
   - Conflux
   - Yunbox [点击下载](https://apps.apple.com/cn/app/id6451087364?mt=8&at=1l3vkVL)，是一款支持阿里云盘、夸克网盘、WebDAV 等协议的多媒体播放器，支持多种云盘订阅管理，以原画质量播放媒体文件，支持各种高清视频格式如 MP4、MKV、AVI、FLV 等，支持 ass、ssa、sup 等多种格式字幕等。

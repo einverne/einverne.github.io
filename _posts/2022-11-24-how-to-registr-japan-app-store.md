@@ -47,3 +47,5 @@ last_updated: 2022-11-25 05:46:24
 下一篇再整理一下在日本常用的 App 吧。
 
 另外如果有人需要日区的 Gift Card，也可以到[这里](https://buy.gtk.pw/) 咨询购买。
+
+另外本人开设了 [日本生活记录](https://japan.einverne.info) 的新博客，如果想要了解日本的真实生活欢迎访问。

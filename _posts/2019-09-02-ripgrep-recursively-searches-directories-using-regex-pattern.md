@@ -123,6 +123,20 @@ last_updated:
 rg --files | rg regular_expression
 ```
 
+### 搜索并替换文本内容
+
+比如有一个需求，替换所有文件中的一个字符串到另外一个词，可以使用如下的方式。
+
+```
+rg foo --files-with-matches | xargs sed -i 's/foo/bar/g'
+```
+
+在 macOS 上默认的 sed 有一些兼容性，需要修改为 
+
+```
+rg foo --files-with-matches | xargs sed -i'' -e 's/foo/bar/g'
+```
+
 ## reference
 
 有两个方法查看 rg 使用

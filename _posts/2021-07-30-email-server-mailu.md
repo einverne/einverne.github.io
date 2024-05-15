@@ -10,11 +10,11 @@ tags: [ mailu, email, email-host, linux, dkim, mail-server, 域名邮箱 , ]
 last_updated:
 ---
 
-[Mailu](https://mailu.io/1.9/) 是一个开源的邮件服务器，可以使用 Docker 部署安装，后台界面使用 Python & Flask 开发。
+[Mailu](https://mailu.io/1.9/) 是一个开源的邮件服务器，可以使用 Docker 部署安装，后台界面使用 Python & Flask 开发。Mailu 整体比较轻量，使用起来也非常舒服。
 
 ## 个人总结的优点
 
-- Mailu 非常轻量，相较于 Mailcow 非常轻量简洁
+- Mailu 非常轻量，相较于 [[Mailcow]] 非常轻量简洁
 - 自带域名昵称，转发等等常用功能
 - 支持两个 Webmail 分别是 roundcube/rainloop
 - 自动生成 DKIM/DMARC/SPF 记录
@@ -24,7 +24,7 @@ last_updated:
 
 - [电子邮件是如何工作的](/post/2022/03/how-email-send-and-receive.html)
 
-了解常用的 [[SPF]]，[[DKIM]]，[[DMARC]] 记录的作用。
+并了解常用的 [[SPF]]，[[DKIM]]，[[DMARC]] 记录的作用。
 
 ## Prerequisite
 系统环境要求：
@@ -62,7 +62,7 @@ last_updated:
 ### DNS 设置
 假设 VPS 的域名是 `1.1.1.1`，以 `example.com` 为例：
 
-- 设置 A 记录， `mx.example.com` 到 1.1.1.1
+- 设置 A 记录， `mx.example.com` 到 VPS IP 地址 `1.1.1.1`
 - 设置 SPF，TXT 记录，值为 `v=spf1 mx ~all`
 - DMARC，`_dmarc.example.com` TXT 记录，值为 `v=DMARC1;p=none;pct100;rua=mailto: admin@example.com;ruf=mailto: admin@example.com`
 
@@ -152,5 +152,7 @@ Mailu 官方提供了一个自动配置生成网页
 
 最后可以使用 <https://www.mail-tester.com/> 来发信测试。
 
-## 推广
+## More
 如果你不想自己搭建邮件服务器，那么也可以选购 [EV Hosting](https://client.einverne.info) 推出的域名邮箱托管服务，可以以极低的价格获得无限域名无限邮箱服务。
+
+目前我个人维护的 EV Hosting 推出了面向个人开发者的[套餐](https://client.einverne.info/order.php?step=1&productGroup=14) 其中包含了独立域名邮箱，主机空间，以及域名折扣套餐。如果有需要的话，也可以去[订购](https://client.einverne.info/order.php?step=1&productGroup=14)。
