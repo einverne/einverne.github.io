@@ -61,7 +61,7 @@ last_updated: 2024-01-28 11:10:50
 
 ![uJZ8](https://photo.einverne.info/images/2024/01/25/uJZ8.png)
 
-综合上面的所有的升级内容，我个人判断这些升级对我目前的使用影响不大，所以就开始在 [Mercari](https://gtk.pw/mercari) 订阅了关键字，正好这两天看到第二代 Apple TV 13410 JPY，看上去价格也合适就下单了。
+综合上面的所有的升级内容，我个人判断这些升级对我目前的使用影响不大，所以就开始在 [Mercari](https://gtk.pw/mercari) 订阅了关键字，正好这两天看到第二代 Apple TV（64GB） 13410 JPY，看上去价格也合适就下单了。
 
 ## 使用
 
