@@ -14,6 +14,10 @@ last_updated:
 
 这篇文章重点介绍一下 VSCode 下的 Beancount 插件。
 
+## 插件安装
+
+和正常的 VSCode 插件安装一样，直接在插件市场里面搜索 Beancount，找到 VSCode-Beancount，然后点击安装即可。
+
 ## VSCode 插件
 
 [VSCode-Beancount](https://marketplace.visualstudio.com/items?itemName=Lencerf.beancount) 插件提供了语法高亮和账户自动补全功能。
@@ -24,4 +28,6 @@ last_updated:
     "beancount.inputMethods": ["pinyin"]
 }
 ```
+
+当配置好之后，插件会自动读取 Beancount 账户信息，然后在记账的过程中，只需要通过关键字来快速输入即可。
 
