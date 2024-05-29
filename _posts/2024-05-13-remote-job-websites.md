@@ -66,6 +66,10 @@ last_updated: 2023-08-03 17:59:50
 
 - [Hatch](https://www.hatch.team/) 是一个专注于澳大利亚的招聘网站
 - <https://jiangren.com.au/>
+- seek.com.au，澳洲最大的招聘网站，有点类似国内智联招聘，上面有 IT 类岗位，但大部分都不提供签证
+- au.jora.com，Jora 是 Seek 集团下的创业公司，提供职位索引
+
+[[澳大利亚公司]]
 
 ### 加拿大
 
