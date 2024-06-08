@@ -28,9 +28,12 @@ zlibrary 的很多域名都被 sized 了，包括
 但是 zlibrary 似乎搜集了很多不同顶级域名，虽然一直在被取缔，但是还一直有可访问的网址。我之前的[文章](/post/2018/02/free-online-books.html) 其实一直再更新。这里就放两个，如果还有更新我一般会更新到之前的文章里面。
 
 - https://singlelogin.re/
+- https://zh.singlelogin.re/
 - https://singlelogin.se
 - 或者使用 [Tor 地址](http://loginzlib2vrak5zzpcocc3ouizykn6k5qecgj2tzlnab5wcbqhembyd.onion)
 - 下载客户端 https://go-to-zlibrary.se/
+
+如果网站的地址都无法访问了，那么可以通过 Telegram Bot 中的 /weblink 命令来获取最新的网站地址。
 
 ## Telegram Bot
 

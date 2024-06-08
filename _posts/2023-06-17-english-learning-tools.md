@@ -19,6 +19,7 @@ last_updated: 2022-06-17 21:20:20
 - [[YouGlish]] 是一个可以通过关键字来搜索发音的网站，非常适合用来学习单词或短语的发音
 - [[Immersive Translate]] 是一款沉浸式的翻译插件，在浏览网页时可以将翻译内容附在原文下方。
 - [[selectext]] 是一款可以复制视频内容的 Chrome 插件
+- [keep-english](https://keep-english.com) 是一个通过 AI 练习英语口语的软件
 
 ## Language Reactor
 

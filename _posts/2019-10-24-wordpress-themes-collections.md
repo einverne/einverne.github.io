@@ -50,6 +50,13 @@ last_updated:
 
 ![fjai](https://photo.einverne.info/images/2023/11/18/fjai.png)
 
+### CoreNext
+
+CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售价 129 CNY。
+
+![P7iS9Z--4x](https://pic.einverne.info/images/P7iS9Z--4x.png)
+
+
 ### CorePress Pro
 
 [CorePress Pro](https://www.lovestu.com/corepress.html) 一款开源的 WordPress 主题。但是目前也提供两个不同的版本，Free 版和 Pro 版，Pro 版一次性付费 99 元。
