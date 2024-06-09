@@ -58,8 +58,8 @@ MXRoute 不允许发送垃圾邮件，并且对于发送邮件每个电子邮件
 如果你想以更低的价格使用 MXRoute 的服务，也可以[联系我](https://client.einverne.info) 以更低的价格出售 MXRoute 的服务。
 
 ## Resend
-[Resend](https://resend.com/home) 是一个专为开发者而服务的发送邮件系统。提供每天 100 封，一个月 3000 封邮件的免费试用额度。
 
+[Resend](https://resend.com/home) 是一个专为开发者而服务的发送邮件系统。提供每天 100 封，一个月 3000 封邮件的免费试用额度。
 
 ## Mailjet
 
@@ -68,6 +68,23 @@ MXRoute 不允许发送垃圾邮件，并且对于发送邮件每个电子邮件
 ## Postmark
 
 [Postmark](https://postmarkapp.com/) 每个月 100 封邮件免费额度。
+
+Postmark 的优点如下：
+
+1. 高可靠性，保证邮件的传递不丢失
+2. 提供 45 天的完整内容历史记录、收件人信息和消息事件
+3. 模版支持，可以自定义邮件模版或者使用现成的模版，所见即所得
+4. 提供邮件分析功能，可以查看邮件的打开率、点击率等数据
+5. 提供 DKIM、Return-Path、DMARC 等验证和技术，保证邮件不被当成垃圾邮件
+6. 支持主流编程语言的 API 库和 Restful API，方便接口调用
+7. 优秀的客服支持
+
+而 Postmark 的缺点在于：
+
+1. 如果需要发送大量邮件，每月固定费用相对较高
+2. Postmark 对开发者友好，对于非技术用户来说，需要一些时间去理解和使用它的功能
+
+至于价格方面，基础计划从每月 15 美元开始，包含 10k 封电子邮件。之后按用量递增，详情请看官网。
 
 ## SparkPost
 
@@ -160,17 +177,18 @@ Mailchannels 是一家邮件发送服务提供商。
 [mailtrap](https://mailtrap.io/) 是一个发送邮件的服务，免费版本提供每个月 100 封的测试邮件。
 
 ## Sendy
+
 [Sendy](https://sendy.co/) 是一个电子邮件发送服务，宣称比 Amazon SES 便宜 100 倍。
 
 ## XyaMail
+
 [XyaMail](https://xyamail.com/) 是一个发送邮件的服务，基本套餐 7.99$ 一年，Premium 19.99$ 一年。
 
 ## mymangomail
 
-[mymangomail](https://www.mymangomail.com/)  是一个收费的邮件发送服务。
+[mymangomail](https://www.mymangomail.com/) 是一个收费的邮件发送服务。
 
 ![feVl](https://photo.einverne.info/images/2023/11/20/feVl.png)
-
 
 ## 相关
 
