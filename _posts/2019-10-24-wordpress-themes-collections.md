@@ -79,6 +79,13 @@ CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售�
 
 [ASTRA](https://wpastra.com/) 是一个轻量，简介，快速的 WordPress 主题，高度可订制化。也可以通过此主题将网站快速转变成一个在线商城。
 
+- Astra Pro 49 USD
+- Essential Toolkit 79 USD
+
+样例
+
+- <https://www.lucaluo.com/>
+
 ### Blocksy
 
 [blocksy](https://creativethemes.com/blocksy/) 是一款非常强大的主题。

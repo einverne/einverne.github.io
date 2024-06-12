@@ -108,6 +108,7 @@ last_updated: 2023-08-03 17:59:50
 - [Web3 Career](https://web3.career)
 - [AbetterWeb3](https://abetterweb3.notion.site/abetterweb3-7ce334dcf8524cb79a5894bdd784ddb4) Notion 笔记
 - [BoleJobs](https://bolejobs.com)
+- [https://dejob.top/](https://dejob.top/)
 
 ## 如何获知远程工作当地的收入水平
 
