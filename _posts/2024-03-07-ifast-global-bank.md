@@ -64,3 +64,4 @@ dg-publish: false
 
 - [新加坡华侨银行 OCBC 开户指南](https://blog.einverne.info/post/2023/11/ocbc.html)
 - [N26 数字银行开户指南](https://japan.einverne.info/p/41.html)
+- [FlowBank 瑞士数字银行开户](https://invest.einverne.info/2023/08/25/flowbank-swiss-digital-bank.html)
