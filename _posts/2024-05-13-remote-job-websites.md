@@ -22,6 +22,7 @@ last_updated: 2023-08-03 17:59:50
 - [Wellfound](https://wellfound.com/) 之前是 Angelist，专注于天使投资的网站，专注于初创公司招聘和投资的平台，旗下也有 Angelist Talents，帮助初创公司找到合适的人才，领先初创企业的职位
 - [Remote OK](https://remoteok.com) 是著名的数字游民网站 NomadList 的姐妹网站，上面有大量的远程工作机会，Remote OK 专注于远程工作机会，可以根据时区和技能等因素来筛选工作。
   - 有一些岗位可能需要外国身份
+  - [一些远程工作的数据](https://remoteok.com/remote-work-statistics)
 - [Remotive](https://remotive.com/) 是一个付费使用的远程工作发布网站，目前主要的国家是美国，英国，加拿大，德国和法国。目前 Remotive 网站提供了包括 Software Development，Design，Marketing，Sales/Business，Product，Project Management，Data Analysis，DevOps/Sysadmin，Finance/Legal，Human Resources，QA，Writing 等等细分领域
 - [JustJoin.it](https://justjoin.it/) 主要是欧洲的岗位，大部分都在波兰
 - [Toptal](https://toptal.com) 是一个专门提供软件开发、设计、金融专家、产品经理和项目经理的专业网络。
@@ -53,6 +54,7 @@ last_updated: 2023-08-03 17:59:50
 - [电鸭社区](https://eleduck.com/) 国内的社区，是数字游民的聚集地，不过申请岗位需要消耗平台电量
 - [V2EX 酷工作](https://www.v2ex.com/?tab=jobs) V2EX 的工作板块，酷工作分类下偶尔会有一些远程岗位
 - [GitHub Remote working](https://github.com/greatghoul/remote-working) 这个项目收集了很多支持远程的团队。
+- [游民](https://youmin.co/) 数字游民相关社区和信息
 
 ## 各个国家本土
 

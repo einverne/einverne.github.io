@@ -115,6 +115,8 @@ Bull Call Spread 策略可以选择未来一段时间（几天，几周或几个
 - [[熊市看跌期权价差]]
 - [[熊市看涨期权价差]]
 
+如果你也对交易，期权感兴趣，可以加入[群组](https://t.me/+RUBhyY60iVcl6hdX)一起讨论呀。
+
 ## 相关工具
 
 - [uSMART](https://gtk.pw/usmart) 新加坡券商
