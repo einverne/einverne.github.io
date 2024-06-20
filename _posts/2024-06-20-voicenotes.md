@@ -15,7 +15,7 @@ dg-publish: false
 
 前两天偶然间收到一个推送，说有一款 AI 语音的笔记应用叫做 [Voicenotes](https://voicenotes.com/)，今天终于有时间试用了一下，我的简单使用体验来说，这是一款通过语音来记录想法，备忘录的工具，它与其他笔记，备忘录的区别就在于 AI 的加持，Voicenotes 只允许通过语音输入，录音会通过识别转录成文字（AI），然后记录的所有内容都可以通过和 AI 提问的方式进行回顾，总结，或者进行 brainstorm。
 
-Voicenotes 是跨平台的，目前提供了 Android 和 iOS 以及 Web 端，并且作者承诺之后会推出 Watch 版本。
+Voicenotes 是跨平台的，目前提供了 Android 和 iOS 以及 Web 端，并且作者承诺之后会推出 Watch 版本。Voicenotes 的数据也是跨平台同步的。
 
 ## 功能介绍
 
@@ -57,5 +57,8 @@ Voicenotes 会根据上一次的录音生成提问。
 
 ## related
 
-- [[alog]]
+- [[alog]] 开源的语音转录应用
 - [[Whisper]]
+- [[VOMO AI]]
+- [[letterly]]
+- [[Oasis]]
