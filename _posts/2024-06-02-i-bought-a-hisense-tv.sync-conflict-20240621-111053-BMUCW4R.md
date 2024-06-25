@@ -1,0 +1,87 @@
+---
+layout: post
+title: "我购买了一台海信电视"
+aliases:
+- "我购买了一台海信电视"
+tagline: ""
+description: ""
+category: 产品体验
+tags: [ tv, hisense, apple-tv, 电视, 4k, hdr ]
+create_time: 2024-06-20 14:41:27
+last_updated: 2024-06-20 14:41:27
+dg-home: false
+dg-publish: false
+---
+
+在小红书看到附近小区有人出电视，看起来成色还不错，之前在我的购物清单中也有计划，想要通过日本的电视节目来无意识锻炼一下听力，另外就是租的 UR 团地自带电视信号，连接上线就自动有电视了。于是我就去线下看了一下电视的外观，顺便测量了一下电视柜的尺寸。没想到长度和宽度正好放在卧室，于是就和对方定下了。
+
+电视是海信的 50E6G，回来查了一下发现海信在日本的占有率还挺高，因为购买的目的就是用来旁听一些电视节目，然后看一下 [Apple TV](https://blog.einverne.info/post/2024/01/i-bought-an-apple-tv.html) 里面的 B 站，以及本地的[电影](https://pt.gtk.pw/)，所以对画质也没有过多的要求，但是好在这一款也还是 4K，并且也支持多个 HDMI 输入，BS/CS 端口，作为一个大屏幕代替个人感觉还是不错的。
+
+## Hisense 50E6G 介绍
+
+[Hisense 海信 50E6G](https://hisense.co.jp/tv/50e6g) 是一款 4K 液晶テレビ。
+
+- NEO エンジン Lite 搭載
+- BS/CS 4K チューナー内蔵
+- HDR対応：HDR10 & HLG
+- 倍速対応：60Hz
+
+![qYDgtmT_GO](https://pic.einverne.info/images/qYDgtmT_GO.png)
+
+### 端口
+有如下的端口
+
+- DTCP-IP
+- 1× 有線 LAN ポート，IEEE802.11ac / a / b / g / n
+- BS・CS4Kチューナー数：1
+- 地上デジタルチューナー数：2
+- 1× 光デジタル音声出力端子
+- 2×USB 端子
+- ARC 対応
+- 3×HDMI 端子，対応（HDMI2.0b 18Gbps）
+- ヘッドホン出力端子
+
+![vcoi](https://photo.einverne.info/images/2024/06/21/vcoi.png)
+端口
+![v48X](https://photo.einverne.info/images/2024/06/21/v48X.png)
+
+
+## 使用记录
+安装使用起来比较简单，拿出来之后安装上下方两个支撑脚就可以了，因为它有 3 个 HDMI，所以我直接连上了 Apple TV（HDMI1），Switch（HDMI2），PS5（HDMI3）正好将所有的 HDMI 利用了起来。
+
+### 连接 Apple TV 4K 之后 HDR vs SDR
+
+- [[SDR]] 是标准动态范围，传统的显示技术，具有有限的动态范围，通常亮度在 100 至 300 尼特。SDR 能够显示的颜色和亮度范围相对较小，在极亮和极暗的场景中可能缺乏细节
+- [[HDR]] 是高动态范围，能够显示更广泛的亮度和对比度范围，亮度通常可以打到 1000 尼特，HDR 显示器可以呈现更深的黑色和更亮的白色，同时保留更多的细节和颜色。
+
+这一款电视在连接 Apple TV 之后可以在 Apple TV 设置中设置 HDR 或 SDR，但是我发现如果设置成 HDR 整体的画面会偏灰色，不清楚是什么原因，我在网上查了很多资料也没有发现问题。
+
+所以日常我还是调整成了 SDR，让电视机自动识别到 HDR 的时候再切换成 HDR，但是画面会突然变黑一两秒。
+
+### Amazon Alexa
+
+海信 50E6G 搭载了 Alexa，可以使用 Amazon Echo デバイス或者手机上的 Alexa アプリ 进行控制。
+
+在设定画面，「ネットワーク サービズ 设定」 > 「スマートスピーカー 连携设定」> 「スマートスピーカー连携」，在电视画面上会显示 8 个数字「スマートスピーカー用连携コード」。
+
+在手机应用 Alexa 中，找到外部连接，ハイセンス，或者「ハイセンス（拡張版），然后输入连携代码即可。
+
+[参考](https://hisense.co.jp/amazonalexa_manual)
+
+## 缺点
+
+### 没有蓝牙
+
+这一款电视是不带蓝牙的，所以不能接蓝牙耳机，但作为一个电视，这个缺点也是没有问题的。
+
+并且因为我日常接入 Apple TV，所以使用 Apple TV 的蓝牙连接耳机也是可以的。
+
+### 没有 AirPlay 也没有投屏
+因为海信海外版本自带的操作系统是 [[VIDAA]]，这个系统比较垃圾，虽然自带了 Netflix，YouTube，Amazon Prime，Hulu，以及很多日本本地的应用 AbemaTV，U-NEXT，DMM 等等，但是不能安装其他的应用，APK 也安装不了，并且也没有提供投屏功能。
+
+但是同样的需要外接电视盒子，Apple TV 和我的斐讯 T1 可以解决投屏的问题，但好在我不依赖投屏，基本上都可以通过本地 Linux 挂载的 SMB 解决。
+
+![vuqQ](https://photo.einverne.info/images/2024/06/21/vuqQ.png)
+
+### 不能安装其他应用
+和上面的问题一样，因为采用了自家的 [[VIDAA]] 操作系统，所以扩展性不够，虽然本地使用 YouTube，Netflix 也算流畅，但是如果能换成 Google TV，或者其他 Android 兼容系统，可玩性会提升不少，比如可以安装直播应用，可以安装投屏应用，可以安装 Tailscale，播放器，[[Kodi]] 等等。

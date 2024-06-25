@@ -36,3 +36,4 @@ Felo 团队还开发了一个网页版本
 - [[Glarity]]
 - [Felo 字幕 ChatGPT 跨语言实施翻译视频字幕](https://chromewebstore.google.com/detail/felo%E5%AD%97%E5%B9%95-chatgpt%E8%B7%A8%E8%AF%AD%E8%A8%80%E7%BF%BB%E8%AF%91%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95/ponokiofkijoolhebggofhhibnafebna?hl=zh-CN) 可以给 YouTube 和会议提供实时双语字幕
 - [YouTube 双语字幕](https://chromewebstore.google.com/detail/youtube-%E5%8F%8C%E5%AD%97%E5%B9%95/hkbdddpiemdeibjoknnofflfgbgnebcm)
+- [[通义听悟]]
