@@ -18,7 +18,7 @@ dg-publish: false
 下面是所有我尝试过的方案
 
 - [[Nolebase]] 一款基于 VitePress 的在线知识库
-- [[Obsidian Digital Garden Plugin]]  一款 Obsidian 插件，结合 GitHub 仓库可以实现快速分享笔记
+- [[Obsidian Digital Garden Plugin]] 一款 Obsidian 插件，结合 GitHub 仓库可以实现快速分享笔记
 - [[Digital Garden Gatsby Template]] 一款 Gatsby 模板
 - [[Digital Garden Jekyll Template]] 一个 Jekyll 模板
 - [[Gatsby Theme Primer Wiki]]
@@ -41,10 +41,11 @@ dg-publish: false
 Quartz 发布 4.x 版本之后可用度大大提高，并且可以直接作为 Obsidian Publish 的开源代替存在。
 
 Quartz 需要 Node v18.14 以及 npm v9.3.1
+
 ## 功能
 
 - 自动生成双向链接 Automatically generated backlinks
-    - 支持 wikilinks，backlinks, Latex, 语法高亮
+  - 支持 wikilinks，backlinks, Latex, 语法高亮
 - 支持 Graph View
 - 链接预览 Link Previews
 - 本地关联图 Local graph
@@ -58,7 +59,12 @@ Quartz 需要 Node v18.14 以及 npm v9.3.1
 
 ![](https://miro.medium.com/v2/resize:fit:1400/1*xPrwTPvq5O8vjB0F6Al0BA.png)
 
+界面
+
+![vMM9](https://photo.einverne.info/images/2024/06/25/vMM9.png)
+
 ## 安装
+
 通过克隆代码本地安装
 
 ```
@@ -70,7 +76,7 @@ npx quartz create
 
 在执行了上面的命令之后，会在命令中选择是否要创建一个全新的仓库，还是直接使用 `ln -s` 来软链接一个既存的文件夹。
 
-然后再运行 
+然后再运行
 
 ```
 npx quartz build --serve
@@ -83,4 +89,3 @@ npx quartz build --serve
 ## reference
 
 - [GitHub](https://github.com/jackyzha0/quartz)
-
