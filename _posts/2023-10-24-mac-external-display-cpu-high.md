@@ -21,6 +21,9 @@ last_updated: 2023-10-24 23:32:34
 
 下载一个 [gfxCardStatus](https://github.com/codykrieger/gfxCardStatus) 可以查看当前使用的 GPU 是核显还是独显。外接显示器必须使用独立显卡，使用该软件手动切换为独立显卡。然后再接上显示器，之后就再没有出现 CPU 过高的问题。
 
+## 补充解决方案
+将 HDMI 线缆更换为雷电口和  Display Port 的连接线材，可以解决 CPU 过高的问题。
+
 ## More
 
 我使用 M1 芯片的 Macbook 连接显示器的时候，却完全没有出现问题，真的不知道是 Intel 芯片的问题，还是 GPU 问题，还是 Apple 的问题了。

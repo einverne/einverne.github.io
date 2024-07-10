@@ -21,6 +21,10 @@ last_updated: 2023-11-23 16:09:34
 - LG 27GN950
 - ASUS PA279CV-J 45790 JPY
 
+## 接口
+
+
+
 ## 控制亮度和声音
 
 Mac mini 连接外部显示器的时候，是不能直接通过系统的快捷键调整屏幕的亮度和声音的，但是通过这个开源的软件 [MonitorControl](https://github.com/MonitorControl/MonitorControl) 就可以实现。

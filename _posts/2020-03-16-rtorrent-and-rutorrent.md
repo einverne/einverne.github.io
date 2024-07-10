@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "rTorrent 和 ruTorrent 使用"
+aliases: "rTorrent 和 ruTorrent 使用"
 tagline: ""
 description: ""
-category:
+category: 经验总结
 tags: [bittorrent, tmux, rtorrent, rutorrent, linux, command-line, command, ]
 last_updated:
 ---

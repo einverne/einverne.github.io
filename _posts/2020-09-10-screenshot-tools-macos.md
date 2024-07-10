@@ -54,7 +54,7 @@ Jietu 是腾讯推出的截图工具。
 - <https://jietu.qq.com/>
 
 ## CleanShot X
-[CleanShot X](https://cleanshot.com/) 是一款收费的截图工具。
+[[CleanShot X for Mac]]  [CleanShot X](https://cleanshot.com/) 是一款收费的截图工具。
 
 - 截图后的图片编辑器
 - CleanShot Cloud，一键上传图片

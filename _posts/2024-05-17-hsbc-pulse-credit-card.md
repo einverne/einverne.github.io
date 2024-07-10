@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "汇丰 Pulse 银联双币信用卡申请及使用"
+title: "汇丰 HSBC Pulse 银联双币信用卡申请及使用"
 aliases:
-- "汇丰 Pulse 银联双币信用卡申请及使用"
+- "汇丰 HSBC Pulse 银联双币信用卡申请及使用"
 tagline: ""
 description: ""
 category: 经验总结
@@ -41,6 +41,10 @@ dg-publish: false
 审核约两周左右的程度，审核完成之后可以收到短信。
 
 在 HSBC HK 应用上可以发现新的信用卡，卡号，有效期，以及安全码（CVV） 。
+
+## 申请流程
+首先汇丰香港的账户最低存款达到最低要求，然后登录 HSBC HK 应用，在首页下方有「信用卡」一栏，在信用卡下可以找到 Pulse 卡，直接在线提交申请。
+
 
 ## 使用和维护
 
