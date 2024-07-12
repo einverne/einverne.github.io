@@ -37,6 +37,8 @@ Bunny CDN 提供节点非常地多，其中亚太节点在二十多个，包括�
 
 注册账号之后，记得在站内兑换优惠码，价值 5 刀，`BUNNYFIVER`，如果兑换码出现问题，欢迎加入[讨论群](https://t.me/+RUBhyY60iVcl6hdX)一起讨论。
 
+另外还可以开 Ticket，说对 Bunny CDN 很感兴趣能不能有一个 Promo Code，这个时候客服也会非常开心地发过来一个 5 USD 的优惠码，这样就有了 10 USD 的余额，也能使用 10 个月左右了。
+
 ![q1bD4QTeqL](https://pic.einverne.info/images/q1bD4QTeqL.png)
 
 ## 设置
@@ -59,3 +61,4 @@ Bunny 也提供免费的 SSL 证书，到页面上一键申请即可。其他 CD
 
 - [[Cloudflare]]
 - [[Fastly]]
+- [[CloudCone CDN]]
