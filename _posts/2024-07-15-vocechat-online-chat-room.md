@@ -25,6 +25,8 @@ dg-publish: false
 
 在当今众多聊天工具中，VoceChat 以其轻量、安全和易用性脱颖而出。作为一款开源的即时通讯软件，VoceChat 为个人和小型团队提供了简洁高效的沟通解决方案。
 
+- 可以发送图片，语音，文字，emoji ，文件等
+- 提供 RESTful API 文档，支持自定义客户端和机器人
 - 支持 Android、iOS 端
 - 支持 Docker 安装，部署极其简单
 - 备份简单
@@ -34,7 +36,7 @@ dg-publish: false
 - 支持自建频道
 - 支持邀请用户
 - 支持语音
-- 支持网页挂件
+- 支持网页挂件，通过 SDK 嵌入网页，在网页中实现频道聊天
 - 支持 iframe 嵌入网页
 
 ## 安装
@@ -71,9 +73,13 @@ server{
 
 相较于其他商业性质的产品，VoceChat 更显得美观，而不像其他商业级别的应用那么端庄正式。
 
+![O9nGNwn4w_](https://pic.einverne.info/images/O9nGNwn4w_.png)
+
 ### 支持语音
 
 VoceChat 通过 [[Agora]] 实现了语音和视频对话，Agora 每个月提供 1000 小时的免费在线语音通话，足够目前使用了。
+
+![jERDCf4uSr](https://pic.einverne.info/images/jERDCf4uSr.png)
 
 ### 屏幕分享
 
@@ -93,7 +99,7 @@ VoceChat 还自带了一个屏幕分享，可以分享当前的屏幕窗口和�
 
 ## 最后
 
-如果想要体验，可以访问我的[实例](https://vc.einverne.info/) 。
+如果想要体验，可以访问我的[实例](https://vc.einverne.info/)的大厅，可以在大厅发送 PT，我会邀请你进入私人频道。
 
 ## related
 
