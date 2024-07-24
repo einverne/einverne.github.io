@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "FocuSee 屏幕录制工具使用体验"
+title: "macOS 屏幕录制应用 FocuSee 使用体验"
 aliases:
 - "FocuSee 屏幕录制工具使用体验"
+- "macOS 屏幕录制应用 FocuSee 使用体验"
 tagline: ""
 description: ""
 category: 产品体验

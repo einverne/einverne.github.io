@@ -55,6 +55,12 @@ Voicenotes 会根据上一次的录音生成提问。
 
 ![pRXHYKBezB](https://pic.einverne.info/images/pRXHYKBezB.png)
 
+
+## 特殊优惠码
+在结帐时使用 `z1CLp1`，可以额外再获得 10% 的减免。
+
+![MwiL](https://photo.einverne.info/images/2024/07/19/MwiL.png)
+
 ## related
 
 - [[alog]] 开源的语音转录应用
