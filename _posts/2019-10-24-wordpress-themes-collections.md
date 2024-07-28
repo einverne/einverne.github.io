@@ -10,6 +10,13 @@ tags: [wordpress, themes, php, design, blog,  ]
 last_updated:
 ---
 
+几款适合个人的博客主题
+
+- [[Puock]]
+- [[Kratos]]
+- [[Mynote]]
+- [[CorePress-Pro]]
+- [d8](https://themebetter.com/theme/d8)
 ### puock
 
 [puock](https://github.com/Licoy/wordpress-theme-puock) 一款开源的，高颜值，自适应的 WordPress 主题，支持白天与黑夜模式、无刷新加载等
