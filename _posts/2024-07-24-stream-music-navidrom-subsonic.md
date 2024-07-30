@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "音流：一款支持 Navidrom 兼容 Subsonic 的跨平台音乐播放器"
+title: "音流：一款支持 Navidrome 兼容 Subsonic 的跨平台音乐播放器"
 aliases:
-- "音流：一款支持 Navidrom 兼容 Subsonic 的跨平台音乐播放器"
+- "音流：一款支持 Navidrome 兼容 Subsonic 的跨平台音乐播放器"
 tagline: ""
 description: ""
 category: 产品体验
@@ -44,6 +44,9 @@ last_updated: 2024-02-01 09:24:55
 Navidrome 配置页
 
 ![M6wG](https://photo.einverne.info/images/2024/07/25/M6wG.png)
+
+## 最后
+如果有朋友感兴趣的话，我自己搭建了一个有 7000+ 音乐的曲库 [Navidrome](https://blog.einverne.info/post/2023/12/navidrome.html)，如果你也喜欢日韩音乐，可以加入我的群组一起讨论，如果你也愿意分享你的曲库，也欢迎联系我，我会给你开一个 Navidrome 帐号。
 
 ## related
 

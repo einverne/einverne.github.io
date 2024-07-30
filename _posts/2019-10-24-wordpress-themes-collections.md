@@ -17,6 +17,7 @@ last_updated:
 - [[Mynote]]
 - [[CorePress-Pro]]
 - [d8](https://themebetter.com/theme/d8)
+- [cocoon](https://github.com/xserver-inc/cocoon) 开源的 WordPress 主题
 ### puock
 
 [puock](https://github.com/Licoy/wordpress-theme-puock) 一款开源的，高颜值，自适应的 WordPress 主题，支持白天与黑夜模式、无刷新加载等
