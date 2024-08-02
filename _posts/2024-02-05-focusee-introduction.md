@@ -56,3 +56,4 @@ FocuSee 是一款收费的软件，如果你可以折腾那么，OBS 也有一�
 - [[Screen Studio]]
 - [[ScreenFlow]]
 - [[Open Broadcaster Software(OBS)]]
+- [[QuickRec]] 一款小巧的录屏应用，只有 1.5MB，还可以 iPad/iPhone 投屏录制。
