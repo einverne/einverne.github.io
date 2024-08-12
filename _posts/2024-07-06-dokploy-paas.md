@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Dokploy 另一个开源自托管的 PaaS 平台"
+title: "Dokploy 又一个开源自托管的 PaaS 平台"
 aliases:
-- "Dokploy 另一个开源自托管的 PaaS 平台"
+- "Dokploy 又一个开源自托管的 PaaS 平台"
 tagline: ""
 description: ""
 category: 产品体验
