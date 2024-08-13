@@ -4,13 +4,13 @@
     <meta charset="utf-8">
 	<link rel="manifest" href="/pwa/manifest.json">
 	<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
-    {% if page.description %}
+    {% if page.description and page.description != "" %}
 	  <meta name="description" content="{{ page.description }}">
     <meta itemprop="description" content="{{ page.description }}">
-		{% elsif post.excerpt and post.excerpt != '' %}
+		{% elsif post.excerpt and post.excerpt != "" %}
 	  <meta name="description" content="{{ post.excerpt | strip_html }}">
 	  {% else %}
-	  <meta name="description" content="{{ post.content | strip_html | truncatewords: 50 }}">
+	  <meta name="description" content="{{ post.content | strip_html | slice: 0, 150 }}">
 	  {% endif %}
 		<meta itemprop="name" content="{{ site.title }}">
 	  {% if post.tags.size > 0 %}
@@ -24,8 +24,8 @@
 	  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 	  <meta property="og:image" content="{{ site.image }}">
 	  <meta property="twitter:card" content="summary">
-	  <meta property="twitter:site" content="{{ site.author.twitter }}">
-	  <meta property="twitter:creator" content="{{ site.author.twitter }}">
+	  <meta property="twitter:site" content="@{{ site.author.twitter }}">
+	  <meta property="twitter:creator" content="@{{ site.author.twitter }}">
 	  <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 	  <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}">
 	  <meta property="twitter:image" content="{{ site.image }}">
