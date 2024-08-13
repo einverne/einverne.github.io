@@ -1,17 +1,35 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Blog">
+<html lang="{{ site.lang | default: 'zh' }}" itemscope itemtype="http://schema.org/Blog">
   <head>
     <meta charset="utf-8">
 	<link rel="manifest" href="/pwa/manifest.json">
 	<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">
-    <meta itemprop="description" content="{{ page.description }}">{% endif %}
-		{% if post.excerpt %}<meta name="description" content="{{ post.excerpt | strip_html }}">{% endif %}
+    {% if page.description %}
+	  <meta name="description" content="{{ page.description }}">
+    <meta itemprop="description" content="{{ page.description }}">
+		{% elsif post.excerpt and post.excerpt != '' %}
+	  <meta name="description" content="{{ post.excerpt | strip_html }}">
+	  {% else %}
+	  <meta name="description" content="{{ post.content | strip_html | truncatewords: 50 }}">
+	  {% endif %}
+		<meta itemprop="name" content="{{ site.title }}">
+	  {% if post.tags.size > 0 %}
+			  <meta name="keywords" content="{% for tag in post.tags %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}">
+	  {% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="theme-color" content="#2196F3">
-	<meta name="google-site-verification" content="puZt0ZyqB-t67BYdYAgLUyIPBeismG68J0dmEc01QeY" />
-
+		<meta name="theme-color" content="#2196F3">
+	  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	  <meta property="og:type" content="article">
+	  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	  <meta property="og:image" content="{{ site.image }}">
+	  <meta property="twitter:card" content="summary">
+	  <meta property="twitter:site" content="{{ site.author.twitter }}">
+	  <meta property="twitter:creator" content="{{ site.author.twitter }}">
+	  <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	  <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}">
+	  <meta property="twitter:image" content="{{ site.image }}">
+		<meta name="google-site-verification" content="puZt0ZyqB-t67BYdYAgLUyIPBeismG68J0dmEc01QeY" />
 	{% if page.url == "/404.html" %}
 		<meta http-equiv = "refresh" content = "3;url=/">
 	{% endif %}
@@ -33,7 +51,7 @@
 		}
     </script>
 	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-3.6.0.slim.min.js"></script>
-
+	<link rel="canonical" href="{{ page.url | prepend: site.url }}">
 	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
 
     <!-- Le styles -->

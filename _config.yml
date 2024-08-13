@@ -4,6 +4,7 @@ permalink: /post/:year/:month/:title.html
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "vendor", "Gemfile", "Gemfile.lock", ".travis.yml"]
 paginate: 10
+lang: zh
 description_length: 200
 markdown: kramdown
 kramdown:
@@ -11,7 +12,7 @@ kramdown:
     default_lang: plaintext
 encoding: UTF-8
 highlighter: rouge
-
+excerpt_separator: "\n\n"
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
@@ -24,7 +25,7 @@ author :
   email : git@einverne.info
   google : EinVerne
   github : einverne
-  twitter : einverne
+  twitter : @einverne
   feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
