@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Dinox 又一款 AI 语音实时转录工具"
+title: "Dinox 又一款 AI 语音转录笔记"
 aliases:
-- "Dinox 又一款 AI 语音实时转录工具"
+- "Dinox 又一款 AI 语音转录笔记"
 tagline: ""
 description: ""
 category: 产品体验
-tags: [ dinox, ai, notes, ios, transcript, ai-transcript, obsidian, ]
+tags: [ dinox, ai, notes, ios, transcript, ai-transcript, obsidian, 语音笔记, ]
 create_time: 2024-07-26 09:44:26
 last_updated: 2024-07-26 09:44:26
 dg-home: false

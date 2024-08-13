@@ -10,6 +10,7 @@ last_updated:
 ---
 
 ## 什么是 NeoVim？
+
 [[NeoVim]] 是 Vim 编辑器的一个重构和扩展版本，旨在修复长期存在的问题，提供更好的插件接口，并简化了脚本配置。对于开发者来说，NeoVim 是一个强大的文本编辑器，支持多种编程语言，并且具有高度的可定制性。
 
 ## 安装 NeoVim
@@ -165,8 +166,6 @@ Plug 'junegunn/fzf.vim'
 nmap <C-p> :Files<CR>
 ```
 
-
 ## 插件
 
 - https://github.com/folke/flash.nvim 快速跳转
-

@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 产品体验
-tags: [ voicenotes, ai, note, ios, ios-app, android, 产品体验, 录音, transcript, 转文字, ]
+tags: [ voicenotes, ai, note, ios, ios-app, android, 产品体验, 录音, transcript, 转文字, 语音笔记]
 create_time: 2024-06-20 22:43:04
 last_updated: 2024-06-20 22:43:04
 dg-home: false
