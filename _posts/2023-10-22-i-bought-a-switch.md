@@ -5,7 +5,7 @@ aliases:
   - 在任天堂即将推出新一代主机时我买入了一台 OLED Switch
 tagline: ''
 description: ''
-category: 
+category: 经验总结
 tags:
   - 日本生活
   - Switch
@@ -18,8 +18,6 @@ create_time: 2023-10-22T20:20:57.000Z
 last_updated: 2023-10-22T20:20:57.000Z
 profileName: Default
 postId: 152
-categories:
-  - 13
 ---
 
 不久之前看到小红书上有人出 Switch，就线下见面交易 28000 日元购入了一台 OLED 白色版本的 Switch，顺便还 4000 日元买了他的塞尔达荒野之息。这篇就简单的记录一下购买过程。
