@@ -13,7 +13,7 @@
             {% if page.last_updated %}
             , Last modified on {{ page.last_updated | date: "%m/%d/%Y" }}
             {% endif %}
-            <span class="entry-author" itemprop="author">by <a href="https://x.com/einverne">{{ site.author.name }}</a>></span>
+            <span class="entry-author" itemprop="author">by <a href="https://x.com/einverne">{{ site.author.name }}</a></span>
             | <a class="revision-histroy" href="{{ site.repo_url }}/commits/master/{{ page.path }}"
                  target="_blank">View revision history</a>
         </div>
