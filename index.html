@@ -8,7 +8,7 @@ description: 博客内容涵盖多个主题，包括 Jekyll、Linux 命令、编
 <div class="row">
   <div class="col-xs-12 col-md-8">
     {% for post in paginator.posts %}
-    {% capture summary %}{{post.content | split:'<!--more--> ' |first }}{% endcapture%}
+    {% capture summary %}{{post.content | split:'<!--more--> ' | first }}{% endcapture%}
     <h1><a class="title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
     <div class="post_at_index">
       {{summary}}
@@ -106,9 +106,6 @@ description: 博客内容涵盖多个主题，包括 Jekyll、Linux 命令、编
     </nav>
   </div>
   <div class="col-xs-12 col-md-4">
-		<div>
-			<a class="twitter-timeline" data-width="390" data-height="640" data-theme="light" href="https://twitter.com/einverne?ref_src=twsrc%5Etfw">Tweets by einverne</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
     <div>
       <h2>电子书</h2>
       <ul>
