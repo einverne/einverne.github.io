@@ -1,27 +1,27 @@
 <div class="row" itemscope itemtype="http://schema.org/Article">
-    <div class="col-xs-12 col-md-8">
+    <div class="col-12 col-md-8">
         <div class="page-header" itemprop="name">
             <h1>{{ page.title }} {% if page.tagline %}
                 <small>{{page.tagline}}</small>
                 {% endif %}
             </h1>
         </div>
-        <div class="post-meta">
+        <div class="post-meta text-muted mb-3">
             {% if page.date %}
             <span class="entry-date" itemprop="datePublished">Posted on {{ page.date | date: "%m/%d/%Y" }}</span>
             {% endif %}
             {% if page.last_updated %}
             , Last modified on {{ page.last_updated | date: "%m/%d/%Y" }}
             {% endif %}
-            <span class="entry-author" itemprop="author">by <a href="https://x.com/einverne">{{ site.author.name }}</a></span>
-            | <a class="revision-histroy" href="{{ site.repo_url }}/commits/master/{{ page.path }}"
+            <span class="entry-author" itemprop="author">by <a class="text-decoration-none" href="https://x.com/einverne">{{ site.author.name }}</a></span>
+            | <a class="revision-histroy text-decoration-none" href="{{ site.repo_url }}/commits/master/{{ page.path }}"
                  target="_blank">View revision history</a>
         </div>
         <div class="post-content" itemprop="articleBody">
             {{ content }}
         </div>
 
-        <div id="related">
+        <div id="related" class="mt-4">
             <h2>Related Posts</h2>
             <ul class="posts"><!--当一篇文章有两个tag一样时显示-->
                 {% for post in site.posts %}
@@ -39,32 +39,31 @@
         </div>
 
         <hr>
-        <nav>
-            <ul class="pager">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-between">
                 {% if page.previous %}
-                <li class="previous"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr;
-                    Previous（前一篇）</a></li>
+                <li class="page-item"><a class="page-link text-decoration-none" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous（前一篇）</a></li>
                 {% else %}
-                <li class="previous disabled"><a>&larr; Previous（前一篇）</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">&larr; Previous（前一篇）</a></li>
                 {% endif %}
-                <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
+                <li class="page-item"><a class="page-link text-decoration-none" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive（目录）</a></li>
                 {% if page.next %}
-                <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
+                <li class="page-item"><a class="page-link text-decoration-none" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next（后一篇） &rarr;</a></li>
                 {% else %}
-                <li class="next disabled"><a>Next（后一篇） &rarr;</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next（后一篇） &rarr;</a></li>
                 {% endif %}
             </ul>
         </nav>
         <hr>
 
-        如果要使用 Remark42 进行评论确保访问的域名为 <a href="https://blog.einverne.info">https://blog.einverne.info</a> 或者点击 <a href="https://blog.einverne.info{{ page.url }}" target="_self">这里</a>评论。
+        <p class="mb-3">如果要使用 Remark42 进行评论确保访问的域名为 <a href="https://blog.einverne.info" class="text-decoration-none">https://blog.einverne.info</a> 或者点击 <a href="https://blog.einverne.info{{ page.url }}" target="_self" class="text-decoration-none">这里</a>评论。</p>
         <div id="remark42"></div>
 
         {% include JB/comments %}
-        <blockquote><p class="quote"></p></blockquote>
+        <blockquote><div id="quote"></div></blockquote>
     </div>
 
-    <div class="col-xs-12 col-md-4">
+    <div class="col-12 col-md-4 mt-4">
         {% unless page.categories == empty %}
         <ul class="tag_box">
             <li><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></li>
@@ -108,12 +107,22 @@
 //            });
 //        }
 
-        $.getJSON('https://my-worker.einverne.workers.dev/', function (data) {
-            var rand = Math.floor(Math.random() * data.quotes.length);
-            var entry = data.quotes[rand].quote + "    --" + data.quotes[rand].name;
-            $('.quote').text(entry);
+        $(document).ready(function() {
+            $.ajax({
+                url: 'https://ev-quotes.einverne.workers.dev/api/quote',
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    var quoteHtml = '<div class="quote-text">' + data.quote + '</div>';
+                    quoteHtml += '<div class="quote-author">— ' + data.name + '</div>';
+                    $('#quote').html(quoteHtml);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error fetching quote:', textStatus, errorThrown);
+                    $('#quote').html('抱歉，無法載入名言。');
+                }
+            });
         });
-
         jQuery('#qrcode').qrcode({
             width: 128,
             height: 128,

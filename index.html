@@ -2,120 +2,91 @@
 layout: default
 title: Verne in GitHub
 description: 博客内容涵盖多个主题，包括 Jekyll、Linux 命令、编程语言学习笔记、各种产品体验、经验总结等。还深入探讨 Git、Java、Vim、Linux、Android 等技术领域，分享关于 Docker、Go、Spring、开源项目的见解。
+keywords: GitHub, Jekyll, Linux 命令, Vim, Docker, Android, Docker, Go, Spring, 开源项目, 学习笔记, 经验总结, 产品体验, 思考感悟, 读书笔记
 ---
 
 <meta itemprop="image" content="{{ site.image }}">
-<div class="row">
-  <div class="col-xs-12 col-md-8">
+<div class="row mt-4">
+  <div class="col-12 col-md-8">
     {% for post in paginator.posts %}
-    {% capture summary %}{{post.content | split:'<!--more--> ' | first }}{% endcapture%}
-    <h1><a class="title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
+    {% capture summary %}{{ post.content | strip_html | slice: 0, 280 }}{% endcapture%}
+    <h1><a class="text-decoration-none title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
     <div class="post_at_index">
       {{summary}}
-      {% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" rel="nofollow">Read more...</a>{% endif %}
+      {% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" rel="nofollow">Read more</a>{% endif %}
     </div>
     <br/>
-    <div>
-      <cite>{{ post.date | date: "%Y-%m-%d" }}</cite> <i class="icon-tag"></i>
-      {% for tag in post.tags %}<a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}">{{ tag }}</a>
-      {% if forloop.last %}
-      {% else %}, {% endif %}
+    <div class="mt-2 mb-3">
+      <i>{{ post.date | date: "%Y-%m-%d" }}</i> <i class="icon-tag"></i>
+      {% for tag in post.tags %}<a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}" class="badge bg-secondary text-decoration-none">{{ tag }}</a>
+      {% if forloop.last %}{% else %}, {% endif %}
       {% endfor %}
     </div>
-    <div style="clear: both;"></div>
+<!--    <div style="clear: both;"></div>-->
     <hr/>
     {% endfor %}
 
     <!-- Pagination links -->
-    <nav>
-      <ul class="pagination hidden-xs">
-        {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <li>
-          <a href="/">&laquo; Previous</a>
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li class="page-item {% if paginator.previous_page == null %}disabled{% endif %}">
+          <a class="page-link" href="{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}" {% if paginator.previous_page == null %}tabindex="-1" aria-disabled="true"{% endif %}>&laquo; Previous</a>
         </li>
-        {% else %}
-        <li>
-          <a href="/page{{ paginator.previous_page }}">&laquo; Previous</a>
-        </li>
-        {% endif %}
-        {% else %}
-        <li class="disabled">
-          <a>&laquo; Previous</a>
-        </li>
-        {% endif %}
 
         {% if paginator.page == 1 %}
-        <li class="active">
-          <a>1</a>
-        </li>
-        {% for count in (2..5) %}
-        <li>
-          <a href="/page{{count}}">{{count}}</a>
-        </li>
-        {% endfor %}
-        <li><span>...</span></li>
-        <li><a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a></li>
+        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
         {% else %}
-        <li>
-          <a href="/">1</a>
-        </li>
+        <li class="page-item"><a class="page-link" href="/">1</a></li>
         {% endif %}
 
-        {% if paginator.page < paginator.total_pages and paginator.page > 1 %}
-          {% if paginator.page > 5 %}
-            {% for count in (2..5) %}
-            <li>
-              <a href="/page{{count}}">{{count}}</a>
-            </li>
-            {% endfor %}
-            <li class="disabled"><span>...</span></li>
-            <li class="active"><a>{{paginator.page}}</a></li>
-          {% else %}
-            {% for count in (2..5) %}
-              {% if paginator.page == count %}
-                <li class="active"><a>{{count}}</a></li>
-                {% else %}
-                <li><a href="/page{{count}}">{{count}}</a></li>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-          <li class="disabled"><span>...</span></li>
-          <li><a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a></li>
+        {% assign page_start = 2 %}
+        {% if paginator.page > 4 %}
+        {% assign page_start = paginator.page | minus: 2 %}
+        <li class="page-item disabled"><span class="page-link">...</span></li>
+        {% endif %}
+
+        {% assign page_end = paginator.total_pages | minus: 1 %}
+        {% assign page_threshold = paginator.total_pages | minus: 3 %}
+        {% if paginator.page < page_threshold %}
+        {% assign page_end = paginator.page | plus: 2 %}
+        {% endif %}
+
+        {% for count in (page_start..page_end) %}
+        {% if count == paginator.page %}
+        <li class="page-item active" aria-current="page"><span class="page-link">{{ count }}</span></li>
         {% else %}
+        <li class="page-item"><a class="page-link" href="/page{{count}}">{{count}}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% assign threshold_page = paginator.total_pages | minus: 3 %}
+        {% if paginator.page < threshold_page %}
+        <li class="page-item disabled"><span class="page-link">...</span></li>
         {% endif %}
 
         {% if paginator.page == paginator.total_pages %}
-        <li><span>...</span></li>
-        <li class="active">
-          <a href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a>
-        </li>
+        <li class="page-item active" aria-current="page"><span class="page-link">{{ paginator.total_pages }}</span></li>
         {% else %}
+        <li class="page-item"><a class="page-link" href="/page{{paginator.total_pages}}">{{paginator.total_pages}}</a></li>
         {% endif %}
 
-        {% if paginator.next_page %}
-        <li>
-          <a href="/page{{paginator.next_page}}">Next &raquo;</a>
+        <li class="page-item {% if paginator.next_page == null %}disabled{% endif %}">
+          <a class="page-link" href="{% if paginator.next_page %}/page{{paginator.next_page}}{% endif %}" {% if paginator.next_page == null %}tabindex="-1" aria-disabled="true"{% endif %}>Next &raquo;</a>
         </li>
-        {% else %}
-        <li class="disabled">
-          <a>Next &raquo;</a>
-        </li>
-        {% endif %}
       </ul>
     </nav>
   </div>
-  <div class="col-xs-12 col-md-4">
-    <div>
+  <div class="col-12 col-md-4">
+    <div class="mb-2">
       <h2>电子书</h2>
-      <ul>
+      <ul class="list-unstyled">
         <li><a href="http://einverne.github.io/markdown-style-guide/zh.html">Markdown 书写风格指南</a></li>
         <li><a href="https://einverne.github.io/gitbook-tutorial">Gitbook 使用教程</a></li>
         <li><a href="https://einverne.gitbooks.io/kafka/content/">Kafka 官方文档中文版</a></li>
         <li><a href="https://einverne.gitbooks.io/intellij-idea-tutorial/content/">IntelliJ IDEA 教程</a></li>
       </ul>
     </div>
-    <div>
+    <div class="mb-2">
       <h2>本站提供服务</h2>
       <ul>
         <li><a href="https://client.einverne.info/order.php?step=1&productGroup=13" target="_blank">域名注册</a></li>
@@ -126,7 +97,7 @@ description: 博客内容涵盖多个主题，包括 Jekyll、Linux 命令、编
         <li><a href="https://wakapi.einverne.info/" target="_blank">追踪代码时间</a></li>
       </ul>
     </div>
-    <div class="categories">
+    <div class="mb-2 categories">
       <h2>文章分类</h2>
       <ul class="tag_box">
         {% assign categories_list = site.categories %}

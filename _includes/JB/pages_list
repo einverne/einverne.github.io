@@ -26,11 +26,15 @@ Usage:
   {% for node in pages_list %}
     {% if node.title != null %}
       {% if group == null or group == node.group %}
-      	{% if page.url == node.url %}
-      	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-      	{% else %}
-      	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
-      	{% endif %}
+        {% if page.url == node.url %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
+        </li>
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}

@@ -13,6 +13,9 @@
 	  <meta name="description" content="{{ post.content | strip_html | slice: 0, 150 }}">
 	  {% endif %}
 		<meta itemprop="name" content="{{ site.title }}">
+	  {% if page.keywords %}
+	  <meta name="keywords" content="{{ page.keywords }}">
+	  {% endif %}
 	  {% if post.tags.size > 0 %}
 			  <meta name="keywords" content="{% for tag in post.tags %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}">
 	  {% endif %}
@@ -50,13 +53,15 @@
 			});
 		}
     </script>
-	<script type="text/javascript" src="{{ ASSET_PATH }}/jquery-3.6.0.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="canonical" href="{{ page.url | prepend: site.url }}">
 	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
 
     <!-- Le styles -->
-    <link href="{{ ASSET_PATH }}/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	  <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ BASE_PATH }}/images/favicon.ico">
@@ -66,13 +71,7 @@
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Site ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Site RSS Feed">
 	<link rel="stylesheet" href="{{ ASSET_PATH }}/font-awesome-4.4.0/css/font-awesome.min.css">
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-W2LDG64');</script>
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529425670069509"
-						crossorigin="anonymous"></script>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8529425670069509" crossorigin="anonymous"></script>
 		<script async src="https://umami.einverne.info/script.js" data-website-id="1b93237c-5000-4e9d-9f4d-581cb7c8c3e3"></script>
 	  <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -86,82 +85,79 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-5FCF34H16J');
 	  </script>
   </head>
 
   <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-          <div class="row mobilepadding">
-					<a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mNavbar">
-  					<ul class="nav navbar-nav">
-  						{% assign pages_list = site.pages %}
-  						{% assign group = 'navigation' %}
-  						{% include JB/pages_list %}
-						  <li class="dropdown">
-							  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Other</a>
-							  <ul class="dropdown-menu">
-									<li><a href="/about.html">About</a></li>
-									<li><a href="https://invest.einverne.info/" target="_blank">投资笔记</a></li>
-									<li><a href="https://broker.einverne.info/" target="_blank">券商推荐</a></li>
-									<li><a href="https://book.einverne.info/" target="_blank">图书分享</a></li>
-								  <li><a href="https://photo.einverne.info/" target="_blank">相册</a></li>
-								  <li><a href="https://kindle.einverne.info/" target="_blank">Kindle 笔记</a></li>
-								  <li><a href="https://ipfs.einverne.info/" target="_blank">IPFS 镜像</a></li>
-								  <li><a href="https://status.einverne.info/" target="_blank">服务状态</a></li>
-									<li><a rel="me" href="https://m.einverne.info/@einverne" target="_blank">在线嘟嘟</a></li>
-								</ul>
-						  </li>
-  					</ul>
-  					<form id="search-form" class="navbar-form navbar-right" role="search">
-  						<div class="form-group">
-  						<input type="text" class="form-control input-sm" placeholder="Search" id="query">
-  						</div>
-  					</form>
-  					<div class="nav-icon">
-  						<a href="/feed.xml"><i class="fa fa-rss fa-2x"></i></a>
-  					</div>
-          </div>
-				</div>
-      </div>
-    </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <div class="container-md">
+		  <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  {% assign pages_list = site.pages %}
+				  {% assign group = 'navigation' %}
+				  {% include JB/pages_list %}
+				  <li class="nav-item dropdown">
+					  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						  Other
+					  </a>
+					  <ul class="dropdown-menu">
+						  <li><a class="dropdown-item" href="/about.html">About</a></li>
+						  <li><a class="dropdown-item" href="https://invest.einverne.info/" target="_blank">投资笔记</a></li>
+						  <li><a class="dropdown-item" href="https://broker.einverne.info/" target="_blank">券商推荐</a></li>
+						  <li><a class="dropdown-item" href="https://book.einverne.info/" target="_blank">图书分享</a></li>
+						  <li><a class="dropdown-item" href="https://photo.einverne.info/" target="_blank">相册</a></li>
+						  <li><a class="dropdown-item" href="https://kindle.einverne.info/" target="_blank">Kindle 笔记</a></li>
+						  <li><a class="dropdown-item" href="https://ipfs.einverne.info/" target="_blank">IPFS 镜像</a></li>
+						  <li><a class="dropdown-item" href="https://status.einverne.info/" target="_blank">服务状态</a></li>
+						  <li><a class="dropdown-item" rel="me" href="https://m.einverne.info/@einverne" target="_blank">在线嘟嘟</a></li>
+					  </ul>
+				  </li>
+			  </ul>
+			  <form id="search-form" class="d-flex" role="search">
+				  <input class="form-control form-control-sm me-2" type="search" placeholder="Search" id="query" aria-label="Search">
+			  </form>
+			  <div class="nav-icon ms-2">
+				  <a href="/feed.xml"><i class="fa fa-rss fa-2x"></i></a>
+			  </div>
+		  </div>
+	  </div>
+  </nav>
+  <div class="container">
+	  <div class="row">
+		  <div class="col-12">
+			  <div class="searchresult">
+			  </div>
+			  <div id="search-loader" class="img-wrap">
+			  </div>
+		  </div>
+	  </div>
+	  {{ content }}
 
-    <div class="container">
-			<div class="row mobilepadding">
-        <div class="row">
-					<div class="col-md-12">
-						<div class="searchresult">
-						</div>
-						<div id="search-loader" class="img-wrap">
-						</div>
+<!--	  <div class="row">-->
+<!--		  <div class="col-12">-->
+<!--		  </div>-->
+<!--	  </div>-->
+  </div>
+
+		<footer class="mt-4 py-3 bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<hr>
+						<p class="mb-0 text-center">
+							&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator." class="text-decoration-none">Jekyll</a>. Hosted on <a href="http://github.com/{{ site.author.github }}" target="_blank" title="Ein Verne's GitHub Repos" class="text-decoration-none">GitHub</a> & <a href="https://ipfs.einverne.info" target="_blank" title="IPFS" class="text-decoration-none">IPFS</a> & <a href="https://gtk.pw/bwg" target="_blank" title="my own vps" class="text-decoration-none">BandwagonHost</a>. Join <a href="https://t.me/+RUBhyY60iVcl6hdX" target="_blank" title="Verne's Blog Telegram Group" class="text-decoration-none">Telegram group</a>.
+						</p>
 					</div>
-        </div>
-				{{ content }}
+				</div>
 			</div>
-
-		</div>
-
-    <footer>
-      <div class="container">
-        <div class="row mobilepadding">
-          			<hr>
-      &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http://jekyllrb.com" target="_blank" title="The simple, blog-aware, static site generator.">Jekyll</a>. Hosted on <a href="http://github.com/{{ site.author.github }}" target="_blank" title="Ein Verne's GitHub Repos">GitHub</a> & <a href="https://ipfs.einverne.info" target="_blank" title="IPFS">IPFS</a> & <a href="https://gtk.pw/bwg" target="_blank" title="my own vps">BandwagonHost</a>. Join <a href="https://t.me/+RUBhyY60iVcl6hdX" target="_blank" title="Verne's Blog Telegram Group">Telegram group</a>.
-      <br><br>
-      </div>
-    </div>
-    </footer>
-
+		</footer>
     {% include JB/analytics %}
 
-	<script async type="text/javascript" src="{{ ASSET_PATH }}/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 	<script async type="text/javascript" src="{{ ASSET_PATH }}/webcore.js"></script>
 
   <script>

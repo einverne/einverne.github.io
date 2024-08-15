@@ -1,8 +1,15 @@
 <div class="row">
-	<div class="col-md-12">
-		<div class="page-header">
-			<h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+	<div class="col-12">
+		<div class="page-header mb-4">
+			<h1>
+				{{ page.title }}
+				{% if page.tagline %}
+				<small class="text-muted">{{ page.tagline }}</small>
+				{% endif %}
+			</h1>
+		</div>
 
+		<div class="content">
 			{{ content }}
 		</div>
 	</div>
