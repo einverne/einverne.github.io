@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "jinja2 笔记"
+aliases: "jinja2 笔记"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -72,7 +73,7 @@ for 循环
 
 <ul>
 { % for comment in comments % }
-    {{ render_comment(comment) }}
+    \{\{ render_comment(comment) \}\}
 { % endfor % }
 </ul>
 ```
@@ -83,7 +84,7 @@ for 循环
 { % import 'macros.html' as macros % }
 <ul>
     { % for comment in comments % }
-        {{ macros.render_comment(comment) }}
+        \{\{ macros.render_comment(comment) \}\}
     { % endfor % }
 </ul>
 ```
@@ -116,7 +117,7 @@ for 循环
 { % extends "base.html" % }
 { % block title % }Index{ % endblock % }
 { % block head % }
-    {{ super() }}
+    \{\{ super() \}\}
     <style>
     </style>
 { % endblock % }
@@ -168,9 +169,9 @@ NoneOf | 确保输入值不在可选值列表中
 
 ```
 <form method="POST">
-{{ form.hidden_tag() }}
-{{ form.name.label }} {{ form.name(id='my-text-field') }}
-{{ form.submit() }}
+\{\{ form.hidden_tag() \}\}
+{{ form.name.label }} \{\{ form.name(id='my-text-field') \}\}
+\{\{ form.submit() \}\}
 </form>
 ```
 

@@ -273,8 +273,8 @@ ALERT InstanceDown   # alert 名字
   FOR 5m             # 条件保持 5m 才会发出 alert
   LABELS { severity = "critical" }  # 设置 alert 的标签
   ANNOTATIONS {             # alert 的其他标签，但不用于标识 alert
-    summary = "Instance {{ $labels.instance }} down",
-	description = "{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 5 minutes.",
+    summary = "Instance \{\{ $labels.instance \}\} down",
+	description = "\{\{ $labels.instance \}\} of job \{\{ $labels.job \}\} has been down for more than 5 minutes.",
   }
 ```
 

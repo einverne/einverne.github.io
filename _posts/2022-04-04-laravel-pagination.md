@@ -120,9 +120,9 @@ Route::get('/users', function () {
 ```
 <div class="container">
     @foreach ($users as $user)
-        {{ $user->name }}
+        \{\{ $user->name \}\}
     @endforeach
 </div>
  
-{{ $users->links() }}
+\{\{ $users->links() \}\}
 ```

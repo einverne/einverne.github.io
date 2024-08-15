@@ -119,11 +119,11 @@ class BookSendMail extends Mailable
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
- <title>name: {{ $detail['title'] }}</title>  
+ <title>name: \{\{ $detail['title'] \}\}</title>  
 </head>  
 <body>  
-<h1>{{ $detail['title'] }}</h1>  
-<p>{{ $detail['body'] }}</p>  
+<h1>\{\{ $detail['title'] \}\}</h1>  
+<p>\{\{ $detail['body'] \}\}</p>  
   
 <p>Thank you</p>  
 </body>  
@@ -264,7 +264,7 @@ View Order
 @endcomponent
  
 Thanks,<br>
-{{ config('app.name') }}
+\{\{ config('app.name') \}\}
 @endcomponent
 ```
 

@@ -117,7 +117,7 @@ $file-> move(public_path('public/Image'), $filename);
 
 ```
 <div class="card-body">
-    <form method="POST" enctype="multipart/form-data" id="upload-image" action="{{ url('save') }}" >
+    <form method="POST" enctype="multipart/form-data" id="upload-image" action="\{\{ url('save') \}\}" >
 
         <div class="row">
 
@@ -125,7 +125,7 @@ $file-> move(public_path('public/Image'), $filename);
                 <div class="form-group">
                     <input type="file" name="image" placeholder="Choose image" id="image">
                 @error('image')
-                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    <div class="alert alert-danger mt-1 mb-1">\{\{ $message \}\}</div>
                 @enderror
                 </div>
             </div>
