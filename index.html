@@ -11,9 +11,9 @@ keywords: GitHub, Jekyll, Linux 命令, Vim, Docker, Android, Docker, Go, Spring
     {% for post in paginator.posts %}
     {% capture summary %}{{ post.content | strip_html | slice: 0, 280 }}{% endcapture%}
     <h1><a class="text-decoration-none title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
-    <div class="post_at_index">
+    <div>
       {{summary}}
-      {% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" class="link-primary link-underline-opacity-25 link-underline-opacity-100-hover">Read more ...</a>{% endif %}
+      {% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Read more ...</a>{% endif %}
     </div>
     <br/>
     <div class="mt-2 mb-3">
@@ -80,21 +80,21 @@ keywords: GitHub, Jekyll, Linux 命令, Vim, Docker, Android, Docker, Go, Spring
     <div class="mb-2">
       <h2>电子书</h2>
       <ul class="list-unstyled">
-        <li><a href="http://einverne.github.io/markdown-style-guide/zh.html">Markdown 书写风格指南</a></li>
-        <li><a href="https://einverne.github.io/gitbook-tutorial">Gitbook 使用教程</a></li>
-        <li><a href="https://einverne.gitbooks.io/kafka/content/">Kafka 官方文档中文版</a></li>
-        <li><a href="https://einverne.gitbooks.io/intellij-idea-tutorial/content/">IntelliJ IDEA 教程</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="http://einverne.github.io/markdown-style-guide/zh.html">Markdown 书写风格指南</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://einverne.github.io/gitbook-tutorial">Gitbook 使用教程</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://einverne.gitbooks.io/kafka/content/">Kafka 官方文档中文版</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://einverne.gitbooks.io/intellij-idea-tutorial/content/">IntelliJ IDEA 教程</a></li>
       </ul>
     </div>
     <div class="mb-2">
       <h2>本站提供服务</h2>
       <ul>
-        <li><a href="https://client.einverne.info/order.php?step=1&productGroup=13" target="_blank">域名注册</a></li>
-        <li><a href="https://client.einverne.info/order.php?step=1&productGroup=9" target="_blank">域名邮箱</a></li>
-        <li><a href="https://client.einverne.info/order.php?step=1&productGroup=1" target="_blank">新加坡共享主机</a></li>
-        <li><a href="https://gpt.einverne.info/" target="_blank">ChatGPT 代理</a></li>
-        <li><a href="https://invites.einverne.info/" target="_blank">好用产品推荐</a></li>
-        <li><a href="https://wakapi.einverne.info/" target="_blank">追踪代码时间</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://client.einverne.info/order.php?step=1&productGroup=13" target="_blank">域名注册</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://client.einverne.info/order.php?step=1&productGroup=9" target="_blank">域名邮箱</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://client.einverne.info/order.php?step=1&productGroup=1" target="_blank">新加坡共享主机</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://gpt.einverne.info/" target="_blank">ChatGPT 代理</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://invites.einverne.info/" target="_blank">好用产品推荐</a></li>
+        <li><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://wakapi.einverne.info/" target="_blank">追踪代码时间</a></li>
       </ul>
     </div>
     <div class="mb-2 categories">
@@ -109,7 +109,7 @@ keywords: GitHub, Jekyll, Linux 命令, Vim, Docker, Android, Docker, Go, Spring
       <ul>
         {% for post in site.posts limit:5 %}
         <li>
-          <a href="{{ post.url }}">{{ post.title}}</a>
+          <a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="{{ post.url }}">{{ post.title}}</a>
           {{ post.excerpt | strip_html }}
         </li>
         {% endfor %}

@@ -27,12 +27,12 @@ Usage:
     {% if node.title != null %}
       {% if group == null or group == node.group %}
         {% if page.url == node.url %}
-        <li>
-          <a aria-current="page" href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
         </li>
         {% else %}
-        <li>
-          <a href="{{ BASE_PATH }}{{node.url}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{node.title}}</a>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a>
         </li>
         {% endif %}
       {% endif %}

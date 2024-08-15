@@ -119,13 +119,6 @@ a {
 /*    list-style: none;*/
 /*}*/
 
-a {
-    text-decoration-line: none;
-}
-a:hover {
-    text-decoration: underline; /* 可选：鼠标悬停时显示下划线 */
-}
-
 #toc a {
     color: #bababa;
 }
