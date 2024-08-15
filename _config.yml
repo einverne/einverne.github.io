@@ -20,6 +20,8 @@ title : Verne in GitHub
 tagline: 学习笔记、经验总结、产品体验
 image: https://photo.einverne.info/images/2024/08/10/MenX.jpg
 repo_url: https://github.com/einverne/einverne.github.io
+description: 博客内容涵盖多个主题，包括 Jekyll、Linux 命令、编程语言学习笔记、各种产品体验、经验总结等。还深入探讨 Git、Java、Vim、Linux、Android 等技术领域，分享关于 Docker、Go、Spring、开源项目的见解。
+url : https://blog.einverne.info
 author :
   name : Ein Verne
   email : git@einverne.info
