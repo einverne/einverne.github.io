@@ -21,7 +21,7 @@ dg-publish: false
 
 ## 特色
 
-前端可以内嵌到自己的网站下，VoceChat 从 Slack, Discord, RocketChat, Solid, Matrix 等产品和规范中博采众长，适用于团队内部交流，个人聊天服务，网站客服，网站内嵌社区的场景。
+前端页面可以内嵌到自己的网站下，VoceChat 从 Slack, Discord, [[RocketChat,]] Solid, [[Matrix]], [[Mattermost]] 等产品和规范中博采众长，适用于团队内部交流，个人聊天服务，网站客服，网站内嵌社区的场景。
 
 在当今众多聊天工具中，VoceChat 以其轻量、安全和易用性脱颖而出。作为一款开源的即时通讯软件，VoceChat 为个人和小型团队提供了简洁高效的沟通解决方案。
 
@@ -43,10 +43,15 @@ dg-publish: false
 
 安装的配置文件可以参考我的 [dockerfile](https://github.com/einverne/dockerfile/tree/master/vocechat)。
 
-Nginx 代理，或者直接使用 [[Nginx Proxy Manager]] 设置
+```
+git clone https://github.com/einverne/dockerfile.git
+cd dockerfile/vocechat
+```
+
+直接使用 [[Nginx Proxy Manager]] 设置，或者使用 Nginx 代理
 
 ```
-server{
+server {
  server_name vocechat.yourdomain.com;
  location / {
     proxy_pass http://127.0.0.1:3010;
