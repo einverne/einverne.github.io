@@ -49,7 +49,7 @@ FocuSee 的价格不低，但好在是买断制的。
 
 ## more
 
-FocuSee 是一款收费的软件，如果你可以折腾那么，OBS 也有一个插件可以实现视频的缩放，可以使用 [Python 脚本](<[https://github.com/tryptech/obs-zoom-and-follow](https://github.com/tryptech/obs-zoom-and-follow)>)。可以参考这个[教程](https://www.youtube.com/watch?v=TUMpjm9lsGs)。
+FocuSee 是一款收费的软件，你可以在[荔枝商城](https://gtk.pw/DzEs0)购买，如果你可以折腾那么，OBS 也有一个插件可以实现视频的缩放，可以使用 [Python 脚本](<[https://github.com/tryptech/obs-zoom-and-follow](https://github.com/tryptech/obs-zoom-and-follow)>)。可以参考这个[教程](https://www.youtube.com/watch?v=TUMpjm9lsGs)。
 
 ## related
 

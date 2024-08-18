@@ -77,6 +77,8 @@ Wiznote 唯一使用他的理由就是他的跨平台，Linux 支持比 Evernote
 ## WizNote
 其实之前也一直在使用中，但由于之前 Evernote Chrome Clipper 做的实在太棒了，所以一直没转过来，为知笔记还是很多人推荐的，容量同步 500M/ 月， 30M / 单笔记，相比 Evernote 已经很不错了。笔记分享这款做的并不是很好，但觉得可以一试。并且 WizNote 支持 markdown 这一条还是非常赞的。
 
+荔枝商店购买[链接](https://gtk.pw/y2OOV)
+
 ## Simplenote
 虽然很多人推荐，但是没有 Chrome Clipper，并且注册账号登陆看了一眼 Web 版，功能比较简单，并且就是功能比不上 Evernote 的复刻版，并不是太想使用它，哪一天它也变成 Evernote 怎么办
 
