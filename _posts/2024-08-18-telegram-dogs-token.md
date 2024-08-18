@@ -61,9 +61,9 @@ DOGS 代币已经在多个交易平台进行预交易，比如 OKX，ByBit，Bit
 
 - [[Gate.io]] ，将于 2024 年 8 月 20 日开始交易
 - [[KuCoin]]，提供预交易市场，并将在正式上市后开放现货交易
-- [[OKX]]，8 月 20 日开放现货交易
+- [OKX](https://gtk.pw/okx)，8 月 20 日开放现货交易
 - [[Gitget]]
-- [[Bybit]]
+- [Bybit](https://gtk.pw/bybit)
 - [[CoinW]]
 - [[Bittime]] 印度尼西亚的加密货币交易平台
 
@@ -83,7 +83,7 @@ DOGS 代币已经在多个交易平台进行预交易，比如 OKX，ByBit，Bit
 
 ### OKX
 
-在 OKX 中，点击充值，然后搜索 dogs，选择 DOGS 代币。
+在 [OKX](https://gtk.pw/okx) 中，点击充值，然后搜索 dogs，选择 DOGS 代币。
 
 复制界面中对应的地址和 Comment（memo）
 
@@ -93,7 +93,7 @@ DOGS 代币已经在多个交易平台进行预交易，比如 OKX，ByBit，Bit
 
 ### ByBit
 
-在 ByBit 中同样的操作，点击充值，然后找到 Dogs（TON Chain）
+在 [ByBit](https://gtk.pw/bybit) 中同样的操作，点击充值，然后找到 Dogs（TON Chain）
 
 在网页中
 
