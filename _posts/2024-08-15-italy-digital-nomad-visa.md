@@ -89,6 +89,8 @@ dg-publish: false
 
 一旦签证获批，达到意大利之后有 8 天时间申请居留许可，称为 permesso di soggior，到任何一个邮局领取一套黄色文件包，填好里面的表格，然后把文件包还给邮局，送到正确的当局处理，得到一个日期去录指纹和确认其他信息。
 
+这里有[一份](https://pic.einverne.info/images/Self-Employment-Nomads-Checklist.pdf) 完整的材料清单，如果有需要也可以参考。
+
 ## 附录
 
 需要证明：

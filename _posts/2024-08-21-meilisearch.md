@@ -24,8 +24,6 @@ dg-publish: false
 - **多语言支持**：针对多种语言进行了优化，包括中文、日文等非拉丁语系，并支持停用词处理，忽略对搜索结果影响不大的常见词。
 - **高级功能**：包括地理位置搜索、多租户支持、高亮显示匹配文本，以及文档管理功能（添加、更新、删除索引中的文档）。
 
-
-
 ## 安装
 
 推荐使用 [Docker Compose](https://github.com/einverne/dockerfile) 的方式安装。
@@ -80,4 +78,3 @@ curl -X POST 'http://localhost:7700/indexes/movies/search' \
 Meilisearch 在中小数据集上的表现最好，但是根据 HackerNews 的测试，在测试导入 1.16 亿条 HackerNews 数据的时候 Meilisearch 性能显著下降。[^1]
 
 [^1]: <https://hackernoon.com/comparing-meilisearch-and-manticore-search-using-key-benchmarks>
-
