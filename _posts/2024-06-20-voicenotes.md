@@ -65,7 +65,9 @@ Voicenotes 会根据上一次的录音生成提问。
 
 - [[alog]] 开源的语音转录应用
 - [Dinox](https://apps.apple.com/cn/app/dinox/id6502698921) 一款 iOS 语音转录笔记应用
+- [[Emote]]
 - [[Whisper]]
 - [[VOMO AI]]
 - [[letterly]]
 - [[Oasis]]
+- [[AudioPen]]
