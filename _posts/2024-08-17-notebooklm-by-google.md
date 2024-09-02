@@ -15,9 +15,11 @@ dg-publish: false
 
 [NotebookLM](https://notebooklm.google/) 是一款由谷歌开发的 AI 驱动的笔记应用和研究应用，可以帮助用户提高研究效率和快速获取文档信息。它能够处理多种格式的文档，如 Google Docs、PDF 和文本文件，粘贴板内容，网页地址，Markdown 文档，并提供智能摘要、创意生成和个性化 AI 助手功能。
 
+在 OpenAI 开放 API 不久之后就出现过 ChatPDG 这样的项目，通过 OpenAI 的语言理解能力使得我们可以使用自然语言和 PDF 进行对话，而 NotebookLM 就是 Google 实验室给出来的大语言模型的一个具体的使用案例。
+
 使用起来最舒服的就是把 PDF 文档，网页内容等全部拉到网页中，然后就可以直接在网页中和文档进行对话，非常适合科研，阅读等场景。想要快速在文档信息中找到自己想要的内容。
 
-NotebookLM 由 Google Gemini 1.5 Pro 提供支持，但是目前只对英文支持比较好，其他语言支持一般。
+NotebookLM 由 Google Gemini 1.5 Pro 提供支持，~~但是目前只对英文支持比较好，其他语言支持一般。~~ 经过 Google 多次迭代，目前已经支持了非常多的语言，包括中文。
 
 ![y394](https://photo.einverne.info/images/2024/08/27/y394.png)
 
