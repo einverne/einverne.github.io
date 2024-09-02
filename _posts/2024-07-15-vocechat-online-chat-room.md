@@ -39,6 +39,12 @@ dg-publish: false
 - 支持网页挂件，通过 SDK 嵌入网页，在网页中实现频道聊天
 - 支持 iframe 嵌入网页
 
+## 视频演示
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+[YouTube 链接](https://youtu.be/W-mO0vAzKbY?si=T7K20dbhNBuq76VL)
+
 ## 安装
 
 安装的配置文件可以参考我的 [dockerfile](https://github.com/einverne/dockerfile/tree/master/vocechat)。

@@ -36,6 +36,11 @@ dg-publish: false
 - **字幕遮挡**，满足部分英语学习者想要盖住硬字幕的需求
 - **录音转写文字**，录音同时实时显示文字
 
+## 演示
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+[YouTube](https://youtu.be/DkwObd3UiAM?si=-fteVXXs9oKXnNF0)
+
 ### 主界面
 
 YPlayer 主界面提供了播放，转写，录制三大功能入口。
@@ -65,7 +70,7 @@ YPlayer 支持录音，并实时转写成文字，目前支持中文和英文，
 尽管 YPlayer 功能强大，但目前仍存在一些局限性：
 
 - **格式支持有限**：仅支持 aiff、3gp、aac、ac3、flac、mp3、mp4、m4a、m4v、wav、au、mov 格式，不支持常用的 mkv 格式。
-    - 但是这个格式问题，可以通过 [[FFmpeg]]，或者是 macOS 上的 [[Permute]]
+  - 但是这个格式问题，可以通过 [[FFmpeg]]，或者是 macOS 上的 [[Permute]]
 - **缺乏实时翻译**：目前不支持本地实时翻译功能。
 
 ## 使用场景

@@ -21,6 +21,14 @@ dg-publish: false
 
 NotebookLM 由 Google Gemini 1.5 Pro 提供支持，~~但是目前只对英文支持比较好，其他语言支持一般。~~ 经过 Google 多次迭代，目前已经支持了非常多的语言，包括中文。
 
+## 视频演示
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1qCHkecEDM&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+[YouTube 链接](https://youtu.be/W-mO0vAzKbY?si=sUR9fMuwI6NaC__A)
+
+## 功能
+
 ![y394](https://photo.einverne.info/images/2024/08/27/y394.png)
 
 传统的笔记应用，比如 Notion，Obsidian 等更专注于笔记的整理，分类，搜索，但是无法根据既有的笔记内容进行归纳总结，或者产生新的想法，或者回答用户的问题。而 NotebookLM 恰恰好解决了这些问题。
@@ -45,7 +53,7 @@ NotebookLM 也可以根据文本内容生成表格，通过整理可视化可以
 
 ## 应用案例三：激发新的灵感
 
-如果不知道怎么开始写自己的论文，或者没有灵感的时候，可以让 NotebookL 梳理思路，列出大纲，给出一些新的想法，这个也是大语言模型在行的事情。
+如果不知道怎么开始写自己的论文，或者没有灵感的时候，可以让 NotebookLM 梳理思路，列出大纲，给出一些新的想法，这个也是大语言模型在行的事情。
 
 ## 应用案例四：整理资料
 
