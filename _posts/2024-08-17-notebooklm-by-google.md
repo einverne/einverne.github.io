@@ -23,7 +23,7 @@ NotebookLM 由 Google Gemini 1.5 Pro 提供支持，~~但是目前只对英文�
 
 ## 视频演示
 
-<iframe src="//player.bilibili.com/player.html?bvid=BV1qCHkecEDM&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1qCHkecEDM&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 [YouTube 链接](https://youtu.be/W-mO0vAzKbY?si=sUR9fMuwI6NaC__A)
 

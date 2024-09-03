@@ -38,7 +38,7 @@ dg-publish: false
 
 ## 演示
 
-<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 [YouTube](https://youtu.be/DkwObd3UiAM?si=-fteVXXs9oKXnNF0)
 
 ### 主界面

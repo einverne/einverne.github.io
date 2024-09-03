@@ -142,5 +142,50 @@
     });
   });
 
+  // Function to resize Bilibili iframes
+  function resizeBilibiliIframes() {
+    const iframes = document.querySelectorAll('iframe[src*="player.bilibili.com"]');
+
+    iframes.forEach(iframe => {
+      const parent = iframe.parentElement;
+      const parentWidth = parent.clientWidth;
+      const aspectRatio = 16 / 9; // Assuming 16:9 aspect ratio for videos
+
+      const newHeight = parentWidth / aspectRatio;
+
+      iframe.style.width = '100%';
+      iframe.style.height = `${newHeight}px`;
+
+      // Append '&autoplay=0' to the src if it's not already present
+      if (!iframe.src.includes('autoplay=0')) {
+        iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'autoplay=0';
+      }
+
+      // Append '&high_quality=1' to the src if it's not already present
+      if (!iframe.src.includes('high_quality=1')) {
+        iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'high_quality=1';
+      }
+
+      // Add 'allowfullscreen' attribute to the iframe
+      iframe.setAttribute('allowfullscreen', 'true');
+    });
+  }
+
+// Run the function on page load
+  window.addEventListener('load', resizeBilibiliIframes);
+
+// Run the function on window resize
+  window.addEventListener('resize', resizeBilibiliIframes);
+
+// MutationObserver to handle dynamically added iframes
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.type === 'childList') {
+        resizeBilibiliIframes();
+      }
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 
 })(jQuery);

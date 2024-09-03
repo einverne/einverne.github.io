@@ -41,7 +41,7 @@ dg-publish: false
 
 ## 视频演示
 
-<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?bvid=BV18JsMebEag&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 [YouTube 链接](https://youtu.be/W-mO0vAzKbY?si=T7K20dbhNBuq76VL)
 
