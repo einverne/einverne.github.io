@@ -68,7 +68,7 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 
 ![4AIn](https://photo.einverne.info/images/2024/02/09/4AIn.png)
 
-支持服务列表包括并不局限于如下：
+支持服务列表包括并不限于如下：
 
 - WordPress
 - Ghost
@@ -96,3 +96,5 @@ sslip.io is a DNS server that maps specially-crafted DNS A records to IP address
 - [[Fider]]
 - [[uptime-kuma]]
 - [[Plausible Analytics]]
+- [[Dokploy]]
+- [[Dokku]]

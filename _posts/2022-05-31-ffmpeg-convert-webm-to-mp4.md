@@ -15,6 +15,7 @@ last_updated:
 ## 基础知识
 
 ### WebM 格式
+
 [[WebM]] 是 Google 开源的一个，免版权费用视频文件格式。该格式可以提供高质量的视频压缩以在 HTML5 页面上使用。BSD 许可开源。[^wiki]
 
 [^wiki]: <https://zh.wikipedia.org/wiki/WebM>
@@ -22,6 +23,7 @@ last_updated:
 WebM 采用 On2 Technologies 公司开发的 [[VP8]] 和后续的 [[VP9]] 作为视频解码器，使用 Xiph.Org 基金会开发的 Vorbis，[[Opus]] 作为音频编码器，以 [[Matroska]] 格式作为封装格式。
 
 ### FFmpeg
+
 FFmpeg 是一系列有关多媒体，包括音频、视频，字幕等等相关元数据处理的编程库和处理工具。可以非常方便地用来对视频内容编解码，转码等等操作。FFmpeg 是一个开放源代码的项目，是一个命令行工具，如果你想要一个 GUI，可以尝试一下 [[HandBrake]]。
 
 FFmpeg 支持非常多的编码格式，包括 VP8，VP9，H.264，Opus，Vorbis，AAC 等等。

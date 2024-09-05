@@ -44,7 +44,7 @@ ls -al ~/.config/clash
 
 ## 修改配置 {#config}
 
-比如说对于我使用的[Wallless 代理](https://www.wlsite8.com/#/register?code=nlyM4OSi)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
+比如说对于我使用的[Wallless 代理](https://v2.gtk.pw)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
 
 另外还有一个代理，有兴趣的可以[试用一下](https://v.gtkpw.xyz)。
 
