@@ -27,7 +27,9 @@ MemoAI 特别适合用于教育讲座，会议记录，媒体制作等领域。
 ## 视频演示
 为了演示方便，我录制了一期视频。
 
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113082563101475&bvid=BV1YjpTeREGs&cid=25743984325&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
+[YouTube](https://youtu.be/NnA8cmu5qT8)
 
 ## 功能
 

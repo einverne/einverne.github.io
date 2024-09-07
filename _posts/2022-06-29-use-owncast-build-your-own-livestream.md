@@ -116,12 +116,10 @@ cd cd /opt/owncast  //进入目录
 
 服务器需要开放端口 1935,8080
 
-设置 OBS 串流
-
-服务器 rtmp://127.0.0.1/live
-串流秘钥 [secret]
-
-播放地址 http://127.0.0.1:8080
+- 设置 OBS 串流
+- 服务器 rtmp://127.0.0.1/live
+- 串流秘钥 [secret]
+- 播放地址 http://127.0.0.1:8080
 
 成功运行之后，日志文件在 `transcoder.log`
 
@@ -255,6 +253,16 @@ ffmpeg -re -nostdin -i "$file" \
 ```
 ffmpeg -re -i ~/INPUT_FILE -vcodec libx264 -profile:v main -preset:v medium -r 30 -g 60 -keyint_min 60 -sc_threshold 0 -b:v 2500k -maxrate 2500k -bufsize 2500k -filter:v scale="trunc(oha/2)2:720" -sws_flags lanczos+accurate_rnd -acodec libfdk_aac -b:a 96k -ar 48000 -ac 2 -f flv rtmp://live.twitch.tv/app/STREAM_KEY
 ```
+
+串流字幕
+
+```
+ffmpeg -re -i input.mp4 -vf subtitles=subtitles.srt -c:v libx264 -preset fast -c:a aac -b:a 128k -f flv rtmp://streaming-server/live/stream-key
+```
+
+## related
+
+- [[Restream]]
 
 ## reference
 
