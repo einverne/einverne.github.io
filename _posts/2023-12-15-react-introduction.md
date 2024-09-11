@@ -85,7 +85,7 @@ TypeScript 是一种向 JavaScript 代码添加类型定义的常用方法。Typ
 
 要使用 React，首先需要 npm 和 Node.js 环境。
 
-通过 npm 安装， 使用 `create-react-app` 构建一个 React 开发环境，这个环境包括了常用的工具比如 [[Webpack]]，ESLint 等。
+通过 npm 安装， 使用 `create-react-app` [命令](https://github.com/facebook/create-react-app)构建一个 React 开发环境，这个环境包括了常用的工具比如 [[Webpack]]，ESLint 等。
 
 ```
 npx create-react-app my-react-app

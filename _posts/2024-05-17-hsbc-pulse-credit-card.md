@@ -20,7 +20,7 @@ dg-publish: false
 
 ![hswEEJwSwm](https://pic.einverne.info/images/hswEEJwSwm.png)
 
-权益
+## 权益
 
 - 5X 奖赏钱
   - 奖赏钱 RC 可以 1:1 还款信用卡
@@ -29,6 +29,13 @@ dg-publish: false
   - RC 兑换到了 MoneBack 之后，还可以互换积分到汇丰或者国泰航空或者花旗
 - 内地及澳门额外 4.4% 回赠
 - 港币或人民币结算，免汇率波动烦忧
+
+### 新客礼
+
+- 800 HKD 奖赏钱
+- 全新信用卡客户成功申请「现金套现」分期计划可享受额外 200 HKD 奖赏钱
+- 首两年免年费
+- 通过 Reward+ 的二维码付款功能签帐可享受额外 100 HKD 奖赏钱
 
 ## 关于年费
 
