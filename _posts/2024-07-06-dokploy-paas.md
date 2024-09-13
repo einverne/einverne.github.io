@@ -13,9 +13,11 @@ dg-home: false
 dg-publish: false
 ---
 
-[Dokploy](https://dokploy.com/) 是一个开源的，可以自托管的 PaaS 平台，Dokploy 可以一站式部署管理平台，简化应用程序和数据库的部署和管理。结合了 Docker 和 Traefik 的功能，为用户提供了一个经济高效的自托管平台即服务 PaaS 解决方案。
+[Dokploy](https://dokploy.com/) 是一个开源的，可以自托管的 [[PaaS]] 平台，Dokploy 可以一站式部署管理平台，简化应用程序和数据库的部署和管理。结合了 Docker 和 Traefik 的功能，为用户提供了一个经济高效的自托管平台即服务 PaaS 解决方案。
 
 Dokploy 可以用来代替 [[Heroku]]，[[Vercel]]，[[Netlify]] 等平台。
+
+之前介绍过 [[PocketBase]]，[[Coolify]] 等等开源项目都可以达到类似的作用。
 
 ## 功能
 
@@ -91,3 +93,4 @@ Dokploy 的优势
 - [[Tsuru]]
 - [[Rancher]]
 - [[Porter]]
+- [[PocketBase]]
