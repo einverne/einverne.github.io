@@ -15,6 +15,8 @@ dg-publish: false
 
 在日本，因为 SoftBank 和 Perplexity AI 开展了[合作](https://japan.einverne.info/p/195.html) ，所以最近大量的使用 Perplexity ，这一篇文章就总结一下 Perplexity 的优势和使用技巧。
 
+2024 年 9 月 8 号的时候，Perplexity 和外部机构合作使用 FREENEWSROOM 可以免费获得一年的 Pro 使用，但是如果在使用 SoftBank 的手机卡的话，还是通过官方的合作获得 Pro 使用。
+
 ## Perplexity AI 介绍
 
 Perplexity AI 是一家成立于 2022 年的人工智能公司，总部位于美国加州旧金山。该公司由 Aravind Srinivas、Denis Yarats、Johnny Ho 和 Andy Konwinski 共同创立，致力于开发基于人工智能的对话式搜索引擎。如果简单的去理解，可以将 Perplexity AI 认为是一个结合了 Google 和 ChatGPT 等 AI 的对话式搜索引擎。以我最近的使用体验而言，基本上已经代替了 Google。

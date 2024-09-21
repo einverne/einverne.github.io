@@ -61,7 +61,13 @@ dg-publish: false
 
 ## macOS 安装
 
+### 获取代码
+
+
+
 根据官网的教程，安装必要的组件
+
+
 
 但是我个人在尝试的过程中，发现执行报错 
 
@@ -90,3 +96,4 @@ export CPATH=$CPATH:/opt/homebrew/include/
 pip uninstall soundfile
 pip install soundfile
 ```
+
