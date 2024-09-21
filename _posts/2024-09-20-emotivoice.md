@@ -32,3 +32,25 @@ EmotiVoice 支持几十种声音选择，支持调节语速，音量，Pitch（�
 音高指的是人耳感知到的声音的高低，人耳对声音频率高低的主观感知。它是声音的三大基本属性之一，与音量（loudness）和音色（timbre）并列。
 
 Pitch 主要由声音的基频决定，基频越高，音高越高。
+
+## 安装
+
+可以通过官方的站点下载 macOS 的[安装包](https://github.com/netease-youdao/EmotiVoice?tab=readme-ov-file)。
+
+注意当前仅仅支持 Apple Silicon 芯片 M 系列设备。
+
+如果安装之后打开报错：
+
+```
+“emotivoice” is damaged and can’t be opened. You should move it to the Trash.
+```
+
+那么需要执行如下的命令[^1]
+
+[^1]: <https://github.com/netease-youdao/EmotiVoice/issues/86>
+
+```
+sudo xattr -r -d com.apple.quarantine /Applications/emotivoice.app
+```
+
+然后就可以正常打开 EmotiVoice。
