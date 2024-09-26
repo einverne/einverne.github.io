@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-EmotiVoice 是网易有道 AI 团队开源的一个强大的 [[TTS]] 引擎，支持中英文双语，包含 2000 多种不同的音色，以及特色的情感合成功能，支持合成包含快乐、兴奋、悲伤、愤怒等广泛情感的语音。上线一周时间便获得了 4000 多星的成绩，并且在 GitHub Trending 榜首。
+[EmotiVoice](https://github.com/netease-youdao/EmotiVoice) 是网易有道 AI 团队开源的一个强大的 [[TTS]] 引擎，支持中英文双语，包含 2000 多种不同的音色，以及特色的情感合成功能，支持合成包含快乐、兴奋、悲伤、愤怒等广泛情感的语音。上线一周时间便获得了 4000 多星的成绩，并且荣登了 GitHub Trending 榜首。
 
 首先我们来解释一下什么是 TTS，TTS 是 Text-to-Speech 的缩写，就是「文本到语音」的技术，是一种将文本内容转换成语音输出的技术。
 

@@ -30,6 +30,8 @@ last_updated:
 - F1 部分截图
 - Cmd+Shift+F1 截取窗口
 
+售价 8 USD。
+
 ## Snipaste
 
 [[Snipaste]] 是一款跨平台的截图工具，使用 QT 构建。
@@ -62,8 +64,12 @@ Jietu 是腾讯推出的截图工具。
 
 一次性付费 29$ 可以到的软件及 1GB 的 Cloud 空间。也可以选择月付费 10$，或者年付费，获得无限空间，自定义域名等服务。
 
-## Xnip
+## Xnip Screenshot
 [Xnip](https://xnipapp.com/) 是一个 macOS 上的截图工具。
+
+## CleanShot X
+[CleanShot X](https://cleanshot.com/) 是 macOS 上一款强大的截图工具，提供了标注，上传，滚动截图，屏幕录制，自定义背景等等功能。
+
 
 ## reference
 

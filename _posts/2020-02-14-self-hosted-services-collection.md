@@ -379,7 +379,7 @@ anyi 导航、聚合搜索、webstack
 - [[Discourse 搭建]]
 - [[Flarum]]
 - [[symphony]] 基于 Java 的论坛
-- [[Vanila]]
+- [[Vanilla]]
 - [[phpBB]]
 - [[studygolang]]
 

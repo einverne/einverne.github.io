@@ -16,6 +16,7 @@ last_updated:
 
 ## zlibrary
 
+- <https://z-lib.gs/>
 - https://zh.au1lib.org/
 - https://zh.b-ok.asia/
 - https://b-ok.cc/
