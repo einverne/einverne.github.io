@@ -460,7 +460,7 @@ aria2, you-get 和 `youtube-dl` 日常使用，Transmission 作为 BitTorrent �
 	brew cask install go2shell
 
 ### 在屏幕上显示输入
-在 Linux 下我使用一个叫 [screenkey](/post/2018/05/screencast.html) 的工具，在 Mac 上也找到一个类似的开源项目 [keycastr](https://github.com/keycastr/keycastr).
+在 Linux 下我使用一个叫 [screenkey](/post/2018/05/screencast.html) 的工具，在 Mac 上也找到一个类似的开源项目 [keycastr](https://github.com/keycastr/keycastr)，还有一个非常美观的 [[Keyviz]]
 
     brew cask install keycastr
 

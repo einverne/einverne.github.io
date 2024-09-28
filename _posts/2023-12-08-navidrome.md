@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "搭建自己的在线音乐播放器 Navidrome"
+title: "利用 Navidrome 搭建自己的在线音乐库"
 aliases:
-- "搭建自己的在线音乐播放器 Navidrome"
+- "利用 Navidrom 搭建自己的在线音乐库"
 tagline: ""
 description: ""
 category: 经验总结
@@ -10,6 +10,8 @@ tags: [navidrome, plexamp, plex, subsonic, open-source, music-server, music-mana
 create_time: 2024-01-31 08:38:00
 last_updated: 2024-01-31 08:38:00
 ---
+
+我过去很多年都是使用网易云音乐来听音乐的，但是用着用着网易云的歌曲就变灰了，听不了了。
 
 [Navidrome](https://www.navidrome.org/) 是一个现代的音乐服务器，兼容所有的 Subsonic/Airsonic 客户端。
 
