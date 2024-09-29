@@ -11,9 +11,23 @@ create_time: 2024-01-31 08:38:00
 last_updated: 2024-01-31 08:38:00
 ---
 
-我过去很多年都是使用网易云音乐来听音乐的，但是用着用着网易云的歌曲就变灰了，听不了了。
+我从[2013，14 年左右](https://blog.einverne.info/post/2014/07/music-website-thinking.html)开始使用网易云音乐来听音乐的，因为后来只有网易云音乐拥有 Linux 客户端，所以在 Linux Mint 下也用了很久的网易云，但是用着用着网易云的歌曲就变灰了，下架了，再找不到了。
 
-[Navidrome](https://www.navidrome.org/) 是一个现代的音乐服务器，兼容所有的 Subsonic/Airsonic 客户端。
+![kqcf9MmOh6](https://pic.einverne.info/images/kqcf9MmOh6.png)
+
+虽然我可以使用网易云音乐的云盘来间接的实现部分歌曲的点亮，但是还是需要将歌曲传给网易，并且有些时候还会出错，因为版权问题或者敏感问题无法上传。
+
+![z-hVQi9zu5](https://pic.einverne.info/images/z-hVQi9zu5.png)
+
+所以有段时间我都是在本地使用 [[Swinsian]] 来听音乐，并且 Swinsian 自带非常强大的 Meta 信息编辑工具，看到不正确的歌曲信息就可以随手修改了。
+
+![BCN3waS_UL](https://pic.einverne.info/images/BCN3waS_UL.png)
+
+后来为了在多设备上串流听音乐，因为我买了终身的 Plex， 又看到 Plex 官方推出了一款音乐播放器 [[Plexamp]]，但是经过了几个月的试用，Plexamp 在曲库匹配和识别上出现了一些我无法解决的问题，所以一气之下就换成了 Navidrome。
+
+[Navidrome](https://www.navidrome.org/) 是一个现代的音乐服务器，我们可以直接自己托管我们自己的音乐库，然后使用任何客户端来串流收听自己的音乐。
+
+Navidrome 兼容所有的 Subsonic/Airsonic 客户端。
 
 Navidrome 后端使用 Go 语言编写，前端基于 React，界面风格采用 Material UI，串流音乐的接口兼容 [[Subsonic]]，所以支持 Subsonic 的客户端都可以使用。
 
@@ -22,7 +36,7 @@ Navidrome 后端使用 Go 语言编写，前端基于 React，界面风格采用
 Navidrome 是什么呢，引用官网的原话：
 
 > **Navidrome is a self-hosted, open source music server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.**
-> 
+>
 > Navidrome 是一个自托管的开源音乐服务器和流媒体。它让您可以自由地从任何浏览器或移动设备收听您的音乐收藏。
 
 特点：
@@ -153,11 +167,9 @@ ND_SPOTIFY_SECRET
 - 桌面端，[[Sonixd]]
   - `brew install --cask sonixd`
 
-
 macOS 下的 Sonixd
 
 ![4aYN](https://photo.einverne.info/images/2024/02/02/4aYN.png)
-
 
 ## 歌词
 

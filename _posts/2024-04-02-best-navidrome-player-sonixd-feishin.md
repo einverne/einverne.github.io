@@ -14,7 +14,6 @@ dg-publish: false
 ---
 
 [Sonixd](https://github.com/jeffvli/sonixd) 是一款跨平台的音乐播放器，可以使用 [[Subsonic API]]，兼容 Jellyfin，[[Navidrome]]，Airsonic，Airsonic-Advanced，Gonic，Astiga 等等服务端。
-[Sonixd](https://github.com/jeffvli/sonixd) 是一款跨平台的音乐播放器，可以使用 [[Subsonic API]]，兼容 Jellyfin，[[Navidrome]]，Airsonic，Airsonic-Advanced，Gonic，Astiga 等等服务端。
 
 Sonixd 是一款非常优秀的云端音乐播放器软件，播放在云端储存的音乐。支持各种格式音乐文件，支持 Windows、MacOS、Linux 系统。打造自己的网易云音乐 PC 客户端，不再为付费及版权所困扰。
 
