@@ -60,6 +60,12 @@ Navidrome 是什么呢，引用官网的原话：
 - 不支持歌曲分享
 - 只支持内嵌的歌词显示
 
+## 视频介绍
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113221293904827&bvid=BV18fxyeaEES&cid=26064521188&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+[YouTube](https://www.youtube.com/watch?v=3eLVdVlE1D8)
+
 ## 为什么要选用 Navidrome
 
 我从 [2014 开始使用网易云音乐](https://blog.einverne.info/post/2014/07/music-website-thinking.html)，几乎很长时间没有变过，但是大家也知道网易云音乐前几年的「变化」，我歌单中的内容就一天天变得不可用（变灰），直接导致产品体验直线下降，虽然还可以使用网易提供的 2T 云盘来解决一部分版权问题，但是还是一些不方便。
