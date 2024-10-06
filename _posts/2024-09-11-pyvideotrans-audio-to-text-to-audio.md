@@ -24,6 +24,8 @@ dg-publish: false
 - 通过多种 TTS 引擎将文字变成音频
 - 将音频和视频进行合成，生成最终的视频
 
+![uxUYM5QJ8i](https://pic.einverne.info/images/uxUYM5QJ8i.png)
+
 功能
 
 - 自动 Transcript 支持 faster openai-whisper，支持自定义的 Hugging Face 模型

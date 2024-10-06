@@ -27,6 +27,7 @@ create_time: 2023-04-26 01:50:53
 - [Posthog](https://posthog.com) 可以自架
 - [GoatCounter](https://www.goatcounter.com/) 一个开源的统计应用
 - [[66analytics]] 一款 PHP 编写的统计
+- [[Aptabase]]
 
 不可自架，闭源
 
@@ -36,6 +37,7 @@ create_time: 2023-04-26 01:50:53
 - [[Smatlook]]
 - [Simple Analytics](https://simpleanalytics.com/)
 - [[Microsoft Clarity]]
+- [[Pirsch]] 一个尊重隐私的网络分析工具
 
 下面就重点介绍一下我准备去试试的几个服务。
 
