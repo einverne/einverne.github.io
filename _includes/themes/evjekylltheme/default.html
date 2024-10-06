@@ -87,6 +87,18 @@
       gtag('js', new Date());
       gtag('config', 'G-5FCF34H16J');
 	  </script>
+	  <script>
+      (function($){
+        setInterval(() => {
+          $.each($('iframe'), (arr,x) => {
+            let src = $(x).attr('src');
+            if (src === undefined) {
+              $(x).remove();
+            }
+          });
+        }, 300);
+      })(jQuery);
+	  </script>
   </head>
 
   <body>
