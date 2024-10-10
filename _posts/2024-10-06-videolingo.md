@@ -17,16 +17,17 @@ dg-publish: false
 
 - 收费的 [MemoAI](https://blog.einverne.info/post/2024/09/memo-ai-audio-transcript.html)
 - 收费的 [YPlayer](https://blog.einverne.info/post/2024/08/yplayer-ai-transcript-player.html)
+- macOS 下的客户端 [[MacWhisper]]
 - 开源的 [pyVideoTrans](https://blog.einverne.info/post/2024/09/pyvideotrans-audio-to-text-to-audio.html)
 - 以及许许多多 [Whisper 项目衍生](https://blog.einverne.info/post/2024/09/whisper-and-related.html)
 
 今天再介绍另一款开源的视频字幕自动翻译项目---- VideoLingo。
 
-[VideoLingo](https://github.com/Huanshere/VideoLingo) 是一款开源的视频自动翻译项目，可以将视频进行字幕切割，翻译，对齐，以及配音配音。
+[VideoLingo](https://github.com/Huanshere/VideoLingo) 是一款开源的视频自动翻译项目，可以将视频进行字幕切割，翻译，对齐，以及配音。
 
 VideoLingo 可以接受 YouTube 链接或者本地视频，可以对视频进行自动转写，并且生成单词级别的转录文件，然后利用 LLM 对原始文本进行翻译，还可以利用 TTS 来生成配音
 
-个人尝试了一下生成 Jensen Huang 的采访，翻译质量非常高，并且达到了宣称的 Netflix 字幕标准，只有单行的长度，并且中文翻译非常信达雅。
+个人尝试了一下生成 Jensen Huang 的采访，因为使用了 Anthropic 的 AI，所以翻译质量非常高，并且达到了宣称的 Netflix 字幕标准，只有单行的长度，并且中文翻译非常信达雅。
 
 ![AJOB0r2lqP](https://pic.einverne.info/images/AJOB0r2lqP.png)
 

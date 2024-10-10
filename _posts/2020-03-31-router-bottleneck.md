@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "分析家里局域网 WiFI 瓶颈"
+aliases: "分析家里局域网 WiFI 瓶颈"
 tagline: ""
 description: ""
 category: 学习笔记

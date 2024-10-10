@@ -24,7 +24,7 @@ Clash for Windows 的优点：
 
 ## CFW 使用
 
-可以在 ~~[GitHub 下载](https://github.com/Fndroid/clash_for_windows_pkg/releases)~~(项目已被删除)，也可以使用[镜像地址下载](https://dl.gtk.pw/proxy/linux)。
+可以在 ~~[GitHub 下载](https://github.com/Fndroid/clash_for_windows_pkg/releases)~~(项目已被删除)，也可以使用[镜像地址下载](https://docs.gtk.pw)。
 
 下载完成后是一个压缩包，解压，并执行其中的 `cfw` 即可。
 
