@@ -55,6 +55,18 @@ Bronze 套餐 9.99 美元一个月
 
 但是完成付款之后还是需要进行 1583 公证之后，Anytime Mailbox 的地址才会被真正激活启用。
 
+### 套餐内容详解
+在 Anytime Mailbox 的订购页面中通常会显示如下的内容
+
+- Incoming Mail Items，每个月可以接收的信件数量，通常会有 30 封的免费额度，超出去之后可能每封加收 0.35 USD
+- Open & Scan Requests，拆开信封并扫描的请求，通常也会包含 5 封的免费额度，超出之后每封 0.5 USD
+- Forward Requests，转发邮件，通常是每封 5 USD，并且需要加上邮费
+- Pickup Requests，提货请求
+- Recycle Requests，回收，丢弃
+- Shred Requests，销毁，碎纸机，通常每次请求 0.15 USD
+- Authorized Recipients，授权的接受人，通常会包含 1~4 位，如果要添加额外的收件人，需要每个人每个月 10 USD
+- Storage，存储，通常会包含 30 天的免费存放时间，如果超出时间，每封邮件每天需要额外支付 0.05 USD
+
 ## 1583 公证
 
 1583 公证是美国法律以及 USPS 规定的内容，如果租用虚拟地址并接受平信则必须完成一个实名及公证的过程，防止滥用以及信息安全。

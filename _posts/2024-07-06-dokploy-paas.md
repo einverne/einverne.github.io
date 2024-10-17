@@ -27,15 +27,19 @@ Dokploy 可以用来代替 [[Heroku]]，[[Vercel]]，[[Netlify]] 等平台。
 - 数据库管理，支持多种数据库服务，MySQL，PostgreSQL，MongoDB 等，并提供自动备份功能
 - 易用性，用户只需要一条命令就可以在 VPS 上安装 Dokploy，快速启动部署流程
 
+Dokploy 是一个利用 Docker Swarm 来编排和管理容器部署的工具。使用 Docker Swarm 作为底层容器编排技术，Docker Swarm 是 Docker 原生的集群管理和编排工具。
+
+![dtm3w1fSZw](https://pic.einverne.info/images/dtm3w1fSZw.png)
+
 ## 安装
 
-要在 VPS 上安装 Dokploy，首先需要通过 SSH 登录到服务器，然后执行以下命令
+要在 VPS 上安装 Dokploy，首先需要通过 SSH 登录到服务器，然后在 root 下执行以下命令：
 
 ```
 curl -sSL https://dokploy.com/install.sh | sh
 ```
 
-该命令会自动安装 Dokploy 及其所需的 Docker 环境。
+该命令会自动安装 Dokploy 及其所需的 Docker 环境，等待执行一段时间之后，在终端中会出现 IP:3000 端口的日志，等待几分钟端口启动之后就可以直接访问 3000 端口，首次注册的用户默认就是管理员。
 
 ## 使用
 
@@ -45,7 +49,7 @@ curl -sSL https://dokploy.com/install.sh | sh
 
 ### 域名设置
 
-登录后，进入 Settings 标签页，在 Server Domain 中输入已设置 A 记录的管理域名（如 web.example.com）。在 Letsencrypt Email 中输入邮箱地址，并选择 Letsencrypt 作为证书提供商，然后点击 Save。系统会自动获取 SSL 证书，之后可以通过 https://web.example.com 访问管理界面。
+登录后，进入 Settings 标签页，在 Server Domain 中输入已设置 A 记录的管理域名（如 web.example.com）。在 Let's Encrypt Email 中输入邮箱地址，并选择 Let's Encrypt 作为证书提供商，然后点击 Save。系统会自动获取 SSL 证书，之后可以通过 https://web.example.com 访问管理界面。
 
 ### 应用程序部署
 
@@ -94,3 +98,5 @@ Dokploy 的优势
 - [[Rancher]]
 - [[Porter]]
 - [[PocketBase]]
+- [[Dockge]]
+
