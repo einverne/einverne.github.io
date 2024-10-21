@@ -190,6 +190,11 @@ Mailchannels 是一家邮件发送服务提供商。
 
 ![feVl](https://photo.einverne.info/images/2023/11/20/feVl.png)
 
+## Benchmark
+[Benchmark](https://www.benchmarkemail.com/jp/) 每个月可以免费发送 3500 封，之后需要付费。
+
+![vBO8NyxMsF](https://pic.einverne.info/images/vBO8NyxMsF.png)
+
 ## 相关
 
 - [[SMTP Relay]]
