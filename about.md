@@ -25,25 +25,30 @@ permalink: /about.html
 
 ## 目前使用的主力设备
 
-目前我的主要桌面平台是 ~~Linux Mint / Ubuntu with Cinnamon Desktop~~ macOS，2020 年购入的第一台 [Mac](/post/2020/07/macbook-pro-initial-setup.html)，移动平台主要是 ~~Android（OnePlus 7 Pro）~~ iOS(iPhone 13)，一台 MSI 的笔记本跟随着我已经 6 年，我扩展到 16G 内存，增加了三块硬盘，目前看来跑 Linux Mint 毫无压力，再战三年应该问题不大。
+目前我的主要桌面平台是 ~~Linux Mint / Ubuntu with Cinnamon Desktop~~ macOS M1 Pro，2020 年购入的第一台 [Mac](/post/2020/07/macbook-pro-initial-setup.html)，移动平台主要是 ~~Android（OnePlus 7 Pro）~~ iOS(iPhone 13 -> iPhone 15 Pro Max)，一台 MSI 的笔记本跟随着我已经 6 年，我扩展到 16G 内存，增加了三块硬盘，目前看来跑 Linux Mint 毫无压力，再战三年应该问题不大。2023 年节点为止主力办公电脑已经更换成 MacBook M1 Pro 16+512GB。
 
-~~我的手机是 OnePlus 7 Pro，我原本以为 iOS 可以比 Android 流畅一些，谁想 iOS 也是越用越卡，所以去年又换回了一加，不过至此我已经搜集了 OnePlus 1, OnePlus 3, OnePlus 7 三代了。~~ 在 2022 年中的时候将手机更换成了 iPhone 13，原来的 OnePlus 7 Pro 作为备用机，主要更换的理由就是目前电池电量有非常严重的问题，并且随着使用系统也常常遇到卡顿的情况。
+~~我的手机是 OnePlus 7 Pro，我原本以为 iOS 可以比 Android 流畅一些，谁想 iOS 也是越用越卡，所以去年又换回了一加，不过至此我已经搜集了 OnePlus 1, OnePlus 3, OnePlus 7 三代了。~~ 在 2022 年中的时候将手机更换成了 iPhone 13，原来的 OnePlus 7 Pro 作为备用机，主要更换的理由就是目前电池电量有非常严重的问题，并且随着使用系统也常常遇到卡顿的情况。2024 年 10 月更换成了 iPhone 15 Pro Max 台版 512GB 用以替换空间不足的 13。
 
 去年在发觉自己看 PDF 需求极大的情况下购入了 [Boox Note Pro](/post/2019/10/boox-note-pro-2-tips.html)，极大的代替了 Kindle 在看 PDF 时的问题，11 寸电子墨水屏带来的阅读乐趣也是 Kindle 不能比拟的。至于为什么没有买 iPad，我是觉得没有必要，我的目的如果只是用来看 PDF 的话，不需要 iPad 那么多的功能来分散注意力。"Do one thing, and do well" 就够了，等哪一天我真正想要用 iPad 的时候再入不迟。
 
 剩下的一些设备要不就是开机 24 小时跑程序或者下载的，要不就是晚上回家躺到床上享受高清电影的，用 NAS 下载后再局域网用 Android 盒子 Kodi 打开，输出到投影，享受 100 寸大屏的沉浸感。
 
-- 智能手机：iPhone 13 ~~OnePlus 7 Pro~~ & ~~iPhone 7~~
-- 平板电脑：Boox Note Pro 用来看 PDF & Kindle 4 阅读其他电子书
-- 耳机：Sony MDR 1000x 秋冬戴保暖 & Sony WI-1000x 春夏戴
-- 电脑：~~MSI GE60 with Linux Mint 19.2~~ / MacBook Pro
+- 智能手机：iPhone 15 Pro Max ~~iPhone 13~~ ~~OnePlus 7 Pro~~ & ~~iPhone 7~~
+- 平板电脑：[[Boox Note Pro]] 用来看 PDF & Kindle 4 阅读其他电子书
+- 耳机：Google Pixel Buds ~~Sony MDR 1000x 秋冬戴保暖~~ & Sony WI-1000x 春夏戴
+- 电脑：~~MSI GE60 with Linux Mint 19.2~~ / MacBook Intel / MacMini M1 / MacBook Pro M1 Pro
+- 显示器：Benq
 - 微型电脑：Raspberry Pi 2B
-- NAS：[QNAP TS-453Bmini](/post/2018/04/qnap-ts453bmini.html) / [迎广 MS04 + J3455](/post/2018/12/build-nas-from-scratch.html)
+- NAS：[QNAP TS-453Bmini](https://blog.einverne.info/post/2018/04/qnap-ts453bmini.html) / [迎广 MS04 + J3455](/post/2018/12/build-nas-from-scratch.html)
 - 投影：BenQ W1070+
+- 电视：[[Hisense 50E6G]]
 - 盒子：[Phicomm T1](/post/2018/01/phicomm-t1-remove-ads.html) & Phicomm N1
 - 路由器：[Phicomm K3](/post/2018/05/phicomm-k3.html) & Netgear WNDR3800 with OpenWrt & [xiaomi r3g](/post/2020/04/mi-wifi-3g.html) & [Asus RT-AC86U](/post/2020/11/asus-rt-ac86u-setup.html)
-- 主机：[PlayStation 4 Pro](/post/2019/11/play-station-4-pro-setup.html)，如果你也玩 PS4，欢迎一起来玩，我的 PSN：**einverne_hk**
+- 主机
+  - [PlayStation 4 Pro](/post/2019/11/play-station-4-pro-setup.html)，如果你也玩 PS4，欢迎一起来玩，我的 PSN：**einverne_hk**
+  - Switch
 - 软路由：倍控 3865U 6 口千兆软路由+金士顿 8GB DDR4 2666 内存 + 金士顿 256 GB SSD mSATA
+- 麦克风：[[Blue Yeti]]
 
 ## 哪些 App 对你的工作 / 学习 / 生活最重要？
 
@@ -88,8 +93,8 @@ permalink: /about.html
 
 目前我只会推荐 Obsidian 一个应用了。似乎目前 Obsidian 算不上鲜有人知的应用了，等下次发现更好玩的应用再分享吧。
 
-
 ## 原来的介绍
+
 <p>这是一个托管在 Github Page 上面的个人博客，就像我在 Blogger <a href="http://www.einverne.tk/p/about.html">关于</a> 页面中说过的，关于页面一直不知道说什么，勉勉强强凑凑字数罢。我原先的博客在 WordPress 上，但是后来嫌麻烦需要管理服务器，保证服务器一直在线，所以转到了 <a href="http://www.einverne.tk">Blogger</a>，当然 Blogger 还一直在更新，只是从我 15 年开始，大部分的内容都属于转载了，原因归咎于我发现了 IFTTT 的神奇妙用，所以我以 Blogger 为中心，InoReader 中转播的内容自动转发到 Blogger 存档，而 Blogger 发布内容之后分享到各大社交网站，Twitter，Weibo，所以也挺好玩的，我看 RSS，然后整个服务就自动在背后执行了。而另外一个契机就是，我开始使用 Markdown，虽然能够找到 <a href="https://stackedit.io">stackedit</a> 来在线将 Markdown 转成 html 然后发布到 Blogger，但是在我看来依旧比较怪异，所以在我保存了大部分的 Markdown 文档之后就转到 Jekyll 了。</p>
 
 <p>这个博客在<a href="http://jekyllbootstrap.com/">jekyllbootstrap</a>的基础上做了一些让我觉得更加舒服的修改，其中也参考了一些其他的博客和代码，最后就是看到得这个样子了。今天勉强把关于页面给添上，然后就这样吧。博客内容会比较杂乱，因为我也并不清楚我会写什么东西，但总之就是几大类，技术文章，学习笔记，思考感悟，整理合集，产品体验，经验总结。技术文章可能又分很多，看具体想写什么吧；学习笔记就当记录学习的过程；思考感悟就是胡诌了，随便看看就行；整理合集会把某一类的某些好用的工具汇总一下；而产品体验就如名字分类一样，就是产品体验报告，个人的体验权当参考；经验总结这个分类就是写一些如何 XX，什么是 XX 之类的总结文。而其他的分类可能会增加，我也说不清楚。就像之前定义 Blogger 说“我的想法，学习过程，有关 Google 的事情”，可是到最后什么文章都有。</p>
@@ -97,6 +102,7 @@ permalink: /about.html
 ## 联系方式
 
 ### 私人通讯地址
+
 邮箱：<a href="mailto:Ein.Verne+gh@gmail.com"><img src="/assets/mail.png" alt="email" title=""></a> <br>
 
 或者你可以通过下面的邮箱地址来找到我：<br/>
@@ -123,4 +129,3 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 - [Twitter](https://twitter.com/einverne)
 - [Mastodon](https://m.einverne.info/@einverne)
 - ~~[豆瓣](https://www.douban.com/people/einverne/)~~ 自从豆瓣开始自我审查开始，就不再使用
-
