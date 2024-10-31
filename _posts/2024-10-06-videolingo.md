@@ -53,6 +53,7 @@ VideoLingo 还采用了多种 TTS 引擎，包括
 ## 安装
 
 ```
+# 获取源代码
 git clone git@github.com:Huanshere/VideoLingo.git
 cd VideoLingo
 pyenv virtualenv 3.10.9 videolingo
