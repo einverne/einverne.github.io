@@ -73,6 +73,9 @@ last_updated: 2024-02-07 13:34:07
 
 ![dwIsV8pBRD](https://pic.einverne.info/images/dwIsV8pBRD.png)
 
+
+![K0CC](https://photo.einverne.info/images/2024/11/05/K0CC.png)
+
 ## related
 
 - [Google 帮助文档 验证开发者身份信息](https://support.google.com/googleplay/android-developer/answer/10841920?sjid=9248559490398603859-AP&authuser=1#zippy=%2C%E4%B8%AA%E4%BA%BA%E8%B4%A6%E5%8F%B7)

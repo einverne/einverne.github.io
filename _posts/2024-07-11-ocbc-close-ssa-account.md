@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ ocbc, ssa-account,  ]
+tags: [ocbc, ssa-account, bank, bank-service, singapore, singapore-bank]
 create_time: 2024-07-13 10:49:47
 last_updated: 2024-07-13 10:49:47
 dg-home: false
