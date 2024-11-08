@@ -76,6 +76,9 @@ last_updated: 2024-02-07 13:34:07
 
 ![K0CC](https://photo.einverne.info/images/2024/11/05/K0CC.png)
 
+从整理资料到准备，整整一个月，终于在 11 月 6 号收到了验证通过的邮件。
+
+![KBDH](https://photo.einverne.info/images/2024/11/06/KBDH.png)
 ## related
 
 - [Google 帮助文档 验证开发者身份信息](https://support.google.com/googleplay/android-developer/answer/10841920?sjid=9248559490398603859-AP&authuser=1#zippy=%2C%E4%B8%AA%E4%BA%BA%E8%B4%A6%E5%8F%B7)
