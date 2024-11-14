@@ -135,7 +135,10 @@ themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站
 
 ### zibll 子比主题
 
-[zibll](https://www.zibll.com/) 是一款 WordPress 商城主题。包含付费商城，VIP 会员，社区论坛，用户权限等等功能。
+[zibll](https://www.zibll.com/) 是一款 WordPress 商城主题。包含付费商城，VIP 会员，社区论坛，用户权限等等功能。599 元 3 个域名。
 
 ### Grace
 Grace 主题是一款自适应的 WordPress 博客主题。目前的版本有 Grace 8.0
+
+### 柒比贰
+[柒比贰](https://7b2.com/) 主题是一款 WordPress 主题，包括了圈子，商铺，动态，等等功能，766 元，两个顶级域名。
