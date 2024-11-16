@@ -10,7 +10,7 @@ tags: [wordpress, themes, php, design, blog,  ]
 last_updated:
 ---
 
-几款适合个人的博客主题
+收集整理几款适合个人的博客主题
 
 - [[Puock]]
 - [[Kratos]]

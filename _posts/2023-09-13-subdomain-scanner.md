@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ domain, subdomain, dns, subdomain-scanner, information-gathering, ]
+tags: [ domain, subdomain, dns, subdomain-scanner, information-gathering, dns-query ]
 create_time: 2023-09-06 08:18:40
 last_updated: 2023-09-16 09:19:48
 ---
@@ -56,3 +56,4 @@ python3 oneforall.py --target douban.com run
 ## Other
 
 - [[Findomain]]
+- [[subfinder]] Go 语言编写的子域名查询工具

@@ -68,7 +68,9 @@ FocuSee 的价格不低，但好在是买断制的。
 
 相较于 [[Screen Studio]] 稍微便宜一点点。
 
-平时有活动的时候可以以 34.9 USD 的价格购入。
+平时有活动的时候可以以 34.9 USD 的价格购入。在 2024 年 11 月 17 日之前，使用 `FS50OFF` 可以享受五折优惠。
+
+![vXa0RXCIaT](https://pic.einverne.info/images/vXa0RXCIaT.png)
 
 ## more
 
