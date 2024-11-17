@@ -64,6 +64,19 @@ e-ID 本质上其实就是一个安全证书，基于公钥 PKI，来确保系�
 
 [^1]: <https://news.err.ee/1608966110/ria-ends-support-for-eesti-ee-email-addresses>
 
+## Smart-ID 绑定
+为了避免每次都需要插入实体卡片进行认证，可以使用 [Smart-ID](https://apps.apple.com/ee/app/smart-id/id1188304729) 这个应用来进行认证。绑定好之后可以直接在手机上进行授权认证。
+
+官方的教程可以参考[这里](https://www.smart-id.com/help/faq/registering/how-to-register-a-smart-id-account-using-an-id-card/)
+
+- 首先下载 Smart ID 应用
+- 然后准备好爱沙尼亚电子居民卡，并且在电脑上可以读取
+- 在 Smart ID 应用中选择「注册」
+- 然后根据流程，在手机上设定 PIN1 和 PIN2
+- 根据提示访问网站，在浏览器上通过实体电子居民卡完成认证，需要 PIN1 和 PIN2
+- 提供邮箱，手机号，完成认证
+- 然后在 Smart ID 手机应用中完成确认
+
 ## 其他服务
 
 有了 ID Card 之后，很多爱沙尼亚的政府公共服务都可以登录，比如爱沙尼亚的车辆管理所，可以在线申请驾照，注册车辆等。

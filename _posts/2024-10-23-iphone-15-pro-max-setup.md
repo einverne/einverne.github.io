@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "iPhone 初始化及单手操作设置"
+title: "iPhone 15 Pro Max 初始化及单手操作设置"
 aliases:
-- "iPhone 初始化及单手操作设置"
+- "iPhone 15 Pro Max 初始化及单手操作设置"
 tagline: ""
 description: ""
 category: 产品体验
