@@ -18,9 +18,35 @@ VPS 性能测试的几个方面：
 - 路由
 
 ## 综合类测试
+
 在运行这类测试脚本之前，最好先将脚本下载下来之后打开看一眼，以防止安装执行一些不可信的文件。
 
+### VPS 融合怪
+
+[VPS 融合怪](https://github.com/spiritLHLS/ecs)服务器测评项目(VPS Fusion Monster Server Test Script)。
+
+最全能的测试脚本。
+
+交互形式
+
+```
+curl -L https://github.com/spiritLHLS/ecs/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+```
+
+无交互形式
+
+```
+curl -L https://github.com/spiritLHLS/ecs/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
+```
+
+IP 质量
+
+```
+bash <(wget -qO- bash.spiritlhl.net/ecs-ipcheck)
+```
+
 ### IPASN AIO Benchmark by mastervnc
+
 The Ultimate Benchmark Script 相较于其他 benchmark 的优势在于可以测试全球不同地区的网络延迟情况。
 
 ```
@@ -47,18 +73,17 @@ bash <(curl -sL https://raw.githubusercontent.com/LloydAsp/NodeBench/main/NodeBe
 
 [teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，磁盘 IO，带宽：
 
-	wget -qO- bench.sh | bash
+    wget -qO- bench.sh | bash
     curl -Lso- bench.sh | bash
-
 
 UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供一定参考。
 
-	wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh
-	chmod +x unixbench.sh
-	./unixbench.sh
-
+    wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh
+    chmod +x unixbench.sh
+    ./unixbench.sh
 
 ### Yet-Another-Bench-Script
+
 [Yet Another Bench Script](https://github.com/masonr/yet-another-bench-script) 正如其名，也是一个用来全面测试 VPS 性能的脚本。
 
 ```
@@ -92,6 +117,7 @@ curl -sL yabs.sh | bash -s -- -i -g
 ```
 
 ### bench monster
+
 [Bench.monster](https://bench.monster/) 是一个服务器网络连接速度，I/O 速度等等的脚本。
 
 ```
@@ -99,10 +125,10 @@ curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
 ```
 
 ### nench
+
 [Nench](https://github.com/n-st/nench)
 
     (curl -s wget.racing/nench.sh | bash; curl -s wget.racing/nench.sh | bash) 2>&1 | tee nench.log
-
 
 ### Superspeed.sh
 
@@ -112,24 +138,24 @@ curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
 
     bash <(curl -Lso- https://git.io/superspeed)
 
-
 ### Superbench
 
 `SuperBench.sh` 是在 bench.sh 上的增强，增加了服务器类型检测，OpenVZ, KVM ，独立服务器通电时间检测等。
 
 该脚本需要 root 运行：
 
-	wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
-	#或者
-	curl -Lso- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
-    
+    wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+    #或者
+    curl -Lso- https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+
     wget -qO- git.io/superbench.sh | bash
     curl -Lso- git.io/superbench.sh | bash
 
 ### Serverreview Benchmark
+
 [Serverreview Benchmark](https://github.com/sayem314/serverreview-benchmark):
 
-	curl -LsO git.io/bench.sh; chmod +x bench.sh && ./bench.sh -a share
+    curl -LsO git.io/bench.sh; chmod +x bench.sh && ./bench.sh -a share
 
 ### LemonBench
 
@@ -139,11 +165,10 @@ curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
 
     curl -LsO bench.monster/speedtest.sh; bash speedtest.sh -asia
 
-
 - <https://bench.monster/>
 
-
 ## CPU 测试
+
 可以通过手工执行命令的方式查看 CPU 信息：
 
     cat /proc/cpuinfo
@@ -151,12 +176,11 @@ curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
 同理可以查看内存：
 
     cat /proc/meminfo
-    
+
 以及硬盘：
 
     fdisk -l
     df -lh
-
 
 ## I/O test
 
@@ -165,13 +189,12 @@ The speed of read and write of your hard drive.
     dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
     dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync
 
-
 ## 网速 Net speed
 
 个人比较常用的是 speedtest-cli
 
-	pip install speedtest-cli
-	speedtest-cli
+    pip install speedtest-cli
+    speedtest-cli
 
 一键脚本测速
 
@@ -181,11 +204,11 @@ wget -qO- network-speed.xyz | bash
 
 测试服务器到国内的速度，[oooldking](https://github.com/oooldking/script):
 
-	wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh | bash
+    wget -qO- https://raw.githubusercontent.com/oooldking/script/master/superspeed.sh | bash
 
 网络连通性
 
-	wget https://raw.githubusercontent.com/helloxz/mping/master/mping.sh && bash mping.sh
+    wget https://raw.githubusercontent.com/helloxz/mping/master/mping.sh && bash mping.sh
 
 测试带宽
 
@@ -194,7 +217,8 @@ wget https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
 python speedtest.py --share
 ```
 
-## ping测试
+## ping 测试
+
 全球各地 ping 测试网站：
 
 - <https://ping.pe>
@@ -214,14 +238,13 @@ bash mping.sh
 
     wget -qO- https://raw.githubusercontent.com/zq/shell/master/autoBestTrace.sh | bash
 
-一键检测VPS回程国内三网路由，root[^mtr]：
+一键检测 VPS 回程国内三网路由，root[^mtr]：
 
     curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash
 
-支持的线路为：电信CN2 GT，电信CN2 GIA，联通169，电信163，联通9929，联通4837，移动CMI
+支持的线路为：电信 CN2 GT，电信 CN2 GIA，联通 169，电信 163，联通 9929，联通 4837，移动 CMI
 
 [^mtr]: <https://github.com/zhucaidan/mtr_trace>
-
 
 BestTrace 工具。
 
@@ -232,27 +255,26 @@ chmod +x besttrace
 ./besttrace -q1 202.106.196.115
 ```
 
-
 ## 在线测试工具
 
-	http://ping.chinaz.com/
+    http://ping.chinaz.com/
 
-	https://www.17ce.com/
+    https://www.17ce.com/
 
-	http://www.webkaka.com/
+    http://www.webkaka.com/
 
-	http://ce.cloud.360.cn/
-
+    http://ce.cloud.360.cn/
 
 ## 独立服务器检测 VPS 通电时间
+
 安装检查工具：
 
     sudo apt install -y smartmontools
-    
+
 使用 `df -h` 查看硬盘设备，然后执行：
 
     smartctl -A /dev/sda | grep "Power_On_Hours"
-    
+
 后面的数字即为硬盘的通电时间小时数。如果通电时间比较长，就要做好备份工作了。
 
 一键脚本：
@@ -265,9 +287,9 @@ wget -q https://github.com/Aniverse/A/raw/i/a && bash a
 
 ### CPU
 
-	# cpu
-	cat /proc/cpuinfo
-	lscpu
+    # cpu
+    cat /proc/cpuinfo
+    lscpu
 
 ### IO
 
@@ -278,8 +300,8 @@ dd if=/dev/zero of=test bs=64k count=4k oflag=dsync
 
 ### 网速
 
-	# speed
-	wget http://cachefly.cachefly.net/100mb.test
+    # speed
+    wget http://cachefly.cachefly.net/100mb.test
 
 ## 流媒体解锁脚本
 
@@ -292,7 +314,6 @@ GitHub 地址：<https://github.com/lmc999/RegionRestrictionCheck>
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
 ```
-
 
 ## reference
 
