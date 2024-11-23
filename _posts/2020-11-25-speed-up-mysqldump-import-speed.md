@@ -10,7 +10,7 @@ tags: [ mysql, linux, mysqldump, sql, methodology, ]
 last_updated:
 ---
 
-在前端时间网上泄漏出来一个巨大包括了近 8 亿 QQ 账号的绑定电话号码数据库，于是想着导入到本地的 MySQL 看看，提升一下查询的速度，因为这个巨大的绑定关系，即使用 grep 查询也需要花费非常多的时间。
+在前段时间网上泄漏出来一个巨大包括了近 8 亿 QQ 账号的绑定电话号码数据库，于是想着导入到本地的 MySQL 看看，提升一下查询的速度，因为这个巨大的绑定关系，即使用 grep 查询也需要花费非常多的时间。
 
 于是我新建了表
 
@@ -74,7 +74,9 @@ mycli -h host -u root -p -D database_name -e "LOAD DATA INFILE '/path/to/file.cs
 
 所以如果 CSV 文件比较大，操作系统临时目录无法放下，可以将文件分割成多份，分批次进行操作。
 
-    $ split -l (numbersofrowsinfile / ((filesize/tmpsize) + 1)) /path/to/your/<file>.csv
+```
+split -l (numbersofrowsinfile / ((filesize/tmpsize) + 1)) /path/to/your/<file>.csv
+```
 
 ## reference
 
