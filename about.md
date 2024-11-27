@@ -117,9 +117,12 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 
 - [日本生活记录](https://japan.einverne.info)，主要记录在日本的生活，分享关于日本的一切
 - [EV 的投资笔记](https://invest.einverne.info/)，主要记录投资学习过程中的疑惑和笔记
+- [Bilibili 哔哩哔哩](https://space.bilibili.com/4849599)，分享发现的有趣有用的 AI 工具，效率工具
+- [EV 实验室 YouTube](https://www.youtube.com/@einverne)，分享发现的有趣有用的 AI 工具，效率工具
+- [EV 的好物分享](https://invites.einverne.info/)，分享发现的好物，产品，工具
+- [个人在线相册](https://photo.einverne.info/)
 - [暮色时光](https://twilight-time.einverne.info) 和朋友的闲聊播客
 - [Kindle Push](https://book.einverne.info/) 之前练手 Python 的图书站点
-- [个人在线相册](https://photo.einverne.info/)
 - [Kindle 笔记](https://kindle.einverne.info/)
 - [各服务的状态](https://status.einverne.info/)，借助 Freshping 搭建
 
