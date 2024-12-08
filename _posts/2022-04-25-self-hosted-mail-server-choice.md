@@ -20,6 +20,7 @@ create_time: 2022-04-26 12:47:22
 - [[mailcow]] 相对于 Mailu 更加强大，但也相对比较消耗资源，mailcow 可以管理多用户，多域名，后台功能非常详细，使用 [[SOGo]] webmail。 [使用 Mailcow 搭建邮件服务器](/post/2022/04/mailcow-email-server.html).
 - [[postal]] 一个使用 Rust 编写的邮件服务器，可以发送和接收邮件。可以使用 HTTP 接口
 - [[Maddy]] 是一个使用 Go 语言实现的多合一邮件服务器。没有 Web 界面，需要借助客户端
+- [mox](https://github.com/mjl-/mox) 是一个使用 Go 语言编写的开源邮件服务器。
 
 其他一些集成方案：
 

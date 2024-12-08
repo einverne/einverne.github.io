@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "自建邮件服务器可选项"
-alias: "自建邮件服务器可选项"
+title: "自建邮件服务器解决方案"
+alias: "自建邮件服务器解决方案"
 tagline: ""
 description: ""
 category: 学习笔记
