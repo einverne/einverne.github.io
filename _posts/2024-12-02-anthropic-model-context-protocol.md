@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-Anthropic 开源了 [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) 简称 MCP 协议，是一种新的标准，用于将人工智能助手连接到数据所在的系统，包括内容存储，业务工具和开发环境。如果一句话来简单的介绍，就是 Anthropic 通过 MCP 协议将人工智能拓展到任意支持 MCP 协议的地方，而不仅仅局限于网络聊天对话，举一个例子就是如果通过 MCP 连接了本地文件夹，那么就可以让 Anthrpic 操作本地文件夹，比如让 AI 在本地生成一篇文章，创建一个项目模板；或者通过 MCP 连接 IDE，那么就可以让 AI 直接读取并修改本地代码。
+Anthropic 开源了 [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) 简称 MCP 协议，是一种新的标准，用于将人工智能助手连接到数据所在的系统，包括内容存储，业务工具和开发环境。如果一句话来简单的介绍，就是 Anthropic 通过 MCP 协议将人工智能拓展到任意支持 MCP 协议的地方，而不仅仅局限于网络聊天对话，举一个例子就是如果通过 MCP 连接了本地文件夹，那么就可以让 Anthropic 操作本地文件夹，比如让 AI 在本地生成一篇文章，创建一个项目模板；或者通过 MCP 连接 IDE，那么就可以让 AI 直接读取并修改本地代码。
 
 Anthropic 在官方网站上说道，AI 助手在模型上投入了大量的资金，推理和质量得到了快速的进步，但是最复杂的模型也会受到数据隔离的限制，陷入信息孤岛（trapped behind information）和遗留系统（legacy system）的问题。每个数据源都需要自己的自定义实现，这使得系统之间的互联难以扩展。
 
