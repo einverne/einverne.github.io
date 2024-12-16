@@ -79,3 +79,9 @@ Mint Mobile 的手机号
 购买成功
 
 ![Ffuyvi4BAD](https://pic.einverne.info/images/Ffuyvi4BAD.png)
+
+购买发货之后会收到邮件，可以根据订单号到下面的网站追踪订单内容。
+
+- <https://www.mintmobile.com/order-lookup/>
+
+也可以从具体订单详情中找到快递单号。
