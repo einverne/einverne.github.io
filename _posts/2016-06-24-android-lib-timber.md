@@ -8,7 +8,7 @@ tags: [Android, AndroidDev, 学习]
 last_updated: 
 ---
 
-今天查询Android在release下不显示Log信息，偶然间接触到 Timber 这个库。 Android 原生提供了很多调试 Log 的方法，但是如果想要在release情况下禁用所有调试信息，除非在原生 Log 外再嵌套实现一层自己的方法，或者使用 ProGuard 。Android 本身没有提供一种简单的方式实现，幸而有大神提供了这样的一个库。
+今天查询 Android 在 release 下不显示 Log 信息，偶然间接触到 Timber 这个库。 Android 原生提供了很多调试 Log 的方法，但是如果想要在 release 情况下禁用所有调试信息，除非在原生 Log 外再嵌套实现一层自己的方法，或者使用 ProGuard 。Android 本身没有提供一种简单的方式实现，幸而有大神提供了这样的一个库。
 
 Android 原生 Logcat 分成 v/d/i/w/e/wtf . 官方推荐的最佳实践就是定义一个 TAG 变量：
 
@@ -23,9 +23,9 @@ Android 原生 Logcat 分成 v/d/i/w/e/wtf . 官方推荐的最佳实践就是�
 - **Log.v**：各种小调试信息
 - **Log.wtf**: 非常严重的错误发生时打 Log
 
-## 设置Timber {#set-up-timber}
+## 设置 Timber {#set-up-timber}
 
-去GitHub 找项目主页 [Timber](https://github.com/JakeWharton/timber) ，在 build.gradle 中加入：
+去 GitHub 找项目主页 [Timber](https://github.com/JakeWharton/timber) ，在 build.gradle 中加入：
 
     compile 'com.jakewharton.timber:timber:4.1.2'
 
@@ -60,7 +60,7 @@ protected String createStackElementTag(StackTraceElement element) {
 
 ## using Timber
 
-同Android提供的 Log 方法类似 Timber 也有 i/v/d/w/e/wtf  这些方法。 Timber 默认 TAG为文件名。当然可以使用 Timber.tag() 方法来设置一次性 tag 。
+同 Android 提供的 Log 方法类似 Timber 也有 i/v/d/w/e/wtf 这些方法。 Timber 默认 TAG 为文件名。当然可以使用 Timber.tag() 方法来设置一次性 tag 。
 
 ```
 Timber.tag("LifeCycles");
@@ -126,9 +126,11 @@ DebugTree 实现了 Timber.Tree ， 和 `log(int priority, String tag, String me
   }
 }
 ```
+
 基本上能看到是为了避免打印长度超出 Log 的最大长度而做的设置。
 
 ## release logging
+
 在给出来的 Demo 中，JakeWharton 实现了一个发布版本的 Tree，
 
 ```
@@ -150,6 +152,7 @@ private static class CrashReportingTree extends Timber.Tree {
 }
 }
 ```
+
 通过优先级，在 release 下 VERBOSE 和 DEBUG 就不产生 Log 信息了。而 Error 和 WARN 就交给了 FakeCrashLibrary 去处理了。
 
 更多的方法可以参考 [文档](http://jakewharton.github.io/timber/) 。
