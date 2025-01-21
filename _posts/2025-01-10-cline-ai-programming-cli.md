@@ -21,6 +21,10 @@ Cline 是一款 AI 辅助编程的，借助 Cline 可以实现 AI 自主编码�
 
 Cline 使用 TypeScript 编写，可以在 CLI 和 VS Code 中使用。和之前介绍过的 [[Cursor.so]] 和 [[Windsurf]] 一样，Cline 的背后也由 Claude 3.5 Sonnet 模型支持，但是 Cline 也可以自行指定背后的调用的模型。
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L5wFFkDx9LE?si=4Ty2qiQTG603coTq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[YouTube](https://www.youtube.com/watch?v=L5wFFkDx9LE) | [Bilibili](https://www.bilibili.com/video/BV19rc6ecEDk/)
+
 ## MCP
 
 在我[之前的文章](https://blog.einverne.info/post/2024/12/anthropic-model-context-protocol.html)中也介绍过 Claude 的 Model Context Protocol （MCP 协议），在 Cline 中，用户也可以通过 MCP 协议来创建新的工具，扩展自己的任务。
