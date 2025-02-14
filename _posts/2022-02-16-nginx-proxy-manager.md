@@ -116,6 +116,41 @@ location / {
 
 保存。然后将静态网站内容放到宿主机的 `/opt/website` 中即可。
 
+## Alternatives
+Nginx Proxy Manager (NPM) 有很多代替方案，可以根据自己的需求和使用场景选择。
+
+### Traefik
+
+Traefik 专为容器化和微服务架构设计，支持多种后端服务，支持 Docker，Kubernetes，Swarm，Marathon，Consul，Etcd 等。
+
+可以自动配置 SSL/TLS 证书，支持 Let's Encrypt，内置监控（Grafana 和 Prometheus）等。
+
+适合需要容器化的环境和需要动态更新配置的用户。
+
+但是 Traefik 的配置比较复杂，可能需要额外的学习成本。
+
+### Caddy
+
+简单易用，自动 HTTPS 配置，支持 HTTP/2 和 HTTP/3。
+
+配置文件直观易读，适合快速部署和安全性要求较高的场景。
+
+适合个人或者小型项目，尤其是需要快速设置 HTTPS 的场景。
+
+### HAProxy
+
+HAProxy 是一个高性能的负载均衡器，支持 TCP 和 HTTP 协议，支持 SSL/TLS 加密。
+
+适合高性能要求的场景，比如大型网站，高并发场景。
+
+但是 HAProxy 的配置比较复杂，需要一定的学习成本。
+
+## Nginx UI
+
+Nginx UI 是一个开源的 Nginx 管理工具，可以通过 Web 界面管理 Nginx 配置文件。拥有类似 Nginx Proxy Manager 的功能，但是 Nginx UI 更加轻量级，适合个人或者小型项目。
+
+Nginx UI 支持快速创建，修改删除虚拟主机，内置 Let's Encrypt 支持。
+
 ## reference
 
 - <https://nginxproxymanager.com/advanced-config/#best-practice-use-a-docker-network>
