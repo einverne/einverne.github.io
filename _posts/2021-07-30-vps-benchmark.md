@@ -45,6 +45,12 @@ IP 质量
 bash <(wget -qO- bash.spiritlhl.net/ecs-ipcheck)
 ```
 
+### spirity
+
+```
+curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+```
+
 ### IPASN AIO Benchmark by mastervnc
 
 The Ultimate Benchmark Script 相较于其他 benchmark 的优势在于可以测试全球不同地区的网络延迟情况。
