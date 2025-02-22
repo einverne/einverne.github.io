@@ -1,11 +1,11 @@
 ---
 layout: post
-title: ""
+title: "Google Gemini 2.0 Flash Thinking 模型"
 aliases:
-  - ""
+  - "Google Gemini 2.0 Flash Thinking 模型"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags:
   - ai
   - google
