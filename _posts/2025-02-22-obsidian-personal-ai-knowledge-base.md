@@ -31,6 +31,8 @@ dg-publish: false
 
 那么这篇文章就介绍我如何将我的 Obsidian 配置成我自己的个人知识库。
 
+需要如下的几个插件：
+
 - GitHub Copilot ，给 Obsidian 增加自动补全功能
   - 集成 GitHub Copilot
   - 智能自动不全
@@ -97,6 +99,6 @@ Text Generator 是一个支持多种 AI 模型的文本生成工具，可以进�
 
 在侧边栏输入问题，然后点击回车，就可以让 AI 回答你的问题，这个模式类似于 Cursor 的侧边栏对话框。
 
-### 简单的模式
+## 简单的模式
 
 使用 [Cursor](https://blog.einverne.info/post/2023/03/ai-powered-editor-cursor-so.html) 或 [Windsurf](https://blog.einverne.info/post/2024/11/windsurf.html) 或者 [Trae](https://blog.einverne.info/post/2025/01/trae-ide-from-bytedance.html) 直接打开 Obsidian Vault 仓库，虽然它们是代码编辑器，但是没说只能用它们来编辑代码呀。

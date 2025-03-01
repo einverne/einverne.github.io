@@ -12,13 +12,13 @@ last_updated:
 The Spring Framework provides abstractions for asynchronous execution and scheduling of tasks with the TaskExecutor and TaskScheduler interfaces, respectively.
 
 ## The Spring TaskExecutor abstraction
-Spring’s TaskExecutor interface is identical to the java.util.concurrent.Executor interface.
+Spring’s TaskExecutor interface is identical to the `java.util.concurrent.Executor` interface.
 
 接口 ExecutorService 的几个常用方法：
 
-- submit() 有返回值的任务使用
-- execute() 无返回值的任务使用
-- getActiveCount() 当前活跃线程数
+- `submit()` 有返回值的任务使用
+- `execute()` 无返回值的任务使用
+- `getActiveCount()` 当前活跃线程数
 
 ### TaskExecutor types
 Spring 提供了一系列的预置的 `TaskExecutor` 的实现，几乎能满足日常的所有需求。
@@ -33,7 +33,7 @@ Spring 提供了一系列的预置的 `TaskExecutor` 的实现，几乎能满足
 ### ThreadPoolTaskExecutor Config
 Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
 
-<!-- spring thread pool executor -->
+```
     <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
         <!-- 线程池维护线程的最少数量 -->
         <property name="corePoolSize" value="5" />
@@ -50,6 +50,7 @@ Spring 线程池 ThreadPoolTaskExecutor 通过 XML 方式配置：
             <bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
         </property>
     </bean>
+```
 
 属性字段说明：
 

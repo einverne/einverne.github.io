@@ -173,7 +173,7 @@ method 可选属性，代表请求方式
 
     }
 
-自动装配主要使用 @ComponentScan、@Component 和 @Autowired。
+自动装配主要使用 `@ComponentScan`、`@Component` 和 `@Autowired`。
 
 - @ComponentScan：作用在配置类上，启用组件扫描。扫描并注册标注了 @Component（@Controller/@Service/@Repository）的类型。@Configuration 已经应用了 @Component 注解。
 - @Autowired：按类型自动装配。@Autowired 和使用 @Inject（JSR-330）或 @Resource（JSR-250）的效果是类似的。@Autowired 和 @Inject 默认按类型注入，@Resource 默认按名称注入。

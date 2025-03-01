@@ -10,6 +10,10 @@ last_updated:
 
 为了实现依赖注入 DI 而引入，Java 提供 `javax.annotation.Resource` , `javax.inject.Inject` 注解，Spring 框架提供了 `org.springframework.beans.factory.annotation.Autowired` 。依赖注入（Denpendency Injection，DI）， 控制反转（Inversion of Control, IoC），主要的目的是去除代码耦合。具体可参考其他资料。
 
+- @Autowired 是 Spring 特有的注解，默认按照类型装配。
+- @Resource 是 Java 标准注解，默认按照名字装配
+
+
 ## 使用
 
 Spring 注入的方式有多种，可以写在 field 上，可以写在 setter 方法上，可以写在 constructor 上。
