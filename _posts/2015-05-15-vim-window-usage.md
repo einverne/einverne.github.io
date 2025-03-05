@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vim 窗口使用"
+aliases: "Vim 窗口使用"
 tagline: ""
 description: ""
 category: Vim

@@ -79,9 +79,6 @@ Advantage of @Inject annotation is that rather than inject a reference directly,
 
 @Resource 如果没有指定 name 属性，当注解标注在 field 上，默认取字段名称作为 bean 名称寻找依赖对象；当标注在属性 setter 方法上，默认取属性名作为 bean 名称寻找依赖。如果没有指定 name 属性，并且按照默认名称找不到依赖对象时，回退到类型装配。
 
-
-
-
 ## 扩展
 
 <https://github.com/google/guice/>
