@@ -62,7 +62,7 @@ npm i -g whistle && w2 start --init
 
 配置规则
 
-比如我们想要将对 www.einverne.info/api 的所有请求都指向本地的 localhost:8080/api ，可以这样配置
+比如我们想要将对 www.einverne.info/api 的所有请求都指向本地的 `localhost:8080/api` ，可以这样配置
 
 ```
 www.einverne.info/api localhost:8080/api

@@ -87,8 +87,7 @@ Oct 18 16:12:38 gc12.einverne.info rancher-system-agent[7340]: time="2024-10-18T
 
 ## k3s 中安装 Rancher
 
-
-### 前提提交
+### 前提条件
 
 确保满足以下先决条件:
 

@@ -49,6 +49,7 @@ Fileball 支持的协议和网盘非常多。
 
 - Emby
 - Jellyfin
+- Plex
 
 Fileball 另外的一个优点是它还可以作为一个音乐播放器，我自己测试一下之后，flac 等等格式都是可以正常播放。
 

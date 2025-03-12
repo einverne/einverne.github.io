@@ -15,6 +15,8 @@ dg-publish: false
 
 Kotlin 和 Java 作为 JVM 生态中两大主流编程语言，在语法特性、开发效率和适用场景上存在显著差异。Kotlin 凭借现代化设计解决了 Java 的许多痛点，而 Java 凭借成熟生态和广泛支持仍是企业级开发的主力。
 
+Kotlin 在 2017 年 Google I/O 大会之后，成为了 Android 平台上潜力巨大的官方支持语言。
+
 ## Java 转换到 Kotlin
 
 Kotlin 采用极简语法设计，相比 Java 减少约 40% 的样板代码量：
@@ -151,3 +153,8 @@ Kotlin 中的扩展函数的设计和我之前学习的 Dart 函数有一些相�
 - Dart 不允许在 dynamic 类型上扩展，Kotlin 允许在动态类型上扩展
 - Dart 可以通过 as 关键字来解决命名冲突，Kotlin 通过导入时重命名解决冲突
 - Dart 可以创建未命名扩展，Kotlin 扩展函数可见性与普通函数相同
+
+
+## related
+
+- [[Scala]]

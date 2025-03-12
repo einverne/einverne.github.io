@@ -4,8 +4,8 @@ title: "威联通折腾篇十六：为 Container Station 更换镜像"
 aliases: "威联通折腾篇十六：为 Container Station 更换镜像"
 tagline: ""
 description: ""
-category: [ 经验总结 , 威联通 ]
-tags: [qnap, qnap-tutorial, linux, docker, mirror, ]
+category: [ 经验总结 , 威联通  ]
+tags: [qnap, qnap-tutorial, linux, docker, mirror, container-registry, container, ]
 last_updated:
 ---
 
