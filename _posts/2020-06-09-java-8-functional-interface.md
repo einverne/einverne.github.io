@@ -23,7 +23,7 @@ Functional interface is a new feature Java 8 introduced. Functional interfaces p
 ## 特性
 
 - 函数式接口都是表达一种行为
-- @FunctionalInterface 保证了函数式接口只有一个抽象方法，但是注解的使用是不必须的
+- `@FunctionalInterface` 保证了函数式接口只有一个抽象方法，但是注解的使用是不必须的
 
 ## java.util.function
 相关的新的函数式接口定义在 `java.util.function` 包下 [^p]：
