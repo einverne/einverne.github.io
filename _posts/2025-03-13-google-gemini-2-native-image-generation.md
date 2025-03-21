@@ -79,7 +79,7 @@ Gemini 可以直接生成简单的海报，官方的例子就是直接生成生�
 
 ## related
 
-- [Whisk](https://blog.einverne.info/post/2025/01/google-ai-whisk.html)
+- [Whis](https://blog.einverne.info/post/2025/01/google-ai-whisk.html)
 - [[Recraft]]
 - [[ideogram]] 是由 Ideogram Inc 开发的免费文本转图像生成模型，能根据提示词生成图像，该模型在生成图片文字方面的能力很强
 - [[jimeng]]
