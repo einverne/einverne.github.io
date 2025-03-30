@@ -10,7 +10,7 @@ tags: [ http, aiohttp, python, aio, async ]
 last_updated:
 ---
 
-最近想找一个 [[Wallabag]] 的 Python 客户端，在 GitHub 简单搜寻了一下之后发现了 [wallbag_api](https://github.com/foxmask/wallabag_api) 这个仓库，看了一下 Python 代码之后发现库中的代码是用 aiohttp 编写的，所以就来学习一下这个 Python 的异步 HTTP 库 aiohttp。
+最近想找一个 [[Wallabag]] 的 Python 客户端，在 GitHub 简单搜寻了一下之后发现了 [wallbag_api](https://github.com/foxmask/wallabag_api) 这个仓库，看了一下 Python 代码之后发现库中的代码是用 aiohttp 编写的，所以就来学习一下这个 Python 的异步 HTTP 库 [[aiohttp]]。
 
 aiohttp 官方简洁明了，`Asynchronous HTTP Client/Server for asyncio and Python.` aiohttp 是一个基于 asyncio 模块的异步 HTTP 客户端/服务端框架。
 
@@ -18,7 +18,7 @@ aiohttp 官方简洁明了，`Asynchronous HTTP Client/Server for asyncio and Py
 
 我们知道 Python 下还有一个比较著名的 HTTP Client 库叫做 requests，这是一个同步的 HTTP 调用客户端，使用 requests 发起 HTTP 调用之后需要同步等待返回结果，而在 aiohttp 可以在发起请求之后将将程序的控制权暂时给别人，等待响应返回结果回来了之后再进行处理，这就可以提升系统的性能。
 
-aiohttp 内部使用了 [[python-asyncio]] 来实现，而 Python 下 asyncio 的核心就是 [[Coroutine|协程]]
+aiohttp 内部使用了 [[python-asyncio]] 来实现，而 Python 下 asyncio 的核心就是 [[Coroutine|协程]]。
 
 ## Coroutine 协程
 Coroutine（协程）是一个更通用的 subroutine(子程序)。

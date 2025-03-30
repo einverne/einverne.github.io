@@ -2,8 +2,8 @@
 layout: post
 title: "JWT 认证使用"
 aliases: 
-- JWT 认证
-- JSON Web Token 认证
+- "JWT 认证"
+- "JSON Web Token 认证"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -26,6 +26,7 @@ session 认证需要服务端大量的逻辑处理，保证 session 一致性，
 
 
 ## 为什么要认证
+
 数据安全：
 
 - 进行安全的验证，服务端可以无状态认证

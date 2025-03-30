@@ -44,7 +44,7 @@ Cloudflare 接收邮件的设置非常简单，在页面中可以创建自定义
 使用 Cloudflare 的域名邮箱发送邮件则需要用到 Gmail 中的设定。Cloudflare Email Routing 自身是不支持发送邮件的。但可以通过如下方法实现域名邮箱的发送：
 
 - Gmail SMTP
-- [[sendinblue]] 等等第三方[邮件发送服务提供商](/post/2017/07/email-services-collection.html)
+- [[Sendinblue]] 等等第三方[邮件发送服务提供商](/post/2017/07/email-services-collection.html)
 - [[AWS SES]] 邮件发送服务
 
 首先要生成[应用专用密码](https://myaccount.google.com/apppasswords)，主要用来代替密码来登录 Gmail，如下图，记住生成的密码。
