@@ -19,6 +19,10 @@ Automa 是一款免费的浏览器扩展程序，专为简化和自动化网页�
 
 在没有 Automa 之前，还有很多基于网页的自动化工具，比如 [[Selenium]]，[[Puppeteer]]，[[Playwright]]，[[Helium]]，[[Cypress]]，但是这些框架和工具基本上都依赖于编程，面向的应用场景大部分也都是编程开发，网页自动化测试等等，必须会安装依赖，有一定的编码基础才能真正跑起来。但是 Automa 则只需要通过鼠标点击，拖拽就可以快速实现一个基于网页的自动化工作流。
 
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114249854620167&bvid=BV1j2ZqYJEWh&cid=25778134416&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+[Bilibili](https://www.bilibili.com/video/BV1j2ZqYJEWh/) | [YouTube](https://www.youtube.com/watch?v=uD6uGl5WNsU)
+
 ## 安装
 
 可以直接在[应用商店安装](https://chromewebstore.google.com/detail/automa/infppggnoaenmfagbfknfkancpbljcca)，也可以通过[源代码](https://github.com/AutomaApp/automa)编译安装。

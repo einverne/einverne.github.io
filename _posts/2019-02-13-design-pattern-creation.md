@@ -15,7 +15,16 @@ last_updated:
 
 为什么要有创建模式，这也符合开闭原则，Java 自带的 new Object() 实例化对象没有任何问题，问题在于修改，一旦当具体实例涉及变化，那么就必须修改实例自身，不符合开闭原则，所以才有这么多的创建模式。将对外暴露的接口抽象起来，将对象创建的方式封装，对外接口尽量减少。
 
+## 为什么需要使用 Factory 设计模式
+
+- 抽象和封装，封装对象创建过程，隐藏复杂的实例化
+    - Decoupling Object creation
+- 客户端代码依赖于工厂接口而非具体类，减少了不同组件之间的紧密耦合。这使得在不影响客户端代码的情况下替换不同的实现变得更加容易。
+    - Flexibility and Extensibility, enables your software to be modularly expandable. You can add new classes without changing the application code, the factory handles object creation while client code remains unchanged.
+
+
 ## 简单工厂
+
 主要分为三个部分，工厂，抽象产品，具体产品。
 
 工厂直接提供具体产品，也就是直接创建具体类。
