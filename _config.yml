@@ -8,6 +8,7 @@ lang: zh
 description_length: 200
 markdown: kramdown
 kramdown:
+  hard_wrap: false
   syntax_highlighter_opts:
     default_lang: plaintext
 encoding: UTF-8

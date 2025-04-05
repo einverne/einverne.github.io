@@ -318,18 +318,22 @@ p img {
     color: #555;
 }
 
-code {
+pre code {
     display: block;
-    width: 100%;
+    white-space: pre;
     color: #333;
     background-color: #eff0f1;
+}
+
+code {
+    width: 100%;
     padding: 7px 8px 5px 8px;
     border-radius: 4px;
     margin: 0;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace, Monaco, Lucida Console, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif;
     font-size: 100%;
     word-break: break-word;
-    white-space: pre-wrap;
+    white-space: nowrap;
 }
 
 /*
