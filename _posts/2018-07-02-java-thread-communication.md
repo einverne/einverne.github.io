@@ -32,7 +32,7 @@ ThreadLocal 类主要解决的就是每个线程绑定自己的值，每个线�
 公平锁线程在获取锁的顺序是按照线程加锁的顺序来分配的，即先来先得 FIFO ，而非公平锁就是获取锁的抢占机制，随机获的锁。
 
 ## ReentrantReadWriteLock
-类 [[ReentrantLock]] 是完全互斥排他，同一时间只有一个线程能够执行 ReentrantLock 后任务，这样的方式保证了实例变量的线程安全，但是效率低下。所以 JDK 中提供了另外一个读写锁 ReentrantReadWriteLock ，在某些不需要操作实例变量的方法中，可以使用读写锁 ReentrantReadWriteLock 来提升方法的效率。
+类 [[ReentrantLock]] 是完全互斥排他，同一时间只有一个线程能够执行 ReentrantLock 后任务，这样的方式保证了实例变量的线程安全，但是效率低下。所以 JDK 中提供了另外一个读写锁 [[ReentrantReadWriteLock]] ，在某些不需要操作实例变量的方法中，可以使用读写锁 ReentrantReadWriteLock 来提升方法的效率。
 
 读写锁表示有两个锁，一个读相关锁，也成为共享锁，另一个是写相关的锁，也叫排它锁。读锁之间不排斥，写锁与其他锁互相排斥。多个线程可以同时读操作，但是同一时刻只允许有一个线程写操作。
 

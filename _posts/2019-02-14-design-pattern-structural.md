@@ -10,7 +10,15 @@ last_updated:
 
 设计模式中的结构模式可以让我们组合类或者对象形成比较大型的结构，但也能保证结构的可维护性和可扩展性。
 
+- Adapter, Allows incompatible interfaces to work together.
+- Decorator, Dynamically adds behavior to objects without altering their structure.
+- Facade, Simplifies access to complex systems by providing a unified interface.
+- Proxy, Controls access to an object, adding security or performance optimizations.
+- Composite, Treats individual objects and compositions of objects uniformly (e.g., tree structures).
+
+
 ## 适配器模式 {#adapter}
+适配器模式解决的问题，允许不兼容的接口一起工作（Allows incompatible interfaces to work together）。
 
 适用场景：
 
@@ -29,6 +37,17 @@ last_updated:
 
 - 大量使用适配器容易造成系统结构混乱
 
+
+```
+public interface Target { void request(); }
+public class Adaptee { void specificRequest() { System.out.println("Specific Request"); } }
+public class Adapter implements Target {
+    private Adaptee adaptee;
+    public Adapter(Adaptee adaptee) { this.adaptee = adaptee; }
+    public void request() { adaptee.specificRequest(); }
+}
+```
+
 ## 合成模式
 又称为“部分 - 整体模式”，合成模式将对象组织到树结构中，可以用来描述整体与部分的关系。
 
@@ -36,11 +55,27 @@ last_updated:
 ## 装饰模式 {#decorate}
 装饰 (Decorator) 模式又名包装 (Wrapper) 模式。装饰模式以对客户端透明的方式**扩展**对象的功能，是继承关系的一个替代方案。
 
+Dynamically adds behavior to objects without altering their structure.
+
 它以对客户透明的方式动态地给一个对象附加上更多的责任。换言之，客户端并不会觉得对象在装饰前和装饰后有什么不同。装饰模式可以在不使用创造更多子类的情况下，将对象的功能加以扩展。
 
 Decorator 模式重点在于责任，在于**保持对外接口一致**的情况下扩展接口功能。这是符合开闭原则的一个模式。
 
 [[decorator design pattern]]
+
+```
+interface Coffee { String getDescription(); double getCost(); }
+class SimpleCoffee implements Coffee {
+    public String getDescription() { return "Simple Coffee"; }
+    public double getCost() { return 5; }
+}
+class MilkDecorator implements Coffee {
+    private Coffee coffee;
+    MilkDecorator(Coffee coffee) { this.coffee = coffee; }
+    public String getDescription() { return coffee.getDescription() + ", Milk"; }
+    public double getCost() { return coffee.getCost() + 1.5; }
+}
+```
 
 ## 代理模式 {#proxy}
 代理模式给某个对象提供代理，由代理对象控制原对象的引用。
@@ -90,6 +125,8 @@ Java 中享元模式的一个典型应用就是 String 类的实现，假设
 
 ## 桥梁模式 {#bridge}
 桥梁模式是对象的结构模式，桥梁模式的用意是“将抽象化 (Abstraction) 与实现化 (Implementation) 解耦合，使得二者可以独立地变化”。
+
+
 
 一般情况下抽象化类中包含一个具体实现，通过包含关系将强关联解耦。
 

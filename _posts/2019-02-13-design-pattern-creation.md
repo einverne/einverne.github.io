@@ -11,14 +11,19 @@ last_updated:
 
 本文主要归纳设计模式中的创建模式 (creational pattern)，主要包括了工厂模式，单例多例，建造者模式，和原型模式等。
 
-创建模式是指对象的实例化过程，这些模式都提供了一种将对象实例化从客户端分离的方法。
+创建模式是指对象的实例化过程，这些模式都提供了一种将对象实例化从客户端(Client)分离的方法。
 
-为什么要有创建模式，这也符合开闭原则，Java 自带的 new Object() 实例化对象没有任何问题，问题在于修改，一旦当具体实例涉及变化，那么就必须修改实例自身，不符合开闭原则，所以才有这么多的创建模式。将对外暴露的接口抽象起来，将对象创建的方式封装，对外接口尽量减少。
+为什么要有创建模式，这也符合[[开闭原则]]，Java 自带的 `new Object()` 实例化对象没有任何问题，问题在于修改，一旦当具体实例涉及变化，那么就必须修改实例自身，不符合开闭原则，所以才有这么多的创建模式。将对外暴露的接口抽象起来，将对象创建的方式封装，对外接口尽量减少。
 
 ## 为什么需要使用 Factory 设计模式
 
-- 抽象和封装，封装对象创建过程，隐藏复杂的实例化
-    - Decoupling Object creation
+- Creates objects without specifying the exact class to instantiate
+- Decoupling Object creation
+    - client code doesn't need to know the specific class of the object it creates
+    - object creation logic is complex or requires dynamic decision-making
+    - decouple the instantiation process from the client code for better flexibility and maintainability
+    - 抽象和封装，封装对象创建过程，隐藏复杂的实例化
+- Reusability: Centralized object creation logic reduces redundancy
 - 客户端代码依赖于工厂接口而非具体类，减少了不同组件之间的紧密耦合。这使得在不影响客户端代码的情况下替换不同的实现变得更加容易。
     - Flexibility and Extensibility, enables your software to be modularly expandable. You can add new classes without changing the application code, the factory handles object creation while client code remains unchanged.
 
@@ -47,11 +52,18 @@ last_updated:
 
 **抽象工厂**和**工厂方法**的区别在于，抽象工厂模式中，一个工厂可以提供多个抽象产品。在工厂方法模式中，由“具体工厂”决定提供哪一类具体产品；在抽象工厂中，由客户端决定返回哪一类产品。
 
+抽象工厂解决的问题是，创建一组相关的对象，但是不指定其具体实现。
+
 ## 单例 {#singleton}
-至始至终只有一个实例。
+类至始至终只有一个实例。
+
+### 解决的问题
+Ensures that a class has only one instance and provides a global access point to it.
 
 ### Eager initialization
+
 The instance of Singleton is created at the time of class loading.
+
 ```java
 public class EagerSingletion {
 	private static final EagerSingletion instance = new EagerSingletion();
@@ -65,6 +77,7 @@ public class EagerSingletion {
 在 Singleton 不占用太多资源时可以使用 `static` 在类加载时使用这个方法。但是对于大对象这个方法就不是很好。
 
 ### Static block initialization
+
 Use static block to create instance
 
 ```java
@@ -88,6 +101,7 @@ public class StaticBlockSingleton {
 使用 `static` 字段和 `static` block 定义的实例都是在实例对象被使用之前就已经创建。
 
 ### Lazy Initialization
+
 在第一次使用时创建。
 
 ```
@@ -138,6 +152,7 @@ public static ThreadSafeSingleton getInstance () {
 ```
 
 ### Bill Pugh Singleton
+
 使用内部静态类
 
 ```
@@ -165,6 +180,11 @@ public class Singleton() {
 
 建造者模式包括：导演，抽象建造者，具体建造者，和产品
 
+### 解决的问题
+
+Simplifies the creation of complex objects with many optional parameters.
+
+### 使用场景
 建造者模式的使用场景：
 
 - 对象内部结构复杂，比如包含不同零件的汽车类，比如一个复杂的邮件类
@@ -182,9 +202,13 @@ public class Singleton() {
 - 相较于工厂模式，客户端需要额外的知识来创建对象
 
 ## 原型模式 {#prototype}
+
 通过原型指明要创建的对象类型，然后通过该原型创造更多的对象实例。Java 中可以通过 `clone()` ，或者反序列化来实现。原型模式允许客户端在不知道对象具体内部细节的情况下创建实例。
 
 一个比较具体的使用场景，比如要对比两个对象修改前后的差异，可以在修改前复制一个对象实例，然后修改之后对比。再比如一次比较重的数据库查询，可以缓存该对象，再下一次请求到来时直接返回该对象的复制。
+
+### 解决的问题
+Creates new objects by copying existing ones, reducing cost。
 
 一些比较适合的场景：
 
