@@ -39,6 +39,12 @@ curl -L https://github.com/spiritLHLS/ecs/raw/main/ecs.sh -o ecs.sh && chmod +x 
 curl -L https://github.com/spiritLHLS/ecs/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh -m 1
 ```
 
+直接在 bash 运行
+
+```
+bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh)
+```
+
 IP 质量
 
 ```
@@ -77,7 +83,7 @@ bash <(curl -sL https://raw.githubusercontent.com/LloydAsp/NodeBench/main/NodeBe
 
 ### bench.sh
 
-[teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，磁盘 IO，带宽：
+bench.sh 是 [teddysun](https://github.com/teddysun/across/blob/master/bench.sh) 提供的综合脚本，检测 CPU，内存，负载，磁盘 IO，带宽：
 
     wget -qO- bench.sh | bash
     curl -Lso- bench.sh | bash
@@ -90,7 +96,7 @@ UnixBench 测试，UnixBench 跑分不一定代表真实性能，但可以提供
 
 ### Yet-Another-Bench-Script
 
-[Yet Another Bench Script](https://github.com/masonr/yet-another-bench-script) 正如其名，也是一个用来全面测试 VPS 性能的脚本。
+[Yet Another Bench Script](https://github.com/masonr/yet-another-bench-script) 在国外非常流行，正如其名，也是一个用来全面测试 VPS 性能的脚本。
 
 ```
 curl -sL yabs.sh | bash
@@ -166,6 +172,10 @@ curl -LsO bench.monster/speedtest.sh; bash speedtest.sh
 ### LemonBench
 
 ~~[LemonBench](https://github.com/LemonBench/LemonBench)，是一款针对 Linux 服务器设计的服务器性能测试工具。通过综合测试，可以快速评估服务器的综合性能，为使用者提供服务器硬件配置信息。~~
+
+```
+wget -qO- https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh | bash -s -- --fast
+```
 
 ### Speedtest
 
