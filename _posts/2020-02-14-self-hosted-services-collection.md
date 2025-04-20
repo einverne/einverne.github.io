@@ -415,7 +415,7 @@ anyi 导航、聚合搜索、webstack
 - [[fediverse]]
 
 ## 自建 k3s
-[[k3s]]
+[[K3s]]
 
 ## 网游
 

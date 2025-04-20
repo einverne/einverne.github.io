@@ -15,7 +15,7 @@ create_time: 2023-03-31 05:30:07
 
 ## 什么是 k3sup
 
-[k3sup](https://github.com/alexellis/k3sup) 是一个可以在任何 Linux 机器上安装并启动 [[k3s]] 的命令行工具，官方宣称可以在 60 秒内启动一个 k3s。k3sup 是一个可帮助快速轻松地在任何地方部署 Kubernetes 集群的工具。它使用 SSH 连接到远程主机并安装 k3s，然后提供一个可用于与集群交互的 kubeconfig 文件。
+[k3sup](https://github.com/alexellis/k3sup) 是一个可以在任何 Linux 机器上安装并启动 [[K3s]] 的命令行工具，官方宣称可以在 60 秒内启动一个 k3s。k3sup 是一个可帮助快速轻松地在任何地方部署 Kubernetes 集群的工具。它使用 SSH 连接到远程主机并安装 k3s，然后提供一个可用于与集群交互的 kubeconfig 文件。
 
 k3sup 发音为“ketchup”。相对于 k8s 来说，k3s 系统容器数量少，轻量级，并且默认使用 containerd 作为容器运行时，内部的 ingress 使用的是 go 语言开发的 traefik，集成了 SQLite 代替 Etcd，但在多个 master 节点中最好使用 Etcd 组件，来保证数据一致性，从而可以 HA。
 
@@ -128,7 +128,7 @@ K3s 是一个轻量级的 Kubernetes 发行版，旨在简化和加速 Kubernete
 
 ## related
 
-- [[k3s]]
+- [[K3s]]
 - [[k3d]]
 - [[Rancher]]
 - [[Multipass]]

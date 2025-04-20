@@ -23,7 +23,7 @@ Netmaker 是一个开源的、基于 WireGuard 网络的组网工具，可以非
 [[WireGuard]] 是一个已经合并到 Linux 内核的轻量级 VPN 协议，可以在不同的主机中建立点对点通信隧道。
 
 ### K3s
-[[k3s]] 是 Rancher Lab 发布的一款轻量级的 Kubernetes 发行版。
+[[K3s]] 是 Rancher Lab 发布的一款轻量级的 Kubernetes 发行版。
 
 ### Kubernetes
 Kubernetes 是一个用于管理容器的开源运维平台，非常易于扩展。通常简称 k8s。

@@ -233,6 +233,14 @@ wget https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
 python speedtest.py --share
 ```
 
+## IP 质量
+
+GitHub [IPQuality](https://github.com/xykt/IPQuality)
+
+```
+bash <(curl -sL Check.Place) -I
+```
+
 ## ping 测试
 
 全球各地 ping 测试网站：

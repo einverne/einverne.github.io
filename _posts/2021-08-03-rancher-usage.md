@@ -77,7 +77,7 @@ k8s 全称是 [[Kubernetes]]，是一个开源的，容器管理平台。
 
 ## Rancher 和 k3s 的区别
 
-[[k3s]] 是一个轻量级的 Kubernetes 发行版，旨在简化 Kubernetes 的部署和管理。包含一个二进制文件，可以在较小的资源和较低的要求下运行。支持常见的 Kubernetes 功能，例如 Pod 和 Service，提供容器运行时（Docker，CRI-O 和 containerd），内置负载均衡器，应用商店和 Helm 支持。
+[[K3s]] 是一个轻量级的 Kubernetes 发行版，旨在简化 Kubernetes 的部署和管理。包含一个二进制文件，可以在较小的资源和较低的要求下运行。支持常见的 Kubernetes 功能，例如 Pod 和 Service，提供容器运行时（Docker，CRI-O 和 containerd），内置负载均衡器，应用商店和 Helm 支持。
 
 ## Prerequisite
 
