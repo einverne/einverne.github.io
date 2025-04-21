@@ -27,7 +27,7 @@ k3sup 需要通过 SSH 连接到对应的服务器进行安装操作，所以配
 
 ## 安装使用
 
-K3S 部署 Kubernetes 集群，创建集群的 https 证书，Helm 部署 rancher，通过 [[Rancher]] 的 UI 界面手动导入 Kubernetes 集群，使用 Kubernetes 集群。
+[[K3s]] 部署 Kubernetes 集群，创建集群的 https 证书，[[Helm]] 部署 [[Rancher]]，通过 [[Rancher]] 的 UI 界面手动导入 Kubernetes 集群，使用 Kubernetes 集群。
 
 k3sup 使用 Go 编写，直接下载编译好的二进制文件就能使用。
 
@@ -122,12 +122,11 @@ K3s 是一个轻量级的 Kubernetes 发行版，旨在简化和加速 Kubernete
 - 8472：用于flannel网络插件的VXLAN通信端口。
 - 10250：Kubelet API的端口，用于节点与主节点之间的通信。
 
-
 也可以使用 `kubectl get service -A` 来查看使用的端口。
-
 
 ## related
 
+- [[Kubernetes]]
 - [[K3s]]
 - [[k3d]]
 - [[Rancher]]

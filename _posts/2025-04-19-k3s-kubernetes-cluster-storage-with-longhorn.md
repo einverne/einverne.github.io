@@ -184,3 +184,4 @@ sudo sed -i -e "s/storageclass.kubernetes.io\/is-default-class: \"true\"/storage
 ## reference
 
 - <https://longhorn.io/>
+- <https://docs.k3s.io/storage>
