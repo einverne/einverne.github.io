@@ -75,6 +75,18 @@ SCI Driver 是一个 k8s 集群中的软件驱动，用于 PV 和 Storage Class 
 - Helm 可使用
 - 确保所有的节点上都安装了 open-iscsi
 
+### open-iscsi
+
+```
+sudo apt install -y open-iscsi nfs-common jq
+sudo systemctl enable iscsid
+sudo systemctl start iscsid
+sudo modprobe iscsi_tcp
+echo "iscsi_tcp" | sudo tee /etc/modules-load.d/iscsi-tcp.conf
+sudo systemctl restart iscsid
+lsmod | grep iscsi
+```
+
 ### 使用 Helm 安装 Longhorn
 
 ```
