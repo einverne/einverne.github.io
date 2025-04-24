@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 产品体验
-tags: [memoai, ai-transcript, audio-to-text, audio-transcript, transcript, subtitle, language-learning]
+tags: [memoai, ai-transcript, audio-to-text, audio-transcript, transcript, subtitle, language-learning, ai, audio, ]
 create_time: 2024-09-04 23:12:34
 last_updated: 2024-09-04 23:12:34
 dg-home: false

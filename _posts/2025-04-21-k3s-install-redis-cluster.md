@@ -55,7 +55,16 @@ helm install my-redis-cluster oci://registry-1.docker.io/bitnamicharts/redis-clu
   --set cluster.nodes=6 \
   --set cluster.replicas=1 \
   --set persistence.storageClass=longhorn \
-  --set persistence.size=5Gi
+  --set persistence.size=2Gi
+```
+
+或者 
+
+```
+helm install my-redis-cluster oci://registry-1.docker.io/bitnamicharts/redis-cluster \
+  --namespace redis-cluster \
+  --create-namespace \
+  -f redis-cluster-values.yml
 ```
 
 - 总共 6 个节点（3 个主节点和 3 个从节点）
@@ -83,6 +92,7 @@ kubectl get pvc -n redis
 export REDIS_PASSWORD=$(kubectl get secret --namespace "redis-cluster" my-redis-cluster -o jsonpath="{.data.redis-password}" | base64 -d)
 echo $REDIS_PASSWORD
 ```
+
 
 ## 访问 Redis 集群
 
