@@ -91,7 +91,7 @@ lsmod | grep iscsi
 
 ```
 helm repo add longhorn https://charts.longhorn.io
-helm repo update k
+helm repo update
 ubectl create namespace longhorn-system
 helm upgrade -i longhorn longhorn/longhorn --namespace longhorn-system
 ```

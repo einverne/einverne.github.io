@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "在 K8s 中安装 Cluster 集群"
+title: "在 K3s 中安装 Redis Cluster 集群"
 aliases:
-- "在 K8s 中安装 Cluster 集群"
+- "在 K3s 中安装 Redis Cluster 集群"
 tagline: ""
 description: ""
 category: 经验总结
