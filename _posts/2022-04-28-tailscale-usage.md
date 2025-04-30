@@ -89,9 +89,9 @@ acls 部分是 ACL 规则主体，每个规则都是一个 HuJSON 对象，它�
     proto: protocol # 可选参数
 ```
 
-Tailscale/Headscale 的默认访问规则是 `default deny`，也就是黑名单模式，只有在访问规则明确允许的情况下设备之间才能通信。所以 ACL 规则中的 `action` 值一般都写 `accept`，毕竟默认是 deny 嘛。
+Tailscale/Headscale 的默认访问规则是  `default deny`，也就是黑名单模式，只有在访问规则明确允许的情况下设备之间才能通信。所以 ACL 规则中的  `action`  值一般都写  `accept`，毕竟默认是 deny 嘛。
 
-`src` 字段表示访问来源列表，该字段可以填的值都在这个表格里：
+`src`  字段表示访问来源列表，该字段可以填的值都在这个表格里：
 
 ## 高级功能
 

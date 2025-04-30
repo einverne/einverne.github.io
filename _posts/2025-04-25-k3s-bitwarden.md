@@ -365,4 +365,14 @@ kubectl logs -n vaultwarden -l app=vaultwarden -f # 检查日志是否有错误
 
 最后，验证数据恢复，通过域名访问实例，使用之前的用户名和密码访问，检查密码库，设置，组织等等是否恢复。
 
+### 其他管理命令
+
+```
+# 获取 secret
+kubectl get secret vaultwarden-secrets -n vaultwarden -o yaml
+
+# 手动重启
+kubectl rollout restart deployment vaultwarden -n vaultwarden
+```
+
 如果访问没有问题，可以在 Cloudflare 上（如果使用的话），配置多个 A 记录分别指向集群中的公网 IP，完成 Bitwarden 高可用的配置。

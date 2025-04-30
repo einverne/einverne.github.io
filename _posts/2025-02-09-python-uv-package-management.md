@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-之前在使用一个 FastAPI 的模板项目的时候，很偶然获知了 uv 这样一个 Python 的包管理工具，简单的查询了一下之后发现这一工具是使用 Rust 编写，已经慢慢获得了社区的认可，被越来越多人推荐了，所以今天我也好好地学习一下 uv。
+之前在使用一个 FastAPI 的模板项目的时候，很偶然获知了 `uv` 这样一个 Python 的包管理工具，简单的查询了一下之后发现这一工具是使用 Rust 编写，已经慢慢获得了社区的认可，被越来越多人推荐了，所以今天我也好好地学习一下 uv。
 
 ## uv 是什么
 
@@ -181,6 +181,55 @@ uv tool upgrade httpie
 ```
 uv tool uninstall httpie
 ```
+
+## 使用过程中的一些问题
+
+当我在 Docker 中使用 uv 的时候，遇到一些奇怪的问题。
+
+我直接按照官方的教程，从镜像从拷贝 uv 来使用，Dockerfile 文件中的内容
+
+```
+# Install uv
+# Ref: https://docs.astral.sh/uv/guides/integration/docker/#installing-uv
+COPY --from=ghcr.io/astral-sh/uv:0.6.17 /uv /uvx /bin/
+```
+
+但是，我无论怎么修改，都会出现如下的网络访问错误。
+
+```
+ => CACHED [stage-0 3/8] COPY --from=ghcr.io/astral-sh/uv:0.6.17 /uv /uvx /bin/                                                                                                                                        0.0s
+ => ERROR [stage-0 4/8] RUN --mount=type=cache,target=/root/.cache/uv     --mount=type=bind,source=uv.lock,target=uv.lock     --mount=type=bind,source=pyproject.toml,target=pyproject.toml     uv sync --frozen --n  21.8s
+------                                                                                                                                                                                                                      
+ > [stage-0 4/8] RUN --mount=type=cache,target=/root/.cache/uv     --mount=type=bind,source=uv.lock,target=uv.lock     --mount=type=bind,source=pyproject.toml,target=pyproject.toml     uv sync --frozen --no-install-project:                                                                                                                                                                                                                         
+0.391 Using CPython 3.12.10 interpreter at: /usr/local/bin/python3                                                                                                                                                          
+0.391 Creating virtual environment at: .venv                                                                                                                                                                                
+21.74   × Failed to download `google-api-python-client==2.160.0`                                                                                                                                                            
+21.74   ├─▶ Failed to fetch:
+21.74   │   `https://files.pythonhosted.org/packages/49/35/41623ac3b581781169eed7f5fcd24bc114c774dc491fab5c05d8eb81af36/google_api_python_client-2.160.0-py2.py3-none-any.whl`
+21.74   ├─▶ Could not connect, are you offline?
+21.74   ├─▶ Request failed after 3 retries
+21.74   ├─▶ error sending request for url
+21.74   │   (https://files.pythonhosted.org/packages/49/35/41623ac3b581781169eed7f5fcd24bc114c774dc491fab5c05d8eb81af36/google_api_python_client-2.160.0-py2.py3-none-any.whl)
+21.74   ├─▶ client error (Connect)
+21.74   ├─▶ dns error: failed to lookup address information: Try again
+21.74   ╰─▶ failed to lookup address information: Try again
+21.74   help: `google-api-python-client` (v2.160.0) was included because `app`
+21.74         (v0.1.0) depends on `google-generativeai` (v0.8.4) which depends on
+21.74         `google-api-python-client`
+------
+Dockerfile:25
+--------------------
+  24 |     # Ref: https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
+  25 | >>> RUN --mount=type=cache,target=/root/.cache/uv \
+  26 | >>>     --mount=type=bind,source=uv.lock,target=uv.lock \
+  27 | >>>     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+  28 | >>>     uv sync --frozen --no-install-project
+  29 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c uv sync --frozen --no-install-project" did not complete successfully: exit code: 1
+```
+
+
 
 ## related
 
