@@ -38,13 +38,13 @@ helm install it-tools jeffresc/it-tools
 直接安装
 
 ```
-helm install it-tools jeffresc/it-tools
+helm install it-tools jeffresc/it-tools -n it-tools
 ```
 
 卸载命令
 
 ```
-helm uninstall it-tools
+helm uninstall it-tools -n it-tools
 ```
 
 如果为了测试，可以直接执行下面的命令，通过临时端口转发来测试服务是否正常。
@@ -59,7 +59,7 @@ export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/nam
 如果您只是临时需要从其他集群外部访问，可以在`port-forward`命令中添加`--address`参数：
 
 ```
-kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT --address 0.0.0.0
+kubectl --namespace it-tools port-forward $POD_NAME 8080:$CONTAINER_PORT --address 0.0.0.0
 ```
 
 这样可以让 port-forward 监听所有网络接口，而不仅仅是 localhost。但请注意，这种方法不是生产环境的推荐做法，因为它依赖于保持 kubectl 命令运行。
