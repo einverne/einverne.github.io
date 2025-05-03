@@ -1,12 +1,12 @@
 ---
 layout: post
-title: ""
+title: "使用 GitHub Actions 构建 Docker 镜像并上传到 GitHub Packages"
 aliases:
-- ""
+- "使用 GitHub Actions 构建 Docker 镜像并上传到 GitHub Packages"
 tagline: ""
 description: ""
-category: 
-tags: [ ]
+category: 经验总结
+tags: [github, github-actions, github-packages, docker, docker-image, docker-build, docker-compose]
 create_time: 2025-04-30 23:04:32
 last_updated: 2025-04-30 23:04:32
 dg-home: false
