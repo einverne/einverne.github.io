@@ -160,7 +160,6 @@ services:
 
 提交成功之后就可以进入 Poste 的管理后台。
 
-
 ### 设置 TLS SSL
 在侧边栏 System settings 中可以申请 Let's Encrypt 证书。
 
@@ -169,7 +168,6 @@ services:
 获得 SSL 证书后，打开 poste 后台 - System settings - TLS Certificate - 选择证书文件进行上传。
 
 SSL 提供商会自动将中级证书合并到了证书文件（比如腾讯云），因此中级证书那个选项可以和证书一致，然后点保存，保存后需要重启容器生效：`docker restart mailserver`
-
 
 ### 配置 DKIM
 在 Virtual Domains 中点击域名获取 DKIM Key。然后将值配置到 DNS 解析。

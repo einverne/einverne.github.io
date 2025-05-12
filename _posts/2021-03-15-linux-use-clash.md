@@ -23,7 +23,7 @@ Linux 下载对应的 `linux-amd64` 即可。
 
 在用了很长一段时间的 Clash 命令行之后，我发现 [Clash For Windows](/post/2021/10/linux-use-clash-for-windows.html) 这个应用也能够在 Linux 下使用。所以最近就切换到了这个应用上。
 
-另外欢迎订阅使用 [EV Proxy](https://v.gtkpw.xyz) 注册之后一键订阅即可使用。
+另外欢迎订阅使用 [EV Proxy](https://v4.gtk.pw). 注册之后一键订阅即可使用。
 
 ## 安装 {#installation}
 
@@ -44,9 +44,9 @@ ls -al ~/.config/clash
 
 ## 修改配置 {#config}
 
-比如说对于我使用的[Wallless 代理](https://v2.gtk.pw)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
+比如说对于我使用的[GTK 代理](https://v4.gtk.pw)，在后台复制地址之后，在网址的后面增加 `&flag=clash` 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， `sub.html`。
 
-另外还有一个代理，有兴趣的可以[试用一下](https://v.gtkpw.xyz)。
+另外还有一个代理，有兴趣的可以[试用一下](https://v4.gtk.pw)。
 
 然后将查看 `sub.html` 内容，应该是一个 yaml 格式的文件。将此格式的文件替换默认的配置。
 
