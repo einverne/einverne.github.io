@@ -13,11 +13,11 @@ dg-home: false
 dg-publish: false
 ---
 
-Exposed 是 JetBrains 在数年前推出的轻量级 ORM 框架，Kotlin 编写，已经在 JetBrains 内部多个关键产品使用。
+Exposed 是 [[JetBrains]] 在数年前推出的轻量级 [[ORM]] 框架，Kotlin 编写，已经在 JetBrains 内部多个关键产品使用。
 
 Exposed 是基于 JDBC 实现，屏蔽了底层建立数据库连接，编写 SQL，操作数据，关闭数据库连接的操作，只需要关心数据操作。
 
-Exposed 提供了两种形式 API，面向 DSL 的 API，面向对象的 API。
+Exposed 提供了两种形式 API，面向 DSL 的 API 和面向对象的 API。
 
 ## 特点
 
@@ -27,6 +27,7 @@ Exposed 提供了两种形式 API，面向 DSL 的 API，面向对象的 API。
 - 支持非常多的数据库，H2，MySQL，MariaDB，Oracle，PostgreSQL，SQL Server，SQLite 等
 
 ## 使用
+
 首先需要添加依赖
 
 ```
@@ -63,6 +64,7 @@ transaction {
 ```
 
 ## DSL
+
 DSL 是领域特定语言。
 
 ```
@@ -105,6 +107,7 @@ fun main() {
 ```
 
 ## DAO
+数据表和实体类定义。
 
 ```
 import org.jetbrains.exposed.dao.IntEntity
@@ -152,7 +155,7 @@ fun main() {
         }
 
         val result = MemberEntity.findById(member.id)
-        
+
         result?.createAt = Instant.now()
         result?.delete()
     }

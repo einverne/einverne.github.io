@@ -128,7 +128,7 @@ spec:
     secretName: it-tools-tls-secret
 ```
 
-这样，当配置了 DNS A 记录指向 K3s 节点的 IP 地址，就可以通过 http://tools.einverne.info 来访问应用。Traefik 会自动申请证书，配置证书。
+这样，当配置了 DNS A 记录指向 K3s 节点的 IP 地址，就可以通过 http://tools.einverne.info 来访问应用。Traefik 会自动申请证书，配置证书。上述的地址也欢迎大家访问使用。
 
 对于生产环境，建议使用 LoadBalancer 或 Ingress 方式，这样可以确保服务的稳定性和可扩展性。如果您的应用需要特定的 TCP/UDP 端口（不仅仅是 HTTP/HTTPS），LoadBalancer 是更好的选择。
 
