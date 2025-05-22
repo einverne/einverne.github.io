@@ -18,7 +18,7 @@ create_time: 2022-04-26 12:47:22
 - [[Poste]] 分为免费版和收费版，可以使用 Docker 部署，所有服务集中在一个镜像中，部署比较简单，适合商用服务，如果出现问题还可以付费进行咨询。Poste 的付费版本提供了更加强大的日志审查，诊断分析工具等等，具体可以参考[官网](https://poste.io/order)
 - [[Mailu]] 是一个使用 Python 编写的邮件服务器，可以使用 Docker 安装部署，集成了 dovecot, postfix 等等。个人的使用体验就是比较小巧，但是功能齐全。还自带 Webmail。 [使用 Mailu 搭建邮件服务器](/post/2021/07/email-server-mailu.html)
 - [[mailcow]] 相对于 Mailu 更加强大，但也相对比较消耗资源，mailcow 可以管理多用户，多域名，后台功能非常详细，使用 [[SOGo]] webmail。 [使用 Mailcow 搭建邮件服务器](/post/2022/04/mailcow-email-server.html).
-- [[postal]] 一个使用 Rust 编写的邮件服务器，可以发送和接收邮件。可以使用 HTTP 接口
+- [[Postal]] 一个使用 Rust 编写的邮件服务器，可以发送和接收邮件。可以使用 HTTP 接口
 - [[Maddy]] 是一个使用 Go 语言实现的多合一邮件服务器。没有 Web 界面，需要借助客户端
 - [mox](https://github.com/mjl-/mox) 是一个使用 Go 语言编写的开源邮件服务器。
 

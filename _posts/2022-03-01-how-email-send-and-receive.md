@@ -20,7 +20,7 @@ last_updated:
 - [[Mailu]]，一个 Python 编写的邮件服务器，可以使用 Docker 部署
 - [[mailcow]]，同样是一个可以使用 Docker 部署的邮件服务器
 - [[Mail-in-a-Box]]，一个非常方便部署的邮箱服务器
-- [[postal]]，一个使用 Rust 实现的邮件服务器
+- [[Postal]]，一个使用 Rust 实现的邮件服务器
 - [[Maddy]] 一个使用 Go 语言实现的邮件服务器，没有 Webmail
 - [[Salmon]] Python 实现的邮件服务器
 
