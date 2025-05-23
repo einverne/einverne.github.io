@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Mac OS 上的平铺窗口管理工具 yabai"
+aliases: "Mac OS 上的平铺窗口管理工具 yabai"
 tagline: ""
-description: ""
+description: "macOS 上的窗口平铺管理工具"
 category: 学习笔记
 tags: [mac, tiling-window-manager, window-manager, hammerspoon, ]
 last_updated:
@@ -11,6 +12,7 @@ last_updated:
 yabai 是一个 Mac OS 上的平铺窗口管理工具。Linux 上很早就有一系列的[平铺窗口管理工具](https://en.wikipedia.org/wiki/Tiling_window_manager)，比如 i3, awesome 等等。yabai 将这个功能带到了 Mac 上。所谓的平铺式窗口管理，是相较于普通的浮动窗口管理，在通常使用的情况下，系统上的应用如果打开了很多，就不可避免的相互叠加，需要频繁的使用 ⌘+Tab 来切换窗口。而平铺式窗口管理，则将所有的窗口平铺在桌面上，窗口之间不会相互重叠。
 
 ## 为什么要用平铺式窗口管理
+
 在不了解平铺式窗口管理之前，我个人非常厌烦的一个事情就是不停地在不同的窗口之前切换，并且切换的效率非常低，虽然在 Mac 上有 [Contexts](https://contexts.co/) 这样的软件来间接的提高窗口切换的速度，但是 Contexts 也需要一个模糊的查找来定位到需要切换的窗口。后来又发现了 Karabiner, 发现可以通过定义组合快捷键来快速切换到对应的应用，比如我定义了 oc 切换到 Chrome，ob 切换到 Obsidian, ok 切换到 kitty，这使得我在任何一个应用中都可以按下 o, 然后迅速的按下 c/b/k 等等来跳转到对应的窗口，即使这个应用窗口在后台，或者这个应用都没有开启，也会打开这个应用后将光标定位到该应用窗口。但这种情况下窗口大小的管理问题便随之而来，虽然我也用 Hammerspoon 定义了快捷键可以全屏，左右上下半屏，但窗口管理的其他一些问题还是没有得到进一步的改善，比如将窗口移动到第二个桌面，将窗口移到左边的显示器等等问题。
 
 而平铺式的窗口管理，通过强可定制的快捷键将这些操作都固化成一定的动作，在熟悉这一些动作之后可以明显的提高效率，从窗口管理的麻烦中解脱出来。平铺式的窗口管理通常有如下特点：
