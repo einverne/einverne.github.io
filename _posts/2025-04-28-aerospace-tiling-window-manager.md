@@ -1,4 +1,4 @@
----
+F---
 layout: post
 title: "告别手动管理窗口的烦恼 AeroSpace 极致的平铺窗口管理器上手体验"
 aliases:
@@ -13,7 +13,20 @@ dg-home: false
 dg-publish: false
 ---
 
-[AeroSpace](https://github.com/nikitabobko/AeroSpace) 是一个 macOS 上的 [[i3]] 类似的窗口屏幕管理工具，很早之前我也介绍过另外一款开源的窗口平铺管理应用 [Yabai](https://blog.einverne.info/post/2020/09/mac-os-tiling-window-manager-yabai.html)，但是 Yabai 要禁用 macOS 的 SIP，最终还是没有利用起来，目前还是靠着 Contexts，[[Hammerspoon]] 来管理窗口。但是最近再次看到了 AeroSpace 这样一款平铺窗口管理器，它轻量，高效，灵活的配置直接成为了我窗口管理的第一候选。
+[AeroSpace](https://github.com/nikitabobko/AeroSpace) 是一个 macOS 上的 [[i3]] 类似的平铺窗口屏幕管理工具，很早之前我也介绍过另外一款开源的窗口平铺管理应用 [Yabai](https://blog.einverne.info/post/2020/09/mac-os-tiling-window-manager-yabai.html)，但是 Yabai 要禁用 macOS 的 SIP，最终还是没有利用起来，目前还是靠着 Contexts，[[Hammerspoon]] 来管理窗口。但是最近再次看到了 AeroSpace 这样一款平铺窗口管理器，它轻量，高效，灵活的配置直接成为了我窗口管理的第一候选。
+
+
+## 什么是平铺窗口管理器
+
+Tiling Window Manager（平铺式窗口管理器）是一种将屏幕空间自动划分为不重叠矩形区域、每个窗口都紧密排列、互不遮挡的窗口管理器类型。
+
+为什么要使用平铺式窗口管理器呢？
+
+- 最大化利用屏幕，所有的应用都平铺在桌面上，没有重叠和交叉
+- 依赖键盘操作，减少对鼠标的依赖，提高效率
+- 多任务处理提高效率，在开发，监控等等场景下，经常需要同时处理多个应用，经常需要快速切换和定位窗口
+- 高度可订制化，支持自定义布局，配置，可以根据自己的习惯灵活调整
+- macOS 上可以减少系统动画对我们操作的干扰，在 GNU/Linux 上则可以尽量节省系统资源占用，平铺窗口管理器通常非常轻量，简洁
 
 ## 为什么选择 AeroSpace
 
@@ -25,6 +38,9 @@ dg-publish: false
 - 轻量高性能，和其他功能复杂的应用相比，AeroSpace 使用 Swift 编写响应迅速，几乎没有卡顿
 - 无需关闭 SIP，Yabai 虽然也非常强大，但是很多高级功能，比如窗口边框，动画控制等都需要关闭 SIP，这会给 macOS 带来一定的安全风险，并且系统升级之后可能需要重新配置，AeroSpace 通过 macOS 的 Accessibility API 来实现窗口管理，巧妙的避开了这个问题
 - 活跃的社区和开发
+
+## 个人的调整
+在很多人的配置和习惯中，将 mod+Enter 作为创建终端的快捷键，但是我个人因为在 Linux 就保留了使用 F12 呼出下拉式终端的方式，并且我使用的终端无论是 Guake， Kitty 还是 Warp  都可以在应用内创建多个 Tab 来管理，所以我个人还是保留了 F12 作为调用终端的习惯。
 
 ## 安装
 
@@ -42,9 +58,7 @@ brew install --cask nikitabobko/tap/aerospace
 cp /Applications/AeroSpace.app/Contents/Resources/default-config.toml ~/.aerospace.toml
 ```
 
-AeroSpace 的核心配置文件，这个默认的配置文件已经包含了一部分基础的快捷键和设置，可以很好的作为初始学习配置的内容。
-
-
+AeroSpace 使用 TOML 格式作为核心配置文件，这个默认的配置文件已经包含了一部分基础的快捷键和设置，可以很好的作为初始学习配置的内容。TOML 格式易读并且支持注释。
 
 ## 使用
 
@@ -84,6 +98,15 @@ Callbacks 回调，AeroSpace 提供了非常多的回调函数，用户可以在
 - Focus (焦点)：决定了哪个窗口是当前活动窗口，键盘输入会发送到这个窗口。
 
 ### AeroSpace 默认的快捷键
+
+核心的几个动作
+
+- 切换窗口
+- 移动窗口
+- 调整窗口大小
+- 切换工作区
+- 移动窗口到工作区
+- 切换模式
 
 | 功能                   | 快捷键                          |
 | -------------------- | ---------------------------- |
@@ -177,6 +200,39 @@ AeroSpace 对多显示器的支持相当不错，每个显示器都可以有自�
 - `main` 对应系统设置中设置的主显示器
 - `second` 对应非主显示器
 
+我自己的配置是将 1-4 工作区留给我的内置显示器，而将 5-8 分配给了外接显示器，在连接了显示器之后会得到显示器的名字，或者也已利用 AeroSpace 的命令 `aerospace list-monitors` 来获取显示器名字。
+
+```
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = ['secondary', 'main']
+6 = ['secondary', 'main']
+7 = ['secondary', 'main']
+8 = ['secondary', 'main']
+```
+
+我就可以将 secondary 替换成我显示器的名字，这样如果有副显示器就会优先利用外接显示器，如果不可用则会回退到使用主显示器。
+
+也可以利用正则表达式来匹配名字
+
+```
+7 = ['^dell.*', 'secondary', 'main']
+```
+
+完成配置之后还可以利用如下的命令在显示器之间移动工作空间。
+
+```
+# 移动当前工作空间到下一个显示器
+aerospace move-workspace-to-monitor next
+
+# 移动工作空间到特定显示器
+aerospace move-workspace-to-monitor main
+aerospace move-workspace-to-monitor secondary
+```
+
 ## mode
 
 可以利用 [mode](https://nikitabobko.github.io/AeroSpace/guide#binding-modes) 命令来定义组合快捷键。比如我们可以定义一套快捷键触发按键是 Alt-r，表示调整窗口，然后进入了 resize 模式之后，就可以再按下减号或者等于号来调整窗口大小。
@@ -212,6 +268,7 @@ AeroSpace 对多显示器的支持相当不错，每个显示器都可以有自�
 
 如果你之前没有接触过平铺窗口管理器，初期可能会有一点学习曲线，特别是记忆各种快捷键。但是一旦熟悉之后，效率的提升是巨大的。建议可以从默认的配置开始，根据自己的需求逐步改进和适配。
 
+
 ### 备份你的配置
 
 默认的 `~/.aerospace.yaml` 配置文件在一段时间的调整之后，你也不想让它突然间丢失吧，那么通常情况下，我会将其放到 [dotfiles](https://github.com/einverne/dotfiles) 仓库中保存，并利用 Git 进行版本管理。
@@ -223,3 +280,7 @@ AeroSpace 对于我而言，是目前 macOS 上最接近理想状态的平铺窗
 ## reference
 
 - [AeroSpace 的官方文档](https://nikitabobko.github.io/AeroSpace/guide.html)
+
+## related
+
+- [[FlashSpace]] 另一个 macOS 上的虚拟工作区管理器

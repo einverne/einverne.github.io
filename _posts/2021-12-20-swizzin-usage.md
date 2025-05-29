@@ -122,3 +122,7 @@ Advanced Settings:
     SCGI mount point: /rutorrent/plugins/httprpc/action.php OR /<username>
     Use SSL: ON
 ```
+
+## qBittorrent
+
+通过 Swizzin 安装的 qBittorrent 默认情况下在 4.6.1 版本之前使用传统的默认密码 `admin/adminadmin` 但是之后的版本中 qBittorrent 会使用 Swizzin 的用户名和密码。

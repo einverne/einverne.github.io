@@ -14,11 +14,9 @@ create_time: 2021-09-27 07:44:20
 这是一篇耽搁了很久，一直躺在我的 Obsidian 笔记中的一篇文章，一直就想好好介绍一下 Hammerspoon，但是因为过去虽然也在用 macOS，但是使用最多的还是 Ubuntu，Hammerspoon 只能在 macOS 上使用，就没有那么大的兴致再花时间学习它的使用。但最近更新了一下系统，发现 Hammerspoon 出了一点问题，没有了 Hammerspoon 之后我才发现很多不适应的地方，那就在花一点时间再梳理一下我的配置。
 
 ## Hammerspoon 是什么？
-Hammerspoon 是一个 macOS 上开源的自动化工具，什么叫做自动化工具呢？通过 Hammerspoon ，可以使用一些脚本来实现原来只能通过界面操作，或快捷键才能达到的效果，并且实现系统自动化。最简单的例子，比如当我连上家里的 WiFi 的时候，就自动将音量调成 3 档；再比如当我切换窗口的时候，自动切换输入法，比如在 IDEA IntelliJ 中自动使用英文输入法，当我打开 Obsidian 则自动切换成中文输入法。
+[Hammerspoon](https://www.hammerspoon.org/) 是一个 macOS 上开源的自动化工具，什么叫做自动化工具呢？通过 Hammerspoon ，可以使用一些脚本来实现原来只能通过界面操作，或快捷键才能达到的效果，并且实现系统自动化。最简单的例子，比如当我连上家里的 WiFi 的时候，就自动将音量调成 3 档；再比如当我切换窗口的时候，自动切换输入法，比如在 IDEA IntelliJ 中自动使用英文输入法，当我打开 Obsidian 则自动切换成中文输入法。
 
 Hammerspoon 使用 Lua 脚本语言与操作系统通信。通过编写 Lua 脚本实现与 macOS API 的交互，Hammerspoon 提供的 API，包括应用的、窗口的、鼠标指针、文件系统、声音设备、电池、屏幕、键盘/鼠标事件、粘贴板、地理位置服务、WiFi 等等。Hammerspoon 是操作系统和 Lua 执行引擎的桥梁，通过 Hammerspoon 可以让 macOS 实现非常强大的自动化。
-
-官网: <https://www.hammerspoon.org/>
 
 ## Hammerspoon 能做什么
 Hammerspoon 实际上是将 macOS 的系统接口实现了一层转发，让用户可以通过简单的 Lua 脚本进行配置，从而实现一定的 UI 自动化，一旦能够直接从 API 层面对接操作系统，那么 Hammerspoon 能够做的事情就非常多了：
@@ -38,7 +36,9 @@ Hammerspoon 实际上是将 macOS 的系统接口实现了一层转发，让用�
 ## Installation
 通过 Homebrew 安装：
 
-    brew install --cask hammerspoon
+```
+brew install --cask hammerspoon
+```
 
 ## 上手配置
 Hammerspoon 的默认配置在 `~/.hammerspoon/init.lua`，我个人通过将配置文件放在 [dotfiles](https://github.com/einverne/dotfiles) 中软链接到目的位置来同步配置。
@@ -71,7 +71,7 @@ hs.alert.show("Config reload!")
 
 这一套窗口管理方法来自 [ashfinal/awesome-hammerspoon](https://github.com/ashfinal/awesome-hammerspoon.git)
 
-不过我个人最常使用的快捷键还是 Hyper + h/l/j/k 可以将当前的窗口以左/右/下/上方式进行分屏。这里需要结合 [[Mac 应用 Karabiner Elements 键盘自定义工具]]
+不过我个人最常使用的快捷键还是 Hyper + h/l/j/k 可以将当前的窗口以左/右/下/上方式进行分屏。这里需要结合 [[Mac 应用 Karabiner Elements 键盘自定义工具]]。
 
 [[Mac 下的自定义快捷键]]
 
@@ -116,6 +116,7 @@ hs.hotkey.bind(hyper, "J", move_window("down"))
 ```
 
 ## 使用 Hammerspoon 在切换 WiFi 时自动切换对应设置
+
 当连接的 WiFi 发生变化的时候触发一个监听事件，更加详细的配置可以看我的 [dotfiles](https://github.com/einverne/dotfiles) 。
 
 ```
@@ -166,6 +167,7 @@ wifiWatcher:start()
 完美的代替了 [kawa](https://github.com/utatti/kawa) 这款切换输入法的工具。
 
 ## 定时自动执行脚本
+
 比如我使用 Obsidian 来作笔记，同时使用 git 来做版本管理，写一个脚本，每 30 分钟提交一次。
 
 ```
@@ -194,6 +196,7 @@ myTimer:start()
 比如定时提交 git commit，定时 git push 等等。当然直接使用 [Crontab](/post/2017/03/crontab-schedule-task.html) 来实现也是可以的。
 
 ## Mute on sleep
+
 在笔记本合上时静音
 
 ```
@@ -208,6 +211,7 @@ caffeinateWatcher:start()
 ```
 
 ## Locking the screen
+
 定义锁屏的快捷键。
 
 ```
@@ -216,11 +220,13 @@ hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'L', function() hs.caffeinate.startScreen
 ```
 
 ## 监听 USB 事件并做相应的设置
+
 对我而言最常见的就是当我接入外接键盘的时候，自动切换 `karabiner-Elements` 的键盘 profile。
 
 这样当我使用 macOS 自带的键盘和外置键盘的时候就可以保持一致的使用习惯。
 
 ## 绑定快捷键快速打开应用
+
 快速打开终端：
 
 ```
@@ -230,9 +236,11 @@ hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, 'K', function () hs.application.launchOrF
 更多的例子可以参考我的 [dotfiles](https://github.com/einverne/dotfiles)
 
 ## 防止长时间不用进入休眠
+
 参考 <https://github.com/einverne/dotfiles/hammerspoon/> 关键字 Caffeine。
 
 ## 将当前窗口移动到其他屏幕中
+
 定义了快捷键 Hyper + 1/2/3 将当前窗口快速移动到其他显示器：
 
 ```
@@ -250,7 +258,9 @@ hs.hotkey.bind({"ctrl", "alt", "cmd"}, "3", moveWindowToDisplay(3))
 ```
 
 ## 对虚拟桌面的支持
+
 非官方支持
+
 - <https://github.com/asmagill/hammerspoon_asm.undocumented>
 - <https://gist.github.com/TwoLeaves/a9d226ac98be5109a226>
 

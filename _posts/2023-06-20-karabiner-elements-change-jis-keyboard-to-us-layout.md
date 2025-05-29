@@ -6,10 +6,12 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ japanese-keyboard, japanese, mac, keyboard, keyboard-layout, us-layout ]
+tags: [ japanese-keyboard, japanese, mac, keyboard, keyboard-layout, us-layout, jis-keyboard, jis, ]
 create_time: 2023-06-29 13:49:41
 last_updated: 2023-06-29 13:49:41
 ---
+
+本文介绍一下在  macOS 下如何通过 Karabiner Elements 这一款键盘映射修改应用将 JIS 布局的日文键盘修改成我熟悉的 US Layout 的键盘。
 
 ## JIS 键盘布局
 
@@ -25,9 +27,10 @@ JIS 键盘布局是日本是最常见的键盘布局，它与国内常用的美�
 
 ![A8NI](https://photo.einverne.info/images/2023/06/29/A8NI.jpg)
 
+
 ## 通过 Karabiner Elements 修改键盘布局
 
-Karabiner Elements 是一款强大的键盘映射工具，可以很容易地修改 JIS 键盘布局到美式键盘布局。本文将向你展示如何使用 Karabiner Elements 来实现这一目标。
+[[Karabiner Elements]] 是一款强大的键盘映射工具，可以很容易地修改 JIS 键盘布局到美式键盘布局。本文将向你展示如何使用 Karabiner Elements 来实现这一目标。
 
 首先，你需要下载并安装 Karabiner Elements。你可以在官方网站上找到适用于 macOS 的安装程序，并按照指示进行安装。一旦安装完成，你就可以打开 Karabiner Elements 并开始配置键盘映射。
 
@@ -37,10 +40,24 @@ Karabiner Elements 是一款强大的键盘映射工具，可以很容易地修�
 brew install --cask karabiner-elements
 ```
 
+
+## 简单修改
+
+在 Simple Modifications 选项中配置了如下的映射关系。
+
+- 英数キー -> left command
+- left command -> left option
+- left option -> left control
+- left control -> caps lock
+
+![PJjD](https://photo.einverne.info/images/2025/05/27/PJjD.png)
+
+### Complex Mofications
+
 在 Karabiner Elements 的界面中，点击左侧的“Complex Modifications”选项卡，然后点击右下角的“Add rule”按钮。在这个界面也可以通过从[在线网站](https://ke-complex-modifications.pqrs.org/)导入的方式。点击 Import more rules from Internet，来从网站下载更多的规则。打开网站规则列表，其中包含各种可用的键盘映射规则。
 
 在规则列表中，找到“Japanese JIS Keyboard to US Keyboard：Remap Symbol Keys”规则，并勾选它。这将启用该规则并应用键盘映射。
 
-接下来，你可以点击右侧的“Details”按钮，以查看该规则的详细信息。在这里，你可以看到该规则将会对哪些键进行映射，以及映射的具体内容。默认情况下，该规则将会将 JIS 键盘布局中的一些键映射为美式键盘布局中的相应键。例如，JIS 键盘布局中的 “@” 键将会映射为 “[” 键，而 “[” 键将会映射为 “]” 键。
+接下来，你可以点击右侧的“Details”按钮，以查看该规则的详细信息。在这里，你可以看到该规则将会对哪些键进行映射，以及映射的具体内容。默认情况下，该规则将会将 JIS 键盘布局中的一些键映射为美式键盘布局中的相应键。例如，JIS 键盘布局中的 “@” 键将会映射为 `[` 键，而 `[` 键将会映射为 `]` 键。
 
 现在，可以关闭 Karabiner Elements，并开始使用修改后的键盘布局。打开任何文本编辑器或其他应用程序，你会发现 JIS 键盘布局已经被修改为美式键盘布局。
