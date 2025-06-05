@@ -1,4 +1,4 @@
-F---
+---
 layout: post
 title: "告别手动管理窗口的烦恼 AeroSpace 极致的平铺窗口管理器上手体验"
 aliases:
@@ -14,7 +14,6 @@ dg-publish: false
 ---
 
 [AeroSpace](https://github.com/nikitabobko/AeroSpace) 是一个 macOS 上的 [[i3]] 类似的平铺窗口屏幕管理工具，很早之前我也介绍过另外一款开源的窗口平铺管理应用 [Yabai](https://blog.einverne.info/post/2020/09/mac-os-tiling-window-manager-yabai.html)，但是 Yabai 要禁用 macOS 的 SIP，最终还是没有利用起来，目前还是靠着 Contexts，[[Hammerspoon]] 来管理窗口。但是最近再次看到了 AeroSpace 这样一款平铺窗口管理器，它轻量，高效，灵活的配置直接成为了我窗口管理的第一候选。
-
 
 ## 什么是平铺窗口管理器
 
@@ -40,7 +39,8 @@ Tiling Window Manager（平铺式窗口管理器）是一种将屏幕空间自�
 - 活跃的社区和开发
 
 ## 个人的调整
-在很多人的配置和习惯中，将 mod+Enter 作为创建终端的快捷键，但是我个人因为在 Linux 就保留了使用 F12 呼出下拉式终端的方式，并且我使用的终端无论是 Guake， Kitty 还是 Warp  都可以在应用内创建多个 Tab 来管理，所以我个人还是保留了 F12 作为调用终端的习惯。
+
+在很多人的配置和习惯中，将 mod+Enter 作为创建终端的快捷键，但是我个人因为在 Linux 就保留了使用 F12 呼出下拉式终端的方式，并且我使用的终端无论是 Guake， Kitty 还是 Warp 都可以在应用内创建多个 Tab 来管理，所以我个人还是保留了 F12 作为调用终端的习惯。
 
 ## 安装
 
@@ -63,6 +63,7 @@ AeroSpace 使用 TOML 格式作为核心配置文件，这个默认的配置文�
 ## 使用
 
 ### 核心概念
+
 在上手使用之前，可以先了解一下几个概念。
 
 #### 显示模式
@@ -78,6 +79,7 @@ AeroSpace 使用 TOML 格式作为核心配置文件，这个默认的配置文�
 Workspace（工作区），类似 macOS 中的虚拟桌面，每个工作区都有自己独立的显示模式，窗口布局。我通常会为不同的任务分配不同的工作区，比如一个用于编码，一个用于浏览器查资料，一个用于通讯工具。
 
 #### Callbacks
+
 Callbacks 回调，AeroSpace 提供了非常多的回调函数，用户可以在这些回调函数中执行命令，比如 `on-window-detected` 回调，就会在检测新窗口时调用。可以使用如下的语法来配置自己的行为。
 
 ```
@@ -90,7 +92,6 @@ Callbacks 回调，AeroSpace 提供了非常多的回调函数，用户可以在
     check-further-callbacks = true
     run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
 ```
-
 
 #### 其他概念
 
@@ -108,22 +109,22 @@ Callbacks 回调，AeroSpace 提供了非常多的回调函数，用户可以在
 - 移动窗口到工作区
 - 切换模式
 
-| 功能                   | 快捷键                          |
-| -------------------- | ---------------------------- |
-| 修改为堆叠模式              | Option-comma                 |
-| 修改为平铺模式              | Option-/                     |
-| 当前焦点切换到左/下/上/右窗口     | Option-H/J/K/L               |
-| 将当前窗口向左/下/上/右移动      | Shift-Option-H/J/K/L         |
-| 调整当前窗口的大小            | Shift-Option -/=             |
-| 切换到编号为 X 的工作区        | Option-X                     |
-| 将当前窗口移动到编号 X 的工作区    | Shift-Option-X               |
-| 在最近两个工作区切换           | Option-Tab                   |
-| 将当前窗口移动到另外显示器        | Shift-Option-Tab             |
-| 将当前窗口所属布局切换为横向       | Option-/（slash）              |
-| 将当前窗口所属布局切换为纵向       | Option-; (semicolon)         |
-| 重置当前工作区布局为等分         | Shift-Option-; 然后按 r         |
-| 当前窗口改为悬浮             | Shift-Option-; 然后按 f         |
-| 关闭所有其他窗口             | Shift-Option-; 然后按 Backspace |
+| 功能                                  | 快捷键                          |
+| ------------------------------------- | ------------------------------- |
+| 修改为堆叠模式                        | Option-comma                    |
+| 修改为平铺模式                        | Option-/                        |
+| 当前焦点切换到左/下/上/右窗口         | Option-H/J/K/L                  |
+| 将当前窗口向左/下/上/右移动           | Shift-Option-H/J/K/L            |
+| 调整当前窗口的大小                    | Shift-Option -/=                |
+| 切换到编号为 X 的工作区               | Option-X                        |
+| 将当前窗口移动到编号 X 的工作区       | Shift-Option-X                  |
+| 在最近两个工作区切换                  | Option-Tab                      |
+| 将当前窗口移动到另外显示器            | Shift-Option-Tab                |
+| 将当前窗口所属布局切换为横向          | Option-/（slash）               |
+| 将当前窗口所属布局切换为纵向          | Option-; (semicolon)            |
+| 重置当前工作区布局为等分              | Shift-Option-; 然后按 r         |
+| 当前窗口改为悬浮                      | Shift-Option-; 然后按 f         |
+| 关闭所有其他窗口                      | Shift-Option-; 然后按 Backspace |
 | 将当前窗口与其左/下/上/右窗口归为一组 | Shift-Option-/ 然后按 H/J/K/L   |
 
 作者在源代码中提供了[带注释版本](https://github.com/nikitabobko/AeroSpace/blob/main/config-examples/default-config.toml) 的说明，如果熟悉 i3 也可以参考 [i3 按键](https://github.com/nikitabobko/AeroSpace/blob/main/config-examples/i3-like-config-example.toml)。
@@ -131,9 +132,10 @@ Callbacks 回调，AeroSpace 提供了非常多的回调函数，用户可以在
 AeroSpace 的默认快捷键以 Option 为主。
 
 ### 工作区
+
 AeroSpace 重新实现了 macOS 的空间，并称之为 Workspace。当工作区不活跃时，所有窗口都会被放置在屏幕可见区域之外的右下角或左下角。一旦切换回工作区，窗口就会被重新放置到屏幕的可见区域。
 
-上面快捷键部分提到了，可以使用 Option 加上数字键或者任意按键（不包括HJKL）来切换对应的工作区，Option+Tab 来在最近的两个工作区之间切换。
+上面快捷键部分提到了，可以使用 Option 加上数字键或者任意按键（不包括 HJKL）来切换对应的工作区，Option+Tab 来在最近的两个工作区之间切换。
 
 对于多显示器，AeroSpace 支持每个显示器拥有独立的工作区，可以使用 Option Shift Tab 将整个工作区移动到下一个显示器。
 
@@ -150,7 +152,6 @@ osascript -e 'id of app "App Name"'
 # 获取应用的所有窗口标题
 osascript -e 'tell application "System Events" to tell process "App Name" to get name of every window'
 ```
-
 
 ### 设置窗口间隔
 
@@ -248,7 +249,6 @@ aerospace move-workspace-to-monitor secondary
 
 这个模式非常类似 Tmux，以及我在 [[Hammerspoon]] 文章中介绍过的快捷键模式，因为这一类的产品操作完全依赖于键盘，所以为了避免快捷键冲突，经常会需要使用组合的快捷键，先通过一个快捷键触发进入某种模式之后，再按下按键来实现真正的动作。
 
-
 ## 比较
 
 ### AeroSpace vs 其他工具 (Yabai, Amethyst)
@@ -267,7 +267,6 @@ aerospace move-workspace-to-monitor secondary
 ### 学习曲线
 
 如果你之前没有接触过平铺窗口管理器，初期可能会有一点学习曲线，特别是记忆各种快捷键。但是一旦熟悉之后，效率的提升是巨大的。建议可以从默认的配置开始，根据自己的需求逐步改进和适配。
-
 
 ### 备份你的配置
 
