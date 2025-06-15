@@ -45,7 +45,7 @@ last_updated: 2022-10-27 23:05:37
 
 ## 笔记 Obsidian 日语相关插件
 
-- [[2022-11-06-japanese-learning-tools-in-obsidian]] 见这里 [在 Obsidian 中安装日语相关的插件辅助笔记](/post/2022/11/japanese-learning-tools-in-obsidian.html)
+- [[2022-11-06-japanese-learning-tools-in-obsidian]] 见这里 [在 Obsidian 中安装日语相关的插件辅助笔记](https://blog.einverne.info/post/2022/11/japanese-learning-tools-in-obsidian.html)
 
 ## Chrome
 

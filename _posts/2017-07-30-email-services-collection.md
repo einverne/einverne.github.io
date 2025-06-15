@@ -195,6 +195,11 @@ Mailchannels 是一家邮件发送服务提供商。
 
 ![vBO8NyxMsF](https://pic.einverne.info/images/vBO8NyxMsF.png)
 
+## Brevo
+
+[Brevo](https://www.brevo.com/) 是一个电子邮件营销网站。免费套餐提供每天 300 封邮件发送。
+
+
 ## 相关
 
 - [[SMTP Relay]]
