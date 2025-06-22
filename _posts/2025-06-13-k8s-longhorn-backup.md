@@ -101,3 +101,7 @@ Longhorn 允许为每个卷配置周期性的备份任务。
 ![H5eltJQkf_](https://pic.einverne.info/images/H5eltJQkf_.png)
 
 Longhorn 有一个优化机制，只有当卷的数据自上次备份以来发生了变化时，周期性备份任务才会创建新的备份，从而避免生成大量内容重复的备份。
+
+## related
+
+- [[Velero]]
