@@ -89,13 +89,17 @@ Dokploy 的优势
 
 但是 Coolify 更友好的一点是，Coolify 支持内建的应用市场，支持通过界面点击完成安装。另外 Coolify 拥有非常活跃的社区，文档相对丰富。
 
+## 应用
+
+- [[Trigger]]
+
 ## related
 
 - [[Dokku]]
 - [[CapRover]]
 - [[Coolify]]
 - [[Tsuru]]
-- [[Rancher]]
+- [[Rancher]]，开源的容器管理平台
 - [[Porter]]
 - [[PocketBase]]
 - [[Dockge]]
