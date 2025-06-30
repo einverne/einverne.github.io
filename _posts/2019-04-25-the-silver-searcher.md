@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Silver Searcher: ag 使用"
+aliases: "The Silver Searcher: ag 使用"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -69,8 +70,10 @@ ag 提供了 `-G` 选项，可以用来缩小查询的范围，`-G PATTERN` 可�
 For more details, you can check `man ag`
 
 ## Drawback
+
 用了一段时间，唯一发现的缺点就是想要搜索中文内容时，发现`ag`并不能很好的处理。
 
 ## reference
 
 - <https://github.com/ggreer/the_silver_searcher>
+- [[ripgrep]]

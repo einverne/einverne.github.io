@@ -17,16 +17,15 @@ dg-publish: false
 
 ## 功能
 
-[whistle](https://github.com/avwo/whistle) 是一个 NodeJS 下的 Debug 代理工具。
+[whistle](https://github.com/avwo/whistle) 是一个 NodeJS 实现的 Debug 代理工具。
 
-- 支持 macOS，Windows
+- 支持 macOS，Windows，提供 Windows 和 macOS 客户端
 - 可以作为 HTTP，HTTPS，WebSocket 代理和反向代理
 - 内置 Weinre，Log，Composer 等工具可以查看远程页面的 DOM 接口
 - 支持抓包和修改 HTTP，HTTPS，HTTP2，WebSocket，TCP 请求
 - 支持重放及构造
 - 支持设置上游代理，PAC 脚本，Hosts，延迟，限速
 - 支持查看远程 console 日志
-- 提供 Windows 和 macOS 客户端
 
 ## 安装
 

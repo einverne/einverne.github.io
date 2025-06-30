@@ -65,3 +65,8 @@ gdu / > file                          # write stats to file, do not start intera
 gdu -o- / | gzip -c >report.json.gz   # write all info to JSON file for later analysis
 zcat report.json.gz | gdu -f-         # read analysis from file
 ```
+
+
+## related
+
+- macOS 下的磁盘分析工具 [[GrandPerspective]]

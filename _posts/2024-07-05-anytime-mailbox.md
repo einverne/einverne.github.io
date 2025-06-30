@@ -27,7 +27,9 @@ dg-publish: false
 2. [FirstLogic](https://firstlogic.com/tools/verify-address)
 3. [Smarty](https://www.smarty.com/products/single-address)
 
-我们在这三个网站上都查一遍。如果"CMRA"或"Commercial Mail Receiving Agency"显示为"N"，或者"RDI"显示为"Residential"，那就说明是私人地址。
+我们在这三个网站上都查一遍。如果"CMRA"或"Commercial Mail Receiving Agency"显示为"N"，或者"RDI"（Residential Delivery Indicator）显示为"Residential"，那就说明是私人地址。
+
+在 USPS 的查询结果中还有一个 DVP（Delivery Point Validation）验证地址是否真实，可以送达。
 
 另外，你还可以在谷歌地图上看看街景。如果建筑看起来像住宅，那多半就是私人地址了。
 

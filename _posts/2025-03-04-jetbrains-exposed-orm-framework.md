@@ -17,7 +17,9 @@ Exposed 是 [[JetBrains]] 在数年前推出的轻量级 [[ORM]] 框架，Kotlin
 
 Exposed 是基于 JDBC 实现，屏蔽了底层建立数据库连接，编写 SQL，操作数据，关闭数据库连接的操作，只需要关心数据操作。
 
-Exposed 提供了两种形式 API，面向 DSL 的 API 和面向对象的 API。
+Exposed 提供了两种形式 API，面向 DSL 的 API 和面向对象的 API。如果想要使用轻量级的 ORM 可以使用 DAO 模式，如果想要使用类型安全的 SQL，推荐使用 DSL。[^1]
+
+[^1]: <https://www.jetbrains.com/help/exposed/home.html>
 
 ## 特点
 
@@ -27,6 +29,15 @@ Exposed 提供了两种形式 API，面向 DSL 的 API 和面向对象的 API。
 - 减少样板代码
 - 支持非常多的数据库，H2，MySQL，MariaDB，Oracle，PostgreSQL，SQL Server，SQLite 等
 - 双重 API 设计，DSL 和 DAO 两种访问方式
+
+## 概念先行
+
+在 Exposed 中，数据库表由 `Table` 类表示，表中的字段由 `Column` 类表示。
+
+Table 在 `org.jetbrains.exposed.v1.sql` 包中定义。DAO API 中提供了 IdTable 类，继承自 Table，这个类默认会包含 id 作为 Primary Key。
+
+### 定义数据表
+
 
 ## 使用
 
@@ -385,6 +396,7 @@ object Members : IntIdTable("members") {
 ```
 
 ## 分页处理
+
 对于大量数据查询，实施分页处理以避免内存溢出。
 
 ```kotlin
