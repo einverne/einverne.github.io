@@ -448,6 +448,18 @@ Database.connect(HikariDataSource(hikariConfig))
 ```
 
 
+## SchemaUtils
+SchemaUtils 提供了一系列静态方法来管理数据库模式，包括表的创建、删除、索引管理等操作。
+
+创建缺失的表和列
+
+```
+transaction {
+    // 只创建不存在的表和列
+    SchemaUtils.createMissingTablesAndColumns(Users, Orders)
+}
+```
+
 ## related
 
 - [[Ktorm]]，轻量，无依赖

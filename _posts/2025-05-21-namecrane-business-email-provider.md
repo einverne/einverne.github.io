@@ -97,6 +97,20 @@ SFTP信息
 
 这些新功能提升了在移动设备上使用的便捷性，用户可以获得实时邮件通知。
 
+## SMTP
+
+配置信息如下
+
+| Protocol | Name / Host       | Port | SSL / TLS     | Purpose                         |
+| -------- | ----------------- | ---- | ------------- | ------------------------------- |
+| SMTP     | us1.workspace.org | 465  | Yes (SSL/TLS) | Outgoing emails                 |
+| SMTP     | us1.workspace.org | 587  | Yes (SSL/TLS) | Outgoing emails                 |
+| POP      | us1.workspace.org | 995  | Yes (SSL/TLS) | POP client connections over SSL |
+| IMAP     | us1.workspace.org | 993  | Yes (SSL/TLS) | IMAP client over SSL            |
+| POP      | us1.workspace.org | 110  | None          | POP client connections          |
+| IMAP     | us1.workspace.org | 143  | None          | IMAP client connections         |
+
+
 ## 历史套餐价格
 
 ```

@@ -239,6 +239,55 @@ val structurallyEqual = user1 == user2    // true，调用equals()
 val referentiallyEqual = user1 === user2  // false，检查引用
 ```
 
+## 接口
+Kotlin 使用 interface 关键字定义接口
+
+```
+interface MyInterface {
+    fun bar() // 未实现方法
+    fun foo() {   // 默认实现
+        println("foo")
+    }
+}
+```
+
+支持属性
+
+```
+interface Behavior {
+    val canWalk: Boolean // 抽象属性
+    val wings: String
+        get() = "wings" // 提供访问器实现
+}
+```
+
+可以使用逗号分隔，实现多个接口
+
+```
+class MyClass : InterfaceA, InterfaceB {
+    // 实现所有接口的抽象方法
+}
+```
+
+当实现多个接口存在同名方法时，Kotlin 提供了明确的冲突解决
+
+```
+interface A {
+    fun foo() { print("A") }
+}
+
+interface B {
+    fun foo() { print("B") }
+}
+
+class C : A, B {
+    override fun foo() {
+        super<A>.foo() // 调用接口 A 的实现
+        super<B>.foo() // 调用接口 B 的实现
+    }
+}
+```
+
 ## 类
 
 ### 类属性访问
@@ -274,6 +323,63 @@ class Person(val name: String) {
     }
 }
 ```
+
+### 类继承
+Kotlin 中所有的类都有一个共同的超类 Any，注意 Any 不是 java.lang.Object。
+
+默认情况下 Kotlin 的类是 final 的，不能被继承，如果要让类能继承必须使用 open 关键字
+
+```
+open class Base
+```
+
+继承语法使用 `:` 来表示
+
+```
+open class Person(val name: String, val age: Int)
+
+class Student(name: String, aget: Int, val studentId: String) : Person(name, age)
+```
+
+如果派生类没有主构造函数，每个次构造函数必须使用 super 关键字初始化基类
+
+```
+class MyView : View {
+    constructor(ctx: Context) : super(ctx)
+    constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
+}
+```
+
+### 方法和属性重写
+父类的方法需要使用 open 修饰才能被重写，子类使用 override 关键字重写方法
+
+```
+open class Person {
+    open fun walk() {
+        println("慢慢走")
+    }
+}
+
+class Doctor : Person() {
+    override fun walk() {
+        println("快走")
+    }
+}
+```
+
+同样属性也需要 open 才能被重写。
+
+```
+open class Animal {
+    open val species: String = "Unknown"
+}
+
+class Dog : Animal() {
+    override val species: String = "Canine"
+}
+```
+
+Kotlin 鼓励开发者更加谨慎地设计类的继承关系，避免意外的继承问题，提高代码的安全性和可维护性。
 
 ### 数据类
 

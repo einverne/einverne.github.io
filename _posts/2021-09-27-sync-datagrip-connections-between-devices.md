@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "在两个 DataGrip 之间同步数据库配置以及一些使用笔记"
-aliases: "在两个 DataGrip 之间同步数据库配置以及一些使用笔记"
+title: "在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记"
+aliases: "在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记"
 tagline: ""
 description: ""
 category: 经验总结
@@ -10,7 +10,7 @@ last_updated: 2024-02-23 09:13:29
 create_time: 2021-09-27 07:58:28
 ---
 
-DataGrip 是 JetBrains 出品的一款数据库管理工具。
+[[DataGrip]] 是 JetBrains 出品的一款数据库管理工具。
 
 ## 同步
 
