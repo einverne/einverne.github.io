@@ -11,7 +11,6 @@ tags: [ jwt, authentication, session, cookie, python, java ]
 last_updated:
 ---
 
-
 现代 Web 应用一般常用的认证方式有如下两种：
 
 - session
@@ -23,7 +22,6 @@ session 认证需要服务端大量的逻辑处理，保证 session 一致性，
 
 - Cookie 会有数量和长度限制
 - Cookie 如果被拦截可能存在安全性问题
-
 
 ## 为什么要认证
 
@@ -52,6 +50,7 @@ session 认证需要服务端大量的逻辑处理，保证 session 一致性，
 - Token 信息在服务端增加了一次验证数据完整性的操作，比 Session 认证方式增加了 CPU 开销
 
 ## JWT
+
 JSON Web Token(JWT) 是一个开放标准（[RFC 7519](https://tools.ietf.org/html/rfc7519)），定义了紧凑、自包含的方式，用于 JSON 对象在各方之间传输。
 
 JWT 实际就是一个字符串，三部分组成：
@@ -59,7 +58,6 @@ JWT 实际就是一个字符串，三部分组成：
 - 头部
 - 载荷
 - 签名
-
 
 ### header
 Header 由两部分组成，token 类型和算法名称（HMAC SHA256，RSA 等等）

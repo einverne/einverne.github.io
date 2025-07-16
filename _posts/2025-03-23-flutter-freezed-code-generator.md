@@ -58,7 +58,7 @@ flutter pub add json_annotation
 flutter pub add dev:json_serializable
 ```
 
-直接修改 pubspec.yaml 文件
+直接修改 `pubspec.yaml` 文件
 
 ```
 dependencies:
