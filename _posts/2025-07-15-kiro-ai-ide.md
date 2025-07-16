@@ -101,6 +101,18 @@ Kiro 集成多模型对话，支持 Claude Sonnet 4/3.7 及其他 Bedrock 模型
 
 Kiro 支持多种输入格式，包括文件、代码库、文档、图像、Git 差异、终端输出等，构建全面的项目理解能力。
 
+## 缺点
+
+Kiro 作为一个预览版的产品，个人感觉目前还有很多不足的地方，虽然 Specs 的概念很好，但是生成规范文档和约束非常慢，
+
+另外也经常出现用着用着就不能用的情况。
+
+![88RX](https://photo.einverne.info/images/2025/07/16/88RX.png)
+
+还有这个错落有致的图标是怎么回事，发布都没有对齐。
+
+![8jSi](https://photo.einverne.info/images/2025/07/16/8jSi.png)
+
 ## 与竞品对比
 
 ### VS Cursor
