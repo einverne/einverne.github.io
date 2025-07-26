@@ -26,7 +26,7 @@ Spokenly 来自一个独立开发者 Vadim Akhmerov，在 macOS 下应用只有 
 ## 特性
 
 - 注重隐私，音频不会离开 Mac，调用本地 Whisper 模型
-- 可以调用 GPT-4o 进行转写
+- 可以选择调用 GPT-4o 进行转写
 - 内置标点符号和语音控制
 - 可以语音打开应用，链接，快捷方式等
 - 文件转录，支持 mp3, m4a, wav, flac 以及 mp4, mov 等等格式
@@ -45,6 +45,8 @@ Spokenly 来自一个独立开发者 Vadim Akhmerov，在 macOS 下应用只有 
 如果不想使用在线的模型，可以直接下载本地的 Whisper Large V3 Turbo(Quantized) 模型，这个兼顾了识别速度和准确度。
 
 ![PyVc](https://photo.einverne.info/images/2025/05/19/PyVc.png)
+
+Spokenly 使用起来非常简单，通过快捷键触发录制音频，松开快捷键就可以进行转录。
 
 ## related
 

@@ -31,6 +31,19 @@ uv 是 [astral-sh](https://github.com/astral-sh) 社区利用 Rust 编写的 Pyt
 brew install uv
 ```
 
+也可以使用安装脚本
+
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+检查是否安装成功
+
+```
+uv --version
+uv help
+```
+
 ## 使用
 
 ### 管理多版本
@@ -110,6 +123,8 @@ uv venv
 
 ```
 uv pip install flask
+uv pip uninstall requests
+uv pip list
 ```
 
 uv pip 和 pip 使用一致。
@@ -157,7 +172,7 @@ uv lock --upgrade-package flask
 或者更新所有包
 
 ```
-uv lock --upgrade
+uv update
 ```
 
 ### 将包提供的命令安装到系统

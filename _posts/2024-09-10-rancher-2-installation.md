@@ -184,17 +184,22 @@ kubectl get pods --namespace cert-manager
 
 ### 安装 Rancher
 
+首先设定密码
+
+```
+export PASSWORD=your-secure-password
+```
+
 安装
 
 ```
 helm install rancher rancher-stable/rancher \
   --namespace cattle-system \
   --set hostname=rancher.YOUR_DOMAIN.com \
-  --set bootstrapPassword=admin \
+  --set bootstrapPassword=$PASSWORD \
   --set ingress.tls.source=letsEncrypt \
   --set letsEncrypt.email=me@example.org \
-  --set letsEncrypt.ingress.class=traefik \
-  --set privateCA=true
+  --set letsEncrypt.ingress.class=traefik
 ```
 
 - 将 rancher.YOUR_DOMAIN.com 替换为你的实际域名。
@@ -226,6 +231,13 @@ kubectl -n cattle-system rollout status deploy/rancher
 [FATAL] Aborting system-agent installation due to requested strict CA verification with no CA checksum provided
 ```
 
+在 Rancher 下游节点注册或部署 RKE3/K3s 集群时，如果 agent-tls-mode 处于严格（strict）而注册命令中缺少 `--ca-checksum` 参数时，`system-agent-install.sh` 脚本会直接终止并抛出以上错误。
+
+Rancher >= 2.9 之后默认开启 strict 模式，对策
+
+- 如果有私有 CA，保留 strict，可以计算 CA SHA256 并在注册命令中添加 `--ca-checksum hash` ，安全级别最高，后续需要更新证书
+- 使用公有 CA（Let's Encrypt等），全局将 agent-tls-mode 修改为 system-store，一次性解决所有节点问题，但是信任链放宽，导致理论攻击面扩大
+- 临时测试，PoC 环境，可以在注册命令前添加 `CATTLE_AGENT_STRICT_VERIFY=false` 最简单绕过检查，但是不建议在生产环境使用，违背零信任原则。
 
 ## 其他命令
 
@@ -242,26 +254,5 @@ sudo rm -rf /etc/rancher /var/lib/rancher
 ps aux | grep rancher
 sudo rm /etc/systemd/system/rancher-*
 sudo systemctl daemon-reload
-```
-
-
-
-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-
-
-```
-curl -vk https://<RANCHER_SERVER_URL>/v3/settings/cacerts | jq -r .value | sha256sum | awk '{print $1}'
-```
-
-```
-curl -fL https://rancher.einverne.info/system-agent-install.sh | sudo  sh -s - --server https://rancher.einverne.info --label 'cattle.io/os=linux' --token 6rfv4hgmmffvj2nz9f9fsrlg2khjnnthzlg9hk8cbfsn5vldj6bgrz --etcd --controlplane --worker
-```
-
-```
-curl -fL https://rancher.einverne.info/system-agent-install.sh | sudo  sh -s - --server https://rancher.einverne.info --label 'cattle.io/os=linux' --token 6rfv4hgmmffvj2nz9f9fsrlg2khjnnthzlg9hk8cbfsn5vldj6bgrz --ca-checksum be15ab9bb1b034c17c8e2d13a748fead0165df3af96f8bcb76eb4cfbb461b5ee --etcd --controlplane --worker
-```
-
-```
-curl -vk https://rancher.einverne.info/v3/settings/cacerts | jq -r .value | sha256sum | awk '{print $1}'
 ```
 
