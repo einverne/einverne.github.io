@@ -35,6 +35,12 @@ dg-publish: false
 
 调查一番之后发现，这个方案可能是比较好的方案，并且只依赖邮件和 Telegram，这两个都是手机上日常已经装好的应用。
 
+### Remote-Code
+
+[Remote Code](https://remote-code.com) 提供了一种方法，可以让我们在手机上远程控制我们的电脑。我们只需要在电脑上安装Uplink这样的一个控制端,然后在手机上使用Remote Code 就可以对电脑上的文件启用远程控制，进行 Vibe Coding。
+
+更多选项 [Claude Code Templates](https://myaltbox.com/NRIa8OplKPB)
+
 ## Claude Code Remote 核心功能
 
 - 邮件通知，当 Claude 完成任务时，系统会自动发送包含完整结果的邮件通知，用户无需持续监控任务状态。通知邮件包括了任务的描述，Claude 的完整响应以及明确的操作提示。
