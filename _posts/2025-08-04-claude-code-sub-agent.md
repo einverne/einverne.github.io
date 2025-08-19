@@ -170,3 +170,9 @@ For each analysis:
 
 Always ensure queries are efficient and cost-effective.
 ```
+
+## subagents 模板
+
+- <https://github.com/contains-studio/agents>
+- <https://github.com/wshobson/agents>
+- SuperClaude
