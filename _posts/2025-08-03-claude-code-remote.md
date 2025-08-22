@@ -75,4 +75,4 @@ ALLOWED_SENDERS=your-notification-email@gmail.com
 ## related
 
 - [[Greptile]] 是一个有 AI 驱动的代码审查服务，提供无限制的代码库连接和审查，每月固定费用 30 美元，GitHub 和 GitLab 集成。
-- [[vibetunnel]]
+- [[VibeTunnel]]
