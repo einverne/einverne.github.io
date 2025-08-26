@@ -18,6 +18,7 @@ last_updated:
 - [[CorePress-Pro]]
 - [d8](https://themebetter.com/theme/d8)
 - [cocoon](https://github.com/xserver-inc/cocoon) 开源的 WordPress 主题
+
 ### puock
 
 [puock](https://github.com/Licoy/wordpress-theme-puock) 一款开源的，高颜值，自适应的 WordPress 主题，支持白天与黑夜模式、无刷新加载等
@@ -64,7 +65,6 @@ CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售�
 
 ![P7iS9Z--4x](https://pic.einverne.info/images/P7iS9Z--4x.png)
 
-
 ### CorePress Pro
 
 [CorePress Pro](https://www.lovestu.com/corepress.html) 一款开源的 WordPress 主题。但是目前也提供两个不同的版本，Free 版和 Pro 版，Pro 版一次性付费 99 元。
@@ -75,7 +75,6 @@ CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售�
 响应式，短代码，绿色，多彩，双栏，博客主题，小清新，代码高亮，强大，免费主题，CMS 主题，卡片式，图片主题
 
 [Independent Publish 2](https://wordpress.com/theme/independent-publisher-2) 是一款非常简洁的 WordPress 主题，由 Raam Dev 开发。
-
 
 ## 主题开发者
 
@@ -98,7 +97,6 @@ CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售�
 
 [blocksy](https://creativethemes.com/blocksy/) 是一款非常强大的主题。
 
-
 ### B2 主题
 
 [B2](https://7b2.com/) 主题是一款非常不错的商业用主题。
@@ -112,6 +110,21 @@ CoreNext 是一款使用 Vue 和 Element 混合开发的 WordPress 主题，售�
 [DUX](https://themebetter.com/theme/dux) 是一款商业化比较成功的主题，售价 799 终身。
 
 themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站，都是使用 DUX 主题。
+
+### JustNews
+
+JustNews 是 WPCOM 团队自主开发的 WordPress 主题，专为博客、自媒体及资讯类网站设计。具有如下的核心特点：
+
+- 可视化编辑内置了自主研发的可视化编辑器，支持拖拽组合模块，零代码即可搭建前端用户中心。
+- 前端用户可以支持邮箱、手机、社交媒体（包含了 QQ、微信、微博、Facebook 等）注册与登录，并提供私信、关注、系统通知等功能。
+- SEO 深度优化代码及 SEO 定制，内置自动抓取关键字，自动 Alt, 百度 API 推送等功能。
+- WebP 图片格式，自动兼容处理，提高加载速度并降低带宽成本。
+- 兼容付费问答社区插件 QA Press 可搭建轻量级问答社区。
+- 小意识设计和多终端适配，完美结合 PC、手机、平板等设备，并提供昼夜风格切换和多种主题风格。
+- 丰富的扩展功能支持快讯专题投稿、评论、打赏、点赞、收藏、分享、海报以及 [[WooCommerce]] 商城功能。
+- 一次购买，终身免费使用和升级
+
+在历史上，每年 618 和双十一都有买一赠一的授权，当前的价格是人民币 599 元，在 2019 年，常规售价是 499 元。
 
 ### jnews
 
@@ -138,7 +151,9 @@ themebetter 主题对 SEO 非常友好，国内流量前几的主机测评网站
 [zibll](https://www.zibll.com/) 是一款 WordPress 商城主题。包含付费商城，VIP 会员，社区论坛，用户权限等等功能。599 元 3 个域名。
 
 ### Grace
+
 Grace 主题是一款自适应的 WordPress 博客主题。目前的版本有 Grace 8.0
 
 ### 柒比贰
+
 [柒比贰](https://7b2.com/) 主题是一款 WordPress 主题，包括了圈子，商铺，动态，等等功能，766 元，两个顶级域名。
