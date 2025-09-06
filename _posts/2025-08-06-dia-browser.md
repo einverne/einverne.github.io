@@ -15,9 +15,15 @@ dg-publish: false
 
 很久以前写过一篇 [Arc 浏览器初印象](https://blog.einverne.info/post/2022/09/arc-browser-first-impression.html)， 一晃已经过去了 3 年，Arc 提出来了很多浏览器的创新功能，比如非常抢眼的无地址栏设计，侧边栏 Spaces 独立空间，智能标签页管理，分栏分屏，快捷命令栏，内置应用的迷你预览窗口，内置的白板和笔记等等。在过去的很长一段时间当中， Arc 都是我的备用浏览器，之所以没有成为主力是因为我的很多工作流还依赖于 Chrome 以及 Chrome 下庞大的插件生态。但是 Arc 浏览器的创始人在前段时间宣布了停止更新 ARK，并且推出了一款新的浏览器，All in AI，这款新的浏览器叫做 Dia。
 
+[YouTube](https://youtu.be/Akxx2vGs1FE) [Bilibili]()
+
 Dia 浏览器在继承了 Arc 浏览器简单、高效、安全的基础之上，又以 AI 为核心进行了重新设计。 我们可以看到， Dia 浏览器非常的简洁。Dia 浏览器的核心设计理念是 AI-first，不是在传统浏览器上添加 AI 功能，而是从底层交互范式出发重新构建浏览器的体验。
 
 ![4p8uIFngQQ](https://pic.einverne.info/images/4p8uIFngQQ.png)
+
+- 右侧对话栏
+- Skills，网页总结
+- 直接生成文字到编辑框
 
 ## 核心功能
 
@@ -42,6 +48,9 @@ DIA 浏览器构建了自己独特的 Skill 技能，这是一个可定制的 AI
 ![bzeYiJ8MTS](https://pic.einverne.info/images/bzeYiJ8MTS.png)
 
 当然官网也给出了更多的 [Skill 使用技巧](https://www.diabrowser.com/skills)。 用户可以根据自己的需求，创建个人专用的工作流和快捷指令。 DIA 浏览器也会根据用户的意图自动调用最合适的技能。
+
+- 一周总结 `/weekly-work`
+
 
 ### 个性化的 AI 风格
 
