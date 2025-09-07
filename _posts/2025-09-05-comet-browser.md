@@ -19,7 +19,7 @@ dg-publish: false
 
 我们知道，在 AIGC 的时代，Google 的搜索面临着非常大的挑战。而现在，Perplexity、ChatGPT、Claude（Anthropic）等纷纷去抢占用户的搜索入口，Google 虽然坐拥着 Chrome 和 Android 的两大平台（桌面和移动端），但是在这两年却一直缓步前行，虽然也在 Chrome 里面新增了很多功能，比如说内置的 Google Lens 图片搜索，以及在 Chrome 138 版本之后集成的小模型 Gemini Nano，可以直接在本地实现部分的 AI 功能，比如内容生成、文本分析等。但是，这些绝大部分的都没有落地成为真正的 Chrome 的功能。 反而是一些 Chrome 上的插件 [Monica](https://gtk.pw/monica)，[[Harpa AI]] 有着非常惊艳的功能，可以实现非常智能的浏览器自动化，更甚至，Claude 在最近也推出了 Chrome 浏览器插件。 我还没有拿到 Claude 浏览器插件的试用体验，那我们今天就先来介绍一下 Comet。
 
-[YouTube](https://youtu.be/AUbWoh8CBtk)
+[YouTube](https://youtu.be/AUbWoh8CBtk) [Bilibili](https://www.bilibili.com/video/BV1JXYMzREsX/)
 
 ## Comet 是什么
 
