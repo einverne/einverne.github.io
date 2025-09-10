@@ -1,11 +1,11 @@
 ---
 layout: post
-title: ""
+title: "Claude Code 利用 ccusage 统计使用情况"
 aliases:
-- ""
+- "Claude Code 利用 ccusage 统计使用情况"
 tagline: ""
 description: ""
-category: 
+category: 经验总结
 tags: [ claude-code, anthropic, ccusage, open-source, ]
 create_time: 2025-08-28 10:48:04
 last_updated: 2025-08-28 10:48:04

@@ -20,6 +20,7 @@ Java 8 新特性：
 
 
 ## 基本使用
+
 Java 8 允许在接口中定义默认方法。
 
 	interface Collection {
