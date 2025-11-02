@@ -82,3 +82,9 @@ Perplexity AI 也可以将搜索结果一键转成 Page，那么 Perplexity AI �
 ## 最后
 
 Perplexity AI 在我最近的使用中确实是一部分代替了 Google，尤其是我想要直接的结果时，或者使用它来计划旅程等等情况下，Perplexity AI 在一定程度上也比 ChatGPT，Gemini 等 AI 返回结果更好一些。但是确实是比较慢，所以我会立即将搜索的内容再打开一个标签页放到 Claude 里面搜索。
+
+## 使用 PayPal 绑定免费一年 Pro
+
+Perplexity 官方和 PayPal 的活动，绑定 PayPal 账户，并选择支付方式，可以免费试用一年 Pro 会员。订阅之后记得到期取消订阅。
+
+![YM0wk_qmVP](https://pic.einverne.info/images/YM0wk_qmVP.png)
