@@ -60,6 +60,11 @@ Alpha Arena，这是全球首个以 AI 模型为对象，在真实市场用真�
 - [ContestTrade](https://github.com/FinStep-AI/ContestTrade) 是 Python 编写的多 Agent 交易系统，基于 Internal Contest Mechanism
 - [nofx](https://github.com/tinkle-community/nofx) 是一个自动化交易的开源项目，由 DeepSeek/Qwen AI 支持，支持 Binance Hyperliquid，Aster DEX exchanges 平台
 - [Alpha Arena Lite](https://github.com/Moshiii/Alpha-Arena-Lite) OpenAI 分析加密货币投资趋势
+- [nof0](https://github.com/wquguru/nof0) 开源的 AI 交易竞技场
+- [PulseTrader](https://github.com/jerlinn/PulseTrader) 是一个 AI 量化投资工具
+- [my-quant](https://github.com/cokepoppy/my-quant) 量化交易系统
+- [open-nof1.ai](https://github.com/SnowingFox/open-nof1.ai)
+- [open-alpha-arena](https://github.com/etrobot/open-alpha-arena) 加密加密货币
 
 ## 最后
 
