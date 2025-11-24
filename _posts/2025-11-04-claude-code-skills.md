@@ -13,10 +13,12 @@ dg-home: false
 dg-publish: false
 ---
 
-在我们进一步介绍 Skills 之前，先来回顾一下 Claude 已经给我提供的扩展：
+我们在使用 Claude Code 的过程当中，是否经常会遇到重复给 AI 提供相同的提示词，不停的告诉 Claude 我自己的工作方式和代码标准，虽然在之前我们可以通过 slash command 或者 CLAUDE.md 文件来部分实现。但今天我要介绍的 Claude Skill 可以更好的帮你解决这个问题。
+
+在我们进一步介绍 Claude Skills 之前，先来回顾一下 Claude 已经给我提供的扩展：
 
 - MCP（Model Context Protocol），这是 Claude 连接外部的协议，让 Claude 可以访问网络，文件，数据库等外部资源，通过 MCP 还可以调用浏览器自动化 Playwright 等。
-- Slash Commands 快捷命令，这是手动配置的快捷命令，通过 `/` 就能触发
+- Slash Commands 快捷命令，这是手动配置的快捷命令，通过 `/` 就能触发调用
 - [Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents) 子代理，用来优化任务级别的工作流和上下文管理，通过可以自定义的系统提示词，工具以及单独的上下文窗口，就像是派生出一个你的分身去干具体的任务
 - [Plugins](https://docs.claude.com/en/docs/claude-code/plugins) 插件，自定义命令行，Agents，hooks，Skills，MCP servers 等，将这些内容都打包到插件中，可以通过 [Plugin Marketplaces](https://docs.claude.com/en/docs/claude-code/plugin-marketplaces) 快速集成
 
@@ -26,20 +28,26 @@ dg-publish: false
 
 Agent Skills 可以用在任何 Claude 相关的产品，桌面客户端，Claude Developer Platform（API），Claude Code 等等产品。
 
+Claude Code Skill 功能目前仅适用于 Pro，Max，Team 和 Enterprise 计划用户。
+
 ## Skills
 
 Claude 使用 Skills 来封装一组能力，Skills 本质上是磁盘上的一个文件夹，文件夹下可以保存完成特定任务所需要的文档（知识）和工具（脚本，工作流等）。
 
-Skill 文件夹通常包括
+一个完整的 Claude Code Skill 通常包括以下部分：
 
 - `SKILL.md` 核心的定义文件，YAML 格式，包含了 Skill 的名字，描述，Markdown 编写的详细指令，指导 Claude 在特定场景下执行的动作
 - `scripts` 存放可执行 Python，Shell 脚本
 - `references`，参考文档，比如 API 文档，数据库定义 Schema，公司代码规范，政策等，Claude 会参考
 - `assets`，资源文件，包括 PPT 模板，Logo，项目脚手架等，Claude 如果使用该 Skill 会直接使用
 
-## Skills 工作原理
+## Skills 的实际应用场景
 
-在执行具体任务的时候，Claude 会扫描相关可用的 Skills，当匹配到可用的技能，会加载最少的信息和相关需要的文件，然后获取具体的能力。
+Skills 可以自动化有固定流程和规范的重复性任务，比如让 Skill 自动评估代码质量，识别安全漏洞，确保代码按照最佳实践，或者让同一应用中所有设计符合主题配色，确保前端代码中使用的 Logo 都是符合品牌要求的，比如让 Skill 定期生成符合规范的报告等等。 我们可以将“Skills”认为是一个拥有专业技能的专家，一旦 Claude 认为我们这项任务可以交给这个专家，就会自动让这位专家称为你当前任务的顾问，更好的完成下达的指令。
+
+## Skills 是如何工作的？
+
+在 Claude Code 启动时，会扫描所有可用的 Skills，查看其名称和描述， 判断这个 Skill 是否与当前的任务相关。只有当 Skill 和任务相关时，Claude 才会加载它。
 
 - 可组合：技能堆叠在一起。Claude 会自动识别需要的技能并协调它们的使用。
 - 可移植：技能在任何地方都使用相同的格式。构建一次，跨 Claude 应用程序、Claude 代码和 API 使用。
@@ -96,7 +104,7 @@ Anthropic 创造了一个为用户构建 Skills 的 Skill，叫做 [Skill Creato
 
 ## 创建自己的 Skill
 
-我们可以使用官方的 Skill Creator 的 Skill 来创建 SKILL.md 文件，当然也可以自己手动创建文件夹和文件。这里就带大家从零开始构建一个 Skills。
+我们可以使用官方的 Skill Creator 的 Skill 来创建 `SKILL.md` 文件，当然也可以自己手动创建文件夹和文件。这里就带大家从零开始构建一个 Skills。
 
 如果要创建一个可以在任何项目中使用的 Skill，将文件存储在 `~/.claude/skills/` 目录下。
 
@@ -110,23 +118,35 @@ mkdir -p ~/.claude/skills/my-skill-name
 mkdir -p .claude/skills/my-skill-name
 ```
 
+Skill 的文件结构
+
+```
+.claude/skills/
+├── code-reviewer/
+│   ├── SKILL.md
+│   ├── manifest.json
+│   └── validators.py
+├── csv-auditor/
+│   ├── SKILL.md
+│   └── validator_script.py
+```
+
 ### 编写 SKILL.md
 
 SKILL.md 文件定义了技能的名字和描述，文件头 YAML 格式，以及 Markdown 正文。
 
 ```
 ---
-name: your-skill-name
-description: Brief description of what this Skill does and when to use it
+name: code-reviewer
+description: 评估代码质量、安全漏洞、性能问题和最佳实践遵守情况
 ---
 
-# Your Skill Name
+# 代码审查 Skill
 
-## Instructions
-Provide clear, step-by-step guidance for Claude.
+## 职责
 
-## Examples
-Show concrete examples of using this Skill.
+1. 检查代码结构和可读性
+2. 识别安全漏洞
 ```
 
 说明
@@ -135,6 +155,10 @@ Show concrete examples of using this Skill.
 - description 简要描述技能的作用，以及什么时候使用该技能，最多 1024 个字符
 
 description 字段非常重要，Claude 会根据此字段来判断何时使用 Skills。可以参考 [最佳实践](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/best-practices)
+
+### 可执行脚本
+
+当 Skill 认为需要执行代码时，会根据 Skill 的定义来调用对应的脚本文件。
 
 ### 支持文件
 
@@ -224,10 +248,6 @@ Skills 的重点在于完成任务，更像是一本操作手册，当遇到某�
 
 Skills 由模型自动调用，Claude 会根据 Skill 描述和具体的任务自动匹配并使用 Skills，无需人工介入，Slash Commands 则是由用户主动发起。
 
-## Skills 的应用场景
-
-Skills 可以自动化有固定流程和规范的重复性任务，比如同一应用中的所有主题配色，比如确保文档中使用的 Logo 都是符合品牌要求的，比如统一代码审查标准，生成符合要求的样板代码等。
-
 ## Skills 带来的启发
 
 Skills 给 Claude 带来了更多的扩展性，组合性也更好，可以任意地将多个技能组合在一起完成一个工作流，比如根据设计文档，生成模板代码，测试代码，代码审查，提交代码等。
@@ -235,3 +255,10 @@ Skills 给 Claude 带来了更多的扩展性，组合性也更好，可以任�
 - 从写提示词变成设计工作流，将提示词工程变成工作流工程，关注输入结构，工具链，状态管理和容错
 - 从一次性产物变成可维护系统，每个 Skill 都是可版本化的流程模块，像软件一样测试，发布和回滚
 - 从智能补充，到智能基建，将 Skills 视为组织的基础设施，承载标准， 权限，日志和治理。
+
+## related
+
+- [[AutoGen]]
+- [[CrewAI]]
+- [[LangGraph]]
+- [[Skill Seeker]]

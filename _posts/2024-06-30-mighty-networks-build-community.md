@@ -40,3 +40,5 @@ Mighty 为用户提供了一个平台，像创建电商独立站一样创建社�
 - [[Kajabi]] 是一个在线课程平台
 - [[Podia]]
 - [[Socially]]
+- [[PopHop]]
+- [[Nas.io]]

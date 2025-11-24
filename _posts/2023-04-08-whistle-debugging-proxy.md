@@ -102,3 +102,6 @@ uri pattern1 pattern2 patternN
 whistle 的规则配置支持非常多的方式，可以参考官方文档进行[配置](https://wproxy.org/whistle/mode.html)。
 
 关于 whistle 的匹配方式可以参考[官网](https://wproxy.org/whistle/pattern.html)。
+
+## related
+

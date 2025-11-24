@@ -446,7 +446,7 @@ Kotlin 中的扩展函数的设计和我之前学习的 Dart 函数有一些相�
 
 ### 静态成员替代
 
-Kotlin 没有静态成员概念，使用 companion object，顶级函数，扩展函数或者 `@JvmStatic` 注解来代替 Java 静态成员。
+Kotlin 没有静态成员概念，没有 static 关键字，而是使用 companion object，顶级函数，扩展函数或者 `@JvmStatic` 注解来代替 Java 静态成员。
 
 Companion Objects 允许在类内部定义类级别的函数和属性。伴生对象本质上是一个类关联的单例对象，可以访问类的私有成员。
 
