@@ -5,7 +5,7 @@ aliases: "适用于编程 Coding 的字体"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [fonts, font, coding, programming, style, ]
+tags: [fonts, font, coding, programming, style, 编程字体, 连字, 等宽字体, ]
 last_updated:
 ---
 
@@ -32,6 +32,17 @@ last_updated:
 通过两两对比，最后选出你最喜欢的编程字体。
 
 - <https://www.codingfont.com/>
+
+## JetBrains Mono
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/) 是 JetBrains 公司推出的开源编程字体。
+
+![lHpU-s_5jZ](https://pic.einverne.info/images/lHpU-s_5jZ.png)
+
+## Maple Mono
+
+[Maple Mono](https://github.com/subframe7536/maple-font) 是一款开源的等宽，支持连字的字体。比较完美地支持中文，英文。
+
+![q7w9e1OVf0](https://pic.einverne.info/images/q7w9e1OVf0.png)
 
 ## Azeret Mono
 通过上面的对比，最后选择出来的我个人喜欢的字体。
