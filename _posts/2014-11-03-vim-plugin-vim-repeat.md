@@ -12,7 +12,9 @@ last_updated:
 
 ## Installation
 
-    Plug 'tpope/vim-repeat'
+```
+Plug 'tpope/vim-repeat'
+```
 
 ## Usage
 

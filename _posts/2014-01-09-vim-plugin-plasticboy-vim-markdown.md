@@ -14,10 +14,13 @@ last_updated:
 - <https://github.com/plasticboy/vim-markdown>
 
 ## installation
+
 在 vim 配置文件
 
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
+```
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+```
 
 ## usage
 

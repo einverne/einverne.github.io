@@ -12,6 +12,7 @@ last_updated:
 之前的文章讲过 [Vim Buffer 的管理](/post/2014/05/vim-buffer-management.html) 这使得工作可以在 Vim 中持续进行，而不需要退出然后重新载入文件。但是如果 Buffer 只能填满一个 Vim 窗口，假如想要在 Vim 中实现分屏，那么就必须要依赖于 Vim 的 Window。又因为 Vim 的 Windows 经常用来做分屏，又有的时候被称为 `splits` 。
 
 ## Windows
+
 Vim 在启动时只会打开单个窗口，可以使用 `Ctrl-w s` 来水平分隔窗口，或者使用 `Ctrl-w v` 来垂直分隔窗口。
 
 在 Vim 中有很多方式打开 Windows

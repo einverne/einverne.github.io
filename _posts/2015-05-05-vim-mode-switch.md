@@ -8,7 +8,7 @@ tags: [vim, linux, editor, linux, vim-mode, ]
 last_updated:
 ---
 
-之前的一篇文章介绍了 [Vim 的多模式](/post/2015/05/vim-mode.html)，这篇文章重点来讲一讲如何在这些模式之间随心的切换。
+之前的一篇文章介绍了 [Vim 的多模式](https://blog.einverne.info/post/2015/05/vim-mode.html)，这篇文章重点来讲一讲如何在这些模式之间随心的切换。
 
 
 ## Normal - Insert

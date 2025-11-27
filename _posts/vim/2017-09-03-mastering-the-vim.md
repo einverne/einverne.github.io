@@ -12,7 +12,7 @@ last_updated:
 
 ## Text Objects and motions
 
-@ChrisToomey 定义了一种 Vim Language，Vim 的语法由`数词 + 动词 + 名词` 组成，比如：
+`@ChrisToomey` 定义了一种 Vim Language，Vim 的语法由`数词 + 动词 + 名词` 组成，比如：
 
 	d 删除
 	w 单词
@@ -125,6 +125,7 @@ Nouns: Parameterized Text Objects
 
 
 ## DOT command
+
 Vim 中的 "." 命令，以命令为单位，重复上一个命令。
 
 Sublime ， IntelliJ IDEA 中经常被人提及的 multiple cursor 的功能，能够在编辑器中提供多个光标一起编辑，其实 Vim 不需要多光标就能够做到，结合强大的 `.` 和 `n .` 可以快速的编辑大量重复的内容。

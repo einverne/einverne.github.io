@@ -8,6 +8,7 @@ last_updated: 2016-07-16
 ---
 
 ## 简单介绍
+
 经[Code Rush](http://foocoder.com/blog/mei-ri-vimcha-jian-kai-pian-zhi-vundle.html/)推荐，之后又陆陆续续看到很多在使用这款插件，所以在入门插件的时候就第一个安装了此插件，VIM如果不依靠插件来增强功能可谓鸡肋。而VIM提供的插件又很多，新手可能无从下手。幸好让我接触到了这个[Vundle]插件，Vundle用来安装，管理其他插件，这样以后安装插件卸载插件的问题就迎刃而解了。用[Vundle]管理插件有以下好处：
 
 - 自动下载安装插件
