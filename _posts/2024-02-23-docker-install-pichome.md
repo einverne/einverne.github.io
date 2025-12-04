@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-之前在使用 [[Eagle]] 的时候就想过如果能够一键将本地的素材库分享到网络上就好了，但后面因为 Eagle 使用的频率不是那么高，我自己也在用 [Chevereto](https://photo.einverne.info) 所以就搁置了。这两天发现一个 PHP 编写的开源的在线图库 [[PicHome]]，看展示界面不错，所以来分享一下。
+之前在使用 [[Eagle]] 的时候就想过如果能够一键将本地的素材库分享到网络上就好了，但后面因为 [[Eagle]] 使用的频率不是那么高，我自己也在用 [Chevereto](https://photo.einverne.info) 所以就搁置了。这两天发现一个 PHP 编写的开源的在线图库 [[PicHome]]，看展示界面不错，所以来分享一下。
 
 [PicHome](https://github.com/zyx0814/Pichome) 是一款 PHP 编写的，开源的图片展示网站，可以将电脑中的媒体文件展示在网页中。
 

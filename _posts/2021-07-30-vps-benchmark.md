@@ -241,6 +241,9 @@ GitHub [IPQuality](https://github.com/xykt/IPQuality)
 bash <(curl -sL Check.Place) -I
 ```
 
+脚本[开源地址](https://github.com/xykt/ScriptMenu)
+
+
 ## ping 测试
 
 全球各地 ping 测试网站：

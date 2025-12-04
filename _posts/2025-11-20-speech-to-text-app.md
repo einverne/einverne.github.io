@@ -128,13 +128,14 @@ SeemlessM4T ，Meta 公司发布，支持 100 种语言，支持语音到语音�
     - [[VoiceTypr]]
     - [[Voice Type]]
     - [[Whispering]]，开源，Whisper 模型
-    - [[Wispr Flow]]
+    - [[Wispr Flow]]，速度快
     - [[superwhisper]]
-    - [[Spokenly]]
+    - [[Spokenly]] 开源
     - [[闪电说]]，利用阿里的 [[SenseVoice]] 模型
     - [[小凹输入法]]
     - [[豆包输入法]]
     - [[Ququ 蛐蛐]] ，开源
+    - [[Typeless]] ，速度快，准确度高
 - 语音转文字笔记软件
     - [[Voicenotes]]
     - [[Emote]]
