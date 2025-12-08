@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-前两天我使用 k3s 搭建了一个实验性质的 Kubernetes 集群，k3s 默认的存储是 Rancher 的 Local Path Provisioner，可以让用户直接使用各个节点的本地存储来创建持久卷（PVC），无需配置外部存储系统。默认存储在每个节点的 `/var/lib/rancher/k3s/storage` 目录下。但是如果使用默认的存储，那么如果数据需要在多个节点中复制和迁移就会有一些问题，所以本文讲述一下如何在 k3s 集群中安装 Longhorn 这样一款轻量的分布式块存储系统。
+前两天我使用 k3s 搭建了一个实验性质的 Kubernetes 集群，k3s 默认的存储是 Rancher 的 Local Path Provisioner，可以让用户直接使用各个节点的本地存储来创建持久卷（PVC），无需配置外部存储系统。默认存储在每个节点的 `/var/lib/rancher/k3s/storage` 目录下。但是如果使用默认的存储，那么如果数据需要在多个节点中复制和迁移就会有一些问题，所以本文讲述一下如何在 k3s 集群中安装 [[Longhorn]] 这样一款轻量的分布式块存储系统。
 
 ## K3s
 
@@ -26,7 +26,7 @@ dg-publish: false
 Longhorn 为每个卷创建一个专用的存储控制器，并在存储在多个节点上的多个副本之间同步复制卷数据。存储控制器和副本本身也使用 Kubernetes 进行编排管理。
 
 - 将 Longhorn 卷用作 Kubernetes 集群中分布式有状态应用程序的持久存储
-- **g高可用**，跨多个节点和数据中心复制块存储以提高可用性
+- **高可用**，跨多个节点和数据中心复制块存储以提高可用性
 - **备份**，将备份数据存储在外部存储（如 NFS 或 AWS S3）中
 - **跨集群恢复**，创建跨集群灾难恢复卷
 - **恢复**，从备份恢复卷
@@ -92,7 +92,7 @@ lsmod | grep iscsi
 ```
 helm repo add longhorn https://charts.longhorn.io
 helm repo update
-ubectl create namespace longhorn-system
+kubectl create namespace longhorn-system
 helm upgrade -i longhorn longhorn/longhorn --namespace longhorn-system
 ```
 

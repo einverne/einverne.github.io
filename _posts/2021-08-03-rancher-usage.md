@@ -197,6 +197,14 @@ docker rmi -f $(docker images -q)
 docker volume rm $(docker volume ls -q)
 ```
 
+## Cluster local
+
+Rancher 中的 Cluster local 是一个特殊的集群，它代表的是 Rancher Server 本身的 Kubernetes 集群。Cluster local 是 Rancher 的管理集群，存储了管理下游集群所需的所有数据。这包括 Rancher 的全局所有数据、权限定义和访问控制规则、所有下游集群的期望状态规范、全局配置和认证信息等等。
+
+进入 Rancher 的管理页面的时候，就会看到这一个特殊的集群。Local 集群是运行 Rancher 本身所在的集群，这是 Rancher 的大脑，存储了所有的配置信息。下游被管理集群是 Rancher 管理和监控的其他 Kubernetes 集群。这些集群可以在本地、云端、边缘部署。
+
+在生产环境当中，通常的做法是建立一个高可用的 Kubernetes 集群，作为 Local 集群。并在 Local 集群上安装 Rancher Server，使用 Rancher 来配置和管理其他下游集群。Local 集群理论上也可以运行工作负载，但是在生产环境中，建议将 Rancher 保持专用的管理集群上，不要和其他工作负载混合部署。
+
 ## 延展阅读
 
 - [KubeSphere](https://kubesphere.com.cn/)

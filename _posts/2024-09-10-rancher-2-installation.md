@@ -82,7 +82,7 @@ sudo journalctl -u rancher-system-agent -f
 发现了错误原因，可能是证书的问题。
 
 ```
-Oct 18 16:12:38 gc12.einverne.info rancher-system-agent[7340]: time="2024-10-18T16:12:38+08:00" level=fatal msg="error while connecting to Kubernetes cluster: Get \"https://rancher.einverne.info/version\": tls: failed to verify certificate: x509: certificate signed by unknown authority"
+Oct 18 16:12:38 xx12.einverne.info rancher-system-agent[7340]: time="2024-10-18T16:12:38+08:00" level=fatal msg="error while connecting to Kubernetes cluster: Get \"https://rancher.domain.com/version\": tls: failed to verify certificate: x509: certificate signed by unknown authority"
 ```
 
 ## k3s 中安装 Rancher
@@ -93,7 +93,6 @@ Oct 18 16:12:38 gc12.einverne.info rancher-system-agent[7340]: time="2024-10-18T
 
 - 有一个公网可访问的域名,并创建一个 A 记录 `rancher.YOUR_DOMAIN.com` 将其指向 Rancher 服务器的 IP 地址。
 - 开放 80 和 443 端口，Let's Encrypt 需要通过 80 端口进行 HTTP-01 挑战验证。
-
 
 ### 安装 k3s
 因为 Docker 安装的单节点 Rancher 只适合测试，并且证书存在问题，为了方便扩展，所以更推荐的方式就是在现有的集群中安装 Rancher。
@@ -131,7 +130,8 @@ kubectl get pods --all-namespaces
 在安装 Rancher 时可以使用 Let's Encrypt 的证书。
 
 ### 安装 Helm
-安装 [[Helm]]
+
+通过如下的方式安装 [[Helm]]
 
 ```
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
