@@ -117,6 +117,10 @@ gemini -p "基于我关于 '系统设计' 的所有笔记，帮我列出一个�
 
 这种全局视角的总结，是传统笔记软件很难做到的。
 
+下面附上一个我直接在 Gemini 中询问「利率和汇率」关系以及相互影响的回答。
+
+![ZHuEquJJae](https://pic.einverne.info/images/ZHuEquJJae.png)
+
 ### 笔记重构 (Refactoring)
 
 当你的 `Inbox` 堆积了大量杂乱的随笔时，可以使用 CLI 快速整理。

@@ -142,7 +142,7 @@ sudo apt-get install helm
 
 ### 安装 cert-manager
 
-首先安装 [[cert-manager]]，用于处理 SSL 证书。
+首先安装 cert-manager，用于处理 SSL 证书。
 
 ```
 # 创建命名空间

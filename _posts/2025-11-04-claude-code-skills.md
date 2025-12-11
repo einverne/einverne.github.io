@@ -232,6 +232,7 @@ List all available Skills?
 
 - [superpowers](https://github.com/obra/superpowers)
 - [SuperClaude Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework)
+- <https://github.com/mrgoonie/claudekit-skills>
 
 ## Skills vs MCP
 

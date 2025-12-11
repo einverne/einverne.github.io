@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ helm, kuberntes, k8s, rancher,  ]
+tags: [ helm, kuberntes, k8s, rancher, k3s, cluster, ]
 create_time: 2025-03-11 14:23:26
 last_updated: 2025-03-11 14:23:26
 dg-home: false
