@@ -1,13 +1,23 @@
 ---
 layout: post
-title: "在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记"
-aliases: "在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记"
+title: 在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记
+aliases:
+  - 在两个 DataGrip 项目之间同步数据库配置以及一些使用笔记
+  - ""
 tagline: ""
 description: ""
 category: 经验总结
-tags: [jetbrains, datagrip, mysql, postgresql, sql, redis]
-last_updated: 2024-02-23 09:13:29
-create_time: 2021-09-27 07:58:28
+tags:
+  - jetbrains
+  - datagrip
+  - mysql
+  - postgresql
+  - sql
+  - redis
+last_updated: 2026-01-01 16:12:30
+create_time: 2026-01-01 16:12:30
+dg-home: false
+dg-publish: false
 ---
 
 [[DataGrip]] 是 JetBrains 出品的一款数据库管理工具。
@@ -27,3 +37,4 @@ create_time: 2021-09-27 07:58:28
 ![A1iMMEc1_1](https://pic.einverne.info/images/A1iMMEc1_1.png)
 
 当然我个人推荐的做法是通过将 SQL 放入版本控制做好 Migration，或者使用自动化的 SQL 版本，比如 Python 下的 [[Alembic]] 来管理数据库表结构的版本，实现可以自动升级，降级等。
+

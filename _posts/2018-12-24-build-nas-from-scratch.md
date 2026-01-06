@@ -23,8 +23,7 @@ last_updated:
 
 - ITX（Mini-ATX，尺寸 17cm * 17cm）
 - M-ATX（Micro-ATX，尺寸 24.4cm * 24.4cm）
-- ATX（尺寸：30.5cm * 24.4cm）
-
+- ATX（尺寸：30.5cm * 24.4cm），这是标准尺寸
 
 ### PCIe
 PCIe 或者是 PCI-e，又叫做 PCI Express 全称是，Peripheral Component Interconnect Express，PCIe 是一个高速串行计算机扩展总线标准，设计的目标是为了替换老的 PCI, PCI-X 和 AGP 总线标准。它是个人计算机主板的显卡，硬盘，SSD，Wi-Fi，网卡的连接接口。有了这个接口就多了一个扩展接口，比如通过 PCIe 接口转 SATA 接口可以扩容，可以通过 PCIe 接口来接外置显卡扩展显示能力，或者扩展以太网卡等等。
@@ -155,7 +154,7 @@ J3455 自带 4 个 SATA 接口，J3455B 只有 2 个 SATA 口。
 ### 如何选择操作系统
 之前整理过 [几个 NAS 系统](/post/2020/02/nas-operating-system-choice.html)，FreeNas 需要硬件，而 unRAID, ESXi 都是闭源产品，且需要授权，先不论其强大的功能，对我而言 OpenMediaVault 比较合适，基于 Debian，我一直用 Mint 所以也比较熟悉。
 
-所以最终的方案是在物理机的 SSD 上安装 Proxmox VE，然后在其中安装 OpenMediaVault，四块机械硬盘直通给 OpenMediaVault 然后使用 [[SnapRAID]] 和 [[MergerFS]] 组成一个存储池使用。
+所以最终的方案是在物理机的 SSD 上安装 [[Proxmox VE]]，然后在其中安装 [[OpenMediaVault]]，四块机械硬盘直通给 OpenMediaVault 然后使用 [[SnapRAID]] 和 [[MergerFS]] 组成一个存储池使用。
 
 ## 实践阶段
 
@@ -163,7 +162,7 @@ J3455 自带 4 个 SATA 接口，J3455B 只有 2 个 SATA 口。
 我的搭配方案：
 
 - 主板 华擎 J3455 京东全新价格 Plus -20 488 入手
-- 内存 QNAP 拆机剩下的笔记本 DDR3L 2G*2
+- 内存 QNAP 拆机剩下的笔记本 DDR3L 2G * 2
 - 机箱 迎广 MS04 加电源，淘宝 879 购入
 - SSD 拆机的闪迪 128G
 - 电源 益衡 7025B 淘宝价格 245 元
@@ -212,9 +211,9 @@ v2ex 的留言 [^v2]:
 
 - CPU XEON E3 1230V2, 4 核 8 线程，ECC
 - 主板 Supermicro X9SCL/X9SCM
-- 内存 32GB(8GB*4 ECC unbuffered)
+- 内存 32GB(8GB * 4 ECC unbuffered)
 - SSD Samsung 840Pro 或者 Optane NVME MLC 的盘。用来当 L2ARC
-- HDD, 非 SMR 的硬盘 5T*4 个。东芝和 HGST 比较稳一些。SG WD 也不怕，反正 RAIDZ2 很稳。
+- HDD, 非 SMR 的硬盘 5T * 4 个。东芝和 HGST 比较稳一些。SG WD 也不怕，反正 RAIDZ2 很稳。
 - U 盘一个
 - 电源，散热器，风扇，机箱随意。散热最好通畅一些最好。
 
@@ -240,7 +239,6 @@ v2ex 的留言 [^v2]:
 - 硬盘支架 E.mini L04
 - 机箱串口挡板 Supermicro Serial Port Bracket
 - 机箱 USB 挡板 Asus USB 2.0 Bracket
-
 
 ## 推荐几个网站
 

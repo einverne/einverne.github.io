@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "使用 alembic 迁移数据库结构"
+aliases: "使用 alembic 迁移数据库结构"
 tagline: ""
 description: ""
 category: 学习笔记
@@ -8,13 +9,14 @@ tags: [python, mysql, sql, migration, db, database, alembic, flask, sqlalchemy, 
 last_updated:
 ---
 
-Alembic 是一个处理数据库更改的工具，它利用 SQLAlchemy 来实现形成迁移。因为 SQLAlchemy 只会在我们使用时根据 metadata create_all 方法来创建缺少的表 ，它不会根据我们对代码的修改而更新数据库表中的列。它也不会自动帮助我们删除表。 Alembic 提供了一种更新 / 删除表，更改列名和添加新约束的方法。因为 Alembic 使用 SQLAlchemy 执行迁移，它们可用于各种后端数据库。
+[[Alembic]] 是一个处理数据库更改的工具，它利用 SQLAlchemy 来实现形成迁移。因为 SQLAlchemy 只会在我们使用时根据 metadata create_all 方法来创建缺少的表 ，它不会根据我们对代码的修改而更新数据库表中的列。它也不会自动帮助我们删除表。 Alembic 提供了一种更新 / 删除表，更改列名和添加新约束的方法。因为 Alembic 使用 SQLAlchemy 执行迁移，它们可用于各种后端数据库。
 
 ## 安装
 
     pip install alembic
 
 ## 使用
+
 初始化，使用如下命令会创建环境到 `migrations` 文件夹下，通常情况下使用 `migrations` 文件夹来存储 alembic 环境，如果想使用别的名字，相应替换为别的名字即可。**注意下面命令中的 migrations 将会是存储所有迁移脚本的目录名字**
 
     alembic init migrations
@@ -52,6 +54,14 @@ Alembic 是一个处理数据库更改的工具，它利用 SQLAlchemy 来实现
 
 查看数据库就会发现 alembic 会自动产生一个 `alembic_version` 的表，只有一个字段和值 `version_num`，记录当前数据库版本。
 
+## 常用命令
+
+- `alembic revision --autogenerate -m "描述变更"` 修改模型之后生成迁移脚本
+- `alembic upgrade head` 升级最新版本
+- `alembic downgrade -1` 回滚一步
+- `alembic current`：查看当前迁移版本。
+- `alembic history`：查看迁移历史。
+- `alembic show <revision_id>`：查看特定迁移详情。
 
 ## reference
 

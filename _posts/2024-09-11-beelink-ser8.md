@@ -13,7 +13,7 @@ dg-home: false
 dg-publish: false
 ---
 
-去年国家补贴看到迷你主机零刻 SER8 有非常大的折扣，AMD 8845HS 16GB 1TB 的版本补贴之后 2689.59 人民币，算还是比较划算，所以就买下了，但一直放在了国内，这一次来日本把 SER8 带来回来。顺便也把之前的 Mac Mini M1 给了，腾了一个位置给它。我家里面本来就有一台非常迷你的低功耗软路由，安装了 [[Proxmox VE]]，以及一台 Ubuntu 虚拟机，在 Ubuntu 虚拟机上安装了 [Swizzin](https://blog.einverne.info/post/2021/12/swizzin-usage.html) ，以及相关的 Flexget 等等工具，挂载了一个 8TB 的硬盘作为一个日常的下载机。普通的 Python 任务也放在 Ubuntu 上跑一跑，今天上到机器上看了一下已经稳定运行 508 天了。这一台 SER8 就是准备用来升级这一台小主机的，虽然功耗高了一些，但是计算能力也更强。
+去年国家补贴看到迷你主机零刻 SER8 有非常大的折扣，AMD 8845HS 16GB 1TB 的版本补贴之后 2689.59 人民币，算还是比较划算，所以就买下了，但一直放在了国内，这一次来日本把 SER8 带来回来。顺便也把之前的 Mac Mini M1 给卖了，腾了一个位置给它。我家里面本来就有一台非常迷你的低功耗软路由，安装了 [[Proxmox VE]]，以及一台 Ubuntu 虚拟机，在 Ubuntu 虚拟机上安装了 [Swizzin](https://blog.einverne.info/post/2021/12/swizzin-usage.html) ，以及相关的 Flexget 等等工具，挂载了一个 8TB 的硬盘作为一个日常的下载机。普通的 Python 任务也放在 Ubuntu 上跑一跑，今天上到机器上看了一下已经稳定运行 508 天了。这一台 SER8 就是准备用来升级这一台小主机的，虽然功耗高了一些，但是计算能力也更强。
 
 ## SER8 整体配置
 
@@ -40,6 +40,10 @@ dg-publish: false
   - HDMI 2.1 \* 1
   - USB4 (40Gbps / TBT3 / PD / DP 1.4) \* 1
 - 适配器 输入 200~240V AC 50/60Hz 输出 19V 6.32A
+
+官方 SER8 还有一款 8745HS 配置的版本在销售，8845HS 和 8745 HS 在 CPU 核心，基础频率，制作工艺上没有太大的差别，只有主频 8845HS 在 5.1GHz，8745HS 是 4.9 GHz，多核工作负载中 8845HS 稍有优势。
+
+但是这两款芯片最重要的区别在于，8845HS 集成了 AMD Ryzen AI Engine NPU，提供 16 TOPS 的 AI 性能，支持多种 AI 架构，8745HS 不包含 NPU，官方对 8745 HS 的描述也是相当于没有 AI Engine NPU 的 8845HS 版本。
 
 两种颜色可选
 
