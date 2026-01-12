@@ -100,6 +100,9 @@ Bronze 套餐 9.99 美元一个月
 
 等认证完成之后，Anytime Mailbox 还需要一定的时间，审核通过，就可以开始使用这个美国地址啦! 按照我的经验，我在工作日睡觉前提交的认证，然后第二天醒来就收到了 Anytime Mailbox 激活的邮件，直接登录后台就能够使用这个私人邮箱了。
 
+## 最后
+如果你注册使用 Anytime Mailbox 是为了开启美国信用卡之路，那么也可以参考 [NomadInit](https://nomadinit.com/) 上面会分享利用 ITIN 注册美国信用卡以及使用指南。
+
 ## related
 
 - [[MyUS]] [MyUS](https://gtk.pw/myus) 转运美国的商品

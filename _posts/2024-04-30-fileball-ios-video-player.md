@@ -13,11 +13,13 @@ dg-home: false
 dg-publish: false
 ---
 
-[Fileball](https://fileball.app/) 是一款 iOS，tvOS 上的本地文件管理器，本地音乐播放器，本地视频播放器，以及文本编辑器，Fileball 可以在 iPhone，iPad，Apple TV 上使用。Fileball 可以连接网络共享，支持 SMB，FTP，SFTP，Synology，NFS，WebDAV 等，支持 Emby，Jellyfin 等，还可以连接百度网盘，Box，Dropbox，Google Drive，OneDrive，pCloud 等，可以作为 [[Infuse]] ，[[VidHub]] 等播放器的平替，高级版本价格也比较合适。Fileball 也支持 [[IPTV]]。
+Firebar （原 [Fileball](https://fileball.app/) ）是一款 iOS，tvOS 上的本地文件管理器，本地音乐播放器，本地视频播放器，以及文本编辑器，Fileball 可以在 iPhone，iPad，Apple TV 上使用。Fileball 可以连接网络共享，支持 SMB，FTP，SFTP，Synology，NFS，WebDAV 等，支持 Emby，Jellyfin 等，还可以连接百度网盘，Box，Dropbox，Google Drive，OneDrive，pCloud 等，可以作为 [[Infuse]] ，[[VidHub]] 等播放器的平替，高级版本价格也比较合适。Fileball 也支持 [[IPTV]]。
 
 之前有写文章[说我购买了一台 Apple TV](https://blog.einverne.info/post/2024/01/i-bought-an-apple-tv.html)，Fileball 那个时候就安装了，虽然平时使用还是 VidHub 比较多，毕竟还是有一个海报墙，但是 Fileball 作为一款文件管理器还是经常被想起来。
 
 > Fileball 原来叫做 Filebox，收到商标侵权投诉修改为 Fileball。
+
+现在更名为 Firebar。
 
 ## 优点
 

@@ -12,7 +12,7 @@ last_updated: 2026-01-02
 
 在我之前的视频当中，我介绍过在 Claude Code 中使用子代理（Subagents）机制和 Git Worktree 来实现并行工作流。我们可以创建子代理来并行执行任务，但是 Subagents 的配置和使用都还需要我们在 Claude Code 中等待。那如果我们有完全独立的两个任务要执行呢，我们可以开两个 Claude Code 分别在两个 Claude Code 中提交任务，然后让 Claude Code 完成。此时我们依然会遇到一些问题，比如说两个 Claude Code 的代码可能产生冲突。并且如果我们有超过两个独立任务时，我们在管理 Claude Code 的成本就会指数级上升。
 
-那么今天要介绍的这个工具就是为了解决上述的问题而诞生的，它的名字叫做 Vibe Kanban。
+那么今天要介绍的这个工具就是为了解决上述的问题而诞生的，它的名字叫做 [[Vibe Kanban]]。
 
 ![GA7PBp0Jy2](https://pic.einverne.info/images/GA7PBp0Jy2.png)
 
