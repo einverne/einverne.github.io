@@ -28,5 +28,5 @@ My Tracks 原本是Google推出Android上记录GPS轨迹的应用，在很早开
 
 ## related
 
-- [[LibHunt]]
+- [[LibHunt]] 追踪开源项目和替代方案的网站
 - [[]]
