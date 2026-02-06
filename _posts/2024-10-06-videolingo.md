@@ -68,7 +68,7 @@ streamlit run st.py
 
 ### LLM 配置
 
-LLM 配置中需要使用到 [[Anthropic]] 的 API，可以访问 https://gpt.einverne.info 获取 API KEY
+LLM 配置中需要使用到 [[Anthropic]] 的 API，可以访问 https://api.einverne.info 获取 API KEY
 
 ### 转录和字幕设置
 

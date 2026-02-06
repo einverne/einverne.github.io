@@ -4,7 +4,7 @@ title: "个人的局域网网络设置整理"
 tagline: ""
 description: ""
 category: 经验总结
-tags: [network, linux, dhcp, ip, ]
+tags: [network, linux, dhcp, ip, dhcp, qnap, proxmox, static-ip]
 last_updated:
 ---
 

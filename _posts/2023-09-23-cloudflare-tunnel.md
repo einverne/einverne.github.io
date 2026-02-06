@@ -48,7 +48,20 @@ Clodflare 会在本地运行一个守护程序，Tunnel 通过本地网络，与
 brew install cloudflared
 ```
 
-首先登录
+在 Ubuntu/Debian 下可以下载安装
+
+```
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo dpkg -i cloudflared-linux-amd64.deb
+```
+
+安装完成之后可以执行确认
+
+```
+cloudflared --version
+```
+
+然后运行命令登录
 
 ```
 cloudflared tunnel login
@@ -56,15 +69,17 @@ cloudflared tunnel login
 
 登录 Cloudflare，命令会给出一个登录地址，拷贝到浏览器登录并授权。注意，授权只能选择一个网站，如果要选择多个网站，授权完成之后不要关闭网页，继续点击授权。
 
-然后创建隧道
+然后创建隧道(Tunnel)
 
 ```
 cloudflared tunnel create tunnel-name
 ```
 
-隧道创建完成之后会产生一个 UUID。
+隧道创建完成之后会产生一个 UUID，并将对应的凭据存放到 `~/.cloudflared/<tunnel-uuid>.json`。
 
-将域名指向对应的隧道
+记住这些信息，之后要写入到 `config.yml` 配置中。
+
+将域名指向对应的隧道，命令会创建一条 DNS CNAME 记录。
 
 ```
 cloudflared tunnel route dns tunnel-name your-name.example.com
@@ -133,7 +148,58 @@ cloudflared tunnel run tunnel-name
 如果要让 Cloudflare 一直在后台运行，可以使用 service 安装
 
 ```
-cloudflared service install
+sudo cloudflared service install
 ```
 
 另外需要注意的是，如果是创建了系统服务之后，配置文件会被拷贝到 `/etc/cloudflared/config.yml` 目录中，后续的修改需要使用这个配置文件。
+
+Cloudflared 会自动使用  `~/.cloudflared/config.yml`  创建 systemd 单元文件
+
+```
+sudo systemctl enable cloudflared
+sudo systemctl start cloudflared
+sudo systemctl status cloudflared
+```
+
+看到状态 active 表示 OK。
+
+此时访问对应的域名即可通过互联网来访问本地局域网中的服务。
+
+## QA
+
+如果在执行 `sudo cloudflared service install` 命令的过程中遇到问题
+
+```
+Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]
+```
+
+cloudflared 会尝试在以下路径查找  `config.yml`  或  `config.yaml`  文件：
+
+- `~/.cloudflared`
+- `~/.cloudflare-warp`
+- `~/cloudflare-warp`
+- `/etc/cloudflared`
+- `/usr/local/etc/cloudflared`
+
+如果找不到，就会报这个错误。
+
+我的真实情况是明明存在配置文件，但是就是找不到，此时可以指定配置文件的绝对路径。
+
+```
+sudo cloudflared --config /home/你的用户名/.cloudflared/config.yml service install
+```
+
+如果要让 `cloudflared` 打印日志，可以在 `config.yml` 中配置
+
+```
+logfile: /var/log/cloudflared.log
+loglevel: info
+```
+
+然后创建日志文件并设置权限
+
+```
+sudo touch /var/log/cloudflared.log
+sudo chown cloudflared:cloudflared /var/log/cloudflared.log
+```
+
