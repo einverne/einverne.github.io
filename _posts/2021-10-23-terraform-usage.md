@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 学习笔记
-tags: [ terraform,  ]
+tags: [terraform, ai-infrastructure, aws, ansible, infrastructure-as-code, ]
 last_updated:
 ---
 
@@ -29,6 +29,17 @@ last_updated:
 Terraform 是一种声明式编码工具，让开发人员通过 HCL（HashiCorp 配置语言）来描述运行应用程序的最终状态环境。
 
 > Terraform is a tool to express the nuts of bolts of infrastructure as code. Think VMs, load balancers, storage, DNS, etc defined as code and stored in versioned source control.
+
+Terraform 的优点
+
+- Multi-Cloud
+- Stateful
+- Version Controlled
+- Declarative
+- Manual Click-Ops
+- Save Money
+- Disaster Recovery
+- Minimize user error
 
 ## Terraform 解决了什么问题
 
@@ -164,3 +175,4 @@ http://hashivim.github.io/vim-terraform/
 
 - [awesome-terraform](https://github.com/shuaibiyy/awesome-terraform)
 - [[Terraform]]
+- [[OpenTofu]]

@@ -55,13 +55,13 @@ JSON Web Token(JWT) 是一个开放标准（[RFC 7519](https://tools.ietf.org/ht
 
 JWT 实际就是一个字符串，三部分组成：
 
-- 头部
-- 载荷
-- 签名
+- 头部 header，token type and how it is signed
+- 载荷 payload，actual data, like user Id, name and role
+- 签名 signature，secret code
 
 ### header
 Header 由两部分组成，token 类型和算法名称（HMAC SHA256，RSA 等等）
-
+.
 ```
 {
   "alg": "HS256",
@@ -121,6 +121,8 @@ HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)
 ## JWT 如何保证安全性
 JWT 安全性保证的关键就是 HMACSHA256，等等加密算法，该加密过程不可逆，无法从客户端的 Token 中解出密钥信息，所以可以认为 Token 是安全的，继而可以认为客户端调用是发送过来的 Token 是可信任的。
 
+## JWT 使用注意点
+payload 不是加密的，只是被编码了，所以不要在其中保存密码等敏感信息。
 
 
 ## 常用的 Python 库

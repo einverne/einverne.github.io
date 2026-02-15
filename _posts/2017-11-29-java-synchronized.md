@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Java 查漏补缺：synchronized"
+aliases: "Java 查漏补缺：synchronized"
 tagline: ""
 description: ""
 category: 学习笔记

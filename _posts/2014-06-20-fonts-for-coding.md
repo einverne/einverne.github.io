@@ -96,6 +96,12 @@ DescriptionInconsolata is an open-source font created by Raph Levien and release
 
 - <https://github.com/belluzj/fantasque-sans>
 
+## Comic Mono
+
+[Comic Mono](https://dtinth.github.io/comic-mono-font/) 是一款开源 Mono 字体。
+
+![ivHQJiS8xh](https://pic.einverne.info/images/ivHQJiS8xh.png)
+
 
 更多编程字体预览：
 
