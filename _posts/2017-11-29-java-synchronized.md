@@ -23,8 +23,15 @@ Java 中的 `synchronized` 块用来标记方法或者代码块是同步的。`s
 在实例方法上使用 `synchronized`：
 
 ```java
-public synchronized void add(int value){
-    count += value;
+public class Counter {
+    private int count = 0;
+
+    public synchronized void add(int value){
+        count += value;
+    }
+    public synchronized int getCount() {
+        return count;
+    }
 }
 ```
 

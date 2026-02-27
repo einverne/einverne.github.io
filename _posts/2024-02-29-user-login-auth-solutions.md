@@ -20,6 +20,7 @@ dg-publish: false
 - 使用成熟的 [[BaaS]] （Backend-as-a-Service）方案，比如商业的 [[Firebase]]，或者开源的 [[Supabase]]，以及我之前介绍并在使用的 [[Appwrite]] 等等
 - [[Clerk]] 最全面的用户管理平台
 - React Next.js 下的方案 [[NextAuth.js]]
+- 后端自己实现 JWT
 
 ## BaaS
 

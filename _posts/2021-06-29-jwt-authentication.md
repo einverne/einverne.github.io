@@ -107,8 +107,6 @@ HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload), secret)
 
 算出签名之后，header, payload, signature 三个部分拼成字符串，用 `.` 分隔，返回给用户。
 
-
-
 ## Token 认证流程
 
 1. 客户端携带用户登录信息（用户名、密码）提交请求

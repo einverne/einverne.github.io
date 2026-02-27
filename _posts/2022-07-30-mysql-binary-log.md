@@ -25,6 +25,7 @@ Binary log 的目的：
 binary log 不会记录那些不修改数据的语句，比如 SELECT 或 SHOW 等等。如果要记录所有的语句，可以使用 [[MySQL  General Query Log]]
 
 ## 清理 bin log
+
 不要直接在操作系统删除 bin.log 文件，让 MySQL 自己处理这些文件。
 
 清理 binlogs 的命令是：

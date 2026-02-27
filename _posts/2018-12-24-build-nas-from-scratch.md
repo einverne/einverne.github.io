@@ -6,12 +6,14 @@ tagline: ""
 description: ""
 category: 学习笔记
 tags: [nas, linux, cpu, motherboard, ]
-last_updated:
+last_updated: 2026-02-16 06:36:11
+create_time: 2022-06-02 08:57:21
 ---
 
-自从年初注册了 [PT 站](/post/2020/02/everything-related-about-bittorrent-and-pt.html) 就发现原来的 [QNAP TS453bmini](/post/2018/04/qnap-ts453bmini.html) 的硬盘就不堪重负，所以想要把下载和真正想要管理的数据安全的从硬件上隔离开，所以才有了这篇文章。
+自从年初注册了 [PT 站](https://blog.einverne.info/post/2020/02/everything-related-about-bittorrent-and-pt.html) 就发现原来的 [QNAP TS453bmini](/post/2018/04/qnap-ts453bmini.html) 的硬盘就不堪重负，所以想要把下载和真正想要管理的数据安全的从硬件上隔离开，所以才有了这篇文章。
 
 ## 研究阶段
+
 自行组装 NAS 相较于买成品 NAS 中间可能遇上许许多多坑，不过填坑的过程就是学习的过程，能学到很多硬件知识，并且通过对自己需求的合理规划能够组一台最合理的符合自己需求的机器。
 
 下面就记录一下研究过程中新接触到的概念。
@@ -44,12 +46,14 @@ PCIe 5.0	|128 GB/s	|32 GT/s	| 32 GHz
 PCIe 6.0	|256 GB/s	|64 GT/s	| 32 GHz
 
 ### TDP
+
 TDP，全称叫做 Thermal Design Power, 散热设计功耗，表示的是**芯片达到最大负荷时热量释放的标准**，单位是**瓦特**，是电脑冷却系统必须有能力驱散热量的最大限度，TDP 不是芯片释放热量的功率。
 
 ### RAID 卡
 RAID 卡是一种把多块独立物理硬盘按照不同方式组合形成一个逻辑硬盘，从而提供比单碟更高性能和提供冗余资料的物理硬件。
 
 #### RAID
+
 RAID 卡是一种物理设备，但是组 RADI 还可以通过软件方式，称为软 RAID ，通过硬件完成 RAID 功能的叫做硬 RAID，通过软件使用 CPU 完成 RADI 的叫做软 RAID。一般不推荐使用软 RAID，出错和故障的概率较高。
 
 如果想要了解更多 RAID 相关知识可以参考这篇[文章](/post/2018/04/raid.html)。
@@ -217,7 +221,7 @@ v2ex 的留言 [^v2]:
 - U 盘一个
 - 电源，散热器，风扇，机箱随意。散热最好通畅一些最好。
 
-当然如果追求极致性能，可以像这位大神一样配置：[^da] 
+当然如果追求极致性能，可以像这位大神一样配置：[^da]
 
 [^da]: https://zhuanlan.zhihu.com/p/92257487
 
