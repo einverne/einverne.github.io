@@ -97,3 +97,4 @@ Functional interface is a new feature Java 8 introduced. Functional interfaces p
 ## reference
 
 - <https://www.geeksforgeeks.org/functional-interfaces-java/>
+- <https://www.scaler.com/topics/functional-interface-in-java/>
