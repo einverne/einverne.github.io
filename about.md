@@ -11,11 +11,11 @@ permalink: /about.html
 
 哈喽，大家好，我通常在网上都叫自己 Ein Verne，仅仅是之前起的英文名，就一直用下来了，平时也常常写写 [文章](https://blog.einverne.info/)，但总是不知不觉中就变成了学习笔记。
 
-我是一个兴趣广泛的人，其实也就是什么都不会，日常[看看电影，书](https://www.douban.com/people/einverne/)，偶尔写写博客，影评，都非专业，发发自己所思所想而已。算是曾经的谷粉，但渐渐的便不再依赖于 Google 的服务，尤其是在 Google Reader， Google Plus 关闭后，2019 年对于我来说也算是一个逃离 Google 的一年，我将我使用的 Google 服务中的个人数据陆陆续续迁移到本地来保存（Google Reader -> [Miniflux](https://github.com/einverne/dockerfile), Play Music -> Plex/Swinsian, Picasa/Google Photos -> 本地 NAS, Gmail -> Self-hosted domain mail box/Cloudflare Email Routing, Google Drive -> Syncthing) ，当然很可惜到目前为止我依然没有办法完全逃离，毕竟现在还天天在用 Gmail，Google Calendar，YouTube 等等。
+我是一个兴趣广泛的人，其实也就是什么都不会，日常[看看电影，书](https://www.douban.com/people/einverne/)，偶尔写写博客，影评，都非专业，发发自己所思所想而已。算是曾经的谷粉，但渐渐的便不再依赖于 Google 的服务，尤其是在 Google Reader， Google Plus 关闭后，2019 年对于我来说也算是一个逃离 Google 的一年，我将我使用的 Google 服务中的个人数据陆陆续续迁移到本地来保存（Google Reader -> [Miniflux](https://github.com/einverne/dockerfile), Play Music -> Plex/Swinsian, Picasa/Google Photos -> 本地 NAS, Gmail -> Self-hosted domain mail box/Cloudflare Email Routing, Google Drive -> [Syncthing](https://blog.einverne.info/post/2019/10/syncthing.html)) ，当然很可惜到目前为止我依然没有办法完全逃离，毕竟现在还天天在用 Gmail，Google Calendar，YouTube 等等。
 
 4 年前因为 Running Man 接触了韩综，自此便像是发现了一片新天地，从韩综，到韩影，到韩国历史和政治，发现韩国近百年的历史何其的相似，结局又何其的不同。一边惊叹于普通人坚定顽强的意志力，一边又惊叹于从下至上的团结力。2020 年刚刚颁发的奥斯卡《寄生虫》就从侧面印证这一点，韩国影人前扑后继，一步比一步走得扎实。个人也陆陆续续的自学韩语多年，目前已经可以简单的交流，看剧大致也能听懂了。
 
-2023 年初，我来到了日本工作，我把我的日语学习笔记放到了[这里](https://japanese-learning-notes.einverne.info/)，我也新开了一个博客专门用来记录[日本的生活](https://japan.einverne.info/)。如果你有任何关于日本想要了解的方面，也欢迎通过下面的联系方式来找到我。
+2023 年初，我来到了日本工作，我把我的日语学习笔记放到了[这里](https://japanese-learning-notes.einverne.info/)，我也新开了一个博客专门用来记录[日本的生活](https://evjp.life)。如果你有任何关于日本想要了解的方面，也欢迎通过下面的联系方式来找到我。
 
 我是一个 Podcast 狂热分子，这些年也听了[不少](https://blog.einverne.info/post/2017/10/podcast-channels.html)很有意思的播客，一直想自己做一档节目，思考过桌游，读书，但最后还是没有下文。
 
@@ -25,30 +25,33 @@ permalink: /about.html
 
 ## 目前使用的主力设备
 
-目前我的主要桌面平台是 ~~Linux Mint / Ubuntu with Cinnamon Desktop~~ macOS M1 Pro，2020 年购入的第一台 [Mac](/post/2020/07/macbook-pro-initial-setup.html)，移动平台主要是 ~~Android（OnePlus 7 Pro）~~ iOS(iPhone 13 -> iPhone 15 Pro Max)，一台 MSI 的笔记本跟随着我已经 6 年，我扩展到 16G 内存，增加了三块硬盘，目前看来跑 Linux Mint 毫无压力，再战三年应该问题不大。2023 年节点为止主力办公电脑已经更换成 MacBook M1 Pro 16+512GB。
+目前我的主要桌面平台是 ~~Linux Mint / Ubuntu with Cinnamon Desktop~~ macOS M1 Pro，2020 年购入的第一台 [Mac](/post/2020/07/macbook-pro-initial-setup.html)，移动平台主要是 ~~Android（OnePlus 7 Pro）~~ iOS(iPhone 13 -> iPhone 15 Pro Max)，一台 MSI 的笔记本跟随着我已经 6 年，我扩展到 16G 内存，增加了三块硬盘，目前看来跑 Linux Mint 毫无压力，再战三年应该问题不大。2023 年节点为止主力办公电脑已经更换成 MacBook M1 Pro 16+512GB。2025 年中更换成 MacBook Air M4。
 
 ~~我的手机是 OnePlus 7 Pro，我原本以为 iOS 可以比 Android 流畅一些，谁想 iOS 也是越用越卡，所以去年又换回了一加，不过至此我已经搜集了 OnePlus 1, OnePlus 3, OnePlus 7 三代了。~~ 在 2022 年中的时候将手机更换成了 iPhone 13，原来的 OnePlus 7 Pro 作为备用机，主要更换的理由就是目前电池电量有非常严重的问题，并且随着使用系统也常常遇到卡顿的情况。2024 年 10 月更换成了 iPhone 15 Pro Max 台版 512GB 用以替换空间不足的 13。
 
 去年在发觉自己看 PDF 需求极大的情况下购入了 [Boox Note Pro](/post/2019/10/boox-note-pro-2-tips.html)，极大的代替了 Kindle 在看 PDF 时的问题，11 寸电子墨水屏带来的阅读乐趣也是 Kindle 不能比拟的。至于为什么没有买 iPad，我是觉得没有必要，我的目的如果只是用来看 PDF 的话，不需要 iPad 那么多的功能来分散注意力。"Do one thing, and do well" 就够了，等哪一天我真正想要用 iPad 的时候再入不迟。
 
-剩下的一些设备要不就是开机 24 小时跑程序或者下载的，要不就是晚上回家躺到床上享受高清电影的，用 NAS 下载后再局域网用 Android 盒子 Kodi 打开，输出到投影，享受 100 寸大屏的沉浸感。
+剩下的一些设备要不就是开机 24 小时跑程序或者下载的，要不就是晚上回家躺到床上享受高清电影的，用 NAS 下载后再局域网用 ~~Android 盒子 Kodi 打开~~ Apple TV 加上 VidHub + Filebar，输出到~~投影，享受 100 寸大屏的沉浸感~~65 寸的大电视。
 
-- 智能手机：iPhone 15 Pro Max ~~iPhone 13~~ ~~OnePlus 7 Pro~~ & ~~iPhone 7~~
+- 智能手机：iPhone 15 Pro Max / Pixel 9 ~~iPhone 13~~ ~~OnePlus 7 Pro~~ & ~~iPhone 7~~
 - 平板电脑：[[Boox Note Pro]] 用来看 PDF & Kindle 4 阅读其他电子书
-- 耳机：Google Pixel Buds ~~Sony MDR 1000x 秋冬戴保暖~~ & Sony WI-1000x 春夏戴
-- 电脑：~~MSI GE60 with Linux Mint 19.2~~ / MacBook Intel / MacMini M1 / MacBook Pro M1 Pro
+- 耳机：[Sony WH-1000XM6](/post/2026/01/sony-wh-1000xm6.html) ~~Google Pixel Buds~~ ~~Sony MDR 1000x 秋冬戴保暖~~ & Sony WI-1000x 春夏戴
+- 电脑：MacBook Air M4 24GB 1TB / MacBook Pro M4 Pro 24GB 512GB / ~~MacBook Pro M1 Pro~~ ~~MacMini M1~~ ~~MacBook Intel~~ ~~MSI GE60 with Linux Mint 19.2~~
 - 显示器：Benq
-- 微型电脑：Raspberry Pi 2B
-- NAS：[QNAP TS-453Bmini](https://blog.einverne.info/post/2018/04/qnap-ts453bmini.html) / [迎广 MS04 + J3455](/post/2018/12/build-nas-from-scratch.html)
+- 微型电脑：[零刻 SER8](/post/2024/09/beelink-ser8.html) / Raspberry Pi 2B
+- NAS：零刻 ME Pro / [QNAP TS-453Bmini](https://blog.einverne.info/post/2018/04/qnap-ts453bmini.html) / [迎广 MS04 + J3455](/post/2018/12/build-nas-from-scratch.html)
 - 投影：BenQ W1070+
-- 电视：[[Hisense 50E6G]]
-- 盒子：[Phicomm T1](/post/2018/01/phicomm-t1-remove-ads.html) & Phicomm N1
-- 路由器：[Phicomm K3](/post/2018/05/phicomm-k3.html) & Netgear WNDR3800 with OpenWrt & [xiaomi r3g](/post/2020/04/mi-wifi-3g.html) & [Asus RT-AC86U](/post/2020/11/asus-rt-ac86u-setup.html)
+- 电视：[Hisense 50E6G](/post/2024/06/i-bought-a-hisense-tv.html)
+- 盒子：[Apple TV](/post/2024/01/i-bought-an-apple-tv.html) ~~[Phicomm T1](/post/2018/01/phicomm-t1-remove-ads.html)~~ & ~~Phicomm N1~~
+- 路由器：Buffalo WSR3600BE4P-BK / ~~[Phicomm K3](/post/2018/05/phicomm-k3.html)~~ ~~Netgear WNDR3800 with OpenWrt~~ ~~[xiaomi r3g](/post/2020/04/mi-wifi-3g.html)~~ ~~[Asus RT-AC86U](/post/2020/11/asus-rt-ac86u-setup.html)~~
 - 主机
-  - [PlayStation 4 Pro](/post/2019/11/play-station-4-pro-setup.html)，如果你也玩 PS4，欢迎一起来玩，我的 PSN：**einverne_hk**
+  - PlayStation 5，PSN：**einverne_hk**
   - Switch
+  - ~~[PlayStation 4 Pro](/post/2019/11/play-station-4-pro-setup.html)~~
 - 软路由：倍控 3865U 6 口千兆软路由+金士顿 8GB DDR4 2666 内存 + 金士顿 256 GB SSD mSATA
-- 麦克风：[[Blue Yeti]]
+- 相机：Sony A7M3 / [Insta360 Go Ultra](/post/2025/12/insta360-go-ultra-review.html)
+  - 镜头：24-105mm F4 G OSS / 35mm F1.8 / 50mm F1.4 GM
+- 麦克风：[Blue Yeti](/post/2023/10/i-bought-a-microphone-blue-yeti.html) / [DJI Mic Mini](/post/2026/01/i-bought-a-dji-mic-mini.html)
 
 ## 哪些 App 对你的工作 / 学习 / 生活最重要？
 
@@ -56,15 +59,15 @@ permalink: /about.html
 
 - 输入法：[RIME](/post/2014/11/rime.html)，一个随时随地适合我习惯的输入法
 - 资讯类：~~InoReader 推荐过很多回~~ 现在虽然 RSS 看得少了，但希望之后慢慢再捡起来（2023 年我又开始用 Miniflux 来阅读文章了），Twitter，在 Google Plus 关闭后很久后选择开始用起来，不过也不是经常发，已经对社交媒体不关心了。
-- 个人管理：[Trello](/post/2017/12/trello-introduction.html)，Google Calendar，Trello 又是一个可以展开多个篇幅的内容，总之它已经成为了我唯一的 GTD 工具，加上和其他比如 Calendar 的配合，非常完美。Calendar 是作为桌面 Widget 存在的，代办事项，设定的周期性目标，活动，提醒都可以在上面展示。
+- 个人管理：~~[Trello](/post/2017/12/trello-introduction.html)，Google Calendar，Trello 又是一个可以展开多个篇幅的内容，总之它已经成为了我唯一的 GTD 工具，加上和其他比如 Calendar 的配合，非常完美。Calendar 是作为桌面 Widget 存在的，代办事项，设定的周期性目标，活动，提醒都可以在上面展示。~~这两年来我将我的 Todo List 更换到 Obsidian 中，借助 Kanban 插件也完美的满足了我的简要需求。
 - 笔记：~~WizNote 多年来一直用的它，跨平台同步也没有其他能代替了。~~ 在 [Obisidian](/post/2020/05/obsidian-note-taking.html) 出现之后，我就全面换成了 Obsidian。
-- 播客：Google Podcasts，至今为止我还安装了 Pocket Casts, Breaker, Anchor ，但用的最多的还是 Google Podcasts，似乎是最全的。随着小宇宙的上线，有些时候听中文播客也会用小宇宙。
+- 播客：~~Google Podcasts~~（已经关闭服务），至今为止我还安装了 Pocket Casts, Breaker, Anchor ，但用的最多的还是 Google Podcasts，似乎是最全的。随着小宇宙的上线，有些时候听中文播客也会用小宇宙。
 - IM 类：[Telegram](/post/2016/07/telegram-review.html)，WeChat 自不必多说。个人写了一个 [@kindlepush_bot](https://einverne.github.io/post/2017/09/telegram-bot.html) 用来发送电子书到 Kindle 。
-- 音乐类：Plex 串流，Swinsian 本地播放，辅助以网易云音乐和 YouTube，7 年云音乐用户，没版权没关系，2T 的云盘何用，youtube-dl 下载最好音质 YouTube 视频，ffmpeg 转码，然后上传到云盘，间接版权。
-- 邮件：Gmail，个人很多重要的邮件和通知都依靠它。
+- 音乐类：~~Plex 串流~~，Swinsian 本地播放，辅助以网易云音乐和 YouTube，7 年云音乐用户，没版权没关系，2T 的云盘何用，youtube-dl 下载最好音质 YouTube 视频，ffmpeg 转码，然后上传到云盘，间接版权。在 VPS 上搭建了 [Navidrome](https://blog.einverne.info/post/2023/12/navidrome.html) 作为我的音乐服务器，在 iOS 上使用 Arpeggi / Narjo 等兼容的客户端。
+- 邮件：Gmail，个人很多重要的邮件和通知都依靠它。还自己使用 Mailcow 搭建了域名服务器，使用了超过 3 年。
 - 密码：~~LastPass + Authentication，密码+二步验证，买过一年 LastPass 后来发现它把最重要的会员功能下放了，后面就没续费，Authentication 可以同步二步验证，尝试过一些可以备份二步验证的服务，有个服务还曾经弄丢过，就一直 Authentication 了，没遇到啥大问题。~~ 全面切换成了 [Bitwarden](/post/2019/06/password-manager-bitwarden.html)，不过二步验证目前还没有完全迁移到 Bitwarden，不过最终都会迁移到 Bitwarden。
-- 索引类：豆瓣和 Wikipedia，2023 年还需要加上 ChatGPT，我关心一个词条，结合这两个应用可以给我一个大致清晰的介绍。
-- 学习：多邻国，Anki，沪江开心词场，Eudic，Moon+ Reader，
+- 索引类：豆瓣和 Wikipedia，2023 年还需要加上 ChatGPT，我关心一个词条，结合这两个应用可以给我一个大致清晰的介绍。Perplexity 90% 替代了 Google。
+- 学习：多邻国，Anki，沪江开心词场，Eudic，Moon+ Reader，还有我自己的 Aki Japanese Dictionary。
 - 词典：[GoldenDict](/post/2018/08/goldendict.html) 唯一的选择
 - 其他：~~Ice Box，可以冰冻其他应用的应用。~~
 - 浏览器：Chrome，唯一浏览器，毕竟桌面版积累的书签和习惯太多了，加上 Google 的标签同步，可以让我随时随地的起身就走而不用关系之前在桌面版流量到哪里，直接用移动版就可以直接同步到桌面版的内容。不过一直在观察 [vivaldi 浏览器](/post/2019/07/replace-google-chrome-with-vivaldi.html)
@@ -78,6 +81,8 @@ permalink: /about.html
 ~~AWS：服务器用处多了，放 Telegram Bot，放网站等等。续费了很久以前的一家叫做 Directspace 的服务提供商 VPS~~，然后还有一台腾讯的 1M 带宽的机器，以及 [Oracle 的机器](/post/2019/09/oracle-offers-always-free-cloud-services.html)。
 
 [有一台能够自主决定安装什么服务的机器](/post/2020/02/self-hosted-services-collection.html)，可以解决很多订阅制服务的问题。
+
+目前无法离开的订阅就是 Claude Code，Codex 了。
 
 ## 能否具体谈谈你是如何使用你的设备和 App 的呢？
 
@@ -123,9 +128,10 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 - [个人在线相册](https://photo.einverne.info/)
 - [暮色时光](https://twilight-time.einverne.info) 和朋友的闲聊播客
 - [Kindle Push](https://book.einverne.info/) 之前练手 Python 的图书站点
-- [Kindle 笔记](https://kindle.einverne.info/)
-- [各服务的状态](https://status.einverne.info/)，借助 Freshping 搭建
+- [Kindle 笔记](https://kindle.einverne.info/) 读书摘录
+- [各服务的状态](https://kuma.einverne.info/)，利用 Uptime Kuma 搭建的服务监控
 - [NomadInit](https://nomadinit.com/)，美国银行卡，信用卡，公司注册记录。
+- [Homepage](https://einverne.info) 我个人的主页，以及我搭建和管理的服务
 
 ### 社交账号
 
@@ -133,3 +139,4 @@ echo "aUBlaW52ZXJuZS5pbmZvCg==" | base64 -d
 - [Twitter](https://twitter.com/einverne)
 - [Mastodon](https://m.einverne.info/@einverne)
 - ~~[豆瓣](https://www.douban.com/people/einverne/)~~ 自从豆瓣开始自我审查开始，就不再使用
+
