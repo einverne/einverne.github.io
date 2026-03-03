@@ -177,15 +177,17 @@
 // Run the function on window resize
   window.addEventListener('resize', resizeBilibiliIframes);
 
-// MutationObserver to handle dynamically added iframes
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (mutation.type === 'childList') {
-        resizeBilibiliIframes();
-      }
+// MutationObserver to handle dynamically added iframes (scoped to .post-content only)
+  var postContent = document.querySelector('.post-content');
+  if (postContent) {
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+          resizeBilibiliIframes();
+        }
+      });
     });
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(postContent, { childList: true, subtree: true });
+  }
 
 })(jQuery);
