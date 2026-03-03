@@ -37,9 +37,13 @@
 		<meta http-equiv = "refresh" content = "3;url=/">
 	{% endif %}
 	<link rel="canonical" href="{{ page.url | prepend: site.url }}">
-	<link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" />
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="preconnect" href="https://u.einverne.info" crossorigin>
+	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	  <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="preload" href="{{ ASSET_PATH }}/google-code-prettify/desert.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link href="{{ ASSET_PATH }}/google-code-prettify/desert.css" type="text/css" rel="stylesheet" /></noscript>
 
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="{{ BASE_PATH }}/images/favicon.ico">

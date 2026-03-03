@@ -7,6 +7,12 @@
       }
     });
     $("iframe[src*='youtube.com']").wrap('<div class="videowrapper" />');
+    /* lazy load images in post content */
+    $('.post-content img').each(function() {
+      if (!this.hasAttribute('loading')) {
+        this.setAttribute('loading', 'lazy');
+      }
+    });
 		anchors.options = {
 			visible: 'always',
 			icon: '¶'
