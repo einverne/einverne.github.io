@@ -88,6 +88,18 @@ Swizzin 的密码是在执行初始化脚本的时候设定的，可以使用如
     sudo systemctl restart rtorrent@<yourusername>
     sudo systemctl status rtorrent@<yourusername>
 
+也可以使用 
+
+```
+sudo box restart rtorrent
+```
+
+## 重启面板
+
+```
+sudo systemctl restart panel
+```
+
 ## 重启 Syncthing
 
 ```

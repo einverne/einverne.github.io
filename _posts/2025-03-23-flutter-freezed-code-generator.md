@@ -8,9 +8,7 @@ description: ""
 category: Flutter
 tags: [ flutter, dart, freezed, model, lombok, ]
 create_time: 2025-03-28 10:13:25
-last_updated: 2025-03-28 10:13:25
-dg-home: false
-dg-publish: false
+last_updated: 2026-03-11 10:13:25
 ---
 
 不管在什么样的应用中，如果要处理大量的数据，不可避免的就是要定义大量的数据类用来装载和解析数据，在 Flutter 中也不例外，今天要介绍的这个 Freezed 库就是 Flutter 中用来作为数据类（data classes）代码生成的这样一款工具。
@@ -276,6 +274,350 @@ class Person with _$Person {
 
 Freezed 会自动处理 copyWith / toString / == / hashCode 。
 
+### 默认值 @Default
+
+freezed 提供 `@Default` 注解来为属性设置默认值。使用 `@Default` 后，该属性在构造时可以不传入。
+
+```dart
+@freezed
+abstract class Settings with _$Settings {
+  const factory Settings({
+    @Default('en') String language,
+    @Default(true) bool darkMode,
+    @Default(14) int fontSize,
+  }) = _Settings;
+
+  factory Settings.fromJson(Map<String, Object?> json) => _$SettingsFromJson(json);
+}
+```
+
+使用时可以只传入需要修改的字段
+
+```dart
+void main() {
+  // 使用全部默认值
+  final defaultSettings = Settings();
+  print(defaultSettings.language); // 'en'
+
+  // 覆盖部分默认值
+  final customSettings = Settings(language: 'zh', fontSize: 16);
+}
+```
+
+在 freezed 3.0 中，还支持非常量默认值。通过使用 Mixed Mode（不使用 factory 构造函数），可以在构造函数中直接使用非常量的默认值
+
+```dart
+@freezed
+abstract class Event with _$Event {
+  Event({
+    required this.name,
+    DateTime? time,
+  }) : time = time ?? DateTime.now();
+
+  final String name;
+  final DateTime time;
+}
+```
+
+### 自定义 JSON 序列化 @JsonKey
+
+freezed 配合 `json_serializable` 使用时，可以通过 `@JsonKey` 注解来自定义 JSON 字段的序列化和反序列化行为。
+
+```dart
+@freezed
+abstract class User with _$User {
+  const factory User({
+    @JsonKey(name: 'user_name') required String userName,
+    @JsonKey(name: 'created_at', fromJson: _dateFromJson, toJson: _dateToJson)
+    required DateTime createdAt,
+    @JsonKey(includeIfNull: false) String? nickname,
+    @JsonKey(defaultValue: 0) int score,
+  }) = _User;
+
+  factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
+}
+
+DateTime _dateFromJson(String date) => DateTime.parse(date);
+String _dateToJson(DateTime date) => date.toIso8601String();
+```
+
+常用的 `@JsonKey` 参数
+
+- `name`：指定 JSON 中的字段名，用于处理命名风格不一致的情况（如 snake_case 和 camelCase）
+- `fromJson` / `toJson`：自定义序列化和反序列化函数
+- `defaultValue`：反序列化时如果字段缺失则使用的默认值
+- `includeIfNull`：为 false 时，序列化时忽略 null 值的字段
+- `ignore`：设为 true 时，该字段不参与序列化
+
+如果需要处理自定义类型的转换，可以使用 `JsonConverter`
+
+```dart
+class DateTimeConverter implements JsonConverter<DateTime, String> {
+  const DateTimeConverter();
+
+  @override
+  DateTime fromJson(String json) => DateTime.parse(json);
+
+  @override
+  String toJson(DateTime object) => object.toIso8601String();
+}
+
+@freezed
+abstract class Post with _$Post {
+  const factory Post({
+    required String title,
+    @DateTimeConverter() required DateTime publishedAt,
+  }) = _Post;
+
+  factory Post.fromJson(Map<String, Object?> json) => _$PostFromJson(json);
+}
+```
+
+### Union Types 联合类型
+
+Union Types（联合类型）是 freezed 最核心的功能之一，也是它与其他代码生成工具（如 equatable）最大的区别。联合类型允许在一个类中定义多个不同形态的构造函数，每个构造函数可以携带不同的数据，非常适合用于状态管理。
+
+定义联合类型时，需要使用 `sealed` 关键字（freezed 3.0 要求），并为每个构造函数指定一个不同的重定向类
+
+```dart
+@freezed
+sealed class AuthState with _$AuthState {
+  const factory AuthState.initial() = AuthInitial;
+  const factory AuthState.loading() = AuthLoading;
+  const factory AuthState.authenticated(User user) = Authenticated;
+  const factory AuthState.error(String message) = AuthError;
+}
+```
+
+联合类型最典型的使用场景是在 [[Flutter]] 的状态管理中，特别是配合 BLoC 使用
+
+```dart
+@freezed
+sealed class ApiResult<T> with _$ApiResult<T> {
+  const factory ApiResult.success(T data) = ApiSuccess<T>;
+  const factory ApiResult.failure(String message, {int? statusCode}) = ApiFailure<T>;
+  const factory ApiResult.loading() = ApiLoading<T>;
+}
+```
+
+联合类型在 JSON 序列化时，默认使用 `runtimeType` 字段来区分不同的类型。可以通过 `@Freezed` 注解来自定义
+
+```dart
+@Freezed(unionKey: 'type', unionValueCase: FreezedUnionCase.pascal)
+sealed class MyResponse with _$MyResponse {
+  const factory MyResponse.success(String data) = MyResponseSuccess;
+
+  @FreezedUnionValue('SpecialCase')
+  const factory MyResponse.special(String a, int b) = MyResponseSpecial;
+}
+```
+
+上面的代码在序列化时会使用 `type` 作为区分字段，而非默认的 `runtimeType`。
+
+freezed 3.0 还引入了两个新特性
+
+Eject Union Cases：可以为联合类型的某个分支使用自定义类，而不是让 freezed 自动生成
+
+```dart
+@freezed
+sealed class Result<T> with _$Result<T> {
+  Result._();
+
+  // freezed 自动生成 ResultData
+  factory Result.data(T data) = ResultData;
+
+  // 使用已有的自定义类 ResultError
+  factory Result.error(Object error) = ResultError;
+}
+
+// 自定义实现
+class ResultError<T> extends Result<T> {
+  ResultError(this.error) : super._();
+  final Object error;
+
+  @override
+  String toString() => 'Custom error: $error';
+}
+```
+
+私有构造函数：可以将某些联合分支设为私有
+
+```dart
+@freezed
+sealed class Result<T> with _$Result<T> {
+  factory Result._data(T data) = ResultData;
+  factory Result.error(Object error) = ResultError;
+}
+```
+
+### 模式匹配
+
+在 freezed 2.x 中，联合类型提供了 `when`、`map`、`maybeWhen`、`maybeMap` 等方法来进行模式匹配。freezed 3.0 移除了这些方法（后来在 3.2.0 中重新添加），推荐使用 Dart 原生的 pattern matching 语法。
+
+使用 Dart 原生的 `switch` 表达式（推荐方式）
+
+```dart
+@freezed
+sealed class AuthState with _$AuthState {
+  const factory AuthState.initial() = AuthInitial;
+  const factory AuthState.loading() = AuthLoading;
+  const factory AuthState.authenticated(User user) = Authenticated;
+  const factory AuthState.error(String message) = AuthError;
+}
+
+// 使用 switch 表达式
+Widget buildWidget(AuthState state) {
+  return switch (state) {
+    AuthInitial() => const Text('Welcome'),
+    AuthLoading() => const CircularProgressIndicator(),
+    Authenticated(:final user) => Text('Hello, ${user.name}'),
+    AuthError(:final message) => Text('Error: $message'),
+  };
+}
+```
+
+使用 `switch` 语句
+
+```dart
+void handleState(AuthState state) {
+  switch (state) {
+    case AuthInitial():
+      print('initial');
+    case AuthLoading():
+      print('loading');
+    case Authenticated(:final user):
+      print('authenticated: ${user.name}');
+    case AuthError(:final message):
+      print('error: $message');
+  }
+}
+```
+
+Dart 原生的 pattern matching 相比 `when`/`map` 的优势在于编译器会进行穷举检查。如果你遗漏了某个分支，编译器会直接报错，而不是在运行时才发现问题。
+
+如果仍然需要 `when`/`map` 方法（例如从 freezed 2.x 迁移的项目），在 freezed 3.2.0 及以上版本中这些方法已经作为扩展方法被重新添加。
+
+### 深拷贝 Deep Copy
+
+freezed 自动生成的 `copyWith` 方法支持深拷贝嵌套的 freezed 对象。当一个 freezed 类包含另一个 freezed 类作为属性时，`copyWith` 可以直接修改嵌套对象的内部字段，而无需手动展开。
+
+```dart
+@freezed
+abstract class Address with _$Address {
+  const factory Address({
+    required String city,
+    required String street,
+  }) = _Address;
+}
+
+@freezed
+abstract class Company with _$Company {
+  const factory Company({
+    required String name,
+    required Address address,
+  }) = _Company;
+}
+
+@freezed
+abstract class Employee with _$Employee {
+  const factory Employee({
+    required String name,
+    required Company company,
+  }) = _Employee;
+}
+```
+
+使用深拷贝
+
+```dart
+void main() {
+  final employee = Employee(
+    name: 'John',
+    company: Company(
+      name: 'Google',
+      address: Address(city: 'Tokyo', street: 'Shibuya'),
+    ),
+  );
+
+  // 深拷贝：直接修改嵌套对象的字段
+  final movedEmployee = employee.copyWith.company.address(city: 'Osaka');
+  print(movedEmployee.company.address.city); // 'Osaka'
+  print(movedEmployee.company.name); // 'Google' （未修改的字段保持不变）
+  print(movedEmployee.name); // 'John'
+
+  // 如果没有深拷贝，需要手动展开
+  // final movedEmployee = employee.copyWith(
+  //   company: employee.company.copyWith(
+  //     address: employee.company.address.copyWith(city: 'Osaka'),
+  //   ),
+  // );
+}
+```
+
+深拷贝只对属性类型也是 freezed 类的情况有效。如果属性是 `List<FreezedClass>` 类型，则不支持直接深拷贝列表内的元素。
+
+### freezed 2.x 到 3.0 的迁移
+
+freezed 3.0 于 2025 年 2 月发布，带来了一些重要的变化。
+
+类声明方式变更：使用 factory 构造函数的类现在必须声明为 `abstract`（单一类）或 `sealed`（联合类型）
+
+```dart
+// freezed 2.x
+@freezed
+class Person with _$Person {
+  const factory Person({required String name}) = _Person;
+}
+
+// freezed 3.0 - 单一类使用 abstract
+@freezed
+abstract class Person with _$Person {
+  const factory Person({required String name}) = _Person;
+}
+
+// freezed 3.0 - 联合类型使用 sealed
+@freezed
+sealed class Result with _$Result {
+  factory Result.success(String data) = Success;
+  factory Result.error(String message) = Error;
+}
+```
+
+Mixed Mode：3.0 引入了混合模式，允许不使用 factory 构造函数来定义类
+
+```dart
+@freezed
+class Person with _$Person {
+  Person({this.name, this.age});
+
+  final String? name;
+  final int? age;
+}
+```
+
+`map`/`when` 方法：3.0 最初移除了这些方法，推荐使用 Dart 原生 pattern matching。在 3.2.0 版本中这些方法被重新添加为扩展方法，以帮助项目迁移。
+
+### 与其他方案对比
+
+| 特性 | freezed | equatable | 手动编写 |
+|------|---------|-----------|---------|
+| == / hashCode | 自动生成 | 自动生成 | 手动编写 |
+| copyWith | 自动生成（支持深拷贝） | 不支持 | 手动编写 |
+| toString | 自动生成 | 手动编写 | 手动编写 |
+| Union Types | 支持 | 不支持 | 手动编写 |
+| JSON 序列化 | 配合 json_serializable | 不支持 | 手动编写 |
+| 不可变性 | @freezed 默认不可变 | 不强制 | 手动保证 |
+| 代码生成 | 需要 build_runner | 不需要 | 不需要 |
+
+freezed 的缺点在于每次修改 Model 后都需要重新运行代码生成，开发时建议使用 `watch` 模式
+
+```
+dart run build_runner watch -d
+```
+
 ## related
 
 - [DartJ](https://dartj.web.app/) 是一个可以将 JSON 快速转变成 Dart 类定义的工具。
+- [freezed 官方文档](https://pub.dev/packages/freezed)
+- [freezed 3.0 迁移指南](https://github.com/rrousselGit/freezed/blob/master/packages/freezed/MIGRATE-3.md)
+- [[Lombok]] Java 生态中类似的代码生成工具
