@@ -183,7 +183,22 @@ Outlook-Dateien
 RDC Connections
 .parallels-vm-directory
 Default.rdp
+
+//---Development---//
+// 忽略所有层级的 node_modules
+**/node_modules
+// 忽略构建输出
+**/dist
+**/.next
+**/.nuxt
+**/build
+// 忽略缓存
+**/.cache
 ```
+
+这里 `**` 是递归通配符，可以匹配任意深度的子目录。比如 `**/node_modules` 会忽略根目录以及所有子目录下的 `node_modules` 文件夹，无论嵌套多深都会生效。
+
+另外需要注意，`.stignore` 文件必须放在同步文件夹的根目录下才会生效，放在子目录中是不起作用的。
 
 ### 同步状态 {#lastest-change}
 
