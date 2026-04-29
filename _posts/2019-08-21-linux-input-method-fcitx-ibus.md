@@ -12,7 +12,6 @@ last_updated:
 
 但是稍微注意一下就是知道，搜狗使用的是 fcitx, 而 rime 声称二者都支持，但是 fcitx-rime 已经很久没有更新，主要的更新还在 IBus 那边。那这就需要一个抉择，因为 Linux 下无法将二者并存。
 
-
 ## fcitx
 
 fcitx 是 Free Chinese Input Toy for X 的简称。

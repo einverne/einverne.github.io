@@ -51,6 +51,8 @@ TradingView 在 Black Friday 和 Cyber Monday 经常有高额打折。
 
 另外一个小贴士就是如果当下不想买，可以注册并订阅他们的 newsletter，这样，一旦有活动，就会通过邮件方式发到邮箱中。
 
+![8T7LY-xwas](https://pic.einverne.info/images/8T7LY-xwas.png)
+
 ## 功能
 
 - 强大的图表，各类技术指标，添加各类技术分析工具，趋势线，支撑线，阻力位，均线等
