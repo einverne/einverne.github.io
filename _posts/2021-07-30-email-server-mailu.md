@@ -37,6 +37,7 @@ last_updated:
 本文在 Ubuntu 20.04 LTS 上进行。
 
 ### 确保 25 端口开放
+
 可以使用如下命令测试 25 端口是否开放：
 
     telnet smtp.gmail.com 25
@@ -48,6 +49,7 @@ last_updated:
     netstat -tulpn | grep -E -w '25|80|110|143|443|465|587|993|995'
 
 ### 设置 hostname
+
 以 `example.com` 为例：
 
     sudo hostnamectl set-hostname mx.example.com
