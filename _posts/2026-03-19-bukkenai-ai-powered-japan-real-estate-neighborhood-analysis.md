@@ -18,7 +18,7 @@ last_updated: 2026-03-19 12:00:00
 
 ## Vibe Coding 开干
 
-我是以"Vibe Coding"的方式来做这个项目的——不是从零开始设计架构，而是带着一个具体的痒点，边做边想，边想边改。用 [[Claude Code]] 作为主要的编程助手，迭代速度比我以往做 side project 快很多，很多时候是先把想法说给 AI，它出一版实现，我来 review 和调整，如此反复。技术栈上没有太多纠结：后端用 [[FastAPI]] 加 [[SQLAlchemy]] 异步 ORM 和 [[PostgreSQL]]（带 PostGIS 地理扩展），前端是 [[Next.js]] 搭配 [[React]] 和 [[TailwindCSS]]，数据来源是 [[Google Maps]] Places API 负责周边设施搜索，国土交通省的 REINFOLIB API 提供灾害风险和地价数据，最后用 [[Claude]] API 把收集到的数据汇总成一份可读性强的分析报告。
+我是以"Vibe Coding"的方式来做这个项目的——不是从零开始设计架构，而是带着一个具体的痒点，边做边想，边想边改。用 [[Claude Code]] 作为主要的编程助手，迭代速度比我以往做 side project 快很多，很多时候是先把想法说给 AI，它出一版实现，我来 review 和调整，如此反复。技术栈上没有太多纠结：后端用 [[FastAPI]] 加 [[SQLAlchemy]] 异步 ORM 和 [[PostgreSQL]]（带 PostGIS 地理扩展），前端是 [[Next.js]] 搭配 [[React]] 和 [[TailwindCSS]]，数据来源是 [[Google Maps]] Places API 负责周边设施搜索，国土交通省的 REINFOLIB API 提供灾害风险和地价数据，最后用 Gemini API 把收集到的数据汇总成一份可读性强的分析报告。
 
 ## 核心功能拆解
 

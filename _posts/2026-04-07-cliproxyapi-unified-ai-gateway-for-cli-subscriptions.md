@@ -11,7 +11,7 @@ create_time: 2026-04-07 14:20:00
 last_updated: 2026-04-08 09:54:50
 ---
 
-最近在折腾自己的 AI 工具链时，我遇到了一个非常现实的痛点。手里同时握着 [[Claude]] Pro、ChatGPT Plus、Gemini Advanced 这几个订阅，每次想在自己的脚本或小工具里调用它们的能力，都只能望洋兴叹——订阅账号给的是网页端或 CLI 工具的使用权，而不是 API Key。如果想走 API 路径，就得额外付一次费，而且 API 的定价往往比订阅贵得多。于是我一直在找一个能把订阅账号的额度转化为 API 调用能力的方案，直到最近发现了 [[CLIProxyAPI]] 这个项目。今天就聊聊这个工具到底解决了什么问题。
+最近在折腾自己的 AI 工具链时，我遇到了一个非常现实的痛点。手里同时握着 Claude Pro、ChatGPT Plus、Gemini Advanced 这几个订阅，每次想在自己的脚本或小工具里调用它们的能力，都只能望洋兴叹——订阅账号给的是网页端或 CLI 工具的使用权，而不是 API Key。如果想走 API 路径，就得额外付一次费，而且 API 的定价往往比订阅贵得多。于是我一直在找一个能把订阅账号的额度转化为 API 调用能力的方案，直到最近发现了 [[CLIProxyAPI]] 这个项目。今天就聊聊这个工具到底解决了什么问题。
 
 ![CLIProxyAPI 统一 AI 网关示意图](https://pic.einverne.info/images/cliproxyapi-unified-gateway.png)
 

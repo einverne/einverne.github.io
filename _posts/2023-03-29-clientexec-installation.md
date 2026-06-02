@@ -98,18 +98,18 @@ FAILED - couldn't use the system's shell binary. Please continue with this insta
 
 ### package 套餐
 
-创建售卖的套餐
+创建售卖的套餐，比如起名
 
-- Basic
-- Standard
-- Pro
+- Basic（基础套餐）
+- Standard（标准套餐）
+- Pro（专业套餐）
 - Bronze
 - Silver
 - Gold
 
 ## 最后
 
-最后的最后，欢迎访问 [EV Hosting](https://client.einverne.info) 订购使用。
+最后的最后，欢迎大家访问我搭建的 [EV Hosting](https://client.einverne.info) 订购使用。目前提供了域名邮箱，共享空间等服务。
 
 ## related
 
