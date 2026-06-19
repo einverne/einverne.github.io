@@ -135,6 +135,12 @@ atuin search kubectl
 atuin stats
 ```
 
+手动删除历史记录，可以通过多种方式完成。
+
+- 方式一，在交互式页面，Ctrl+R 或者上箭头，进入搜索，选中目标后，按 Ctrl+O，再按 Ctrl+D
+- 方式二：在主搜索界面直接选中对应的选项，按 Ctrl+A，然后按 D
+- 方式三：如果想按照关键字批量删除，可以先不加删除参数预览，确认执行 `atuin search query` 后，再使用 `atuin search --delete query` 删除匹配项。
+
 ## 自建同步服务器
 
 对数据隐私有更高要求的话，可以自己搭建 Atuin 服务器。官方提供了完整的自托管方案，支持 Docker 和 [[Kubernetes]] 部署。
@@ -175,6 +181,42 @@ sync_address = "https://atuin.your-domain.com"
 ```
 
 然后重新注册或者登录，之后的同步都走自己的服务器。
+
+## atuin 不记录历史
+
+atuin 不记录历史可能有多种情况。首先需要检查 Shell 插件是否配置成功，可以运行
+
+```
+atuin doctor  # 检查 Shell 是否集成正常
+atuin status  # 查看同步状态和历史记录数量
+```
+
+如果是 Zsh 确保配置了
+
+```
+eval "$(atuin init zsh)"
+```
+
+检查 ~/.config/atuin/config.toml 中是否设置了
+
+```
+[sync]
+records = true
+```
+
+在 macOS 下经常出现 daemon 状态异常，执行如下的命令检查。
+
+```
+atuin daemon status
+```
+
+如果发现 atuin daemon 没有执行，通过如下的命令重启
+
+
+```
+brew upgrade atuin
+brew services restart atuin
+```
 
 ## 最后
 

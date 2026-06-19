@@ -6,7 +6,7 @@ aliases:
 tagline: ""
 description: ""
 category: 经验总结
-tags: [ shell, atuin, bash, bash-history ]
+tags: [ shell, atuin, bash, bash-history, zsh ]
 create_time: 2023-06-08 13:25:20
 last_updated: 2026-03-18 00:00:00
 ---
