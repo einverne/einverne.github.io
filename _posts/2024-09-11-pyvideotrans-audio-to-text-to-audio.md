@@ -65,13 +65,10 @@ dg-publish: false
 
 ### 获取代码
 
-
-
 根据官网的教程，安装必要的组件
 
-
-
 但是我个人在尝试的过程中，发现执行报错 
+
 
 ```
 OSError: cannot load library '/Users/einverne/.pyenv/versions/pyvideotrans/lib/python3.10/site-packages/_soundfile_data/libsndfile.dylib': dlopen(/Users/einverne/.pyenv/versions/pyvideotrans/lib/python3.10/site-packages/_soundfile_data/libsndfile.dylib, 0x0002): tried: 

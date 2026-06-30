@@ -24,6 +24,8 @@ last_updated:
 
 Mintlify 的出现打破了这个局面。它提供了一套开箱即用的高颜值 UI，同时让你把文档内容（Markdown/MDX）直接放在你的代码仓库里。你只管写内容，它负责渲染、托管和即时更新。
 
+![vdepv7Z_YZ](https://pic.einverne.info/images/vdepv7Z_YZ.png)
+
 ## 为什么它值得关注？
 
 在使用 Mintlify 的这段时间里，有几个特性让我印象深刻，也正是这些点让我决定把它推荐给大家。

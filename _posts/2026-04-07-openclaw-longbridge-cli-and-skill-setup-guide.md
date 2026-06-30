@@ -74,7 +74,7 @@ iwr https://open.longbridge.com/longbridge/longbridge-terminal/install.ps1 | iex
 安装完 CLI 之后第一件事就是登录。运行：
 
 ```bash
-longbridge login
+longbridge auth login
 ```
 
 终端会输出一段类似下面的信息：
@@ -118,7 +118,7 @@ openclaw skill install openclaw-skills-longbridge-openapi
 }
 ```
 
-需要注意的是，如果你已经通过 `longbridge login` 完成了 CLI 端的 OAuth 登录，那么 Skill 中可以直接调用 CLI 命令，无需再单独配置环境变量；但如果你的 Skill 是直接调用 Longbridge OpenAPI（绕过 CLI），那么 App Key、Secret、Access Token 是必须的。这两种调用方式各有优缺点，下面会详细说。
+需要注意的是，如果你已经通过 `longbridge auth login` 完成了 CLI 端的 OAuth 登录，那么 Skill 中可以直接调用 CLI 命令，无需再单独配置环境变量；但如果你的 Skill 是直接调用 Longbridge OpenAPI（绕过 CLI），那么 App Key、Secret、Access Token 是必须的。这两种调用方式各有优缺点，下面会详细说。
 
 ## 实战体验
 

@@ -134,3 +134,7 @@ bun run tauri build --target universal-apple-darwin
 ```
 ./src-tauri/target/release/claudia
 ```
+
+## related
+
+- [[Claude Code UI]]
