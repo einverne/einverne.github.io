@@ -70,6 +70,8 @@ Jietu 是腾讯推出的截图工具。
 ## CleanShot X
 [CleanShot X](https://cleanshot.com/) 是 macOS 上一款强大的截图工具，提供了标注，上传，滚动截图，屏幕录制，自定义背景等等功能。
 
+## Capso
+Capso 是一款开源的 Swift 实现的截图工具。
 
 ## reference
 
