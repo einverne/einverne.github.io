@@ -11,7 +11,7 @@ create_time: 2026-06-26 16:00:00
 last_updated: 2026-06-29 00:00:00
 ---
 
-最近一段时间我在深度使用 [[Claude Code]] 做开发工作，用得越多，账单就越触目惊心。一次稍微复杂一点的任务，比如让它读取几个文件、搜索一下代码、跑一下测试，轻轻松松就能烧掉超过 100K 的 Token。更让人无奈的是，这 100K 里面有相当大一部分是重复冗余的内容——工具调用的输出、日志、搜索结果，它们被原封不动地塞进上下文，再一次次地发给模型，而模型其实只需要其中很小一部分关键信息。
+最近一段时间我在深度使用 [[Claude Code]] 做开发工作，用得越多，就越感觉套餐余量紧张。一次稍微复杂一点的任务，比如让它读取几个文件、搜索一下代码、跑一下测试，轻轻松松就能烧掉超过 100K 的 Token。更让人无奈的是，这 100K 里面有相当大一部分是重复冗余的内容——工具调用的输出、日志、搜索结果，它们被原封不动地塞进上下文，再一次次地发给模型，而模型其实只需要其中很小一部分关键信息。
 
 直到我发现了 [[Headroom]] 这个工具，才意识到这个问题其实有解。
 
@@ -234,6 +234,27 @@ headroom memory stats
 headroom memory list
 # 启动代理服务器
 headroom proxy --port 8787 7 天的
+```
+
+### headroom 升级
+
+可以使用 `headroom upgrade` 来升级到最新正式版。
+
+### 将 headroom 安装成后台任务
+在 macOS 上生成一个 launchd LaunchAgent（底层是 systemd/launchd/Docker 三选一，macOS 自动选 launchd），把 headroom proxy 交给系统的进程管理器托管，端口默认 8787，之后不需要任何应用单独去"wrap"或手动起进程——只要把各个客户端的 ANTHROPIC_BASE_URL / OPENAI_BASE_URL 指向 http://localhost:8787 就行，代理本身生死跟具体哪个应用没有关系。
+
+```
+headroom install apply --preset persistent-service --providers auto
+headroom install status
+headroom install start      # 启动
+headroom install stop       # 停止
+headroom install restart    # 重启
+```
+
+也可以直接使用 launchctl 直接操作。
+
+```
+
 ```
 
 ## 进阶配置和实践建议

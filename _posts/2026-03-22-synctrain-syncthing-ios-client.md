@@ -147,3 +147,4 @@ SyncTrain 解决了困扰我多年的一个问题——在 iOS 上优雅地使�
 - [[Syncthing]]
 - [[PhotoPrism]]
 - [[Navidrome]]
+- [[BasicSync]] Android 上的开源客户端

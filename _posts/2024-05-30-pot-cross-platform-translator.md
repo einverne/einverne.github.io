@@ -1,11 +1,11 @@
 ---
 layout: post
-title: ""
+title: "2024-05-30-pot-cross-platform-translator"
 aliases:
-- ""
+- "2024-05-30-pot-cross-platform-translator"
 tagline: ""
 description: ""
-category: 
+category: 产品体验
 tags: [ google-translator, deepl, pot, easydict, goldendict, macos,  ]
 create_time: 2023-05-09 09:16:26
 last_updated: 2023-05-09 09:16:26
