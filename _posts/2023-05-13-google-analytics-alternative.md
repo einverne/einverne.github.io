@@ -28,6 +28,7 @@ create_time: 2023-04-26 01:50:53
 - [GoatCounter](https://www.goatcounter.com/) 一个开源的统计应用
 - [[66analytics]] 一款 PHP 编写的统计
 - [[Aptabase]]
+- [[Visitors]]
 
 不可自架，闭源
 
