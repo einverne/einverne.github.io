@@ -358,6 +358,7 @@ default_container_command: sleep 1d
 
 `playbook.yml` 文件：
 
+{% raw %}
 ```yaml
 ---
 - hosts: all
@@ -455,6 +456,7 @@ tasks:
     - { name: 'user1', groups: 'g1'}
     - { name: 'user2', groups: 'root'}
 ```
+{% endraw %}
 
 
 
