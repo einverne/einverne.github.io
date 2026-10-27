@@ -1,6 +1,6 @@
-<div class="row" itemscope itemtype="http://schema.org/Article">
+<div class="row">
     <div class="col-12 col-md-8">
-        <div class="page-header" itemprop="name">
+        <div class="page-header">
             <h1>{{ page.title }} {% if page.tagline %}
                 <small>{{page.tagline}}</small>
                 {% endif %}
@@ -8,16 +8,16 @@
         </div>
         <div class="post-meta text-muted mb-3">
             {% if page.date %}
-            <span class="entry-date" itemprop="datePublished">Posted on {{ page.date | date: "%m/%d/%Y" }}</span>
+            <span class="entry-date">Posted on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%m/%d/%Y" }}</time></span>
             {% endif %}
             {% if page.last_updated %}
-            , Last modified on {{ page.last_updated | date: "%m/%d/%Y" }}
+            , Last modified on <time datetime="{{ page.last_updated | date: '%Y-%m-%dT%H:%M:%S%:z' }}">{{ page.last_updated | date: "%m/%d/%Y" }}</time>
             {% endif %}
-            <span class="entry-author" itemprop="author">by <a class="text-decoration-none" href="https://x.com/einverne">{{ site.author.name }}</a></span>
+            <span class="entry-author">by <a class="text-decoration-none" href="https://x.com/einverne">{{ site.author.name }}</a></span>
             | <a class="revision-histroy text-decoration-none" href="{{ site.repo_url }}/commits/master/{{ page.path }}"
                  target="_blank">View revision history</a>
         </div>
-        <div class="post-content" itemprop="articleBody">
+        <div class="post-content">
             {{ content }}
         </div>
 
@@ -27,6 +27,7 @@
                 {%- assign related_count = 0 -%}
                 {%- for post in site.posts -%}
                     {%- if related_count >= 10 -%}{%- break -%}{%- endif -%}
+                    {%- if post.url == page.url -%}{%- continue -%}{%- endif -%}
                     {%- assign sameTagCount = 0 -%}
                     {%- for tag in post.tags -%}
                         {%- if page.tags contains tag -%}

@@ -66,6 +66,12 @@ h2 {
     border-left: 5px solid #2e9fff;
 }
 
+/* 首页文章标题用 h2，保持原来 h1 的外观 */
+.post-list-title {
+    padding: 0;
+    border: 0;
+}
+
 /*.mobilepadding {*/
 /*    padding-left: 15px;*/
 /*    padding-right: 15px;*/

@@ -3,40 +3,89 @@
   <head>
     <meta charset="utf-8">
 	<link rel="manifest" href="/pwa/manifest.json">
-	<title>{% if page.url == "/index.html" %} {{ site.title }} {% else %} {% if page.title %}{{ page.title }}{% endif %} | {{ site.title }} {% endif %}</title>
-    {% if page.description and page.description != "" %}
-	  <meta name="description" content="{{ page.description }}">
-    <meta itemprop="description" content="{{ page.description }}">
-		{% elsif post.excerpt and post.excerpt != "" %}
-	  <meta name="description" content="{{ post.excerpt | strip_html }}">
-	  {% else %}
-	  <meta name="description" content="{{ post.content | strip_html | slice: 0, 150 }}">
-	  {% endif %}
+	{%- if paginator.page > 1 -%}
+		{%- capture seo_title -%}{{ site.title }} | 第 {{ paginator.page }} 页{%- endcapture -%}
+	{%- elsif page.url == "/" or page.url == "/index.html" -%}
+		{%- capture seo_title -%}{{ site.title }} | {{ site.tagline }}{%- endcapture -%}
+	{%- elsif page.title -%}
+		{%- capture seo_title -%}{{ page.title }} | {{ site.title }}{%- endcapture -%}
+	{%- else -%}
+		{%- assign seo_title = site.title -%}
+	{%- endif -%}
+	{%- comment -%} 优先用 front matter 的 description，文章没有写时取摘要或正文前 150 字 {%- endcomment -%}
+	{%- if page.description and page.description != "" -%}
+		{%- assign seo_description = page.description | strip_html | normalize_whitespace -%}
+	{%- elsif page.collection == "posts" -%}
+		{%- assign seo_description = page.excerpt | strip_html | normalize_whitespace -%}
+		{%- if seo_description.size < 50 -%}
+			{%- assign seo_description = page.content | strip_html | normalize_whitespace -%}
+		{%- endif -%}
+		{%- assign seo_description = seo_description | truncate: 150 -%}
+	{%- endif -%}
+	{%- if seo_description == nil or seo_description == "" -%}
+		{%- assign seo_description = site.description -%}
+	{%- endif -%}
+	{%- assign seo_description = seo_description | replace: "[[", "" | replace: "]]", "" | replace: '"', '&quot;' %}
+	<title>{{ seo_title }}</title>
+	<meta name="description" content="{{ seo_description }}">
+	<meta itemprop="description" content="{{ seo_description }}">
 		<meta itemprop="name" content="{{ site.title }}">
-	  {% if page.keywords %}
+	  {%- if page.keywords %}
 	  <meta name="keywords" content="{{ page.keywords }}">
-	  {% endif %}
-	  {% if post.tags.size > 0 %}
-			  <meta name="keywords" content="{% for tag in post.tags %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}">
-	  {% endif %}
+	  {%- elsif page.tags.size > 0 %}
+	  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
+	  {%- endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="theme-color" content="#2196F3">
-	  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title }}{% endif %}">
+	  <meta property="og:description" content="{{ seo_description }}">
 	  <meta property="og:type" content="article">
 	  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 	  <meta property="og:image" content="{{ site.image }}">
 	  <meta property="twitter:card" content="summary">
 	  <meta property="twitter:site" content="@{{ site.author.twitter }}">
 	  <meta property="twitter:creator" content="@{{ site.author.twitter }}">
-	  <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-	  <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ post.content | strip_html | truncatewords: 50 }}{% endif %}">
+	  <meta property="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title }}{% endif %}">
+	  <meta property="twitter:description" content="{{ seo_description }}">
 	  <meta property="twitter:image" content="{{ site.image }}">
 		<meta name="google-site-verification" content="puZt0ZyqB-t67BYdYAgLUyIPBeismG68J0dmEc01QeY" />
 	{% if page.url == "/404.html" %}
 		<meta http-equiv = "refresh" content = "3;url=/">
 	{% endif %}
 	<link rel="canonical" href="{{ page.url | prepend: site.url }}">
+	{%- if page.collection == "posts" %}
+	{%- assign modified_date = page.date -%}
+	{%- if page.last_updated -%}
+		{%- assign published_ts = page.date | date: "%s" | plus: 0 -%}
+		{%- assign modified_ts = page.last_updated | date: "%s" | plus: 0 -%}
+		{%- if modified_ts > published_ts -%}{%- assign modified_date = page.last_updated -%}{%- endif -%}
+	{%- endif %}
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		"headline": {{ page.title | jsonify }},
+		"url": {{ page.url | absolute_url | jsonify }},
+		"mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+		"datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+		"dateModified": {{ modified_date | date: "%Y-%m-%dT%H:%M:%S%:z" | jsonify }},
+		"author": {
+			"@type": "Person",
+			"name": {{ site.author.name | jsonify }},
+			"url": {{ "/about.html" | absolute_url | jsonify }}
+		},
+		"image": {{ site.image | jsonify }},
+		"keywords": {{ page.tags | join: ", " | jsonify }},
+		"inLanguage": "zh-CN",
+		"isPartOf": {
+			"@type": "Blog",
+			"name": {{ site.title | jsonify }},
+			"url": {{ site.url | jsonify }}
+		}
+	}
+	</script>
+	{%- endif %}
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 	<link rel="preconnect" href="https://u.einverne.info" crossorigin>
 	<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>

@@ -6,11 +6,12 @@ keywords: GitHub, Jekyll, Linux 命令, Vim, Docker, Android, Docker, Go, Spring
 ---
 
 <meta itemprop="image" content="{{ site.image }}">
+<h1 class="visually-hidden">{{ site.title }}</h1>
 <div class="row mt-4">
   <div class="col-12 col-md-8">
     {% for post in paginator.posts %}
     {% capture summary %}{{ post.content | strip_html | slice: 0, 280 }}{% endcapture%}
-    <h1><a class="text-decoration-none title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
+    <h2 class="h1 post-list-title"><a class="text-decoration-none title" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
     <div>
       {{summary}}
       {% if summary != post.content %}<a href="{{ BASE_PATH }}{{ post.url }}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Read more ...</a>{% endif %}
