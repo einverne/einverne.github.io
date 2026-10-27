@@ -14,11 +14,16 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@master
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run --rm \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:4.2.2 /bin/bash -c "chmod a+w /srv/jekyll/Gemfile.lock && chmod 777 /srv/jekyll && jekyll build --future"
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3'
+        bundler-cache: true
+    - name: Build the site
+      # jekyll/builder 镜像默认时区为 America/Chicago，保持一致避免日期输出变化
+      env:
+        TZ: America/Chicago
+      run: bundle exec jekyll build --future
     - name: copy file via ssh
       uses: appleboy/scp-action@v0.1.4
       with:
