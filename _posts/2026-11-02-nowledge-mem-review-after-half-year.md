@@ -97,7 +97,7 @@ MCP 客户端的地址是 `https://mem.example.com/mcp/`，注意末尾的斜杠
 
 ### 主动召回意味着可能漏掉
 
-Nowledge Mem 的召回方式是开场注入一份简报，其余靠 Agent 自己判断什么时候去搜。这样做省 token，不会每条 prompt 都塞一大段可能不相关的上下文，但代价是如果 Agent 没意识到需要查，就会漏掉。我的经验是在 `CLAUDE.md` 或者 `AGENTS.md` 里写清楚哪些场景必须先查记忆，比如继续之前的任务、涉及服务器配置、需要引用过去的决定。平时和 Agent 对话时，我也会直接说「先去 Nowledge Mem 里搜一下上次的方案」。如果你想要每条 prompt 都自动注入上下文，可以看看我之前写的 [PowerContext 介绍：让 Codex 和 Claude Code 共享跨会话上下文与记忆](https://blog.einverne.info/post/2026/10/powercontext-cross-session-agent-context.html)，两者的思路正好相反。
+Nowledge Mem 的召回方式是开场注入一份简报，其余靠 Agent 自己判断什么时候去搜。这样做省 token，不会每条 prompt 都塞一大段可能不相关的上下文，但代价是如果 Agent 没意识到需要查，就会漏掉。我的经验是在 `CLAUDE.md` 或者 `AGENTS.md` 里写清楚哪些场景必须先查记忆，比如继续之前的任务、涉及服务器配置、需要引用过去的决定。平时和 Agent 对话时，我也会直接说「先去 Nowledge Mem 里搜一下上次的方案」。如果你想要每条 prompt 都自动注入上下文，可以看看我之前写的 [用 PowerContext 给多个 Coding Agent 做任务交接](https://blog.einverne.info/post/2026/10/powercontext-cross-session-agent-context.html)，两者的思路正好相反。
 
 ### 不是什么都值得记
 
