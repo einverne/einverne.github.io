@@ -10,7 +10,7 @@ create_time: 2026-10-29 13:55:15
 last_updated: 2026-10-29 13:55:15
 ---
 
-前两天整理了一篇 [AI 浏览器自动化方案怎么选](https://blog.einverne.info/post/2026/10/ai-browser-automation-landscape.html)，把 Playwright、MCP、Agent 专用浏览器、WebMCP 这些路线梳理了一遍。在那篇文章里我提到，「内置 Agent 的 AI 浏览器」这一类里我最看好的是 [Aside](https://myaltbox.com/BDOqQbPjJlW-aside)，原因是它的密码管理器设计得很用心，但篇幅有限没有展开。今天就单独写一篇，聊聊这个浏览器到底能做什么、和 [[Comet]]、[[Dia Browser]] 有什么不一样，以及我现在是怎么用它的。如果你看完想试试，可以用我的邀请链接 [https://aside.com/r/UpYKnv9ziq](https://aside.com/r/UpYKnv9ziq) 注册，注册后会额外获得 100 Credits。
+前两天整理了一篇 [AI 浏览器自动化方案怎么选](https://blog.einverne.info/post/2026/10/ai-browser-automation-landscape.html)，把 Playwright、MCP、Agent 专用浏览器、WebMCP 这些路线梳理了一遍。在那篇文章里我提到，「内置 Agent 的 AI 浏览器」这一类里我最看好的是 [Aside](https://myaltbox.com/BDOqQbPjJlW-aside)，原因是它的密码管理器设计得很用心，但篇幅有限没有展开。今天就单独写一篇，聊聊这个浏览器到底能做什么、和 [[Comet]]、[[Dia Browser]] 有什么不一样，以及我现在是怎么用它的。如果你看完想试试，可以用我的[邀请链接](https://aside.com/r/UpYKnv9ziq) 注册，注册后会额外获得 100 Credits。
 
 ![Aside 浏览器：在已登录的网站里替你干活的 AI Agent](https://pic.einverne.info/images/2026-10-29-14-05-00-aside-ai-browser.png)
 
