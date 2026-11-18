@@ -30,3 +30,5 @@ PocketBase 的 SQLite 可以搭配 [[Litestream]] 一起使用。
 [Litestream](https://litestream.io/) 是一个使用 Go 编写的，用于 SQLite 数据库流式复制的工具。它作为一个单独的后台进程运行，并不断地从磁盘上复制写前日志页到一个或多个副本。 这种异步复制提供了类似于 Postgres 或 MySQL 等数据库服务器的灾难恢复。 SQLite 有一个名为"WAL"（预写日志）的日志模式。
 
 PocketBase 和 Litestream 都只需要非常少的资源，完全可以在 512 MB 内存的 VPS 上运行。
+
+[[Beszel]] 利用了 PocketBase 的基础。
