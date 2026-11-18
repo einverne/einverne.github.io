@@ -7,7 +7,7 @@ description: "介绍开源自托管的 Semaphore UI，它为 Ansible、Terraform
 category: "产品体验"
 tags: [semaphore-ui, ansible, terraform, opentofu, devops, self-hosted, homelab]
 create_time: 2026-11-12 10:00:00
-last_updated: 2026-11-12 10:00:00
+last_updated: 2026-11-18 16:30:00
 ---
 
 我手上的 VPS 和 Homelab 日常维护基本交给 [[Ansible]]：初始化系统、加固 SSH、轮换密钥、装 Docker，一条 `ansible-playbook` 跑下去几十台机器就同步好了。用久了有两个问题越来越明显。第一，执行记录只存在于终端滚动缓冲区里，过两周再想知道某台机器上次是什么时候跑过哪个 playbook、结果如何，基本无从查起。第二，所有操作都绑在我自己的 MacBook 上，私钥、inventory、vault 密码都在本地，换台电脑或者想让别人帮忙执行一下就很麻烦。最近在找解决方案的时候，重新注意到了 [[Semaphore UI]] 这个项目，它正好就是为这类场景设计的。
@@ -62,7 +62,6 @@ services:
       - "3000:3000"
     environment:
       SEMAPHORE_DB_DIALECT: sqlite
-      SEMAPHORE_DB: /etc/semaphore/semaphore.sqlite
       SEMAPHORE_PLAYBOOK_PATH: /tmp/semaphore/
       SEMAPHORE_ADMIN: admin
       SEMAPHORE_ADMIN_NAME: admin
@@ -83,6 +82,8 @@ volumes:
 
 其中 `SEMAPHORE_ACCESS_KEY_ENCRYPTION` 是 Key Store 的加密密钥，用下面的命令生成，并且一定要妥善备份。这个值一旦丢失，数据库里加密保存的 SSH 私钥和密码就全部无法解密了。官方示例里写死了一个现成的值，千万不要照抄。
 
+另外，网上不少教程会加一行 `SEMAPHORE_DB: /etc/semaphore/semaphore.sqlite` 来指定 SQLite 文件位置，我实测在 v2.20.24 上这个变量对 SQLite 并不生效，数据库始终写在容器内的 `/var/lib/semaphore/database.sqlite`，也就是上面挂载的 `semaphore_data` 卷里，所以这里干脆去掉了。
+
 ```bash
 head -c32 /dev/urandom | base64
 ```
@@ -97,7 +98,7 @@ head -c32 /dev/urandom | base64
 
 第三个是从命令行迁移过来时的习惯问题。我以前很多 playbook 依赖本地的 `~/.ssh/config` 来定义主机别名、端口和跳板机，搬到 Semaphore 之后这些配置都不存在了。建议把连接信息完整写进 inventory 里，比如用 `ansible_host`、`ansible_port` 和 `ansible_ssh_common_args` 明确指定，这样无论在本地还是在 Semaphore 里执行，行为都是一致的，这本身也是一个让 Ansible 仓库更规范的机会。
 
-最后是数据备份。用 SQLite 的话，整个 Semaphore 的状态就是 `/etc/semaphore` 下的那个数据库文件，再加上前面说的加密密钥。定期备份这两样东西就够了，恢复时把文件放回去、用同一个加密密钥启动即可。如果后面用户和任务量大了，再按官方文档迁移到 MySQL 或 PostgreSQL 也不迟。
+最后是数据备份。用 SQLite 的话，整个 Semaphore 的状态由三样东西组成：`/var/lib/semaphore` 下的 `database.sqlite` 数据库文件，`/etc/semaphore` 下自动生成的 `config.json`（里面有 cookie 加密密钥），以及前面说的 Key Store 加密密钥。定期备份这三样就够了，最好先停掉容器再打包，避免拷到写了一半的数据库；恢复时把文件放回去、用同一个加密密钥启动即可。如果后面用户和任务量大了，再按官方文档迁移到 MySQL 或 PostgreSQL 也不迟。
 
 ## 最后
 
